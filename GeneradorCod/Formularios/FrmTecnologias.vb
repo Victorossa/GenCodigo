@@ -7,6 +7,8 @@
             Cancelar_Tecnologias()
             SP_Plantillas_BUSQUEDA_SEGUN_PARAMETRO_Tecnologia()
             Cancelar_Plantillas()
+            SP_Componentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaID()
+            Cancelar_Componentes()
         Catch ex As System.Exception
             System.Windows.Forms.MessageBox.Show(ex.Message)
         End Try
@@ -547,6 +549,296 @@
 
 #End Region
 
+
+#Region "Procedimientos"
+    Sub Cancelar_Componentes()
+        'Botones Del Menu
+        Nuevo_Menu_Componentes.Enabled = True
+        Guardar_Menu_Componentes.Enabled = False
+        Editar_Menu_Componentes.Enabled = True
+        Actualizar_Menu_Componentes.Enabled = False
+        Eliminar_Menu_Componentes.Enabled = False
+        'Grid
+        SP_Componentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView.Enabled = True
+        'Cargar Datos de Tabla Actualizados
+        SP_Componentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaID()
+        Bloquear_Objetos_Componentes()
+        Parar_Timer_Componentes()
+        Timer_Ubicar_En_Fila_Componentes()
+    End Sub
+    'Insertar
+    Private Sub SP_Componentes_EDICION_INSERTAR()
+        Try
+            Me.SP_Componentes_EDICION_INSERTARTableAdapter.Fill(Me.DataSetAdministracion.SP_Componentes_EDICION_INSERTAR,
+                                                 New System.Nullable(Of Integer)(CType(PlantillaIDTextBox.Text, Integer)),
+                                                 NombreComponenteTextBox.Text,
+                                                 CodigoTextBox.Text)
+            SP_Componentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaID()
+            MsgBox("El Dato Fue Guardado Exitosamente", MsgBoxStyle.Information, "Guardar Dato")
+        Catch ex As System.Exception
+            System.Windows.Forms.MessageBox.Show(ex.Message)
+        End Try
+    End Sub
+    'Actualizar
+    Private Sub SP_Componentes_EDICION_ACTUALIZAR()
+        Try
+            Me.SP_Componentes_EDICION_ACTUALIZARTableAdapter.Fill(Me.DataSetAdministracion.SP_Componentes_EDICION_ACTUALIZAR,
+                                                 New System.Nullable(Of Integer)(CType(ComponenteIDTextBox.Text, Integer)),
+                                                 New System.Nullable(Of Integer)(CType(PlantillaIDTextBox.Text, Integer)),
+                                                 NombreComponenteTextBox.Text,
+                                                 CodigoTextBox.Text)
+            SP_Componentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaID()
+            MsgBox("El Dato Fue Actualizado Exitosamente", MsgBoxStyle.Information, "Actualizar Dato")
+        Catch ex As System.Exception
+            System.Windows.Forms.MessageBox.Show(ex.Message)
+        End Try
+    End Sub
+    'Eliminar
+    Private Sub SP_Componentes_EDICION_ELIMINAR()
+        Try
+            Me.SP_Componentes_EDICION_ELIMINARTableAdapter.Fill(Me.DataSetAdministracion.SP_Componentes_EDICION_ELIMINAR, New System.Nullable(Of Long)(CType(ComponenteIDTextBox.Text, Long)))
+            SP_Componentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaID()
+            MsgBox("El Dato Fue Eliminado Exitosamente de la Base de Datos", MsgBoxStyle.Information, "Eliminación de Dato")
+        Catch ex As System.Exception
+            System.Windows.Forms.MessageBox.Show(ex.Message)
+        End Try
+    End Sub
+#End Region
+#Region "Menus"
+    'Nuevo 
+    Private Sub Nuevo_Menu_Componentes_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Nuevo_Menu_Componentes.Click
+        Nuevo_Menu_Componentes.Enabled = False
+        Editar_Menu_Componentes.Enabled = False
+        SP_Componentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView.Enabled = False
+        Limpiar_Objetos_Componentes()
+        NombreComponenteTextBox.Enabled = True
+        NombreComponenteTextBox.Focus()
+    End Sub
+    'Guardar
+    Private Sub Guardar_Menu_Componentes_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Guardar_Menu_Componentes.Click
+        Control_Nulos_Componentes()
+
+        If ControlNulos.Text = "" Then ' Then
+            SP_Componentes_EDICION_INSERTAR()
+            Cancelar_Componentes()
+            Parar_Timer_Componentes()
+        End If
+    End Sub
+    'Editar
+    Private Sub Editar_Menu_Componentes_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Editar_Menu_Componentes.Click
+        Nuevo_Menu_Componentes.Enabled = False
+        Guardar_Menu_Componentes.Enabled = False
+        Editar_Menu_Componentes.Enabled = False
+        Actualizar_Menu_Componentes.Enabled = True
+        Eliminar_Menu_Componentes.Enabled = True
+        SP_Componentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView.Enabled = False
+        Desbloquear_Objetos_Componentes()
+        Timer_Actualizar_Componentes()
+        Timer_Eliminar_Componentes()
+    End Sub
+    'Actualizar
+    Private Sub Actualizar_Menu_Componentes_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Actualizar_Menu_Componentes.Click
+        Control_Nulos_Componentes()
+
+        If ControlNulos.Text = "" Then ' Then
+            SP_Componentes_EDICION_ACTUALIZAR()
+            Cancelar_Componentes()
+            Parar_Timer_Componentes()
+        End If
+    End Sub
+    Private Sub Eliminar_Menu_Componentes_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Eliminar_Menu_Componentes.Click
+        If MsgBox("Desea Eliminar Este Dato?", MsgBoxStyle.YesNo) = MsgBoxResult.Yes Then
+            SP_Componentes_EDICION_ELIMINAR()
+            Cancelar_Componentes()
+            Parar_Timer_Componentes()
+        Else
+            MsgBox("Se Cancelo la Eliminación del Dato", MsgBoxStyle.Information)
+            Cancelar_Componentes()
+        End If
+    End Sub
+    'Cancelar
+    Private Sub Cancelar_Menu_Componentes_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Cancelar_Menu_Componentes.Click
+        Cancelar_Componentes()
+    End Sub
+#End Region
+
+#Region "Eventos sobre Objetos "
+    'Control de Nulos
+    Public Sub Control_Nulos_Componentes()
+        ControlNulos.Text = "" '
+        Select Case ControlNulos.Text = "" '
+            Case PlantillaIDTextBox.Text = ""
+                MsgBox("El nombre del campo: PlantillaID; Esta vacio, Favor Verificar", MsgBoxStyle.Critical)
+                PlantillaIDTextBox.BackColor = Color.Beige
+                ControlNulos.Text = "1"
+            Case NombreComponenteTextBox.Text = ""
+                MsgBox("El nombre del campo: NombreComponente; Esta vacio, Favor Verificar", MsgBoxStyle.Critical)
+                NombreComponenteTextBox.BackColor = Color.Beige
+                ControlNulos.Text = "1"
+            Case CodigoTextBox.Text = ""
+                MsgBox("El nombre del campo: Codigo; Esta vacio, Favor Verificar", MsgBoxStyle.Critical)
+                CodigoTextBox.BackColor = Color.Beige
+                ControlNulos.Text = "1"
+            Case Else
+                ControlNulos.Text = "" '
+        End Select
+    End Sub
+    Private Sub NombreComponenteTextBox_KeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles NombreComponenteTextBox.KeyPress
+        If Asc(e.KeyChar) = 13 Then
+            If NombreComponenteTextBox.Text = "" Then
+                MsgBox("Dato Obligatorio, Favor Verificar", MsgBoxStyle.Critical, "Validación de Datos")
+                NombreComponenteTextBox.Text = ""
+                NombreComponenteTextBox.Focus()
+            Else
+                CodigoTextBox.Enabled = True
+                CodigoTextBox.Focus()
+            End If
+        End If
+        Dim Longitud, Ascii As Integer
+        Dim Temp As String
+        Dim Caracter As Char
+        Longitud = (NombreComponenteTextBox.TextLength) - 1
+        If Longitud < 1 Then
+            Longitud = Longitud + 1
+            Caracter = Microsoft.VisualBasic.Right(NombreComponenteTextBox.Text, 1)
+            Caracter = UCase(Caracter)
+            NombreComponenteTextBox.Text = ""
+            NombreComponenteTextBox.Text = Caracter
+            NombreComponenteTextBox.SelectionStart = Longitud + 1
+            Exit Sub
+        End If
+        Caracter = Mid(NombreComponenteTextBox.Text, Longitud, Longitud)
+        Ascii = Asc(Caracter)
+        If Ascii = 32 Then
+            Temp = Microsoft.VisualBasic.Left(NombreComponenteTextBox.Text, Longitud)
+            Caracter = Microsoft.VisualBasic.Right(NombreComponenteTextBox.Text, 1)
+            Caracter = UCase(Caracter)
+            NombreComponenteTextBox.Text = ""
+            NombreComponenteTextBox.Text = Temp + Caracter
+            NombreComponenteTextBox.SelectionStart = Longitud + 1
+        End If
+    End Sub
+    Private Sub CodigoTextBox_KeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles CodigoTextBox.KeyPress
+        If Asc(e.KeyChar) = 13 Then
+            If Actualizar_Menu_Componentes.Enabled = True Then
+                Actualizar_Menu_Componentes.Enabled = True
+                Eliminar_Menu_Componentes.Enabled = True
+            Else
+                If CodigoTextBox.Text = "" Then
+                    MsgBox("Dato Obligatorio, Favor Verificar", MsgBoxStyle.Critical, "Validación de Datos")
+                    CodigoTextBox.Text = ""
+                    CodigoTextBox.Focus()
+                Else
+                    MsgBox("La Información Ya puede ser Guardada el Icono de Guardado queda habilitado", MsgBoxStyle.Information, "Guardar los Datos")
+                    Guardar_Menu_Componentes.Enabled = True
+                    Timer_Guardar_Componentes()
+                End If
+            End If
+        End If
+    End Sub
+    Public Sub Limpiar_Objetos_Componentes()
+        NombreComponenteTextBox.Text = "" ''
+        CodigoTextBox.Text = "" ''
+    End Sub
+    Public Sub Desbloquear_Objetos_Componentes()
+        NombreComponenteTextBox.Enabled = True
+        CodigoTextBox.Enabled = True
+    End Sub
+    Public Sub Bloquear_Objetos_Componentes()
+        NombreComponenteTextBox.Enabled = False
+        CodigoTextBox.Enabled = False
+    End Sub
+#End Region
+
+#Region "Timer de Botones"
+    'Declaraciones de Timers de Botones
+    Private WithEvents Timer_Guardar_Menu_Componentes As Timer
+    Private WithEvents Timer_Actualizar_Menu_Componentes As Timer
+    Private WithEvents Timer_Eliminar_Menu_Componentes As Timer
+    'Procedimientos del Timer
+    Private Sub Timer_Guardar_Componentes()
+        Me.Timer_Guardar_Menu_Componentes = New Timer
+        Timer_Guardar_Menu_Componentes.Interval = 250
+        Timer_Guardar_Menu_Componentes.Start()
+    End Sub
+    Private Sub Timer_Actualizar_Componentes()
+        Me.Timer_Actualizar_Menu_Componentes = New Timer
+        Timer_Actualizar_Menu_Componentes.Interval = 500
+        Timer_Actualizar_Menu_Componentes.Start()
+    End Sub
+    Private Sub Timer_Eliminar_Componentes()
+        Me.Timer_Eliminar_Menu_Componentes = New Timer
+        Timer_Eliminar_Menu_Componentes.Interval = 800
+        Timer_Eliminar_Menu_Componentes.Start()
+    End Sub
+    'Eventos Tick
+    Private Sub Timer_Guardar_Menu_Componentes_Tick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Timer_Guardar_Menu_Componentes.Tick
+        If Guardar_Menu_Componentes.BackColor = Color.White Then
+            Guardar_Menu_Componentes.BackColor = Color.Green
+        Else
+            Guardar_Menu_Componentes.BackColor = Color.White
+        End If
+    End Sub
+    Private Sub Timer_Actualizar_Menu_Componentes_Tick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Timer_Actualizar_Menu_Componentes.Tick
+        If Actualizar_Menu_Componentes.BackColor = Color.White Then
+            Actualizar_Menu_Componentes.BackColor = Color.Green
+        Else
+            Actualizar_Menu_Componentes.BackColor = Color.White
+        End If
+    End Sub
+    Private Sub Timer_Eliminar_Menu_Componentes_Tick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Timer_Eliminar_Menu_Componentes.Tick
+        If Eliminar_Menu_Componentes.BackColor = Color.White Then
+            Eliminar_Menu_Componentes.BackColor = Color.Red
+        Else
+            Eliminar_Menu_Componentes.BackColor = Color.White
+        End If
+    End Sub
+    'Parar Timer
+    Private Sub Parar_Timer_Componentes()
+        Me.Timer_Guardar_Menu_Componentes = New Timer
+        Timer_Guardar_Menu_Componentes.Stop()
+        Guardar_Menu_Componentes.BackColor = Color.White
+        Me.Timer_Actualizar_Menu_Componentes = New Timer
+        Timer_Actualizar_Menu_Componentes.Stop()
+        Actualizar_Menu_Componentes.BackColor = Color.White
+        Me.Timer_Eliminar_Menu_Componentes = New Timer
+        Timer_Eliminar_Menu_Componentes.Stop()
+        Eliminar_Menu_Componentes.BackColor = Color.White
+    End Sub
+#End Region
+#Region "Ubicación de Fila"
+    Private WithEvents Timer_Ubicacion_Componentes As Timer
+    Dim X_Componentes
+    Private Sub Timer_Ubicar_En_Fila_Componentes()
+        Me.Timer_Ubicacion_Componentes = New Timer
+        Timer_Ubicacion_Componentes.Interval = 100
+        Timer_Ubicacion_Componentes.Start()
+    End Sub
+    Private Sub SP_Componentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView_CellMouseClick(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewCellMouseEventArgs) Handles SP_Componentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView.CellMouseClick
+        X_Componentes = SP_Componentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView.CurrentRow.Index
+    End Sub
+    Private Sub Ubicar_En_Fila_Componentes()
+        Try
+            Me.SP_Componentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView.Rows(X_Componentes).Selected = True
+            Me.SP_Componentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView.FirstDisplayedScrollingRowIndex = X_Componentes
+        Catch ex As Exception
+        End Try
+    End Sub
+    Private Sub Timer_Ubicacion_Componentes_Tick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Timer_Ubicacion_Componentes.Tick
+        Ubicar_En_Fila_Componentes()
+        Timer_Ubicacion_Componentes.Stop()
+    End Sub
+
+    Private Sub BtnBuscarYPintar_Click(sender As Object, e As EventArgs) Handles BtnBuscarYPintar.Click
+        If TxtBuscado.Text <> "" Then
+            Try
+                RtPlantilla.Text = Replace(RtPlantilla.Text, TxtBuscado.Text, TxtRemplazarPor.Text)
+            Catch ex As Exception
+
+            End Try
+        End If
+    End Sub
+#End Region
 
 
 
