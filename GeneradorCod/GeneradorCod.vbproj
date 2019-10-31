@@ -88,6 +88,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSetAdministracion.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Data\DataSetAdministracion.vb">
+      <DependentUpon>DataSetAdministracion.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\FrmReplace.Designer.vb">
       <DependentUpon>FrmReplace.vb</DependentUpon>
     </Compile>
