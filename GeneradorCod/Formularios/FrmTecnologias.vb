@@ -7,6 +7,8 @@
             Cancelar_Plantillas()
             SP_Componentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaID()
             Cancelar_Componentes()
+            SP_RequerimientosPlantillas_BUSQUEDA_SEGUN_PARAMETRO_PlantillaID()
+            Cancelar_RequerimientosPlantillas()
         Catch ex As System.Exception
             System.Windows.Forms.MessageBox.Show(ex.Message)
         End Try
@@ -533,7 +535,7 @@
 
     Private Sub PlantillaIDTextBox_TextChanged(sender As Object, e As EventArgs) Handles PlantillaIDTextBox.TextChanged
         SP_Componentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaID()
-        SP_RequerimientosPlantillas_BUSQUEDA_SEGUN_PARAMETRO_PlantillaID
+        SP_RequerimientosPlantillas_BUSQUEDA_SEGUN_PARAMETRO_PlantillaID()
     End Sub
 
     Private Sub SP_Componentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaID()
@@ -745,7 +747,7 @@
     End Sub
     Public Sub Bloquear_Objetos_Componentes()
         NombreComponenteTextBox.Enabled = False
-        CodigoTextBox.Enabled = False
+        'CodigoTextBox.Enabled = False
     End Sub
 #End Region
 
@@ -828,15 +830,6 @@
         Timer_Ubicacion_Componentes.Stop()
     End Sub
 
-    Private Sub BtnBuscarYPintar_Click(sender As Object, e As EventArgs) Handles BtnBuscarYPintar.Click
-        If TxtBuscado.Text <> "" Then
-            Try
-                CodigoTextBox.Text = Replace(CodigoTextBox.Text, TxtBuscado.Text, TxtRemplazarPor.Text)
-            Catch ex As Exception
-
-            End Try
-        End If
-    End Sub
 
     Private Sub SP_RequerimientosPlantillas_BUSQUEDA_SEGUN_PARAMETRO_PlantillaID()
         Try
@@ -849,6 +842,286 @@
 
 
 
+
+
+#End Region
+
+
+#Region "Procedimientos"
+    Sub Cancelar_RequerimientosPlantillas()
+        'Botones Del Menu
+        Nuevo_Menu_RequerimientosPlantillas.Enabled = True
+        Guardar_Menu_RequerimientosPlantillas.Enabled = False
+        Editar_Menu_RequerimientosPlantillas.Enabled = True
+        Actualizar_Menu_RequerimientosPlantillas.Enabled = False
+        Eliminar_Menu_RequerimientosPlantillas.Enabled = False
+        'Grid
+        SP_RequerimientosPlantillas_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView.Enabled = True
+        'Cargar Datos de Tabla Actualizados
+        SP_RequerimientosPlantillas_BUSQUEDA_SEGUN_PARAMETRO_PlantillaID()
+        Bloquear_Objetos_RequerimientosPlantillas()
+        Parar_Timer_RequerimientosPlantillas()
+        Timer_Ubicar_En_Fila_RequerimientosPlantillas()
+    End Sub
+    'Insertar
+    Private Sub SP_RequerimientosPlantillas_EDICION_INSERTAR()
+        Try
+            Me.SP_RequerimientosPlantillas_EDICION_INSERTARTableAdapter.Fill(Me.DataSetAdministracion.SP_RequerimientosPlantillas_EDICION_INSERTAR,
+                                                 New System.Nullable(Of Integer)(CType(PlantillaIDTextBox.Text, Integer)),
+                                                 EnunciadoTextBox.Text,
+                                                 RequerimientoTextBox.Text,
+                                                 New System.Nullable(Of Integer)(CType(OrdenDePeticionTextBox.Text, Integer)))
+            SP_RequerimientosPlantillas_BUSQUEDA_SEGUN_PARAMETRO_PlantillaID()
+            MsgBox("El Dato Fue Guardado Exitosamente", MsgBoxStyle.Information, "Guardar Dato")
+        Catch ex As System.Exception
+            System.Windows.Forms.MessageBox.Show(ex.Message)
+        End Try
+    End Sub
+    'Actualizar
+    Private Sub SP_RequerimientosPlantillas_EDICION_ACTUALIZAR()
+        Try
+            Me.SP_RequerimientosPlantillas_EDICION_ACTUALIZARTableAdapter.Fill(Me.DataSetAdministracion.SP_RequerimientosPlantillas_EDICION_ACTUALIZAR,
+                                                 New System.Nullable(Of Integer)(CType(RequerimientoPlantillaIDTextBox.Text, Integer)),
+                                                 New System.Nullable(Of Integer)(CType(PlantillaIDTextBox.Text, Integer)),
+                                                 EnunciadoTextBox.Text,
+                                                 RequerimientoTextBox.Text,
+                                                 New System.Nullable(Of Integer)(CType(OrdenDePeticionTextBox.Text, Integer)))
+            SP_RequerimientosPlantillas_BUSQUEDA_SEGUN_PARAMETRO_PlantillaID()
+            MsgBox("El Dato Fue Actualizado Exitosamente", MsgBoxStyle.Information, "Actualizar Dato")
+        Catch ex As System.Exception
+            System.Windows.Forms.MessageBox.Show(ex.Message)
+        End Try
+    End Sub
+    'Eliminar
+    Private Sub SP_RequerimientosPlantillas_EDICION_ELIMINAR()
+        Try
+            Me.SP_RequerimientosPlantillas_EDICION_ELIMINARTableAdapter.Fill(Me.DataSetAdministracion.SP_RequerimientosPlantillas_EDICION_ELIMINAR, New System.Nullable(Of Long)(CType(RequerimientoPlantillaIDTextBox.Text, Long)))
+            SP_RequerimientosPlantillas_BUSQUEDA_SEGUN_PARAMETRO_PlantillaID()
+            MsgBox("El Dato Fue Eliminado Exitosamente de la Base de Datos", MsgBoxStyle.Information, "Eliminación de Dato")
+        Catch ex As System.Exception
+            System.Windows.Forms.MessageBox.Show(ex.Message)
+        End Try
+    End Sub
+#End Region
+#Region "Menus"
+    'Nuevo 
+    Private Sub Nuevo_Menu_RequerimientosPlantillas_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Nuevo_Menu_RequerimientosPlantillas.Click
+        Nuevo_Menu_RequerimientosPlantillas.Enabled = False
+        Editar_Menu_RequerimientosPlantillas.Enabled = False
+        SP_RequerimientosPlantillas_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView.Enabled = False
+        Limpiar_Objetos_RequerimientosPlantillas()
+        EnunciadoTextBox.Enabled = True
+        EnunciadoTextBox.Focus()
+    End Sub
+    'Guardar
+    Private Sub Guardar_Menu_RequerimientosPlantillas_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Guardar_Menu_RequerimientosPlantillas.Click
+        Control_Nulos_RequerimientosPlantillas()
+
+        If ControlNulos.Text = "" Then ' Then
+            SP_RequerimientosPlantillas_EDICION_INSERTAR()
+            Cancelar_RequerimientosPlantillas()
+            Parar_Timer_RequerimientosPlantillas()
+        End If
+    End Sub
+    'Editar
+    Private Sub Editar_Menu_RequerimientosPlantillas_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Editar_Menu_RequerimientosPlantillas.Click
+        Nuevo_Menu_RequerimientosPlantillas.Enabled = False
+        Guardar_Menu_RequerimientosPlantillas.Enabled = False
+        Editar_Menu_RequerimientosPlantillas.Enabled = False
+        Actualizar_Menu_RequerimientosPlantillas.Enabled = True
+        Eliminar_Menu_RequerimientosPlantillas.Enabled = True
+        SP_RequerimientosPlantillas_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView.Enabled = False
+        Desbloquear_Objetos_RequerimientosPlantillas()
+        Timer_Actualizar_RequerimientosPlantillas()
+        Timer_Eliminar_RequerimientosPlantillas()
+    End Sub
+    'Actualizar
+    Private Sub Actualizar_Menu_RequerimientosPlantillas_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Actualizar_Menu_RequerimientosPlantillas.Click
+        Control_Nulos_RequerimientosPlantillas()
+
+        If ControlNulos.Text = "" Then ' Then
+            SP_RequerimientosPlantillas_EDICION_ACTUALIZAR()
+            Cancelar_RequerimientosPlantillas()
+            Parar_Timer_RequerimientosPlantillas()
+        End If
+    End Sub
+    Private Sub Eliminar_Menu_RequerimientosPlantillas_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Eliminar_Menu_RequerimientosPlantillas.Click
+        If MsgBox("Desea Eliminar Este Dato?", MsgBoxStyle.YesNo) = MsgBoxResult.Yes Then
+            SP_RequerimientosPlantillas_EDICION_ELIMINAR()
+            Cancelar_RequerimientosPlantillas()
+            Parar_Timer_RequerimientosPlantillas()
+        Else
+            MsgBox("Se Cancelo la Eliminación del Dato", MsgBoxStyle.Information)
+            Cancelar_RequerimientosPlantillas()
+        End If
+    End Sub
+    'Cancelar
+    Private Sub Cancelar_Menu_RequerimientosPlantillas_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Cancelar_Menu_RequerimientosPlantillas.Click
+        Cancelar_RequerimientosPlantillas()
+    End Sub
+#End Region
+#Region "Eventos sobre Objetos "
+    'Control de Nulos
+    Public Sub Control_Nulos_RequerimientosPlantillas()
+        ControlNulos.Text = "" '
+        Select Case ControlNulos.Text = "" '
+            Case PlantillaIDTextBox.Text = ""
+                MsgBox("El nombre del campo: PlantillaID; Esta vacio, Favor Verificar", MsgBoxStyle.Critical)
+                PlantillaIDTextBox.BackColor = Color.Beige
+                ControlNulos.Text = "1"
+            Case EnunciadoTextBox.Text = ""
+                MsgBox("El nombre del campo: Enunciado; Esta vacio, Favor Verificar", MsgBoxStyle.Critical)
+                EnunciadoTextBox.BackColor = Color.Beige
+                ControlNulos.Text = "1"
+            Case RequerimientoTextBox.Text = ""
+                MsgBox("El nombre del campo: Requerimiento; Esta vacio, Favor Verificar", MsgBoxStyle.Critical)
+                RequerimientoTextBox.BackColor = Color.Beige
+                ControlNulos.Text = "1"
+            Case OrdenDePeticionTextBox.Text = ""
+                MsgBox("El nombre del campo: OrdenDePeticion; Esta vacio, Favor Verificar", MsgBoxStyle.Critical)
+                OrdenDePeticionTextBox.BackColor = Color.Beige
+                ControlNulos.Text = "1"
+            Case Else
+                ControlNulos.Text = "" '
+        End Select
+    End Sub
+    Private Sub EnunciadoTextBox_KeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles EnunciadoTextBox.KeyPress
+        If Asc(e.KeyChar) = 13 Then
+            If EnunciadoTextBox.Text = "" Then
+                MsgBox("Dato Obligatorio, Favor Verificar", MsgBoxStyle.Critical, "Validación de Datos")
+                EnunciadoTextBox.Text = ""
+                EnunciadoTextBox.Focus()
+            Else
+                RequerimientoTextBox.Enabled = True
+                RequerimientoTextBox.Focus()
+            End If
+        End If
+    End Sub
+    Private Sub RequerimientoTextBox_KeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles RequerimientoTextBox.KeyPress
+        If Asc(e.KeyChar) = 13 Then
+            If RequerimientoTextBox.Text = "" Then
+                MsgBox("Dato Obligatorio, Favor Verificar", MsgBoxStyle.Critical, "Validación de Datos")
+                RequerimientoTextBox.Text = ""
+                RequerimientoTextBox.Focus()
+            Else
+                OrdenDePeticionTextBox.Enabled = True
+                OrdenDePeticionTextBox.Focus()
+            End If
+        End If
+    End Sub
+    Private Sub OrdenDePeticionTextBox_KeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles OrdenDePeticionTextBox.KeyPress
+        If Asc(e.KeyChar) = 13 Then
+            If Actualizar_Menu_RequerimientosPlantillas.Enabled = True Then
+                Actualizar_Menu_RequerimientosPlantillas.Enabled = True
+                Eliminar_Menu_RequerimientosPlantillas.Enabled = True
+            Else
+                If OrdenDePeticionTextBox.Text = "" Then
+                    MsgBox("Dato Obligatorio, Favor Verificar", MsgBoxStyle.Critical, "Validación de Datos")
+                    OrdenDePeticionTextBox.Text = ""
+                    OrdenDePeticionTextBox.Focus()
+                Else
+                    MsgBox("La Información Ya puede ser Guardada el Icono de Guardado queda habilitado", MsgBoxStyle.Information, "Guardar los Datos")
+                    Guardar_Menu_RequerimientosPlantillas.Enabled = True
+                    Timer_Guardar_RequerimientosPlantillas()
+                End If
+            End If
+        End If
+    End Sub
+    Public Sub Limpiar_Objetos_RequerimientosPlantillas()
+        EnunciadoTextBox.Text = "" ''
+        RequerimientoTextBox.Text = "" ''
+        OrdenDePeticionTextBox.Text = "" ''
+    End Sub
+    Public Sub Desbloquear_Objetos_RequerimientosPlantillas()
+        EnunciadoTextBox.Enabled = True
+        RequerimientoTextBox.Enabled = True
+        OrdenDePeticionTextBox.Enabled = True
+    End Sub
+    Public Sub Bloquear_Objetos_RequerimientosPlantillas()
+        EnunciadoTextBox.Enabled = False
+        RequerimientoTextBox.Enabled = False
+        OrdenDePeticionTextBox.Enabled = False
+    End Sub
+#End Region
+
+#Region "Timer de Botones"
+    'Declaraciones de Timers de Botones
+    Private WithEvents Timer_Guardar_Menu_RequerimientosPlantillas As Timer
+    Private WithEvents Timer_Actualizar_Menu_RequerimientosPlantillas As Timer
+    Private WithEvents Timer_Eliminar_Menu_RequerimientosPlantillas As Timer
+    'Procedimientos del Timer
+    Private Sub Timer_Guardar_RequerimientosPlantillas()
+        Me.Timer_Guardar_Menu_RequerimientosPlantillas = New Timer
+        Timer_Guardar_Menu_RequerimientosPlantillas.Interval = 250
+        Timer_Guardar_Menu_RequerimientosPlantillas.Start()
+    End Sub
+    Private Sub Timer_Actualizar_RequerimientosPlantillas()
+        Me.Timer_Actualizar_Menu_RequerimientosPlantillas = New Timer
+        Timer_Actualizar_Menu_RequerimientosPlantillas.Interval = 500
+        Timer_Actualizar_Menu_RequerimientosPlantillas.Start()
+    End Sub
+    Private Sub Timer_Eliminar_RequerimientosPlantillas()
+        Me.Timer_Eliminar_Menu_RequerimientosPlantillas = New Timer
+        Timer_Eliminar_Menu_RequerimientosPlantillas.Interval = 800
+        Timer_Eliminar_Menu_RequerimientosPlantillas.Start()
+    End Sub
+    'Eventos Tick
+    Private Sub Timer_Guardar_Menu_RequerimientosPlantillas_Tick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Timer_Guardar_Menu_RequerimientosPlantillas.Tick
+        If Guardar_Menu_RequerimientosPlantillas.BackColor = Color.White Then
+            Guardar_Menu_RequerimientosPlantillas.BackColor = Color.Green
+        Else
+            Guardar_Menu_RequerimientosPlantillas.BackColor = Color.White
+        End If
+    End Sub
+    Private Sub Timer_Actualizar_Menu_RequerimientosPlantillas_Tick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Timer_Actualizar_Menu_RequerimientosPlantillas.Tick
+        If Actualizar_Menu_RequerimientosPlantillas.BackColor = Color.White Then
+            Actualizar_Menu_RequerimientosPlantillas.BackColor = Color.Green
+        Else
+            Actualizar_Menu_RequerimientosPlantillas.BackColor = Color.White
+        End If
+    End Sub
+    Private Sub Timer_Eliminar_Menu_RequerimientosPlantillas_Tick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Timer_Eliminar_Menu_RequerimientosPlantillas.Tick
+        If Eliminar_Menu_RequerimientosPlantillas.BackColor = Color.White Then
+            Eliminar_Menu_RequerimientosPlantillas.BackColor = Color.Red
+        Else
+            Eliminar_Menu_RequerimientosPlantillas.BackColor = Color.White
+        End If
+    End Sub
+    'Parar Timer
+    Private Sub Parar_Timer_RequerimientosPlantillas()
+        Me.Timer_Guardar_Menu_RequerimientosPlantillas = New Timer
+        Timer_Guardar_Menu_RequerimientosPlantillas.Stop()
+        Guardar_Menu_RequerimientosPlantillas.BackColor = Color.White
+        Me.Timer_Actualizar_Menu_RequerimientosPlantillas = New Timer
+        Timer_Actualizar_Menu_RequerimientosPlantillas.Stop()
+        Actualizar_Menu_RequerimientosPlantillas.BackColor = Color.White
+        Me.Timer_Eliminar_Menu_RequerimientosPlantillas = New Timer
+        Timer_Eliminar_Menu_RequerimientosPlantillas.Stop()
+        Eliminar_Menu_RequerimientosPlantillas.BackColor = Color.White
+    End Sub
+#End Region
+#Region "Ubicación de Fila"
+    Private WithEvents Timer_Ubicacion_RequerimientosPlantillas As Timer
+    Dim X_RequerimientosPlantillas
+    Private Sub Timer_Ubicar_En_Fila_RequerimientosPlantillas()
+        Me.Timer_Ubicacion_RequerimientosPlantillas = New Timer
+        Timer_Ubicacion_RequerimientosPlantillas.Interval = 100
+        Timer_Ubicacion_RequerimientosPlantillas.Start()
+    End Sub
+    Private Sub SP_RequerimientosPlantillas_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView_CellMouseClick(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewCellMouseEventArgs) Handles SP_RequerimientosPlantillas_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView.CellMouseClick
+        X_RequerimientosPlantillas = SP_RequerimientosPlantillas_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView.CurrentRow.Index
+    End Sub
+    Private Sub Ubicar_En_Fila_RequerimientosPlantillas()
+        Try
+            Me.SP_RequerimientosPlantillas_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView.Rows(X_RequerimientosPlantillas).Selected = True
+            Me.SP_RequerimientosPlantillas_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView.FirstDisplayedScrollingRowIndex = X_RequerimientosPlantillas
+        Catch ex As Exception
+        End Try
+    End Sub
+    Private Sub Timer_Ubicacion_RequerimientosPlantillas_Tick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Timer_Ubicacion_RequerimientosPlantillas.Tick
+        Ubicar_En_Fila_RequerimientosPlantillas()
+        Timer_Ubicacion_RequerimientosPlantillas.Stop()
+    End Sub
 #End Region
 
 
@@ -856,6 +1129,52 @@
 
 
 
+
+
+    Private Sub BtnBuscarYPintar_Click(sender As Object, e As EventArgs) Handles BtnBuscarYPintar.Click
+
+    End Sub
+
+    Private Sub BtnCambiarCodYGuardar_Click(sender As Object, e As EventArgs) Handles BtnCambiarCodYGuardar.Click
+        If TxtBuscado.Text <> "" Then
+            Try
+                CodigoTextBox.Text = Replace(CodigoTextBox.Text, TxtBuscado.Text, TxtRemplazarPor.Text)
+                SP_Componentes_EDICION_ACTUALIZAR_SoloCodigo()
+            Catch ex As Exception
+
+            End Try
+        End If
+    End Sub
+
+    Private Sub SP_Componentes_EDICION_ACTUALIZAR_SoloCodigo()
+        Try
+            Me.SP_Componentes_EDICION_ACTUALIZARTableAdapter.Fill(Me.DataSetAdministracion.SP_Componentes_EDICION_ACTUALIZAR,
+                                                 New System.Nullable(Of Integer)(CType(ComponenteIDTextBox.Text, Integer)),
+                                                 New System.Nullable(Of Integer)(CType(PlantillaIDTextBox.Text, Integer)),
+                                                 NombreComponenteTextBox.Text,
+                                                 CodigoTextBox.Text)
+        Catch ex As System.Exception
+            System.Windows.Forms.MessageBox.Show(ex.Message)
+        End Try
+    End Sub
+
+
+    'While contador > 0
+    '        DgvComponentes.CurrentCell = DgvComponentes.Rows(0).Cells(0)
+    '        'Si el componente es reproducible lo hara por cada tabla por cada tabla del proyecto
+    '        If ReproducibleCheckBox.Checked = True Then
+    '            DocumentoImplementacionTextBox.Text = DocumentoImplementacionTextBox.Text & "." & vbCrLf & "." & vbCrLf & "." & vbCrLf & "." & vbCrLf
+    '            DocumentoImplementacionTextBox.Text = DocumentoImplementacionTextBox.Text & ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> " & CboProcesosProyecto.Text & "." & vbCrLf & "." & vbCrLf & "." & vbCrLf & "." & vbCrLf
+    '            ProcesoPorComponente()
+    '        Else
+    '            'Generara el codigo inmediatamente
+    '            DocumentoImplementacionTextBox.Text = DocumentoImplementacionTextBox.Text & "." & vbCrLf & "." & vbCrLf & "." & vbCrLf & "." & vbCrLf
+    '            DocumentoImplementacionTextBox.Text = DocumentoImplementacionTextBox.Text & ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> " & CboProcesosProyecto.Text & "." & vbCrLf & "." & vbCrLf & "." & vbCrLf & "." & vbCrLf
+    '            DocumentoImplementacionTextBox.Text = DocumentoImplementacionTextBox.Text & vbCrLf & TratamientoText.M1_REMPLAZATODOCLAVEVALOR(SP_T_04_02_ValorRemplazarProyecto_BUSQUEDA_SEGUN_PARAMETRO_T_04_01_ProyectoIDDataGridView, ContenidoComponenteTextBox.Text)
+    '        End If
+    '        DgvComponentes.Rows.RemoveAt(0)
+    '        contador = contador - 1
+    '    End While
 
 
 End Class
