@@ -25,6 +25,7 @@ Partial Class Inicio
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.AdministraciónToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.TecnologiasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.GeneracionToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -40,7 +41,7 @@ Partial Class Inicio
         '
         'AdministraciónToolStripMenuItem
         '
-        Me.AdministraciónToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.TecnologiasToolStripMenuItem})
+        Me.AdministraciónToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.TecnologiasToolStripMenuItem, Me.GeneracionToolStripMenuItem})
         Me.AdministraciónToolStripMenuItem.Name = "AdministraciónToolStripMenuItem"
         Me.AdministraciónToolStripMenuItem.Size = New System.Drawing.Size(112, 22)
         Me.AdministraciónToolStripMenuItem.Text = "Administración"
@@ -50,6 +51,12 @@ Partial Class Inicio
         Me.TecnologiasToolStripMenuItem.Name = "TecnologiasToolStripMenuItem"
         Me.TecnologiasToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.TecnologiasToolStripMenuItem.Text = "Tecnologias"
+        '
+        'GeneracionToolStripMenuItem
+        '
+        Me.GeneracionToolStripMenuItem.Name = "GeneracionToolStripMenuItem"
+        Me.GeneracionToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.GeneracionToolStripMenuItem.Text = "Generacion"
         '
         'Inicio
         '
@@ -73,4 +80,5 @@ Partial Class Inicio
     Friend WithEvents MenuStrip1 As MenuStrip
     Friend WithEvents AdministraciónToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents TecnologiasToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents GeneracionToolStripMenuItem As ToolStripMenuItem
 End Class
