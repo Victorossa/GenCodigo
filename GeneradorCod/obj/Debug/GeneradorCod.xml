@@ -107,6 +107,41 @@ Represents the strongly named DataTable class.
 Represents the strongly named DataTable class.
 </summary>
 </member>
+<member name="T:GeneradorCod.DataSetAdministracion.SP_Proyectos_EDICION_ACTUALIZARDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:GeneradorCod.DataSetAdministracion.SP_Proyectos_EDICION_ELIMINARDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:GeneradorCod.DataSetAdministracion.SP_Proyectos_EDICION_INSERTARDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:GeneradorCod.DataSetAdministracion.ProyectosDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:GeneradorCod.DataSetAdministracion.SP_CARGA_TECNOLOGIAS_APLICADAS_A_PROYECTODataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:GeneradorCod.DataSetAdministracion.SP_ProyectosYTecnologias_EDICION_INSERTARDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:GeneradorCod.DataSetAdministracion.ELIMINA_SEGUN_PROYECTODataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
 <member name="T:GeneradorCod.DataSetAdministracion.SP_Tecnologias_EDICION_ACTUALIZARRow">
 <summary>
 Represents strongly named DataRow class.
@@ -183,6 +218,41 @@ Represents strongly named DataRow class.
 </summary>
 </member>
 <member name="T:GeneradorCod.DataSetAdministracion.SP_RequerimientosPlantillas_EDICION_INSERTARRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:GeneradorCod.DataSetAdministracion.SP_Proyectos_EDICION_ACTUALIZARRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:GeneradorCod.DataSetAdministracion.SP_Proyectos_EDICION_ELIMINARRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:GeneradorCod.DataSetAdministracion.SP_Proyectos_EDICION_INSERTARRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:GeneradorCod.DataSetAdministracion.ProyectosRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:GeneradorCod.DataSetAdministracion.SP_CARGA_TECNOLOGIAS_APLICADAS_A_PROYECTORow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:GeneradorCod.DataSetAdministracion.SP_ProyectosYTecnologias_EDICION_INSERTARRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:GeneradorCod.DataSetAdministracion.ELIMINA_SEGUN_PROYECTORow">
 <summary>
 Represents strongly named DataRow class.
 </summary>
@@ -267,6 +337,41 @@ Row event argument class
 Row event argument class
 </summary>
 </member>
+<member name="T:GeneradorCod.DataSetAdministracion.SP_Proyectos_EDICION_ACTUALIZARRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:GeneradorCod.DataSetAdministracion.SP_Proyectos_EDICION_ELIMINARRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:GeneradorCod.DataSetAdministracion.SP_Proyectos_EDICION_INSERTARRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:GeneradorCod.DataSetAdministracion.ProyectosRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:GeneradorCod.DataSetAdministracion.SP_CARGA_TECNOLOGIAS_APLICADAS_A_PROYECTORowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:GeneradorCod.DataSetAdministracion.SP_ProyectosYTecnologias_EDICION_INSERTARRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:GeneradorCod.DataSetAdministracion.ELIMINA_SEGUN_PROYECTORowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
 <member name="T:GeneradorCod.DataSetAdministracionTableAdapters.SP_Tecnologias_EDICION_ACTUALIZARTableAdapter">
 <summary>
 Represents the connection and commands used to retrieve and save data.
@@ -343,6 +448,41 @@ Represents the connection and commands used to retrieve and save data.
 </summary>
 </member>
 <member name="T:GeneradorCod.DataSetAdministracionTableAdapters.SP_RequerimientosPlantillas_EDICION_INSERTARTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:GeneradorCod.DataSetAdministracionTableAdapters.SP_Proyectos_EDICION_ACTUALIZARTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:GeneradorCod.DataSetAdministracionTableAdapters.SP_Proyectos_EDICION_ELIMINARTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:GeneradorCod.DataSetAdministracionTableAdapters.SP_Proyectos_EDICION_INSERTARTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:GeneradorCod.DataSetAdministracionTableAdapters.ProyectosTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:GeneradorCod.DataSetAdministracionTableAdapters.SP_CARGA_TECNOLOGIAS_APLICADAS_A_PROYECTOTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:GeneradorCod.DataSetAdministracionTableAdapters.SP_ProyectosYTecnologias_EDICION_INSERTARTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:GeneradorCod.DataSetAdministracionTableAdapters.ELIMINA_SEGUN_PROYECTOTableAdapter">
 <summary>
 Represents the connection and commands used to retrieve and save data.
 </summary>
