@@ -301,6 +301,7 @@
         Try
             Me.SP_Plantillas_EDICION_INSERTARTableAdapter.Fill(Me.DataSetAdministracion.SP_Plantillas_EDICION_INSERTAR,
                                                  New System.Nullable(Of Integer)(CType(TecnologiaIDTextBox.Text, Integer)),
+                                                 New System.Nullable(Of Integer)(CType(GrupoTiposIDTextBox.Text, Integer)),
                                                  NombrePlantillaTextBox.Text)
             SP_Plantillas_BUSQUEDA_SEGUN_PARAMETRO_Tecnologia()
             MsgBox("El Dato Fue Guardado Exitosamente", MsgBoxStyle.Information, "Guardar Dato")
@@ -315,6 +316,7 @@
             Me.SP_Plantillas_EDICION_ACTUALIZARTableAdapter.Fill(Me.DataSetAdministracion.SP_Plantillas_EDICION_ACTUALIZAR,
                                                  New System.Nullable(Of Integer)(CType(PlantillaIDTextBox.Text, Integer)),
                                                  New System.Nullable(Of Integer)(CType(TecnologiaIDTextBox.Text, Integer)),
+                                                 New System.Nullable(Of Integer)(CType(GrupoTiposIDTextBox.Text, Integer)),
                                                  NombrePlantillaTextBox.Text)
             SP_Plantillas_BUSQUEDA_SEGUN_PARAMETRO_Tecnologia()
             MsgBox("El Dato Fue Actualizado Exitosamente", MsgBoxStyle.Information, "Actualizar Dato")
@@ -573,7 +575,7 @@
             Me.SP_Componentes_EDICION_INSERTARTableAdapter.Fill(Me.DataSetAdministracion.SP_Componentes_EDICION_INSERTAR,
                                                  New System.Nullable(Of Integer)(CType(PlantillaIDTextBox.Text, Integer)),
                                                  NombreComponenteTextBox.Text,
-                                                 CodigoTextBox.Text)
+                                                 ContenidoComponenteRichTextBox.Text)
             SP_Componentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaID()
             MsgBox("El Dato Fue Guardado Exitosamente", MsgBoxStyle.Information, "Guardar Dato")
         Catch ex As System.Exception
@@ -587,7 +589,7 @@
                                                  New System.Nullable(Of Integer)(CType(ComponenteIDTextBox.Text, Integer)),
                                                  New System.Nullable(Of Integer)(CType(PlantillaIDTextBox.Text, Integer)),
                                                  NombreComponenteTextBox.Text,
-                                                 CodigoTextBox.Text)
+                                                 ContenidoComponenteRichTextBox.Text)
             SP_Componentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaID()
             MsgBox("El Dato Fue Actualizado Exitosamente", MsgBoxStyle.Information, "Actualizar Dato")
         Catch ex As System.Exception
@@ -676,9 +678,9 @@
                 MsgBox("El nombre del campo: NombreComponente; Esta vacio, Favor Verificar", MsgBoxStyle.Critical)
                 NombreComponenteTextBox.BackColor = Color.Beige
                 ControlNulos.Text = "1"
-            Case CodigoTextBox.Text = ""
+            Case ContenidoComponenteRichTextBox.Text = ""
                 MsgBox("El nombre del campo: Codigo; Esta vacio, Favor Verificar", MsgBoxStyle.Critical)
-                CodigoTextBox.BackColor = Color.Beige
+                ContenidoComponenteRichTextBox.BackColor = Color.Beige
                 ControlNulos.Text = "1"
             Case Else
                 ControlNulos.Text = "" '
@@ -691,8 +693,8 @@
                 NombreComponenteTextBox.Text = ""
                 NombreComponenteTextBox.Focus()
             Else
-                CodigoTextBox.Enabled = True
-                CodigoTextBox.Focus()
+                ContenidoComponenteRichTextBox.Enabled = True
+                ContenidoComponenteRichTextBox.Focus()
             End If
         End If
         Dim Longitud, Ascii As Integer
@@ -719,16 +721,16 @@
             NombreComponenteTextBox.SelectionStart = Longitud + 1
         End If
     End Sub
-    Private Sub CodigoTextBox_KeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles CodigoTextBox.KeyPress
+    Private Sub ContenidoComponenteRichTextBox_KeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles ContenidoComponenteRichTextBox.KeyPress
         If Asc(e.KeyChar) = 13 Then
             If Actualizar_Menu_Componentes.Enabled = True Then
                 Actualizar_Menu_Componentes.Enabled = True
                 Eliminar_Menu_Componentes.Enabled = True
             Else
-                If CodigoTextBox.Text = "" Then
+                If ContenidoComponenteRichTextBox.Text = "" Then
                     MsgBox("Dato Obligatorio, Favor Verificar", MsgBoxStyle.Critical, "Validación de Datos")
-                    CodigoTextBox.Text = ""
-                    CodigoTextBox.Focus()
+                    ContenidoComponenteRichTextBox.Text = ""
+                    ContenidoComponenteRichTextBox.Focus()
                 Else
                     MsgBox("La Información Ya puede ser Guardada el Icono de Guardado queda habilitado", MsgBoxStyle.Information, "Guardar los Datos")
                     Guardar_Menu_Componentes.Enabled = True
@@ -739,15 +741,15 @@
     End Sub
     Public Sub Limpiar_Objetos_Componentes()
         NombreComponenteTextBox.Text = "" ''
-        CodigoTextBox.Text = "" ''
+        ContenidoComponenteRichTextBox.Text = "" ''
     End Sub
     Public Sub Desbloquear_Objetos_Componentes()
         NombreComponenteTextBox.Enabled = True
-        CodigoTextBox.Enabled = True
+        ContenidoComponenteRichTextBox.Enabled = True
     End Sub
     Public Sub Bloquear_Objetos_Componentes()
         NombreComponenteTextBox.Enabled = False
-        'CodigoTextBox.Enabled = False
+        'ContenidoComponenteRichTextBox.Enabled = False
     End Sub
 #End Region
 
@@ -1126,24 +1128,40 @@
 
 
 
-
-
-
-
-
     Private Sub BtnBuscarYPintar_Click(sender As Object, e As EventArgs) Handles BtnBuscarYPintar.Click
-
-    End Sub
-
-    Private Sub BtnCambiarCodYGuardar_Click(sender As Object, e As EventArgs) Handles BtnCambiarCodYGuardar.Click
         If TxtBuscado.Text <> "" Then
             Try
-                CodigoTextBox.Text = Replace(CodigoTextBox.Text, TxtBuscado.Text, TxtRemplazarPor.Text)
-                SP_Componentes_EDICION_ACTUALIZAR_SoloCodigo()
+                Dim index As Integer = 0
+                While index < ContenidoComponenteRichTextBox.Text.LastIndexOf(TxtBuscado.Text)
+                    ContenidoComponenteRichTextBox.Find(TxtBuscado.Text, index, ContenidoComponenteRichTextBox.TextLength, RichTextBoxFinds.None)
+                    ContenidoComponenteRichTextBox.SelectionBackColor = Color.Yellow
+                    index = ContenidoComponenteRichTextBox.Text.IndexOf(TxtBuscado.Text, index) + 1
+                End While
             Catch ex As Exception
 
             End Try
         End If
+    End Sub
+    Dim incremento As Integer = 10
+    Private Sub BtnSubirFuente_Click(sender As Object, e As EventArgs) Handles BtnSubirFuente.Click
+        Try
+            If incremento > 0 Then
+                incremento = incremento + 1
+                ContenidoComponenteRichTextBox.Font = New Font(ContenidoComponenteRichTextBox.Font.Name, incremento, ContenidoComponenteRichTextBox.Font.Style, ContenidoComponenteRichTextBox.Font.Unit)
+            End If
+        Catch ex As Exception
+
+        End Try
+    End Sub
+    Private Sub BtnBajarFuente_Click(sender As Object, e As EventArgs) Handles BtnBajarFuente.Click
+        Try
+            If incremento > 0 Then
+                incremento = incremento - 1
+                ContenidoComponenteRichTextBox.Font = New Font(ContenidoComponenteRichTextBox.Font.Name, incremento, ContenidoComponenteRichTextBox.Font.Style, ContenidoComponenteRichTextBox.Font.Unit)
+            End If
+        Catch ex As Exception
+
+        End Try
     End Sub
 
     Private Sub SP_Componentes_EDICION_ACTUALIZAR_SoloCodigo()
@@ -1152,11 +1170,53 @@
                                                  New System.Nullable(Of Integer)(CType(ComponenteIDTextBox.Text, Integer)),
                                                  New System.Nullable(Of Integer)(CType(PlantillaIDTextBox.Text, Integer)),
                                                  NombreComponenteTextBox.Text,
-                                                 CodigoTextBox.Text)
+                                                 ContenidoComponenteRichTextBox.Text)
         Catch ex As System.Exception
             System.Windows.Forms.MessageBox.Show(ex.Message)
         End Try
     End Sub
+
+    Private Sub BtnRemplazar_Click(sender As Object, e As EventArgs) Handles BtnRemplazar.Click
+        If RBPermitirEspacios.Checked = True Then
+            'Quitar los espacios en blanco
+            TxtRemplazarPor.Text = TxtRemplazarPor.Text
+        Else
+            'Quitar los espacios en blanco
+            TxtRemplazarPor.Text = TxtRemplazarPor.Text.Replace(" "c, String.Empty)
+        End If
+
+        'If valor = 1 Then
+        If TxtBuscado.Text <> "" Then
+            Dim errString As String = ContenidoComponenteRichTextBox.Text
+            Dim correctString As String = errString.Replace(TxtBuscado.Text, TxtRemplazarPor.Text)
+            ContenidoComponenteRichTextBox.Text = correctString
+        End If
+    End Sub
+
+    Private Sub BtnLimpiar_Click(sender As Object, e As EventArgs) Handles BtnLimpiar.Click
+        TxtBuscado.Text = ""
+        TxtBuscado.Focus()
+    End Sub
+
+    Private Sub BtnSubirRemplazado_Click(sender As Object, e As EventArgs) Handles BtnSubirRemplazado.Click
+        TxtBuscado.Text = TxtRemplazarPor.Text
+    End Sub
+
+    Private Sub BtnLimpiarRemplazar_Click(sender As Object, e As EventArgs) Handles BtnLimpiarRemplazar.Click
+        TxtRemplazarPor.Text = ""
+        TxtRemplazarPor.Focus()
+    End Sub
+
+    Private Sub BtnGuardarCodigo_Click(sender As Object, e As EventArgs) Handles BtnGuardarCodigo.Click
+        If MsgBox("Desea Actualizar este codigo?", MsgBoxStyle.YesNo) = MsgBoxResult.Yes Then
+            SP_Componentes_EDICION_ACTUALIZAR_SoloCodigo()
+            MsgBox("Se actualizo la plantilla", MsgBoxStyle.Information)
+        Else
+            MsgBox("Se Cancelo la Instrucción", MsgBoxStyle.Information)
+        End If
+    End Sub
+
+
 
 
     'While contador > 0

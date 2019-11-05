@@ -91,6 +91,11 @@
     <Compile Include="Data\DataSetAdministracion.vb">
       <DependentUpon>DataSetAdministracion.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Data\DataSetTablasYCampos.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetTablasYCampos.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\FrmReplace.Designer.vb">
       <DependentUpon>FrmReplace.vb</DependentUpon>
     </Compile>
@@ -153,6 +158,17 @@
     </None>
     <None Include="Data\DataSetAdministracion.xss">
       <DependentUpon>DataSetAdministracion.xsd</DependentUpon>
+    </None>
+    <None Include="Data\DataSetTablasYCampos.xsc">
+      <DependentUpon>DataSetTablasYCampos.xsd</DependentUpon>
+    </None>
+    <None Include="Data\DataSetTablasYCampos.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetTablasYCampos.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="Data\DataSetTablasYCampos.xss">
+      <DependentUpon>DataSetTablasYCampos.xsd</DependentUpon>
     </None>
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>

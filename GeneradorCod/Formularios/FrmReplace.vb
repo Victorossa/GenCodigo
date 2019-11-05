@@ -20,7 +20,7 @@
         End Try
     End Sub
     Private Sub TecnologiaIDTextBox_TextChanged(sender As Object, e As EventArgs) Handles TecnologiaIDTextBox.TextChanged
-        SP_Plantillas_BUSQUEDA_SEGUN_PARAMETRO_Tecnologia()
+
     End Sub
     Private Sub PlantillaIDTextBox_TextChanged(sender As Object, e As EventArgs) Handles PlantillaIDTextBox.TextChanged
         SP_Componentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaID()
@@ -28,7 +28,7 @@
     End Sub
     Private Sub SP_Plantillas_BUSQUEDA_SEGUN_PARAMETRO_Tecnologia()
         Try
-            Me.SP_Plantillas_BUSQUEDA_SEGUN_PARAMETRO_TecnologiaTableAdapter.Fill(Me.DataSetAdministracion.SP_Plantillas_BUSQUEDA_SEGUN_PARAMETRO_Tecnologia, New System.Nullable(Of Integer)(CType(TecnologiaIDTextBox.Text, Integer)))
+            Me.SP_Plantillas_BUSQUEDA_SEGUN_PARAMETRO_TecnologiaTableAdapter.Fill(Me.DataSetAdministracion.SP_Plantillas_BUSQUEDA_SEGUN_PARAMETRO_Tecnologia, New System.Nullable(Of Integer)(CType(TecnologiaID_EliminaRelacion.Text, Integer)))
         Catch ex As System.Exception
             'System.Windows.Forms.MessageBox.Show(ex.Message)
         End Try
@@ -55,18 +55,21 @@
 
     'RTC
     Private Sub BtnBuscarYPintar_Click(sender As Object, e As EventArgs) Handles BtnBuscarYPintar.Click
-        Dim contadorRequisitos = SP_RequerimientosPlantillas_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView.Rows.Count()
-        'If TxtBuscado.Text <> "" Then
-        '    Try
-        '        RtPlantilla.Text = Replace(RtPlantilla.Text, TxtBuscado.Text, TxtRemplazarPor.Text)
-        '    Catch ex As Exception
+        Dim contadorTecnologiasAplicadas = SP_CARGA_TECNOLOGIAS_APLICADAS_A_PROYECTODataGridView.Rows.Count()
 
-        '    End Try
-        'End If
+        While contadorTecnologiasAplicadas > 0
+            'Se ubica en la primera fila
+            SP_CARGA_TECNOLOGIAS_APLICADAS_A_PROYECTODataGridView.CurrentCell = SP_CARGA_TECNOLOGIAS_APLICADAS_A_PROYECTODataGridView.Rows(0).Cells(0)
+            RecorrerRequerimientosPorTecnologia()
+            SP_CARGA_TECNOLOGIAS_APLICADAS_A_PROYECTODataGridView.Rows.RemoveAt(0)
+            contadorTecnologiasAplicadas = contadorTecnologiasAplicadas - 1
+        End While
+    End Sub
 
-        While contadorRequisitos > 0
+    Public Sub RecorrerRequerimientosPorTecnologia()
+        Dim contadorRequerimientos = SP_RequerimientosPlantillas_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView.Rows.Count()
+        While contadorRequerimientos > 0
             SP_RequerimientosPlantillas_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView.CurrentCell = SP_RequerimientosPlantillas_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView.Rows(0).Cells(0)
-
             ValorRequisito = InputBox(EnunciadoTextBox.Text)
             If ValorRequisito = "" Then
                 If MsgBox("No has ingresdo un valor para: " + EnunciadoTextBox.Text, MsgBoxStyle.YesNo) = MsgBoxResult.No Then
@@ -74,16 +77,13 @@
                     Exit While
                 End If
             Else
-
                 SP_RequerimientosPlantillas_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView.Rows.RemoveAt(0)
-                contadorRequisitos = contadorRequisitos - 1
+                contadorRequerimientos = contadorRequerimientos - 1
             End If
         End While
 
 
     End Sub
-
-
 
 #Region "Procedimientos"
     Sub Cancelar_Proyectos()
@@ -370,6 +370,7 @@
 
     Private Sub ProyectoIDTextBox_TextChanged(sender As Object, e As EventArgs) Handles ProyectoIDTextBox.TextChanged
         SP_CARGA_TECNOLOGIAS_APLICADAS_A_PROYECTO()
+        SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID()
     End Sub
 
     Private Sub SP_Plantillas_BUSQUEDA_SEGUN_PARAMETRO_TecnologiaDataGridView_CellMouseDoubleClick(sender As Object, e As DataGridViewCellMouseEventArgs) Handles SP_Plantillas_BUSQUEDA_SEGUN_PARAMETRO_TecnologiaDataGridView.CellMouseDoubleClick
@@ -400,6 +401,18 @@
         ELIMINA_SEGUN_PROYECTO()
         SP_CARGA_TECNOLOGIAS_APLICADAS_A_PROYECTO()
         MsgBox("Se Elimino Relacion", MsgBoxStyle.Exclamation)
+    End Sub
+
+    Private Sub SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID()
+        Try
+            Me.SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoIDTableAdapter.Fill(Me.DataSetTablasYCampos.SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID, New System.Nullable(Of Integer)(CType(ProyectoIDTextBox.Text, Integer)))
+        Catch ex As System.Exception
+            'System.Windows.Forms.MessageBox.Show(ex.Message)
+        End Try
+    End Sub
+
+    Private Sub TecnologiaID_EliminaRelacion_TextChanged(sender As Object, e As EventArgs) Handles TecnologiaID_EliminaRelacion.TextChanged
+        SP_Plantillas_BUSQUEDA_SEGUN_PARAMETRO_Tecnologia()
     End Sub
 
 
