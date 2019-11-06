@@ -81,7 +81,6 @@ Partial Class FrmTecnologias
         Me.TxtBuscado = New System.Windows.Forms.TextBox()
         Me.TxtRemplazarPor = New System.Windows.Forms.TextBox()
         Me.SP_RequerimientosPlantillas_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView = New System.Windows.Forms.DataGridView()
-        Me.DataGridViewTextBoxColumn6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.SP_RequerimientosPlantillas_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDBindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
         Me.RequerimientoTextBox = New System.Windows.Forms.TextBox()
         Me.OrdenDePeticionTextBox = New System.Windows.Forms.TextBox()
@@ -143,6 +142,7 @@ Partial Class FrmTecnologias
         Me.TabPage3 = New System.Windows.Forms.TabPage()
         Me.TextBox2 = New System.Windows.Forms.TextBox()
         Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.DataGridViewTextBoxColumn6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         NombreTecnologiaLabel = New System.Windows.Forms.Label()
         TecnologiaIDLabel = New System.Windows.Forms.Label()
         NombrePlantillaLabel = New System.Windows.Forms.Label()
@@ -683,10 +683,10 @@ Partial Class FrmTecnologias
         'NombreComponenteTextBox
         '
         Me.NombreComponenteTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SP_Componentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDBindingSource, "NombreComponente", True))
-        Me.NombreComponenteTextBox.Location = New System.Drawing.Point(4, 105)
+        Me.NombreComponenteTextBox.Location = New System.Drawing.Point(3, 105)
         Me.NombreComponenteTextBox.Multiline = True
         Me.NombreComponenteTextBox.Name = "NombreComponenteTextBox"
-        Me.NombreComponenteTextBox.Size = New System.Drawing.Size(139, 96)
+        Me.NombreComponenteTextBox.Size = New System.Drawing.Size(139, 146)
         Me.NombreComponenteTextBox.TabIndex = 97
         '
         'SP_Componentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDBindingSource
@@ -749,13 +749,6 @@ Partial Class FrmTecnologias
         Me.SP_RequerimientosPlantillas_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView.RowHeadersVisible = False
         Me.SP_RequerimientosPlantillas_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView.Size = New System.Drawing.Size(594, 391)
         Me.SP_RequerimientosPlantillas_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView.TabIndex = 107
-        '
-        'DataGridViewTextBoxColumn6
-        '
-        Me.DataGridViewTextBoxColumn6.DataPropertyName = "Requerimiento"
-        Me.DataGridViewTextBoxColumn6.HeaderText = "Requerimiento"
-        Me.DataGridViewTextBoxColumn6.Name = "DataGridViewTextBoxColumn6"
-        Me.DataGridViewTextBoxColumn6.Width = 317
         '
         'SP_RequerimientosPlantillas_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDBindingSource1
         '
@@ -1237,6 +1230,13 @@ Partial Class FrmTecnologias
         Me.TextBox1.Size = New System.Drawing.Size(391, 470)
         Me.TextBox1.TabIndex = 100
         '
+        'DataGridViewTextBoxColumn6
+        '
+        Me.DataGridViewTextBoxColumn6.DataPropertyName = "Requerimiento"
+        Me.DataGridViewTextBoxColumn6.HeaderText = "Requerimiento"
+        Me.DataGridViewTextBoxColumn6.Name = "DataGridViewTextBoxColumn6"
+        Me.DataGridViewTextBoxColumn6.Width = 590
+        '
         'FrmTecnologias
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 18.0!)
@@ -1374,7 +1374,6 @@ Partial Class FrmTecnologias
     Friend WithEvents SP_RequerimientosPlantillas_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDBindingSource1 As BindingSource
     Friend WithEvents SP_RequerimientosPlantillas_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView As DataGridView
     Friend WithEvents RequerimientoTextBox As TextBox
-    Friend WithEvents DataGridViewTextBoxColumn6 As DataGridViewTextBoxColumn
     Friend WithEvents OrdenDePeticionTextBox As TextBox
     Friend WithEvents EnunciadoTextBox As TextBox
     Friend WithEvents Panel5 As Panel
@@ -1412,4 +1411,5 @@ Partial Class FrmTecnologias
     Friend WithEvents BtnLimpiarRemplazar As Button
     Friend WithEvents BtnLimpiar As Button
     Friend WithEvents BtnGuardarCodigo As Button
+    Friend WithEvents DataGridViewTextBoxColumn6 As DataGridViewTextBoxColumn
 End Class

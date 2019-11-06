@@ -20,7 +20,7 @@
         End Try
     End Sub
     Private Sub TecnologiaIDTextBox_TextChanged(sender As Object, e As EventArgs) Handles TecnologiaIDTextBox.TextChanged
-
+        SP_Plantillas_BUSQUEDA_SEGUN_PARAMETRO_Tecnologia_2()
     End Sub
     Private Sub PlantillaIDTextBox_TextChanged(sender As Object, e As EventArgs) Handles PlantillaIDTextBox.TextChanged
         SP_Componentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaID()
@@ -34,7 +34,14 @@
         End Try
 
     End Sub
+    Private Sub SP_Plantillas_BUSQUEDA_SEGUN_PARAMETRO_Tecnologia_2()
+        Try
+            Me.SP_Plantillas_BUSQUEDA_SEGUN_PARAMETRO_TecnologiaTableAdapter.Fill(Me.DataSetAdministracion.SP_Plantillas_BUSQUEDA_SEGUN_PARAMETRO_Tecnologia, New System.Nullable(Of Integer)(CType(TecnologiaIDTextBox.Text, Integer)))
+        Catch ex As System.Exception
+            'System.Windows.Forms.MessageBox.Show(ex.Message)
+        End Try
 
+    End Sub
     Private Sub SP_Componentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaID()
         Try
             Me.SP_Componentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDTableAdapter.Fill(Me.DataSetAdministracion.SP_Componentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaID, New System.Nullable(Of Integer)(CType(PlantillaIDTextBox.Text, Integer)))
@@ -57,9 +64,8 @@
     Private Sub BtnBuscarYPintar_Click(sender As Object, e As EventArgs) Handles BtnBuscarYPintar.Click
         'Limpia la base de Datos
         SP_ELIMINA_RegistroValorRequerimientos_SegunID()
-
         Dim contadorTecnologiasAplicadas = SP_CARGA_TECNOLOGIAS_APLICADAS_A_PROYECTODataGridView.Rows.Count()
-
+        'Carga las tecnologias aplicadas y segun pide los requerimientos de de las plantillas de dichas tecnologias
         While contadorTecnologiasAplicadas > 0
             'Se ubica en la primera fila
             SP_CARGA_TECNOLOGIAS_APLICADAS_A_PROYECTODataGridView.CurrentCell = SP_CARGA_TECNOLOGIAS_APLICADAS_A_PROYECTODataGridView.Rows(0).Cells(0)
@@ -67,6 +73,10 @@
             SP_CARGA_TECNOLOGIAS_APLICADAS_A_PROYECTODataGridView.Rows.RemoveAt(0)
             contadorTecnologiasAplicadas = contadorTecnologiasAplicadas - 1
         End While
+        'Vuelve y carga las tecnologias aplicadas
+        SP_CARGA_TECNOLOGIAS_APLICADAS_A_PROYECTO()
+        'Carga los Valores asignados
+        SP_RegistroValorRequerimientos_SEGUN_ProyectoID()
     End Sub
 
     Public Sub RecorrerRequerimientosPorTecnologia()
@@ -74,16 +84,43 @@
         While contadorRequerimientos > 0
             SP_RequerimientosPlantillas_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView.CurrentCell = SP_RequerimientosPlantillas_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView.Rows(0).Cells(0)
             ValorRequerimientoTextBox.Text = InputBox(EnunciadoTextBox.Text)
-            SP_RegistroValorRequerimientos_EDICION_INSERTAR()
             If ValorRequerimientoTextBox.Text = "" Then
                 If MsgBox("No has ingresdo un valor para: " + EnunciadoTextBox.Text, MsgBoxStyle.YesNo) = MsgBoxResult.No Then
                     SP_RequerimientosPlantillas_BUSQUEDA_SEGUN_PARAMETRO_PlantillaID()
                     Exit While
                 End If
             Else
+                'Guarda el Valor del Requerimiento
+                SP_RegistroValorRequerimientos_EDICION_INSERTAR()
+                'Elimina la fila del grid
                 SP_RequerimientosPlantillas_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView.Rows.RemoveAt(0)
+                'Descuenta del Contador
                 contadorRequerimientos = contadorRequerimientos - 1
             End If
+        End While
+    End Sub
+
+    Private Sub BtnRemplazar_Click(sender As Object, e As EventArgs) Handles BtnRemplazar.Click
+        Dim contadorTecnologiasAplicadas = SP_CARGA_TECNOLOGIAS_APLICADAS_A_PROYECTODataGridView.Rows.Count()
+        'Recorrera para hacer los replace en las plantillas
+        While contadorTecnologiasAplicadas > 0
+            'Se ubica en la primera fila
+            SP_CARGA_TECNOLOGIAS_APLICADAS_A_PROYECTODataGridView.CurrentCell = SP_CARGA_TECNOLOGIAS_APLICADAS_A_PROYECTODataGridView.Rows(0).Cells(0)
+            RecorrerComponentesHaciendoReplace()
+            SP_CARGA_TECNOLOGIAS_APLICADAS_A_PROYECTODataGridView.Rows.RemoveAt(0)
+            contadorTecnologiasAplicadas = contadorTecnologiasAplicadas - 1
+        End While
+    End Sub
+    Public Sub RecorrerComponentesHaciendoReplace()
+        Dim contadorComponentes = SP_Componentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView.Rows.Count()
+        While contadorComponentes > 0
+            'Se ubica en la primera fila
+            SP_Componentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView.CurrentCell = SP_Componentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView.Rows(0).Cells(0)
+            '
+            CodigoGeneradoTextBox.Text = CodigoGeneradoTextBox.Text & "." & vbCrLf & CodigoTextBox.Text & vbCrLf & "." & vbCrLf & "." & vbCrLf
+
+            SP_Componentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView.Rows.RemoveAt(0)
+            contadorComponentes = contadorComponentes - 1
         End While
     End Sub
 
@@ -371,16 +408,21 @@
     End Sub
 
     Private Sub ProyectoIDTextBox_TextChanged(sender As Object, e As EventArgs) Handles ProyectoIDTextBox.TextChanged
+        'Carga los registros de Parametros del Proyecto ya ingresados
+        SP_RegistroValorRequerimientos_SEGUN_ProyectoID()
+        'Carga las tecnologias aplicadas al proyecto
         SP_CARGA_TECNOLOGIAS_APLICADAS_A_PROYECTO()
-        SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID()
     End Sub
 
+#Region "Proyectos y Tecnologias"
     Private Sub SP_Plantillas_BUSQUEDA_SEGUN_PARAMETRO_TecnologiaDataGridView_CellMouseDoubleClick(sender As Object, e As DataGridViewCellMouseEventArgs) Handles SP_Plantillas_BUSQUEDA_SEGUN_PARAMETRO_TecnologiaDataGridView.CellMouseDoubleClick
+        'Inserta la relacion entre el proyecto y la tecnologia aplicada al mismo
         SP_ProyectosYTecnologias_EDICION_INSERTAR()
+        'Carga las tecnologias aplicadas al proyecto
         SP_CARGA_TECNOLOGIAS_APLICADAS_A_PROYECTO()
         MsgBox("Se Crea Relación Del Proyecto" & NombreProyectoTextBox.Text & " con la tecnologia " & NombreTecnologiaTextBox.Text, MsgBoxStyle.Information)
     End Sub
-
+    'Metodo que inserta la relacion
     Private Sub SP_ProyectosYTecnologias_EDICION_INSERTAR()
         Try
             Me.SP_ProyectosYTecnologias_EDICION_INSERTARTableAdapter.Fill(Me.DataSetAdministracion.SP_ProyectosYTecnologias_EDICION_INSERTAR, New System.Nullable(Of Integer)(CType(ProyectoIDTextBox.Text, Integer)), New System.Nullable(Of Integer)(CType(TecnologiaIDTextBox.Text, Integer)), New System.Nullable(Of Integer)(CType(PlantillaIDTextBox.Text, Integer)))
@@ -389,6 +431,10 @@
         End Try
 
     End Sub
+#End Region
+
+
+
 
     Private Sub ELIMINA_SEGUN_PROYECTO()
         Try
@@ -417,6 +463,9 @@
         SP_Plantillas_BUSQUEDA_SEGUN_PARAMETRO_Tecnologia()
     End Sub
 
+
+#Region "Registro Valores de Requerimientos de Plantillas"
+    'Inserta valores de los requerimientos de las plantillas de la tecnologia asignada al proyecto
     Private Sub SP_RegistroValorRequerimientos_EDICION_INSERTAR()
         Try
             Me.SP_RegistroValorRequerimientos_EDICION_INSERTARTableAdapter.Fill(Me.DataSetTablasYCampos.SP_RegistroValorRequerimientos_EDICION_INSERTAR,
@@ -429,6 +478,7 @@
 
     End Sub
 
+    'Elimina los valores registrados de los requerimientos de las plantillas de la tecnologia asignada al proyecto
     Private Sub SP_ELIMINA_RegistroValorRequerimientos_SegunID()
         Try
             Me.SP_ELIMINA_RegistroValorRequerimientos_SegunIDTableAdapter.Fill(Me.DataSetTablasYCampos.SP_ELIMINA_RegistroValorRequerimientos_SegunID, New System.Nullable(Of Integer)(CType(ProyectoIDTextBox.Text, Integer)))
@@ -436,6 +486,20 @@
             System.Windows.Forms.MessageBox.Show(ex.Message)
         End Try
     End Sub
+
+    'Carga los valores de los requerimientos de las plantillas de la tecnologia asignada al proyecto
+    Private Sub SP_RegistroValorRequerimientos_SEGUN_ProyectoID()
+        Try
+            Me.SP_RegistroValorRequerimientos_SEGUN_ProyectoIDTableAdapter.Fill(Me.DataSetTablasYCampos.SP_RegistroValorRequerimientos_SEGUN_ProyectoID, New System.Nullable(Of Integer)(CType(ProyectoIDTextBox.Text, Integer)))
+        Catch ex As System.Exception
+            'System.Windows.Forms.MessageBox.Show(ex.Message)
+        End Try
+
+    End Sub
+
+
+
+#End Region
 
 
 #End Region

@@ -35,9 +35,9 @@ Partial Class FrmReplace
         Dim NombreTecnologiaLabel As System.Windows.Forms.Label
         Dim TecnologiaIDLabel1 As System.Windows.Forms.Label
         Dim RequerimientoLabel As System.Windows.Forms.Label
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmReplace))
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim CodigoLabel As System.Windows.Forms.Label
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmReplace))
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.BtnBuscarYPintar = New System.Windows.Forms.Button()
         Me.SP_RequerimientosPlantillas_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView = New System.Windows.Forms.DataGridView()
         Me.DataGridViewTextBoxColumn5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -104,15 +104,21 @@ Partial Class FrmReplace
         Me.SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoIDBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.DataSetTablasYCampos = New GeneradorCod.DataSetTablasYCampos()
         Me.RequerimientoTextBox = New System.Windows.Forms.TextBox()
+        Me.ValorRequerimientoTextBox = New System.Windows.Forms.TextBox()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.CodigoTextBox = New System.Windows.Forms.TextBox()
         Me.SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoIDTableAdapter = New GeneradorCod.DataSetTablasYCamposTableAdapters.SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoIDTableAdapter()
         Me.TableAdapterManager1 = New GeneradorCod.DataSetTablasYCamposTableAdapters.TableAdapterManager()
         Me.SP_RegistroValorRequerimientos_EDICION_INSERTARBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.SP_RegistroValorRequerimientos_EDICION_INSERTARTableAdapter = New GeneradorCod.DataSetTablasYCamposTableAdapters.SP_RegistroValorRequerimientos_EDICION_INSERTARTableAdapter()
-        Me.ValorRequerimientoTextBox = New System.Windows.Forms.TextBox()
-        Me.Label1 = New System.Windows.Forms.Label()
         Me.SP_ELIMINA_RegistroValorRequerimientos_SegunIDBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.SP_ELIMINA_RegistroValorRequerimientos_SegunIDTableAdapter = New GeneradorCod.DataSetTablasYCamposTableAdapters.SP_ELIMINA_RegistroValorRequerimientos_SegunIDTableAdapter()
-        Me.CodigoTextBox = New System.Windows.Forms.TextBox()
+        Me.SP_RegistroValorRequerimientos_SEGUN_ProyectoIDBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.SP_RegistroValorRequerimientos_SEGUN_ProyectoIDTableAdapter = New GeneradorCod.DataSetTablasYCamposTableAdapters.SP_RegistroValorRequerimientos_SEGUN_ProyectoIDTableAdapter()
+        Me.SP_RegistroValorRequerimientos_SEGUN_ProyectoIDDataGridView = New System.Windows.Forms.DataGridView()
+        Me.DataGridViewTextBoxColumn3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.BtnRemplazar = New System.Windows.Forms.Button()
         RequerimientoPlantillaIDLabel = New System.Windows.Forms.Label()
         ComponenteIDLabel = New System.Windows.Forms.Label()
         PlantillaIDLabel = New System.Windows.Forms.Label()
@@ -154,6 +160,8 @@ Partial Class FrmReplace
         CType(Me.DataSetTablasYCampos, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.SP_RegistroValorRequerimientos_EDICION_INSERTARBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.SP_ELIMINA_RegistroValorRequerimientos_SegunIDBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.SP_RegistroValorRequerimientos_SEGUN_ProyectoIDBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.SP_RegistroValorRequerimientos_SEGUN_ProyectoIDDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'RequerimientoPlantillaIDLabel
@@ -264,11 +272,20 @@ Partial Class FrmReplace
         RequerimientoLabel.TabIndex = 126
         RequerimientoLabel.Text = "Requerimiento:"
         '
+        'CodigoLabel
+        '
+        CodigoLabel.AutoSize = True
+        CodigoLabel.Location = New System.Drawing.Point(776, 249)
+        CodigoLabel.Name = "CodigoLabel"
+        CodigoLabel.Size = New System.Drawing.Size(43, 13)
+        CodigoLabel.TabIndex = 129
+        CodigoLabel.Text = "Codigo:"
+        '
         'BtnBuscarYPintar
         '
         Me.BtnBuscarYPintar.BackColor = System.Drawing.Color.White
         Me.BtnBuscarYPintar.Image = CType(resources.GetObject("BtnBuscarYPintar.Image"), System.Drawing.Image)
-        Me.BtnBuscarYPintar.Location = New System.Drawing.Point(1000, 237)
+        Me.BtnBuscarYPintar.Location = New System.Drawing.Point(1004, 23)
         Me.BtnBuscarYPintar.Name = "BtnBuscarYPintar"
         Me.BtnBuscarYPintar.Size = New System.Drawing.Size(49, 44)
         Me.BtnBuscarYPintar.TabIndex = 90
@@ -349,8 +366,8 @@ Partial Class FrmReplace
         'DataGridViewTextBoxColumn7
         '
         Me.DataGridViewTextBoxColumn7.DataPropertyName = "NombreTecnologia"
-        DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.DataGridViewTextBoxColumn7.DefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.DataGridViewTextBoxColumn7.DefaultCellStyle = DataGridViewCellStyle3
         Me.DataGridViewTextBoxColumn7.HeaderText = "Nombre Tecnologia"
         Me.DataGridViewTextBoxColumn7.Name = "DataGridViewTextBoxColumn7"
         Me.DataGridViewTextBoxColumn7.Width = 130
@@ -367,7 +384,7 @@ Partial Class FrmReplace
         Me.SP_Componentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.SP_Componentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn8})
         Me.SP_Componentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView.DataSource = Me.SP_Componentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDBindingSource
-        Me.SP_Componentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView.Location = New System.Drawing.Point(1000, 8)
+        Me.SP_Componentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView.Location = New System.Drawing.Point(1109, 8)
         Me.SP_Componentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView.Name = "SP_Componentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView"
         Me.SP_Componentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView.RowHeadersVisible = False
         Me.SP_Componentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView.Size = New System.Drawing.Size(144, 220)
@@ -652,6 +669,7 @@ Partial Class FrmReplace
         Me.CodigoGeneradoTextBox.Location = New System.Drawing.Point(302, 22)
         Me.CodigoGeneradoTextBox.Multiline = True
         Me.CodigoGeneradoTextBox.Name = "CodigoGeneradoTextBox"
+        Me.CodigoGeneradoTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
         Me.CodigoGeneradoTextBox.Size = New System.Drawing.Size(278, 537)
         Me.CodigoGeneradoTextBox.TabIndex = 91
         '
@@ -803,6 +821,31 @@ Partial Class FrmReplace
         Me.RequerimientoTextBox.Size = New System.Drawing.Size(66, 20)
         Me.RequerimientoTextBox.TabIndex = 127
         '
+        'ValorRequerimientoTextBox
+        '
+        Me.ValorRequerimientoTextBox.Location = New System.Drawing.Point(704, 398)
+        Me.ValorRequerimientoTextBox.Name = "ValorRequerimientoTextBox"
+        Me.ValorRequerimientoTextBox.Size = New System.Drawing.Size(66, 20)
+        Me.ValorRequerimientoTextBox.TabIndex = 128
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(596, 401)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(102, 13)
+        Me.Label1.TabIndex = 129
+        Me.Label1.Text = "Valor Requerimiento"
+        '
+        'CodigoTextBox
+        '
+        Me.CodigoTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SP_Componentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDBindingSource, "Codigo", True))
+        Me.CodigoTextBox.Location = New System.Drawing.Point(779, 267)
+        Me.CodigoTextBox.Multiline = True
+        Me.CodigoTextBox.Name = "CodigoTextBox"
+        Me.CodigoTextBox.Size = New System.Drawing.Size(210, 215)
+        Me.CodigoTextBox.TabIndex = 130
+        '
         'SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoIDTableAdapter
         '
         Me.SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoIDTableAdapter.ClearBeforeFill = True
@@ -827,22 +870,6 @@ Partial Class FrmReplace
         '
         Me.SP_RegistroValorRequerimientos_EDICION_INSERTARTableAdapter.ClearBeforeFill = True
         '
-        'ValorRequerimientoTextBox
-        '
-        Me.ValorRequerimientoTextBox.Location = New System.Drawing.Point(704, 398)
-        Me.ValorRequerimientoTextBox.Name = "ValorRequerimientoTextBox"
-        Me.ValorRequerimientoTextBox.Size = New System.Drawing.Size(66, 20)
-        Me.ValorRequerimientoTextBox.TabIndex = 128
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(596, 401)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(102, 13)
-        Me.Label1.TabIndex = 129
-        Me.Label1.Text = "Valor Requerimiento"
-        '
         'SP_ELIMINA_RegistroValorRequerimientos_SegunIDBindingSource
         '
         Me.SP_ELIMINA_RegistroValorRequerimientos_SegunIDBindingSource.DataMember = "SP_ELIMINA_RegistroValorRequerimientos_SegunID"
@@ -852,29 +879,57 @@ Partial Class FrmReplace
         '
         Me.SP_ELIMINA_RegistroValorRequerimientos_SegunIDTableAdapter.ClearBeforeFill = True
         '
-        'CodigoLabel
+        'SP_RegistroValorRequerimientos_SEGUN_ProyectoIDBindingSource
         '
-        CodigoLabel.AutoSize = True
-        CodigoLabel.Location = New System.Drawing.Point(800, 347)
-        CodigoLabel.Name = "CodigoLabel"
-        CodigoLabel.Size = New System.Drawing.Size(43, 13)
-        CodigoLabel.TabIndex = 129
-        CodigoLabel.Text = "Codigo:"
+        Me.SP_RegistroValorRequerimientos_SEGUN_ProyectoIDBindingSource.DataMember = "SP_RegistroValorRequerimientos_SEGUN_ProyectoID"
+        Me.SP_RegistroValorRequerimientos_SEGUN_ProyectoIDBindingSource.DataSource = Me.DataSetTablasYCampos
         '
-        'CodigoTextBox
+        'SP_RegistroValorRequerimientos_SEGUN_ProyectoIDTableAdapter
         '
-        Me.CodigoTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SP_Componentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDBindingSource, "Codigo", True))
-        Me.CodigoTextBox.Location = New System.Drawing.Point(849, 344)
-        Me.CodigoTextBox.Multiline = True
-        Me.CodigoTextBox.Name = "CodigoTextBox"
-        Me.CodigoTextBox.Size = New System.Drawing.Size(151, 215)
-        Me.CodigoTextBox.TabIndex = 130
+        Me.SP_RegistroValorRequerimientos_SEGUN_ProyectoIDTableAdapter.ClearBeforeFill = True
+        '
+        'SP_RegistroValorRequerimientos_SEGUN_ProyectoIDDataGridView
+        '
+        Me.SP_RegistroValorRequerimientos_SEGUN_ProyectoIDDataGridView.AllowUserToAddRows = False
+        Me.SP_RegistroValorRequerimientos_SEGUN_ProyectoIDDataGridView.AutoGenerateColumns = False
+        Me.SP_RegistroValorRequerimientos_SEGUN_ProyectoIDDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.SP_RegistroValorRequerimientos_SEGUN_ProyectoIDDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn3, Me.DataGridViewTextBoxColumn4})
+        Me.SP_RegistroValorRequerimientos_SEGUN_ProyectoIDDataGridView.DataSource = Me.SP_RegistroValorRequerimientos_SEGUN_ProyectoIDBindingSource
+        Me.SP_RegistroValorRequerimientos_SEGUN_ProyectoIDDataGridView.Location = New System.Drawing.Point(779, 22)
+        Me.SP_RegistroValorRequerimientos_SEGUN_ProyectoIDDataGridView.Name = "SP_RegistroValorRequerimientos_SEGUN_ProyectoIDDataGridView"
+        Me.SP_RegistroValorRequerimientos_SEGUN_ProyectoIDDataGridView.RowHeadersVisible = False
+        Me.SP_RegistroValorRequerimientos_SEGUN_ProyectoIDDataGridView.Size = New System.Drawing.Size(210, 220)
+        Me.SP_RegistroValorRequerimientos_SEGUN_ProyectoIDDataGridView.TabIndex = 131
+        '
+        'DataGridViewTextBoxColumn3
+        '
+        Me.DataGridViewTextBoxColumn3.DataPropertyName = "Requerimiento"
+        Me.DataGridViewTextBoxColumn3.HeaderText = "Requerimiento"
+        Me.DataGridViewTextBoxColumn3.Name = "DataGridViewTextBoxColumn3"
+        '
+        'DataGridViewTextBoxColumn4
+        '
+        Me.DataGridViewTextBoxColumn4.DataPropertyName = "ValorRequerimiento"
+        Me.DataGridViewTextBoxColumn4.HeaderText = "Valor Requerimiento"
+        Me.DataGridViewTextBoxColumn4.Name = "DataGridViewTextBoxColumn4"
+        '
+        'BtnRemplazar
+        '
+        Me.BtnRemplazar.BackColor = System.Drawing.Color.White
+        Me.BtnRemplazar.Image = CType(resources.GetObject("BtnRemplazar.Image"), System.Drawing.Image)
+        Me.BtnRemplazar.Location = New System.Drawing.Point(1004, 75)
+        Me.BtnRemplazar.Name = "BtnRemplazar"
+        Me.BtnRemplazar.Size = New System.Drawing.Size(49, 44)
+        Me.BtnRemplazar.TabIndex = 132
+        Me.BtnRemplazar.UseVisualStyleBackColor = False
         '
         'FrmReplace
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1314, 579)
+        Me.Controls.Add(Me.BtnRemplazar)
+        Me.Controls.Add(Me.SP_RegistroValorRequerimientos_SEGUN_ProyectoIDDataGridView)
         Me.Controls.Add(CodigoLabel)
         Me.Controls.Add(Me.CodigoTextBox)
         Me.Controls.Add(Me.Label1)
@@ -936,6 +991,8 @@ Partial Class FrmReplace
         CType(Me.DataSetTablasYCampos, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.SP_RegistroValorRequerimientos_EDICION_INSERTARBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.SP_ELIMINA_RegistroValorRequerimientos_SegunIDBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.SP_RegistroValorRequerimientos_SEGUN_ProyectoIDBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.SP_RegistroValorRequerimientos_SEGUN_ProyectoIDDataGridView, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -1015,4 +1072,10 @@ Partial Class FrmReplace
     Friend WithEvents SP_ELIMINA_RegistroValorRequerimientos_SegunIDBindingSource As BindingSource
     Friend WithEvents SP_ELIMINA_RegistroValorRequerimientos_SegunIDTableAdapter As DataSetTablasYCamposTableAdapters.SP_ELIMINA_RegistroValorRequerimientos_SegunIDTableAdapter
     Friend WithEvents CodigoTextBox As TextBox
+    Friend WithEvents SP_RegistroValorRequerimientos_SEGUN_ProyectoIDBindingSource As BindingSource
+    Friend WithEvents SP_RegistroValorRequerimientos_SEGUN_ProyectoIDTableAdapter As DataSetTablasYCamposTableAdapters.SP_RegistroValorRequerimientos_SEGUN_ProyectoIDTableAdapter
+    Friend WithEvents SP_RegistroValorRequerimientos_SEGUN_ProyectoIDDataGridView As DataGridView
+    Friend WithEvents DataGridViewTextBoxColumn3 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn4 As DataGridViewTextBoxColumn
+    Friend WithEvents BtnRemplazar As Button
 End Class
