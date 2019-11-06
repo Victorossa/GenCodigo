@@ -55,6 +55,9 @@
 
     'RTC
     Private Sub BtnBuscarYPintar_Click(sender As Object, e As EventArgs) Handles BtnBuscarYPintar.Click
+        'Limpia la base de Datos
+        SP_ELIMINA_RegistroValorRequerimientos_SegunID()
+
         Dim contadorTecnologiasAplicadas = SP_CARGA_TECNOLOGIAS_APLICADAS_A_PROYECTODataGridView.Rows.Count()
 
         While contadorTecnologiasAplicadas > 0
@@ -70,8 +73,9 @@
         Dim contadorRequerimientos = SP_RequerimientosPlantillas_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView.Rows.Count()
         While contadorRequerimientos > 0
             SP_RequerimientosPlantillas_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView.CurrentCell = SP_RequerimientosPlantillas_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView.Rows(0).Cells(0)
-            ValorRequisito = InputBox(EnunciadoTextBox.Text)
-            If ValorRequisito = "" Then
+            ValorRequerimientoTextBox.Text = InputBox(EnunciadoTextBox.Text)
+            SP_RegistroValorRequerimientos_EDICION_INSERTAR()
+            If ValorRequerimientoTextBox.Text = "" Then
                 If MsgBox("No has ingresdo un valor para: " + EnunciadoTextBox.Text, MsgBoxStyle.YesNo) = MsgBoxResult.No Then
                     SP_RequerimientosPlantillas_BUSQUEDA_SEGUN_PARAMETRO_PlantillaID()
                     Exit While
@@ -81,8 +85,6 @@
                 contadorRequerimientos = contadorRequerimientos - 1
             End If
         End While
-
-
     End Sub
 
 #Region "Procedimientos"
@@ -413,6 +415,26 @@
 
     Private Sub TecnologiaID_EliminaRelacion_TextChanged(sender As Object, e As EventArgs) Handles TecnologiaID_EliminaRelacion.TextChanged
         SP_Plantillas_BUSQUEDA_SEGUN_PARAMETRO_Tecnologia()
+    End Sub
+
+    Private Sub SP_RegistroValorRequerimientos_EDICION_INSERTAR()
+        Try
+            Me.SP_RegistroValorRequerimientos_EDICION_INSERTARTableAdapter.Fill(Me.DataSetTablasYCampos.SP_RegistroValorRequerimientos_EDICION_INSERTAR,
+                                                                                New System.Nullable(Of Integer)(CType(ProyectoIDTextBox.Text, Integer)),
+                                                                                RequerimientoTextBox.Text,
+                                                                                ValorRequerimientoTextBox.Text)
+        Catch ex As System.Exception
+            System.Windows.Forms.MessageBox.Show(ex.Message)
+        End Try
+
+    End Sub
+
+    Private Sub SP_ELIMINA_RegistroValorRequerimientos_SegunID()
+        Try
+            Me.SP_ELIMINA_RegistroValorRequerimientos_SegunIDTableAdapter.Fill(Me.DataSetTablasYCampos.SP_ELIMINA_RegistroValorRequerimientos_SegunID, New System.Nullable(Of Integer)(CType(ProyectoIDTextBox.Text, Integer)))
+        Catch ex As System.Exception
+            System.Windows.Forms.MessageBox.Show(ex.Message)
+        End Try
     End Sub
 
 
