@@ -117,7 +117,7 @@
             'Se ubica en la primera fila
             SP_Componentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView.CurrentCell = SP_Componentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView.Rows(0).Cells(0)
             '
-            CodigoGeneradoTextBox.Text = CodigoGeneradoTextBox.Text & "." & vbCrLf & CodigoTextBox.Text & vbCrLf & "." & vbCrLf & "." & vbCrLf
+            CodigoGeneradoTextBox.Text = CodigoGeneradoTextBox.Text & vbCrLf & NombreTecnologiaTextBox1.Text & vbCrLf & NombreComponenteTextBox.Text & vbCrLf & CodigoTextBox.Text & vbCrLf & "++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++" & vbCrLf
 
             SP_Componentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView.Rows.RemoveAt(0)
             contadorComponentes = contadorComponentes - 1
