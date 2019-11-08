@@ -1195,21 +1195,15 @@
     End Sub
 
     Private Sub BtnRemplazar_Click(sender As Object, e As EventArgs) Handles BtnRemplazar.Click
-        If RBPermitirEspacios.Checked = True Then
-            'Quitar los espacios en blanco
-            TxtRemplazarPor.Text = TxtRemplazarPor.Text
-        Else
-            'Quitar los espacios en blanco
-            TxtRemplazarPor.Text = TxtRemplazarPor.Text.Replace(" "c, String.Empty)
-        End If
-
-        'If valor = 1 Then
-        If TxtBuscado.Text <> "" Then
-            Dim errString As String = ContenidoComponenteRichTextBox.Text
-            Dim correctString As String = errString.Replace(TxtBuscado.Text, TxtRemplazarPor.Text)
-            ContenidoComponenteRichTextBox.Text = correctString
-        End If
+        ContenidoComponenteRichTextBox.Text = RemplazarTexto(TxtBuscado.Text, TxtRemplazarPor.Text, ContenidoComponenteRichTextBox.Text)
     End Sub
+
+    Shared Function RemplazarTexto(TextoBuscado As String, TextoParaRemplazo As String, TextoBase As String) As String
+        TextoParaRemplazo = TextoParaRemplazo.Replace(" "c, String.Empty)
+        Dim resultado As String = TextoBase.Replace(TextoBuscado, TextoParaRemplazo)
+        Return resultado
+    End Function
+
 
     Private Sub BtnLimpiar_Click(sender As Object, e As EventArgs) Handles BtnLimpiar.Click
         TxtBuscado.Text = ""

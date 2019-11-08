@@ -156,6 +156,18 @@
   <metadata name="CodigoLabel.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>False</value>
   </metadata>
+  <metadata name="NombreComponenteLabel.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="NombreTecnologiaLabel1.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="RequerimientoLabel1.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="ValorRequerimientoLabel.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="BtnBuscarYPintar.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -187,17 +199,8 @@
   <metadata name="SP_RequerimientosPlantillas_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 173</value>
   </metadata>
-  <metadata name="SP_RequerimientosPlantillas_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 173</value>
-  </metadata>
   <metadata name="DataSetAdministracion.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 56</value>
-  </metadata>
-  <metadata name="DataSetAdministracion.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 56</value>
-  </metadata>
-  <metadata name="SP_Plantillas_BUSQUEDA_SEGUN_PARAMETRO_TecnologiaBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 134</value>
   </metadata>
   <metadata name="SP_Plantillas_BUSQUEDA_SEGUN_PARAMETRO_TecnologiaBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 134</value>
@@ -205,17 +208,8 @@
   <metadata name="TecnologiasBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>193, 56</value>
   </metadata>
-  <metadata name="TecnologiasBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>193, 56</value>
-  </metadata>
   <metadata name="SP_Componentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 95</value>
-  </metadata>
-  <metadata name="SP_Componentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 95</value>
-  </metadata>
-  <metadata name="SP_CARGA_TECNOLOGIAS_APLICADAS_A_PROYECTOBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>332, 368</value>
   </metadata>
   <metadata name="SP_CARGA_TECNOLOGIAS_APLICADAS_A_PROYECTOBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>332, 368</value>
@@ -381,9 +375,6 @@
   <metadata name="ProyectosBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>542, 212</value>
   </metadata>
-  <metadata name="ProyectosBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>542, 212</value>
-  </metadata>
   <metadata name="TableAdapterManager.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>1248, 17</value>
   </metadata>
@@ -437,12 +428,6 @@
   </metadata>
   <metadata name="SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoIDBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 485</value>
-  </metadata>
-  <metadata name="SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoIDBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 485</value>
-  </metadata>
-  <metadata name="DataSetTablasYCampos.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>585, 446</value>
   </metadata>
   <metadata name="DataSetTablasYCampos.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>585, 446</value>
@@ -498,12 +483,33 @@
         RK5CYII=
 </value>
   </data>
-  <metadata name="NombreComponenteLabel.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>False</value>
-  </metadata>
-  <metadata name="NombreTecnologiaLabel1.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>False</value>
-  </metadata>
+  <data name="Button1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wwAADsMBx2+oZAAABM9JREFUWEftVt1PU3cY5u/Z5RJxZJkXXrpku9sSoone7MKbZbvZlqjRJQ7YmDhA
+        RfmSAyoF1IKCQEGgLaylH9ByWkpbWvol0EJLW1paS/vsvC89hgj4gc5liU/y5tBff+d9nvezlHzE/woq
+        Rxpkw2ICE444tM4kil/9uyBCsknnJpMaPDvPgbk424g5DMVYCK1PfO9XkNWfQpc+yoTZQgGEWPo5VmIZ
+        ZLLb/Hk9nsGMOwqNKwaVGEXDfdf7ESFHF4w+Z6LdSGTzLMK3mobFm4RburOYLmAhXmAhdXdt7ybi5ahf
+        RkE6X15PQm/xwWjzs1l96yzEnwW/W9tuRd/Y0tsJocYi8qVwpki1F6FQGGPjJoyodJhUm14YnY0+NWJq
+        xotgpoD5lS3UCzOobzW9mQgiphomt/JFqr2YmXViaEALk8mNxxo3mobcqOuzoaHfhnuqOWi1FrahUROC
+        yRxnRHhgR9VV7atFdGojoIaj1B4EUVzkqM32KOqfxtBu2IQ6kIcpAgwGgF5PFu3SNJAws8GGJyozglJf
+        kD1QLeJi1dj+IpTTEUzNbxRp9kciscmRm51R1EykMe7dxlI8j9X0jllieYjSZzENjErlmxT9nAl6UjlI
+        RL82gPO/je4vom3Iz84PAkWv14kctcqdQyi5QxwuOvdIT2q+wHYBIem+YSMFhyvApfAkpO8l80n3aF8c
+        KKKxbxHjptV9y6D728Id32HOvoiciMkpRRiW2iaaL7ClpNdJyOLaBlQjBjjXMiyARpSEqm1RXKpWY0Dl
+        3CukWenk0ZGXjAwSoJt7hv6FHKLFyImcnkQal0QTsQw6W0lt8VTsFkDmSoG36J8NOgw/de8VIfQ6uHPj
+        SSmnRVD6LbYgeuzbnH4iJpOJd5MT6Jw2Zv+gnidBFmCPgY0EqtQe1Dfq9y/HNWEWbd0i0pkcOzQZ5zE7
+        I02BNw+1P8cliGZ3yGlZySaD/o5EklA+1nHJZAEUPb2nNwYP7gUZTXdncVMwI7yW4uUzNGjEstTtfa4s
+        O3s5ahmykGmdC4MT1p0mlQRQr6zGn+PhIzsu/T7xanIZHT02nK+a5NkfGrHAMB3k/T/hS/HYUSrl6Dnt
+        uRwSqSy8nhgUigmIgRhPB91z+zZQK9X9erPhzch341bFH1Dd+hk9LR3SfD+DyxWBZTGMuVAM9nCMO94d
+        WoOLzqwr6OrSQm12MzH9cKmnll6f8oNg7voF1htl8N4+Ck31MSia7uCh0gilchotLYOoqBRwpUYBQRhl
+        YopcN+flEnn8MTQLJlTWvGYVH4TxunKIrScQ05xDpPdL6Ks/Qff1Gp4I+vERhEFcre1Cw00l7is1UOvm
+        EYqmuCRy1IqH4uHIh2vK4eo+g5TYhMiTU7A3HEHvxeO48VcnWhXzXGsionEjo+4m0D8obZ0WVF7VHI6Y
+        0FdVDlvHSSTM17D8qBwz9aW48+NnLxwSATUUTQhBngjREZbSrWEBxatvj+7Lp6C78TVCqnNYEE5AXfEp
+        Gs+W7XHYO+BgsllxBZtb27xaD91oMu79egbDl4/BevsbTNcdR89PR1Bz+vNXOiXSy1fUnJHi0eHRdPYo
+        Hl8oYxO+L8W1s1+9u9O3wZXTX6D6ZCnbByeXcfOHbyFc+O6/If+ID4+Skn8AOGNpAG4DoPwAAAAASUVO
+        RK5CYII=
+</value>
+  </data>
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>25</value>
   </metadata>

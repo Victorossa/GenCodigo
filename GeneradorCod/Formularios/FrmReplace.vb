@@ -101,6 +101,8 @@
     End Sub
 
     Private Sub BtnRemplazar_Click(sender As Object, e As EventArgs) Handles BtnRemplazar.Click
+        'Limpia
+        CodigoGeneradoTextBox.Text = ""
         Dim contadorTecnologiasAplicadas = SP_CARGA_TECNOLOGIAS_APLICADAS_A_PROYECTODataGridView.Rows.Count()
         'Recorrera para hacer los replace en las plantillas
         While contadorTecnologiasAplicadas > 0
@@ -116,12 +118,41 @@
         While contadorComponentes > 0
             'Se ubica en la primera fila
             SP_Componentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView.CurrentCell = SP_Componentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView.Rows(0).Cells(0)
-            '
             CodigoGeneradoTextBox.Text = CodigoGeneradoTextBox.Text & vbCrLf & NombreTecnologiaTextBox1.Text & vbCrLf & NombreComponenteTextBox.Text & vbCrLf & CodigoTextBox.Text & vbCrLf & "++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++" & vbCrLf
-
             SP_Componentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView.Rows.RemoveAt(0)
             contadorComponentes = contadorComponentes - 1
         End While
+        RemplazarEnResultado(CodigoGeneradoTextBox.Text)
+    End Sub
+
+    Public Sub RemplazarEnResultado(textoBase As String)
+        If InStr(textoBase, "{{{Campos}}}") Then
+            GenerarCampos()
+        End If
+        Dim contadorRequerimientos = SP_RegistroValorRequerimientos_SEGUN_ProyectoIDDataGridView.Rows.Count
+        While contadorRequerimientos > 0
+            'Se ubica en la primera fila
+            SP_RegistroValorRequerimientos_SEGUN_ProyectoIDDataGridView.CurrentCell = SP_RegistroValorRequerimientos_SEGUN_ProyectoIDDataGridView.Rows(0).Cells(0)
+            CodigoGeneradoTextBox.Text = CodigoGeneradoTextBox.Text.Replace(RequerimientoTextBox1.Text, ValorRequerimientoTextBox1.Text)
+            SP_RegistroValorRequerimientos_SEGUN_ProyectoIDDataGridView.Rows.RemoveAt(0)
+            contadorRequerimientos = contadorRequerimientos - 1
+        End While
+        SP_Proyectos_EDICION_ACTUALIZAR_CodigoRemplazado()
+    End Sub
+    Private Sub SP_Proyectos_EDICION_ACTUALIZAR_CodigoRemplazado()
+        Try
+            Me.SP_Proyectos_EDICION_ACTUALIZARTableAdapter.Fill(Me.DataSetAdministracion.SP_Proyectos_EDICION_ACTUALIZAR,
+                                                 New System.Nullable(Of Integer)(CType(ProyectoIDTextBox.Text, Integer)),
+                                                 NombreProyectoTextBox.Text,
+                                                 CodigoGeneradoTextBox.Text,
+                                                 DescripcionTextBox.Text)
+            Me.ProyectosTableAdapter.Fill(Me.DataSetAdministracion.Proyectos)
+        Catch ex As System.Exception
+            System.Windows.Forms.MessageBox.Show(ex.Message)
+        End Try
+    End Sub
+    Public Sub GenerarCampos()
+
     End Sub
 
 #Region "Procedimientos"
@@ -499,11 +530,19 @@
 
 
 
-#End Region
 
 
 #End Region
 
+
+#End Region
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        CodigoGeneradoTextBox.Text = CodigoGeneradoTextBox.Text.Replace(RequerimientoTextBox1.Text, ValorRequerimientoTextBox1.Text)
+    End Sub
+    Private Sub NoReproducible()
+        CodigoGeneradoTextBox.Text = TratamientoText.M1_REMPLAZATODOCLAVEVALOR(SP_T_ValorRemplazarTipoProyectoPruebas_BUSQUEDA_SEGUN_PARAMETRO_TipoProyectoDataGridView, ContenidoComponenteTextBox.Text)
+    End Sub
 
 
 End Class

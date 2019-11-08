@@ -36,10 +36,12 @@ Partial Class FrmReplace
         Dim TecnologiaIDLabel1 As System.Windows.Forms.Label
         Dim RequerimientoLabel As System.Windows.Forms.Label
         Dim CodigoLabel As System.Windows.Forms.Label
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmReplace))
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim NombreComponenteLabel As System.Windows.Forms.Label
         Dim NombreTecnologiaLabel1 As System.Windows.Forms.Label
+        Dim RequerimientoLabel1 As System.Windows.Forms.Label
+        Dim ValorRequerimientoLabel As System.Windows.Forms.Label
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmReplace))
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.BtnBuscarYPintar = New System.Windows.Forms.Button()
         Me.SP_RequerimientosPlantillas_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView = New System.Windows.Forms.DataGridView()
         Me.DataGridViewTextBoxColumn5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -123,6 +125,9 @@ Partial Class FrmReplace
         Me.BtnRemplazar = New System.Windows.Forms.Button()
         Me.NombreComponenteTextBox = New System.Windows.Forms.TextBox()
         Me.NombreTecnologiaTextBox1 = New System.Windows.Forms.TextBox()
+        Me.RequerimientoTextBox1 = New System.Windows.Forms.TextBox()
+        Me.ValorRequerimientoTextBox1 = New System.Windows.Forms.TextBox()
+        Me.Button1 = New System.Windows.Forms.Button()
         RequerimientoPlantillaIDLabel = New System.Windows.Forms.Label()
         ComponenteIDLabel = New System.Windows.Forms.Label()
         PlantillaIDLabel = New System.Windows.Forms.Label()
@@ -138,6 +143,8 @@ Partial Class FrmReplace
         CodigoLabel = New System.Windows.Forms.Label()
         NombreComponenteLabel = New System.Windows.Forms.Label()
         NombreTecnologiaLabel1 = New System.Windows.Forms.Label()
+        RequerimientoLabel1 = New System.Windows.Forms.Label()
+        ValorRequerimientoLabel = New System.Windows.Forms.Label()
         CType(Me.SP_RequerimientosPlantillas_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.SP_RequerimientosPlantillas_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DataSetAdministracion, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -281,11 +288,47 @@ Partial Class FrmReplace
         'CodigoLabel
         '
         CodigoLabel.AutoSize = True
-        CodigoLabel.Location = New System.Drawing.Point(776, 331)
+        CodigoLabel.Location = New System.Drawing.Point(776, 338)
         CodigoLabel.Name = "CodigoLabel"
         CodigoLabel.Size = New System.Drawing.Size(43, 13)
         CodigoLabel.TabIndex = 129
         CodigoLabel.Text = "Codigo:"
+        '
+        'NombreComponenteLabel
+        '
+        NombreComponenteLabel.AutoSize = True
+        NombreComponenteLabel.Location = New System.Drawing.Point(776, 296)
+        NombreComponenteLabel.Name = "NombreComponenteLabel"
+        NombreComponenteLabel.Size = New System.Drawing.Size(110, 13)
+        NombreComponenteLabel.TabIndex = 132
+        NombreComponenteLabel.Text = "Nombre Componente:"
+        '
+        'NombreTecnologiaLabel1
+        '
+        NombreTecnologiaLabel1.AutoSize = True
+        NombreTecnologiaLabel1.Location = New System.Drawing.Point(783, 256)
+        NombreTecnologiaLabel1.Name = "NombreTecnologiaLabel1"
+        NombreTecnologiaLabel1.Size = New System.Drawing.Size(103, 13)
+        NombreTecnologiaLabel1.TabIndex = 133
+        NombreTecnologiaLabel1.Text = "Nombre Tecnologia:"
+        '
+        'RequerimientoLabel1
+        '
+        RequerimientoLabel1.AutoSize = True
+        RequerimientoLabel1.Location = New System.Drawing.Point(783, 172)
+        RequerimientoLabel1.Name = "RequerimientoLabel1"
+        RequerimientoLabel1.Size = New System.Drawing.Size(78, 13)
+        RequerimientoLabel1.TabIndex = 134
+        RequerimientoLabel1.Text = "Requerimiento:"
+        '
+        'ValorRequerimientoLabel
+        '
+        ValorRequerimientoLabel.AutoSize = True
+        ValorRequerimientoLabel.Location = New System.Drawing.Point(783, 211)
+        ValorRequerimientoLabel.Name = "ValorRequerimientoLabel"
+        ValorRequerimientoLabel.Size = New System.Drawing.Size(105, 13)
+        ValorRequerimientoLabel.TabIndex = 135
+        ValorRequerimientoLabel.Text = "Valor Requerimiento:"
         '
         'BtnBuscarYPintar
         '
@@ -372,8 +415,8 @@ Partial Class FrmReplace
         'DataGridViewTextBoxColumn7
         '
         Me.DataGridViewTextBoxColumn7.DataPropertyName = "NombreTecnologia"
-        DataGridViewCellStyle3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.DataGridViewTextBoxColumn7.DefaultCellStyle = DataGridViewCellStyle3
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.DataGridViewTextBoxColumn7.DefaultCellStyle = DataGridViewCellStyle1
         Me.DataGridViewTextBoxColumn7.HeaderText = "Nombre Tecnologia"
         Me.DataGridViewTextBoxColumn7.Name = "DataGridViewTextBoxColumn7"
         Me.DataGridViewTextBoxColumn7.Width = 130
@@ -846,10 +889,10 @@ Partial Class FrmReplace
         'CodigoTextBox
         '
         Me.CodigoTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SP_Componentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDBindingSource, "Codigo", True))
-        Me.CodigoTextBox.Location = New System.Drawing.Point(779, 348)
+        Me.CodigoTextBox.Location = New System.Drawing.Point(779, 355)
         Me.CodigoTextBox.Multiline = True
         Me.CodigoTextBox.Name = "CodigoTextBox"
-        Me.CodigoTextBox.Size = New System.Drawing.Size(210, 211)
+        Me.CodigoTextBox.Size = New System.Drawing.Size(210, 168)
         Me.CodigoTextBox.TabIndex = 130
         '
         'SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoIDTableAdapter
@@ -860,7 +903,11 @@ Partial Class FrmReplace
         '
         Me.TableAdapterManager1.BackupDataSetBeforeUpdate = False
         Me.TableAdapterManager1.Connection = Nothing
+        Me.TableAdapterManager1.GruposDeTiposDeDatosTableAdapter = Nothing
         Me.TableAdapterManager1.SP_ELIMINA_RegistroValorRequerimientos_SegunIDTableAdapter = Nothing
+        Me.TableAdapterManager1.SP_GruposDeTiposDeDatos_EDICION_ACTUALIZARTableAdapter = Nothing
+        Me.TableAdapterManager1.SP_GruposDeTiposDeDatos_EDICION_ELIMINARTableAdapter = Nothing
+        Me.TableAdapterManager1.SP_GruposDeTiposDeDatos_EDICION_INSERTARTableAdapter = Nothing
         Me.TableAdapterManager1.SP_RegistroValorRequerimientos_EDICION_INSERTARTableAdapter = Nothing
         Me.TableAdapterManager1.SP_TablasDeProyecto_EDICION_ACTUALIZARTableAdapter = Nothing
         Me.TableAdapterManager1.SP_TablasDeProyecto_EDICION_ELIMINARTableAdapter = Nothing
@@ -904,7 +951,7 @@ Partial Class FrmReplace
         Me.SP_RegistroValorRequerimientos_SEGUN_ProyectoIDDataGridView.Location = New System.Drawing.Point(779, 22)
         Me.SP_RegistroValorRequerimientos_SEGUN_ProyectoIDDataGridView.Name = "SP_RegistroValorRequerimientos_SEGUN_ProyectoIDDataGridView"
         Me.SP_RegistroValorRequerimientos_SEGUN_ProyectoIDDataGridView.RowHeadersVisible = False
-        Me.SP_RegistroValorRequerimientos_SEGUN_ProyectoIDDataGridView.Size = New System.Drawing.Size(210, 220)
+        Me.SP_RegistroValorRequerimientos_SEGUN_ProyectoIDDataGridView.Size = New System.Drawing.Size(210, 138)
         Me.SP_RegistroValorRequerimientos_SEGUN_ProyectoIDDataGridView.TabIndex = 131
         '
         'DataGridViewTextBoxColumn3
@@ -929,45 +976,58 @@ Partial Class FrmReplace
         Me.BtnRemplazar.TabIndex = 132
         Me.BtnRemplazar.UseVisualStyleBackColor = False
         '
-        'NombreComponenteLabel
-        '
-        NombreComponenteLabel.AutoSize = True
-        NombreComponenteLabel.Location = New System.Drawing.Point(776, 289)
-        NombreComponenteLabel.Name = "NombreComponenteLabel"
-        NombreComponenteLabel.Size = New System.Drawing.Size(110, 13)
-        NombreComponenteLabel.TabIndex = 132
-        NombreComponenteLabel.Text = "Nombre Componente:"
-        '
         'NombreComponenteTextBox
         '
         Me.NombreComponenteTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SP_Componentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDBindingSource, "NombreComponente", True))
-        Me.NombreComponenteTextBox.Location = New System.Drawing.Point(779, 308)
+        Me.NombreComponenteTextBox.Location = New System.Drawing.Point(779, 315)
         Me.NombreComponenteTextBox.Name = "NombreComponenteTextBox"
         Me.NombreComponenteTextBox.Size = New System.Drawing.Size(210, 20)
         Me.NombreComponenteTextBox.TabIndex = 133
         '
-        'NombreTecnologiaLabel1
-        '
-        NombreTecnologiaLabel1.AutoSize = True
-        NombreTecnologiaLabel1.Location = New System.Drawing.Point(783, 249)
-        NombreTecnologiaLabel1.Name = "NombreTecnologiaLabel1"
-        NombreTecnologiaLabel1.Size = New System.Drawing.Size(103, 13)
-        NombreTecnologiaLabel1.TabIndex = 133
-        NombreTecnologiaLabel1.Text = "Nombre Tecnologia:"
-        '
         'NombreTecnologiaTextBox1
         '
         Me.NombreTecnologiaTextBox1.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SP_CARGA_TECNOLOGIAS_APLICADAS_A_PROYECTOBindingSource, "NombreTecnologia", True))
-        Me.NombreTecnologiaTextBox1.Location = New System.Drawing.Point(779, 265)
+        Me.NombreTecnologiaTextBox1.Location = New System.Drawing.Point(779, 272)
         Me.NombreTecnologiaTextBox1.Name = "NombreTecnologiaTextBox1"
         Me.NombreTecnologiaTextBox1.Size = New System.Drawing.Size(210, 20)
         Me.NombreTecnologiaTextBox1.TabIndex = 134
+        '
+        'RequerimientoTextBox1
+        '
+        Me.RequerimientoTextBox1.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SP_RegistroValorRequerimientos_SEGUN_ProyectoIDBindingSource, "Requerimiento", True))
+        Me.RequerimientoTextBox1.Location = New System.Drawing.Point(779, 188)
+        Me.RequerimientoTextBox1.Name = "RequerimientoTextBox1"
+        Me.RequerimientoTextBox1.Size = New System.Drawing.Size(210, 20)
+        Me.RequerimientoTextBox1.TabIndex = 135
+        '
+        'ValorRequerimientoTextBox1
+        '
+        Me.ValorRequerimientoTextBox1.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SP_RegistroValorRequerimientos_SEGUN_ProyectoIDBindingSource, "ValorRequerimiento", True))
+        Me.ValorRequerimientoTextBox1.Location = New System.Drawing.Point(779, 227)
+        Me.ValorRequerimientoTextBox1.Name = "ValorRequerimientoTextBox1"
+        Me.ValorRequerimientoTextBox1.Size = New System.Drawing.Size(210, 20)
+        Me.ValorRequerimientoTextBox1.TabIndex = 136
+        '
+        'Button1
+        '
+        Me.Button1.BackColor = System.Drawing.Color.White
+        Me.Button1.Image = CType(resources.GetObject("Button1.Image"), System.Drawing.Image)
+        Me.Button1.Location = New System.Drawing.Point(1004, 125)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(49, 44)
+        Me.Button1.TabIndex = 137
+        Me.Button1.UseVisualStyleBackColor = False
         '
         'FrmReplace
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1314, 579)
+        Me.Controls.Add(Me.Button1)
+        Me.Controls.Add(ValorRequerimientoLabel)
+        Me.Controls.Add(Me.ValorRequerimientoTextBox1)
+        Me.Controls.Add(RequerimientoLabel1)
+        Me.Controls.Add(Me.RequerimientoTextBox1)
         Me.Controls.Add(NombreTecnologiaLabel1)
         Me.Controls.Add(Me.NombreTecnologiaTextBox1)
         Me.Controls.Add(NombreComponenteLabel)
@@ -1124,4 +1184,7 @@ Partial Class FrmReplace
     Friend WithEvents BtnRemplazar As Button
     Friend WithEvents NombreComponenteTextBox As TextBox
     Friend WithEvents NombreTecnologiaTextBox1 As TextBox
+    Friend WithEvents RequerimientoTextBox1 As TextBox
+    Friend WithEvents ValorRequerimientoTextBox1 As TextBox
+    Friend WithEvents Button1 As Button
 End Class
