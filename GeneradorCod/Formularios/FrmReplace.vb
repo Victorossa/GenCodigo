@@ -14,7 +14,8 @@
             SP_Plantillas_BUSQUEDA_SEGUN_PARAMETRO_Tecnologia()
             SP_Componentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaID()
             SP_RequerimientosPlantillas_BUSQUEDA_SEGUN_PARAMETRO_PlantillaID()
-
+            SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID()
+            Cancelar_TablasDeProyecto()
         Catch ex As System.Exception
             System.Windows.Forms.MessageBox.Show(ex.Message)
         End Try
@@ -152,7 +153,7 @@
         End Try
     End Sub
     Public Sub GenerarCampos()
-
+        MsgBox("Ingresar los Campos")
     End Sub
 
 #Region "Procedimientos"
@@ -443,6 +444,8 @@
         SP_RegistroValorRequerimientos_SEGUN_ProyectoID()
         'Carga las tecnologias aplicadas al proyecto
         SP_CARGA_TECNOLOGIAS_APLICADAS_A_PROYECTO()
+        'Carga Tablas del Proyecto
+        SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID()
     End Sub
 
 #Region "Proyectos y Tecnologias"
@@ -480,14 +483,6 @@
         ELIMINA_SEGUN_PROYECTO()
         SP_CARGA_TECNOLOGIAS_APLICADAS_A_PROYECTO()
         MsgBox("Se Elimino Relacion", MsgBoxStyle.Exclamation)
-    End Sub
-
-    Private Sub SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID()
-        Try
-            Me.SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoIDTableAdapter.Fill(Me.DataSetTablasYCampos.SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID, New System.Nullable(Of Integer)(CType(ProyectoIDTextBox.Text, Integer)))
-        Catch ex As System.Exception
-            'System.Windows.Forms.MessageBox.Show(ex.Message)
-        End Try
     End Sub
 
     Private Sub TecnologiaID_EliminaRelacion_TextChanged(sender As Object, e As EventArgs) Handles TecnologiaID_EliminaRelacion.TextChanged
@@ -537,10 +532,254 @@
 
 #End Region
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        CodigoGeneradoTextBox.Text = TratamientoText.RemplazosDeClaveValor(SP_RegistroValorRequerimientos_SEGUN_ProyectoIDDataGridView, CodigoGeneradoTextBox.Text)
+    'Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+    '    CodigoGeneradoTextBox.Text = TratamientoText.RemplazosDeClaveValor(SP_RegistroValorRequerimientos_SEGUN_ProyectoIDDataGridView, CodigoGeneradoTextBox.Text)
+    'End Sub
+
+#Region "Administracion Tablas"
+
+#Region "Procedimientos"
+    Private Sub SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID()
+        Try
+            Me.SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoIDTableAdapter.Fill(Me.DataSetTablasYCampos.SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID, New System.Nullable(Of Integer)(CType(ProyectoIDTextBox.Text, Integer)))
+        Catch ex As System.Exception
+            'System.Windows.Forms.MessageBox.Show(ex.Message)
+        End Try
     End Sub
 
+    Sub Cancelar_TablasDeProyecto()
+        'Botones Del Menu
+        Nuevo_Menu_TablasDeProyecto.Enabled = True
+        Guardar_Menu_TablasDeProyecto.Enabled = False
+        Editar_Menu_TablasDeProyecto.Enabled = True
+        Actualizar_Menu_TablasDeProyecto.Enabled = False
+        Eliminar_Menu_TablasDeProyecto.Enabled = False
+        'Grid
+        SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoIDDataGridView.Enabled = True
+        'Cargar Datos de Tabla Actualizados
+        SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID()
+        Bloquear_Objetos_TablasDeProyecto()
+        Parar_Timer_TablasDeProyecto()
+        Timer_Ubicar_En_Fila_TablasDeProyecto()
+    End Sub
+    'Insertar
+    Private Sub SP_TablasDeProyecto_EDICION_INSERTAR()
+        Try
+            Me.SP_TablasDeProyecto_EDICION_INSERTARTableAdapter.Fill(Me.DataSetTablasYCampos.SP_TablasDeProyecto_EDICION_INSERTAR,
+                                                 New System.Nullable(Of Integer)(CType(ProyectoIDTextBox.Text, Integer)),
+                                                 NombreTablaTextBox.Text)
+            SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID()
+            MsgBox("El Dato Fue Guardado Exitosamente", MsgBoxStyle.Information, "Guardar Dato")
+        Catch ex As System.Exception
+            System.Windows.Forms.MessageBox.Show(ex.Message)
+        End Try
+    End Sub
+    'Actualizar
+    Private Sub SP_TablasDeProyecto_EDICION_ACTUALIZAR()
+        Try
+            Me.SP_TablasDeProyecto_EDICION_ACTUALIZARTableAdapter.Fill(Me.DataSetTablasYCampos.SP_TablasDeProyecto_EDICION_ACTUALIZAR,
+                                                 New System.Nullable(Of Integer)(CType(TablaIDTextBox.Text, Integer)),
+                                                 New System.Nullable(Of Integer)(CType(ProyectoIDTextBox.Text, Integer)),
+                                                 NombreTablaTextBox.Text)
+            SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID()
+            MsgBox("El Dato Fue Actualizado Exitosamente", MsgBoxStyle.Information, "Actualizar Dato")
+        Catch ex As System.Exception
+            System.Windows.Forms.MessageBox.Show(ex.Message)
+        End Try
+    End Sub
+    'Eliminar
+    Private Sub SP_TablasDeProyecto_EDICION_ELIMINAR()
+        Try
+            Me.SP_TablasDeProyecto_EDICION_ELIMINARTableAdapter.Fill(Me.DataSetTablasYCampos.SP_TablasDeProyecto_EDICION_ELIMINAR, New System.Nullable(Of Long)(CType(TablaIDTextBox.Text, Long)))
+            SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID()
+            MsgBox("El Dato Fue Eliminado Exitosamente de la Base de Datos", MsgBoxStyle.Information, "Eliminación de Dato")
+        Catch ex As System.Exception
+            System.Windows.Forms.MessageBox.Show(ex.Message)
+        End Try
+    End Sub
+#End Region
+#Region "Menus"
+    'Nuevo 
+    Private Sub Nuevo_Menu_TablasDeProyecto_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Nuevo_Menu_TablasDeProyecto.Click
+        Nuevo_Menu_TablasDeProyecto.Enabled = False
+        Editar_Menu_TablasDeProyecto.Enabled = False
+        SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoIDDataGridView.Enabled = False
+        Limpiar_Objetos_TablasDeProyecto()
+        NombreTablaTextBox.Enabled = True
+        NombreTablaTextBox.Focus
+    End Sub
+    'Guardar
+    Private Sub Guardar_Menu_TablasDeProyecto_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Guardar_Menu_TablasDeProyecto.Click
+        Control_Nulos_TablasDeProyecto()
 
+        If ControlNulos.Text = "" Then ' Then
+            SP_TablasDeProyecto_EDICION_INSERTAR()
+            Cancelar_TablasDeProyecto()
+            Parar_Timer_TablasDeProyecto()
+        End If
+    End Sub
+    'Editar
+    Private Sub Editar_Menu_TablasDeProyecto_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Editar_Menu_TablasDeProyecto.Click
+        Nuevo_Menu_TablasDeProyecto.Enabled = False
+        Guardar_Menu_TablasDeProyecto.Enabled = False
+        Editar_Menu_TablasDeProyecto.Enabled = False
+        Actualizar_Menu_TablasDeProyecto.Enabled = True
+        Eliminar_Menu_TablasDeProyecto.Enabled = True
+        SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoIDDataGridView.Enabled = False
+        Desbloquear_Objetos_TablasDeProyecto()
+        Timer_Actualizar_TablasDeProyecto()
+        Timer_Eliminar_TablasDeProyecto()
+    End Sub
+    'Actualizar
+    Private Sub Actualizar_Menu_TablasDeProyecto_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Actualizar_Menu_TablasDeProyecto.Click
+        Control_Nulos_TablasDeProyecto()
+
+        If ControlNulos.Text = "" Then ' Then
+            SP_TablasDeProyecto_EDICION_ACTUALIZAR()
+            Cancelar_TablasDeProyecto()
+            Parar_Timer_TablasDeProyecto()
+        End If
+    End Sub
+    Private Sub Eliminar_Menu_TablasDeProyecto_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Eliminar_Menu_TablasDeProyecto.Click
+        If MsgBox("Desea Eliminar Este Dato?", MsgBoxStyle.YesNo) = MsgBoxResult.Yes Then
+            SP_TablasDeProyecto_EDICION_ELIMINAR()
+            Cancelar_TablasDeProyecto()
+            Parar_Timer_TablasDeProyecto()
+        Else
+            MsgBox("Se Cancelo la Eliminación del Dato", MsgBoxStyle.Information)
+            Cancelar_TablasDeProyecto()
+        End If
+    End Sub
+    'Cancelar
+    Private Sub Cancelar_Menu_TablasDeProyecto_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Cancelar_Menu_TablasDeProyecto.Click
+        Cancelar_TablasDeProyecto()
+    End Sub
+#End Region
+#Region "Eventos sobre Objetos "
+    'Control de Nulos
+    Public Sub Control_Nulos_TablasDeProyecto()
+        ControlNulos.Text = "" '
+        Select Case ControlNulos.Text = "" '
+            Case ProyectoIDTextBox.Text = ""
+                MsgBox("El nombre del campo: ProyectoID; Esta vacio, Favor Verificar", MsgBoxStyle.Critical)
+                ProyectoIDTextBox.BackColor = Color.Beige
+                ControlNulos.Text = "1"
+            Case NombreTablaTextBox.Text = ""
+                MsgBox("El nombre del campo: NombreTabla; Esta vacio, Favor Verificar", MsgBoxStyle.Critical)
+                NombreTablaTextBox.BackColor = Color.Beige
+                ControlNulos.Text = "1"
+            Case Else
+                ControlNulos.Text = "" '
+        End Select
+    End Sub
+    Private Sub NombreTablaTextBox_KeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles NombreTablaTextBox.KeyPress
+        If Asc(e.KeyChar) = 13 Then
+            If Actualizar_Menu_TablasDeProyecto.Enabled = True Then
+                Actualizar_Menu_TablasDeProyecto.Enabled = True
+                Eliminar_Menu_TablasDeProyecto.Enabled = True
+            Else
+                If NombreTablaTextBox.Text = "" Then
+                    MsgBox("Dato Obligatorio, Favor Verificar", MsgBoxStyle.Critical, "Validación de Datos")
+                    NombreTablaTextBox.Text = ""
+                    NombreTablaTextBox.Focus()
+                Else
+                    MsgBox("La Información Ya puede ser Guardada el Icono de Guardado queda habilitado", MsgBoxStyle.Information, "Guardar los Datos")
+                    Guardar_Menu_TablasDeProyecto.Enabled = True
+                    Timer_Guardar_TablasDeProyecto()
+                End If
+            End If
+        End If
+    End Sub
+    Public Sub Limpiar_Objetos_TablasDeProyecto()
+        NombreTablaTextBox.Text = "" ''
+    End Sub
+    Public Sub Desbloquear_Objetos_TablasDeProyecto()
+        NombreTablaTextBox.Enabled = True
+    End Sub
+    Public Sub Bloquear_Objetos_TablasDeProyecto()
+        NombreTablaTextBox.Enabled = False
+    End Sub
+#End Region
+#Region "Timer de Botones"
+    'Declaraciones de Timers de Botones
+    Private WithEvents Timer_Guardar_Menu_TablasDeProyecto As Timer
+    Private WithEvents Timer_Actualizar_Menu_TablasDeProyecto As Timer
+    Private WithEvents Timer_Eliminar_Menu_TablasDeProyecto As Timer
+    'Procedimientos del Timer
+    Private Sub Timer_Guardar_TablasDeProyecto()
+        Me.Timer_Guardar_Menu_TablasDeProyecto = New Timer
+        Timer_Guardar_Menu_TablasDeProyecto.Interval = 250
+        Timer_Guardar_Menu_TablasDeProyecto.Start()
+    End Sub
+    Private Sub Timer_Actualizar_TablasDeProyecto()
+        Me.Timer_Actualizar_Menu_TablasDeProyecto = New Timer
+        Timer_Actualizar_Menu_TablasDeProyecto.Interval = 500
+        Timer_Actualizar_Menu_TablasDeProyecto.Start()
+    End Sub
+    Private Sub Timer_Eliminar_TablasDeProyecto()
+        Me.Timer_Eliminar_Menu_TablasDeProyecto = New Timer
+        Timer_Eliminar_Menu_TablasDeProyecto.Interval = 800
+        Timer_Eliminar_Menu_TablasDeProyecto.Start()
+    End Sub
+    'Eventos Tick
+    Private Sub Timer_Guardar_Menu_TablasDeProyecto_Tick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Timer_Guardar_Menu_TablasDeProyecto.Tick
+        If Guardar_Menu_TablasDeProyecto.BackColor = Color.White Then
+            Guardar_Menu_TablasDeProyecto.BackColor = Color.Green
+        Else
+            Guardar_Menu_TablasDeProyecto.BackColor = Color.White
+        End If
+    End Sub
+    Private Sub Timer_Actualizar_Menu_TablasDeProyecto_Tick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Timer_Actualizar_Menu_TablasDeProyecto.Tick
+        If Actualizar_Menu_TablasDeProyecto.BackColor = Color.White Then
+            Actualizar_Menu_TablasDeProyecto.BackColor = Color.Green
+        Else
+            Actualizar_Menu_TablasDeProyecto.BackColor = Color.White
+        End If
+    End Sub
+    Private Sub Timer_Eliminar_Menu_TablasDeProyecto_Tick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Timer_Eliminar_Menu_TablasDeProyecto.Tick
+        If Eliminar_Menu_TablasDeProyecto.BackColor = Color.White Then
+            Eliminar_Menu_TablasDeProyecto.BackColor = Color.Red
+        Else
+            Eliminar_Menu_TablasDeProyecto.BackColor = Color.White
+        End If
+    End Sub
+    'Parar Timer
+    Private Sub Parar_Timer_TablasDeProyecto()
+        Me.Timer_Guardar_Menu_TablasDeProyecto = New Timer
+        Timer_Guardar_Menu_TablasDeProyecto.Stop()
+        Guardar_Menu_TablasDeProyecto.BackColor = Color.White
+        Me.Timer_Actualizar_Menu_TablasDeProyecto = New Timer
+        Timer_Actualizar_Menu_TablasDeProyecto.Stop()
+        Actualizar_Menu_TablasDeProyecto.BackColor = Color.White
+        Me.Timer_Eliminar_Menu_TablasDeProyecto = New Timer
+        Timer_Eliminar_Menu_TablasDeProyecto.Stop()
+        Eliminar_Menu_TablasDeProyecto.BackColor = Color.White
+    End Sub
+#End Region
+#Region "Ubicación de Fila"
+    Private WithEvents Timer_Ubicacion_TablasDeProyecto As Timer
+    Dim X_TablasDeProyecto
+    Private Sub Timer_Ubicar_En_Fila_TablasDeProyecto()
+        Me.Timer_Ubicacion_TablasDeProyecto = New Timer
+        Timer_Ubicacion_TablasDeProyecto.Interval = 100
+        Timer_Ubicacion_TablasDeProyecto.Start()
+    End Sub
+    Private Sub SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoIDDataGridView_CellMouseClick(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewCellMouseEventArgs) Handles SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoIDDataGridView.CellMouseClick
+        X_TablasDeProyecto = SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoIDDataGridView.CurrentRow.Index
+    End Sub
+    Private Sub Ubicar_En_Fila_TablasDeProyecto()
+        Try
+            Me.SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoIDDataGridView.Rows(X_TablasDeProyecto).Selected = True
+            Me.SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoIDDataGridView.FirstDisplayedScrollingRowIndex = X_TablasDeProyecto
+        Catch ex As Exception
+        End Try
+    End Sub
+    Private Sub Timer_Ubicacion_TablasDeProyecto_Tick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Timer_Ubicacion_TablasDeProyecto.Tick
+        Ubicar_En_Fila_TablasDeProyecto()
+        Timer_Ubicacion_TablasDeProyecto.Stop()
+    End Sub
+#End Region
+
+#End Region
 
 End Class

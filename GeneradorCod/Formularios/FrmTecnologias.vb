@@ -1488,6 +1488,15 @@
     Private Sub NombreGrupoTipoDeDatoTextBox1_TextChanged(sender As Object, e As EventArgs) Handles NombreGrupoTipoDeDatoTextBox1.TextChanged
         Cbo_GruposDeCampos.Text = NombreGrupoTipoDeDatoTextBox1.Text
     End Sub
+    Dim textoCampos As String = "{{{Campos}}}"
+    Dim textoTabla As String = "{{{Tabla}}}"
+    Private Sub BtnImprimeTabla_Click(sender As Object, e As EventArgs) Handles BtnImprimeTabla.Click
+        ContenidoComponenteRichTextBox.Text = ContenidoComponenteRichTextBox.Text + textoCampos
+    End Sub
+
+    Private Sub BtnImprimeCampos_Click(sender As Object, e As EventArgs) Handles BtnImprimeCampos.Click
+        ContenidoComponenteRichTextBox.Text = ContenidoComponenteRichTextBox.Text + textoTabla
+    End Sub
 
 
 

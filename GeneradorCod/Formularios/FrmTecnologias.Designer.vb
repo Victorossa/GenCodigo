@@ -37,7 +37,7 @@ Partial Class FrmTecnologias
         Dim GrupoTiposIDLabel As System.Windows.Forms.Label
         Dim NombreGrupoTipoDeDatoLabel1 As System.Windows.Forms.Label
         Dim GrupoTiposIDLabel1 As System.Windows.Forms.Label
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmTecnologias))
         Me.TecnologiasDataGridView = New System.Windows.Forms.DataGridView()
         Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -170,6 +170,8 @@ Partial Class FrmTecnologias
         Me.SP_GruposDeTiposDeDatos_BUSQUEDA_SEGUN_PARAMETRO_GrupoTiposIDTableAdapter = New GeneradorCod.DataSetTablasYCamposTableAdapters.SP_GruposDeTiposDeDatos_BUSQUEDA_SEGUN_PARAMETRO_GrupoTiposIDTableAdapter()
         Me.NombreGrupoTipoDeDatoTextBox1 = New System.Windows.Forms.TextBox()
         Me.GrupoTiposIDTextBox2 = New System.Windows.Forms.TextBox()
+        Me.BtnImprimeCampos = New System.Windows.Forms.Button()
+        Me.BtnImprimeTabla = New System.Windows.Forms.Button()
         NombreTecnologiaLabel = New System.Windows.Forms.Label()
         TecnologiaIDLabel = New System.Windows.Forms.Label()
         NombrePlantillaLabel = New System.Windows.Forms.Label()
@@ -372,8 +374,8 @@ Partial Class FrmTecnologias
         'DataGridViewTextBoxColumn2
         '
         Me.DataGridViewTextBoxColumn2.DataPropertyName = "NombreTecnologia"
-        DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.DataGridViewTextBoxColumn2.DefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.DataGridViewTextBoxColumn2.DefaultCellStyle = DataGridViewCellStyle2
         Me.DataGridViewTextBoxColumn2.HeaderText = "Nombre Tecnologia"
         Me.DataGridViewTextBoxColumn2.Name = "DataGridViewTextBoxColumn2"
         Me.DataGridViewTextBoxColumn2.Width = 277
@@ -1155,6 +1157,8 @@ Partial Class FrmTecnologias
         '
         'TabPage1
         '
+        Me.TabPage1.Controls.Add(Me.BtnImprimeTabla)
+        Me.TabPage1.Controls.Add(Me.BtnImprimeCampos)
         Me.TabPage1.Controls.Add(Me.BtnGuardarCodigo)
         Me.TabPage1.Controls.Add(Me.BtnSubirRemplazado)
         Me.TabPage1.Controls.Add(Me.BtnLimpiarRemplazar)
@@ -1181,7 +1185,7 @@ Partial Class FrmTecnologias
         '
         Me.BtnGuardarCodigo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.BtnGuardarCodigo.Image = CType(resources.GetObject("BtnGuardarCodigo.Image"), System.Drawing.Image)
-        Me.BtnGuardarCodigo.Location = New System.Drawing.Point(547, 6)
+        Me.BtnGuardarCodigo.Location = New System.Drawing.Point(545, 6)
         Me.BtnGuardarCodigo.Name = "BtnGuardarCodigo"
         Me.BtnGuardarCodigo.Size = New System.Drawing.Size(49, 44)
         Me.BtnGuardarCodigo.TabIndex = 123
@@ -1230,7 +1234,7 @@ Partial Class FrmTecnologias
         Me.BtnRemplazar.BackColor = System.Drawing.Color.White
         Me.BtnRemplazar.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnRemplazar.Image = CType(resources.GetObject("BtnRemplazar.Image"), System.Drawing.Image)
-        Me.BtnRemplazar.Location = New System.Drawing.Point(440, 7)
+        Me.BtnRemplazar.Location = New System.Drawing.Point(437, 7)
         Me.BtnRemplazar.Name = "BtnRemplazar"
         Me.BtnRemplazar.Size = New System.Drawing.Size(49, 43)
         Me.BtnRemplazar.TabIndex = 118
@@ -1242,7 +1246,7 @@ Partial Class FrmTecnologias
         Me.BtnBajarFuente.BackColor = System.Drawing.Color.White
         Me.BtnBajarFuente.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnBajarFuente.Image = CType(resources.GetObject("BtnBajarFuente.Image"), System.Drawing.Image)
-        Me.BtnBajarFuente.Location = New System.Drawing.Point(497, 62)
+        Me.BtnBajarFuente.Location = New System.Drawing.Point(491, 7)
         Me.BtnBajarFuente.Name = "BtnBajarFuente"
         Me.BtnBajarFuente.Size = New System.Drawing.Size(49, 43)
         Me.BtnBajarFuente.TabIndex = 117
@@ -1254,7 +1258,7 @@ Partial Class FrmTecnologias
         Me.BtnSubirFuente.BackColor = System.Drawing.Color.White
         Me.BtnSubirFuente.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnSubirFuente.Image = CType(resources.GetObject("BtnSubirFuente.Image"), System.Drawing.Image)
-        Me.BtnSubirFuente.Location = New System.Drawing.Point(389, 62)
+        Me.BtnSubirFuente.Location = New System.Drawing.Point(383, 7)
         Me.BtnSubirFuente.Name = "BtnSubirFuente"
         Me.BtnSubirFuente.Size = New System.Drawing.Size(49, 43)
         Me.BtnSubirFuente.TabIndex = 116
@@ -1273,7 +1277,7 @@ Partial Class FrmTecnologias
         '
         Me.BtnBuscarYPintar.BackColor = System.Drawing.Color.White
         Me.BtnBuscarYPintar.Image = CType(resources.GetObject("BtnBuscarYPintar.Image"), System.Drawing.Image)
-        Me.BtnBuscarYPintar.Location = New System.Drawing.Point(335, 7)
+        Me.BtnBuscarYPintar.Location = New System.Drawing.Point(329, 7)
         Me.BtnBuscarYPintar.Name = "BtnBuscarYPintar"
         Me.BtnBuscarYPintar.Size = New System.Drawing.Size(49, 43)
         Me.BtnBuscarYPintar.TabIndex = 99
@@ -1292,7 +1296,7 @@ Partial Class FrmTecnologias
         Me.TabPage2.Location = New System.Drawing.Point(4, 27)
         Me.TabPage2.Name = "TabPage2"
         Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage2.Size = New System.Drawing.Size(609, 576)
+        Me.TabPage2.Size = New System.Drawing.Size(602, 576)
         Me.TabPage2.TabIndex = 1
         Me.TabPage2.Text = "Requerimientos"
         Me.TabPage2.UseVisualStyleBackColor = True
@@ -1306,7 +1310,7 @@ Partial Class FrmTecnologias
         Me.TabPage3.Location = New System.Drawing.Point(4, 27)
         Me.TabPage3.Name = "TabPage3"
         Me.TabPage3.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage3.Size = New System.Drawing.Size(609, 576)
+        Me.TabPage3.Size = New System.Drawing.Size(602, 576)
         Me.TabPage3.TabIndex = 2
         Me.TabPage3.Text = "Grupos de Campos"
         Me.TabPage3.UseVisualStyleBackColor = True
@@ -1323,7 +1327,7 @@ Partial Class FrmTecnologias
         Me.Panel7.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel7.Location = New System.Drawing.Point(3, 3)
         Me.Panel7.Name = "Panel7"
-        Me.Panel7.Size = New System.Drawing.Size(603, 46)
+        Me.Panel7.Size = New System.Drawing.Size(596, 46)
         Me.Panel7.TabIndex = 103
         '
         'Nuevo_Menu_GruposDeTiposDeDatos
@@ -1497,6 +1501,28 @@ Partial Class FrmTecnologias
         Me.GrupoTiposIDTextBox2.Name = "GrupoTiposIDTextBox2"
         Me.GrupoTiposIDTextBox2.Size = New System.Drawing.Size(100, 26)
         Me.GrupoTiposIDTextBox2.TabIndex = 120
+        '
+        'BtnImprimeCampos
+        '
+        Me.BtnImprimeCampos.BackColor = System.Drawing.Color.White
+        Me.BtnImprimeCampos.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnImprimeCampos.Location = New System.Drawing.Point(501, 56)
+        Me.BtnImprimeCampos.Name = "BtnImprimeCampos"
+        Me.BtnImprimeCampos.Size = New System.Drawing.Size(93, 43)
+        Me.BtnImprimeCampos.TabIndex = 124
+        Me.BtnImprimeCampos.Text = "{{{Campos}}}"
+        Me.BtnImprimeCampos.UseVisualStyleBackColor = False
+        '
+        'BtnImprimeTabla
+        '
+        Me.BtnImprimeTabla.BackColor = System.Drawing.Color.White
+        Me.BtnImprimeTabla.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnImprimeTabla.Location = New System.Drawing.Point(329, 56)
+        Me.BtnImprimeTabla.Name = "BtnImprimeTabla"
+        Me.BtnImprimeTabla.Size = New System.Drawing.Size(93, 43)
+        Me.BtnImprimeTabla.TabIndex = 125
+        Me.BtnImprimeTabla.Text = "{{{Tabla}}}"
+        Me.BtnImprimeTabla.UseVisualStyleBackColor = False
         '
         'FrmTecnologias
         '
@@ -1710,4 +1736,6 @@ Partial Class FrmTecnologias
     Friend WithEvents SP_GruposDeTiposDeDatos_BUSQUEDA_SEGUN_PARAMETRO_GrupoTiposIDTableAdapter As DataSetTablasYCamposTableAdapters.SP_GruposDeTiposDeDatos_BUSQUEDA_SEGUN_PARAMETRO_GrupoTiposIDTableAdapter
     Friend WithEvents NombreGrupoTipoDeDatoTextBox1 As TextBox
     Friend WithEvents GrupoTiposIDTextBox2 As TextBox
+    Friend WithEvents BtnImprimeTabla As Button
+    Friend WithEvents BtnImprimeCampos As Button
 End Class
