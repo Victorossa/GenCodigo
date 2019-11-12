@@ -10,32 +10,21 @@
         '1- Genera el Datatable con el contenido del dgv que contiene los replaces y valores a remplazar
         Dim DtRemplazos As DataTable
         DtRemplazos = DataGridViewToDataTable(dgvClaveValor)
-        DtRemplazos.Columns(2).ColumnName = "Clave"
-        DtRemplazos.Columns(3).ColumnName = "Valor"
+        DtRemplazos.Columns("DataGridViewTextBoxColumn3").ColumnName = "Clave"
+        DtRemplazos.Columns("DataGridViewTextBoxColumn4").ColumnName = "Valor"
+        Dim ValorTemporal As String
+        Dim TextoRemplazado As String
         '2- Trunca la tabla de replace para limpiar su contenido 
         AccesoDatos.TruncaReplace()
         '3- Guarda el texto que llega con los parametros para luego ir siendo actualizado cada vez que se haga un replace
         AccesoDatos.InsertaArchivoRepalce(TextoComoParametro)
-        'Para iniciar el ciclo
-        Dim VarchivoR As String
-        Dim obj1, obj2 As T_ArchivoReplace
-        Dim TextoRemplazado As String
+        ''Para iniciar el ciclo
         For Each row As DataRow In DtRemplazos.Rows
             Dim Clave As String = CStr(row("Clave"))
             Dim Valor As String = CStr(row("Valor"))
-            'Carga el valor del archivo replace
-            obj1 = AccesoDatos.MostrarArcvhivoR(1)
-            VarchivoR = obj1.ArchivoReplace
-            'Hace el remplazo
-            TextoRemplazado = VarchivoR.Replace(Clave, Valor)
-            AccesoDatos.TruncaReplace()
-            AccesoDatos.InsertaArchivoRepalce(TextoRemplazado)
+            ValorTemporal = TextoComoParametro.Replace(Clave, Valor)
         Next
-        'Carga el valor del archivo replace
-        obj2 = AccesoDatos.MostrarArcvhivoR(1)
-        VarchivoR = obj2.ArchivoReplace
-        AccesoDatos.TruncaReplace()
-        Return VarchivoR
+
     End Function
 
     Public Function DataGridViewToDataTable(dgv As DataGridView) As DataTable

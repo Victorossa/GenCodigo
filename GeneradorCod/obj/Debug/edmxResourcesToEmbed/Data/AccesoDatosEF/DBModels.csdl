@@ -1,0 +1,307 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="PrEsEntities1" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="ArchivoReplace">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="ArchivoReplace1" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Componentes">
+    <Key>
+      <PropertyRef Name="ComponenteID" />
+    </Key>
+    <Property Name="ComponenteID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PlantillaID" Type="Int32" Nullable="false" />
+    <Property Name="NombreComponente" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="Codigo" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="GruposDeTiposDeDatos">
+    <Key>
+      <PropertyRef Name="GrupoTiposID" />
+    </Key>
+    <Property Name="GrupoTiposID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NombreGrupoTipoDeDato" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Plantillas">
+    <Key>
+      <PropertyRef Name="PlantillaID" />
+    </Key>
+    <Property Name="PlantillaID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TecnologiaID" Type="Int32" Nullable="false" />
+    <Property Name="GrupoTiposID" Type="Int32" />
+    <Property Name="NombrePlantilla" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Proyectos">
+    <Key>
+      <PropertyRef Name="ProyectoID" />
+    </Key>
+    <Property Name="ProyectoID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NombreProyecto" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="CodigoGenerado" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Descripcion" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="ProyectosYTecnologias">
+    <Key>
+      <PropertyRef Name="ProyectosYTecnologiasID" />
+    </Key>
+    <Property Name="ProyectosYTecnologiasID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ProyectoID" Type="Int32" Nullable="false" />
+    <Property Name="TecnologiaID" Type="Int32" Nullable="false" />
+    <Property Name="PlantillaID" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="RegistroValorRequerimientos">
+    <Key>
+      <PropertyRef Name="RegistroValorRequerimientoID" />
+    </Key>
+    <Property Name="RegistroValorRequerimientoID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ProyectoID" Type="Int32" Nullable="false" />
+    <Property Name="Requerimiento" Type="String" MaxLength="500" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ValorRequerimiento" Type="String" MaxLength="500" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="RequerimientosPlantillas">
+    <Key>
+      <PropertyRef Name="RequerimientoPlantillaID" />
+    </Key>
+    <Property Name="RequerimientoPlantillaID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PlantillaID" Type="Int32" Nullable="false" />
+    <Property Name="Enunciado" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="Requerimiento" Type="String" MaxLength="500" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="OrdenDePeticion" Type="Int32" />
+  </EntityType>
+  <EntityType Name="TablasDeProyecto">
+    <Key>
+      <PropertyRef Name="TablaID" />
+    </Key>
+    <Property Name="TablaID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ProyectoID" Type="Int32" Nullable="false" />
+    <Property Name="NombreTabla" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Tecnologias">
+    <Key>
+      <PropertyRef Name="TecnologiaID" />
+    </Key>
+    <Property Name="TecnologiaID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NombreTecnologia" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TiposDeDatos">
+    <Key>
+      <PropertyRef Name="CampoID" />
+    </Key>
+    <Property Name="CampoID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="GrupoTiposID" Type="Int32" Nullable="false" />
+    <Property Name="NombreDelCampo" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Prefijo" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="Superior" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="Sufijo" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="Inferior" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="Multiremplazo" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="View_ProyectosYTecnologias">
+    <Key>
+      <PropertyRef Name="ProyectosYTecnologiasID" />
+      <PropertyRef Name="NombreProyecto" />
+      <PropertyRef Name="NombreTecnologia" />
+      <PropertyRef Name="NombrePlantilla" />
+      <PropertyRef Name="ProyectoID" />
+      <PropertyRef Name="TecnologiaID" />
+      <PropertyRef Name="PlantillaID" />
+    </Key>
+    <Property Name="ProyectosYTecnologiasID" Type="Int32" Nullable="false" />
+    <Property Name="NombreProyecto" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="NombreTecnologia" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="NombrePlantilla" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ProyectoID" Type="Int32" Nullable="false" />
+    <Property Name="TecnologiaID" Type="Int32" Nullable="false" />
+    <Property Name="PlantillaID" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="DBModel" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="ArchivoReplace" EntityType="Self.ArchivoReplace" />
+    <EntitySet Name="Componentes" EntityType="Self.Componentes" />
+    <EntitySet Name="GruposDeTiposDeDatos" EntityType="Self.GruposDeTiposDeDatos" />
+    <EntitySet Name="Plantillas" EntityType="Self.Plantillas" />
+    <EntitySet Name="Proyectos" EntityType="Self.Proyectos" />
+    <EntitySet Name="ProyectosYTecnologias" EntityType="Self.ProyectosYTecnologias" />
+    <EntitySet Name="RegistroValorRequerimientos" EntityType="Self.RegistroValorRequerimientos" />
+    <EntitySet Name="RequerimientosPlantillas" EntityType="Self.RequerimientosPlantillas" />
+    <EntitySet Name="TablasDeProyecto" EntityType="Self.TablasDeProyecto" />
+    <EntitySet Name="Tecnologias" EntityType="Self.Tecnologias" />
+    <EntitySet Name="TiposDeDatos" EntityType="Self.TiposDeDatos" />
+    <EntitySet Name="View_ProyectosYTecnologias" EntityType="Self.View_ProyectosYTecnologias" />
+    <FunctionImport Name="ELIMINA_SEGUN_PROYECTO">
+      <Parameter Name="ProyectoID" Mode="In" Type="Int32" />
+      <Parameter Name="TecnologiaID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SP_ArchivoReplace_EDICION_INSERTAR">
+      <Parameter Name="ArchivoReplace" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SP_CARGA_TECNOLOGIAS_APLICADAS_A_PROYECTO" ReturnType="Collection(PrEsEntities1.SP_CARGA_TECNOLOGIAS_APLICADAS_A_PROYECTO_Result)">
+      <Parameter Name="ProyectoID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SP_Componentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaID" ReturnType="Collection(PrEsEntities1.SP_Componentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaID_Result)">
+      <Parameter Name="PlantillaID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SP_Componentes_EDICION_ACTUALIZAR">
+      <Parameter Name="ComponenteID" Mode="In" Type="Int32" />
+      <Parameter Name="PlantillaID" Mode="In" Type="Int32" />
+      <Parameter Name="NombreComponente" Mode="In" Type="String" />
+      <Parameter Name="Codigo" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SP_Componentes_EDICION_ELIMINAR">
+      <Parameter Name="ComponenteID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SP_Componentes_EDICION_INSERTAR">
+      <Parameter Name="PlantillaID" Mode="In" Type="Int32" />
+      <Parameter Name="NombreComponente" Mode="In" Type="String" />
+      <Parameter Name="Codigo" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SP_ELIMINA_RegistroValorRequerimientos_SegunID">
+      <Parameter Name="ProyectoID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SP_GruposDeTiposDeDatos_BUSQUEDA_SEGUN_PARAMETRO_GrupoTiposID" ReturnType="Collection(PrEsEntities1.SP_GruposDeTiposDeDatos_BUSQUEDA_SEGUN_PARAMETRO_GrupoTiposID_Result)">
+      <Parameter Name="GrupoTiposID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SP_GruposDeTiposDeDatos_EDICION_ACTUALIZAR">
+      <Parameter Name="GrupoTiposID" Mode="In" Type="Int32" />
+      <Parameter Name="NombreGrupoTipoDeDato" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SP_GruposDeTiposDeDatos_EDICION_ELIMINAR">
+      <Parameter Name="GrupoTiposID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SP_GruposDeTiposDeDatos_EDICION_INSERTAR">
+      <Parameter Name="NombreGrupoTipoDeDato" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SP_Plantillas_BUSQUEDA_SEGUN_PARAMETRO_Tecnologia" ReturnType="Collection(PrEsEntities1.SP_Plantillas_BUSQUEDA_SEGUN_PARAMETRO_Tecnologia_Result)">
+      <Parameter Name="TecnologiaID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SP_Plantillas_EDICION_ACTUALIZAR">
+      <Parameter Name="PlantillaID" Mode="In" Type="Int32" />
+      <Parameter Name="TecnologiaID" Mode="In" Type="Int32" />
+      <Parameter Name="NombrePlantilla" Mode="In" Type="String" />
+      <Parameter Name="GrupoTiposID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SP_Plantillas_EDICION_ELIMINAR">
+      <Parameter Name="PlantillaID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SP_Plantillas_EDICION_INSERTAR">
+      <Parameter Name="TecnologiaID" Mode="In" Type="Int32" />
+      <Parameter Name="NombrePlantilla" Mode="In" Type="String" />
+      <Parameter Name="GrupoTiposID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SP_Proyectos_EDICION_ACTUALIZAR">
+      <Parameter Name="ProyectoID" Mode="In" Type="Int32" />
+      <Parameter Name="NombreProyecto" Mode="In" Type="String" />
+      <Parameter Name="CodigoGenerado" Mode="In" Type="String" />
+      <Parameter Name="Descripcion" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SP_Proyectos_EDICION_ELIMINAR">
+      <Parameter Name="ProyectoID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SP_Proyectos_EDICION_INSERTAR">
+      <Parameter Name="NombreProyecto" Mode="In" Type="String" />
+      <Parameter Name="CodigoGenerado" Mode="In" Type="String" />
+      <Parameter Name="Descripcion" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SP_ProyectosYTecnologias_EDICION_INSERTAR">
+      <Parameter Name="ProyectoID" Mode="In" Type="Int32" />
+      <Parameter Name="TecnologiaID" Mode="In" Type="Int32" />
+      <Parameter Name="PlantillaID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SP_RegistroValorRequerimientos_EDICION_INSERTAR">
+      <Parameter Name="ProyectoID" Mode="In" Type="Int32" />
+      <Parameter Name="Requerimiento" Mode="In" Type="String" />
+      <Parameter Name="ValorRequerimiento" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SP_RegistroValorRequerimientos_SEGUN_ProyectoID" ReturnType="Collection(PrEsEntities1.SP_RegistroValorRequerimientos_SEGUN_ProyectoID_Result)">
+      <Parameter Name="ProyectoID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SP_RequerimientosPlantillas_BUSQUEDA_SEGUN_PARAMETRO_PlantillaID" ReturnType="Collection(PrEsEntities1.SP_RequerimientosPlantillas_BUSQUEDA_SEGUN_PARAMETRO_PlantillaID_Result)">
+      <Parameter Name="PlantillaID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SP_RequerimientosPlantillas_EDICION_ACTUALIZAR">
+      <Parameter Name="RequerimientoPlantillaID" Mode="In" Type="Int32" />
+      <Parameter Name="PlantillaID" Mode="In" Type="Int32" />
+      <Parameter Name="Enunciado" Mode="In" Type="String" />
+      <Parameter Name="Requerimiento" Mode="In" Type="String" />
+      <Parameter Name="OrdenDePeticion" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SP_RequerimientosPlantillas_EDICION_ELIMINAR">
+      <Parameter Name="RequerimientoPlantillaID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SP_RequerimientosPlantillas_EDICION_INSERTAR">
+      <Parameter Name="PlantillaID" Mode="In" Type="Int32" />
+      <Parameter Name="Enunciado" Mode="In" Type="String" />
+      <Parameter Name="Requerimiento" Mode="In" Type="String" />
+      <Parameter Name="OrdenDePeticion" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID" ReturnType="Collection(PrEsEntities1.SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID_Result)">
+      <Parameter Name="ProyectoID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SP_TablasDeProyecto_EDICION_ACTUALIZAR">
+      <Parameter Name="TablaID" Mode="In" Type="Int32" />
+      <Parameter Name="ProyectoID" Mode="In" Type="Int32" />
+      <Parameter Name="NombreTabla" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SP_TablasDeProyecto_EDICION_ELIMINAR">
+      <Parameter Name="TablaID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SP_TablasDeProyecto_EDICION_INSERTAR">
+      <Parameter Name="ProyectoID" Mode="In" Type="Int32" />
+      <Parameter Name="NombreTabla" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SP_Tecnologias_EDICION_ACTUALIZAR">
+      <Parameter Name="TecnologiaID" Mode="In" Type="Int32" />
+      <Parameter Name="NombreTecnologia" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SP_Tecnologias_EDICION_ELIMINAR">
+      <Parameter Name="TecnologiaID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SP_Tecnologias_EDICION_INSERTAR">
+      <Parameter Name="NombreTecnologia" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="TruncateReplace" />
+  </EntityContainer>
+  <ComplexType Name="SP_CARGA_TECNOLOGIAS_APLICADAS_A_PROYECTO_Result">
+    <Property Type="Int32" Name="ProyectosYTecnologiasID" Nullable="false" />
+    <Property Type="String" Name="NombreProyecto" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="NombreTecnologia" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="NombrePlantilla" Nullable="false" MaxLength="100" />
+    <Property Type="Int32" Name="ProyectoID" Nullable="false" />
+    <Property Type="Int32" Name="TecnologiaID" Nullable="false" />
+    <Property Type="Int32" Name="PlantillaID" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="SP_Componentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaID_Result">
+    <Property Type="Int32" Name="ComponenteID" Nullable="false" />
+    <Property Type="Int32" Name="PlantillaID" Nullable="false" />
+    <Property Type="String" Name="NombreComponente" Nullable="true" MaxLength="500" />
+    <Property Type="String" Name="Codigo" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="SP_GruposDeTiposDeDatos_BUSQUEDA_SEGUN_PARAMETRO_GrupoTiposID_Result">
+    <Property Type="Int32" Name="GrupoTiposID" Nullable="false" />
+    <Property Type="String" Name="NombreGrupoTipoDeDato" Nullable="false" MaxLength="200" />
+  </ComplexType>
+  <ComplexType Name="SP_Plantillas_BUSQUEDA_SEGUN_PARAMETRO_Tecnologia_Result">
+    <Property Type="Int32" Name="PlantillaID" Nullable="false" />
+    <Property Type="Int32" Name="TecnologiaID" Nullable="false" />
+    <Property Type="Int32" Name="GrupoTiposID" Nullable="true" />
+    <Property Type="String" Name="NombrePlantilla" Nullable="false" MaxLength="100" />
+  </ComplexType>
+  <ComplexType Name="SP_RegistroValorRequerimientos_SEGUN_ProyectoID_Result">
+    <Property Type="Int64" Name="RegistroValorRequerimientoID" Nullable="false" />
+    <Property Type="Int32" Name="ProyectoID" Nullable="false" />
+    <Property Type="String" Name="Requerimiento" Nullable="false" MaxLength="500" />
+    <Property Type="String" Name="ValorRequerimiento" Nullable="false" MaxLength="500" />
+  </ComplexType>
+  <ComplexType Name="SP_RequerimientosPlantillas_BUSQUEDA_SEGUN_PARAMETRO_PlantillaID_Result">
+    <Property Type="Int32" Name="RequerimientoPlantillaID" Nullable="false" />
+    <Property Type="Int32" Name="PlantillaID" Nullable="false" />
+    <Property Type="String" Name="Enunciado" Nullable="true" MaxLength="500" />
+    <Property Type="String" Name="Requerimiento" Nullable="false" MaxLength="500" />
+    <Property Type="Int32" Name="OrdenDePeticion" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID_Result">
+    <Property Type="Int32" Name="TablaID" Nullable="false" />
+    <Property Type="Int32" Name="ProyectoID" Nullable="false" />
+    <Property Type="String" Name="NombreTabla" Nullable="false" MaxLength="200" />
+  </ComplexType>
+</Schema>

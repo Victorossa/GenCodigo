@@ -538,11 +538,9 @@
 #End Region
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        CodigoGeneradoTextBox.Text = CodigoGeneradoTextBox.Text.Replace(RequerimientoTextBox1.Text, ValorRequerimientoTextBox1.Text)
+        CodigoGeneradoTextBox.Text = TratamientoText.RemplazosDeClaveValor(SP_RegistroValorRequerimientos_SEGUN_ProyectoIDDataGridView, CodigoGeneradoTextBox.Text)
     End Sub
-    Private Sub NoReproducible()
-        CodigoGeneradoTextBox.Text = TratamientoText.M1_REMPLAZATODOCLAVEVALOR(SP_T_ValorRemplazarTipoProyectoPruebas_BUSQUEDA_SEGUN_PARAMETRO_TipoProyectoDataGridView, ContenidoComponenteTextBox.Text)
-    End Sub
+
 
 
 End Class
