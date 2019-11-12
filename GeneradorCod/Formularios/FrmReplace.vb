@@ -778,6 +778,19 @@
         Ubicar_En_Fila_TablasDeProyecto()
         Timer_Ubicacion_TablasDeProyecto.Stop()
     End Sub
+
+    Private Sub SP_TiposDeCampos_BUSQUEDA_SEGUN_PARAMETRO_GrupoTiposID()
+        Try
+            Me.SP_TiposDeCampos_BUSQUEDA_SEGUN_PARAMETRO_GrupoTiposIDTableAdapter.Fill(Me.DataSetTablasYCampos.SP_TiposDeCampos_BUSQUEDA_SEGUN_PARAMETRO_GrupoTiposID, New System.Nullable(Of Integer)(CType(GrupoTiposIDTextBox.Text, Integer)))
+        Catch ex As System.Exception
+            'System.Windows.Forms.MessageBox.Show(ex.Message)
+        End Try
+
+    End Sub
+
+    Private Sub GrupoTiposIDTextBox_TextChanged(sender As Object, e As EventArgs) Handles GrupoTiposIDTextBox.TextChanged
+        SP_TiposDeCampos_BUSQUEDA_SEGUN_PARAMETRO_GrupoTiposID()
+    End Sub
 #End Region
 
 #End Region

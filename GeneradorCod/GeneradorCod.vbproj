@@ -172,6 +172,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSetTablasYCampos.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Data\DataSetTablasYCampos.vb">
+      <DependentUpon>DataSetTablasYCampos.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\FrmReplace.Designer.vb">
       <DependentUpon>FrmReplace.vb</DependentUpon>
     </Compile>

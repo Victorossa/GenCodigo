@@ -12,6 +12,8 @@
             SP_RequerimientosPlantillas_BUSQUEDA_SEGUN_PARAMETRO_PlantillaID()
             Cancelar_RequerimientosPlantillas()
             Cancelar_GruposDeTiposDeDatos()
+            SP_TiposDeCampos_BUSQUEDA_SEGUN_PARAMETRO_GrupoTiposID()
+            Cancelar_TiposDeCampos()
         Catch ex As System.Exception
             System.Windows.Forms.MessageBox.Show(ex.Message)
         End Try
@@ -127,7 +129,7 @@
     Private Sub Cancelar_Menu_Tecnologias_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Cancelar_Menu_Tecnologias.Click
         Cancelar_Tecnologias()
     End Sub
-    'Load de Formulario
+
 
 #End Region
 #Region "Eventos sobre Objetos "
@@ -1261,7 +1263,7 @@
     Private Sub SP_GruposDeTiposDeDatos_EDICION_ACTUALIZAR()
         Try
             Me.SP_GruposDeTiposDeDatos_EDICION_ACTUALIZARTableAdapter.Fill(Me.DataSetTablasYCampos.SP_GruposDeTiposDeDatos_EDICION_ACTUALIZAR,
-                                                 New System.Nullable(Of Integer)(CType(GrupoTiposIDTextBox.Text, Integer)),
+                                                 New System.Nullable(Of Integer)(CType(GrupoTiposIDTextBox1.Text, Integer)),
                                                  NombreGrupoTipoDeDatoTextBox.Text)
             Me.GruposDeTiposDeDatosTableAdapter.Fill(Me.DataSetTablasYCampos.GruposDeTiposDeDatos)
             MsgBox("El Dato Fue Actualizado Exitosamente", MsgBoxStyle.Information, "Actualizar Dato")
@@ -1352,18 +1354,6 @@
 #End Region
 #Region "Eventos sobre Objetos "
     'Control de Nulos
-    Private Sub GrupoTiposIDTextBox_KeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles GrupoTiposIDTextBox.KeyPress
-        If Asc(e.KeyChar) = 13 Then
-            If GrupoTiposIDTextBox.Text = "" Then
-                MsgBox("Dato Obligatorio, Favor Verificar", MsgBoxStyle.Critical, "Validación de Datos")
-                GrupoTiposIDTextBox.Text = ""
-                GrupoTiposIDTextBox.Focus()
-            Else
-                NombreGrupoTipoDeDatoTextBox.Enabled = True
-                NombreGrupoTipoDeDatoTextBox.Focus()
-            End If
-        End If
-    End Sub
     Private Sub NombreGrupoTipoDeDatoTextBox_KeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles NombreGrupoTipoDeDatoTextBox.KeyPress
         If Asc(e.KeyChar) = 13 Then
             If Actualizar_Menu_GruposDeTiposDeDatos.Enabled = True Then
@@ -1471,8 +1461,6 @@
         Timer_Ubicacion_GruposDeTiposDeDatos.Stop()
     End Sub
 
-
-
     Private Sub SP_GruposDeTiposDeDatos_BUSQUEDA_SEGUN_PARAMETRO_GrupoTiposID()
         Try
             Me.SP_GruposDeTiposDeDatos_BUSQUEDA_SEGUN_PARAMETRO_GrupoTiposIDTableAdapter.Fill(Me.DataSetTablasYCampos.SP_GruposDeTiposDeDatos_BUSQUEDA_SEGUN_PARAMETRO_GrupoTiposID, New System.Nullable(Of Integer)(CType(GrupoTiposIDTextBox2.Text, Integer)))
@@ -1483,6 +1471,7 @@
 
     Private Sub GrupoTiposIDTextBox2_TextChanged(sender As Object, e As EventArgs) Handles GrupoTiposIDTextBox2.TextChanged
         SP_GruposDeTiposDeDatos_BUSQUEDA_SEGUN_PARAMETRO_GrupoTiposID()
+
     End Sub
 
     Private Sub NombreGrupoTipoDeDatoTextBox1_TextChanged(sender As Object, e As EventArgs) Handles NombreGrupoTipoDeDatoTextBox1.TextChanged
@@ -1503,6 +1492,275 @@
 
 
 #End Region
+
+
+
+
+#Region "Administracion Campos de Grupos"
+
+    Private Sub SP_TiposDeCampos_BUSQUEDA_SEGUN_PARAMETRO_GrupoTiposID()
+        Try
+            Me.SP_TiposDeCampos_BUSQUEDA_SEGUN_PARAMETRO_GrupoTiposIDTableAdapter.Fill(Me.DataSetTablasYCampos.SP_TiposDeCampos_BUSQUEDA_SEGUN_PARAMETRO_GrupoTiposID, New System.Nullable(Of Integer)(CType(GrupoTiposIDTextBox1.Text, Integer)))
+        Catch ex As System.Exception
+            'System.Windows.Forms.MessageBox.Show(ex.Message)
+        End Try
+
+    End Sub
+
+#Region "Procedimientos"
+    Sub Cancelar_TiposDeCampos()
+        'Botones Del Menu
+        Nuevo_Menu_TiposDeCampos.Enabled = True
+        Guardar_Menu_TiposDeCampos.Enabled = False
+        Editar_Menu_TiposDeCampos.Enabled = True
+        Actualizar_Menu_TiposDeCampos.Enabled = False
+        Eliminar_Menu_TiposDeCampos.Enabled = False
+        'Grid
+        SP_TiposDeCampos_BUSQUEDA_SEGUN_PARAMETRO_GrupoTiposIDDataGridView.Enabled = True
+        'Cargar Datos de Tabla Actualizados
+        SP_TiposDeCampos_BUSQUEDA_SEGUN_PARAMETRO_GrupoTiposID()
+        Bloquear_Objetos_TiposDeCampos()
+        Parar_Timer_TiposDeCampos()
+        Timer_Ubicar_En_Fila_TiposDeCampos()
+    End Sub
+    'Insertar
+    Private Sub SP_TiposDeCampos_EDICION_INSERTAR()
+        Try
+            Me.SP_TiposDeCampos_EDICION_INSERTARTableAdapter.Fill(Me.DataSetTablasYCampos.SP_TiposDeCampos_EDICION_INSERTAR,
+                                                 New System.Nullable(Of Integer)(CType(GrupoTiposIDTextBox1.Text, Integer)),
+                                                 NombreTipoTextBox.Text)
+            SP_TiposDeCampos_BUSQUEDA_SEGUN_PARAMETRO_GrupoTiposID()
+            MsgBox("El Dato Fue Guardado Exitosamente", MsgBoxStyle.Information, "Guardar Dato")
+        Catch ex As System.Exception
+            System.Windows.Forms.MessageBox.Show(ex.Message)
+
+        End Try
+    End Sub
+    'Actualizar
+    Private Sub SP_TiposDeCampos_EDICION_ACTUALIZAR()
+        Try
+            Me.SP_TiposDeCampos_EDICION_ACTUALIZARTableAdapter.Fill(Me.DataSetTablasYCampos.SP_TiposDeCampos_EDICION_ACTUALIZAR,
+                                                 New System.Nullable(Of Integer)(CType(TipoCampoIDTextBox.Text, Integer)),
+                                                 New System.Nullable(Of Integer)(CType(GrupoTiposIDTextBox1.Text, Integer)),
+                                                 NombreTipoTextBox.Text)
+            SP_TiposDeCampos_BUSQUEDA_SEGUN_PARAMETRO_GrupoTiposID()
+            MsgBox("El Dato Fue Actualizado Exitosamente", MsgBoxStyle.Information, "Actualizar Dato")
+        Catch ex As System.Exception
+            System.Windows.Forms.MessageBox.Show(ex.Message)
+        End Try
+    End Sub
+    'Eliminar
+    Private Sub SP_TiposDeCampos_EDICION_ELIMINAR()
+        Try
+            Me.SP_TiposDeCampos_EDICION_ELIMINARTableAdapter.Fill(Me.DataSetTablasYCampos.SP_TiposDeCampos_EDICION_ELIMINAR, New System.Nullable(Of Long)(CType(TipoCampoIDTextBox.Text, Long)))
+            SP_TiposDeCampos_BUSQUEDA_SEGUN_PARAMETRO_GrupoTiposID()
+            MsgBox("El Dato Fue Eliminado Exitosamente de la Base de Datos", MsgBoxStyle.Information, "Eliminación de Dato")
+        Catch ex As System.Exception
+            System.Windows.Forms.MessageBox.Show(ex.Message)
+        End Try
+    End Sub
+#End Region
+#Region "Menus"
+    'Nuevo 
+    Private Sub Nuevo_Menu_TiposDeCampos_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Nuevo_Menu_TiposDeCampos.Click
+        Nuevo_Menu_TiposDeCampos.Enabled = False
+        Editar_Menu_TiposDeCampos.Enabled = False
+        SP_TiposDeCampos_BUSQUEDA_SEGUN_PARAMETRO_GrupoTiposIDDataGridView.Enabled = False
+        Limpiar_Objetos_TiposDeCampos()
+        NombreTipoTextBox.Enabled = True
+        NombreTipoTextBox.Focus()
+    End Sub
+    'Guardar
+    Private Sub Guardar_Menu_TiposDeCampos_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Guardar_Menu_TiposDeCampos.Click
+        Control_Nulos_TiposDeCampos()
+
+        If ControlNulos.Text = "" Then ' Then
+            SP_TiposDeCampos_EDICION_INSERTAR()
+            Cancelar_TiposDeCampos()
+            Parar_Timer_TiposDeCampos()
+        End If
+    End Sub
+    'Editar
+    Private Sub Editar_Menu_TiposDeCampos_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Editar_Menu_TiposDeCampos.Click
+        Nuevo_Menu_TiposDeCampos.Enabled = False
+        Guardar_Menu_TiposDeCampos.Enabled = False
+        Editar_Menu_TiposDeCampos.Enabled = False
+        Actualizar_Menu_TiposDeCampos.Enabled = True
+        Eliminar_Menu_TiposDeCampos.Enabled = True
+        SP_TiposDeCampos_BUSQUEDA_SEGUN_PARAMETRO_GrupoTiposIDDataGridView.Enabled = False
+        Desbloquear_Objetos_TiposDeCampos()
+        Timer_Actualizar_TiposDeCampos()
+        Timer_Eliminar_TiposDeCampos()
+    End Sub
+    'Actualizar
+    Private Sub Actualizar_Menu_TiposDeCampos_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Actualizar_Menu_TiposDeCampos.Click
+        Control_Nulos_TiposDeCampos()
+
+        If ControlNulos.Text = "" Then ' Then
+            SP_TiposDeCampos_EDICION_ACTUALIZAR()
+            Cancelar_TiposDeCampos()
+            Parar_Timer_TiposDeCampos()
+        End If
+    End Sub
+    Private Sub Eliminar_Menu_TiposDeCampos_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Eliminar_Menu_TiposDeCampos.Click
+        If MsgBox("Desea Eliminar Este Dato?", MsgBoxStyle.YesNo) = MsgBoxResult.Yes Then
+            SP_TiposDeCampos_EDICION_ELIMINAR()
+            Cancelar_TiposDeCampos()
+            Parar_Timer_TiposDeCampos()
+        Else
+            MsgBox("Se Cancelo la Eliminación del Dato", MsgBoxStyle.Information)
+            Cancelar_TiposDeCampos()
+        End If
+    End Sub
+    'Cancelar
+    Private Sub Cancelar_Menu_TiposDeCampos_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Cancelar_Menu_TiposDeCampos.Click
+        Cancelar_TiposDeCampos()
+    End Sub
+#End Region
+#Region "Eventos sobre Objetos "
+    'Control de Nulos
+    Public Sub Control_Nulos_TiposDeCampos()
+        ControlNulos.Text = "" '
+        Select Case ControlNulos.Text = "" '
+            Case GrupoTiposIDTextBox1.Text = ""
+                MsgBox("El nombre del campo: GrupoTiposID; Esta vacio, Favor Verificar", MsgBoxStyle.Critical)
+                GrupoTiposIDTextBox1.BackColor = Color.Beige
+                ControlNulos.Text = "1"
+            Case NombreTipoTextBox.Text = ""
+                MsgBox("El nombre del campo: NombreTipo; Esta vacio, Favor Verificar", MsgBoxStyle.Critical)
+                NombreTipoTextBox.BackColor = Color.Beige
+                ControlNulos.Text = "1"
+            Case Else
+                ControlNulos.Text = "" '
+        End Select
+    End Sub
+    Private Sub GrupoTiposIDTextBox_KeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles GrupoTiposIDTextBox.KeyPress
+        If Asc(e.KeyChar) = 13 Then
+            If GrupoTiposIDTextBox.Text = "" Then
+                MsgBox("Dato Obligatorio, Favor Verificar", MsgBoxStyle.Critical, "Validación de Datos")
+                GrupoTiposIDTextBox.Text = ""
+                GrupoTiposIDTextBox.Focus()
+            Else
+                NombreTipoTextBox.Enabled = True
+                NombreTipoTextBox.Focus()
+            End If
+        End If
+    End Sub
+    Private Sub NombreTipoTextBox_KeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles NombreTipoTextBox.KeyPress
+        If Asc(e.KeyChar) = 13 Then
+            If Actualizar_Menu_TiposDeCampos.Enabled = True Then
+                Actualizar_Menu_TiposDeCampos.Enabled = True
+                Eliminar_Menu_TiposDeCampos.Enabled = True
+            Else
+                If NombreTipoTextBox.Text = "" Then
+                    MsgBox("Dato Obligatorio, Favor Verificar", MsgBoxStyle.Critical, "Validación de Datos")
+                    NombreTipoTextBox.Text = ""
+                    NombreTipoTextBox.Focus()
+                Else
+                    MsgBox("La Información Ya puede ser Guardada el Icono de Guardado queda habilitado", MsgBoxStyle.Information, "Guardar los Datos")
+                    Guardar_Menu_TiposDeCampos.Enabled = True
+                    Timer_Guardar_TiposDeCampos()
+                End If
+            End If
+        End If
+    End Sub
+    Public Sub Limpiar_Objetos_TiposDeCampos()
+        NombreTipoTextBox.Text = "" ''
+    End Sub
+    Public Sub Desbloquear_Objetos_TiposDeCampos()
+        NombreTipoTextBox.Enabled = True
+    End Sub
+    Public Sub Bloquear_Objetos_TiposDeCampos()
+        NombreTipoTextBox.Enabled = False
+    End Sub
+#End Region
+#Region "Timer de Botones"
+    'Declaraciones de Timers de Botones
+    Private WithEvents Timer_Guardar_Menu_TiposDeCampos As Timer
+    Private WithEvents Timer_Actualizar_Menu_TiposDeCampos As Timer
+    Private WithEvents Timer_Eliminar_Menu_TiposDeCampos As Timer
+    'Procedimientos del Timer
+    Private Sub Timer_Guardar_TiposDeCampos()
+        Me.Timer_Guardar_Menu_TiposDeCampos = New Timer
+        Timer_Guardar_Menu_TiposDeCampos.Interval = 250
+        Timer_Guardar_Menu_TiposDeCampos.Start()
+    End Sub
+    Private Sub Timer_Actualizar_TiposDeCampos()
+        Me.Timer_Actualizar_Menu_TiposDeCampos = New Timer
+        Timer_Actualizar_Menu_TiposDeCampos.Interval = 500
+        Timer_Actualizar_Menu_TiposDeCampos.Start()
+    End Sub
+    Private Sub Timer_Eliminar_TiposDeCampos()
+        Me.Timer_Eliminar_Menu_TiposDeCampos = New Timer
+        Timer_Eliminar_Menu_TiposDeCampos.Interval = 800
+        Timer_Eliminar_Menu_TiposDeCampos.Start()
+    End Sub
+    'Eventos Tick
+    Private Sub Timer_Guardar_Menu_TiposDeCampos_Tick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Timer_Guardar_Menu_TiposDeCampos.Tick
+        If Guardar_Menu_TiposDeCampos.BackColor = Color.White Then
+            Guardar_Menu_TiposDeCampos.BackColor = Color.Green
+        Else
+            Guardar_Menu_TiposDeCampos.BackColor = Color.White
+        End If
+    End Sub
+    Private Sub Timer_Actualizar_Menu_TiposDeCampos_Tick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Timer_Actualizar_Menu_TiposDeCampos.Tick
+        If Actualizar_Menu_TiposDeCampos.BackColor = Color.White Then
+            Actualizar_Menu_TiposDeCampos.BackColor = Color.Green
+        Else
+            Actualizar_Menu_TiposDeCampos.BackColor = Color.White
+        End If
+    End Sub
+    Private Sub Timer_Eliminar_Menu_TiposDeCampos_Tick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Timer_Eliminar_Menu_TiposDeCampos.Tick
+        If Eliminar_Menu_TiposDeCampos.BackColor = Color.White Then
+            Eliminar_Menu_TiposDeCampos.BackColor = Color.Red
+        Else
+            Eliminar_Menu_TiposDeCampos.BackColor = Color.White
+        End If
+    End Sub
+    'Parar Timer
+    Private Sub Parar_Timer_TiposDeCampos()
+        Me.Timer_Guardar_Menu_TiposDeCampos = New Timer
+        Timer_Guardar_Menu_TiposDeCampos.Stop()
+        Guardar_Menu_TiposDeCampos.BackColor = Color.White
+        Me.Timer_Actualizar_Menu_TiposDeCampos = New Timer
+        Timer_Actualizar_Menu_TiposDeCampos.Stop()
+        Actualizar_Menu_TiposDeCampos.BackColor = Color.White
+        Me.Timer_Eliminar_Menu_TiposDeCampos = New Timer
+        Timer_Eliminar_Menu_TiposDeCampos.Stop()
+        Eliminar_Menu_TiposDeCampos.BackColor = Color.White
+    End Sub
+#End Region
+#Region "Ubicación de Fila"
+    Private WithEvents Timer_Ubicacion_TiposDeCampos As Timer
+    Dim X_TiposDeCampos
+    Private Sub Timer_Ubicar_En_Fila_TiposDeCampos()
+        Me.Timer_Ubicacion_TiposDeCampos = New Timer
+        Timer_Ubicacion_TiposDeCampos.Interval = 100
+        Timer_Ubicacion_TiposDeCampos.Start()
+    End Sub
+    Private Sub SP_TiposDeCampos_BUSQUEDA_SEGUN_PARAMETRO_GrupoTiposIDDataGridView_CellMouseClick(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewCellMouseEventArgs) Handles SP_TiposDeCampos_BUSQUEDA_SEGUN_PARAMETRO_GrupoTiposIDDataGridView.CellMouseClick
+        X_TiposDeCampos = SP_TiposDeCampos_BUSQUEDA_SEGUN_PARAMETRO_GrupoTiposIDDataGridView.CurrentRow.Index
+    End Sub
+    Private Sub Ubicar_En_Fila_TiposDeCampos()
+        Try
+            Me.SP_TiposDeCampos_BUSQUEDA_SEGUN_PARAMETRO_GrupoTiposIDDataGridView.Rows(X_TiposDeCampos).Selected = True
+            Me.SP_TiposDeCampos_BUSQUEDA_SEGUN_PARAMETRO_GrupoTiposIDDataGridView.FirstDisplayedScrollingRowIndex = X_TiposDeCampos
+        Catch ex As Exception
+        End Try
+    End Sub
+    Private Sub Timer_Ubicacion_TiposDeCampos_Tick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Timer_Ubicacion_TiposDeCampos.Tick
+        Ubicar_En_Fila_TiposDeCampos()
+        Timer_Ubicacion_TiposDeCampos.Stop()
+    End Sub
+    Private Sub GrupoTiposIDTextBox1_TextChanged(sender As Object, e As EventArgs) Handles GrupoTiposIDTextBox1.TextChanged
+        SP_TiposDeCampos_BUSQUEDA_SEGUN_PARAMETRO_GrupoTiposID()
+    End Sub
+#End Region
+
+#End Region
+    Private Sub Label4_Click(sender As Object, e As EventArgs)
+
+    End Sub
 
 
 
