@@ -16,6 +16,8 @@
             SP_RequerimientosPlantillas_BUSQUEDA_SEGUN_PARAMETRO_PlantillaID()
             SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID()
             Cancelar_TablasDeProyecto()
+            SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaID()
+            Cancelar_CamposDeTablas()
         Catch ex As System.Exception
             System.Windows.Forms.MessageBox.Show(ex.Message)
         End Try
@@ -119,7 +121,7 @@
         While contadorComponentes > 0
             'Se ubica en la primera fila
             SP_Componentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView.CurrentCell = SP_Componentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView.Rows(0).Cells(0)
-            CodigoGeneradoTextBox.Text = CodigoGeneradoTextBox.Text & vbCrLf & NombreTecnologiaTextBox1.Text & vbCrLf & NombreComponenteTextBox.Text & vbCrLf & CodigoTextBox.Text & vbCrLf & "++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++" & vbCrLf
+            CodigoGeneradoTextBox.Text = CodigoGeneradoTextBox.Text & vbCrLf & "                      " & NombreTecnologiaTextBox1.Text & vbCrLf & NombreComponenteTextBox.Text & vbCrLf & CodigoTextBox.Text & vbCrLf & "++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++" & vbCrLf
             SP_Componentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView.Rows.RemoveAt(0)
             contadorComponentes = contadorComponentes - 1
         End While
@@ -129,6 +131,9 @@
     Public Sub RemplazarEnResultado(textoBase As String)
         If InStr(textoBase, "{{{Campos}}}") Then
             GenerarCampos()
+        End If
+        If InStr(textoBase, "{{{Tabla}}}") Then
+            GenerarTabla()
         End If
         Dim contadorRequerimientos = SP_RegistroValorRequerimientos_SEGUN_ProyectoIDDataGridView.Rows.Count
         While contadorRequerimientos > 0
@@ -153,7 +158,25 @@
         End Try
     End Sub
     Public Sub GenerarCampos()
-        MsgBox("Ingresar los Campos")
+        Dim contadorCampos = SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaIDDataGridView.Rows.Count
+        Dim Campos As String = ""
+        While contadorCampos > 0
+            'Se ubica en la primera fila
+            SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaIDDataGridView.CurrentCell = SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaIDDataGridView.Rows(0).Cells(0)
+            If SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaIDDataGridView.Rows.Count > 1 Then
+                Campos = Campos + NombreCampoTextBox.Text + "," & vbCrLf
+            Else
+                Campos = Campos + NombreCampoTextBox.Text
+            End If
+            SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaIDDataGridView.Rows.RemoveAt(0)
+            contadorCampos = contadorCampos - 1
+        End While
+        CodigoGeneradoTextBox.Text = CodigoGeneradoTextBox.Text.Replace("{{{Campos}}}", Campos)
+        SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaID()
+        SP_Proyectos_EDICION_ACTUALIZAR_CodigoRemplazado()
+    End Sub
+    Public Sub GenerarTabla()
+        MsgBox("Imprimir Tabla")
     End Sub
 
 #Region "Procedimientos"
@@ -791,8 +814,287 @@
     Private Sub GrupoTiposIDTextBox_TextChanged(sender As Object, e As EventArgs) Handles GrupoTiposIDTextBox.TextChanged
         SP_TiposDeCampos_BUSQUEDA_SEGUN_PARAMETRO_GrupoTiposID()
     End Sub
+
+
 #End Region
 
 #End Region
+
+
+
+#Region "Procedimientos"
+    Private Sub SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaID()
+        Try
+            If TablaIDTextBox.Text = "" Then
+                TablaIDTextBox.Text = "0"
+                Me.SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaIDTableAdapter.Fill(Me.DataSetTablasYCampos.SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaID, New System.Nullable(Of Integer)(CType(TablaIDTextBox.Text, Integer)))
+            Else
+                Me.SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaIDTableAdapter.Fill(Me.DataSetTablasYCampos.SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaID, New System.Nullable(Of Integer)(CType(TablaIDTextBox.Text, Integer)))
+            End If
+        Catch ex As System.Exception
+            'System.Windows.Forms.MessageBox.Show(ex.Message)
+        End Try
+    End Sub
+    Sub Cancelar_CamposDeTablas()
+        'Botones Del Menu
+        Nuevo_Menu_CamposDeTablas.Enabled = True
+        Guardar_Menu_CamposDeTablas.Enabled = False
+        Editar_Menu_CamposDeTablas.Enabled = True
+        Actualizar_Menu_CamposDeTablas.Enabled = False
+        Eliminar_Menu_CamposDeTablas.Enabled = False
+        'Grid
+        SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaIDDataGridView.Enabled = True
+        'Cargar Datos de Tabla Actualizados
+        SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaID()
+        Bloquear_Objetos_CamposDeTablas()
+        Parar_Timer_CamposDeTablas()
+        Timer_Ubicar_En_Fila_CamposDeTablas()
+    End Sub
+    'Insertar
+    Private Sub SP_CamposDeTablas_EDICION_INSERTAR()
+        Try
+            Me.SP_CamposDeTablas_EDICION_INSERTARTableAdapter.Fill(Me.DataSetTablasYCampos.SP_CamposDeTablas_EDICION_INSERTAR,
+                                                 New System.Nullable(Of Integer)(CType(TablaIDTextBox.Text, Integer)),
+                                                 Cbo_TipoDato.Text,
+                                                 NombreCampoTextBox.Text)
+            SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaID()
+            MsgBox("El Dato Fue Guardado Exitosamente", MsgBoxStyle.Information, "Guardar Dato")
+        Catch ex As System.Exception
+            System.Windows.Forms.MessageBox.Show(ex.Message)
+        End Try
+    End Sub
+    'Actualizar
+    Private Sub SP_CamposDeTablas_EDICION_ACTUALIZAR()
+        Try
+            Me.SP_CamposDeTablas_EDICION_ACTUALIZARTableAdapter.Fill(Me.DataSetTablasYCampos.SP_CamposDeTablas_EDICION_ACTUALIZAR,
+                                                 New System.Nullable(Of Integer)(CType(CampoIDTextBox.Text, Integer)),
+                                                 New System.Nullable(Of Integer)(CType(TablaIDTextBox.Text, Integer)),
+                                                 Cbo_TipoDato.Text,
+                                                 NombreCampoTextBox.Text)
+            SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaID()
+            MsgBox("El Dato Fue Actualizado Exitosamente", MsgBoxStyle.Information, "Actualizar Dato")
+        Catch ex As System.Exception
+            System.Windows.Forms.MessageBox.Show(ex.Message)
+        End Try
+    End Sub
+    'Eliminar
+    Private Sub SP_CamposDeTablas_EDICION_ELIMINAR()
+        Try
+            Me.SP_CamposDeTablas_EDICION_ELIMINARTableAdapter.Fill(Me.DataSetTablasYCampos.SP_CamposDeTablas_EDICION_ELIMINAR, New System.Nullable(Of Long)(CType(CampoIDTextBox.Text, Long)))
+            SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaID()
+            MsgBox("El Dato Fue Eliminado Exitosamente de la Base de Datos", MsgBoxStyle.Information, "Eliminación de Dato")
+        Catch ex As System.Exception
+            System.Windows.Forms.MessageBox.Show(ex.Message)
+        End Try
+    End Sub
+#End Region
+#Region "Menus"
+    'Nuevo 
+    Private Sub Nuevo_Menu_CamposDeTablas_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Nuevo_Menu_CamposDeTablas.Click
+        Nuevo_Menu_CamposDeTablas.Enabled = False
+        Editar_Menu_CamposDeTablas.Enabled = False
+        SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaIDDataGridView.Enabled = False
+        Limpiar_Objetos_CamposDeTablas()
+        NombreCampoTextBox.Enabled = True
+        NombreCampoTextBox.Focus()
+    End Sub
+    'Guardar
+    Private Sub Guardar_Menu_CamposDeTablas_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Guardar_Menu_CamposDeTablas.Click
+        Control_Nulos_CamposDeTablas()
+
+        If ControlNulos.Text = "" Then ' Then
+            SP_CamposDeTablas_EDICION_INSERTAR()
+            Cancelar_CamposDeTablas()
+            Parar_Timer_CamposDeTablas()
+        End If
+    End Sub
+    'Editar
+    Private Sub Editar_Menu_CamposDeTablas_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Editar_Menu_CamposDeTablas.Click
+        Nuevo_Menu_CamposDeTablas.Enabled = False
+        Guardar_Menu_CamposDeTablas.Enabled = False
+        Editar_Menu_CamposDeTablas.Enabled = False
+        Actualizar_Menu_CamposDeTablas.Enabled = True
+        Eliminar_Menu_CamposDeTablas.Enabled = True
+        SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaIDDataGridView.Enabled = False
+        Desbloquear_Objetos_CamposDeTablas()
+        Timer_Actualizar_CamposDeTablas()
+        Timer_Eliminar_CamposDeTablas()
+    End Sub
+    'Actualizar
+    Private Sub Actualizar_Menu_CamposDeTablas_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Actualizar_Menu_CamposDeTablas.Click
+        Control_Nulos_CamposDeTablas()
+
+        If ControlNulos.Text = "" Then ' Then
+            SP_CamposDeTablas_EDICION_ACTUALIZAR()
+            Cancelar_CamposDeTablas()
+            Parar_Timer_CamposDeTablas()
+        End If
+    End Sub
+    Private Sub Eliminar_Menu_CamposDeTablas_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Eliminar_Menu_CamposDeTablas.Click
+        If MsgBox("Desea Eliminar Este Dato?", MsgBoxStyle.YesNo) = MsgBoxResult.Yes Then
+            SP_CamposDeTablas_EDICION_ELIMINAR()
+            Cancelar_CamposDeTablas()
+            Parar_Timer_CamposDeTablas()
+        Else
+            MsgBox("Se Cancelo la Eliminación del Dato", MsgBoxStyle.Information)
+            Cancelar_CamposDeTablas()
+        End If
+    End Sub
+    'Cancelar
+    Private Sub Cancelar_Menu_CamposDeTablas_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Cancelar_Menu_CamposDeTablas.Click
+        Cancelar_CamposDeTablas()
+    End Sub
+#End Region
+#Region "Eventos sobre Objetos "
+    'Control de Nulos
+    Public Sub Control_Nulos_CamposDeTablas()
+        ControlNulos.Text = "" '
+        Select Case ControlNulos.Text = "" '
+            Case TablaIDTextBox.Text = ""
+                MsgBox("El nombre del campo: TablaID; Esta vacio, Favor Verificar", MsgBoxStyle.Critical)
+                TablaIDTextBox.BackColor = Color.Beige
+                ControlNulos.Text = "1"
+            Case Cbo_TipoDato.Text = ""
+                MsgBox("El nombre del campo: TablaID; Esta vacio, Favor Verificar", MsgBoxStyle.Critical)
+                Cbo_TipoDato.BackColor = Color.Beige
+                ControlNulos.Text = "1"
+            Case NombreCampoTextBox.Text = ""
+                MsgBox("El nombre del campo: NombreCampo; Esta vacio, Favor Verificar", MsgBoxStyle.Critical)
+                NombreCampoTextBox.BackColor = Color.Beige
+                ControlNulos.Text = "1"
+            Case Else
+                ControlNulos.Text = "" '
+        End Select
+    End Sub
+    Private Sub NombreCampoTextBox_KeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles NombreCampoTextBox.KeyPress
+        If Asc(e.KeyChar) = 13 Then
+            If NombreCampoTextBox.Text = "" Then
+                MsgBox("Dato Obligatorio, Favor Verificar", MsgBoxStyle.Critical, "Validación de Datos")
+                NombreCampoTextBox.Text = ""
+                NombreCampoTextBox.Focus()
+            Else
+                Cbo_TipoDato.Enabled = True
+                Cbo_TipoDato.Focus()
+            End If
+        End If
+    End Sub
+    Private Sub Cbo_TipoDato_KeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles Cbo_TipoDato.KeyPress
+        If Asc(e.KeyChar) = 13 Then
+            If Actualizar_Menu_CamposDeTablas.Enabled = True Then
+                Actualizar_Menu_CamposDeTablas.Enabled = True
+                Eliminar_Menu_CamposDeTablas.Enabled = True
+            Else
+                If Cbo_TipoDato.Text = "" Then
+                    MsgBox("Dato Obligatorio, Favor Verificar", MsgBoxStyle.Critical, "Validación de Datos")
+                    Cbo_TipoDato.Text = ""
+                    Cbo_TipoDato.Focus()
+                Else
+                    MsgBox("La Información Ya puede ser Guardada el Icono de Guardado queda habilitado", MsgBoxStyle.Information, "Guardar los Datos")
+                    Guardar_Menu_CamposDeTablas.Enabled = True
+                    Timer_Guardar_CamposDeTablas()
+                End If
+            End If
+        End If
+    End Sub
+    Public Sub Limpiar_Objetos_CamposDeTablas()
+        NombreCampoTextBox.Text = "" ''
+        Cbo_TipoDato.Text = ""
+    End Sub
+    Public Sub Desbloquear_Objetos_CamposDeTablas()
+        NombreCampoTextBox.Enabled = True
+        Cbo_TipoDato.Enabled = True
+    End Sub
+    Public Sub Bloquear_Objetos_CamposDeTablas()
+        NombreCampoTextBox.Enabled = False
+        Cbo_TipoDato.Enabled = False
+    End Sub
+#End Region
+#Region "Timer de Botones"
+    'Declaraciones de Timers de Botones
+    Private WithEvents Timer_Guardar_Menu_CamposDeTablas As Timer
+    Private WithEvents Timer_Actualizar_Menu_CamposDeTablas As Timer
+    Private WithEvents Timer_Eliminar_Menu_CamposDeTablas As Timer
+    'Procedimientos del Timer
+    Private Sub Timer_Guardar_CamposDeTablas()
+        Me.Timer_Guardar_Menu_CamposDeTablas = New Timer
+        Timer_Guardar_Menu_CamposDeTablas.Interval = 250
+        Timer_Guardar_Menu_CamposDeTablas.Start()
+    End Sub
+    Private Sub Timer_Actualizar_CamposDeTablas()
+        Me.Timer_Actualizar_Menu_CamposDeTablas = New Timer
+        Timer_Actualizar_Menu_CamposDeTablas.Interval = 500
+        Timer_Actualizar_Menu_CamposDeTablas.Start()
+    End Sub
+    Private Sub Timer_Eliminar_CamposDeTablas()
+        Me.Timer_Eliminar_Menu_CamposDeTablas = New Timer
+        Timer_Eliminar_Menu_CamposDeTablas.Interval = 800
+        Timer_Eliminar_Menu_CamposDeTablas.Start()
+    End Sub
+    'Eventos Tick
+    Private Sub Timer_Guardar_Menu_CamposDeTablas_Tick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Timer_Guardar_Menu_CamposDeTablas.Tick
+        If Guardar_Menu_CamposDeTablas.BackColor = Color.White Then
+            Guardar_Menu_CamposDeTablas.BackColor = Color.Green
+        Else
+            Guardar_Menu_CamposDeTablas.BackColor = Color.White
+        End If
+    End Sub
+    Private Sub Timer_Actualizar_Menu_CamposDeTablas_Tick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Timer_Actualizar_Menu_CamposDeTablas.Tick
+        If Actualizar_Menu_CamposDeTablas.BackColor = Color.White Then
+            Actualizar_Menu_CamposDeTablas.BackColor = Color.Green
+        Else
+            Actualizar_Menu_CamposDeTablas.BackColor = Color.White
+        End If
+    End Sub
+    Private Sub Timer_Eliminar_Menu_CamposDeTablas_Tick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Timer_Eliminar_Menu_CamposDeTablas.Tick
+        If Eliminar_Menu_CamposDeTablas.BackColor = Color.White Then
+            Eliminar_Menu_CamposDeTablas.BackColor = Color.Red
+        Else
+            Eliminar_Menu_CamposDeTablas.BackColor = Color.White
+        End If
+    End Sub
+    'Parar Timer
+    Private Sub Parar_Timer_CamposDeTablas()
+        Me.Timer_Guardar_Menu_CamposDeTablas = New Timer
+        Timer_Guardar_Menu_CamposDeTablas.Stop()
+        Guardar_Menu_CamposDeTablas.BackColor = Color.White
+        Me.Timer_Actualizar_Menu_CamposDeTablas = New Timer
+        Timer_Actualizar_Menu_CamposDeTablas.Stop()
+        Actualizar_Menu_CamposDeTablas.BackColor = Color.White
+        Me.Timer_Eliminar_Menu_CamposDeTablas = New Timer
+        Timer_Eliminar_Menu_CamposDeTablas.Stop()
+        Eliminar_Menu_CamposDeTablas.BackColor = Color.White
+    End Sub
+#End Region
+#Region "Ubicación de Fila"
+    Private WithEvents Timer_Ubicacion_CamposDeTablas As Timer
+    Dim X_CamposDeTablas
+    Private Sub Timer_Ubicar_En_Fila_CamposDeTablas()
+        Me.Timer_Ubicacion_CamposDeTablas = New Timer
+        Timer_Ubicacion_CamposDeTablas.Interval = 100
+        Timer_Ubicacion_CamposDeTablas.Start()
+    End Sub
+    Private Sub SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaIDDataGridView_CellMouseClick(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewCellMouseEventArgs) Handles SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaIDDataGridView.CellMouseClick
+        X_CamposDeTablas = SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaIDDataGridView.CurrentRow.Index
+    End Sub
+    Private Sub Ubicar_En_Fila_CamposDeTablas()
+        Try
+            Me.SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaIDDataGridView.Rows(X_CamposDeTablas).Selected = True
+            Me.SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaIDDataGridView.FirstDisplayedScrollingRowIndex = X_CamposDeTablas
+        Catch ex As Exception
+        End Try
+    End Sub
+    Private Sub Timer_Ubicacion_CamposDeTablas_Tick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Timer_Ubicacion_CamposDeTablas.Tick
+        Ubicar_En_Fila_CamposDeTablas()
+        Timer_Ubicacion_CamposDeTablas.Stop()
+    End Sub
+    Private Sub TablaIDTextBox_TextChanged_1(sender As Object, e As EventArgs) Handles TablaIDTextBox.TextChanged
+        SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaID()
+    End Sub
+
+    Private Sub TipoTextBox_TextChanged(sender As Object, e As EventArgs) Handles TipoTextBox.TextChanged
+        Cbo_TipoDato.Text = TipoTextBox.Text
+    End Sub
+#End Region
+
 
 End Class

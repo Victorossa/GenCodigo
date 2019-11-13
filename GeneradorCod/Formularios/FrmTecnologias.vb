@@ -1480,11 +1480,11 @@
     Dim textoCampos As String = "{{{Campos}}}"
     Dim textoTabla As String = "{{{Tabla}}}"
     Private Sub BtnImprimeTabla_Click(sender As Object, e As EventArgs) Handles BtnImprimeTabla.Click
-        ContenidoComponenteRichTextBox.Text = ContenidoComponenteRichTextBox.Text + textoCampos
+        Me.ContenidoComponenteRichTextBox.Text = Me.ContenidoComponenteRichTextBox.Text.Insert(Me.ContenidoComponenteRichTextBox.SelectionStart, "{{{Tabla}}}")
     End Sub
 
     Private Sub BtnImprimeCampos_Click(sender As Object, e As EventArgs) Handles BtnImprimeCampos.Click
-        ContenidoComponenteRichTextBox.Text = ContenidoComponenteRichTextBox.Text + textoTabla
+        Me.ContenidoComponenteRichTextBox.Text = Me.ContenidoComponenteRichTextBox.Text.Insert(Me.ContenidoComponenteRichTextBox.SelectionStart, "{{{Campos}}}")
     End Sub
 
 
