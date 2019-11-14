@@ -9961,7 +9961,6 @@ Namespace DataSetAdministracionTableAdapters
             Me._adapter.InsertCommand.CommandType = Global.System.Data.CommandType.StoredProcedure
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@RETURN_VALUE", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.ReturnValue, 10, 0, Nothing, Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@TecnologiaID", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 10, 0, "", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@GrupoTiposID", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 10, 0, "", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@NombrePlantilla", Global.System.Data.SqlDbType.VarChar, 100, Global.System.Data.ParameterDirection.Input, 0, 0, "", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
         End Sub
         
@@ -9982,7 +9981,6 @@ Namespace DataSetAdministracionTableAdapters
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.StoredProcedure
             Me._commandCollection(0).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@RETURN_VALUE", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.ReturnValue, 10, 0, Nothing, Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(0).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@TecnologiaID", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 10, 0, Nothing, Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._commandCollection(0).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@GrupoTiposID", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 10, 0, Nothing, Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(0).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@NombrePlantilla", Global.System.Data.SqlDbType.VarChar, 100, Global.System.Data.ParameterDirection.Input, 0, 0, Nothing, Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
         End Sub
         
@@ -9990,22 +9988,17 @@ Namespace DataSetAdministracionTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, true)>  _
-        Public Overloads Overridable Function Fill(ByVal dataTable As DataSetAdministracion.SP_Plantillas_EDICION_INSERTARDataTable, ByVal TecnologiaID As Global.System.Nullable(Of Integer), ByVal GrupoTiposID As Global.System.Nullable(Of Integer), ByVal NombrePlantilla As String) As Integer
+        Public Overloads Overridable Function Fill(ByVal dataTable As DataSetAdministracion.SP_Plantillas_EDICION_INSERTARDataTable, ByVal TecnologiaID As Global.System.Nullable(Of Integer), ByVal NombrePlantilla As String) As Integer
             Me.Adapter.SelectCommand = Me.CommandCollection(0)
             If (TecnologiaID.HasValue = true) Then
                 Me.Adapter.SelectCommand.Parameters(1).Value = CType(TecnologiaID.Value,Integer)
             Else
                 Me.Adapter.SelectCommand.Parameters(1).Value = Global.System.DBNull.Value
             End If
-            If (GrupoTiposID.HasValue = true) Then
-                Me.Adapter.SelectCommand.Parameters(2).Value = CType(GrupoTiposID.Value,Integer)
-            Else
-                Me.Adapter.SelectCommand.Parameters(2).Value = Global.System.DBNull.Value
-            End If
             If (NombrePlantilla Is Nothing) Then
-                Me.Adapter.SelectCommand.Parameters(3).Value = Global.System.DBNull.Value
+                Me.Adapter.SelectCommand.Parameters(2).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.SelectCommand.Parameters(3).Value = CType(NombrePlantilla,String)
+                Me.Adapter.SelectCommand.Parameters(2).Value = CType(NombrePlantilla,String)
             End If
             If (Me.ClearBeforeFill = true) Then
                 dataTable.Clear
@@ -10018,22 +10011,17 @@ Namespace DataSetAdministracionTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], true)>  _
-        Public Overloads Overridable Function GetData(ByVal TecnologiaID As Global.System.Nullable(Of Integer), ByVal GrupoTiposID As Global.System.Nullable(Of Integer), ByVal NombrePlantilla As String) As DataSetAdministracion.SP_Plantillas_EDICION_INSERTARDataTable
+        Public Overloads Overridable Function GetData(ByVal TecnologiaID As Global.System.Nullable(Of Integer), ByVal NombrePlantilla As String) As DataSetAdministracion.SP_Plantillas_EDICION_INSERTARDataTable
             Me.Adapter.SelectCommand = Me.CommandCollection(0)
             If (TecnologiaID.HasValue = true) Then
                 Me.Adapter.SelectCommand.Parameters(1).Value = CType(TecnologiaID.Value,Integer)
             Else
                 Me.Adapter.SelectCommand.Parameters(1).Value = Global.System.DBNull.Value
             End If
-            If (GrupoTiposID.HasValue = true) Then
-                Me.Adapter.SelectCommand.Parameters(2).Value = CType(GrupoTiposID.Value,Integer)
-            Else
-                Me.Adapter.SelectCommand.Parameters(2).Value = Global.System.DBNull.Value
-            End If
             If (NombrePlantilla Is Nothing) Then
-                Me.Adapter.SelectCommand.Parameters(3).Value = Global.System.DBNull.Value
+                Me.Adapter.SelectCommand.Parameters(2).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.SelectCommand.Parameters(3).Value = CType(NombrePlantilla,String)
+                Me.Adapter.SelectCommand.Parameters(2).Value = CType(NombrePlantilla,String)
             End If
             Dim dataTable As DataSetAdministracion.SP_Plantillas_EDICION_INSERTARDataTable = New DataSetAdministracion.SP_Plantillas_EDICION_INSERTARDataTable()
             Me.Adapter.Fill(dataTable)
@@ -10072,21 +10060,16 @@ Namespace DataSetAdministracionTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Insert, true)>  _
-        Public Overloads Overridable Function Insert(ByVal TecnologiaID As Global.System.Nullable(Of Integer), ByVal GrupoTiposID As Global.System.Nullable(Of Integer), ByVal NombrePlantilla As String) As Integer
+        Public Overloads Overridable Function Insert(ByVal TecnologiaID As Global.System.Nullable(Of Integer), ByVal NombrePlantilla As String) As Integer
             If (TecnologiaID.HasValue = true) Then
                 Me.Adapter.InsertCommand.Parameters(1).Value = CType(TecnologiaID.Value,Integer)
             Else
                 Me.Adapter.InsertCommand.Parameters(1).Value = Global.System.DBNull.Value
             End If
-            If (GrupoTiposID.HasValue = true) Then
-                Me.Adapter.InsertCommand.Parameters(2).Value = CType(GrupoTiposID.Value,Integer)
-            Else
-                Me.Adapter.InsertCommand.Parameters(2).Value = Global.System.DBNull.Value
-            End If
             If (NombrePlantilla Is Nothing) Then
-                Me.Adapter.InsertCommand.Parameters(3).Value = Global.System.DBNull.Value
+                Me.Adapter.InsertCommand.Parameters(2).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.InsertCommand.Parameters(3).Value = CType(NombrePlantilla,String)
+                Me.Adapter.InsertCommand.Parameters(2).Value = CType(NombrePlantilla,String)
             End If
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.InsertCommand.Connection.State
             If ((Me.Adapter.InsertCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
@@ -10235,7 +10218,6 @@ Namespace DataSetAdministracionTableAdapters
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@RETURN_VALUE", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.ReturnValue, 10, 0, Nothing, Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@PlantillaID", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 10, 0, "", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@TecnologiaID", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 10, 0, "", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@GrupoTiposID", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 10, 0, "", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@NombrePlantilla", Global.System.Data.SqlDbType.VarChar, 100, Global.System.Data.ParameterDirection.Input, 0, 0, "", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
         End Sub
         
@@ -10257,7 +10239,6 @@ Namespace DataSetAdministracionTableAdapters
             Me._commandCollection(0).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@RETURN_VALUE", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.ReturnValue, 10, 0, Nothing, Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(0).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@PlantillaID", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 10, 0, Nothing, Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(0).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@TecnologiaID", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 10, 0, Nothing, Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._commandCollection(0).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@GrupoTiposID", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 10, 0, Nothing, Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(0).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@NombrePlantilla", Global.System.Data.SqlDbType.VarChar, 100, Global.System.Data.ParameterDirection.Input, 0, 0, Nothing, Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
         End Sub
         
@@ -10265,7 +10246,7 @@ Namespace DataSetAdministracionTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, true)>  _
-        Public Overloads Overridable Function Fill(ByVal dataTable As DataSetAdministracion.SP_Plantillas_EDICION_ACTUALIZARDataTable, ByVal PlantillaID As Global.System.Nullable(Of Integer), ByVal TecnologiaID As Global.System.Nullable(Of Integer), ByVal GrupoTiposID As Global.System.Nullable(Of Integer), ByVal NombrePlantilla As String) As Integer
+        Public Overloads Overridable Function Fill(ByVal dataTable As DataSetAdministracion.SP_Plantillas_EDICION_ACTUALIZARDataTable, ByVal PlantillaID As Global.System.Nullable(Of Integer), ByVal TecnologiaID As Global.System.Nullable(Of Integer), ByVal NombrePlantilla As String) As Integer
             Me.Adapter.SelectCommand = Me.CommandCollection(0)
             If (PlantillaID.HasValue = true) Then
                 Me.Adapter.SelectCommand.Parameters(1).Value = CType(PlantillaID.Value,Integer)
@@ -10277,15 +10258,10 @@ Namespace DataSetAdministracionTableAdapters
             Else
                 Me.Adapter.SelectCommand.Parameters(2).Value = Global.System.DBNull.Value
             End If
-            If (GrupoTiposID.HasValue = true) Then
-                Me.Adapter.SelectCommand.Parameters(3).Value = CType(GrupoTiposID.Value,Integer)
-            Else
-                Me.Adapter.SelectCommand.Parameters(3).Value = Global.System.DBNull.Value
-            End If
             If (NombrePlantilla Is Nothing) Then
-                Me.Adapter.SelectCommand.Parameters(4).Value = Global.System.DBNull.Value
+                Me.Adapter.SelectCommand.Parameters(3).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.SelectCommand.Parameters(4).Value = CType(NombrePlantilla,String)
+                Me.Adapter.SelectCommand.Parameters(3).Value = CType(NombrePlantilla,String)
             End If
             If (Me.ClearBeforeFill = true) Then
                 dataTable.Clear
@@ -10298,7 +10274,7 @@ Namespace DataSetAdministracionTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], true)>  _
-        Public Overloads Overridable Function GetData(ByVal PlantillaID As Global.System.Nullable(Of Integer), ByVal TecnologiaID As Global.System.Nullable(Of Integer), ByVal GrupoTiposID As Global.System.Nullable(Of Integer), ByVal NombrePlantilla As String) As DataSetAdministracion.SP_Plantillas_EDICION_ACTUALIZARDataTable
+        Public Overloads Overridable Function GetData(ByVal PlantillaID As Global.System.Nullable(Of Integer), ByVal TecnologiaID As Global.System.Nullable(Of Integer), ByVal NombrePlantilla As String) As DataSetAdministracion.SP_Plantillas_EDICION_ACTUALIZARDataTable
             Me.Adapter.SelectCommand = Me.CommandCollection(0)
             If (PlantillaID.HasValue = true) Then
                 Me.Adapter.SelectCommand.Parameters(1).Value = CType(PlantillaID.Value,Integer)
@@ -10310,15 +10286,10 @@ Namespace DataSetAdministracionTableAdapters
             Else
                 Me.Adapter.SelectCommand.Parameters(2).Value = Global.System.DBNull.Value
             End If
-            If (GrupoTiposID.HasValue = true) Then
-                Me.Adapter.SelectCommand.Parameters(3).Value = CType(GrupoTiposID.Value,Integer)
-            Else
-                Me.Adapter.SelectCommand.Parameters(3).Value = Global.System.DBNull.Value
-            End If
             If (NombrePlantilla Is Nothing) Then
-                Me.Adapter.SelectCommand.Parameters(4).Value = Global.System.DBNull.Value
+                Me.Adapter.SelectCommand.Parameters(3).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.SelectCommand.Parameters(4).Value = CType(NombrePlantilla,String)
+                Me.Adapter.SelectCommand.Parameters(3).Value = CType(NombrePlantilla,String)
             End If
             Dim dataTable As DataSetAdministracion.SP_Plantillas_EDICION_ACTUALIZARDataTable = New DataSetAdministracion.SP_Plantillas_EDICION_ACTUALIZARDataTable()
             Me.Adapter.Fill(dataTable)
@@ -10357,7 +10328,7 @@ Namespace DataSetAdministracionTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
-        Public Overloads Overridable Function Update(ByVal PlantillaID As Global.System.Nullable(Of Integer), ByVal TecnologiaID As Global.System.Nullable(Of Integer), ByVal GrupoTiposID As Global.System.Nullable(Of Integer), ByVal NombrePlantilla As String) As Integer
+        Public Overloads Overridable Function Update(ByVal PlantillaID As Global.System.Nullable(Of Integer), ByVal TecnologiaID As Global.System.Nullable(Of Integer), ByVal NombrePlantilla As String) As Integer
             If (PlantillaID.HasValue = true) Then
                 Me.Adapter.UpdateCommand.Parameters(1).Value = CType(PlantillaID.Value,Integer)
             Else
@@ -10368,15 +10339,10 @@ Namespace DataSetAdministracionTableAdapters
             Else
                 Me.Adapter.UpdateCommand.Parameters(2).Value = Global.System.DBNull.Value
             End If
-            If (GrupoTiposID.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(3).Value = CType(GrupoTiposID.Value,Integer)
-            Else
-                Me.Adapter.UpdateCommand.Parameters(3).Value = Global.System.DBNull.Value
-            End If
             If (NombrePlantilla Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(4).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(3).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(4).Value = CType(NombrePlantilla,String)
+                Me.Adapter.UpdateCommand.Parameters(3).Value = CType(NombrePlantilla,String)
             End If
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.UpdateCommand.Connection.State
             If ((Me.Adapter.UpdateCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _

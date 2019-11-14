@@ -22,8 +22,16 @@
             System.Windows.Forms.MessageBox.Show(ex.Message)
         End Try
     End Sub
-    Private Sub TecnologiaIDTextBox_TextChanged(sender As Object, e As EventArgs) Handles TecnologiaIDTextBox.TextChanged
-        SP_Plantillas_BUSQUEDA_SEGUN_PARAMETRO_Tecnologia_2()
+    Private Sub TecnologiaIDTextBox_TextChanged_1(sender As Object, e As EventArgs) Handles TecnologiaIDTextBox.TextChanged
+        SP_Plantillas_BUSQUEDA_SEGUN_PARAMETRO_Tecnologia_3()
+    End Sub
+    Private Sub SP_Plantillas_BUSQUEDA_SEGUN_PARAMETRO_Tecnologia_3()
+        Try
+            Me.SP_Plantillas_BUSQUEDA_SEGUN_PARAMETRO_TecnologiaTableAdapter.Fill(Me.DataSetAdministracion.SP_Plantillas_BUSQUEDA_SEGUN_PARAMETRO_Tecnologia, New System.Nullable(Of Integer)(CType(TecnologiaIDTextBox.Text, Integer)))
+        Catch ex As System.Exception
+            'System.Windows.Forms.MessageBox.Show(ex.Message)
+        End Try
+
     End Sub
     Private Sub PlantillaIDTextBox_TextChanged(sender As Object, e As EventArgs) Handles PlantillaIDTextBox.TextChanged
         SP_Componentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaID()
@@ -45,9 +53,12 @@
         End Try
 
     End Sub
+    Private Sub PlantillaIDTextBox1_TextChanged(sender As Object, e As EventArgs) Handles PlantillaIDTextBox1.TextChanged
+        SP_Plantillas_BUSQUEDA_SEGUN_PARAMETRO_Tecnologia_2()
+    End Sub
     Private Sub SP_Componentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaID()
         Try
-            Me.SP_Componentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDTableAdapter.Fill(Me.DataSetAdministracion.SP_Componentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaID, New System.Nullable(Of Integer)(CType(PlantillaIDTextBox.Text, Integer)))
+            Me.SP_Componentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDTableAdapter.Fill(Me.DataSetAdministracion.SP_Componentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaID, New System.Nullable(Of Integer)(CType(PlantillaIDTextBox1.Text, Integer)))
         Catch ex As System.Exception
             'System.Windows.Forms.MessageBox.Show(ex.Message)
         End Try
@@ -106,8 +117,9 @@
     Private Sub BtnRemplazar_Click(sender As Object, e As EventArgs) Handles BtnRemplazar.Click
         'Limpia
         CodigoGeneradoTextBox.Text = ""
+        'Cuenta las tecnologias aplicadas al proyecto
         Dim contadorTecnologiasAplicadas = SP_CARGA_TECNOLOGIAS_APLICADAS_A_PROYECTODataGridView.Rows.Count()
-        'Recorrera para hacer los replace en las plantillas
+        'Recorre el grid con las tecnologias aplicadas
         While contadorTecnologiasAplicadas > 0
             'Se ubica en la primera fila
             SP_CARGA_TECNOLOGIAS_APLICADAS_A_PROYECTODataGridView.CurrentCell = SP_CARGA_TECNOLOGIAS_APLICADAS_A_PROYECTODataGridView.Rows(0).Cells(0)
@@ -115,6 +127,7 @@
             SP_CARGA_TECNOLOGIAS_APLICADAS_A_PROYECTODataGridView.Rows.RemoveAt(0)
             contadorTecnologiasAplicadas = contadorTecnologiasAplicadas - 1
         End While
+        SP_CARGA_TECNOLOGIAS_APLICADAS_A_PROYECTO()
     End Sub
     Public Sub RecorrerComponentesHaciendoReplace()
         Dim contadorComponentes = SP_Componentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView.Rows.Count()
@@ -131,9 +144,6 @@
     Public Sub RemplazarEnResultado(textoBase As String)
         If InStr(textoBase, "{{{Campos}}}") Then
             GenerarCampos()
-        End If
-        If InStr(textoBase, "{{{Tabla}}}") Then
-            GenerarTabla()
         End If
         Dim contadorRequerimientos = SP_RegistroValorRequerimientos_SEGUN_ProyectoIDDataGridView.Rows.Count
         While contadorRequerimientos > 0
@@ -174,10 +184,10 @@
         CodigoGeneradoTextBox.Text = CodigoGeneradoTextBox.Text.Replace("{{{Campos}}}", Campos)
         SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaID()
         SP_Proyectos_EDICION_ACTUALIZAR_CodigoRemplazado()
+        SP_CARGA_TECNOLOGIAS_APLICADAS_A_PROYECTO()
     End Sub
-    Public Sub GenerarTabla()
-        MsgBox("Imprimir Tabla")
-    End Sub
+
+
 
 #Region "Procedimientos"
     Sub Cancelar_Proyectos()
@@ -555,9 +565,6 @@
 
 #End Region
 
-    'Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-    '    CodigoGeneradoTextBox.Text = TratamientoText.RemplazosDeClaveValor(SP_RegistroValorRequerimientos_SEGUN_ProyectoIDDataGridView, CodigoGeneradoTextBox.Text)
-    'End Sub
 
 #Region "Administracion Tablas"
 
@@ -802,18 +809,6 @@
         Timer_Ubicacion_TablasDeProyecto.Stop()
     End Sub
 
-    Private Sub SP_TiposDeCampos_BUSQUEDA_SEGUN_PARAMETRO_GrupoTiposID()
-        Try
-            Me.SP_TiposDeCampos_BUSQUEDA_SEGUN_PARAMETRO_GrupoTiposIDTableAdapter.Fill(Me.DataSetTablasYCampos.SP_TiposDeCampos_BUSQUEDA_SEGUN_PARAMETRO_GrupoTiposID, New System.Nullable(Of Integer)(CType(GrupoTiposIDTextBox.Text, Integer)))
-        Catch ex As System.Exception
-            'System.Windows.Forms.MessageBox.Show(ex.Message)
-        End Try
-
-    End Sub
-
-    Private Sub GrupoTiposIDTextBox_TextChanged(sender As Object, e As EventArgs) Handles GrupoTiposIDTextBox.TextChanged
-        SP_TiposDeCampos_BUSQUEDA_SEGUN_PARAMETRO_GrupoTiposID()
-    End Sub
 
 
 #End Region
@@ -1106,6 +1101,22 @@
     Private Sub NombreCampoTextBox_TextChanged(sender As Object, e As EventArgs) Handles NombreCampoTextBox.TextChanged
         SP_CampoComponentes_Segun_Plantilla_TipoTable()
     End Sub
+
+    Private Sub CodigoGeneradoTextBox_MouseDoubleClick(sender As Object, e As MouseEventArgs) Handles CodigoGeneradoTextBox.MouseDoubleClick
+        CodigoGeneradoTextBox.BringToFront()
+        CodigoGeneradoTextBox.Dock = DockStyle.Fill
+    End Sub
+
+    Private Sub CodigoGeneradoTextBox_MouseClick(sender As Object, e As MouseEventArgs) Handles CodigoGeneradoTextBox.MouseClick
+        CodigoGeneradoTextBox.SendToBack()
+        CodigoGeneradoTextBox.Dock = DockStyle.None
+    End Sub
+
+
+
+
+
+
 #End Region
 
 
