@@ -164,9 +164,9 @@
             'Se ubica en la primera fila
             SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaIDDataGridView.CurrentCell = SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaIDDataGridView.Rows(0).Cells(0)
             If SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaIDDataGridView.Rows.Count > 1 Then
-                Campos = Campos + NombreCampoTextBox.Text + "," & vbCrLf
+                Campos = Campos + PrefijoTextBox.Text + NombreCampoTextBox.Text + SufijoTextBox.Text + "," & vbCrLf
             Else
-                Campos = Campos + NombreCampoTextBox.Text
+                Campos = Campos + PrefijoTextBox.Text + NombreCampoTextBox.Text + SufijoTextBox.Text
             End If
             SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaIDDataGridView.Rows.RemoveAt(0)
             contadorCampos = contadorCampos - 1
@@ -1093,6 +1093,18 @@
 
     Private Sub TipoTextBox_TextChanged(sender As Object, e As EventArgs) Handles TipoTextBox.TextChanged
         Cbo_TipoDato.Text = TipoTextBox.Text
+    End Sub
+
+    Private Sub SP_CampoComponentes_Segun_Plantilla_TipoTable()
+        Try
+            Me.SP_CampoComponentes_Segun_Plantilla_TipoTableAdapter.Fill(Me.DataSetTablasYCampos.SP_CampoComponentes_Segun_Plantilla_Tipo, New System.Nullable(Of Integer)(CType(PlantillaIDTextBox.Text, Integer)), TipoTextBox.Text)
+        Catch ex As System.Exception
+            'System.Windows.Forms.MessageBox.Show(ex.Message)
+        End Try
+    End Sub
+
+    Private Sub NombreCampoTextBox_TextChanged(sender As Object, e As EventArgs) Handles NombreCampoTextBox.TextChanged
+        SP_CampoComponentes_Segun_Plantilla_TipoTable()
     End Sub
 #End Region
 

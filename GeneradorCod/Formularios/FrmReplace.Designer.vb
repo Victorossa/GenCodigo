@@ -46,9 +46,13 @@ Partial Class FrmReplace
         Dim GrupoTiposIDLabel As System.Windows.Forms.Label
         Dim CampoIDLabel As System.Windows.Forms.Label
         Dim NombreCampoLabel As System.Windows.Forms.Label
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmReplace))
         Dim TipoLabel As System.Windows.Forms.Label
+        Dim PrefijoLabel As System.Windows.Forms.Label
+        Dim SuperiorLabel As System.Windows.Forms.Label
+        Dim SufijoLabel As System.Windows.Forms.Label
+        Dim InferiorLabel As System.Windows.Forms.Label
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmReplace))
         Me.BtnBuscarYPintar = New System.Windows.Forms.Button()
         Me.SP_RequerimientosPlantillas_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView = New System.Windows.Forms.DataGridView()
         Me.DataGridViewTextBoxColumn5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -177,6 +181,12 @@ Partial Class FrmReplace
         Me.Cbo_TipoDato = New System.Windows.Forms.ComboBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.TipoTextBox = New System.Windows.Forms.TextBox()
+        Me.SP_CampoComponentes_Segun_Plantilla_TipoBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.SP_CampoComponentes_Segun_Plantilla_TipoTableAdapter = New GeneradorCod.DataSetTablasYCamposTableAdapters.SP_CampoComponentes_Segun_Plantilla_TipoTableAdapter()
+        Me.PrefijoTextBox = New System.Windows.Forms.TextBox()
+        Me.SuperiorTextBox = New System.Windows.Forms.TextBox()
+        Me.SufijoTextBox = New System.Windows.Forms.TextBox()
+        Me.InferiorTextBox = New System.Windows.Forms.TextBox()
         RequerimientoPlantillaIDLabel = New System.Windows.Forms.Label()
         ComponenteIDLabel = New System.Windows.Forms.Label()
         PlantillaIDLabel = New System.Windows.Forms.Label()
@@ -201,6 +211,10 @@ Partial Class FrmReplace
         CampoIDLabel = New System.Windows.Forms.Label()
         NombreCampoLabel = New System.Windows.Forms.Label()
         TipoLabel = New System.Windows.Forms.Label()
+        PrefijoLabel = New System.Windows.Forms.Label()
+        SuperiorLabel = New System.Windows.Forms.Label()
+        SufijoLabel = New System.Windows.Forms.Label()
+        InferiorLabel = New System.Windows.Forms.Label()
         CType(Me.SP_RequerimientosPlantillas_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.SP_RequerimientosPlantillas_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DataSetAdministracion, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -243,6 +257,7 @@ Partial Class FrmReplace
         CType(Me.SP_CamposDeTablas_EDICION_ACTUALIZARBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.SP_CamposDeTablas_EDICION_ELIMINARBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.SP_CamposDeTablas_EDICION_INSERTARBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.SP_CampoComponentes_Segun_Plantilla_TipoBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'RequerimientoPlantillaIDLabel
@@ -452,6 +467,51 @@ Partial Class FrmReplace
         NombreCampoLabel.TabIndex = 148
         NombreCampoLabel.Text = "Nombre Campo:"
         '
+        'TipoLabel
+        '
+        TipoLabel.AutoSize = True
+        TipoLabel.Location = New System.Drawing.Point(1203, 555)
+        TipoLabel.Name = "TipoLabel"
+        TipoLabel.Size = New System.Drawing.Size(31, 13)
+        TipoLabel.TabIndex = 151
+        TipoLabel.Text = "Tipo:"
+        '
+        'PrefijoLabel
+        '
+        PrefijoLabel.AutoSize = True
+        PrefijoLabel.Location = New System.Drawing.Point(901, 461)
+        PrefijoLabel.Name = "PrefijoLabel"
+        PrefijoLabel.Size = New System.Drawing.Size(39, 13)
+        PrefijoLabel.TabIndex = 153
+        PrefijoLabel.Text = "Prefijo:"
+        '
+        'SuperiorLabel
+        '
+        SuperiorLabel.AutoSize = True
+        SuperiorLabel.Location = New System.Drawing.Point(954, 429)
+        SuperiorLabel.Name = "SuperiorLabel"
+        SuperiorLabel.Size = New System.Drawing.Size(49, 13)
+        SuperiorLabel.TabIndex = 154
+        SuperiorLabel.Text = "Superior:"
+        '
+        'SufijoLabel
+        '
+        SufijoLabel.AutoSize = True
+        SufijoLabel.Location = New System.Drawing.Point(1020, 461)
+        SufijoLabel.Name = "SufijoLabel"
+        SufijoLabel.Size = New System.Drawing.Size(36, 13)
+        SufijoLabel.TabIndex = 155
+        SufijoLabel.Text = "Sufijo:"
+        '
+        'InferiorLabel
+        '
+        InferiorLabel.AutoSize = True
+        InferiorLabel.Location = New System.Drawing.Point(960, 523)
+        InferiorLabel.Name = "InferiorLabel"
+        InferiorLabel.Size = New System.Drawing.Size(42, 13)
+        InferiorLabel.TabIndex = 156
+        InferiorLabel.Text = "Inferior:"
+        '
         'BtnBuscarYPintar
         '
         Me.BtnBuscarYPintar.BackColor = System.Drawing.Color.White
@@ -537,8 +597,8 @@ Partial Class FrmReplace
         'DataGridViewTextBoxColumn7
         '
         Me.DataGridViewTextBoxColumn7.DataPropertyName = "NombreTecnologia"
-        DataGridViewCellStyle3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.DataGridViewTextBoxColumn7.DefaultCellStyle = DataGridViewCellStyle3
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.DataGridViewTextBoxColumn7.DefaultCellStyle = DataGridViewCellStyle2
         Me.DataGridViewTextBoxColumn7.HeaderText = "Nombre Tecnologia"
         Me.DataGridViewTextBoxColumn7.Name = "DataGridViewTextBoxColumn7"
         Me.DataGridViewTextBoxColumn7.Width = 130
@@ -632,7 +692,7 @@ Partial Class FrmReplace
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Left
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(296, 592)
+        Me.Panel1.Size = New System.Drawing.Size(296, 607)
         Me.Panel1.TabIndex = 122
         '
         'TabControl1
@@ -1462,7 +1522,7 @@ Partial Class FrmReplace
         'Cbo_TipoDato
         '
         Me.Cbo_TipoDato.FormattingEnabled = True
-        Me.Cbo_TipoDato.Items.AddRange(New Object() {"boolean", "Date", "numeric", "string"})
+        Me.Cbo_TipoDato.Items.AddRange(New Object() {"boolean", "Date", "float", "numeric", "string"})
         Me.Cbo_TipoDato.Location = New System.Drawing.Point(669, 335)
         Me.Cbo_TipoDato.Name = "Cbo_TipoDato"
         Me.Cbo_TipoDato.Size = New System.Drawing.Size(203, 21)
@@ -1478,15 +1538,6 @@ Partial Class FrmReplace
         Me.Label2.TabIndex = 151
         Me.Label2.Text = "Tipo de Dato"
         '
-        'TipoLabel
-        '
-        TipoLabel.AutoSize = True
-        TipoLabel.Location = New System.Drawing.Point(1203, 555)
-        TipoLabel.Name = "TipoLabel"
-        TipoLabel.Size = New System.Drawing.Size(31, 13)
-        TipoLabel.TabIndex = 151
-        TipoLabel.Text = "Tipo:"
-        '
         'TipoTextBox
         '
         Me.TipoTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaIDBindingSource, "Tipo", True))
@@ -1495,11 +1546,60 @@ Partial Class FrmReplace
         Me.TipoTextBox.Size = New System.Drawing.Size(48, 20)
         Me.TipoTextBox.TabIndex = 152
         '
+        'SP_CampoComponentes_Segun_Plantilla_TipoBindingSource
+        '
+        Me.SP_CampoComponentes_Segun_Plantilla_TipoBindingSource.DataMember = "SP_CampoComponentes_Segun_Plantilla_Tipo"
+        Me.SP_CampoComponentes_Segun_Plantilla_TipoBindingSource.DataSource = Me.DataSetTablasYCampos
+        '
+        'SP_CampoComponentes_Segun_Plantilla_TipoTableAdapter
+        '
+        Me.SP_CampoComponentes_Segun_Plantilla_TipoTableAdapter.ClearBeforeFill = True
+        '
+        'PrefijoTextBox
+        '
+        Me.PrefijoTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SP_CampoComponentes_Segun_Plantilla_TipoBindingSource, "Prefijo", True))
+        Me.PrefijoTextBox.Location = New System.Drawing.Point(892, 477)
+        Me.PrefijoTextBox.Name = "PrefijoTextBox"
+        Me.PrefijoTextBox.Size = New System.Drawing.Size(57, 20)
+        Me.PrefijoTextBox.TabIndex = 154
+        '
+        'SuperiorTextBox
+        '
+        Me.SuperiorTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SP_CampoComponentes_Segun_Plantilla_TipoBindingSource, "Superior", True))
+        Me.SuperiorTextBox.Location = New System.Drawing.Point(950, 451)
+        Me.SuperiorTextBox.Name = "SuperiorTextBox"
+        Me.SuperiorTextBox.Size = New System.Drawing.Size(57, 20)
+        Me.SuperiorTextBox.TabIndex = 155
+        '
+        'SufijoTextBox
+        '
+        Me.SufijoTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SP_CampoComponentes_Segun_Plantilla_TipoBindingSource, "Sufijo", True))
+        Me.SufijoTextBox.Location = New System.Drawing.Point(1010, 477)
+        Me.SufijoTextBox.Name = "SufijoTextBox"
+        Me.SufijoTextBox.Size = New System.Drawing.Size(57, 20)
+        Me.SufijoTextBox.TabIndex = 156
+        '
+        'InferiorTextBox
+        '
+        Me.InferiorTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SP_CampoComponentes_Segun_Plantilla_TipoBindingSource, "Inferior", True))
+        Me.InferiorTextBox.Location = New System.Drawing.Point(950, 500)
+        Me.InferiorTextBox.Name = "InferiorTextBox"
+        Me.InferiorTextBox.Size = New System.Drawing.Size(57, 20)
+        Me.InferiorTextBox.TabIndex = 157
+        '
         'FrmReplace
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1165, 592)
+        Me.ClientSize = New System.Drawing.Size(1308, 607)
+        Me.Controls.Add(InferiorLabel)
+        Me.Controls.Add(Me.InferiorTextBox)
+        Me.Controls.Add(SufijoLabel)
+        Me.Controls.Add(Me.SufijoTextBox)
+        Me.Controls.Add(SuperiorLabel)
+        Me.Controls.Add(Me.SuperiorTextBox)
+        Me.Controls.Add(PrefijoLabel)
+        Me.Controls.Add(Me.PrefijoTextBox)
         Me.Controls.Add(TipoLabel)
         Me.Controls.Add(Me.TipoTextBox)
         Me.Controls.Add(Me.Label2)
@@ -1604,6 +1704,7 @@ Partial Class FrmReplace
         CType(Me.SP_CamposDeTablas_EDICION_ACTUALIZARBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.SP_CamposDeTablas_EDICION_ELIMINARBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.SP_CamposDeTablas_EDICION_INSERTARBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.SP_CampoComponentes_Segun_Plantilla_TipoBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -1736,4 +1837,10 @@ Partial Class FrmReplace
     Friend WithEvents Cbo_TipoDato As ComboBox
     Friend WithEvents Label2 As Label
     Friend WithEvents TipoTextBox As TextBox
+    Friend WithEvents SP_CampoComponentes_Segun_Plantilla_TipoBindingSource As BindingSource
+    Friend WithEvents SP_CampoComponentes_Segun_Plantilla_TipoTableAdapter As DataSetTablasYCamposTableAdapters.SP_CampoComponentes_Segun_Plantilla_TipoTableAdapter
+    Friend WithEvents PrefijoTextBox As TextBox
+    Friend WithEvents SuperiorTextBox As TextBox
+    Friend WithEvents SufijoTextBox As TextBox
+    Friend WithEvents InferiorTextBox As TextBox
 End Class
