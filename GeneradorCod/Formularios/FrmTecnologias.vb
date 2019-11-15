@@ -742,9 +742,11 @@
                     ContenidoComponenteRichTextBox.Text = ""
                     ContenidoComponenteRichTextBox.Focus()
                 Else
-                    MsgBox("La Información Ya puede ser Guardada el Icono de Guardado queda habilitado", MsgBoxStyle.Information, "Guardar los Datos")
-                    Guardar_Menu_Componentes.Enabled = True
-                    Timer_Guardar_Componentes()
+                    If Nuevo_Menu_Componentes.Enabled = False Then
+                        MsgBox("La Información Ya puede ser Guardada el Icono de Guardado queda habilitado", MsgBoxStyle.Information, "Guardar los Datos")
+                        Guardar_Menu_Componentes.Enabled = True
+                        Timer_Guardar_Componentes()
+                    End If
                 End If
             End If
         End If
@@ -1601,6 +1603,10 @@
 
     Private Sub BtnImprimeCampos_Click(sender As Object, e As EventArgs) Handles BtnImprimeCampos.Click
         Me.ContenidoComponenteRichTextBox.Text = Me.ContenidoComponenteRichTextBox.Text.Insert(Me.ContenidoComponenteRichTextBox.SelectionStart, "{{{Campos}}}")
+    End Sub
+
+    Private Sub BtnImprimeTabla_Click(sender As Object, e As EventArgs) Handles BtnImprimeTabla.Click
+        Me.ContenidoComponenteRichTextBox.Text = Me.ContenidoComponenteRichTextBox.Text.Insert(Me.ContenidoComponenteRichTextBox.SelectionStart, "{{{Tabla}}}")
     End Sub
 #End Region
 

@@ -173,11 +173,7 @@
         While contadorCampos > 0
             'Se ubica en la primera fila
             SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaIDDataGridView.CurrentCell = SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaIDDataGridView.Rows(0).Cells(0)
-            If SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaIDDataGridView.Rows.Count > 1 Then
-                Campos = Campos + PrefijoTextBox.Text + NombreCampoTextBox.Text + SufijoTextBox.Text + "," & vbCrLf
-            Else
-                Campos = Campos + PrefijoTextBox.Text + NombreCampoTextBox.Text + SufijoTextBox.Text
-            End If
+            Campos = Campos + TratamientoCampos(NombreCampoTextBox.Text, contadorCampos)
             SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaIDDataGridView.Rows.RemoveAt(0)
             contadorCampos = contadorCampos - 1
         End While
@@ -187,7 +183,23 @@
         SP_CARGA_TECNOLOGIAS_APLICADAS_A_PROYECTO()
     End Sub
 
+    Function TratamientoCampos(campoConComplemento As String, contadorCampos As Integer) As String
+        If PrefijoTextBox.Text <> "" Then
+            campoConComplemento = PrefijoTextBox.Text & campoConComplemento & SeparadorCamposTextBox.Text
+        End If
 
+        If contadorCampos > 1 Then
+            campoConComplemento = campoConComplemento & SufijoTextBox.Text & SeparadorCamposTextBox.Text
+        Else
+            campoConComplemento = campoConComplemento & SufijoTextBox.Text
+        End If
+
+        If SuperiorTextBox.Text <> "" Then
+            campoConComplemento = SuperiorTextBox.Text & vbCrLf & campoConComplemento
+        End If
+
+        Return campoConComplemento
+    End Function
 
 #Region "Procedimientos"
     Sub Cancelar_Proyectos()

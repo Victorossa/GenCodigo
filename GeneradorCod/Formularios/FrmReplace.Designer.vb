@@ -50,8 +50,9 @@ Partial Class FrmReplace
         Dim SufijoLabel As System.Windows.Forms.Label
         Dim InferiorLabel As System.Windows.Forms.Label
         Dim PlantillaIDLabel1 As System.Windows.Forms.Label
-        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmReplace))
+        Dim SeparadorCamposLabel As System.Windows.Forms.Label
         Me.BtnBuscarYPintar = New System.Windows.Forms.Button()
         Me.SP_RequerimientosPlantillas_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView = New System.Windows.Forms.DataGridView()
         Me.DataGridViewTextBoxColumn5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -183,17 +184,18 @@ Partial Class FrmReplace
         Me.InferiorTextBox = New System.Windows.Forms.TextBox()
         Me.PlantillaIDTextBox1 = New System.Windows.Forms.TextBox()
         Me.Panel5 = New System.Windows.Forms.Panel()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.ValorRequerimientoTextBox = New System.Windows.Forms.TextBox()
+        Me.Label11 = New System.Windows.Forms.Label()
+        Me.Label10 = New System.Windows.Forms.Label()
+        Me.Label9 = New System.Windows.Forms.Label()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
-        Me.Label9 = New System.Windows.Forms.Label()
-        Me.Label10 = New System.Windows.Forms.Label()
-        Me.Label11 = New System.Windows.Forms.Label()
-        Me.ValorRequerimientoTextBox = New System.Windows.Forms.TextBox()
-        Me.Label1 = New System.Windows.Forms.Label()
+        Me.SeparadorCamposTextBox = New System.Windows.Forms.TextBox()
         ComponenteIDLabel = New System.Windows.Forms.Label()
         PlantillaIDLabel = New System.Windows.Forms.Label()
         TecnologiaIDLabel = New System.Windows.Forms.Label()
@@ -221,6 +223,7 @@ Partial Class FrmReplace
         SufijoLabel = New System.Windows.Forms.Label()
         InferiorLabel = New System.Windows.Forms.Label()
         PlantillaIDLabel1 = New System.Windows.Forms.Label()
+        SeparadorCamposLabel = New System.Windows.Forms.Label()
         CType(Me.SP_RequerimientosPlantillas_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.SP_RequerimientosPlantillas_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DataSetAdministracion, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -468,7 +471,7 @@ Partial Class FrmReplace
         'PrefijoLabel
         '
         PrefijoLabel.AutoSize = True
-        PrefijoLabel.Location = New System.Drawing.Point(389, 515)
+        PrefijoLabel.Location = New System.Drawing.Point(433, 506)
         PrefijoLabel.Name = "PrefijoLabel"
         PrefijoLabel.Size = New System.Drawing.Size(39, 13)
         PrefijoLabel.TabIndex = 153
@@ -477,7 +480,7 @@ Partial Class FrmReplace
         'SuperiorLabel
         '
         SuperiorLabel.AutoSize = True
-        SuperiorLabel.Location = New System.Drawing.Point(442, 483)
+        SuperiorLabel.Location = New System.Drawing.Point(486, 474)
         SuperiorLabel.Name = "SuperiorLabel"
         SuperiorLabel.Size = New System.Drawing.Size(49, 13)
         SuperiorLabel.TabIndex = 154
@@ -486,7 +489,7 @@ Partial Class FrmReplace
         'SufijoLabel
         '
         SufijoLabel.AutoSize = True
-        SufijoLabel.Location = New System.Drawing.Point(508, 515)
+        SufijoLabel.Location = New System.Drawing.Point(552, 506)
         SufijoLabel.Name = "SufijoLabel"
         SufijoLabel.Size = New System.Drawing.Size(36, 13)
         SufijoLabel.TabIndex = 155
@@ -495,7 +498,7 @@ Partial Class FrmReplace
         'InferiorLabel
         '
         InferiorLabel.AutoSize = True
-        InferiorLabel.Location = New System.Drawing.Point(448, 577)
+        InferiorLabel.Location = New System.Drawing.Point(434, 552)
         InferiorLabel.Name = "InferiorLabel"
         InferiorLabel.Size = New System.Drawing.Size(42, 13)
         InferiorLabel.TabIndex = 156
@@ -595,8 +598,8 @@ Partial Class FrmReplace
         'DataGridViewTextBoxColumn7
         '
         Me.DataGridViewTextBoxColumn7.DataPropertyName = "NombreTecnologia"
-        DataGridViewCellStyle4.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.DataGridViewTextBoxColumn7.DefaultCellStyle = DataGridViewCellStyle4
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.DataGridViewTextBoxColumn7.DefaultCellStyle = DataGridViewCellStyle2
         Me.DataGridViewTextBoxColumn7.HeaderText = "Nombre Tecnologia"
         Me.DataGridViewTextBoxColumn7.Name = "DataGridViewTextBoxColumn7"
         Me.DataGridViewTextBoxColumn7.Width = 130
@@ -1049,7 +1052,7 @@ Partial Class FrmReplace
         Me.CodigoTextBox.Location = New System.Drawing.Point(572, 13)
         Me.CodigoTextBox.Multiline = True
         Me.CodigoTextBox.Name = "CodigoTextBox"
-        Me.CodigoTextBox.Size = New System.Drawing.Size(283, 561)
+        Me.CodigoTextBox.Size = New System.Drawing.Size(283, 445)
         Me.CodigoTextBox.TabIndex = 130
         '
         'SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoIDTableAdapter
@@ -1509,7 +1512,7 @@ Partial Class FrmReplace
         'PrefijoTextBox
         '
         Me.PrefijoTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SP_CampoComponentes_Segun_Plantilla_TipoBindingSource, "Prefijo", True))
-        Me.PrefijoTextBox.Location = New System.Drawing.Point(380, 531)
+        Me.PrefijoTextBox.Location = New System.Drawing.Point(424, 522)
         Me.PrefijoTextBox.Name = "PrefijoTextBox"
         Me.PrefijoTextBox.Size = New System.Drawing.Size(57, 20)
         Me.PrefijoTextBox.TabIndex = 154
@@ -1517,7 +1520,7 @@ Partial Class FrmReplace
         'SuperiorTextBox
         '
         Me.SuperiorTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SP_CampoComponentes_Segun_Plantilla_TipoBindingSource, "Superior", True))
-        Me.SuperiorTextBox.Location = New System.Drawing.Point(438, 505)
+        Me.SuperiorTextBox.Location = New System.Drawing.Point(482, 496)
         Me.SuperiorTextBox.Name = "SuperiorTextBox"
         Me.SuperiorTextBox.Size = New System.Drawing.Size(57, 20)
         Me.SuperiorTextBox.TabIndex = 155
@@ -1525,7 +1528,7 @@ Partial Class FrmReplace
         'SufijoTextBox
         '
         Me.SufijoTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SP_CampoComponentes_Segun_Plantilla_TipoBindingSource, "Sufijo", True))
-        Me.SufijoTextBox.Location = New System.Drawing.Point(498, 531)
+        Me.SufijoTextBox.Location = New System.Drawing.Point(542, 522)
         Me.SufijoTextBox.Name = "SufijoTextBox"
         Me.SufijoTextBox.Size = New System.Drawing.Size(57, 20)
         Me.SufijoTextBox.TabIndex = 156
@@ -1533,7 +1536,7 @@ Partial Class FrmReplace
         'InferiorTextBox
         '
         Me.InferiorTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SP_CampoComponentes_Segun_Plantilla_TipoBindingSource, "Inferior", True))
-        Me.InferiorTextBox.Location = New System.Drawing.Point(438, 554)
+        Me.InferiorTextBox.Location = New System.Drawing.Point(482, 545)
         Me.InferiorTextBox.Name = "InferiorTextBox"
         Me.InferiorTextBox.Size = New System.Drawing.Size(57, 20)
         Me.InferiorTextBox.TabIndex = 157
@@ -1550,6 +1553,8 @@ Partial Class FrmReplace
         '
         Me.Panel5.AutoScroll = True
         Me.Panel5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel5.Controls.Add(SeparadorCamposLabel)
+        Me.Panel5.Controls.Add(Me.SeparadorCamposTextBox)
         Me.Panel5.Controls.Add(Me.SP_RequerimientosPlantillas_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView)
         Me.Panel5.Controls.Add(Me.Label1)
         Me.Panel5.Controls.Add(Me.ValorRequerimientoTextBox)
@@ -1614,6 +1619,52 @@ Partial Class FrmReplace
         Me.Panel5.Size = New System.Drawing.Size(418, 567)
         Me.Panel5.TabIndex = 159
         '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(392, 5)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(138, 13)
+        Me.Label1.TabIndex = 168
+        Me.Label1.Text = "ValorRequerimientoTextBox"
+        '
+        'ValorRequerimientoTextBox
+        '
+        Me.ValorRequerimientoTextBox.Location = New System.Drawing.Point(395, 21)
+        Me.ValorRequerimientoTextBox.Name = "ValorRequerimientoTextBox"
+        Me.ValorRequerimientoTextBox.Size = New System.Drawing.Size(100, 20)
+        Me.ValorRequerimientoTextBox.TabIndex = 167
+        '
+        'Label11
+        '
+        Me.Label11.AutoSize = True
+        Me.Label11.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label11.Location = New System.Drawing.Point(5, 528)
+        Me.Label11.Name = "Label11"
+        Me.Label11.Size = New System.Drawing.Size(389, 13)
+        Me.Label11.TabIndex = 166
+        Me.Label11.Text = "SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaID"
+        '
+        'Label10
+        '
+        Me.Label10.AutoSize = True
+        Me.Label10.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label10.Location = New System.Drawing.Point(1, 489)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(63, 13)
+        Me.Label10.TabIndex = 165
+        Me.Label10.Text = "Proyectos"
+        '
+        'Label9
+        '
+        Me.Label9.AutoSize = True
+        Me.Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label9.Location = New System.Drawing.Point(2, 413)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(313, 13)
+        Me.Label9.TabIndex = 164
+        Me.Label9.Text = "SP_RegistroValorRequerimientos_SEGUN_ProyectoID"
+        '
         'Label8
         '
         Me.Label8.AutoSize = True
@@ -1674,51 +1725,22 @@ Partial Class FrmReplace
         Me.Label3.TabIndex = 0
         Me.Label3.Text = "SP_CARGA_TECNOLOGIAS_APLICADAS_"
         '
-        'Label9
+        'SeparadorCamposLabel
         '
-        Me.Label9.AutoSize = True
-        Me.Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label9.Location = New System.Drawing.Point(2, 413)
-        Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(313, 13)
-        Me.Label9.TabIndex = 164
-        Me.Label9.Text = "SP_RegistroValorRequerimientos_SEGUN_ProyectoID"
+        SeparadorCamposLabel.AutoSize = True
+        SeparadorCamposLabel.Location = New System.Drawing.Point(598, 467)
+        SeparadorCamposLabel.Name = "SeparadorCamposLabel"
+        SeparadorCamposLabel.Size = New System.Drawing.Size(100, 13)
+        SeparadorCamposLabel.TabIndex = 168
+        SeparadorCamposLabel.Text = "Separador Campos:"
         '
-        'Label10
+        'SeparadorCamposTextBox
         '
-        Me.Label10.AutoSize = True
-        Me.Label10.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label10.Location = New System.Drawing.Point(1, 489)
-        Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(63, 13)
-        Me.Label10.TabIndex = 165
-        Me.Label10.Text = "Proyectos"
-        '
-        'Label11
-        '
-        Me.Label11.AutoSize = True
-        Me.Label11.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label11.Location = New System.Drawing.Point(5, 528)
-        Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(389, 13)
-        Me.Label11.TabIndex = 166
-        Me.Label11.Text = "SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaID"
-        '
-        'ValorRequerimientoTextBox
-        '
-        Me.ValorRequerimientoTextBox.Location = New System.Drawing.Point(395, 21)
-        Me.ValorRequerimientoTextBox.Name = "ValorRequerimientoTextBox"
-        Me.ValorRequerimientoTextBox.Size = New System.Drawing.Size(100, 20)
-        Me.ValorRequerimientoTextBox.TabIndex = 167
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(392, 5)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(138, 13)
-        Me.Label1.TabIndex = 168
-        Me.Label1.Text = "ValorRequerimientoTextBox"
+        Me.SeparadorCamposTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SP_CampoComponentes_Segun_Plantilla_TipoBindingSource, "SeparadorCampos", True))
+        Me.SeparadorCamposTextBox.Location = New System.Drawing.Point(601, 487)
+        Me.SeparadorCamposTextBox.Name = "SeparadorCamposTextBox"
+        Me.SeparadorCamposTextBox.Size = New System.Drawing.Size(100, 20)
+        Me.SeparadorCamposTextBox.TabIndex = 169
         '
         'FrmReplace
         '
@@ -1935,4 +1957,5 @@ Partial Class FrmReplace
     Friend WithEvents Label10 As Label
     Friend WithEvents Label1 As Label
     Friend WithEvents ValorRequerimientoTextBox As TextBox
+    Friend WithEvents SeparadorCamposTextBox As TextBox
 End Class
