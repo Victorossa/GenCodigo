@@ -44,7 +44,7 @@ Partial Class FrmTecnologias
         Dim InferiorLabel As System.Windows.Forms.Label
         Dim SeparadorCamposLabel As System.Windows.Forms.Label
         Dim MultiReplaceLabel As System.Windows.Forms.Label
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmTecnologias))
         Me.TecnologiasDataGridView = New System.Windows.Forms.DataGridView()
         Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -194,6 +194,7 @@ Partial Class FrmTecnologias
         Me.SP_RequerimientosPlantillas_EDICION_ELIMINARTableAdapter = New GeneradorCod.DataSetAdministracionTableAdapters.SP_RequerimientosPlantillas_EDICION_ELIMINARTableAdapter()
         Me.SP_RequerimientosPlantillas_EDICION_INSERTARBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.SP_RequerimientosPlantillas_EDICION_INSERTARTableAdapter = New GeneradorCod.DataSetAdministracionTableAdapters.SP_RequerimientosPlantillas_EDICION_INSERTARTableAdapter()
+        Me.BtnImprimeClavePrincipal = New System.Windows.Forms.Button()
         NombreTecnologiaLabel = New System.Windows.Forms.Label()
         TecnologiaIDLabel = New System.Windows.Forms.Label()
         NombrePlantillaLabel = New System.Windows.Forms.Label()
@@ -470,8 +471,8 @@ Partial Class FrmTecnologias
         'DataGridViewTextBoxColumn2
         '
         Me.DataGridViewTextBoxColumn2.DataPropertyName = "NombreTecnologia"
-        DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.DataGridViewTextBoxColumn2.DefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.DataGridViewTextBoxColumn2.DefaultCellStyle = DataGridViewCellStyle2
         Me.DataGridViewTextBoxColumn2.HeaderText = "Nombre Tecnologia"
         Me.DataGridViewTextBoxColumn2.Name = "DataGridViewTextBoxColumn2"
         Me.DataGridViewTextBoxColumn2.Width = 277
@@ -1068,6 +1069,7 @@ Partial Class FrmTecnologias
         '
         'TabPage1
         '
+        Me.TabPage1.Controls.Add(Me.BtnImprimeClavePrincipal)
         Me.TabPage1.Controls.Add(Me.BtnImprimeTabla)
         Me.TabPage1.Controls.Add(Me.BtnImprimeCampos)
         Me.TabPage1.Controls.Add(Me.BtnGuardarCodigo)
@@ -1096,7 +1098,7 @@ Partial Class FrmTecnologias
         '
         Me.BtnImprimeTabla.BackColor = System.Drawing.Color.White
         Me.BtnImprimeTabla.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnImprimeTabla.Location = New System.Drawing.Point(329, 62)
+        Me.BtnImprimeTabla.Location = New System.Drawing.Point(314, 62)
         Me.BtnImprimeTabla.Name = "BtnImprimeTabla"
         Me.BtnImprimeTabla.Size = New System.Drawing.Size(93, 43)
         Me.BtnImprimeTabla.TabIndex = 125
@@ -1167,7 +1169,7 @@ Partial Class FrmTecnologias
         Me.BtnRemplazar.BackColor = System.Drawing.Color.White
         Me.BtnRemplazar.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnRemplazar.Image = CType(resources.GetObject("BtnRemplazar.Image"), System.Drawing.Image)
-        Me.BtnRemplazar.Location = New System.Drawing.Point(437, 7)
+        Me.BtnRemplazar.Location = New System.Drawing.Point(430, 7)
         Me.BtnRemplazar.Name = "BtnRemplazar"
         Me.BtnRemplazar.Size = New System.Drawing.Size(49, 43)
         Me.BtnRemplazar.TabIndex = 118
@@ -1179,7 +1181,7 @@ Partial Class FrmTecnologias
         Me.BtnBajarFuente.BackColor = System.Drawing.Color.White
         Me.BtnBajarFuente.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnBajarFuente.Image = CType(resources.GetObject("BtnBajarFuente.Image"), System.Drawing.Image)
-        Me.BtnBajarFuente.Location = New System.Drawing.Point(491, 7)
+        Me.BtnBajarFuente.Location = New System.Drawing.Point(487, 7)
         Me.BtnBajarFuente.Name = "BtnBajarFuente"
         Me.BtnBajarFuente.Size = New System.Drawing.Size(49, 43)
         Me.BtnBajarFuente.TabIndex = 117
@@ -1191,7 +1193,7 @@ Partial Class FrmTecnologias
         Me.BtnSubirFuente.BackColor = System.Drawing.Color.White
         Me.BtnSubirFuente.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnSubirFuente.Image = CType(resources.GetObject("BtnSubirFuente.Image"), System.Drawing.Image)
-        Me.BtnSubirFuente.Location = New System.Drawing.Point(383, 7)
+        Me.BtnSubirFuente.Location = New System.Drawing.Point(373, 7)
         Me.BtnSubirFuente.Name = "BtnSubirFuente"
         Me.BtnSubirFuente.Size = New System.Drawing.Size(49, 43)
         Me.BtnSubirFuente.TabIndex = 116
@@ -1210,7 +1212,7 @@ Partial Class FrmTecnologias
         '
         Me.BtnBuscarYPintar.BackColor = System.Drawing.Color.White
         Me.BtnBuscarYPintar.Image = CType(resources.GetObject("BtnBuscarYPintar.Image"), System.Drawing.Image)
-        Me.BtnBuscarYPintar.Location = New System.Drawing.Point(329, 7)
+        Me.BtnBuscarYPintar.Location = New System.Drawing.Point(314, 7)
         Me.BtnBuscarYPintar.Name = "BtnBuscarYPintar"
         Me.BtnBuscarYPintar.Size = New System.Drawing.Size(49, 43)
         Me.BtnBuscarYPintar.TabIndex = 99
@@ -1758,6 +1760,17 @@ Partial Class FrmTecnologias
         '
         Me.SP_RequerimientosPlantillas_EDICION_INSERTARTableAdapter.ClearBeforeFill = True
         '
+        'BtnImprimeClavePrincipal
+        '
+        Me.BtnImprimeClavePrincipal.BackColor = System.Drawing.Color.White
+        Me.BtnImprimeClavePrincipal.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnImprimeClavePrincipal.Location = New System.Drawing.Point(408, 62)
+        Me.BtnImprimeClavePrincipal.Name = "BtnImprimeClavePrincipal"
+        Me.BtnImprimeClavePrincipal.Size = New System.Drawing.Size(93, 43)
+        Me.BtnImprimeClavePrincipal.TabIndex = 126
+        Me.BtnImprimeClavePrincipal.Text = "{{{Clave}}}"
+        Me.BtnImprimeClavePrincipal.UseVisualStyleBackColor = False
+        '
         'FrmTecnologias
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 18.0!)
@@ -1993,4 +2006,5 @@ Partial Class FrmTecnologias
     Friend WithEvents Panel8 As Panel
     Friend WithEvents Label3 As Label
     Friend WithEvents MultiReplaceTextBox As TextBox
+    Friend WithEvents BtnImprimeClavePrincipal As Button
 End Class

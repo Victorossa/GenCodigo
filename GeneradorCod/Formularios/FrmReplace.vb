@@ -126,6 +126,12 @@
             RecorrerComponentesHaciendoReplace()
             SP_CARGA_TECNOLOGIAS_APLICADAS_A_PROYECTODataGridView.Rows.RemoveAt(0)
             contadorTecnologiasAplicadas = contadorTecnologiasAplicadas - 1
+            PrefijoTextBox.Text = ""
+            SufijoTextBox.Text = ""
+            SuperiorTextBox.Text = ""
+            InferiorTextBox.Text = ""
+            MultiReplaceTextBox.Text = ""
+            SP_CampoComponentes_Segun_Plantilla_TipoTable()
         End While
         SP_CARGA_TECNOLOGIAS_APLICADAS_A_PROYECTO()
     End Sub
@@ -134,7 +140,7 @@
         While contadorComponentes > 0
             'Se ubica en la primera fila
             SP_Componentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView.CurrentCell = SP_Componentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView.Rows(0).Cells(0)
-            CodigoGeneradoTextBox.Text = CodigoGeneradoTextBox.Text & vbCrLf & "                              " & NombreTecnologiaTextBox1.Text & vbCrLf & NombreComponenteTextBox.Text & vbCrLf & CodigoTextBox.Text & vbCrLf & "++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++" & vbCrLf
+            CodigoGeneradoTextBox.Text = CodigoGeneradoTextBox.Text & vbCrLf & "                              " & NombreTecnologiaTextBox1.Text & vbCrLf & NombreComponenteTextBox.Text & vbCrLf & CodigoTextBox.Text & vbCrLf & "++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++" & vbCrLf & vbCrLf
             SP_Componentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView.Rows.RemoveAt(0)
             contadorComponentes = contadorComponentes - 1
         End While
@@ -142,9 +148,26 @@
     End Sub
 
     Public Sub RemplazarEnResultado(textoBase As String)
-        If InStr(textoBase, "{{{Campos}}}") Then
+        'Remplaza la Tabla
+        If InStr(textoBase, "{{{Tabla}}}") Then
+            CargarTabla(textoBase)
+        End If
+        'Remplaza la clave Principal
+        If InStr(textoBase, "{{{Clave}}}") Then
+            GenerarClave(textoBase)
+        End If
+        'Remplaza los Campos
+        If Not InStr(textoBase, "{{{Campos}}}") Then
             GenerarCampos()
         End If
+        'Remplaza los Requerimientos
+        CargaRequerimientos()
+        'Guarda la informacion
+        SP_Proyectos_EDICION_ACTUALIZAR_CodigoRemplazado()
+
+    End Sub
+
+    Private Sub CargaRequerimientos()
         Dim contadorRequerimientos = SP_RegistroValorRequerimientos_SEGUN_ProyectoIDDataGridView.Rows.Count
         While contadorRequerimientos > 0
             'Se ubica en la primera fila
@@ -153,7 +176,6 @@
             SP_RegistroValorRequerimientos_SEGUN_ProyectoIDDataGridView.Rows.RemoveAt(0)
             contadorRequerimientos = contadorRequerimientos - 1
         End While
-        SP_Proyectos_EDICION_ACTUALIZAR_CodigoRemplazado()
     End Sub
     Private Sub SP_Proyectos_EDICION_ACTUALIZAR_CodigoRemplazado()
         Try
@@ -162,7 +184,6 @@
                                                  NombreProyectoTextBox.Text,
                                                  CodigoGeneradoTextBox.Text,
                                                  DescripcionTextBox.Text)
-            Me.ProyectosTableAdapter.Fill(Me.DataSetAdministracion.Proyectos)
         Catch ex As System.Exception
             System.Windows.Forms.MessageBox.Show(ex.Message)
         End Try
@@ -179,10 +200,7 @@
         End While
         CodigoGeneradoTextBox.Text = CodigoGeneradoTextBox.Text.Replace("{{{Campos}}}", Campos)
         SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaID()
-        SP_Proyectos_EDICION_ACTUALIZAR_CodigoRemplazado()
-        SP_CARGA_TECNOLOGIAS_APLICADAS_A_PROYECTO()
     End Sub
-
     Function TratamientoCampos(campoConComplemento As String, contadorCampos As Integer) As String
         Dim Campo As String = "Campo"
         Dim Objeto As String = ""
@@ -190,7 +208,7 @@
         If MultiReplaceTextBox.Text = "" Then
             'Poner Prefijo
             If PrefijoTextBox.Text <> "" Then
-                Campo = PrefijoTextBox.Text & Campo & SeparadorCamposTextBox.Text
+                Campo = PrefijoTextBox.Text & Campo
             End If
             'Poner Sufijo con separador
             If contadorCampos > 1 Then
@@ -210,7 +228,26 @@
         Else
             Objeto = MultiReplaceTextBox.Text.Replace("Campo", campoConComplemento)
         End If
+
         Return Objeto
+    End Function
+    Function GenerarClave(textoBase As String)
+        CapturaClavePrincipal(textoBase)
+    End Function
+    Function CargarTabla(textoBase As String)
+        CodigoGeneradoTextBox.Text = CodigoGeneradoTextBox.Text.Replace("{{{Tabla}}}", NombreTablaTextBox1.Text)
+        Return vbEmpty
+    End Function
+
+    Function CapturaClavePrincipal(textoBase As String)
+        Try
+            'Se ubica en la primera fila
+            SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaIDDataGridView.CurrentCell = SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaIDDataGridView.Rows(0).Cells(0)
+            CodigoGeneradoTextBox.Text = CodigoGeneradoTextBox.Text.Replace("{{{Clave}}}", NombreCampoTextBox.Text)
+            Return vbEmpty
+        Catch ex As Exception
+
+        End Try
     End Function
 
 #Region "Procedimientos"
@@ -660,7 +697,7 @@
         SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoIDDataGridView.Enabled = False
         Limpiar_Objetos_TablasDeProyecto()
         NombreTablaTextBox.Enabled = True
-        NombreTablaTextBox.Focus
+        NombreTablaTextBox.Focus()
     End Sub
     'Guardar
     Private Sub Guardar_Menu_TablasDeProyecto_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Guardar_Menu_TablasDeProyecto.Click
@@ -1153,6 +1190,8 @@
         CodigoGeneradoTextBox.Text = ""
         SP_Proyectos_EDICION_ACTUALIZAR_CodigoRemplazado()
     End Sub
+
+
 
 
 
