@@ -17,11 +17,11 @@
     <Shape ID="DesignTable:SP_CamposDeTablas_EDICION_ELIMINAR" ZOrder="8" X="1235" Y="129" Height="54" Width="300" AdapterExpanded="false" DataTableExpanded="false" OldAdapterHeight="44" OldDataTableHeight="46" SplitterPosition="24" />
     <Shape ID="DesignTable:SP_CamposDeTablas_EDICION_ACTUALIZAR" ZOrder="7" X="1234" Y="67" Height="54" Width="300" AdapterExpanded="false" DataTableExpanded="false" OldAdapterHeight="44" OldDataTableHeight="46" SplitterPosition="24" />
     <Shape ID="DesignTable:SP_CamposDeTablas_EDICION_INSERTAR" ZOrder="6" X="1236" Y="187" Height="54" Width="300" AdapterExpanded="false" DataTableExpanded="false" OldAdapterHeight="44" OldDataTableHeight="46" SplitterPosition="24" />
-    <Shape ID="DesignTable:SP_CampoComponentes_Segun_Plantilla_Tipo" ZOrder="5" X="626" Y="9" Height="54" Width="300" AdapterExpanded="false" DataTableExpanded="false" OldAdapterHeight="45" OldDataTableHeight="197" SplitterPosition="24" />
+    <Shape ID="DesignTable:SP_CampoComponentes_Segun_Plantilla_Tipo" ZOrder="5" X="626" Y="9" Height="54" Width="300" AdapterExpanded="false" DataTableExpanded="false" OldAdapterHeight="45" OldDataTableHeight="216" SplitterPosition="24" />
     <Shape ID="DesignTable:SP_CampoComponentes_EDICION_ACTUALIZAR" ZOrder="4" X="625" Y="67" Height="54" Width="300" AdapterExpanded="false" DataTableExpanded="false" OldAdapterHeight="44" OldDataTableHeight="46" SplitterPosition="24" />
     <Shape ID="DesignTable:SP_CampoComponentes_EDICION_ELIMINAR" ZOrder="3" X="627" Y="126" Height="54" Width="300" AdapterExpanded="false" DataTableExpanded="false" OldAdapterHeight="44" OldDataTableHeight="46" SplitterPosition="24" />
     <Shape ID="DesignTable:SP_CampoComponentes_EDICION_INSERTAR" ZOrder="2" X="625" Y="185" Height="54" Width="300" AdapterExpanded="false" DataTableExpanded="false" OldAdapterHeight="44" OldDataTableHeight="46" SplitterPosition="24" />
-    <Shape ID="DesignTable:SP_CampoComponentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaID" ZOrder="1" X="625" Y="242" Height="54" Width="300" AdapterExpanded="false" DataTableExpanded="false" OldAdapterHeight="45" OldDataTableHeight="178" SplitterPosition="24" />
+    <Shape ID="DesignTable:SP_CampoComponentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaID" ZOrder="1" X="625" Y="242" Height="54" Width="300" AdapterExpanded="false" DataTableExpanded="false" OldAdapterHeight="45" OldDataTableHeight="197" SplitterPosition="24" />
   </Shapes>
   <Connectors />
 </DiagramLayout>

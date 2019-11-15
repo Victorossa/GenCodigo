@@ -3649,6 +3649,8 @@ Partial Public Class DataSetTablasYCampos
         
         Private columnSeparadorCampos As Global.System.Data.DataColumn
         
+        Private columnMultiReplace As Global.System.Data.DataColumn
+        
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Sub New()
@@ -3757,6 +3759,14 @@ Partial Public Class DataSetTablasYCampos
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public ReadOnly Property MultiReplaceColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnMultiReplace
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
          Global.System.ComponentModel.Browsable(false)>  _
         Public ReadOnly Property Count() As Integer
@@ -3793,9 +3803,9 @@ Partial Public Class DataSetTablasYCampos
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Overloads Function AddSP_CampoComponentes_Segun_Plantilla_TipoRow(ByVal PlantillaID As Integer, ByVal Tipo As String, ByVal Prefijo As String, ByVal Superior As String, ByVal Sufijo As String, ByVal Inferior As String, ByVal Multiremplazo As String, ByVal SeparadorCampos As String) As SP_CampoComponentes_Segun_Plantilla_TipoRow
+        Public Overloads Function AddSP_CampoComponentes_Segun_Plantilla_TipoRow(ByVal PlantillaID As Integer, ByVal Tipo As String, ByVal Prefijo As String, ByVal Superior As String, ByVal Sufijo As String, ByVal Inferior As String, ByVal Multiremplazo As String, ByVal SeparadorCampos As String, ByVal MultiReplace As String) As SP_CampoComponentes_Segun_Plantilla_TipoRow
             Dim rowSP_CampoComponentes_Segun_Plantilla_TipoRow As SP_CampoComponentes_Segun_Plantilla_TipoRow = CType(Me.NewRow,SP_CampoComponentes_Segun_Plantilla_TipoRow)
-            Dim columnValuesArray() As Object = New Object() {Nothing, PlantillaID, Tipo, Prefijo, Superior, Sufijo, Inferior, Multiremplazo, SeparadorCampos}
+            Dim columnValuesArray() As Object = New Object() {Nothing, PlantillaID, Tipo, Prefijo, Superior, Sufijo, Inferior, Multiremplazo, SeparadorCampos, MultiReplace}
             rowSP_CampoComponentes_Segun_Plantilla_TipoRow.ItemArray = columnValuesArray
             Me.Rows.Add(rowSP_CampoComponentes_Segun_Plantilla_TipoRow)
             Return rowSP_CampoComponentes_Segun_Plantilla_TipoRow
@@ -3833,6 +3843,7 @@ Partial Public Class DataSetTablasYCampos
             Me.columnInferior = MyBase.Columns("Inferior")
             Me.columnMultiremplazo = MyBase.Columns("Multiremplazo")
             Me.columnSeparadorCampos = MyBase.Columns("SeparadorCampos")
+            Me.columnMultiReplace = MyBase.Columns("MultiReplace")
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -3856,6 +3867,8 @@ Partial Public Class DataSetTablasYCampos
             MyBase.Columns.Add(Me.columnMultiremplazo)
             Me.columnSeparadorCampos = New Global.System.Data.DataColumn("SeparadorCampos", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnSeparadorCampos)
+            Me.columnMultiReplace = New Global.System.Data.DataColumn("MultiReplace", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnMultiReplace)
             Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnCampoComponenteID}, true))
             Me.columnCampoComponenteID.AutoIncrement = true
             Me.columnCampoComponenteID.AutoIncrementSeed = -1
@@ -3872,6 +3885,7 @@ Partial Public Class DataSetTablasYCampos
             Me.columnInferior.MaxLength = 200
             Me.columnMultiremplazo.MaxLength = 2147483647
             Me.columnSeparadorCampos.MaxLength = 2147483647
+            Me.columnMultiReplace.MaxLength = 2147483647
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -4742,6 +4756,8 @@ Partial Public Class DataSetTablasYCampos
         
         Private columnSeparadorCampos As Global.System.Data.DataColumn
         
+        Private columnMultiReplace As Global.System.Data.DataColumn
+        
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Sub New()
@@ -4842,6 +4858,14 @@ Partial Public Class DataSetTablasYCampos
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public ReadOnly Property MultiReplaceColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnMultiReplace
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
          Global.System.ComponentModel.Browsable(false)>  _
         Public ReadOnly Property Count() As Integer
@@ -4878,9 +4902,9 @@ Partial Public Class DataSetTablasYCampos
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Overloads Function AddSP_CampoComponentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDRow(ByVal PlantillaID As Integer, ByVal Tipo As String, ByVal Prefijo As String, ByVal Superior As String, ByVal Sufijo As String, ByVal Inferior As String, ByVal SeparadorCampos As String) As SP_CampoComponentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDRow
+        Public Overloads Function AddSP_CampoComponentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDRow(ByVal PlantillaID As Integer, ByVal Tipo As String, ByVal Prefijo As String, ByVal Superior As String, ByVal Sufijo As String, ByVal Inferior As String, ByVal SeparadorCampos As String, ByVal MultiReplace As String) As SP_CampoComponentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDRow
             Dim rowSP_CampoComponentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDRow As SP_CampoComponentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDRow = CType(Me.NewRow,SP_CampoComponentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDRow)
-            Dim columnValuesArray() As Object = New Object() {Nothing, PlantillaID, Tipo, Prefijo, Superior, Sufijo, Inferior, SeparadorCampos}
+            Dim columnValuesArray() As Object = New Object() {Nothing, PlantillaID, Tipo, Prefijo, Superior, Sufijo, Inferior, SeparadorCampos, MultiReplace}
             rowSP_CampoComponentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDRow.ItemArray = columnValuesArray
             Me.Rows.Add(rowSP_CampoComponentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDRow)
             Return rowSP_CampoComponentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDRow
@@ -4917,6 +4941,7 @@ Partial Public Class DataSetTablasYCampos
             Me.columnSufijo = MyBase.Columns("Sufijo")
             Me.columnInferior = MyBase.Columns("Inferior")
             Me.columnSeparadorCampos = MyBase.Columns("SeparadorCampos")
+            Me.columnMultiReplace = MyBase.Columns("MultiReplace")
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -4938,6 +4963,8 @@ Partial Public Class DataSetTablasYCampos
             MyBase.Columns.Add(Me.columnInferior)
             Me.columnSeparadorCampos = New Global.System.Data.DataColumn("SeparadorCampos", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnSeparadorCampos)
+            Me.columnMultiReplace = New Global.System.Data.DataColumn("MultiReplace", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnMultiReplace)
             Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnCampoComponenteID}, true))
             Me.columnCampoComponenteID.AutoIncrement = true
             Me.columnCampoComponenteID.AutoIncrementSeed = -1
@@ -4953,6 +4980,7 @@ Partial Public Class DataSetTablasYCampos
             Me.columnSufijo.MaxLength = 200
             Me.columnInferior.MaxLength = 200
             Me.columnSeparadorCampos.MaxLength = 2147483647
+            Me.columnMultiReplace.MaxLength = 2147483647
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -5542,6 +5570,22 @@ Partial Public Class DataSetTablasYCampos
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Property MultiReplace() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableSP_CampoComponentes_Segun_Plantilla_Tipo.MultiReplaceColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'MultiReplace' de la tabla 'SP_CampoComponentes_Segun_Plan"& _ 
+                            "tilla_Tipo' es DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableSP_CampoComponentes_Segun_Plantilla_Tipo.MultiReplaceColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Function IsPrefijoNull() As Boolean
             Return Me.IsNull(Me.tableSP_CampoComponentes_Segun_Plantilla_Tipo.PrefijoColumn)
         End Function
@@ -5610,6 +5654,18 @@ Partial Public Class DataSetTablasYCampos
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Sub SetSeparadorCamposNull()
             Me(Me.tableSP_CampoComponentes_Segun_Plantilla_Tipo.SeparadorCamposColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Function IsMultiReplaceNull() As Boolean
+            Return Me.IsNull(Me.tableSP_CampoComponentes_Segun_Plantilla_Tipo.MultiReplaceColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Sub SetMultiReplaceNull()
+            Me(Me.tableSP_CampoComponentes_Segun_Plantilla_Tipo.MultiReplaceColumn) = Global.System.Convert.DBNull
         End Sub
     End Class
     
@@ -5791,6 +5847,22 @@ Partial Public Class DataSetTablasYCampos
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Property MultiReplace() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableSP_CampoComponentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaID.MultiReplaceColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'MultiReplace' de la tabla 'SP_CampoComponentes_BUSQUEDA_S"& _ 
+                            "EGUN_PARAMETRO_PlantillaID' es DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableSP_CampoComponentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaID.MultiReplaceColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Function IsPrefijoNull() As Boolean
             Return Me.IsNull(Me.tableSP_CampoComponentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaID.PrefijoColumn)
         End Function
@@ -5847,6 +5919,18 @@ Partial Public Class DataSetTablasYCampos
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Sub SetSeparadorCamposNull()
             Me(Me.tableSP_CampoComponentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaID.SeparadorCamposColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Function IsMultiReplaceNull() As Boolean
+            Return Me.IsNull(Me.tableSP_CampoComponentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaID.MultiReplaceColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Sub SetMultiReplaceNull()
+            Me(Me.tableSP_CampoComponentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaID.MultiReplaceColumn) = Global.System.Convert.DBNull
         End Sub
     End Class
     
@@ -9210,6 +9294,7 @@ Namespace DataSetTablasYCamposTableAdapters
             tableMapping.ColumnMappings.Add("Inferior", "Inferior")
             tableMapping.ColumnMappings.Add("Multiremplazo", "Multiremplazo")
             tableMapping.ColumnMappings.Add("SeparadorCampos", "SeparadorCampos")
+            tableMapping.ColumnMappings.Add("MultiReplace", "MultiReplace")
             Me._adapter.TableMappings.Add(tableMapping)
         End Sub
         
@@ -9414,7 +9499,8 @@ Namespace DataSetTablasYCamposTableAdapters
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Superior", Global.System.Data.SqlDbType.VarChar, 200, Global.System.Data.ParameterDirection.Input, 0, 0, "", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Sufijo", Global.System.Data.SqlDbType.VarChar, 200, Global.System.Data.ParameterDirection.Input, 0, 0, "", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Inferior", Global.System.Data.SqlDbType.VarChar, 200, Global.System.Data.ParameterDirection.Input, 0, 0, "", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@SeparadorCampos", Global.System.Data.SqlDbType.VarChar, 2147483647, Global.System.Data.ParameterDirection.Input, 0, 0, "", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@SeparadorCampos", Global.System.Data.SqlDbType.VarChar, 50, Global.System.Data.ParameterDirection.Input, 0, 0, "", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@MultiReplace", Global.System.Data.SqlDbType.VarChar, 2147483647, Global.System.Data.ParameterDirection.Input, 0, 0, "", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -9440,14 +9526,15 @@ Namespace DataSetTablasYCamposTableAdapters
             Me._commandCollection(0).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Superior", Global.System.Data.SqlDbType.VarChar, 200, Global.System.Data.ParameterDirection.Input, 0, 0, Nothing, Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(0).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Sufijo", Global.System.Data.SqlDbType.VarChar, 200, Global.System.Data.ParameterDirection.Input, 0, 0, Nothing, Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(0).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Inferior", Global.System.Data.SqlDbType.VarChar, 200, Global.System.Data.ParameterDirection.Input, 0, 0, Nothing, Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._commandCollection(0).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@SeparadorCampos", Global.System.Data.SqlDbType.VarChar, 2147483647, Global.System.Data.ParameterDirection.Input, 0, 0, Nothing, Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(0).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@SeparadorCampos", Global.System.Data.SqlDbType.VarChar, 50, Global.System.Data.ParameterDirection.Input, 0, 0, Nothing, Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(0).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@MultiReplace", Global.System.Data.SqlDbType.VarChar, 2147483647, Global.System.Data.ParameterDirection.Input, 0, 0, Nothing, Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, true)>  _
-        Public Overloads Overridable Function Fill(ByVal dataTable As DataSetTablasYCampos.SP_CampoComponentes_EDICION_ACTUALIZARDataTable, ByVal CampoComponenteID As Global.System.Nullable(Of Integer), ByVal PlantillaID As Global.System.Nullable(Of Integer), ByVal Tipo As String, ByVal Prefijo As String, ByVal Superior As String, ByVal Sufijo As String, ByVal Inferior As String, ByVal SeparadorCampos As String) As Integer
+        Public Overloads Overridable Function Fill(ByVal dataTable As DataSetTablasYCampos.SP_CampoComponentes_EDICION_ACTUALIZARDataTable, ByVal CampoComponenteID As Global.System.Nullable(Of Integer), ByVal PlantillaID As Global.System.Nullable(Of Integer), ByVal Tipo As String, ByVal Prefijo As String, ByVal Superior As String, ByVal Sufijo As String, ByVal Inferior As String, ByVal SeparadorCampos As String, ByVal MultiReplace As String) As Integer
             Me.Adapter.SelectCommand = Me.CommandCollection(0)
             If (CampoComponenteID.HasValue = true) Then
                 Me.Adapter.SelectCommand.Parameters(1).Value = CType(CampoComponenteID.Value,Integer)
@@ -9488,6 +9575,11 @@ Namespace DataSetTablasYCamposTableAdapters
                 Me.Adapter.SelectCommand.Parameters(8).Value = Global.System.DBNull.Value
             Else
                 Me.Adapter.SelectCommand.Parameters(8).Value = CType(SeparadorCampos,String)
+            End If
+            If (MultiReplace Is Nothing) Then
+                Me.Adapter.SelectCommand.Parameters(9).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.SelectCommand.Parameters(9).Value = CType(MultiReplace,String)
             End If
             If (Me.ClearBeforeFill = true) Then
                 dataTable.Clear
@@ -9500,7 +9592,7 @@ Namespace DataSetTablasYCamposTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], true)>  _
-        Public Overloads Overridable Function GetData(ByVal CampoComponenteID As Global.System.Nullable(Of Integer), ByVal PlantillaID As Global.System.Nullable(Of Integer), ByVal Tipo As String, ByVal Prefijo As String, ByVal Superior As String, ByVal Sufijo As String, ByVal Inferior As String, ByVal SeparadorCampos As String) As DataSetTablasYCampos.SP_CampoComponentes_EDICION_ACTUALIZARDataTable
+        Public Overloads Overridable Function GetData(ByVal CampoComponenteID As Global.System.Nullable(Of Integer), ByVal PlantillaID As Global.System.Nullable(Of Integer), ByVal Tipo As String, ByVal Prefijo As String, ByVal Superior As String, ByVal Sufijo As String, ByVal Inferior As String, ByVal SeparadorCampos As String, ByVal MultiReplace As String) As DataSetTablasYCampos.SP_CampoComponentes_EDICION_ACTUALIZARDataTable
             Me.Adapter.SelectCommand = Me.CommandCollection(0)
             If (CampoComponenteID.HasValue = true) Then
                 Me.Adapter.SelectCommand.Parameters(1).Value = CType(CampoComponenteID.Value,Integer)
@@ -9541,6 +9633,11 @@ Namespace DataSetTablasYCamposTableAdapters
                 Me.Adapter.SelectCommand.Parameters(8).Value = Global.System.DBNull.Value
             Else
                 Me.Adapter.SelectCommand.Parameters(8).Value = CType(SeparadorCampos,String)
+            End If
+            If (MultiReplace Is Nothing) Then
+                Me.Adapter.SelectCommand.Parameters(9).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.SelectCommand.Parameters(9).Value = CType(MultiReplace,String)
             End If
             Dim dataTable As DataSetTablasYCampos.SP_CampoComponentes_EDICION_ACTUALIZARDataTable = New DataSetTablasYCampos.SP_CampoComponentes_EDICION_ACTUALIZARDataTable()
             Me.Adapter.Fill(dataTable)
@@ -9579,7 +9676,7 @@ Namespace DataSetTablasYCamposTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
-        Public Overloads Overridable Function Update(ByVal CampoComponenteID As Global.System.Nullable(Of Integer), ByVal PlantillaID As Global.System.Nullable(Of Integer), ByVal Tipo As String, ByVal Prefijo As String, ByVal Superior As String, ByVal Sufijo As String, ByVal Inferior As String, ByVal SeparadorCampos As String) As Integer
+        Public Overloads Overridable Function Update(ByVal CampoComponenteID As Global.System.Nullable(Of Integer), ByVal PlantillaID As Global.System.Nullable(Of Integer), ByVal Tipo As String, ByVal Prefijo As String, ByVal Superior As String, ByVal Sufijo As String, ByVal Inferior As String, ByVal SeparadorCampos As String, ByVal MultiReplace As String) As Integer
             If (CampoComponenteID.HasValue = true) Then
                 Me.Adapter.UpdateCommand.Parameters(1).Value = CType(CampoComponenteID.Value,Integer)
             Else
@@ -9619,6 +9716,11 @@ Namespace DataSetTablasYCamposTableAdapters
                 Me.Adapter.UpdateCommand.Parameters(8).Value = Global.System.DBNull.Value
             Else
                 Me.Adapter.UpdateCommand.Parameters(8).Value = CType(SeparadorCampos,String)
+            End If
+            If (MultiReplace Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(9).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(9).Value = CType(MultiReplace,String)
             End If
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.UpdateCommand.Connection.State
             If ((Me.Adapter.UpdateCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
@@ -10010,7 +10112,8 @@ Namespace DataSetTablasYCamposTableAdapters
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Superior", Global.System.Data.SqlDbType.VarChar, 200, Global.System.Data.ParameterDirection.Input, 0, 0, "", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Sufijo", Global.System.Data.SqlDbType.VarChar, 200, Global.System.Data.ParameterDirection.Input, 0, 0, "", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Inferior", Global.System.Data.SqlDbType.VarChar, 200, Global.System.Data.ParameterDirection.Input, 0, 0, "", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@SeparadorCampos", Global.System.Data.SqlDbType.VarChar, 2147483647, Global.System.Data.ParameterDirection.Input, 0, 0, "", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@SeparadorCampos", Global.System.Data.SqlDbType.VarChar, 50, Global.System.Data.ParameterDirection.Input, 0, 0, "", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@MultiReplace", Global.System.Data.SqlDbType.VarChar, 2147483647, Global.System.Data.ParameterDirection.Input, 0, 0, "", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -10035,14 +10138,15 @@ Namespace DataSetTablasYCamposTableAdapters
             Me._commandCollection(0).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Superior", Global.System.Data.SqlDbType.VarChar, 200, Global.System.Data.ParameterDirection.Input, 0, 0, Nothing, Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(0).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Sufijo", Global.System.Data.SqlDbType.VarChar, 200, Global.System.Data.ParameterDirection.Input, 0, 0, Nothing, Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(0).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Inferior", Global.System.Data.SqlDbType.VarChar, 200, Global.System.Data.ParameterDirection.Input, 0, 0, Nothing, Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._commandCollection(0).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@SeparadorCampos", Global.System.Data.SqlDbType.VarChar, 2147483647, Global.System.Data.ParameterDirection.Input, 0, 0, Nothing, Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(0).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@SeparadorCampos", Global.System.Data.SqlDbType.VarChar, 50, Global.System.Data.ParameterDirection.Input, 0, 0, Nothing, Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(0).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@MultiReplace", Global.System.Data.SqlDbType.VarChar, 2147483647, Global.System.Data.ParameterDirection.Input, 0, 0, Nothing, Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, true)>  _
-        Public Overloads Overridable Function Fill(ByVal dataTable As DataSetTablasYCampos.SP_CampoComponentes_EDICION_INSERTARDataTable, ByVal PlantillaID As Global.System.Nullable(Of Integer), ByVal Tipo As String, ByVal Prefijo As String, ByVal Superior As String, ByVal Sufijo As String, ByVal Inferior As String, ByVal SeparadorCampos As String) As Integer
+        Public Overloads Overridable Function Fill(ByVal dataTable As DataSetTablasYCampos.SP_CampoComponentes_EDICION_INSERTARDataTable, ByVal PlantillaID As Global.System.Nullable(Of Integer), ByVal Tipo As String, ByVal Prefijo As String, ByVal Superior As String, ByVal Sufijo As String, ByVal Inferior As String, ByVal SeparadorCampos As String, ByVal MultiReplace As String) As Integer
             Me.Adapter.SelectCommand = Me.CommandCollection(0)
             If (PlantillaID.HasValue = true) Then
                 Me.Adapter.SelectCommand.Parameters(1).Value = CType(PlantillaID.Value,Integer)
@@ -10078,6 +10182,11 @@ Namespace DataSetTablasYCamposTableAdapters
                 Me.Adapter.SelectCommand.Parameters(7).Value = Global.System.DBNull.Value
             Else
                 Me.Adapter.SelectCommand.Parameters(7).Value = CType(SeparadorCampos,String)
+            End If
+            If (MultiReplace Is Nothing) Then
+                Me.Adapter.SelectCommand.Parameters(8).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.SelectCommand.Parameters(8).Value = CType(MultiReplace,String)
             End If
             If (Me.ClearBeforeFill = true) Then
                 dataTable.Clear
@@ -10090,7 +10199,7 @@ Namespace DataSetTablasYCamposTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], true)>  _
-        Public Overloads Overridable Function GetData(ByVal PlantillaID As Global.System.Nullable(Of Integer), ByVal Tipo As String, ByVal Prefijo As String, ByVal Superior As String, ByVal Sufijo As String, ByVal Inferior As String, ByVal SeparadorCampos As String) As DataSetTablasYCampos.SP_CampoComponentes_EDICION_INSERTARDataTable
+        Public Overloads Overridable Function GetData(ByVal PlantillaID As Global.System.Nullable(Of Integer), ByVal Tipo As String, ByVal Prefijo As String, ByVal Superior As String, ByVal Sufijo As String, ByVal Inferior As String, ByVal SeparadorCampos As String, ByVal MultiReplace As String) As DataSetTablasYCampos.SP_CampoComponentes_EDICION_INSERTARDataTable
             Me.Adapter.SelectCommand = Me.CommandCollection(0)
             If (PlantillaID.HasValue = true) Then
                 Me.Adapter.SelectCommand.Parameters(1).Value = CType(PlantillaID.Value,Integer)
@@ -10126,6 +10235,11 @@ Namespace DataSetTablasYCamposTableAdapters
                 Me.Adapter.SelectCommand.Parameters(7).Value = Global.System.DBNull.Value
             Else
                 Me.Adapter.SelectCommand.Parameters(7).Value = CType(SeparadorCampos,String)
+            End If
+            If (MultiReplace Is Nothing) Then
+                Me.Adapter.SelectCommand.Parameters(8).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.SelectCommand.Parameters(8).Value = CType(MultiReplace,String)
             End If
             Dim dataTable As DataSetTablasYCampos.SP_CampoComponentes_EDICION_INSERTARDataTable = New DataSetTablasYCampos.SP_CampoComponentes_EDICION_INSERTARDataTable()
             Me.Adapter.Fill(dataTable)
@@ -10164,7 +10278,7 @@ Namespace DataSetTablasYCamposTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Insert, true)>  _
-        Public Overloads Overridable Function Insert(ByVal PlantillaID As Global.System.Nullable(Of Integer), ByVal Tipo As String, ByVal Prefijo As String, ByVal Superior As String, ByVal Sufijo As String, ByVal Inferior As String, ByVal SeparadorCampos As String) As Integer
+        Public Overloads Overridable Function Insert(ByVal PlantillaID As Global.System.Nullable(Of Integer), ByVal Tipo As String, ByVal Prefijo As String, ByVal Superior As String, ByVal Sufijo As String, ByVal Inferior As String, ByVal SeparadorCampos As String, ByVal MultiReplace As String) As Integer
             If (PlantillaID.HasValue = true) Then
                 Me.Adapter.InsertCommand.Parameters(1).Value = CType(PlantillaID.Value,Integer)
             Else
@@ -10199,6 +10313,11 @@ Namespace DataSetTablasYCamposTableAdapters
                 Me.Adapter.InsertCommand.Parameters(7).Value = Global.System.DBNull.Value
             Else
                 Me.Adapter.InsertCommand.Parameters(7).Value = CType(SeparadorCampos,String)
+            End If
+            If (MultiReplace Is Nothing) Then
+                Me.Adapter.InsertCommand.Parameters(8).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.InsertCommand.Parameters(8).Value = CType(MultiReplace,String)
             End If
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.InsertCommand.Connection.State
             If ((Me.Adapter.InsertCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
@@ -10351,6 +10470,7 @@ Namespace DataSetTablasYCamposTableAdapters
             tableMapping.ColumnMappings.Add("Sufijo", "Sufijo")
             tableMapping.ColumnMappings.Add("Inferior", "Inferior")
             tableMapping.ColumnMappings.Add("SeparadorCampos", "SeparadorCampos")
+            tableMapping.ColumnMappings.Add("MultiReplace", "MultiReplace")
             Me._adapter.TableMappings.Add(tableMapping)
         End Sub
         

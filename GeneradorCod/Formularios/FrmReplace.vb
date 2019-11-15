@@ -134,7 +134,7 @@
         While contadorComponentes > 0
             'Se ubica en la primera fila
             SP_Componentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView.CurrentCell = SP_Componentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView.Rows(0).Cells(0)
-            CodigoGeneradoTextBox.Text = CodigoGeneradoTextBox.Text & vbCrLf & "                      " & NombreTecnologiaTextBox1.Text & vbCrLf & NombreComponenteTextBox.Text & vbCrLf & CodigoTextBox.Text & vbCrLf & "++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++" & vbCrLf
+            CodigoGeneradoTextBox.Text = CodigoGeneradoTextBox.Text & vbCrLf & "                              " & NombreTecnologiaTextBox1.Text & vbCrLf & NombreComponenteTextBox.Text & vbCrLf & CodigoTextBox.Text & vbCrLf & "++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++" & vbCrLf
             SP_Componentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView.Rows.RemoveAt(0)
             contadorComponentes = contadorComponentes - 1
         End While
@@ -184,21 +184,33 @@
     End Sub
 
     Function TratamientoCampos(campoConComplemento As String, contadorCampos As Integer) As String
-        If PrefijoTextBox.Text <> "" Then
-            campoConComplemento = PrefijoTextBox.Text & campoConComplemento & SeparadorCamposTextBox.Text
-        End If
+        Dim Campo As String = "Campo"
+        Dim Objeto As String = ""
 
-        If contadorCampos > 1 Then
-            campoConComplemento = campoConComplemento & SufijoTextBox.Text & SeparadorCamposTextBox.Text
+        If MultiReplaceTextBox.Text = "" Then
+            'Poner Prefijo
+            If PrefijoTextBox.Text <> "" Then
+                Campo = PrefijoTextBox.Text & Campo & SeparadorCamposTextBox.Text
+            End If
+            'Poner Sufijo con separador
+            If contadorCampos > 1 Then
+                Campo = Campo & SufijoTextBox.Text & SeparadorCamposTextBox.Text
+            Else
+                Campo = Campo & SufijoTextBox.Text
+            End If
+            'Poner Superior
+            If SuperiorTextBox.Text <> "" Then
+                Campo = SuperiorTextBox.Text & vbCrLf & Campo
+            End If
+            'Poner Inferior
+            If InferiorTextBox.Text <> "" Then
+                Campo = Campo & vbCrLf & InferiorTextBox.Text
+            End If
+            Objeto = Campo.Replace("Campo", campoConComplemento)
         Else
-            campoConComplemento = campoConComplemento & SufijoTextBox.Text
+            Objeto = MultiReplaceTextBox.Text.Replace("Campo", campoConComplemento)
         End If
-
-        If SuperiorTextBox.Text <> "" Then
-            campoConComplemento = SuperiorTextBox.Text & vbCrLf & campoConComplemento
-        End If
-
-        Return campoConComplemento
+        Return Objeto
     End Function
 
 #Region "Procedimientos"
@@ -851,11 +863,14 @@
         Eliminar_Menu_CamposDeTablas.Enabled = False
         'Grid
         SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaIDDataGridView.Enabled = True
+        SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoIDDataGridView.Enabled = True
+        Panel2.Enabled = True
         'Cargar Datos de Tabla Actualizados
         SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaID()
         Bloquear_Objetos_CamposDeTablas()
         Parar_Timer_CamposDeTablas()
         Timer_Ubicar_En_Fila_CamposDeTablas()
+
     End Sub
     'Insertar
     Private Sub SP_CamposDeTablas_EDICION_INSERTAR()
@@ -901,6 +916,8 @@
         Nuevo_Menu_CamposDeTablas.Enabled = False
         Editar_Menu_CamposDeTablas.Enabled = False
         SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaIDDataGridView.Enabled = False
+        SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoIDDataGridView.Enabled = False
+        Panel2.Enabled = False
         Limpiar_Objetos_CamposDeTablas()
         NombreCampoTextBox.Enabled = True
         NombreCampoTextBox.Focus()
@@ -923,6 +940,8 @@
         Actualizar_Menu_CamposDeTablas.Enabled = True
         Eliminar_Menu_CamposDeTablas.Enabled = True
         SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaIDDataGridView.Enabled = False
+        SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoIDDataGridView.Enabled = False
+        Panel2.Enabled = False
         Desbloquear_Objetos_CamposDeTablas()
         Timer_Actualizar_CamposDeTablas()
         Timer_Eliminar_CamposDeTablas()
@@ -1104,7 +1123,7 @@
 
     Private Sub SP_CampoComponentes_Segun_Plantilla_TipoTable()
         Try
-            Me.SP_CampoComponentes_Segun_Plantilla_TipoTableAdapter.Fill(Me.DataSetTablasYCampos.SP_CampoComponentes_Segun_Plantilla_Tipo, New System.Nullable(Of Integer)(CType(PlantillaIDTextBox.Text, Integer)), TipoTextBox.Text)
+            Me.SP_CampoComponentes_Segun_Plantilla_TipoTableAdapter.Fill(Me.DataSetTablasYCampos.SP_CampoComponentes_Segun_Plantilla_Tipo, New System.Nullable(Of Integer)(CType(PlantillaIDTextBox1.Text, Integer)), TipoTextBox.Text)
         Catch ex As System.Exception
             'System.Windows.Forms.MessageBox.Show(ex.Message)
         End Try
@@ -1115,14 +1134,27 @@
     End Sub
 
     Private Sub CodigoGeneradoTextBox_MouseDoubleClick(sender As Object, e As MouseEventArgs) Handles CodigoGeneradoTextBox.MouseDoubleClick
+        CodigoGeneradoTextBox.SendToBack()
+        CodigoGeneradoTextBox.Dock = DockStyle.None
+    End Sub
+
+    Private Sub MaximizarCodigoGeneradoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles MaximizarCodigoGeneradoToolStripMenuItem.Click
         CodigoGeneradoTextBox.BringToFront()
         CodigoGeneradoTextBox.Dock = DockStyle.Fill
     End Sub
 
-    Private Sub CodigoGeneradoTextBox_MouseClick(sender As Object, e As MouseEventArgs) Handles CodigoGeneradoTextBox.MouseClick
-        CodigoGeneradoTextBox.SendToBack()
-        CodigoGeneradoTextBox.Dock = DockStyle.None
+    Private Sub BtnCopiar_Click(sender As Object, e As EventArgs) Handles BtnCopiar.Click
+        If CodigoGeneradoTextBox.Text <> "" Then
+            Clipboard.SetText(CodigoGeneradoTextBox.Text)
+        End If
     End Sub
+
+    Private Sub BtnLimpiar_Click(sender As Object, e As EventArgs) Handles BtnLimpiar.Click
+        CodigoGeneradoTextBox.Text = ""
+        SP_Proyectos_EDICION_ACTUALIZAR_CodigoRemplazado()
+    End Sub
+
+
 
 
 

@@ -1288,7 +1288,7 @@
 
 
     Private Sub TipoTextBox_TextChanged(sender As Object, e As EventArgs) Handles TipoTextBox.TextChanged
-
+        Cbo_TipoDato.Text = TipoTextBox.Text
     End Sub
 
 #Region "Procedimientos"
@@ -1326,7 +1326,8 @@
                                                  SuperiorTextBox.Text,
                                                  SufijoTextBox.Text,
                                                  InferiorTextBox.Text,
-                                                 SeparadorCamposTextBox.Text)
+                                                 SeparadorCamposTextBox.Text,
+                                                 MultiReplaceTextBox.Text)
             SP_CampoComponentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaID()
             MsgBox("El Dato Fue Guardado Exitosamente", MsgBoxStyle.Information, "Guardar Dato")
         Catch ex As System.Exception
@@ -1344,7 +1345,8 @@
                                                  SuperiorTextBox.Text,
                                                  SufijoTextBox.Text,
                                                  InferiorTextBox.Text,
-                                                 SeparadorCamposTextBox.Text)
+                                                 SeparadorCamposTextBox.Text,
+                                                 MultiReplaceTextBox.Text)
             SP_CampoComponentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaID()
             MsgBox("El Dato Fue Actualizado Exitosamente", MsgBoxStyle.Information, "Actualizar Dato")
         Catch ex As System.Exception
@@ -1418,6 +1420,37 @@
     Private Sub Cancelar_Menu_CampoComponentes_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Cancelar_Menu_CampoComponentes.Click
         Cancelar_CampoComponentes()
     End Sub
+    'Quitar espacios en blanco    
+    Private Sub BtnPrevisualizar_Click(sender As Object, e As EventArgs) Handles BtnPrevisualizar.Click
+        TratamientoPorDatoConPSSI()
+    End Sub
+
+    Private Sub TratamientoPorDatoConPSSI()
+        Dim Campo As String = "CAMPO"
+        If MultiReplaceTextBox.Text = "" Then
+            'Pone prifijo
+            If PrefijoTextBox.Text <> "" Then
+                Campo = PrefijoTextBox.Text & Campo
+            End If
+            'pone sufijo
+            If SufijoTextBox.Text <> "" Then
+                Campo = Campo & SufijoTextBox.Text
+            End If
+            'superior
+            If SuperiorTextBox.Text <> "" Then
+                Campo = SuperiorTextBox.Text & vbCrLf & Campo
+            End If
+            'inferior
+            If InferiorTextBox.Text <> "" Then
+                Campo = Campo & vbCrLf & InferiorTextBox.Text
+            End If
+            MultiReplaceTextBox.Text = ""
+            TxtPrevisualizar.Text = Trim(Campo)
+        Else
+            TxtPrevisualizar.Text = MultiReplaceTextBox.Text.Replace("Campo", Campo)
+        End If
+    End Sub
+
 #End Region
 #Region "Eventos sobre Objetos "
     'Control de Nulos
@@ -1453,14 +1486,8 @@
     End Sub
     Private Sub SeparadorCamposTextBox_KeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles SeparadorCamposTextBox.KeyPress
         If Asc(e.KeyChar) = 13 Then
-            If SeparadorCamposTextBox.Text = "" Then
-                MsgBox("Dato Obligatorio, Favor Verificar", MsgBoxStyle.Critical, "Validación de Datos")
-                SeparadorCamposTextBox.Text = ""
-                SeparadorCamposTextBox.Focus()
-            Else
-                PrefijoTextBox.Enabled = True
-                PrefijoTextBox.Focus()
-            End If
+            PrefijoTextBox.Enabled = True
+            PrefijoTextBox.Focus()
         End If
         If InStr(1, ",;" & Chr(8), e.KeyChar) = 0 Then
             e.KeyChar = ""
@@ -1486,6 +1513,12 @@
     End Sub
     Private Sub InferiorTextBox_KeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles InferiorTextBox.KeyPress
         If Asc(e.KeyChar) = 13 Then
+            MultiReplaceTextBox.Enabled = True
+            MultiReplaceTextBox.Focus()
+        End If
+    End Sub
+    Private Sub MultiReplaceTextBox_KeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles MultiReplaceTextBox.KeyPress
+        If Asc(e.KeyChar) = 13 Then
             If Actualizar_Menu_CampoComponentes.Enabled = True Then
                 Actualizar_Menu_CampoComponentes.Enabled = True
                 Eliminar_Menu_CampoComponentes.Enabled = True
@@ -1503,6 +1536,7 @@
         SuperiorTextBox.Text = "" ''
         SufijoTextBox.Text = "" ''
         InferiorTextBox.Text = "" ''
+        MultiReplaceTextBox.Text = ""
     End Sub
     Public Sub Desbloquear_Objetos_CampoComponentes()
         Cbo_TipoDato.Enabled = True
@@ -1511,6 +1545,7 @@
         SuperiorTextBox.Enabled = True
         SufijoTextBox.Enabled = True
         InferiorTextBox.Enabled = True
+        MultiReplaceTextBox.Enabled = True
     End Sub
     Public Sub Bloquear_Objetos_CampoComponentes()
         Cbo_TipoDato.Enabled = False
@@ -1519,6 +1554,7 @@
         SuperiorTextBox.Enabled = False
         SufijoTextBox.Enabled = False
         InferiorTextBox.Enabled = False
+        MultiReplaceTextBox.Enabled = False
     End Sub
 #End Region
 
@@ -1589,6 +1625,7 @@
     Private Sub SP_CampoComponentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView_CellMouseClick(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewCellMouseEventArgs) Handles SP_CampoComponentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView.CellMouseClick
         X_CampoComponentes = SP_CampoComponentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView.CurrentRow.Index
     End Sub
+
     Private Sub Ubicar_En_Fila_CampoComponentes()
         Try
             Me.SP_CampoComponentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView.Rows(X_CampoComponentes).Selected = True
@@ -1608,6 +1645,8 @@
     Private Sub BtnImprimeTabla_Click(sender As Object, e As EventArgs) Handles BtnImprimeTabla.Click
         Me.ContenidoComponenteRichTextBox.Text = Me.ContenidoComponenteRichTextBox.Text.Insert(Me.ContenidoComponenteRichTextBox.SelectionStart, "{{{Tabla}}}")
     End Sub
+
+
 #End Region
 
 
