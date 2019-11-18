@@ -169,6 +169,7 @@ Partial Class FrmReplace
         Me.InferiorTextBox = New System.Windows.Forms.TextBox()
         Me.PlantillaIDTextBox1 = New System.Windows.Forms.TextBox()
         Me.Panel5 = New System.Windows.Forms.Panel()
+        Me.ClavePrincipal = New System.Windows.Forms.TextBox()
         Me.NombreTablaTextBox1 = New System.Windows.Forms.TextBox()
         Me.MultiReplaceTextBox = New System.Windows.Forms.TextBox()
         Me.SeparadorCamposTextBox = New System.Windows.Forms.TextBox()
@@ -204,7 +205,6 @@ Partial Class FrmReplace
         Me.SP_CamposDeTablas_EDICION_INSERTARBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.SP_CamposDeTablas_EDICION_INSERTARTableAdapter = New GeneradorCod.DataSetTablasYCamposTableAdapters.SP_CamposDeTablas_EDICION_INSERTARTableAdapter()
         Me.SP_CampoComponentes_Segun_Plantilla_TipoTableAdapter = New GeneradorCod.DataSetTablasYCamposTableAdapters.SP_CampoComponentes_Segun_Plantilla_TipoTableAdapter()
-        Me.ClavePrincipal = New System.Windows.Forms.TextBox()
         ComponenteIDLabel = New System.Windows.Forms.Label()
         PlantillaIDLabel = New System.Windows.Forms.Label()
         TecnologiaIDLabel = New System.Windows.Forms.Label()
@@ -1595,6 +1595,13 @@ Partial Class FrmReplace
         Me.Panel5.Size = New System.Drawing.Size(418, 567)
         Me.Panel5.TabIndex = 159
         '
+        'ClavePrincipal
+        '
+        Me.ClavePrincipal.Location = New System.Drawing.Point(246, 162)
+        Me.ClavePrincipal.Name = "ClavePrincipal"
+        Me.ClavePrincipal.Size = New System.Drawing.Size(100, 20)
+        Me.ClavePrincipal.TabIndex = 172
+        '
         'NombreTablaTextBox1
         '
         Me.NombreTablaTextBox1.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoIDBindingSource, "NombreTabla", True))
@@ -1830,13 +1837,6 @@ Partial Class FrmReplace
         'SP_CampoComponentes_Segun_Plantilla_TipoTableAdapter
         '
         Me.SP_CampoComponentes_Segun_Plantilla_TipoTableAdapter.ClearBeforeFill = True
-        '
-        'ClavePrincipal
-        '
-        Me.ClavePrincipal.Location = New System.Drawing.Point(246, 162)
-        Me.ClavePrincipal.Name = "ClavePrincipal"
-        Me.ClavePrincipal.Size = New System.Drawing.Size(100, 20)
-        Me.ClavePrincipal.TabIndex = 172
         '
         'FrmReplace
         '

@@ -1,6 +1,5 @@
 ﻿Public Class FrmTecnologias
     Private Sub FrmTecnologias_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
         Try
             Me.TecnologiasTableAdapter.Fill(Me.DataSetAdministracion.Tecnologias)
             Cancelar_Tecnologias()
@@ -12,6 +11,7 @@
             Cancelar_RequerimientosPlantillas()
             SP_CampoComponentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaID()
             Cancelar_CampoComponentes()
+            Me.SP_CARGA_CONVENSIONES_USADASTableAdapter.Fill(Me.DataSetTablasYCampos.SP_CARGA_CONVENSIONES_USADAS)
         Catch ex As System.Exception
             System.Windows.Forms.MessageBox.Show(ex.Message)
         End Try
@@ -578,6 +578,7 @@
         Bloquear_Objetos_Componentes()
         Parar_Timer_Componentes()
         Timer_Ubicar_En_Fila_Componentes()
+        Me.TecnologiasTableAdapter.Fill(Me.DataSetAdministracion.Tecnologias)
     End Sub
     'Insertar
     Private Sub SP_Componentes_EDICION_INSERTAR()
@@ -1648,6 +1649,14 @@
 
     Private Sub BtnImprimeClavePrincipal_Click(sender As Object, e As EventArgs) Handles BtnImprimeClavePrincipal.Click
         Me.ContenidoComponenteRichTextBox.Text = Me.ContenidoComponenteRichTextBox.Text.Insert(Me.ContenidoComponenteRichTextBox.SelectionStart, "{{{Clave}}}")
+    End Sub
+
+    Private Sub BtnTablaMinuscula_Click(sender As Object, e As EventArgs) Handles BtnTablaMinuscula.Click
+        Me.ContenidoComponenteRichTextBox.Text = Me.ContenidoComponenteRichTextBox.Text.Insert(Me.ContenidoComponenteRichTextBox.SelectionStart, "{{{Tmin}}}")
+    End Sub
+
+    Private Sub SP_CARGA_CONVENSIONES_USADASDataGridView_CellMouseDoubleClick(sender As Object, e As DataGridViewCellMouseEventArgs) Handles SP_CARGA_CONVENSIONES_USADASDataGridView.CellMouseDoubleClick
+        RequerimientoTextBox.Text = CONVENSIONESTextBox.Text
     End Sub
 
 

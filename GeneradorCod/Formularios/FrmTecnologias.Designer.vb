@@ -46,6 +46,7 @@ Partial Class FrmTecnologias
         Dim MultiReplaceLabel As System.Windows.Forms.Label
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmTecnologias))
+        Dim CONVENSIONESLabel As System.Windows.Forms.Label
         Me.TecnologiasDataGridView = New System.Windows.Forms.DataGridView()
         Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.TecnologiasBindingSource = New System.Windows.Forms.BindingSource(Me.components)
@@ -90,7 +91,6 @@ Partial Class FrmTecnologias
         Me.TxtBuscado = New System.Windows.Forms.TextBox()
         Me.TxtRemplazarPor = New System.Windows.Forms.TextBox()
         Me.SP_RequerimientosPlantillas_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView = New System.Windows.Forms.DataGridView()
-        Me.DataGridViewTextBoxColumn6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.SP_RequerimientosPlantillas_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDBindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
         Me.RequerimientoTextBox = New System.Windows.Forms.TextBox()
         Me.OrdenDePeticionTextBox = New System.Windows.Forms.TextBox()
@@ -108,6 +108,8 @@ Partial Class FrmTecnologias
         Me.GrupoTiposIDTextBox = New System.Windows.Forms.TextBox()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
+        Me.BtnTablaMinuscula = New System.Windows.Forms.Button()
+        Me.BtnImprimeClavePrincipal = New System.Windows.Forms.Button()
         Me.BtnImprimeTabla = New System.Windows.Forms.Button()
         Me.BtnImprimeCampos = New System.Windows.Forms.Button()
         Me.BtnGuardarCodigo = New System.Windows.Forms.Button()
@@ -134,8 +136,15 @@ Partial Class FrmTecnologias
         Me.SufijoTextBox = New System.Windows.Forms.TextBox()
         Me.SeparadorCamposTextBox = New System.Windows.Forms.TextBox()
         Me.Label4 = New System.Windows.Forms.Label()
-        Me.Cbo_TipoDato = New System.Windows.Forms.ComboBox()
         Me.SP_CampoComponentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView = New System.Windows.Forms.DataGridView()
+        Me.DataGridViewTextBoxColumn7 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn8 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn9 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn10 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn11 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.MultiReplace = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn12 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Cbo_TipoDato = New System.Windows.Forms.ComboBox()
         Me.Panel7 = New System.Windows.Forms.Panel()
         Me.BtnPrevisualizar = New System.Windows.Forms.Button()
         Me.Nuevo_Menu_CampoComponentes = New System.Windows.Forms.Button()
@@ -188,14 +197,12 @@ Partial Class FrmTecnologias
         Me.SP_RequerimientosPlantillas_EDICION_ELIMINARTableAdapter = New GeneradorCod.DataSetAdministracionTableAdapters.SP_RequerimientosPlantillas_EDICION_ELIMINARTableAdapter()
         Me.SP_RequerimientosPlantillas_EDICION_INSERTARBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.SP_RequerimientosPlantillas_EDICION_INSERTARTableAdapter = New GeneradorCod.DataSetAdministracionTableAdapters.SP_RequerimientosPlantillas_EDICION_INSERTARTableAdapter()
-        Me.BtnImprimeClavePrincipal = New System.Windows.Forms.Button()
-        Me.DataGridViewTextBoxColumn7 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn8 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn9 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn10 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn11 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.MultiReplace = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn12 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.SP_CARGA_CONVENSIONES_USADASBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.SP_CARGA_CONVENSIONES_USADASTableAdapter = New GeneradorCod.DataSetTablasYCamposTableAdapters.SP_CARGA_CONVENSIONES_USADASTableAdapter()
+        Me.SP_CARGA_CONVENSIONES_USADASDataGridView = New System.Windows.Forms.DataGridView()
+        Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.CONVENSIONESTextBox = New System.Windows.Forms.TextBox()
         NombreTecnologiaLabel = New System.Windows.Forms.Label()
         TecnologiaIDLabel = New System.Windows.Forms.Label()
         NombrePlantillaLabel = New System.Windows.Forms.Label()
@@ -217,6 +224,7 @@ Partial Class FrmTecnologias
         InferiorLabel = New System.Windows.Forms.Label()
         SeparadorCamposLabel = New System.Windows.Forms.Label()
         MultiReplaceLabel = New System.Windows.Forms.Label()
+        CONVENSIONESLabel = New System.Windows.Forms.Label()
         CType(Me.TecnologiasDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TecnologiasBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DataSetAdministracion, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -258,6 +266,8 @@ Partial Class FrmTecnologias
         CType(Me.SP_RequerimientosPlantillas_EDICION_ACTUALIZARBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.SP_RequerimientosPlantillas_EDICION_ELIMINARBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.SP_RequerimientosPlantillas_EDICION_INSERTARBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.SP_CARGA_CONVENSIONES_USADASBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.SP_CARGA_CONVENSIONES_USADASDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'NombreTecnologiaLabel
@@ -909,15 +919,8 @@ Partial Class FrmTecnologias
         Me.SP_RequerimientosPlantillas_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView.Location = New System.Drawing.Point(6, 179)
         Me.SP_RequerimientosPlantillas_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView.Name = "SP_RequerimientosPlantillas_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView"
         Me.SP_RequerimientosPlantillas_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView.RowHeadersVisible = False
-        Me.SP_RequerimientosPlantillas_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView.Size = New System.Drawing.Size(717, 391)
+        Me.SP_RequerimientosPlantillas_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView.Size = New System.Drawing.Size(459, 391)
         Me.SP_RequerimientosPlantillas_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView.TabIndex = 107
-        '
-        'DataGridViewTextBoxColumn6
-        '
-        Me.DataGridViewTextBoxColumn6.DataPropertyName = "Requerimiento"
-        Me.DataGridViewTextBoxColumn6.HeaderText = "Requerimiento"
-        Me.DataGridViewTextBoxColumn6.Name = "DataGridViewTextBoxColumn6"
-        Me.DataGridViewTextBoxColumn6.Width = 590
         '
         'SP_RequerimientosPlantillas_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDBindingSource1
         '
@@ -1078,6 +1081,7 @@ Partial Class FrmTecnologias
         '
         'TabPage1
         '
+        Me.TabPage1.Controls.Add(Me.BtnTablaMinuscula)
         Me.TabPage1.Controls.Add(Me.BtnImprimeClavePrincipal)
         Me.TabPage1.Controls.Add(Me.BtnImprimeTabla)
         Me.TabPage1.Controls.Add(Me.BtnImprimeCampos)
@@ -1103,13 +1107,35 @@ Partial Class FrmTecnologias
         Me.TabPage1.Text = "Busqueda y Remplazo"
         Me.TabPage1.UseVisualStyleBackColor = True
         '
+        'BtnTablaMinuscula
+        '
+        Me.BtnTablaMinuscula.BackColor = System.Drawing.Color.White
+        Me.BtnTablaMinuscula.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnTablaMinuscula.Location = New System.Drawing.Point(578, 62)
+        Me.BtnTablaMinuscula.Name = "BtnTablaMinuscula"
+        Me.BtnTablaMinuscula.Size = New System.Drawing.Size(79, 43)
+        Me.BtnTablaMinuscula.TabIndex = 127
+        Me.BtnTablaMinuscula.Text = "{{{Tmin}}}"
+        Me.BtnTablaMinuscula.UseVisualStyleBackColor = False
+        '
+        'BtnImprimeClavePrincipal
+        '
+        Me.BtnImprimeClavePrincipal.BackColor = System.Drawing.Color.White
+        Me.BtnImprimeClavePrincipal.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnImprimeClavePrincipal.Location = New System.Drawing.Point(400, 62)
+        Me.BtnImprimeClavePrincipal.Name = "BtnImprimeClavePrincipal"
+        Me.BtnImprimeClavePrincipal.Size = New System.Drawing.Size(77, 43)
+        Me.BtnImprimeClavePrincipal.TabIndex = 126
+        Me.BtnImprimeClavePrincipal.Text = "{{{Clave}}}"
+        Me.BtnImprimeClavePrincipal.UseVisualStyleBackColor = False
+        '
         'BtnImprimeTabla
         '
         Me.BtnImprimeTabla.BackColor = System.Drawing.Color.White
         Me.BtnImprimeTabla.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnImprimeTabla.Location = New System.Drawing.Point(314, 62)
         Me.BtnImprimeTabla.Name = "BtnImprimeTabla"
-        Me.BtnImprimeTabla.Size = New System.Drawing.Size(104, 43)
+        Me.BtnImprimeTabla.Size = New System.Drawing.Size(80, 43)
         Me.BtnImprimeTabla.TabIndex = 125
         Me.BtnImprimeTabla.Text = "{{{Tabla}}}"
         Me.BtnImprimeTabla.UseVisualStyleBackColor = False
@@ -1118,9 +1144,9 @@ Partial Class FrmTecnologias
         '
         Me.BtnImprimeCampos.BackColor = System.Drawing.Color.White
         Me.BtnImprimeCampos.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnImprimeCampos.Location = New System.Drawing.Point(622, 62)
+        Me.BtnImprimeCampos.Location = New System.Drawing.Point(483, 62)
         Me.BtnImprimeCampos.Name = "BtnImprimeCampos"
-        Me.BtnImprimeCampos.Size = New System.Drawing.Size(93, 43)
+        Me.BtnImprimeCampos.Size = New System.Drawing.Size(89, 43)
         Me.BtnImprimeCampos.TabIndex = 124
         Me.BtnImprimeCampos.Text = "{{{Campos}}}"
         Me.BtnImprimeCampos.UseVisualStyleBackColor = False
@@ -1229,6 +1255,9 @@ Partial Class FrmTecnologias
         '
         'TabPage2
         '
+        Me.TabPage2.Controls.Add(Me.SP_CARGA_CONVENSIONES_USADASDataGridView)
+        Me.TabPage2.Controls.Add(CONVENSIONESLabel)
+        Me.TabPage2.Controls.Add(Me.CONVENSIONESTextBox)
         Me.TabPage2.Controls.Add(Me.SP_RequerimientosPlantillas_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView)
         Me.TabPage2.Controls.Add(Me.RequerimientoTextBox)
         Me.TabPage2.Controls.Add(RequerimientoLabel)
@@ -1374,16 +1403,6 @@ Partial Class FrmTecnologias
         Me.Label4.TabIndex = 153
         Me.Label4.Text = "Tipo de Dato"
         '
-        'Cbo_TipoDato
-        '
-        Me.Cbo_TipoDato.FormattingEnabled = True
-        Me.Cbo_TipoDato.Items.AddRange(New Object() {"boolean", "Date", "float", "numeric", "string"})
-        Me.Cbo_TipoDato.Location = New System.Drawing.Point(116, 64)
-        Me.Cbo_TipoDato.Name = "Cbo_TipoDato"
-        Me.Cbo_TipoDato.Size = New System.Drawing.Size(211, 26)
-        Me.Cbo_TipoDato.Sorted = True
-        Me.Cbo_TipoDato.TabIndex = 152
-        '
         'SP_CampoComponentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView
         '
         Me.SP_CampoComponentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView.AllowUserToAddRows = False
@@ -1396,6 +1415,58 @@ Partial Class FrmTecnologias
         Me.SP_CampoComponentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView.RowHeadersVisible = False
         Me.SP_CampoComponentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView.Size = New System.Drawing.Size(711, 206)
         Me.SP_CampoComponentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView.TabIndex = 91
+        '
+        'DataGridViewTextBoxColumn7
+        '
+        Me.DataGridViewTextBoxColumn7.DataPropertyName = "Tipo"
+        Me.DataGridViewTextBoxColumn7.HeaderText = "Tipo"
+        Me.DataGridViewTextBoxColumn7.Name = "DataGridViewTextBoxColumn7"
+        '
+        'DataGridViewTextBoxColumn8
+        '
+        Me.DataGridViewTextBoxColumn8.DataPropertyName = "Prefijo"
+        Me.DataGridViewTextBoxColumn8.HeaderText = "Prefijo"
+        Me.DataGridViewTextBoxColumn8.Name = "DataGridViewTextBoxColumn8"
+        '
+        'DataGridViewTextBoxColumn9
+        '
+        Me.DataGridViewTextBoxColumn9.DataPropertyName = "Superior"
+        Me.DataGridViewTextBoxColumn9.HeaderText = "Superior"
+        Me.DataGridViewTextBoxColumn9.Name = "DataGridViewTextBoxColumn9"
+        '
+        'DataGridViewTextBoxColumn10
+        '
+        Me.DataGridViewTextBoxColumn10.DataPropertyName = "Sufijo"
+        Me.DataGridViewTextBoxColumn10.HeaderText = "Sufijo"
+        Me.DataGridViewTextBoxColumn10.Name = "DataGridViewTextBoxColumn10"
+        '
+        'DataGridViewTextBoxColumn11
+        '
+        Me.DataGridViewTextBoxColumn11.DataPropertyName = "Inferior"
+        Me.DataGridViewTextBoxColumn11.HeaderText = "Inferior"
+        Me.DataGridViewTextBoxColumn11.Name = "DataGridViewTextBoxColumn11"
+        '
+        'MultiReplace
+        '
+        Me.MultiReplace.DataPropertyName = "MultiReplace"
+        Me.MultiReplace.HeaderText = "MultiReplace"
+        Me.MultiReplace.Name = "MultiReplace"
+        '
+        'DataGridViewTextBoxColumn12
+        '
+        Me.DataGridViewTextBoxColumn12.DataPropertyName = "SeparadorCampos"
+        Me.DataGridViewTextBoxColumn12.HeaderText = "Separador Campos"
+        Me.DataGridViewTextBoxColumn12.Name = "DataGridViewTextBoxColumn12"
+        '
+        'Cbo_TipoDato
+        '
+        Me.Cbo_TipoDato.FormattingEnabled = True
+        Me.Cbo_TipoDato.Items.AddRange(New Object() {"boolean", "Date", "float", "numeric", "string"})
+        Me.Cbo_TipoDato.Location = New System.Drawing.Point(116, 64)
+        Me.Cbo_TipoDato.Name = "Cbo_TipoDato"
+        Me.Cbo_TipoDato.Size = New System.Drawing.Size(211, 26)
+        Me.Cbo_TipoDato.Sorted = True
+        Me.Cbo_TipoDato.TabIndex = 152
         '
         'Panel7
         '
@@ -1735,58 +1806,58 @@ Partial Class FrmTecnologias
         '
         Me.SP_RequerimientosPlantillas_EDICION_INSERTARTableAdapter.ClearBeforeFill = True
         '
-        'BtnImprimeClavePrincipal
+        'DataGridViewTextBoxColumn6
         '
-        Me.BtnImprimeClavePrincipal.BackColor = System.Drawing.Color.White
-        Me.BtnImprimeClavePrincipal.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnImprimeClavePrincipal.Location = New System.Drawing.Point(456, 62)
-        Me.BtnImprimeClavePrincipal.Name = "BtnImprimeClavePrincipal"
-        Me.BtnImprimeClavePrincipal.Size = New System.Drawing.Size(104, 43)
-        Me.BtnImprimeClavePrincipal.TabIndex = 126
-        Me.BtnImprimeClavePrincipal.Text = "{{{Clave}}}"
-        Me.BtnImprimeClavePrincipal.UseVisualStyleBackColor = False
+        Me.DataGridViewTextBoxColumn6.DataPropertyName = "Requerimiento"
+        Me.DataGridViewTextBoxColumn6.HeaderText = "Requerimiento"
+        Me.DataGridViewTextBoxColumn6.Name = "DataGridViewTextBoxColumn6"
+        Me.DataGridViewTextBoxColumn6.Width = 455
         '
-        'DataGridViewTextBoxColumn7
+        'SP_CARGA_CONVENSIONES_USADASBindingSource
         '
-        Me.DataGridViewTextBoxColumn7.DataPropertyName = "Tipo"
-        Me.DataGridViewTextBoxColumn7.HeaderText = "Tipo"
-        Me.DataGridViewTextBoxColumn7.Name = "DataGridViewTextBoxColumn7"
+        Me.SP_CARGA_CONVENSIONES_USADASBindingSource.DataMember = "SP_CARGA_CONVENSIONES_USADAS"
+        Me.SP_CARGA_CONVENSIONES_USADASBindingSource.DataSource = Me.DataSetTablasYCampos
         '
-        'DataGridViewTextBoxColumn8
+        'SP_CARGA_CONVENSIONES_USADASTableAdapter
         '
-        Me.DataGridViewTextBoxColumn8.DataPropertyName = "Prefijo"
-        Me.DataGridViewTextBoxColumn8.HeaderText = "Prefijo"
-        Me.DataGridViewTextBoxColumn8.Name = "DataGridViewTextBoxColumn8"
+        Me.SP_CARGA_CONVENSIONES_USADASTableAdapter.ClearBeforeFill = True
         '
-        'DataGridViewTextBoxColumn9
+        'SP_CARGA_CONVENSIONES_USADASDataGridView
         '
-        Me.DataGridViewTextBoxColumn9.DataPropertyName = "Superior"
-        Me.DataGridViewTextBoxColumn9.HeaderText = "Superior"
-        Me.DataGridViewTextBoxColumn9.Name = "DataGridViewTextBoxColumn9"
+        Me.SP_CARGA_CONVENSIONES_USADASDataGridView.AllowUserToAddRows = False
+        Me.SP_CARGA_CONVENSIONES_USADASDataGridView.AutoGenerateColumns = False
+        Me.SP_CARGA_CONVENSIONES_USADASDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.SP_CARGA_CONVENSIONES_USADASDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn1})
+        Me.SP_CARGA_CONVENSIONES_USADASDataGridView.DataSource = Me.SP_CARGA_CONVENSIONES_USADASBindingSource
+        Me.SP_CARGA_CONVENSIONES_USADASDataGridView.Location = New System.Drawing.Point(471, 179)
+        Me.SP_CARGA_CONVENSIONES_USADASDataGridView.Name = "SP_CARGA_CONVENSIONES_USADASDataGridView"
+        Me.SP_CARGA_CONVENSIONES_USADASDataGridView.RowHeadersVisible = False
+        Me.SP_CARGA_CONVENSIONES_USADASDataGridView.Size = New System.Drawing.Size(250, 391)
+        Me.SP_CARGA_CONVENSIONES_USADASDataGridView.TabIndex = 110
         '
-        'DataGridViewTextBoxColumn10
+        'DataGridViewTextBoxColumn1
         '
-        Me.DataGridViewTextBoxColumn10.DataPropertyName = "Sufijo"
-        Me.DataGridViewTextBoxColumn10.HeaderText = "Sufijo"
-        Me.DataGridViewTextBoxColumn10.Name = "DataGridViewTextBoxColumn10"
+        Me.DataGridViewTextBoxColumn1.DataPropertyName = "CONVENSIONES"
+        Me.DataGridViewTextBoxColumn1.HeaderText = "CONVENSIONES USADAS"
+        Me.DataGridViewTextBoxColumn1.Name = "DataGridViewTextBoxColumn1"
+        Me.DataGridViewTextBoxColumn1.Width = 246
         '
-        'DataGridViewTextBoxColumn11
+        'CONVENSIONESLabel
         '
-        Me.DataGridViewTextBoxColumn11.DataPropertyName = "Inferior"
-        Me.DataGridViewTextBoxColumn11.HeaderText = "Inferior"
-        Me.DataGridViewTextBoxColumn11.Name = "DataGridViewTextBoxColumn11"
+        CONVENSIONESLabel.AutoSize = True
+        CONVENSIONESLabel.Location = New System.Drawing.Point(482, 517)
+        CONVENSIONESLabel.Name = "CONVENSIONESLabel"
+        CONVENSIONESLabel.Size = New System.Drawing.Size(106, 18)
+        CONVENSIONESLabel.TabIndex = 110
+        CONVENSIONESLabel.Text = "CONVENSIONES:"
         '
-        'MultiReplace
+        'CONVENSIONESTextBox
         '
-        Me.MultiReplace.DataPropertyName = "MultiReplace"
-        Me.MultiReplace.HeaderText = "MultiReplace"
-        Me.MultiReplace.Name = "MultiReplace"
-        '
-        'DataGridViewTextBoxColumn12
-        '
-        Me.DataGridViewTextBoxColumn12.DataPropertyName = "SeparadorCampos"
-        Me.DataGridViewTextBoxColumn12.HeaderText = "Separador Campos"
-        Me.DataGridViewTextBoxColumn12.Name = "DataGridViewTextBoxColumn12"
+        Me.CONVENSIONESTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SP_CARGA_CONVENSIONES_USADASBindingSource, "CONVENSIONES", True))
+        Me.CONVENSIONESTextBox.Location = New System.Drawing.Point(594, 514)
+        Me.CONVENSIONESTextBox.Name = "CONVENSIONESTextBox"
+        Me.CONVENSIONESTextBox.Size = New System.Drawing.Size(100, 26)
+        Me.CONVENSIONESTextBox.TabIndex = 111
         '
         'FrmTecnologias
         '
@@ -1870,6 +1941,8 @@ Partial Class FrmTecnologias
         CType(Me.SP_RequerimientosPlantillas_EDICION_ACTUALIZARBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.SP_RequerimientosPlantillas_EDICION_ELIMINARBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.SP_RequerimientosPlantillas_EDICION_INSERTARBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.SP_CARGA_CONVENSIONES_USADASBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.SP_CARGA_CONVENSIONES_USADASDataGridView, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -1978,7 +2051,6 @@ Partial Class FrmTecnologias
     Friend WithEvents BtnLimpiarRemplazar As Button
     Friend WithEvents BtnLimpiar As Button
     Friend WithEvents BtnGuardarCodigo As Button
-    Friend WithEvents DataGridViewTextBoxColumn6 As DataGridViewTextBoxColumn
     Friend WithEvents DataSetTablasYCampos As DataSetTablasYCampos
     Friend WithEvents TableAdapterManager1 As DataSetTablasYCamposTableAdapters.TableAdapterManager
     Friend WithEvents GrupoTiposIDTextBox1 As TextBox
@@ -2025,4 +2097,11 @@ Partial Class FrmTecnologias
     Friend WithEvents DataGridViewTextBoxColumn11 As DataGridViewTextBoxColumn
     Friend WithEvents MultiReplace As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn12 As DataGridViewTextBoxColumn
+    Friend WithEvents BtnTablaMinuscula As Button
+    Friend WithEvents DataGridViewTextBoxColumn6 As DataGridViewTextBoxColumn
+    Friend WithEvents SP_CARGA_CONVENSIONES_USADASBindingSource As BindingSource
+    Friend WithEvents SP_CARGA_CONVENSIONES_USADASTableAdapter As DataSetTablasYCamposTableAdapters.SP_CARGA_CONVENSIONES_USADASTableAdapter
+    Friend WithEvents SP_CARGA_CONVENSIONES_USADASDataGridView As DataGridView
+    Friend WithEvents DataGridViewTextBoxColumn1 As DataGridViewTextBoxColumn
+    Friend WithEvents CONVENSIONESTextBox As TextBox
 End Class

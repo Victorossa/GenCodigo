@@ -152,6 +152,10 @@
         If InStr(textoBase, "{{{Tabla}}}") Then
             CargarTabla(textoBase)
         End If
+        'Tabla en Minuscula
+        If InStr(textoBase, "{{{Tmin}}}") Then
+            CargarTablaMinuscula(textoBase)
+        End If
         'Remplaza la clave Principal
         If InStr(textoBase, "{{{Clave}}}") Then
             GenerarClave(textoBase)
@@ -176,6 +180,7 @@
             SP_RegistroValorRequerimientos_SEGUN_ProyectoIDDataGridView.Rows.RemoveAt(0)
             contadorRequerimientos = contadorRequerimientos - 1
         End While
+        SP_RegistroValorRequerimientos_SEGUN_ProyectoID()
     End Sub
     Private Sub SP_Proyectos_EDICION_ACTUALIZAR_CodigoRemplazado()
         Try
@@ -236,6 +241,11 @@
     End Function
     Function CargarTabla(textoBase As String)
         CodigoGeneradoTextBox.Text = CodigoGeneradoTextBox.Text.Replace("{{{Tabla}}}", NombreTablaTextBox1.Text)
+        Return vbEmpty
+    End Function
+    Function CargarTablaMinuscula(textoBase As String)
+        NombreTablaTextBox1.Text = LCase(NombreTablaTextBox1.Text)
+        CodigoGeneradoTextBox.Text = CodigoGeneradoTextBox.Text.Replace("{{{Tmin}}}", NombreTablaTextBox1.Text)
         Return vbEmpty
     End Function
 
