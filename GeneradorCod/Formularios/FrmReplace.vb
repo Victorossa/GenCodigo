@@ -97,18 +97,29 @@
         Dim contadorRequerimientos = SP_RequerimientosPlantillas_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView.Rows.Count()
         While contadorRequerimientos > 0
             SP_RequerimientosPlantillas_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView.CurrentCell = SP_RequerimientosPlantillas_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView.Rows(0).Cells(0)
-            ValorRequerimientoTextBox.Text = InputBox(EnunciadoTextBox.Text)
-            If ValorRequerimientoTextBox.Text = "" Then
-                If MsgBox("No has ingresdo un valor para: " + EnunciadoTextBox.Text, MsgBoxStyle.YesNo) = MsgBoxResult.No Then
-                    SP_RequerimientosPlantillas_BUSQUEDA_SEGUN_PARAMETRO_PlantillaID()
-                    Exit While
+            SP_RegistroValorRequerimientos_SegunProyectoRequerimiento()
+            If RegistroValorRequerimientoIDTextBox.Text = "" Then
+                ValorRequerimientoTextBox.Text = InputBox(EnunciadoTextBox.Text)
+                If ValorRequerimientoTextBox.Text = "" Then
+                    If MsgBox("No has ingresdo un valor para: " + EnunciadoTextBox.Text, MsgBoxStyle.YesNo) = MsgBoxResult.No Then
+                        SP_RequerimientosPlantillas_BUSQUEDA_SEGUN_PARAMETRO_PlantillaID()
+                        Exit While
+                    End If
+                Else
+                    'Guarda el Valor del Requerimiento
+                    SP_RegistroValorRequerimientos_EDICION_INSERTAR()
+                    'Elimina la fila del grid
+                    SP_RequerimientosPlantillas_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView.Rows.RemoveAt(0)
+                    'Descuenta del Contador
+                    contadorRequerimientos = contadorRequerimientos - 1
                 End If
             Else
+                'Inserta el mismo valor que ha trabajado
+                ValorRequerimientoTextBox.Text = ValorRequerimientoTextBox2.Text
                 'Guarda el Valor del Requerimiento
                 SP_RegistroValorRequerimientos_EDICION_INSERTAR()
-                'Elimina la fila del grid
                 SP_RequerimientosPlantillas_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView.Rows.RemoveAt(0)
-                'Descuenta del Contador
+                ''Descuenta del Contador
                 contadorRequerimientos = contadorRequerimientos - 1
             End If
         End While
@@ -1199,6 +1210,14 @@
     Private Sub BtnLimpiar_Click(sender As Object, e As EventArgs) Handles BtnLimpiar.Click
         CodigoGeneradoTextBox.Text = ""
         SP_Proyectos_EDICION_ACTUALIZAR_CodigoRemplazado()
+    End Sub
+
+    Private Sub SP_RegistroValorRequerimientos_SegunProyectoRequerimiento()
+        Try
+            Me.SP_RegistroValorRequerimientos_SegunProyectoRequerimientoTableAdapter.Fill(Me.DataSetTablasYCampos.SP_RegistroValorRequerimientos_SegunProyectoRequerimiento, New System.Nullable(Of Integer)(CType(ProyectoIDTextBox.Text, Integer)), RequerimientoTextBox.Text)
+        Catch ex As System.Exception
+            System.Windows.Forms.MessageBox.Show(ex.Message)
+        End Try
     End Sub
 
 

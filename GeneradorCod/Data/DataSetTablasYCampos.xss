@@ -22,8 +22,8 @@
     <Shape ID="DesignTable:SP_CampoComponentes_EDICION_ELIMINAR" ZOrder="5" X="627" Y="126" Height="54" Width="300" AdapterExpanded="false" DataTableExpanded="false" OldAdapterHeight="44" OldDataTableHeight="46" SplitterPosition="24" />
     <Shape ID="DesignTable:SP_CampoComponentes_EDICION_INSERTAR" ZOrder="4" X="625" Y="185" Height="54" Width="300" AdapterExpanded="false" DataTableExpanded="false" OldAdapterHeight="44" OldDataTableHeight="46" SplitterPosition="24" />
     <Shape ID="DesignTable:SP_CampoComponentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaID" ZOrder="3" X="625" Y="242" Height="54" Width="300" AdapterExpanded="false" DataTableExpanded="false" OldAdapterHeight="45" OldDataTableHeight="197" SplitterPosition="24" />
-    <Shape ID="DesignTable:SP_RegistroValorRequerimientos_SegunProyectoRequerimiento" ZOrder="2" X="7" Y="392" Height="54" Width="300" AdapterExpanded="false" DataTableExpanded="false" OldAdapterHeight="45" OldDataTableHeight="102" SplitterPosition="24" />
-    <Shape ID="DesignTable:SP_CARGA_CONVENSIONES_USADAS" ZOrder="1" X="7" Y="449" Height="54" Width="300" AdapterExpanded="false" DataTableExpanded="false" OldAdapterHeight="44" OldDataTableHeight="46" SplitterPosition="24" />
+    <Shape ID="DesignTable:SP_RegistroValorRequerimientos_SegunProyectoRequerimiento" ZOrder="1" X="7" Y="392" Height="54" Width="300" AdapterExpanded="false" DataTableExpanded="false" OldAdapterHeight="45" OldDataTableHeight="102" SplitterPosition="24" />
+    <Shape ID="DesignTable:SP_CARGA_CONVENSIONES_USADAS" ZOrder="2" X="7" Y="449" Height="54" Width="300" AdapterExpanded="false" DataTableExpanded="false" OldAdapterHeight="44" OldDataTableHeight="46" SplitterPosition="24" />
   </Shapes>
   <Connectors />
 </DiagramLayout>
