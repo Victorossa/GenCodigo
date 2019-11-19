@@ -53,10 +53,10 @@ Partial Class FrmReplace
         Dim SeparadorCamposLabel As System.Windows.Forms.Label
         Dim MultiReplaceLabel As System.Windows.Forms.Label
         Dim NombreTablaLabel1 As System.Windows.Forms.Label
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmReplace))
         Dim RegistroValorRequerimientoIDLabel As System.Windows.Forms.Label
         Dim ValorRequerimientoLabel1 As System.Windows.Forms.Label
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmReplace))
         Me.BtnBuscarYPintar = New System.Windows.Forms.Button()
         Me.SP_RequerimientosPlantillas_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView = New System.Windows.Forms.DataGridView()
         Me.DataGridViewTextBoxColumn5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -171,6 +171,10 @@ Partial Class FrmReplace
         Me.InferiorTextBox = New System.Windows.Forms.TextBox()
         Me.PlantillaIDTextBox1 = New System.Windows.Forms.TextBox()
         Me.Panel5 = New System.Windows.Forms.Panel()
+        Me.ValorRequerimientoTextBox2 = New System.Windows.Forms.TextBox()
+        Me.SP_RegistroValorRequerimientos_SegunProyectoRequerimientoBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.Label12 = New System.Windows.Forms.Label()
+        Me.RegistroValorRequerimientoIDTextBox = New System.Windows.Forms.TextBox()
         Me.ClavePrincipal = New System.Windows.Forms.TextBox()
         Me.NombreTablaTextBox1 = New System.Windows.Forms.TextBox()
         Me.MultiReplaceTextBox = New System.Windows.Forms.TextBox()
@@ -207,11 +211,9 @@ Partial Class FrmReplace
         Me.SP_CamposDeTablas_EDICION_INSERTARBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.SP_CamposDeTablas_EDICION_INSERTARTableAdapter = New GeneradorCod.DataSetTablasYCamposTableAdapters.SP_CamposDeTablas_EDICION_INSERTARTableAdapter()
         Me.SP_CampoComponentes_Segun_Plantilla_TipoTableAdapter = New GeneradorCod.DataSetTablasYCamposTableAdapters.SP_CampoComponentes_Segun_Plantilla_TipoTableAdapter()
-        Me.SP_RegistroValorRequerimientos_SegunProyectoRequerimientoBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.SP_RegistroValorRequerimientos_SegunProyectoRequerimientoTableAdapter = New GeneradorCod.DataSetTablasYCamposTableAdapters.SP_RegistroValorRequerimientos_SegunProyectoRequerimientoTableAdapter()
-        Me.RegistroValorRequerimientoIDTextBox = New System.Windows.Forms.TextBox()
-        Me.Label12 = New System.Windows.Forms.Label()
-        Me.ValorRequerimientoTextBox2 = New System.Windows.Forms.TextBox()
+        Me.Button1 = New System.Windows.Forms.Button()
+        Me.TextBox1 = New System.Windows.Forms.TextBox()
         ComponenteIDLabel = New System.Windows.Forms.Label()
         PlantillaIDLabel = New System.Windows.Forms.Label()
         TecnologiaIDLabel = New System.Windows.Forms.Label()
@@ -281,6 +283,7 @@ Partial Class FrmReplace
         CType(Me.SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaIDBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.SP_CampoComponentes_Segun_Plantilla_TipoBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel5.SuspendLayout()
+        CType(Me.SP_RegistroValorRequerimientos_SegunProyectoRequerimientoBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.SP_RegistroValorRequerimientos_EDICION_INSERTARBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.SP_ELIMINA_RegistroValorRequerimientos_SegunIDBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.SP_TablasDeProyecto_EDICION_ACTUALIZARBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -289,7 +292,6 @@ Partial Class FrmReplace
         CType(Me.SP_CamposDeTablas_EDICION_ACTUALIZARBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.SP_CamposDeTablas_EDICION_ELIMINARBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.SP_CamposDeTablas_EDICION_INSERTARBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.SP_RegistroValorRequerimientos_SegunProyectoRequerimientoBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'ComponenteIDLabel
@@ -561,6 +563,24 @@ Partial Class FrmReplace
         NombreTablaLabel1.Size = New System.Drawing.Size(77, 13)
         NombreTablaLabel1.TabIndex = 170
         NombreTablaLabel1.Text = "Nombre Tabla:"
+        '
+        'RegistroValorRequerimientoIDLabel
+        '
+        RegistroValorRequerimientoIDLabel.AutoSize = True
+        RegistroValorRequerimientoIDLabel.Location = New System.Drawing.Point(7, 588)
+        RegistroValorRequerimientoIDLabel.Name = "RegistroValorRequerimientoIDLabel"
+        RegistroValorRequerimientoIDLabel.Size = New System.Drawing.Size(161, 13)
+        RegistroValorRequerimientoIDLabel.TabIndex = 172
+        RegistroValorRequerimientoIDLabel.Text = "Registro Valor Requerimiento ID:"
+        '
+        'ValorRequerimientoLabel1
+        '
+        ValorRequerimientoLabel1.AutoSize = True
+        ValorRequerimientoLabel1.Location = New System.Drawing.Point(243, 588)
+        ValorRequerimientoLabel1.Name = "ValorRequerimientoLabel1"
+        ValorRequerimientoLabel1.Size = New System.Drawing.Size(105, 13)
+        ValorRequerimientoLabel1.TabIndex = 174
+        ValorRequerimientoLabel1.Text = "Valor Requerimiento:"
         '
         'BtnBuscarYPintar
         '
@@ -1534,6 +1554,8 @@ Partial Class FrmReplace
         '
         Me.Panel5.AutoScroll = True
         Me.Panel5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel5.Controls.Add(Me.TextBox1)
+        Me.Panel5.Controls.Add(Me.Button1)
         Me.Panel5.Controls.Add(ValorRequerimientoLabel1)
         Me.Panel5.Controls.Add(Me.ValorRequerimientoTextBox2)
         Me.Panel5.Controls.Add(Me.Label12)
@@ -1609,6 +1631,37 @@ Partial Class FrmReplace
         Me.Panel5.Name = "Panel5"
         Me.Panel5.Size = New System.Drawing.Size(418, 567)
         Me.Panel5.TabIndex = 159
+        '
+        'ValorRequerimientoTextBox2
+        '
+        Me.ValorRequerimientoTextBox2.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SP_RegistroValorRequerimientos_SegunProyectoRequerimientoBindingSource, "ValorRequerimiento", True))
+        Me.ValorRequerimientoTextBox2.Location = New System.Drawing.Point(354, 585)
+        Me.ValorRequerimientoTextBox2.Name = "ValorRequerimientoTextBox2"
+        Me.ValorRequerimientoTextBox2.Size = New System.Drawing.Size(40, 20)
+        Me.ValorRequerimientoTextBox2.TabIndex = 175
+        '
+        'SP_RegistroValorRequerimientos_SegunProyectoRequerimientoBindingSource
+        '
+        Me.SP_RegistroValorRequerimientos_SegunProyectoRequerimientoBindingSource.DataMember = "SP_RegistroValorRequerimientos_SegunProyectoRequerimiento"
+        Me.SP_RegistroValorRequerimientos_SegunProyectoRequerimientoBindingSource.DataSource = Me.DataSetTablasYCampos
+        '
+        'Label12
+        '
+        Me.Label12.AutoSize = True
+        Me.Label12.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label12.Location = New System.Drawing.Point(5, 567)
+        Me.Label12.Name = "Label12"
+        Me.Label12.Size = New System.Drawing.Size(367, 13)
+        Me.Label12.TabIndex = 174
+        Me.Label12.Text = "SP_RegistroValorRequerimientos_SegunProyectoRequerimiento"
+        '
+        'RegistroValorRequerimientoIDTextBox
+        '
+        Me.RegistroValorRequerimientoIDTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SP_RegistroValorRequerimientos_SegunProyectoRequerimientoBindingSource, "RegistroValorRequerimientoID", True))
+        Me.RegistroValorRequerimientoIDTextBox.Location = New System.Drawing.Point(174, 585)
+        Me.RegistroValorRequerimientoIDTextBox.Name = "RegistroValorRequerimientoIDTextBox"
+        Me.RegistroValorRequerimientoIDTextBox.Size = New System.Drawing.Size(67, 20)
+        Me.RegistroValorRequerimientoIDTextBox.TabIndex = 173
         '
         'ClavePrincipal
         '
@@ -1853,58 +1906,26 @@ Partial Class FrmReplace
         '
         Me.SP_CampoComponentes_Segun_Plantilla_TipoTableAdapter.ClearBeforeFill = True
         '
-        'SP_RegistroValorRequerimientos_SegunProyectoRequerimientoBindingSource
-        '
-        Me.SP_RegistroValorRequerimientos_SegunProyectoRequerimientoBindingSource.DataMember = "SP_RegistroValorRequerimientos_SegunProyectoRequerimiento"
-        Me.SP_RegistroValorRequerimientos_SegunProyectoRequerimientoBindingSource.DataSource = Me.DataSetTablasYCampos
-        '
         'SP_RegistroValorRequerimientos_SegunProyectoRequerimientoTableAdapter
         '
         Me.SP_RegistroValorRequerimientos_SegunProyectoRequerimientoTableAdapter.ClearBeforeFill = True
         '
-        'RegistroValorRequerimientoIDLabel
+        'Button1
         '
-        RegistroValorRequerimientoIDLabel.AutoSize = True
-        RegistroValorRequerimientoIDLabel.Location = New System.Drawing.Point(7, 588)
-        RegistroValorRequerimientoIDLabel.Name = "RegistroValorRequerimientoIDLabel"
-        RegistroValorRequerimientoIDLabel.Size = New System.Drawing.Size(161, 13)
-        RegistroValorRequerimientoIDLabel.TabIndex = 172
-        RegistroValorRequerimientoIDLabel.Text = "Registro Valor Requerimiento ID:"
+        Me.Button1.Location = New System.Drawing.Point(270, 217)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(75, 23)
+        Me.Button1.TabIndex = 176
+        Me.Button1.Text = "Button1"
+        Me.Button1.UseVisualStyleBackColor = True
         '
-        'RegistroValorRequerimientoIDTextBox
+        'TextBox1
         '
-        Me.RegistroValorRequerimientoIDTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SP_RegistroValorRequerimientos_SegunProyectoRequerimientoBindingSource, "RegistroValorRequerimientoID", True))
-        Me.RegistroValorRequerimientoIDTextBox.Location = New System.Drawing.Point(174, 585)
-        Me.RegistroValorRequerimientoIDTextBox.Name = "RegistroValorRequerimientoIDTextBox"
-        Me.RegistroValorRequerimientoIDTextBox.Size = New System.Drawing.Size(67, 20)
-        Me.RegistroValorRequerimientoIDTextBox.TabIndex = 173
-        '
-        'Label12
-        '
-        Me.Label12.AutoSize = True
-        Me.Label12.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label12.Location = New System.Drawing.Point(5, 567)
-        Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(367, 13)
-        Me.Label12.TabIndex = 174
-        Me.Label12.Text = "SP_RegistroValorRequerimientos_SegunProyectoRequerimiento"
-        '
-        'ValorRequerimientoLabel1
-        '
-        ValorRequerimientoLabel1.AutoSize = True
-        ValorRequerimientoLabel1.Location = New System.Drawing.Point(243, 588)
-        ValorRequerimientoLabel1.Name = "ValorRequerimientoLabel1"
-        ValorRequerimientoLabel1.Size = New System.Drawing.Size(105, 13)
-        ValorRequerimientoLabel1.TabIndex = 174
-        ValorRequerimientoLabel1.Text = "Valor Requerimiento:"
-        '
-        'ValorRequerimientoTextBox2
-        '
-        Me.ValorRequerimientoTextBox2.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SP_RegistroValorRequerimientos_SegunProyectoRequerimientoBindingSource, "ValorRequerimiento", True))
-        Me.ValorRequerimientoTextBox2.Location = New System.Drawing.Point(354, 585)
-        Me.ValorRequerimientoTextBox2.Name = "ValorRequerimientoTextBox2"
-        Me.ValorRequerimientoTextBox2.Size = New System.Drawing.Size(40, 20)
-        Me.ValorRequerimientoTextBox2.TabIndex = 175
+        Me.TextBox1.Location = New System.Drawing.Point(270, 245)
+        Me.TextBox1.Multiline = True
+        Me.TextBox1.Name = "TextBox1"
+        Me.TextBox1.Size = New System.Drawing.Size(260, 59)
+        Me.TextBox1.TabIndex = 177
         '
         'FrmReplace
         '
@@ -1969,6 +1990,7 @@ Partial Class FrmReplace
         CType(Me.SP_CampoComponentes_Segun_Plantilla_TipoBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel5.ResumeLayout(False)
         Me.Panel5.PerformLayout()
+        CType(Me.SP_RegistroValorRequerimientos_SegunProyectoRequerimientoBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.SP_RegistroValorRequerimientos_EDICION_INSERTARBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.SP_ELIMINA_RegistroValorRequerimientos_SegunIDBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.SP_TablasDeProyecto_EDICION_ACTUALIZARBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
@@ -1977,7 +1999,6 @@ Partial Class FrmReplace
         CType(Me.SP_CamposDeTablas_EDICION_ACTUALIZARBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.SP_CamposDeTablas_EDICION_ELIMINARBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.SP_CamposDeTablas_EDICION_INSERTARBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.SP_RegistroValorRequerimientos_SegunProyectoRequerimientoBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -2137,4 +2158,6 @@ Partial Class FrmReplace
     Friend WithEvents Label12 As Label
     Friend WithEvents RegistroValorRequerimientoIDTextBox As TextBox
     Friend WithEvents ValorRequerimientoTextBox2 As TextBox
+    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents Button1 As Button
 End Class

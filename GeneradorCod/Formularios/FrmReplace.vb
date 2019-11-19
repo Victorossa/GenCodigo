@@ -166,6 +166,17 @@
         'Tabla en Minuscula
         If InStr(textoBase, "{{{Tmin}}}") Then
             CargarTablaMinuscula(textoBase)
+            NombreTablaTextBox1.Text = NombreTablaTextBox.Text
+        End If
+        'Tabla en Minuscula
+        If InStr(textoBase, "{{{TPlur}}}") Then
+            CargarTablaEnPlural(textoBase)
+            NombreTablaTextBox1.Text = NombreTablaTextBox.Text
+        End If
+        'Tabla Con Mayusculos a Minusculas
+        If InStr(textoBase, "{{{A=>-a}}}") Then
+            ConvertirMayusculasMinSeparadasPorGuion()
+            NombreTablaTextBox1.Text = NombreTablaTextBox.Text
         End If
         'Remplaza la clave Principal
         If InStr(textoBase, "{{{Clave}}}") Then
@@ -259,6 +270,37 @@
         CodigoGeneradoTextBox.Text = CodigoGeneradoTextBox.Text.Replace("{{{Tmin}}}", NombreTablaTextBox1.Text)
         Return vbEmpty
     End Function
+    Function CargarTablaEnPlural(textoBase As String)
+        NombreTablaTextBox1.Text = NombreTablaTextBox1.Text + "s"
+        CodigoGeneradoTextBox.Text = CodigoGeneradoTextBox.Text.Replace("{{{TPlur}}}", NombreTablaTextBox1.Text)
+        Return vbEmpty
+    End Function
+
+    Function ConvertirMayusculasMinSeparadasPorGuion()
+        Dim cadena As String = NombreTablaTextBox1.Text
+        Dim myChar As String = ""
+        Dim fChar As String = ""
+        Dim otra As String = ""
+        For i = 1 To Len(cadena)
+            'Evalua si es mayuscula
+            If Asc(Mid(cadena, i, 1)) >= 65 And Asc(Mid(cadena, i, 1)) <= 90 Then
+                myChar = cadena.Chars(i - 1)
+                myChar = LCase(myChar)
+                If i = 1 Then
+                    fChar = fChar + myChar
+                Else
+                    fChar = fChar + "-" & myChar
+                End If
+                myChar = ""
+            Else
+                fChar = fChar + myChar + Mid(cadena, i, 1)
+                myChar = ""
+            End If
+        Next
+        CodigoGeneradoTextBox.Text = CodigoGeneradoTextBox.Text.Replace("{{{A=>-a}}}", fChar)
+        NombreTablaTextBox1.Text = NombreTablaTextBox.Text
+        Return vbEmpty
+    End Function
 
     Function CapturaClavePrincipal(textoBase As String)
         Try
@@ -269,6 +311,7 @@
         Catch ex As Exception
 
         End Try
+
     End Function
 
 #Region "Procedimientos"
@@ -1218,6 +1261,10 @@
         Catch ex As System.Exception
             System.Windows.Forms.MessageBox.Show(ex.Message)
         End Try
+    End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        ConvertirMayusculasMinSeparadasPorGuion()
     End Sub
 
 
