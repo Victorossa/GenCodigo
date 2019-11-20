@@ -151,7 +151,11 @@
         While contadorComponentes > 0
             'Se ubica en la primera fila
             SP_Componentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView.CurrentCell = SP_Componentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView.Rows(0).Cells(0)
-            CodigoGeneradoTextBox.Text = CodigoGeneradoTextBox.Text & vbCrLf & "                              " & NombreTecnologiaTextBox1.Text & vbCrLf & NombreComponenteTextBox.Text & vbCrLf & CodigoTextBox.Text & vbCrLf & "++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++" & vbCrLf & vbCrLf
+            If XTablaCheckBox.Checked = True Then
+                CodigoGeneradoTextBox.Text = CodigoGeneradoTextBox.Text & vbCrLf & "                              " & NombreTecnologiaTextBox1.Text & vbCrLf & NombreComponenteTextBox.Text & vbCrLf & CodigoTextBox.Text & vbCrLf & "++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++" & vbCrLf & vbCrLf
+            Else
+                MsgBox("No Reproducible")
+            End If
             SP_Componentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView.Rows.RemoveAt(0)
             contadorComponentes = contadorComponentes - 1
         End While
@@ -611,7 +615,7 @@
         'Inserta la relacion entre el proyecto y la tecnologia aplicada al mismo
         SP_ProyectosYTecnologias_EDICION_INSERTAR()
         'Carga las tecnologias aplicadas al proyecto
-        SP_CARGA_TECNOLOGIAS_APLICADAS_A_PROYECTO()
+        'SP_CARGA_TECNOLOGIAS_APLICADAS_A_PROYECTO()
         MsgBox("Se Crea Relación Del Proyecto" & NombreProyectoTextBox.Text & " con la tecnologia " & NombreTecnologiaTextBox.Text, MsgBoxStyle.Information)
     End Sub
     'Metodo que inserta la relacion
@@ -1264,7 +1268,16 @@
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        ConvertirMayusculasMinSeparadasPorGuion()
+        Dim contadorTecnologiasAplicadas = SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoIDDataGridView.Rows.Count()
+        'Carga las tecnologias aplicadas y segun pide los requerimientos de de las plantillas de dichas tecnologias
+        While contadorTecnologiasAplicadas > 0
+            'Se ubica en la primera fila
+            SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoIDDataGridView.CurrentCell = SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoIDDataGridView.Rows(0).Cells(0)
+            RecorrerRequerimientosPorTecnologia()
+            SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoIDDataGridView.Rows.RemoveAt(0)
+            contadorTecnologiasAplicadas = contadorTecnologiasAplicadas - 1
+        End While
+        SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID()
     End Sub
 
 

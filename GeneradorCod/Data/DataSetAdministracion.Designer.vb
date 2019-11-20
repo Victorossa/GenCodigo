@@ -3082,6 +3082,8 @@ Partial Public Class DataSetAdministracion
         
         Private columnCodigo As Global.System.Data.DataColumn
         
+        Private columnXTabla As Global.System.Data.DataColumn
+        
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Sub New()
@@ -3150,6 +3152,14 @@ Partial Public Class DataSetAdministracion
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public ReadOnly Property XTablaColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnXTabla
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
          Global.System.ComponentModel.Browsable(false)>  _
         Public ReadOnly Property Count() As Integer
@@ -3186,9 +3196,9 @@ Partial Public Class DataSetAdministracion
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Overloads Function AddSP_Componentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDRow(ByVal PlantillaID As Integer, ByVal NombreComponente As String, ByVal Codigo As String) As SP_Componentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDRow
+        Public Overloads Function AddSP_Componentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDRow(ByVal PlantillaID As Integer, ByVal NombreComponente As String, ByVal Codigo As String, ByVal XTabla As Boolean) As SP_Componentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDRow
             Dim rowSP_Componentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDRow As SP_Componentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDRow = CType(Me.NewRow,SP_Componentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDRow)
-            Dim columnValuesArray() As Object = New Object() {Nothing, PlantillaID, NombreComponente, Codigo}
+            Dim columnValuesArray() As Object = New Object() {Nothing, PlantillaID, NombreComponente, Codigo, XTabla}
             rowSP_Componentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDRow.ItemArray = columnValuesArray
             Me.Rows.Add(rowSP_Componentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDRow)
             Return rowSP_Componentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDRow
@@ -3221,6 +3231,7 @@ Partial Public Class DataSetAdministracion
             Me.columnPlantillaID = MyBase.Columns("PlantillaID")
             Me.columnNombreComponente = MyBase.Columns("NombreComponente")
             Me.columnCodigo = MyBase.Columns("Codigo")
+            Me.columnXTabla = MyBase.Columns("XTabla")
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -3234,6 +3245,8 @@ Partial Public Class DataSetAdministracion
             MyBase.Columns.Add(Me.columnNombreComponente)
             Me.columnCodigo = New Global.System.Data.DataColumn("Codigo", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnCodigo)
+            Me.columnXTabla = New Global.System.Data.DataColumn("XTabla", GetType(Boolean), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnXTabla)
             Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnComponenteID}, true))
             Me.columnComponenteID.AutoIncrement = true
             Me.columnComponenteID.AutoIncrementSeed = -1
@@ -7271,6 +7284,22 @@ Partial Public Class DataSetAdministracion
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Property XTabla() As Boolean
+            Get
+                Try 
+                    Return CType(Me(Me.tableSP_Componentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaID.XTablaColumn),Boolean)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'XTabla' de la tabla 'SP_Componentes_BUSQUEDA_SEGUN_PARAME"& _ 
+                            "TRO_PlantillaID' es DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableSP_Componentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaID.XTablaColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Function IsNombreComponenteNull() As Boolean
             Return Me.IsNull(Me.tableSP_Componentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaID.NombreComponenteColumn)
         End Function
@@ -7279,6 +7308,18 @@ Partial Public Class DataSetAdministracion
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Sub SetNombreComponenteNull()
             Me(Me.tableSP_Componentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaID.NombreComponenteColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Function IsXTablaNull() As Boolean
+            Return Me.IsNull(Me.tableSP_Componentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaID.XTablaColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Sub SetXTablaNull()
+            Me(Me.tableSP_Componentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaID.XTablaColumn) = Global.System.Convert.DBNull
         End Sub
     End Class
     
@@ -10730,6 +10771,7 @@ Namespace DataSetAdministracionTableAdapters
             tableMapping.ColumnMappings.Add("PlantillaID", "PlantillaID")
             tableMapping.ColumnMappings.Add("NombreComponente", "NombreComponente")
             tableMapping.ColumnMappings.Add("Codigo", "Codigo")
+            tableMapping.ColumnMappings.Add("XTabla", "XTabla")
             Me._adapter.TableMappings.Add(tableMapping)
         End Sub
         
@@ -10920,6 +10962,7 @@ Namespace DataSetAdministracionTableAdapters
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@PlantillaID", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 10, 0, "", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@NombreComponente", Global.System.Data.SqlDbType.VarChar, 500, Global.System.Data.ParameterDirection.Input, 0, 0, "", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Codigo", Global.System.Data.SqlDbType.VarChar, 2147483647, Global.System.Data.ParameterDirection.Input, 0, 0, "", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@XTabla", Global.System.Data.SqlDbType.Bit, 1, Global.System.Data.ParameterDirection.Input, 1, 0, "", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -10942,13 +10985,14 @@ Namespace DataSetAdministracionTableAdapters
             Me._commandCollection(0).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@PlantillaID", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 10, 0, Nothing, Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(0).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@NombreComponente", Global.System.Data.SqlDbType.VarChar, 500, Global.System.Data.ParameterDirection.Input, 0, 0, Nothing, Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(0).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Codigo", Global.System.Data.SqlDbType.VarChar, 2147483647, Global.System.Data.ParameterDirection.Input, 0, 0, Nothing, Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(0).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@XTabla", Global.System.Data.SqlDbType.Bit, 1, Global.System.Data.ParameterDirection.Input, 1, 0, Nothing, Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, true)>  _
-        Public Overloads Overridable Function Fill(ByVal dataTable As DataSetAdministracion.SP_Componentes_EDICION_ACTUALIZARDataTable, ByVal ComponenteID As Global.System.Nullable(Of Integer), ByVal PlantillaID As Global.System.Nullable(Of Integer), ByVal NombreComponente As String, ByVal Codigo As String) As Integer
+        Public Overloads Overridable Function Fill(ByVal dataTable As DataSetAdministracion.SP_Componentes_EDICION_ACTUALIZARDataTable, ByVal ComponenteID As Global.System.Nullable(Of Integer), ByVal PlantillaID As Global.System.Nullable(Of Integer), ByVal NombreComponente As String, ByVal Codigo As String, ByVal XTabla As Global.System.Nullable(Of Boolean)) As Integer
             Me.Adapter.SelectCommand = Me.CommandCollection(0)
             If (ComponenteID.HasValue = true) Then
                 Me.Adapter.SelectCommand.Parameters(1).Value = CType(ComponenteID.Value,Integer)
@@ -10969,6 +11013,11 @@ Namespace DataSetAdministracionTableAdapters
                 Me.Adapter.SelectCommand.Parameters(4).Value = Global.System.DBNull.Value
             Else
                 Me.Adapter.SelectCommand.Parameters(4).Value = CType(Codigo,String)
+            End If
+            If (XTabla.HasValue = true) Then
+                Me.Adapter.SelectCommand.Parameters(5).Value = CType(XTabla.Value,Boolean)
+            Else
+                Me.Adapter.SelectCommand.Parameters(5).Value = Global.System.DBNull.Value
             End If
             If (Me.ClearBeforeFill = true) Then
                 dataTable.Clear
@@ -10981,7 +11030,7 @@ Namespace DataSetAdministracionTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], true)>  _
-        Public Overloads Overridable Function GetData(ByVal ComponenteID As Global.System.Nullable(Of Integer), ByVal PlantillaID As Global.System.Nullable(Of Integer), ByVal NombreComponente As String, ByVal Codigo As String) As DataSetAdministracion.SP_Componentes_EDICION_ACTUALIZARDataTable
+        Public Overloads Overridable Function GetData(ByVal ComponenteID As Global.System.Nullable(Of Integer), ByVal PlantillaID As Global.System.Nullable(Of Integer), ByVal NombreComponente As String, ByVal Codigo As String, ByVal XTabla As Global.System.Nullable(Of Boolean)) As DataSetAdministracion.SP_Componentes_EDICION_ACTUALIZARDataTable
             Me.Adapter.SelectCommand = Me.CommandCollection(0)
             If (ComponenteID.HasValue = true) Then
                 Me.Adapter.SelectCommand.Parameters(1).Value = CType(ComponenteID.Value,Integer)
@@ -11002,6 +11051,11 @@ Namespace DataSetAdministracionTableAdapters
                 Me.Adapter.SelectCommand.Parameters(4).Value = Global.System.DBNull.Value
             Else
                 Me.Adapter.SelectCommand.Parameters(4).Value = CType(Codigo,String)
+            End If
+            If (XTabla.HasValue = true) Then
+                Me.Adapter.SelectCommand.Parameters(5).Value = CType(XTabla.Value,Boolean)
+            Else
+                Me.Adapter.SelectCommand.Parameters(5).Value = Global.System.DBNull.Value
             End If
             Dim dataTable As DataSetAdministracion.SP_Componentes_EDICION_ACTUALIZARDataTable = New DataSetAdministracion.SP_Componentes_EDICION_ACTUALIZARDataTable()
             Me.Adapter.Fill(dataTable)
@@ -11040,7 +11094,7 @@ Namespace DataSetAdministracionTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
-        Public Overloads Overridable Function Update(ByVal ComponenteID As Global.System.Nullable(Of Integer), ByVal PlantillaID As Global.System.Nullable(Of Integer), ByVal NombreComponente As String, ByVal Codigo As String) As Integer
+        Public Overloads Overridable Function Update(ByVal ComponenteID As Global.System.Nullable(Of Integer), ByVal PlantillaID As Global.System.Nullable(Of Integer), ByVal NombreComponente As String, ByVal Codigo As String, ByVal XTabla As Global.System.Nullable(Of Boolean)) As Integer
             If (ComponenteID.HasValue = true) Then
                 Me.Adapter.UpdateCommand.Parameters(1).Value = CType(ComponenteID.Value,Integer)
             Else
@@ -11060,6 +11114,11 @@ Namespace DataSetAdministracionTableAdapters
                 Me.Adapter.UpdateCommand.Parameters(4).Value = Global.System.DBNull.Value
             Else
                 Me.Adapter.UpdateCommand.Parameters(4).Value = CType(Codigo,String)
+            End If
+            If (XTabla.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(5).Value = CType(XTabla.Value,Boolean)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(5).Value = Global.System.DBNull.Value
             End If
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.UpdateCommand.Connection.State
             If ((Me.Adapter.UpdateCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
@@ -11448,6 +11507,7 @@ Namespace DataSetAdministracionTableAdapters
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@PlantillaID", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 10, 0, "", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@NombreComponente", Global.System.Data.SqlDbType.VarChar, 500, Global.System.Data.ParameterDirection.Input, 0, 0, "", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Codigo", Global.System.Data.SqlDbType.VarChar, 2147483647, Global.System.Data.ParameterDirection.Input, 0, 0, "", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@XTabla", Global.System.Data.SqlDbType.Bit, 1, Global.System.Data.ParameterDirection.Input, 1, 0, "", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -11469,13 +11529,14 @@ Namespace DataSetAdministracionTableAdapters
             Me._commandCollection(0).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@PlantillaID", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 10, 0, Nothing, Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(0).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@NombreComponente", Global.System.Data.SqlDbType.VarChar, 500, Global.System.Data.ParameterDirection.Input, 0, 0, Nothing, Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(0).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Codigo", Global.System.Data.SqlDbType.VarChar, 2147483647, Global.System.Data.ParameterDirection.Input, 0, 0, Nothing, Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(0).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@XTabla", Global.System.Data.SqlDbType.Bit, 1, Global.System.Data.ParameterDirection.Input, 1, 0, Nothing, Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, true)>  _
-        Public Overloads Overridable Function Fill(ByVal dataTable As DataSetAdministracion.SP_Componentes_EDICION_INSERTARDataTable, ByVal PlantillaID As Global.System.Nullable(Of Integer), ByVal NombreComponente As String, ByVal Codigo As String) As Integer
+        Public Overloads Overridable Function Fill(ByVal dataTable As DataSetAdministracion.SP_Componentes_EDICION_INSERTARDataTable, ByVal PlantillaID As Global.System.Nullable(Of Integer), ByVal NombreComponente As String, ByVal Codigo As String, ByVal XTabla As Global.System.Nullable(Of Boolean)) As Integer
             Me.Adapter.SelectCommand = Me.CommandCollection(0)
             If (PlantillaID.HasValue = true) Then
                 Me.Adapter.SelectCommand.Parameters(1).Value = CType(PlantillaID.Value,Integer)
@@ -11491,6 +11552,11 @@ Namespace DataSetAdministracionTableAdapters
                 Me.Adapter.SelectCommand.Parameters(3).Value = Global.System.DBNull.Value
             Else
                 Me.Adapter.SelectCommand.Parameters(3).Value = CType(Codigo,String)
+            End If
+            If (XTabla.HasValue = true) Then
+                Me.Adapter.SelectCommand.Parameters(4).Value = CType(XTabla.Value,Boolean)
+            Else
+                Me.Adapter.SelectCommand.Parameters(4).Value = Global.System.DBNull.Value
             End If
             If (Me.ClearBeforeFill = true) Then
                 dataTable.Clear
@@ -11503,7 +11569,7 @@ Namespace DataSetAdministracionTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], true)>  _
-        Public Overloads Overridable Function GetData(ByVal PlantillaID As Global.System.Nullable(Of Integer), ByVal NombreComponente As String, ByVal Codigo As String) As DataSetAdministracion.SP_Componentes_EDICION_INSERTARDataTable
+        Public Overloads Overridable Function GetData(ByVal PlantillaID As Global.System.Nullable(Of Integer), ByVal NombreComponente As String, ByVal Codigo As String, ByVal XTabla As Global.System.Nullable(Of Boolean)) As DataSetAdministracion.SP_Componentes_EDICION_INSERTARDataTable
             Me.Adapter.SelectCommand = Me.CommandCollection(0)
             If (PlantillaID.HasValue = true) Then
                 Me.Adapter.SelectCommand.Parameters(1).Value = CType(PlantillaID.Value,Integer)
@@ -11519,6 +11585,11 @@ Namespace DataSetAdministracionTableAdapters
                 Me.Adapter.SelectCommand.Parameters(3).Value = Global.System.DBNull.Value
             Else
                 Me.Adapter.SelectCommand.Parameters(3).Value = CType(Codigo,String)
+            End If
+            If (XTabla.HasValue = true) Then
+                Me.Adapter.SelectCommand.Parameters(4).Value = CType(XTabla.Value,Boolean)
+            Else
+                Me.Adapter.SelectCommand.Parameters(4).Value = Global.System.DBNull.Value
             End If
             Dim dataTable As DataSetAdministracion.SP_Componentes_EDICION_INSERTARDataTable = New DataSetAdministracion.SP_Componentes_EDICION_INSERTARDataTable()
             Me.Adapter.Fill(dataTable)
@@ -11557,7 +11628,7 @@ Namespace DataSetAdministracionTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Insert, true)>  _
-        Public Overloads Overridable Function Insert(ByVal PlantillaID As Global.System.Nullable(Of Integer), ByVal NombreComponente As String, ByVal Codigo As String) As Integer
+        Public Overloads Overridable Function Insert(ByVal PlantillaID As Global.System.Nullable(Of Integer), ByVal NombreComponente As String, ByVal Codigo As String, ByVal XTabla As Global.System.Nullable(Of Boolean)) As Integer
             If (PlantillaID.HasValue = true) Then
                 Me.Adapter.InsertCommand.Parameters(1).Value = CType(PlantillaID.Value,Integer)
             Else
@@ -11572,6 +11643,11 @@ Namespace DataSetAdministracionTableAdapters
                 Me.Adapter.InsertCommand.Parameters(3).Value = Global.System.DBNull.Value
             Else
                 Me.Adapter.InsertCommand.Parameters(3).Value = CType(Codigo,String)
+            End If
+            If (XTabla.HasValue = true) Then
+                Me.Adapter.InsertCommand.Parameters(4).Value = CType(XTabla.Value,Boolean)
+            Else
+                Me.Adapter.InsertCommand.Parameters(4).Value = Global.System.DBNull.Value
             End If
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.InsertCommand.Connection.State
             If ((Me.Adapter.InsertCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _

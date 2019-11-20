@@ -57,6 +57,7 @@ Partial Class FrmReplace
         Dim ValorRequerimientoLabel1 As System.Windows.Forms.Label
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmReplace))
+        Dim XTablaLabel As System.Windows.Forms.Label
         Me.BtnBuscarYPintar = New System.Windows.Forms.Button()
         Me.SP_RequerimientosPlantillas_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView = New System.Windows.Forms.DataGridView()
         Me.DataGridViewTextBoxColumn5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -171,6 +172,7 @@ Partial Class FrmReplace
         Me.InferiorTextBox = New System.Windows.Forms.TextBox()
         Me.PlantillaIDTextBox1 = New System.Windows.Forms.TextBox()
         Me.Panel5 = New System.Windows.Forms.Panel()
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.ValorRequerimientoTextBox2 = New System.Windows.Forms.TextBox()
         Me.SP_RegistroValorRequerimientos_SegunProyectoRequerimientoBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.Label12 = New System.Windows.Forms.Label()
@@ -212,8 +214,7 @@ Partial Class FrmReplace
         Me.SP_CamposDeTablas_EDICION_INSERTARTableAdapter = New GeneradorCod.DataSetTablasYCamposTableAdapters.SP_CamposDeTablas_EDICION_INSERTARTableAdapter()
         Me.SP_CampoComponentes_Segun_Plantilla_TipoTableAdapter = New GeneradorCod.DataSetTablasYCamposTableAdapters.SP_CampoComponentes_Segun_Plantilla_TipoTableAdapter()
         Me.SP_RegistroValorRequerimientos_SegunProyectoRequerimientoTableAdapter = New GeneradorCod.DataSetTablasYCamposTableAdapters.SP_RegistroValorRequerimientos_SegunProyectoRequerimientoTableAdapter()
-        Me.Button1 = New System.Windows.Forms.Button()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.XTablaCheckBox = New System.Windows.Forms.CheckBox()
         ComponenteIDLabel = New System.Windows.Forms.Label()
         PlantillaIDLabel = New System.Windows.Forms.Label()
         TecnologiaIDLabel = New System.Windows.Forms.Label()
@@ -246,6 +247,7 @@ Partial Class FrmReplace
         NombreTablaLabel1 = New System.Windows.Forms.Label()
         RegistroValorRequerimientoIDLabel = New System.Windows.Forms.Label()
         ValorRequerimientoLabel1 = New System.Windows.Forms.Label()
+        XTablaLabel = New System.Windows.Forms.Label()
         CType(Me.SP_RequerimientosPlantillas_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.SP_RequerimientosPlantillas_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DataSetAdministracion, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -333,7 +335,7 @@ Partial Class FrmReplace
         'ProyectoIDLabel
         '
         ProyectoIDLabel.AutoSize = True
-        ProyectoIDLabel.Location = New System.Drawing.Point(67, 536)
+        ProyectoIDLabel.Location = New System.Drawing.Point(67, 561)
         ProyectoIDLabel.Name = "ProyectoIDLabel"
         ProyectoIDLabel.Size = New System.Drawing.Size(66, 13)
         ProyectoIDLabel.TabIndex = 122
@@ -414,7 +416,7 @@ Partial Class FrmReplace
         'RequerimientoLabel1
         '
         RequerimientoLabel1.AutoSize = True
-        RequerimientoLabel1.Location = New System.Drawing.Point(56, 465)
+        RequerimientoLabel1.Location = New System.Drawing.Point(56, 490)
         RequerimientoLabel1.Name = "RequerimientoLabel1"
         RequerimientoLabel1.Size = New System.Drawing.Size(78, 13)
         RequerimientoLabel1.TabIndex = 134
@@ -423,7 +425,7 @@ Partial Class FrmReplace
         'ValorRequerimientoLabel
         '
         ValorRequerimientoLabel.AutoSize = True
-        ValorRequerimientoLabel.Location = New System.Drawing.Point(29, 491)
+        ValorRequerimientoLabel.Location = New System.Drawing.Point(29, 516)
         ValorRequerimientoLabel.Name = "ValorRequerimientoLabel"
         ValorRequerimientoLabel.Size = New System.Drawing.Size(105, 13)
         ValorRequerimientoLabel.TabIndex = 135
@@ -468,7 +470,7 @@ Partial Class FrmReplace
         'CampoIDLabel
         '
         CampoIDLabel.AutoSize = True
-        CampoIDLabel.Location = New System.Drawing.Point(75, 631)
+        CampoIDLabel.Location = New System.Drawing.Point(75, 656)
         CampoIDLabel.Name = "CampoIDLabel"
         CampoIDLabel.Size = New System.Drawing.Size(57, 13)
         CampoIDLabel.TabIndex = 147
@@ -486,7 +488,7 @@ Partial Class FrmReplace
         'TipoLabel
         '
         TipoLabel.AutoSize = True
-        TipoLabel.Location = New System.Drawing.Point(101, 653)
+        TipoLabel.Location = New System.Drawing.Point(101, 678)
         TipoLabel.Name = "TipoLabel"
         TipoLabel.Size = New System.Drawing.Size(31, 13)
         TipoLabel.TabIndex = 151
@@ -567,7 +569,7 @@ Partial Class FrmReplace
         'RegistroValorRequerimientoIDLabel
         '
         RegistroValorRequerimientoIDLabel.AutoSize = True
-        RegistroValorRequerimientoIDLabel.Location = New System.Drawing.Point(7, 588)
+        RegistroValorRequerimientoIDLabel.Location = New System.Drawing.Point(7, 613)
         RegistroValorRequerimientoIDLabel.Name = "RegistroValorRequerimientoIDLabel"
         RegistroValorRequerimientoIDLabel.Size = New System.Drawing.Size(161, 13)
         RegistroValorRequerimientoIDLabel.TabIndex = 172
@@ -576,7 +578,7 @@ Partial Class FrmReplace
         'ValorRequerimientoLabel1
         '
         ValorRequerimientoLabel1.AutoSize = True
-        ValorRequerimientoLabel1.Location = New System.Drawing.Point(243, 588)
+        ValorRequerimientoLabel1.Location = New System.Drawing.Point(243, 613)
         ValorRequerimientoLabel1.Name = "ValorRequerimientoLabel1"
         ValorRequerimientoLabel1.Size = New System.Drawing.Size(105, 13)
         ValorRequerimientoLabel1.TabIndex = 174
@@ -952,7 +954,7 @@ Partial Class FrmReplace
         'ProyectoIDTextBox
         '
         Me.ProyectoIDTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ProyectosBindingSource, "ProyectoID", True))
-        Me.ProyectoIDTextBox.Location = New System.Drawing.Point(139, 533)
+        Me.ProyectoIDTextBox.Location = New System.Drawing.Point(139, 558)
         Me.ProyectoIDTextBox.Name = "ProyectoIDTextBox"
         Me.ProyectoIDTextBox.Size = New System.Drawing.Size(101, 20)
         Me.ProyectoIDTextBox.TabIndex = 123
@@ -1198,7 +1200,7 @@ Partial Class FrmReplace
         'RequerimientoTextBox1
         '
         Me.RequerimientoTextBox1.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SP_RegistroValorRequerimientos_SEGUN_ProyectoIDBindingSource, "Requerimiento", True))
-        Me.RequerimientoTextBox1.Location = New System.Drawing.Point(140, 461)
+        Me.RequerimientoTextBox1.Location = New System.Drawing.Point(140, 486)
         Me.RequerimientoTextBox1.Name = "RequerimientoTextBox1"
         Me.RequerimientoTextBox1.Size = New System.Drawing.Size(100, 20)
         Me.RequerimientoTextBox1.TabIndex = 135
@@ -1206,7 +1208,7 @@ Partial Class FrmReplace
         'ValorRequerimientoTextBox1
         '
         Me.ValorRequerimientoTextBox1.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SP_RegistroValorRequerimientos_SEGUN_ProyectoIDBindingSource, "ValorRequerimiento", True))
-        Me.ValorRequerimientoTextBox1.Location = New System.Drawing.Point(140, 487)
+        Me.ValorRequerimientoTextBox1.Location = New System.Drawing.Point(140, 512)
         Me.ValorRequerimientoTextBox1.Name = "ValorRequerimientoTextBox1"
         Me.ValorRequerimientoTextBox1.Size = New System.Drawing.Size(100, 20)
         Me.ValorRequerimientoTextBox1.TabIndex = 136
@@ -1465,7 +1467,7 @@ Partial Class FrmReplace
         'CampoIDTextBox
         '
         Me.CampoIDTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaIDBindingSource, "CampoID", True))
-        Me.CampoIDTextBox.Location = New System.Drawing.Point(138, 628)
+        Me.CampoIDTextBox.Location = New System.Drawing.Point(138, 653)
         Me.CampoIDTextBox.Name = "CampoIDTextBox"
         Me.CampoIDTextBox.Size = New System.Drawing.Size(103, 20)
         Me.CampoIDTextBox.TabIndex = 148
@@ -1500,7 +1502,7 @@ Partial Class FrmReplace
         'TipoTextBox
         '
         Me.TipoTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaIDBindingSource, "Tipo", True))
-        Me.TipoTextBox.Location = New System.Drawing.Point(138, 650)
+        Me.TipoTextBox.Location = New System.Drawing.Point(138, 675)
         Me.TipoTextBox.Name = "TipoTextBox"
         Me.TipoTextBox.Size = New System.Drawing.Size(103, 20)
         Me.TipoTextBox.TabIndex = 152
@@ -1554,7 +1556,8 @@ Partial Class FrmReplace
         '
         Me.Panel5.AutoScroll = True
         Me.Panel5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Panel5.Controls.Add(Me.TextBox1)
+        Me.Panel5.Controls.Add(XTablaLabel)
+        Me.Panel5.Controls.Add(Me.XTablaCheckBox)
         Me.Panel5.Controls.Add(Me.Button1)
         Me.Panel5.Controls.Add(ValorRequerimientoLabel1)
         Me.Panel5.Controls.Add(Me.ValorRequerimientoTextBox2)
@@ -1632,6 +1635,15 @@ Partial Class FrmReplace
         Me.Panel5.Size = New System.Drawing.Size(418, 567)
         Me.Panel5.TabIndex = 159
         '
+        'Button1
+        '
+        Me.Button1.Location = New System.Drawing.Point(270, 217)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(75, 23)
+        Me.Button1.TabIndex = 176
+        Me.Button1.Text = "Button1"
+        Me.Button1.UseVisualStyleBackColor = True
+        '
         'ValorRequerimientoTextBox2
         '
         Me.ValorRequerimientoTextBox2.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SP_RegistroValorRequerimientos_SegunProyectoRequerimientoBindingSource, "ValorRequerimiento", True))
@@ -1649,7 +1661,7 @@ Partial Class FrmReplace
         '
         Me.Label12.AutoSize = True
         Me.Label12.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label12.Location = New System.Drawing.Point(5, 567)
+        Me.Label12.Location = New System.Drawing.Point(5, 592)
         Me.Label12.Name = "Label12"
         Me.Label12.Size = New System.Drawing.Size(367, 13)
         Me.Label12.TabIndex = 174
@@ -1658,7 +1670,7 @@ Partial Class FrmReplace
         'RegistroValorRequerimientoIDTextBox
         '
         Me.RegistroValorRequerimientoIDTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SP_RegistroValorRequerimientos_SegunProyectoRequerimientoBindingSource, "RegistroValorRequerimientoID", True))
-        Me.RegistroValorRequerimientoIDTextBox.Location = New System.Drawing.Point(174, 585)
+        Me.RegistroValorRequerimientoIDTextBox.Location = New System.Drawing.Point(174, 610)
         Me.RegistroValorRequerimientoIDTextBox.Name = "RegistroValorRequerimientoIDTextBox"
         Me.RegistroValorRequerimientoIDTextBox.Size = New System.Drawing.Size(67, 20)
         Me.RegistroValorRequerimientoIDTextBox.TabIndex = 173
@@ -1715,7 +1727,7 @@ Partial Class FrmReplace
         '
         Me.Label11.AutoSize = True
         Me.Label11.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label11.Location = New System.Drawing.Point(5, 608)
+        Me.Label11.Location = New System.Drawing.Point(5, 633)
         Me.Label11.Name = "Label11"
         Me.Label11.Size = New System.Drawing.Size(389, 13)
         Me.Label11.TabIndex = 166
@@ -1725,7 +1737,7 @@ Partial Class FrmReplace
         '
         Me.Label10.AutoSize = True
         Me.Label10.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label10.Location = New System.Drawing.Point(1, 517)
+        Me.Label10.Location = New System.Drawing.Point(1, 542)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(63, 13)
         Me.Label10.TabIndex = 165
@@ -1735,7 +1747,7 @@ Partial Class FrmReplace
         '
         Me.Label9.AutoSize = True
         Me.Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label9.Location = New System.Drawing.Point(2, 441)
+        Me.Label9.Location = New System.Drawing.Point(2, 466)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(313, 13)
         Me.Label9.TabIndex = 164
@@ -1910,22 +1922,24 @@ Partial Class FrmReplace
         '
         Me.SP_RegistroValorRequerimientos_SegunProyectoRequerimientoTableAdapter.ClearBeforeFill = True
         '
-        'Button1
+        'XTablaLabel
         '
-        Me.Button1.Location = New System.Drawing.Point(270, 217)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(75, 23)
-        Me.Button1.TabIndex = 176
-        Me.Button1.Text = "Button1"
-        Me.Button1.UseVisualStyleBackColor = True
+        XTablaLabel.AutoSize = True
+        XTablaLabel.Location = New System.Drawing.Point(90, 443)
+        XTablaLabel.Name = "XTablaLabel"
+        XTablaLabel.Size = New System.Drawing.Size(44, 13)
+        XTablaLabel.TabIndex = 177
+        XTablaLabel.Text = "XTabla:"
         '
-        'TextBox1
+        'XTablaCheckBox
         '
-        Me.TextBox1.Location = New System.Drawing.Point(270, 245)
-        Me.TextBox1.Multiline = True
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(260, 59)
-        Me.TextBox1.TabIndex = 177
+        Me.XTablaCheckBox.DataBindings.Add(New System.Windows.Forms.Binding("CheckState", Me.SP_Componentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDBindingSource, "XTabla", True))
+        Me.XTablaCheckBox.Location = New System.Drawing.Point(140, 438)
+        Me.XTablaCheckBox.Name = "XTablaCheckBox"
+        Me.XTablaCheckBox.Size = New System.Drawing.Size(104, 24)
+        Me.XTablaCheckBox.TabIndex = 178
+        Me.XTablaCheckBox.Text = "CheckBox1"
+        Me.XTablaCheckBox.UseVisualStyleBackColor = True
         '
         'FrmReplace
         '
@@ -2158,6 +2172,6 @@ Partial Class FrmReplace
     Friend WithEvents Label12 As Label
     Friend WithEvents RegistroValorRequerimientoIDTextBox As TextBox
     Friend WithEvents ValorRequerimientoTextBox2 As TextBox
-    Friend WithEvents TextBox1 As TextBox
     Friend WithEvents Button1 As Button
+    Friend WithEvents XTablaCheckBox As CheckBox
 End Class

@@ -586,7 +586,8 @@
             Me.SP_Componentes_EDICION_INSERTARTableAdapter.Fill(Me.DataSetAdministracion.SP_Componentes_EDICION_INSERTAR,
                                                  New System.Nullable(Of Integer)(CType(PlantillaIDTextBox.Text, Integer)),
                                                  NombreComponenteTextBox.Text,
-                                                 ContenidoComponenteRichTextBox.Text)
+                                                 ContenidoComponenteRichTextBox.Text,
+                                                 XTablaTextBox.Text)
             SP_Componentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaID()
             MsgBox("El Dato Fue Guardado Exitosamente", MsgBoxStyle.Information, "Guardar Dato")
         Catch ex As System.Exception
@@ -600,7 +601,8 @@
                                                  New System.Nullable(Of Integer)(CType(ComponenteIDTextBox.Text, Integer)),
                                                  New System.Nullable(Of Integer)(CType(PlantillaIDTextBox.Text, Integer)),
                                                  NombreComponenteTextBox.Text,
-                                                 ContenidoComponenteRichTextBox.Text)
+                                                 ContenidoComponenteRichTextBox.Text,
+                                                 XTablaTextBox.Text)
             SP_Componentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaID()
             MsgBox("El Dato Fue Actualizado Exitosamente", MsgBoxStyle.Information, "Actualizar Dato")
         Catch ex As System.Exception
@@ -704,8 +706,8 @@
                 NombreComponenteTextBox.Text = ""
                 NombreComponenteTextBox.Focus()
             Else
-                ContenidoComponenteRichTextBox.Enabled = True
-                ContenidoComponenteRichTextBox.Focus()
+                XTablaCheckBox.Enabled = True
+                XTablaCheckBox.Focus()
             End If
         End If
         Dim Longitud, Ascii As Integer
@@ -732,6 +734,21 @@
             NombreComponenteTextBox.SelectionStart = Longitud + 1
         End If
     End Sub
+
+    Private Sub XTablaCheckBox_KeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles XTablaCheckBox.KeyPress
+        If Asc(e.KeyChar) = 13 Then
+            If XTablaCheckBox.Text = "" Then
+                MsgBox("Dato Obligatorio, Favor Verificar", MsgBoxStyle.Critical, "Validación de Datos")
+                XTablaCheckBox.Text = ""
+                XTablaCheckBox.Focus()
+            Else
+                ContenidoComponenteRichTextBox.Enabled = True
+                ContenidoComponenteRichTextBox.Focus()
+            End If
+        End If
+    End Sub
+
+
     Private Sub ContenidoComponenteRichTextBox_KeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles ContenidoComponenteRichTextBox.KeyPress
         If Asc(e.KeyChar) = 13 Then
             If Actualizar_Menu_Componentes.Enabled = True Then
@@ -752,17 +769,28 @@
             End If
         End If
     End Sub
+    Private Sub XTablaCheckBox_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles XTablaCheckBox.CheckedChanged
+        If XTablaCheckBox.Checked = True Then
+            XTablaCheckBox.Text = "SI"
+            XTablaTextBox.Text = "True"
+        Else
+            XTablaCheckBox.Text = "NO"
+            XTablaTextBox.Text = "False"
+        End If
+    End Sub
+
     Public Sub Limpiar_Objetos_Componentes()
         NombreComponenteTextBox.Text = "" ''
         ContenidoComponenteRichTextBox.Text = "" ''
+        XTablaTextBox.Text = ""
     End Sub
     Public Sub Desbloquear_Objetos_Componentes()
         NombreComponenteTextBox.Enabled = True
-        ContenidoComponenteRichTextBox.Enabled = True
+        XTablaCheckBox.Enabled = True
     End Sub
     Public Sub Bloquear_Objetos_Componentes()
         NombreComponenteTextBox.Enabled = False
-        'ContenidoComponenteRichTextBox.Enabled = False
+        XTablaCheckBox.Enabled = False
     End Sub
 #End Region
 
@@ -1183,7 +1211,8 @@
                                                  New System.Nullable(Of Integer)(CType(ComponenteIDTextBox.Text, Integer)),
                                                  New System.Nullable(Of Integer)(CType(PlantillaIDTextBox.Text, Integer)),
                                                  NombreComponenteTextBox.Text,
-                                                 ContenidoComponenteRichTextBox.Text)
+                                                 ContenidoComponenteRichTextBox.Text,
+                                                 XTablaTextBox.Text)
         Catch ex As System.Exception
             System.Windows.Forms.MessageBox.Show(ex.Message)
         End Try

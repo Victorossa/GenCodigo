@@ -45,6 +45,8 @@ Partial Class FrmTecnologias
         Dim SeparadorCamposLabel As System.Windows.Forms.Label
         Dim MultiReplaceLabel As System.Windows.Forms.Label
         Dim CONVENSIONESLabel As System.Windows.Forms.Label
+        Dim XTablaLabel As System.Windows.Forms.Label
+        Dim XTablaLabel1 As System.Windows.Forms.Label
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmTecnologias))
         Me.TecnologiasDataGridView = New System.Windows.Forms.DataGridView()
@@ -83,8 +85,9 @@ Partial Class FrmTecnologias
         Me.Actualizar_Menu_Componentes = New System.Windows.Forms.Button()
         Me.Guardar_Menu_Componentes = New System.Windows.Forms.Button()
         Me.Panel6 = New System.Windows.Forms.Panel()
-        Me.NombreComponenteTextBox = New System.Windows.Forms.TextBox()
+        Me.XTablaCheckBox = New System.Windows.Forms.CheckBox()
         Me.SP_Componentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.NombreComponenteTextBox = New System.Windows.Forms.TextBox()
         Me.SP_Componentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView = New System.Windows.Forms.DataGridView()
         Me.DataGridViewTextBoxColumn5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ComponenteIDTextBox = New System.Windows.Forms.TextBox()
@@ -109,6 +112,8 @@ Partial Class FrmTecnologias
         Me.GrupoTiposIDTextBox = New System.Windows.Forms.TextBox()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
+        Me.BtnMayusculaAMinuscula = New System.Windows.Forms.Button()
+        Me.BtnTablaPlural = New System.Windows.Forms.Button()
         Me.BtnTablaMinuscula = New System.Windows.Forms.Button()
         Me.BtnImprimeClavePrincipal = New System.Windows.Forms.Button()
         Me.BtnImprimeTabla = New System.Windows.Forms.Button()
@@ -172,6 +177,7 @@ Partial Class FrmTecnologias
         Me.SP_CampoComponentes_EDICION_ELIMINARTableAdapter = New GeneradorCod.DataSetTablasYCamposTableAdapters.SP_CampoComponentes_EDICION_ELIMINARTableAdapter()
         Me.SP_CampoComponentes_EDICION_INSERTARBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.SP_CampoComponentes_EDICION_INSERTARTableAdapter = New GeneradorCod.DataSetTablasYCamposTableAdapters.SP_CampoComponentes_EDICION_INSERTARTableAdapter()
+        Me.SP_CARGA_CONVENSIONES_USADASTableAdapter = New GeneradorCod.DataSetTablasYCamposTableAdapters.SP_CARGA_CONVENSIONES_USADASTableAdapter()
         Me.TecnologiasTableAdapter = New GeneradorCod.DataSetAdministracionTableAdapters.TecnologiasTableAdapter()
         Me.TableAdapterManager = New GeneradorCod.DataSetAdministracionTableAdapters.TableAdapterManager()
         Me.SP_Tecnologias_EDICION_ACTUALIZARBindingSource = New System.Windows.Forms.BindingSource(Me.components)
@@ -202,9 +208,7 @@ Partial Class FrmTecnologias
         Me.SP_RequerimientosPlantillas_EDICION_ELIMINARTableAdapter = New GeneradorCod.DataSetAdministracionTableAdapters.SP_RequerimientosPlantillas_EDICION_ELIMINARTableAdapter()
         Me.SP_RequerimientosPlantillas_EDICION_INSERTARBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.SP_RequerimientosPlantillas_EDICION_INSERTARTableAdapter = New GeneradorCod.DataSetAdministracionTableAdapters.SP_RequerimientosPlantillas_EDICION_INSERTARTableAdapter()
-        Me.SP_CARGA_CONVENSIONES_USADASTableAdapter = New GeneradorCod.DataSetTablasYCamposTableAdapters.SP_CARGA_CONVENSIONES_USADASTableAdapter()
-        Me.BtnTablaPlural = New System.Windows.Forms.Button()
-        Me.BtnMayusculaAMinuscula = New System.Windows.Forms.Button()
+        Me.XTablaTextBox = New System.Windows.Forms.TextBox()
         NombreTecnologiaLabel = New System.Windows.Forms.Label()
         TecnologiaIDLabel = New System.Windows.Forms.Label()
         NombrePlantillaLabel = New System.Windows.Forms.Label()
@@ -227,6 +231,8 @@ Partial Class FrmTecnologias
         SeparadorCamposLabel = New System.Windows.Forms.Label()
         MultiReplaceLabel = New System.Windows.Forms.Label()
         CONVENSIONESLabel = New System.Windows.Forms.Label()
+        XTablaLabel = New System.Windows.Forms.Label()
+        XTablaLabel1 = New System.Windows.Forms.Label()
         CType(Me.TecnologiasDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TecnologiasBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DataSetAdministracion, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -481,6 +487,24 @@ Partial Class FrmTecnologias
         CONVENSIONESLabel.Size = New System.Drawing.Size(106, 18)
         CONVENSIONESLabel.TabIndex = 110
         CONVENSIONESLabel.Text = "CONVENSIONES:"
+        '
+        'XTablaLabel
+        '
+        XTablaLabel.AutoSize = True
+        XTablaLabel.Location = New System.Drawing.Point(5, 235)
+        XTablaLabel.Name = "XTablaLabel"
+        XTablaLabel.Size = New System.Drawing.Size(69, 18)
+        XTablaLabel.TabIndex = 97
+        XTablaLabel.Text = "Por Tabla:"
+        '
+        'XTablaLabel1
+        '
+        XTablaLabel1.AutoSize = True
+        XTablaLabel1.Location = New System.Drawing.Point(738, 426)
+        XTablaLabel1.Name = "XTablaLabel1"
+        XTablaLabel1.Size = New System.Drawing.Size(53, 18)
+        XTablaLabel1.TabIndex = 155
+        XTablaLabel1.Text = "XTabla:"
         '
         'TecnologiasDataGridView
         '
@@ -848,6 +872,8 @@ Partial Class FrmTecnologias
         '
         Me.Panel6.BackColor = System.Drawing.SystemColors.ScrollBar
         Me.Panel6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel6.Controls.Add(XTablaLabel)
+        Me.Panel6.Controls.Add(Me.XTablaCheckBox)
         Me.Panel6.Controls.Add(Me.NombreComponenteTextBox)
         Me.Panel6.Controls.Add(NombreComponenteLabel)
         Me.Panel6.Controls.Add(Me.SP_Componentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView)
@@ -863,19 +889,28 @@ Partial Class FrmTecnologias
         Me.Panel6.Size = New System.Drawing.Size(146, 609)
         Me.Panel6.TabIndex = 96
         '
+        'XTablaCheckBox
+        '
+        Me.XTablaCheckBox.DataBindings.Add(New System.Windows.Forms.Binding("CheckState", Me.SP_Componentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDBindingSource, "XTabla", True))
+        Me.XTablaCheckBox.Location = New System.Drawing.Point(77, 233)
+        Me.XTablaCheckBox.Name = "XTablaCheckBox"
+        Me.XTablaCheckBox.Size = New System.Drawing.Size(104, 24)
+        Me.XTablaCheckBox.TabIndex = 98
+        Me.XTablaCheckBox.UseVisualStyleBackColor = True
+        '
+        'SP_Componentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDBindingSource
+        '
+        Me.SP_Componentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDBindingSource.DataMember = "SP_Componentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaID"
+        Me.SP_Componentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDBindingSource.DataSource = Me.DataSetAdministracion
+        '
         'NombreComponenteTextBox
         '
         Me.NombreComponenteTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SP_Componentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDBindingSource, "NombreComponente", True))
         Me.NombreComponenteTextBox.Location = New System.Drawing.Point(3, 105)
         Me.NombreComponenteTextBox.Multiline = True
         Me.NombreComponenteTextBox.Name = "NombreComponenteTextBox"
-        Me.NombreComponenteTextBox.Size = New System.Drawing.Size(139, 146)
+        Me.NombreComponenteTextBox.Size = New System.Drawing.Size(139, 117)
         Me.NombreComponenteTextBox.TabIndex = 97
-        '
-        'SP_Componentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDBindingSource
-        '
-        Me.SP_Componentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDBindingSource.DataMember = "SP_Componentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaID"
-        Me.SP_Componentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDBindingSource.DataSource = Me.DataSetAdministracion
         '
         'SP_Componentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView
         '
@@ -1094,7 +1129,7 @@ Partial Class FrmTecnologias
         Me.TabControl1.Location = New System.Drawing.Point(444, 0)
         Me.TabControl1.Name = "TabControl1"
         Me.TabControl1.SelectedIndex = 0
-        Me.TabControl1.Size = New System.Drawing.Size(734, 607)
+        Me.TabControl1.Size = New System.Drawing.Size(733, 607)
         Me.TabControl1.TabIndex = 116
         '
         'TabPage1
@@ -1122,10 +1157,32 @@ Partial Class FrmTecnologias
         Me.TabPage1.Location = New System.Drawing.Point(4, 27)
         Me.TabPage1.Name = "TabPage1"
         Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage1.Size = New System.Drawing.Size(726, 576)
+        Me.TabPage1.Size = New System.Drawing.Size(725, 576)
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Text = "Busqueda y Remplazo"
         Me.TabPage1.UseVisualStyleBackColor = True
+        '
+        'BtnMayusculaAMinuscula
+        '
+        Me.BtnMayusculaAMinuscula.BackColor = System.Drawing.Color.White
+        Me.BtnMayusculaAMinuscula.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnMayusculaAMinuscula.Location = New System.Drawing.Point(532, 62)
+        Me.BtnMayusculaAMinuscula.Name = "BtnMayusculaAMinuscula"
+        Me.BtnMayusculaAMinuscula.Size = New System.Drawing.Size(78, 43)
+        Me.BtnMayusculaAMinuscula.TabIndex = 129
+        Me.BtnMayusculaAMinuscula.Text = "{{{A=>-a}}}"
+        Me.BtnMayusculaAMinuscula.UseVisualStyleBackColor = False
+        '
+        'BtnTablaPlural
+        '
+        Me.BtnTablaPlural.BackColor = System.Drawing.Color.White
+        Me.BtnTablaPlural.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnTablaPlural.Location = New System.Drawing.Point(448, 62)
+        Me.BtnTablaPlural.Name = "BtnTablaPlural"
+        Me.BtnTablaPlural.Size = New System.Drawing.Size(78, 43)
+        Me.BtnTablaPlural.TabIndex = 128
+        Me.BtnTablaPlural.Text = "{{{TPlur}}}"
+        Me.BtnTablaPlural.UseVisualStyleBackColor = False
         '
         'BtnTablaMinuscula
         '
@@ -1175,7 +1232,7 @@ Partial Class FrmTecnologias
         '
         Me.BtnGuardarCodigo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.BtnGuardarCodigo.Image = CType(resources.GetObject("BtnGuardarCodigo.Image"), System.Drawing.Image)
-        Me.BtnGuardarCodigo.Location = New System.Drawing.Point(646, 6)
+        Me.BtnGuardarCodigo.Location = New System.Drawing.Point(669, 6)
         Me.BtnGuardarCodigo.Name = "BtnGuardarCodigo"
         Me.BtnGuardarCodigo.Size = New System.Drawing.Size(49, 44)
         Me.BtnGuardarCodigo.TabIndex = 123
@@ -1289,7 +1346,7 @@ Partial Class FrmTecnologias
         Me.TabPage2.Location = New System.Drawing.Point(4, 27)
         Me.TabPage2.Name = "TabPage2"
         Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage2.Size = New System.Drawing.Size(726, 576)
+        Me.TabPage2.Size = New System.Drawing.Size(164, 576)
         Me.TabPage2.TabIndex = 1
         Me.TabPage2.Text = "Requerimientos"
         Me.TabPage2.UseVisualStyleBackColor = True
@@ -1348,7 +1405,7 @@ Partial Class FrmTecnologias
         Me.TabPage3.Location = New System.Drawing.Point(4, 27)
         Me.TabPage3.Name = "TabPage3"
         Me.TabPage3.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage3.Size = New System.Drawing.Size(726, 576)
+        Me.TabPage3.Size = New System.Drawing.Size(164, 576)
         Me.TabPage3.TabIndex = 2
         Me.TabPage3.Text = "Tipos de Datos Campos"
         Me.TabPage3.UseVisualStyleBackColor = True
@@ -1706,6 +1763,10 @@ Partial Class FrmTecnologias
         '
         Me.SP_CampoComponentes_EDICION_INSERTARTableAdapter.ClearBeforeFill = True
         '
+        'SP_CARGA_CONVENSIONES_USADASTableAdapter
+        '
+        Me.SP_CARGA_CONVENSIONES_USADASTableAdapter.ClearBeforeFill = True
+        '
         'TecnologiasTableAdapter
         '
         Me.TecnologiasTableAdapter.ClearBeforeFill = True
@@ -1859,31 +1920,13 @@ Partial Class FrmTecnologias
         '
         Me.SP_RequerimientosPlantillas_EDICION_INSERTARTableAdapter.ClearBeforeFill = True
         '
-        'SP_CARGA_CONVENSIONES_USADASTableAdapter
+        'XTablaTextBox
         '
-        Me.SP_CARGA_CONVENSIONES_USADASTableAdapter.ClearBeforeFill = True
-        '
-        'BtnTablaPlural
-        '
-        Me.BtnTablaPlural.BackColor = System.Drawing.Color.White
-        Me.BtnTablaPlural.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnTablaPlural.Location = New System.Drawing.Point(448, 62)
-        Me.BtnTablaPlural.Name = "BtnTablaPlural"
-        Me.BtnTablaPlural.Size = New System.Drawing.Size(78, 43)
-        Me.BtnTablaPlural.TabIndex = 128
-        Me.BtnTablaPlural.Text = "{{{TPlur}}}"
-        Me.BtnTablaPlural.UseVisualStyleBackColor = False
-        '
-        'BtnMayusculaAMinuscula
-        '
-        Me.BtnMayusculaAMinuscula.BackColor = System.Drawing.Color.White
-        Me.BtnMayusculaAMinuscula.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnMayusculaAMinuscula.Location = New System.Drawing.Point(532, 62)
-        Me.BtnMayusculaAMinuscula.Name = "BtnMayusculaAMinuscula"
-        Me.BtnMayusculaAMinuscula.Size = New System.Drawing.Size(78, 43)
-        Me.BtnMayusculaAMinuscula.TabIndex = 129
-        Me.BtnMayusculaAMinuscula.Text = "{{{A=>-a}}}"
-        Me.BtnMayusculaAMinuscula.UseVisualStyleBackColor = False
+        Me.XTablaTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SP_Componentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDBindingSource, "XTabla", True))
+        Me.XTablaTextBox.Location = New System.Drawing.Point(797, 423)
+        Me.XTablaTextBox.Name = "XTablaTextBox"
+        Me.XTablaTextBox.Size = New System.Drawing.Size(100, 26)
+        Me.XTablaTextBox.TabIndex = 156
         '
         'FrmTecnologias
         '
@@ -1891,6 +1934,8 @@ Partial Class FrmTecnologias
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1179, 609)
         Me.Controls.Add(Me.TabControl1)
+        Me.Controls.Add(XTablaLabel1)
+        Me.Controls.Add(Me.XTablaTextBox)
         Me.Controls.Add(CampoComponenteIDLabel)
         Me.Controls.Add(Me.CampoComponenteIDTextBox)
         Me.Controls.Add(Me.TipoCampoIDTextBox)
@@ -2132,4 +2177,6 @@ Partial Class FrmTecnologias
     Friend WithEvents CONVENSIONESTextBox As TextBox
     Friend WithEvents BtnTablaPlural As Button
     Friend WithEvents BtnMayusculaAMinuscula As Button
+    Friend WithEvents XTablaCheckBox As CheckBox
+    Friend WithEvents XTablaTextBox As TextBox
 End Class
