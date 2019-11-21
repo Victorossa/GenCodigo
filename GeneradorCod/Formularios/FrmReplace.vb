@@ -17,7 +17,7 @@
             SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID()
             Cancelar_TablasDeProyecto()
             SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaID()
-            Cancelar_CamposDeTablas()
+            SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID()
         Catch ex As System.Exception
             System.Windows.Forms.MessageBox.Show(ex.Message)
         End Try
@@ -163,38 +163,10 @@
     End Sub
 
     Public Sub RemplazarEnResultado(textoBase As String, NombreTabla As String)
-        'Remplaza la Tabla
-        If InStr(textoBase, "{{{Tabla}}}") Then
-            CargarTabla(textoBase, NombreTabla)
-        End If
-        'Tabla en Minuscula
-        If InStr(textoBase, "{{{Tmin}}}") Then
-            CargarTablaMinuscula(textoBase, NombreTabla)
-            NombreTablaTextBox1.Text = NombreTablaTextBox.Text
-        End If
-        'Tabla en Minuscula
-        If InStr(textoBase, "{{{TPlur}}}") Then
-            CargarTablaEnPlural(textoBase)
-            NombreTablaTextBox1.Text = NombreTablaTextBox.Text
-        End If
-        'Tabla Con Mayusculos a Minusculas
-        If InStr(textoBase, "{{{A=>-a}}}") Then
-            ConvertirMayusculasMinSeparadasPorGuion()
-            NombreTablaTextBox1.Text = NombreTablaTextBox.Text
-        End If
-        'Remplaza la clave Principal
-        If InStr(textoBase, "{{{Clave}}}") Then
-            GenerarClave(textoBase)
-        End If
-        'Remplaza los Campos
-        If Not InStr(textoBase, "{{{Campos}}}") Then
-            GenerarCampos()
-        End If
         'Remplaza los Requerimientos
         CargaRequerimientos()
         'Guarda la informacion
         SP_Proyectos_EDICION_ACTUALIZAR_CodigoRemplazado()
-
     End Sub
 
     Private Sub CargaRequerimientos()
@@ -219,19 +191,19 @@
             System.Windows.Forms.MessageBox.Show(ex.Message)
         End Try
     End Sub
-    Public Sub GenerarCampos()
-        Dim contadorCampos = SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaIDDataGridView.Rows.Count
+    Function GenerarCampos()
+        Dim contadorCampos = SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaID1DataGridView.Rows.Count
         Dim Campos As String = ""
         While contadorCampos > 0
             'Se ubica en la primera fila
-            SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaIDDataGridView.CurrentCell = SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaIDDataGridView.Rows(0).Cells(0)
-            Campos = Campos + TratamientoCampos(NombreCampoTextBox.Text, contadorCampos)
-            SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaIDDataGridView.Rows.RemoveAt(0)
+            SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaID1DataGridView.CurrentCell = SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaID1DataGridView.Rows(0).Cells(0)
+            Campos = Campos + TratamientoCampos(NombreCampoTextBox1.Text, contadorCampos) & vbCrLf
+            SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaID1DataGridView.Rows.RemoveAt(0)
             contadorCampos = contadorCampos - 1
         End While
-        CodigoGeneradoTextBox.Text = CodigoGeneradoTextBox.Text.Replace("{{{Campos}}}", Campos)
-        SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaID()
-    End Sub
+        Return Campos
+        SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaID1()
+    End Function
     Function TratamientoCampos(campoConComplemento As String, contadorCampos As Integer) As String
         Dim Campo As String = "Campo"
         Dim Objeto As String = ""
@@ -262,8 +234,9 @@
 
         Return Objeto
     End Function
-    Function GenerarClave(textoBase As String)
-        CapturaClavePrincipal(textoBase)
+    Function GenerarClave()
+        Dim Clave = CapturaClavePrincipal()
+        Return Clave
     End Function
     Function CargarTabla(textoBase As String, NombreTabla As String)
         Dim CodigoGenerado = textoBase.Replace("{{{Tabla}}}", NombreTabla)
@@ -271,17 +244,17 @@
     End Function
     Function CargarTablaMinuscula(textoBase As String, NombreTabla As String)
         NombreTabla = LCase(NombreTabla)
-        Dim CodigoGenerado = CodigoGeneradoTextBox.Text.Replace("{{{Tmin}}}", NombreTabla)
+        Dim CodigoGenerado = textoBase.Replace("{{{Tmin}}}", NombreTabla)
         Return CodigoGenerado
     End Function
-    Function CargarTablaEnPlural(textoBase As String)
-        NombreTablaTextBox1.Text = NombreTablaTextBox1.Text + "s"
-        CodigoGeneradoTextBox.Text = CodigoGeneradoTextBox.Text.Replace("{{{TPlur}}}", NombreTablaTextBox1.Text)
-        Return vbEmpty
+    Function CargarTablaEnPlural(textoBase As String, NombreTabla As String)
+        NombreTabla = NombreTabla + "s"
+        Dim CodigoGenerado = textoBase.Replace("{{{TPlur}}}", NombreTabla)
+        Return CodigoGenerado
     End Function
 
-    Function ConvertirMayusculasMinSeparadasPorGuion()
-        Dim cadena As String = NombreTablaTextBox1.Text
+    Function ConvertirMayusculasMinSeparadasPorGuion(textoBase As String, NombreTabla As String)
+        Dim cadena As String = NombreTabla
         Dim myChar As String = ""
         Dim fChar As String = ""
         Dim otra As String = ""
@@ -301,17 +274,17 @@
                 myChar = ""
             End If
         Next
-        CodigoGeneradoTextBox.Text = CodigoGeneradoTextBox.Text.Replace("{{{A=>-a}}}", fChar)
+        Dim CodigoGenerado = textoBase.Replace("{{{A=>-a}}}", fChar)
         NombreTablaTextBox1.Text = NombreTablaTextBox.Text
-        Return vbEmpty
+        Return CodigoGenerado
     End Function
 
-    Function CapturaClavePrincipal(textoBase As String)
+    Function CapturaClavePrincipal()
         Try
             'Se ubica en la primera fila
-            SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaIDDataGridView.CurrentCell = SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaIDDataGridView.Rows(0).Cells(0)
-            CodigoGeneradoTextBox.Text = CodigoGeneradoTextBox.Text.Replace("{{{Clave}}}", NombreCampoTextBox.Text)
-            Return vbEmpty
+            SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaID1DataGridView.CurrentCell = SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaID1DataGridView.Rows(0).Cells(0)
+            Dim Clave = NombreCampoTextBox1.Text
+            Return Clave
         Catch ex As Exception
 
         End Try
@@ -608,6 +581,7 @@
         SP_CARGA_TECNOLOGIAS_APLICADAS_A_PROYECTO()
         'Carga Tablas del Proyecto
         SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID()
+        SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1_RepetirTablas()
     End Sub
 
 #Region "Proyectos y Tecnologias"
@@ -1268,8 +1242,9 @@
         End Try
     End Sub
     Function TablasDeAplicacion(Contenido As String)
-        'Carga el listado de Tablas Dos
+        'carga las tablas que tenga el proyecto
         SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1_RepetirTablas()
+        'Cuenta las tablas que hay
         Dim contadorTablasSistema = SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1DataGridView.Rows.Count()
         Dim textoDeTablas As String = ""
         'Carga las tecnologias aplicadas y segun pide los requerimientos de de las plantillas de dichas tecnologias
@@ -1287,44 +1262,50 @@
         Try
             Me.SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1TableAdapter.Fill(Me.DataSetTablasYCampos.SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1, New System.Nullable(Of Integer)(CType(ProyectoIDTextBox.Text, Integer)))
         Catch ex As System.Exception
-            System.Windows.Forms.MessageBox.Show(ex.Message)
+            'System.Windows.Forms.MessageBox.Show(ex.Message)
         End Try
 
     End Sub
     Function RemplazosDeTodasTablas(Contenido As String, Tabla As String)
         Dim ContenidoGenerado As String = ""
+        Dim ObjContenido As String = ""
         If InStr(Contenido, "{{{Tabla}}}") Then
             ContenidoGenerado = CargarTabla(Contenido, Tabla)
         End If
         If InStr(Contenido, "{{{Tmin}}}") Then
             ContenidoGenerado = CargarTablaMinuscula(ContenidoGenerado, Tabla)
         End If
+        If InStr(Contenido, "{{{TPlur}}}") Then
+            ContenidoGenerado = CargarTablaEnPlural(ContenidoGenerado, Tabla)
+        End If
+        If InStr(Contenido, "{{{A=>-a}}}") Then
+            ContenidoGenerado = ConvertirMayusculasMinSeparadasPorGuion(ContenidoGenerado, Tabla)
+        End If
+        If InStr(Contenido, "{{{Clave}}}") Then
+            Dim Clave = GenerarClave()
+            ContenidoGenerado = ContenidoGenerado.Replace("{{{Clave}}}", Clave)
+        End If
+        If Not InStr(Contenido, "{{{Campos}}}") Then
+            Dim Campos = GenerarCampos()
+            ContenidoGenerado = ContenidoGenerado.Replace("{{{Campos}}}", Campos)
+        End If
         Return ContenidoGenerado
     End Function
+    Private Sub TablaIDTextBox1_TextChanged(sender As Object, e As EventArgs) Handles TablaIDTextBox1.TextChanged
+        SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaID1()
+    End Sub
+
+    Private Sub SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaID1()
+        Try
+            Me.SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaID1TableAdapter.Fill(Me.DataSetTablasYCampos.SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaID1, New System.Nullable(Of Integer)(CType(TablaIDTextBox1.Text, Integer)))
+        Catch ex As System.Exception
+            'System.Windows.Forms.MessageBox.Show(ex.Message)
+        End Try
+
+    End Sub
 
     Public Sub RemplazarEnResultadoPorTabla(textoBase As String, nombreTabla As String)
-        'Remplaza la Tabla
 
-        'Tabla en Minuscula
-
-        'Tabla en Minuscula
-        If InStr(textoBase, "{{{TPlur}}}") Then
-            CargarTablaEnPlural(textoBase)
-            NombreTablaTextBox1.Text = NombreTablaTextBox.Text
-        End If
-        'Tabla Con Mayusculos a Minusculas
-        If InStr(textoBase, "{{{A=>-a}}}") Then
-            ConvertirMayusculasMinSeparadasPorGuion()
-            NombreTablaTextBox1.Text = NombreTablaTextBox.Text
-        End If
-        'Remplaza la clave Principal
-        If InStr(textoBase, "{{{Clave}}}") Then
-            GenerarClave(textoBase)
-        End If
-        'Remplaza los Campos
-        If Not InStr(textoBase, "{{{Campos}}}") Then
-            GenerarCampos()
-        End If
         'Remplaza los Requerimientos
         CargaRequerimientos()
         'Guarda la informacion
