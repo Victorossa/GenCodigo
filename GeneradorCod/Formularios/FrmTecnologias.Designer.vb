@@ -47,7 +47,7 @@ Partial Class FrmTecnologias
         Dim CONVENSIONESLabel As System.Windows.Forms.Label
         Dim XTablaLabel As System.Windows.Forms.Label
         Dim XTablaLabel1 As System.Windows.Forms.Label
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmTecnologias))
         Me.TecnologiasDataGridView = New System.Windows.Forms.DataGridView()
         Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -209,6 +209,7 @@ Partial Class FrmTecnologias
         Me.SP_RequerimientosPlantillas_EDICION_INSERTARBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.SP_RequerimientosPlantillas_EDICION_INSERTARTableAdapter = New GeneradorCod.DataSetAdministracionTableAdapters.SP_RequerimientosPlantillas_EDICION_INSERTARTableAdapter()
         Me.XTablaTextBox = New System.Windows.Forms.TextBox()
+        Me.BtnTablaPluralMinuscula = New System.Windows.Forms.Button()
         NombreTecnologiaLabel = New System.Windows.Forms.Label()
         TecnologiaIDLabel = New System.Windows.Forms.Label()
         NombrePlantillaLabel = New System.Windows.Forms.Label()
@@ -523,8 +524,8 @@ Partial Class FrmTecnologias
         'DataGridViewTextBoxColumn2
         '
         Me.DataGridViewTextBoxColumn2.DataPropertyName = "NombreTecnologia"
-        DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.DataGridViewTextBoxColumn2.DefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.DataGridViewTextBoxColumn2.DefaultCellStyle = DataGridViewCellStyle2
         Me.DataGridViewTextBoxColumn2.HeaderText = "Nombre Tecnologia"
         Me.DataGridViewTextBoxColumn2.Name = "DataGridViewTextBoxColumn2"
         Me.DataGridViewTextBoxColumn2.Width = 277
@@ -1134,6 +1135,7 @@ Partial Class FrmTecnologias
         '
         'TabPage1
         '
+        Me.TabPage1.Controls.Add(Me.BtnTablaPluralMinuscula)
         Me.TabPage1.Controls.Add(Me.BtnMayusculaAMinuscula)
         Me.TabPage1.Controls.Add(Me.BtnTablaPlural)
         Me.TabPage1.Controls.Add(Me.BtnTablaMinuscula)
@@ -1346,7 +1348,7 @@ Partial Class FrmTecnologias
         Me.TabPage2.Location = New System.Drawing.Point(4, 27)
         Me.TabPage2.Name = "TabPage2"
         Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage2.Size = New System.Drawing.Size(164, 576)
+        Me.TabPage2.Size = New System.Drawing.Size(725, 576)
         Me.TabPage2.TabIndex = 1
         Me.TabPage2.Text = "Requerimientos"
         Me.TabPage2.UseVisualStyleBackColor = True
@@ -1405,7 +1407,7 @@ Partial Class FrmTecnologias
         Me.TabPage3.Location = New System.Drawing.Point(4, 27)
         Me.TabPage3.Name = "TabPage3"
         Me.TabPage3.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage3.Size = New System.Drawing.Size(164, 576)
+        Me.TabPage3.Size = New System.Drawing.Size(725, 576)
         Me.TabPage3.TabIndex = 2
         Me.TabPage3.Text = "Tipos de Datos Campos"
         Me.TabPage3.UseVisualStyleBackColor = True
@@ -1928,6 +1930,17 @@ Partial Class FrmTecnologias
         Me.XTablaTextBox.Size = New System.Drawing.Size(100, 26)
         Me.XTablaTextBox.TabIndex = 156
         '
+        'BtnTablaPluralMinuscula
+        '
+        Me.BtnTablaPluralMinuscula.BackColor = System.Drawing.Color.White
+        Me.BtnTablaPluralMinuscula.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnTablaPluralMinuscula.Location = New System.Drawing.Point(616, 61)
+        Me.BtnTablaPluralMinuscula.Name = "BtnTablaPluralMinuscula"
+        Me.BtnTablaPluralMinuscula.Size = New System.Drawing.Size(102, 43)
+        Me.BtnTablaPluralMinuscula.TabIndex = 130
+        Me.BtnTablaPluralMinuscula.Text = "{{{TPlurMin}}}"
+        Me.BtnTablaPluralMinuscula.UseVisualStyleBackColor = False
+        '
         'FrmTecnologias
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 18.0!)
@@ -2179,4 +2192,5 @@ Partial Class FrmTecnologias
     Friend WithEvents BtnMayusculaAMinuscula As Button
     Friend WithEvents XTablaCheckBox As CheckBox
     Friend WithEvents XTablaTextBox As TextBox
+    Friend WithEvents BtnTablaPluralMinuscula As Button
 End Class

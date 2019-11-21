@@ -253,6 +253,13 @@
         Return CodigoGenerado
     End Function
 
+    Function CargarTablaEnPluralMinus(textoBase As String, NombreTabla As String)
+        NombreTabla = NombreTabla + "s"
+        NombreTabla = LCase(NombreTabla)
+        Dim CodigoGenerado = textoBase.Replace("{{{TPlurMin}}}", NombreTabla)
+        Return CodigoGenerado
+    End Function
+
     Function ConvertirMayusculasMinSeparadasPorGuion(textoBase As String, NombreTabla As String)
         Dim cadena As String = NombreTabla
         Dim myChar As String = ""
@@ -1084,6 +1091,7 @@
         End If
     End Sub
     Private Sub Cbo_TipoDato_KeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles Cbo_TipoDato.KeyPress
+
         If Asc(e.KeyChar) = 13 Then
             If Actualizar_Menu_CamposDeTablas.Enabled = True Then
                 Actualizar_Menu_CamposDeTablas.Enabled = True
@@ -1251,7 +1259,7 @@
         While contadorTablasSistema > 0
             'Se ubica en la primera fila
             SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1DataGridView.CurrentCell = SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1DataGridView.Rows(0).Cells(0)
-            textoDeTablas = textoDeTablas + RemplazosDeTodasTablas(Contenido, NombreTablaTextBox2.Text) & vbCrLf
+            textoDeTablas = textoDeTablas & RemplazosDeTodasTablas(Contenido, NombreTablaTextBox2.Text) & vbCrLf
             SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1DataGridView.Rows.RemoveAt(0)
             contadorTablasSistema = contadorTablasSistema - 1
         End While
@@ -1277,6 +1285,9 @@
         End If
         If InStr(Contenido, "{{{TPlur}}}") Then
             ContenidoGenerado = CargarTablaEnPlural(ContenidoGenerado, Tabla)
+        End If
+        If InStr(Contenido, "{{{TPlurMin}}}") Then
+            ContenidoGenerado = CargarTablaEnPluralMinus(ContenidoGenerado, Tabla)
         End If
         If InStr(Contenido, "{{{A=>-a}}}") Then
             ContenidoGenerado = ConvertirMayusculasMinSeparadasPorGuion(ContenidoGenerado, Tabla)
