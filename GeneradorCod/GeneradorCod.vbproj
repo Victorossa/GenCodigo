@@ -175,6 +175,7 @@
     <Compile Include="Data\DataSetTablasYCampos.vb">
       <DependentUpon>DataSetTablasYCampos.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Data\ProcesamientoTexto.vb" />
     <Compile Include="Formularios\FrmReplace.Designer.vb">
       <DependentUpon>FrmReplace.vb</DependentUpon>
     </Compile>

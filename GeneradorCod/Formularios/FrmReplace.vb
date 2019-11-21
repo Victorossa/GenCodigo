@@ -151,25 +151,25 @@
         While contadorComponentes > 0
             'Se ubica en la primera fila
             SP_Componentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView.CurrentCell = SP_Componentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView.Rows(0).Cells(0)
-            If XTablaCheckBox.Checked = True Then
+            If XTablaCheckBox.Checked = False Then
                 CodigoGeneradoTextBox.Text = CodigoGeneradoTextBox.Text & vbCrLf & "                              " & NombreTecnologiaTextBox1.Text & vbCrLf & NombreComponenteTextBox.Text & vbCrLf & CodigoTextBox.Text & vbCrLf & "++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++" & vbCrLf & vbCrLf
             Else
-                MsgBox("No Reproducible")
+                CodigoGeneradoTextBox.Text = CodigoGeneradoTextBox.Text & vbCrLf & TablasDeAplicacion(CodigoTextBox.Text) & vbCrLf & "++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++" & vbCrLf & vbCrLf
             End If
             SP_Componentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView.Rows.RemoveAt(0)
             contadorComponentes = contadorComponentes - 1
         End While
-        RemplazarEnResultado(CodigoGeneradoTextBox.Text)
+        RemplazarEnResultado(CodigoGeneradoTextBox.Text, NombreTablaTextBox1.Text)
     End Sub
 
-    Public Sub RemplazarEnResultado(textoBase As String)
+    Public Sub RemplazarEnResultado(textoBase As String, NombreTabla As String)
         'Remplaza la Tabla
         If InStr(textoBase, "{{{Tabla}}}") Then
-            CargarTabla(textoBase)
+            CargarTabla(textoBase, NombreTabla)
         End If
         'Tabla en Minuscula
         If InStr(textoBase, "{{{Tmin}}}") Then
-            CargarTablaMinuscula(textoBase)
+            CargarTablaMinuscula(textoBase, NombreTabla)
             NombreTablaTextBox1.Text = NombreTablaTextBox.Text
         End If
         'Tabla en Minuscula
@@ -265,14 +265,14 @@
     Function GenerarClave(textoBase As String)
         CapturaClavePrincipal(textoBase)
     End Function
-    Function CargarTabla(textoBase As String)
-        CodigoGeneradoTextBox.Text = CodigoGeneradoTextBox.Text.Replace("{{{Tabla}}}", NombreTablaTextBox1.Text)
-        Return vbEmpty
+    Function CargarTabla(textoBase As String, NombreTabla As String)
+        Dim CodigoGenerado = textoBase.Replace("{{{Tabla}}}", NombreTabla)
+        Return CodigoGenerado
     End Function
-    Function CargarTablaMinuscula(textoBase As String)
-        NombreTablaTextBox1.Text = LCase(NombreTablaTextBox1.Text)
-        CodigoGeneradoTextBox.Text = CodigoGeneradoTextBox.Text.Replace("{{{Tmin}}}", NombreTablaTextBox1.Text)
-        Return vbEmpty
+    Function CargarTablaMinuscula(textoBase As String, NombreTabla As String)
+        NombreTabla = LCase(NombreTabla)
+        Dim CodigoGenerado = CodigoGeneradoTextBox.Text.Replace("{{{Tmin}}}", NombreTabla)
+        Return CodigoGenerado
     End Function
     Function CargarTablaEnPlural(textoBase As String)
         NombreTablaTextBox1.Text = NombreTablaTextBox1.Text + "s"
@@ -1248,17 +1248,18 @@
         CodigoGeneradoTextBox.Dock = DockStyle.Fill
     End Sub
 
+#End Region
+
+
     Private Sub BtnCopiar_Click(sender As Object, e As EventArgs) Handles BtnCopiar.Click
         If CodigoGeneradoTextBox.Text <> "" Then
             Clipboard.SetText(CodigoGeneradoTextBox.Text)
         End If
     End Sub
-
     Private Sub BtnLimpiar_Click(sender As Object, e As EventArgs) Handles BtnLimpiar.Click
         CodigoGeneradoTextBox.Text = ""
         SP_Proyectos_EDICION_ACTUALIZAR_CodigoRemplazado()
     End Sub
-
     Private Sub SP_RegistroValorRequerimientos_SegunProyectoRequerimiento()
         Try
             Me.SP_RegistroValorRequerimientos_SegunProyectoRequerimientoTableAdapter.Fill(Me.DataSetTablasYCampos.SP_RegistroValorRequerimientos_SegunProyectoRequerimiento, New System.Nullable(Of Integer)(CType(ProyectoIDTextBox.Text, Integer)), RequerimientoTextBox.Text)
@@ -1266,30 +1267,69 @@
             System.Windows.Forms.MessageBox.Show(ex.Message)
         End Try
     End Sub
-
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        Dim contadorTecnologiasAplicadas = SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoIDDataGridView.Rows.Count()
+    Function TablasDeAplicacion(Contenido As String)
+        'Carga el listado de Tablas Dos
+        SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1_RepetirTablas()
+        Dim contadorTablasSistema = SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1DataGridView.Rows.Count()
+        Dim textoDeTablas As String = ""
         'Carga las tecnologias aplicadas y segun pide los requerimientos de de las plantillas de dichas tecnologias
-        While contadorTecnologiasAplicadas > 0
+        While contadorTablasSistema > 0
             'Se ubica en la primera fila
-            SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoIDDataGridView.CurrentCell = SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoIDDataGridView.Rows(0).Cells(0)
-            RecorrerRequerimientosPorTecnologia()
-            SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoIDDataGridView.Rows.RemoveAt(0)
-            contadorTecnologiasAplicadas = contadorTecnologiasAplicadas - 1
+            SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1DataGridView.CurrentCell = SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1DataGridView.Rows(0).Cells(0)
+            textoDeTablas = textoDeTablas + RemplazosDeTodasTablas(Contenido, NombreTablaTextBox2.Text) & vbCrLf
+            SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1DataGridView.Rows.RemoveAt(0)
+            contadorTablasSistema = contadorTablasSistema - 1
         End While
-        SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID()
+        SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1_RepetirTablas()
+        Return textoDeTablas
+    End Function
+    Private Sub SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1_RepetirTablas()
+        Try
+            Me.SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1TableAdapter.Fill(Me.DataSetTablasYCampos.SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1, New System.Nullable(Of Integer)(CType(ProyectoIDTextBox.Text, Integer)))
+        Catch ex As System.Exception
+            System.Windows.Forms.MessageBox.Show(ex.Message)
+        End Try
+
     End Sub
+    Function RemplazosDeTodasTablas(Contenido As String, Tabla As String)
+        Dim ContenidoGenerado As String = ""
+        If InStr(Contenido, "{{{Tabla}}}") Then
+            ContenidoGenerado = CargarTabla(Contenido, Tabla)
+        End If
+        If InStr(Contenido, "{{{Tmin}}}") Then
+            ContenidoGenerado = CargarTablaMinuscula(ContenidoGenerado, Tabla)
+        End If
+        Return ContenidoGenerado
+    End Function
 
+    Public Sub RemplazarEnResultadoPorTabla(textoBase As String, nombreTabla As String)
+        'Remplaza la Tabla
 
+        'Tabla en Minuscula
 
+        'Tabla en Minuscula
+        If InStr(textoBase, "{{{TPlur}}}") Then
+            CargarTablaEnPlural(textoBase)
+            NombreTablaTextBox1.Text = NombreTablaTextBox.Text
+        End If
+        'Tabla Con Mayusculos a Minusculas
+        If InStr(textoBase, "{{{A=>-a}}}") Then
+            ConvertirMayusculasMinSeparadasPorGuion()
+            NombreTablaTextBox1.Text = NombreTablaTextBox.Text
+        End If
+        'Remplaza la clave Principal
+        If InStr(textoBase, "{{{Clave}}}") Then
+            GenerarClave(textoBase)
+        End If
+        'Remplaza los Campos
+        If Not InStr(textoBase, "{{{Campos}}}") Then
+            GenerarCampos()
+        End If
+        'Remplaza los Requerimientos
+        CargaRequerimientos()
+        'Guarda la informacion
+        SP_Proyectos_EDICION_ACTUALIZAR_CodigoRemplazado()
 
-
-
-
-
-
-
-#End Region
-
+    End Sub
 
 End Class

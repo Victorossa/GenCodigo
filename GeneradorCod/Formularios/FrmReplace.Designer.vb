@@ -55,9 +55,10 @@ Partial Class FrmReplace
         Dim NombreTablaLabel1 As System.Windows.Forms.Label
         Dim RegistroValorRequerimientoIDLabel As System.Windows.Forms.Label
         Dim ValorRequerimientoLabel1 As System.Windows.Forms.Label
+        Dim XTablaLabel As System.Windows.Forms.Label
+        Dim NombreTablaLabel2 As System.Windows.Forms.Label
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmReplace))
-        Dim XTablaLabel As System.Windows.Forms.Label
         Me.BtnBuscarYPintar = New System.Windows.Forms.Button()
         Me.SP_RequerimientosPlantillas_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView = New System.Windows.Forms.DataGridView()
         Me.DataGridViewTextBoxColumn5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -172,6 +173,13 @@ Partial Class FrmReplace
         Me.InferiorTextBox = New System.Windows.Forms.TextBox()
         Me.PlantillaIDTextBox1 = New System.Windows.Forms.TextBox()
         Me.Panel5 = New System.Windows.Forms.Panel()
+        Me.NombreTablaTextBox2 = New System.Windows.Forms.TextBox()
+        Me.SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1BindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1DataGridView = New System.Windows.Forms.DataGridView()
+        Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn11 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.XTablaCheckBox = New System.Windows.Forms.CheckBox()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.ValorRequerimientoTextBox2 = New System.Windows.Forms.TextBox()
         Me.SP_RegistroValorRequerimientos_SegunProyectoRequerimientoBindingSource = New System.Windows.Forms.BindingSource(Me.components)
@@ -214,7 +222,7 @@ Partial Class FrmReplace
         Me.SP_CamposDeTablas_EDICION_INSERTARTableAdapter = New GeneradorCod.DataSetTablasYCamposTableAdapters.SP_CamposDeTablas_EDICION_INSERTARTableAdapter()
         Me.SP_CampoComponentes_Segun_Plantilla_TipoTableAdapter = New GeneradorCod.DataSetTablasYCamposTableAdapters.SP_CampoComponentes_Segun_Plantilla_TipoTableAdapter()
         Me.SP_RegistroValorRequerimientos_SegunProyectoRequerimientoTableAdapter = New GeneradorCod.DataSetTablasYCamposTableAdapters.SP_RegistroValorRequerimientos_SegunProyectoRequerimientoTableAdapter()
-        Me.XTablaCheckBox = New System.Windows.Forms.CheckBox()
+        Me.SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1TableAdapter = New GeneradorCod.DataSetTablasYCamposTableAdapters.SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1TableAdapter()
         ComponenteIDLabel = New System.Windows.Forms.Label()
         PlantillaIDLabel = New System.Windows.Forms.Label()
         TecnologiaIDLabel = New System.Windows.Forms.Label()
@@ -248,6 +256,7 @@ Partial Class FrmReplace
         RegistroValorRequerimientoIDLabel = New System.Windows.Forms.Label()
         ValorRequerimientoLabel1 = New System.Windows.Forms.Label()
         XTablaLabel = New System.Windows.Forms.Label()
+        NombreTablaLabel2 = New System.Windows.Forms.Label()
         CType(Me.SP_RequerimientosPlantillas_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.SP_RequerimientosPlantillas_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DataSetAdministracion, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -285,6 +294,8 @@ Partial Class FrmReplace
         CType(Me.SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaIDBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.SP_CampoComponentes_Segun_Plantilla_TipoBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel5.SuspendLayout()
+        CType(Me.SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1BindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1DataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.SP_RegistroValorRequerimientos_SegunProyectoRequerimientoBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.SP_RegistroValorRequerimientos_EDICION_INSERTARBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.SP_ELIMINA_RegistroValorRequerimientos_SegunIDBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -583,6 +594,24 @@ Partial Class FrmReplace
         ValorRequerimientoLabel1.Size = New System.Drawing.Size(105, 13)
         ValorRequerimientoLabel1.TabIndex = 174
         ValorRequerimientoLabel1.Text = "Valor Requerimiento:"
+        '
+        'XTablaLabel
+        '
+        XTablaLabel.AutoSize = True
+        XTablaLabel.Location = New System.Drawing.Point(90, 443)
+        XTablaLabel.Name = "XTablaLabel"
+        XTablaLabel.Size = New System.Drawing.Size(44, 13)
+        XTablaLabel.TabIndex = 177
+        XTablaLabel.Text = "XTabla:"
+        '
+        'NombreTablaLabel2
+        '
+        NombreTablaLabel2.AutoSize = True
+        NombreTablaLabel2.Location = New System.Drawing.Point(569, 392)
+        NombreTablaLabel2.Name = "NombreTablaLabel2"
+        NombreTablaLabel2.Size = New System.Drawing.Size(77, 13)
+        NombreTablaLabel2.TabIndex = 178
+        NombreTablaLabel2.Text = "Nombre Tabla:"
         '
         'BtnBuscarYPintar
         '
@@ -1136,7 +1165,7 @@ Partial Class FrmReplace
         Me.CodigoTextBox.Location = New System.Drawing.Point(572, 13)
         Me.CodigoTextBox.Multiline = True
         Me.CodigoTextBox.Name = "CodigoTextBox"
-        Me.CodigoTextBox.Size = New System.Drawing.Size(283, 445)
+        Me.CodigoTextBox.Size = New System.Drawing.Size(283, 248)
         Me.CodigoTextBox.TabIndex = 130
         '
         'SP_RegistroValorRequerimientos_SEGUN_ProyectoIDDataGridView
@@ -1556,6 +1585,9 @@ Partial Class FrmReplace
         '
         Me.Panel5.AutoScroll = True
         Me.Panel5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel5.Controls.Add(NombreTablaLabel2)
+        Me.Panel5.Controls.Add(Me.NombreTablaTextBox2)
+        Me.Panel5.Controls.Add(Me.SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1DataGridView)
         Me.Panel5.Controls.Add(XTablaLabel)
         Me.Panel5.Controls.Add(Me.XTablaCheckBox)
         Me.Panel5.Controls.Add(Me.Button1)
@@ -1634,6 +1666,61 @@ Partial Class FrmReplace
         Me.Panel5.Name = "Panel5"
         Me.Panel5.Size = New System.Drawing.Size(418, 567)
         Me.Panel5.TabIndex = 159
+        '
+        'NombreTablaTextBox2
+        '
+        Me.NombreTablaTextBox2.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1BindingSource, "NombreTabla", True))
+        Me.NombreTablaTextBox2.Location = New System.Drawing.Point(652, 389)
+        Me.NombreTablaTextBox2.Name = "NombreTablaTextBox2"
+        Me.NombreTablaTextBox2.Size = New System.Drawing.Size(100, 20)
+        Me.NombreTablaTextBox2.TabIndex = 179
+        '
+        'SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1BindingSource
+        '
+        Me.SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1BindingSource.DataMember = "SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1"
+        Me.SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1BindingSource.DataSource = Me.DataSetTablasYCampos
+        '
+        'SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1DataGridView
+        '
+        Me.SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1DataGridView.AllowUserToAddRows = False
+        Me.SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1DataGridView.AutoGenerateColumns = False
+        Me.SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1DataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1DataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn1, Me.DataGridViewTextBoxColumn2, Me.DataGridViewTextBoxColumn11})
+        Me.SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1DataGridView.DataSource = Me.SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1BindingSource
+        Me.SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1DataGridView.Location = New System.Drawing.Point(572, 268)
+        Me.SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1DataGridView.Name = "SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1DataGridView"
+        Me.SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1DataGridView.RowHeadersVisible = False
+        Me.SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1DataGridView.Size = New System.Drawing.Size(273, 109)
+        Me.SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1DataGridView.TabIndex = 178
+        '
+        'DataGridViewTextBoxColumn1
+        '
+        Me.DataGridViewTextBoxColumn1.DataPropertyName = "TablaID"
+        Me.DataGridViewTextBoxColumn1.HeaderText = "TablaID"
+        Me.DataGridViewTextBoxColumn1.Name = "DataGridViewTextBoxColumn1"
+        Me.DataGridViewTextBoxColumn1.ReadOnly = True
+        '
+        'DataGridViewTextBoxColumn2
+        '
+        Me.DataGridViewTextBoxColumn2.DataPropertyName = "ProyectoID"
+        Me.DataGridViewTextBoxColumn2.HeaderText = "ProyectoID"
+        Me.DataGridViewTextBoxColumn2.Name = "DataGridViewTextBoxColumn2"
+        '
+        'DataGridViewTextBoxColumn11
+        '
+        Me.DataGridViewTextBoxColumn11.DataPropertyName = "NombreTabla"
+        Me.DataGridViewTextBoxColumn11.HeaderText = "NombreTabla"
+        Me.DataGridViewTextBoxColumn11.Name = "DataGridViewTextBoxColumn11"
+        '
+        'XTablaCheckBox
+        '
+        Me.XTablaCheckBox.DataBindings.Add(New System.Windows.Forms.Binding("CheckState", Me.SP_Componentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDBindingSource, "XTabla", True))
+        Me.XTablaCheckBox.Location = New System.Drawing.Point(140, 438)
+        Me.XTablaCheckBox.Name = "XTablaCheckBox"
+        Me.XTablaCheckBox.Size = New System.Drawing.Size(104, 24)
+        Me.XTablaCheckBox.TabIndex = 178
+        Me.XTablaCheckBox.Text = "CheckBox1"
+        Me.XTablaCheckBox.UseVisualStyleBackColor = True
         '
         'Button1
         '
@@ -1922,24 +2009,9 @@ Partial Class FrmReplace
         '
         Me.SP_RegistroValorRequerimientos_SegunProyectoRequerimientoTableAdapter.ClearBeforeFill = True
         '
-        'XTablaLabel
+        'SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1TableAdapter
         '
-        XTablaLabel.AutoSize = True
-        XTablaLabel.Location = New System.Drawing.Point(90, 443)
-        XTablaLabel.Name = "XTablaLabel"
-        XTablaLabel.Size = New System.Drawing.Size(44, 13)
-        XTablaLabel.TabIndex = 177
-        XTablaLabel.Text = "XTabla:"
-        '
-        'XTablaCheckBox
-        '
-        Me.XTablaCheckBox.DataBindings.Add(New System.Windows.Forms.Binding("CheckState", Me.SP_Componentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDBindingSource, "XTabla", True))
-        Me.XTablaCheckBox.Location = New System.Drawing.Point(140, 438)
-        Me.XTablaCheckBox.Name = "XTablaCheckBox"
-        Me.XTablaCheckBox.Size = New System.Drawing.Size(104, 24)
-        Me.XTablaCheckBox.TabIndex = 178
-        Me.XTablaCheckBox.Text = "CheckBox1"
-        Me.XTablaCheckBox.UseVisualStyleBackColor = True
+        Me.SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1TableAdapter.ClearBeforeFill = True
         '
         'FrmReplace
         '
@@ -2004,6 +2076,8 @@ Partial Class FrmReplace
         CType(Me.SP_CampoComponentes_Segun_Plantilla_TipoBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel5.ResumeLayout(False)
         Me.Panel5.PerformLayout()
+        CType(Me.SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1BindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1DataGridView, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.SP_RegistroValorRequerimientos_SegunProyectoRequerimientoBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.SP_RegistroValorRequerimientos_EDICION_INSERTARBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.SP_ELIMINA_RegistroValorRequerimientos_SegunIDBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
@@ -2174,4 +2248,11 @@ Partial Class FrmReplace
     Friend WithEvents ValorRequerimientoTextBox2 As TextBox
     Friend WithEvents Button1 As Button
     Friend WithEvents XTablaCheckBox As CheckBox
+    Friend WithEvents SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1BindingSource As BindingSource
+    Friend WithEvents SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1TableAdapter As DataSetTablasYCamposTableAdapters.SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1TableAdapter
+    Friend WithEvents NombreTablaTextBox2 As TextBox
+    Friend WithEvents SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1DataGridView As DataGridView
+    Friend WithEvents DataGridViewTextBoxColumn1 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn2 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn11 As DataGridViewTextBoxColumn
 End Class
