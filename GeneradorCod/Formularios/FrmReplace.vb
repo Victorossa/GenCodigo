@@ -1210,12 +1210,14 @@
 
     Private Sub SP_CampoComponentes_Segun_Plantilla_TipoTable()
         Try
-            Me.SP_CampoComponentes_Segun_Plantilla_TipoTableAdapter.Fill(Me.DataSetTablasYCampos.SP_CampoComponentes_Segun_Plantilla_Tipo, New System.Nullable(Of Integer)(CType(PlantillaIDTextBox1.Text, Integer)), TipoTextBox.Text)
+            Me.SP_CampoComponentes_Segun_Plantilla_TipoTableAdapter.Fill(Me.DataSetTablasYCampos.SP_CampoComponentes_Segun_Plantilla_Tipo, New System.Nullable(Of Integer)(CType(PlantillaIDTextBox1.Text, Integer)), TipoTextBox1.Text)
         Catch ex As System.Exception
             'System.Windows.Forms.MessageBox.Show(ex.Message)
         End Try
     End Sub
-
+    Private Sub NombreCampoTextBox1_TextChanged(sender As Object, e As EventArgs) Handles NombreCampoTextBox1.TextChanged
+        SP_CampoComponentes_Segun_Plantilla_TipoTable()
+    End Sub
     Private Sub NombreCampoTextBox_TextChanged(sender As Object, e As EventArgs) Handles NombreCampoTextBox.TextChanged
         SP_CampoComponentes_Segun_Plantilla_TipoTable()
     End Sub
@@ -1275,7 +1277,7 @@
 
     End Sub
     Function RemplazosDeTodasTablas(Contenido As String, Tabla As String)
-        Dim ContenidoGenerado As String = ""
+        Dim ContenidoGenerado As String = Contenido
         Dim ObjContenido As String = ""
         If InStr(Contenido, "{{{Tabla}}}") Then
             ContenidoGenerado = CargarTabla(Contenido, Tabla)
@@ -1323,5 +1325,6 @@
         SP_Proyectos_EDICION_ACTUALIZAR_CodigoRemplazado()
 
     End Sub
+
 
 End Class

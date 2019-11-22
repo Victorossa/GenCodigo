@@ -61,16 +61,18 @@ Partial Class FrmReplace
         Dim CampoIDLabel1 As System.Windows.Forms.Label
         Dim NombreCampoLabel1 As System.Windows.Forms.Label
         Dim TipoLabel1 As System.Windows.Forms.Label
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmReplace))
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmReplace))
         Me.BtnBuscarYPintar = New System.Windows.Forms.Button()
         Me.SP_RequerimientosPlantillas_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView = New System.Windows.Forms.DataGridView()
         Me.DataGridViewTextBoxColumn5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.SP_RequerimientosPlantillas_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.DataSetAdministracion = New GeneradorCod.DataSetAdministracion()
         Me.SP_Plantillas_BUSQUEDA_SEGUN_PARAMETRO_TecnologiaDataGridView = New System.Windows.Forms.DataGridView()
+        Me.DataGridViewTextBoxColumn6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.SP_Plantillas_BUSQUEDA_SEGUN_PARAMETRO_TecnologiaBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.TecnologiasDataGridView = New System.Windows.Forms.DataGridView()
+        Me.DataGridViewTextBoxColumn7 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.TecnologiasBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.SP_Componentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView = New System.Windows.Forms.DataGridView()
         Me.DataGridViewTextBoxColumn8 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -84,6 +86,8 @@ Partial Class FrmReplace
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
         Me.SP_CARGA_TECNOLOGIAS_APLICADAS_A_PROYECTODataGridView = New System.Windows.Forms.DataGridView()
+        Me.DataGridViewTextBoxColumn12 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn13 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.SP_CARGA_TECNOLOGIAS_APLICADAS_A_PROYECTOBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.TabPage2 = New System.Windows.Forms.TabPage()
         Me.PanelAdministracion_ = New System.Windows.Forms.Panel()
@@ -97,6 +101,7 @@ Partial Class FrmReplace
         Me.ProyectosBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.NombreProyectoTextBox = New System.Windows.Forms.TextBox()
         Me.ProyectosDataGridView = New System.Windows.Forms.DataGridView()
+        Me.DataGridViewTextBoxColumn10 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ProyectoIDTextBox = New System.Windows.Forms.TextBox()
         Me.CodigoGeneradoTextBox = New System.Windows.Forms.TextBox()
         Me.CM1 = New System.Windows.Forms.ContextMenuStrip(Me.components)
@@ -233,11 +238,6 @@ Partial Class FrmReplace
         Me.SP_RegistroValorRequerimientos_SegunProyectoRequerimientoTableAdapter = New GeneradorCod.DataSetTablasYCamposTableAdapters.SP_RegistroValorRequerimientos_SegunProyectoRequerimientoTableAdapter()
         Me.SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1TableAdapter = New GeneradorCod.DataSetTablasYCamposTableAdapters.SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1TableAdapter()
         Me.SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaID1TableAdapter = New GeneradorCod.DataSetTablasYCamposTableAdapters.SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaID1TableAdapter()
-        Me.DataGridViewTextBoxColumn10 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn12 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn13 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn7 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         ComponenteIDLabel = New System.Windows.Forms.Label()
         PlantillaIDLabel = New System.Windows.Forms.Label()
         TecnologiaIDLabel = New System.Windows.Forms.Label()
@@ -724,6 +724,14 @@ Partial Class FrmReplace
         Me.SP_Plantillas_BUSQUEDA_SEGUN_PARAMETRO_TecnologiaDataGridView.Size = New System.Drawing.Size(146, 155)
         Me.SP_Plantillas_BUSQUEDA_SEGUN_PARAMETRO_TecnologiaDataGridView.TabIndex = 94
         '
+        'DataGridViewTextBoxColumn6
+        '
+        Me.DataGridViewTextBoxColumn6.DataPropertyName = "NombrePlantilla"
+        Me.DataGridViewTextBoxColumn6.HeaderText = "Nombre Plantilla"
+        Me.DataGridViewTextBoxColumn6.Name = "DataGridViewTextBoxColumn6"
+        Me.DataGridViewTextBoxColumn6.ReadOnly = True
+        Me.DataGridViewTextBoxColumn6.Width = 142
+        '
         'SP_Plantillas_BUSQUEDA_SEGUN_PARAMETRO_TecnologiaBindingSource
         '
         Me.SP_Plantillas_BUSQUEDA_SEGUN_PARAMETRO_TecnologiaBindingSource.DataMember = "SP_Plantillas_BUSQUEDA_SEGUN_PARAMETRO_Tecnologia"
@@ -743,6 +751,15 @@ Partial Class FrmReplace
         Me.TecnologiasDataGridView.RowHeadersVisible = False
         Me.TecnologiasDataGridView.Size = New System.Drawing.Size(148, 155)
         Me.TecnologiasDataGridView.TabIndex = 96
+        '
+        'DataGridViewTextBoxColumn7
+        '
+        Me.DataGridViewTextBoxColumn7.DataPropertyName = "NombreTecnologia"
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.DataGridViewTextBoxColumn7.DefaultCellStyle = DataGridViewCellStyle1
+        Me.DataGridViewTextBoxColumn7.HeaderText = "Nombre Tecnologia"
+        Me.DataGridViewTextBoxColumn7.Name = "DataGridViewTextBoxColumn7"
+        Me.DataGridViewTextBoxColumn7.Width = 144
         '
         'TecnologiasBindingSource
         '
@@ -863,6 +880,22 @@ Partial Class FrmReplace
         Me.SP_CARGA_TECNOLOGIAS_APLICADAS_A_PROYECTODataGridView.RowHeadersVisible = False
         Me.SP_CARGA_TECNOLOGIAS_APLICADAS_A_PROYECTODataGridView.Size = New System.Drawing.Size(301, 155)
         Me.SP_CARGA_TECNOLOGIAS_APLICADAS_A_PROYECTODataGridView.TabIndex = 124
+        '
+        'DataGridViewTextBoxColumn12
+        '
+        Me.DataGridViewTextBoxColumn12.DataPropertyName = "NombreTecnologia"
+        Me.DataGridViewTextBoxColumn12.HeaderText = "Tecnologia"
+        Me.DataGridViewTextBoxColumn12.Name = "DataGridViewTextBoxColumn12"
+        Me.DataGridViewTextBoxColumn12.ReadOnly = True
+        Me.DataGridViewTextBoxColumn12.Width = 148
+        '
+        'DataGridViewTextBoxColumn13
+        '
+        Me.DataGridViewTextBoxColumn13.DataPropertyName = "NombrePlantilla"
+        Me.DataGridViewTextBoxColumn13.HeaderText = "Plantilla"
+        Me.DataGridViewTextBoxColumn13.Name = "DataGridViewTextBoxColumn13"
+        Me.DataGridViewTextBoxColumn13.ReadOnly = True
+        Me.DataGridViewTextBoxColumn13.Width = 148
         '
         'SP_CARGA_TECNOLOGIAS_APLICADAS_A_PROYECTOBindingSource
         '
@@ -996,6 +1029,13 @@ Partial Class FrmReplace
         Me.ProyectosDataGridView.RowHeadersVisible = False
         Me.ProyectosDataGridView.Size = New System.Drawing.Size(315, 149)
         Me.ProyectosDataGridView.TabIndex = 0
+        '
+        'DataGridViewTextBoxColumn10
+        '
+        Me.DataGridViewTextBoxColumn10.DataPropertyName = "NombreProyecto"
+        Me.DataGridViewTextBoxColumn10.HeaderText = "Nombre Proyecto"
+        Me.DataGridViewTextBoxColumn10.Name = "DataGridViewTextBoxColumn10"
+        Me.DataGridViewTextBoxColumn10.Width = 311
         '
         'ProyectoIDTextBox
         '
@@ -2117,46 +2157,6 @@ Partial Class FrmReplace
         'SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaID1TableAdapter
         '
         Me.SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaID1TableAdapter.ClearBeforeFill = True
-        '
-        'DataGridViewTextBoxColumn10
-        '
-        Me.DataGridViewTextBoxColumn10.DataPropertyName = "NombreProyecto"
-        Me.DataGridViewTextBoxColumn10.HeaderText = "Nombre Proyecto"
-        Me.DataGridViewTextBoxColumn10.Name = "DataGridViewTextBoxColumn10"
-        Me.DataGridViewTextBoxColumn10.Width = 311
-        '
-        'DataGridViewTextBoxColumn12
-        '
-        Me.DataGridViewTextBoxColumn12.DataPropertyName = "NombreTecnologia"
-        Me.DataGridViewTextBoxColumn12.HeaderText = "Tecnologia"
-        Me.DataGridViewTextBoxColumn12.Name = "DataGridViewTextBoxColumn12"
-        Me.DataGridViewTextBoxColumn12.ReadOnly = True
-        Me.DataGridViewTextBoxColumn12.Width = 148
-        '
-        'DataGridViewTextBoxColumn13
-        '
-        Me.DataGridViewTextBoxColumn13.DataPropertyName = "NombrePlantilla"
-        Me.DataGridViewTextBoxColumn13.HeaderText = "Plantilla"
-        Me.DataGridViewTextBoxColumn13.Name = "DataGridViewTextBoxColumn13"
-        Me.DataGridViewTextBoxColumn13.ReadOnly = True
-        Me.DataGridViewTextBoxColumn13.Width = 148
-        '
-        'DataGridViewTextBoxColumn7
-        '
-        Me.DataGridViewTextBoxColumn7.DataPropertyName = "NombreTecnologia"
-        DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.DataGridViewTextBoxColumn7.DefaultCellStyle = DataGridViewCellStyle1
-        Me.DataGridViewTextBoxColumn7.HeaderText = "Nombre Tecnologia"
-        Me.DataGridViewTextBoxColumn7.Name = "DataGridViewTextBoxColumn7"
-        Me.DataGridViewTextBoxColumn7.Width = 144
-        '
-        'DataGridViewTextBoxColumn6
-        '
-        Me.DataGridViewTextBoxColumn6.DataPropertyName = "NombrePlantilla"
-        Me.DataGridViewTextBoxColumn6.HeaderText = "Nombre Plantilla"
-        Me.DataGridViewTextBoxColumn6.Name = "DataGridViewTextBoxColumn6"
-        Me.DataGridViewTextBoxColumn6.ReadOnly = True
-        Me.DataGridViewTextBoxColumn6.Width = 142
         '
         'FrmReplace
         '

@@ -578,7 +578,7 @@
         Bloquear_Objetos_Componentes()
         Parar_Timer_Componentes()
         Timer_Ubicar_En_Fila_Componentes()
-        Me.TecnologiasTableAdapter.Fill(Me.DataSetAdministracion.Tecnologias)
+        'Me.TecnologiasTableAdapter.Fill(Me.DataSetAdministracion.Tecnologias)
     End Sub
     'Insertar
     Private Sub SP_Componentes_EDICION_INSERTAR()
