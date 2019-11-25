@@ -47,7 +47,7 @@ Partial Class FrmTecnologias
         Dim CONVENSIONESLabel As System.Windows.Forms.Label
         Dim XTablaLabel As System.Windows.Forms.Label
         Dim XTablaLabel1 As System.Windows.Forms.Label
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmTecnologias))
         Me.TecnologiasDataGridView = New System.Windows.Forms.DataGridView()
         Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -112,6 +112,7 @@ Partial Class FrmTecnologias
         Me.GrupoTiposIDTextBox = New System.Windows.Forms.TextBox()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
+        Me.BtnTablaPluralMinuscula = New System.Windows.Forms.Button()
         Me.BtnMayusculaAMinuscula = New System.Windows.Forms.Button()
         Me.BtnTablaPlural = New System.Windows.Forms.Button()
         Me.BtnTablaMinuscula = New System.Windows.Forms.Button()
@@ -209,7 +210,6 @@ Partial Class FrmTecnologias
         Me.SP_RequerimientosPlantillas_EDICION_INSERTARBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.SP_RequerimientosPlantillas_EDICION_INSERTARTableAdapter = New GeneradorCod.DataSetAdministracionTableAdapters.SP_RequerimientosPlantillas_EDICION_INSERTARTableAdapter()
         Me.XTablaTextBox = New System.Windows.Forms.TextBox()
-        Me.BtnTablaPluralMinuscula = New System.Windows.Forms.Button()
         NombreTecnologiaLabel = New System.Windows.Forms.Label()
         TecnologiaIDLabel = New System.Windows.Forms.Label()
         NombrePlantillaLabel = New System.Windows.Forms.Label()
@@ -524,8 +524,8 @@ Partial Class FrmTecnologias
         'DataGridViewTextBoxColumn2
         '
         Me.DataGridViewTextBoxColumn2.DataPropertyName = "NombreTecnologia"
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.DataGridViewTextBoxColumn2.DefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.DataGridViewTextBoxColumn2.DefaultCellStyle = DataGridViewCellStyle1
         Me.DataGridViewTextBoxColumn2.HeaderText = "Nombre Tecnologia"
         Me.DataGridViewTextBoxColumn2.Name = "DataGridViewTextBoxColumn2"
         Me.DataGridViewTextBoxColumn2.Width = 277
@@ -1164,6 +1164,17 @@ Partial Class FrmTecnologias
         Me.TabPage1.Text = "Busqueda y Remplazo"
         Me.TabPage1.UseVisualStyleBackColor = True
         '
+        'BtnTablaPluralMinuscula
+        '
+        Me.BtnTablaPluralMinuscula.BackColor = System.Drawing.Color.White
+        Me.BtnTablaPluralMinuscula.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnTablaPluralMinuscula.Location = New System.Drawing.Point(616, 61)
+        Me.BtnTablaPluralMinuscula.Name = "BtnTablaPluralMinuscula"
+        Me.BtnTablaPluralMinuscula.Size = New System.Drawing.Size(102, 43)
+        Me.BtnTablaPluralMinuscula.TabIndex = 130
+        Me.BtnTablaPluralMinuscula.Text = "{{{TPlurMin}}}"
+        Me.BtnTablaPluralMinuscula.UseVisualStyleBackColor = False
+        '
         'BtnMayusculaAMinuscula
         '
         Me.BtnMayusculaAMinuscula.BackColor = System.Drawing.Color.White
@@ -1316,6 +1327,7 @@ Partial Class FrmTecnologias
         'ContenidoComponenteRichTextBox
         '
         Me.ContenidoComponenteRichTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SP_Componentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDBindingSource, "Codigo", True))
+        Me.ContenidoComponenteRichTextBox.Font = New System.Drawing.Font("Candara", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ContenidoComponenteRichTextBox.Location = New System.Drawing.Point(3, 111)
         Me.ContenidoComponenteRichTextBox.Name = "ContenidoComponenteRichTextBox"
         Me.ContenidoComponenteRichTextBox.Size = New System.Drawing.Size(716, 459)
@@ -1929,17 +1941,6 @@ Partial Class FrmTecnologias
         Me.XTablaTextBox.Name = "XTablaTextBox"
         Me.XTablaTextBox.Size = New System.Drawing.Size(100, 26)
         Me.XTablaTextBox.TabIndex = 156
-        '
-        'BtnTablaPluralMinuscula
-        '
-        Me.BtnTablaPluralMinuscula.BackColor = System.Drawing.Color.White
-        Me.BtnTablaPluralMinuscula.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnTablaPluralMinuscula.Location = New System.Drawing.Point(616, 61)
-        Me.BtnTablaPluralMinuscula.Name = "BtnTablaPluralMinuscula"
-        Me.BtnTablaPluralMinuscula.Size = New System.Drawing.Size(102, 43)
-        Me.BtnTablaPluralMinuscula.TabIndex = 130
-        Me.BtnTablaPluralMinuscula.Text = "{{{TPlurMin}}}"
-        Me.BtnTablaPluralMinuscula.UseVisualStyleBackColor = False
         '
         'FrmTecnologias
         '
