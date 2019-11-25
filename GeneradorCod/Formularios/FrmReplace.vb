@@ -154,7 +154,7 @@
             If XTablaCheckBox.Checked = False Then
                 CodigoGeneradoTextBox.Text = CodigoGeneradoTextBox.Text & vbCrLf & "                              " & NombreTecnologiaTextBox1.Text & vbCrLf & NombreComponenteTextBox.Text & vbCrLf & CodigoTextBox.Text & vbCrLf & "++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++" & vbCrLf & vbCrLf
             Else
-                CodigoGeneradoTextBox.Text = CodigoGeneradoTextBox.Text & vbCrLf & TablasDeAplicacion(CodigoTextBox.Text) & vbCrLf & "++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++" & vbCrLf & vbCrLf
+                CodigoGeneradoTextBox.Text = CodigoGeneradoTextBox.Text & vbCrLf & NombreComponenteTextBox.Text & TablasDeAplicacion(CodigoTextBox.Text) & vbCrLf & "++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++" & vbCrLf & vbCrLf
             End If
             SP_Componentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView.Rows.RemoveAt(0)
             contadorComponentes = contadorComponentes - 1
