@@ -57,11 +57,22 @@ Namespace My
         <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.Configuration.SpecialSettingAttribute(Global.System.Configuration.SpecialSetting.ConnectionString),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-D98GTRE\SQLEXPRESS;Initial Catalog=GeneradorCodigoBD;Integrat"& _ 
-            "ed Security=True")>  _
+         Global.System.Configuration.DefaultSettingValueAttribute("Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\BaseDeDatos\G"& _ 
+            "eneradorCodigoBD.mdf;Integrated Security=True")>  _
         Public ReadOnly Property GeneradorCodigoBDConnectionString() As String
             Get
                 Return CType(Me("GeneradorCodigoBDConnectionString"),String)
+            End Get
+        End Property
+        
+        <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.SpecialSettingAttribute(Global.System.Configuration.SpecialSetting.ConnectionString),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\BaseDeDatos\G"& _ 
+            "eneradorCodigoBD.mdf;Integrated Security=True;Connect Timeout=30")>  _
+        Public ReadOnly Property GeneradorBDConnectionString() As String
+            Get
+                Return CType(Me("GeneradorBDConnectionString"),String)
             End Get
         End Property
     End Class

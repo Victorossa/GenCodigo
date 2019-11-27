@@ -304,7 +304,8 @@
         Try
             Me.SP_Plantillas_EDICION_INSERTARTableAdapter.Fill(Me.DataSetAdministracion.SP_Plantillas_EDICION_INSERTAR,
                                                  New System.Nullable(Of Integer)(CType(TecnologiaIDTextBox.Text, Integer)),
-                                                 NombrePlantillaTextBox.Text)
+                                                 NombrePlantillaTextBox.Text,
+                                                 New System.Nullable(Of Integer)(CType(OrdenTextBox.Text, Integer)))
             SP_Plantillas_BUSQUEDA_SEGUN_PARAMETRO_Tecnologia()
             MsgBox("El Dato Fue Guardado Exitosamente", MsgBoxStyle.Information, "Guardar Dato")
         Catch ex As System.Exception
@@ -318,7 +319,8 @@
             Me.SP_Plantillas_EDICION_ACTUALIZARTableAdapter.Fill(Me.DataSetAdministracion.SP_Plantillas_EDICION_ACTUALIZAR,
                                                  New System.Nullable(Of Integer)(CType(PlantillaIDTextBox.Text, Integer)),
                                                  New System.Nullable(Of Integer)(CType(TecnologiaIDTextBox.Text, Integer)),
-                                                 NombrePlantillaTextBox.Text)
+                                                 NombrePlantillaTextBox.Text,
+                                                 New System.Nullable(Of Integer)(CType(OrdenTextBox.Text, Integer)))
             SP_Plantillas_BUSQUEDA_SEGUN_PARAMETRO_Tecnologia()
             MsgBox("El Dato Fue Actualizado Exitosamente", MsgBoxStyle.Information, "Actualizar Dato")
         Catch ex As System.Exception
@@ -414,19 +416,13 @@
     End Sub
     Private Sub NombrePlantillaTextBox_KeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles NombrePlantillaTextBox.KeyPress
         If Asc(e.KeyChar) = 13 Then
-            If Actualizar_Menu_Plantillas.Enabled = True Then
-                Actualizar_Menu_Plantillas.Enabled = True
-                Eliminar_Menu_Plantillas.Enabled = True
+            If NombrePlantillaTextBox.Text = "" Then
+                MsgBox("Dato Obligatorio, Favor Verificar", MsgBoxStyle.Critical, "Validación de Datos")
+                NombrePlantillaTextBox.Text = ""
+                NombrePlantillaTextBox.Focus()
             Else
-                If NombrePlantillaTextBox.Text = "" Then
-                    MsgBox("Dato Obligatorio, Favor Verificar", MsgBoxStyle.Critical, "Validación de Datos")
-                    NombrePlantillaTextBox.Text = ""
-                    NombrePlantillaTextBox.Focus()
-                Else
-                    MsgBox("La Información Ya puede ser Guardada el Icono de Guardado queda habilitado", MsgBoxStyle.Information, "Guardar los Datos")
-                    Guardar_Menu_Plantillas.Enabled = True
-                    Timer_Guardar_Plantillas()
-                End If
+                OrdenTextBox.Enabled = True
+                OrdenTextBox.Focus()
             End If
         End If
         Dim Longitud, Ascii As Integer
@@ -453,16 +449,36 @@
             NombrePlantillaTextBox.SelectionStart = Longitud + 1
         End If
     End Sub
-
+    Private Sub OrdenTextBox_KeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles OrdenTextBox.KeyPress
+        If Asc(e.KeyChar) = 13 Then
+            If Actualizar_Menu_Plantillas.Enabled = True Then
+                Actualizar_Menu_Plantillas.Enabled = True
+                Eliminar_Menu_Plantillas.Enabled = True
+            Else
+                If OrdenTextBox.Text = "" Then
+                    MsgBox("Dato Obligatorio, Favor Verificar", MsgBoxStyle.Critical, "Validación de Datos")
+                    OrdenTextBox.Text = ""
+                    OrdenTextBox.Focus()
+                Else
+                    MsgBox("La Información Ya puede ser Guardada el Icono de Guardado queda habilitado", MsgBoxStyle.Information, "Guardar los Datos")
+                    Guardar_Menu_Plantillas.Enabled = True
+                    Timer_Guardar_Plantillas()
+                End If
+            End If
+        End If
+    End Sub
 
     Public Sub Limpiar_Objetos_Plantillas()
         NombrePlantillaTextBox.Text = "" ''
+        OrdenTextBox.Text = ""
     End Sub
     Public Sub Desbloquear_Objetos_Plantillas()
         NombrePlantillaTextBox.Enabled = True
+        OrdenTextBox.Enabled = True
     End Sub
     Public Sub Bloquear_Objetos_Plantillas()
         NombrePlantillaTextBox.Enabled = False
+        OrdenTextBox.Enabled = False
     End Sub
 #End Region
 #Region "Timer de Botones"
@@ -1260,14 +1276,6 @@
 
 
     Private Sub TipoCampoIDTextBox_TextChanged(sender As Object, e As EventArgs) Handles TipoCampoIDTextBox.TextChanged
-
-    End Sub
-
-    Private Sub GrupoTiposIDLabel1_Click(sender As Object, e As EventArgs)
-
-    End Sub
-
-    Private Sub GrupoTiposIDTextBox2_TextChanged(sender As Object, e As EventArgs) Handles GrupoTiposIDTextBox2.TextChanged
 
     End Sub
 

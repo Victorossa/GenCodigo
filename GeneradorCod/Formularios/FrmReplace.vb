@@ -596,7 +596,7 @@
         'Inserta la relacion entre el proyecto y la tecnologia aplicada al mismo
         SP_ProyectosYTecnologias_EDICION_INSERTAR()
         'Carga las tecnologias aplicadas al proyecto
-        'SP_CARGA_TECNOLOGIAS_APLICADAS_A_PROYECTO()
+        SP_CARGA_TECNOLOGIAS_APLICADAS_A_PROYECTO()
         MsgBox("Se Crea Relación Del Proyecto" & NombreProyectoTextBox.Text & " con la tecnologia " & NombreTecnologiaTextBox.Text, MsgBoxStyle.Information)
     End Sub
     'Metodo que inserta la relacion

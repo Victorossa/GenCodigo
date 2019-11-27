@@ -35,7 +35,6 @@ Partial Class FrmTecnologias
         Dim RequerimientoPlantillaIDLabel As System.Windows.Forms.Label
         Dim GrupoTiposIDLabel As System.Windows.Forms.Label
         Dim NombreGrupoTipoDeDatoLabel1 As System.Windows.Forms.Label
-        Dim GrupoTiposIDLabel1 As System.Windows.Forms.Label
         Dim CampoComponenteIDLabel As System.Windows.Forms.Label
         Dim TipoLabel As System.Windows.Forms.Label
         Dim PrefijoLabel As System.Windows.Forms.Label
@@ -47,7 +46,8 @@ Partial Class FrmTecnologias
         Dim CONVENSIONESLabel As System.Windows.Forms.Label
         Dim XTablaLabel As System.Windows.Forms.Label
         Dim XTablaLabel1 As System.Windows.Forms.Label
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim OrdenLabel As System.Windows.Forms.Label
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmTecnologias))
         Me.TecnologiasDataGridView = New System.Windows.Forms.DataGridView()
         Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -65,8 +65,9 @@ Partial Class FrmTecnologias
         Me.ControlNulos = New System.Windows.Forms.TextBox()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Panel3 = New System.Windows.Forms.Panel()
-        Me.NombrePlantillaTextBox = New System.Windows.Forms.TextBox()
+        Me.OrdenTextBox = New System.Windows.Forms.TextBox()
         Me.SP_Plantillas_BUSQUEDA_SEGUN_PARAMETRO_TecnologiaBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.NombrePlantillaTextBox = New System.Windows.Forms.TextBox()
         Me.SP_Plantillas_BUSQUEDA_SEGUN_PARAMETRO_TecnologiaDataGridView = New System.Windows.Forms.DataGridView()
         Me.DataGridViewTextBoxColumn4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Panel4 = New System.Windows.Forms.Panel()
@@ -179,6 +180,7 @@ Partial Class FrmTecnologias
         Me.SP_CampoComponentes_EDICION_INSERTARBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.SP_CampoComponentes_EDICION_INSERTARTableAdapter = New GeneradorCod.DataSetTablasYCamposTableAdapters.SP_CampoComponentes_EDICION_INSERTARTableAdapter()
         Me.SP_CARGA_CONVENSIONES_USADASTableAdapter = New GeneradorCod.DataSetTablasYCamposTableAdapters.SP_CARGA_CONVENSIONES_USADASTableAdapter()
+        Me.XTablaTextBox = New System.Windows.Forms.TextBox()
         Me.TecnologiasTableAdapter = New GeneradorCod.DataSetAdministracionTableAdapters.TecnologiasTableAdapter()
         Me.TableAdapterManager = New GeneradorCod.DataSetAdministracionTableAdapters.TableAdapterManager()
         Me.SP_Tecnologias_EDICION_ACTUALIZARBindingSource = New System.Windows.Forms.BindingSource(Me.components)
@@ -209,7 +211,7 @@ Partial Class FrmTecnologias
         Me.SP_RequerimientosPlantillas_EDICION_ELIMINARTableAdapter = New GeneradorCod.DataSetAdministracionTableAdapters.SP_RequerimientosPlantillas_EDICION_ELIMINARTableAdapter()
         Me.SP_RequerimientosPlantillas_EDICION_INSERTARBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.SP_RequerimientosPlantillas_EDICION_INSERTARTableAdapter = New GeneradorCod.DataSetAdministracionTableAdapters.SP_RequerimientosPlantillas_EDICION_INSERTARTableAdapter()
-        Me.XTablaTextBox = New System.Windows.Forms.TextBox()
+        Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
         NombreTecnologiaLabel = New System.Windows.Forms.Label()
         TecnologiaIDLabel = New System.Windows.Forms.Label()
         NombrePlantillaLabel = New System.Windows.Forms.Label()
@@ -222,7 +224,6 @@ Partial Class FrmTecnologias
         RequerimientoPlantillaIDLabel = New System.Windows.Forms.Label()
         GrupoTiposIDLabel = New System.Windows.Forms.Label()
         NombreGrupoTipoDeDatoLabel1 = New System.Windows.Forms.Label()
-        GrupoTiposIDLabel1 = New System.Windows.Forms.Label()
         CampoComponenteIDLabel = New System.Windows.Forms.Label()
         TipoLabel = New System.Windows.Forms.Label()
         PrefijoLabel = New System.Windows.Forms.Label()
@@ -234,6 +235,7 @@ Partial Class FrmTecnologias
         CONVENSIONESLabel = New System.Windows.Forms.Label()
         XTablaLabel = New System.Windows.Forms.Label()
         XTablaLabel1 = New System.Windows.Forms.Label()
+        OrdenLabel = New System.Windows.Forms.Label()
         CType(Me.TecnologiasDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TecnologiasBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DataSetAdministracion, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -392,16 +394,6 @@ Partial Class FrmTecnologias
         NombreGrupoTipoDeDatoLabel1.Text = "Nombre Grupo Tipo De Dato:"
         AddHandler NombreGrupoTipoDeDatoLabel1.Click, AddressOf Me.NombreGrupoTipoDeDatoLabel1_Click
         '
-        'GrupoTiposIDLabel1
-        '
-        GrupoTiposIDLabel1.AutoSize = True
-        GrupoTiposIDLabel1.Location = New System.Drawing.Point(689, 296)
-        GrupoTiposIDLabel1.Name = "GrupoTiposIDLabel1"
-        GrupoTiposIDLabel1.Size = New System.Drawing.Size(102, 18)
-        GrupoTiposIDLabel1.TabIndex = 119
-        GrupoTiposIDLabel1.Text = "Grupo Tipos ID:"
-        AddHandler GrupoTiposIDLabel1.Click, AddressOf Me.GrupoTiposIDLabel1_Click
-        '
         'CampoComponenteIDLabel
         '
         CampoComponenteIDLabel.AutoSize = True
@@ -507,6 +499,15 @@ Partial Class FrmTecnologias
         XTablaLabel1.TabIndex = 155
         XTablaLabel1.Text = "XTabla:"
         '
+        'OrdenLabel
+        '
+        OrdenLabel.AutoSize = True
+        OrdenLabel.Location = New System.Drawing.Point(248, 52)
+        OrdenLabel.Name = "OrdenLabel"
+        OrdenLabel.Size = New System.Drawing.Size(40, 14)
+        OrdenLabel.TabIndex = 95
+        OrdenLabel.Text = "Orden:"
+        '
         'TecnologiasDataGridView
         '
         Me.TecnologiasDataGridView.AllowUserToAddRows = False
@@ -524,8 +525,8 @@ Partial Class FrmTecnologias
         'DataGridViewTextBoxColumn2
         '
         Me.DataGridViewTextBoxColumn2.DataPropertyName = "NombreTecnologia"
-        DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.DataGridViewTextBoxColumn2.DefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.DataGridViewTextBoxColumn2.DefaultCellStyle = DataGridViewCellStyle3
         Me.DataGridViewTextBoxColumn2.HeaderText = "Nombre Tecnologia"
         Me.DataGridViewTextBoxColumn2.Name = "DataGridViewTextBoxColumn2"
         Me.DataGridViewTextBoxColumn2.Width = 277
@@ -659,6 +660,8 @@ Partial Class FrmTecnologias
         'Panel3
         '
         Me.Panel3.AutoScroll = True
+        Me.Panel3.Controls.Add(OrdenLabel)
+        Me.Panel3.Controls.Add(Me.OrdenTextBox)
         Me.Panel3.Controls.Add(NombrePlantillaLabel)
         Me.Panel3.Controls.Add(Me.NombrePlantillaTextBox)
         Me.Panel3.Controls.Add(Me.SP_Plantillas_BUSQUEDA_SEGUN_PARAMETRO_TecnologiaDataGridView)
@@ -669,18 +672,27 @@ Partial Class FrmTecnologias
         Me.Panel3.Size = New System.Drawing.Size(292, 386)
         Me.Panel3.TabIndex = 94
         '
-        'NombrePlantillaTextBox
+        'OrdenTextBox
         '
-        Me.NombrePlantillaTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SP_Plantillas_BUSQUEDA_SEGUN_PARAMETRO_TecnologiaBindingSource, "NombrePlantilla", True))
-        Me.NombrePlantillaTextBox.Location = New System.Drawing.Point(6, 69)
-        Me.NombrePlantillaTextBox.Name = "NombrePlantillaTextBox"
-        Me.NombrePlantillaTextBox.Size = New System.Drawing.Size(278, 22)
-        Me.NombrePlantillaTextBox.TabIndex = 95
+        Me.OrdenTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SP_Plantillas_BUSQUEDA_SEGUN_PARAMETRO_TecnologiaBindingSource, "Orden", True))
+        Me.OrdenTextBox.Location = New System.Drawing.Point(251, 69)
+        Me.OrdenTextBox.Name = "OrdenTextBox"
+        Me.OrdenTextBox.Size = New System.Drawing.Size(33, 22)
+        Me.OrdenTextBox.TabIndex = 96
+        Me.OrdenTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'SP_Plantillas_BUSQUEDA_SEGUN_PARAMETRO_TecnologiaBindingSource
         '
         Me.SP_Plantillas_BUSQUEDA_SEGUN_PARAMETRO_TecnologiaBindingSource.DataMember = "SP_Plantillas_BUSQUEDA_SEGUN_PARAMETRO_Tecnologia"
         Me.SP_Plantillas_BUSQUEDA_SEGUN_PARAMETRO_TecnologiaBindingSource.DataSource = Me.DataSetAdministracion
+        '
+        'NombrePlantillaTextBox
+        '
+        Me.NombrePlantillaTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SP_Plantillas_BUSQUEDA_SEGUN_PARAMETRO_TecnologiaBindingSource, "NombrePlantilla", True))
+        Me.NombrePlantillaTextBox.Location = New System.Drawing.Point(6, 69)
+        Me.NombrePlantillaTextBox.Name = "NombrePlantillaTextBox"
+        Me.NombrePlantillaTextBox.Size = New System.Drawing.Size(239, 22)
+        Me.NombrePlantillaTextBox.TabIndex = 95
         '
         'SP_Plantillas_BUSQUEDA_SEGUN_PARAMETRO_TecnologiaDataGridView
         '
@@ -1173,6 +1185,7 @@ Partial Class FrmTecnologias
         Me.BtnTablaPluralMinuscula.Size = New System.Drawing.Size(102, 43)
         Me.BtnTablaPluralMinuscula.TabIndex = 130
         Me.BtnTablaPluralMinuscula.Text = "{{{TPlurMin}}}"
+        Me.ToolTip1.SetToolTip(Me.BtnTablaPluralMinuscula, "Tabla en Plural y en Minuscula")
         Me.BtnTablaPluralMinuscula.UseVisualStyleBackColor = False
         '
         'BtnMayusculaAMinuscula
@@ -1184,6 +1197,8 @@ Partial Class FrmTecnologias
         Me.BtnMayusculaAMinuscula.Size = New System.Drawing.Size(78, 43)
         Me.BtnMayusculaAMinuscula.TabIndex = 129
         Me.BtnMayusculaAMinuscula.Text = "{{{A=>-a}}}"
+        Me.ToolTip1.SetToolTip(Me.BtnMayusculaAMinuscula, "Nombre de la Tabla en Minusculas, y donde tenga mayusculas se le antecede un gion" &
+        " ( - ) y se pone en minusculas FormaDePago => forma-de-pago")
         Me.BtnMayusculaAMinuscula.UseVisualStyleBackColor = False
         '
         'BtnTablaPlural
@@ -1195,6 +1210,7 @@ Partial Class FrmTecnologias
         Me.BtnTablaPlural.Size = New System.Drawing.Size(78, 43)
         Me.BtnTablaPlural.TabIndex = 128
         Me.BtnTablaPlural.Text = "{{{TPlur}}}"
+        Me.ToolTip1.SetToolTip(Me.BtnTablaPlural, "Nombre de la Tabla en Plural")
         Me.BtnTablaPlural.UseVisualStyleBackColor = False
         '
         'BtnTablaMinuscula
@@ -1206,6 +1222,7 @@ Partial Class FrmTecnologias
         Me.BtnTablaMinuscula.Size = New System.Drawing.Size(79, 43)
         Me.BtnTablaMinuscula.TabIndex = 127
         Me.BtnTablaMinuscula.Text = "{{{Tmin}}}"
+        Me.ToolTip1.SetToolTip(Me.BtnTablaMinuscula, "Nombre de la Tabla en Minuscula")
         Me.BtnTablaMinuscula.UseVisualStyleBackColor = False
         '
         'BtnImprimeClavePrincipal
@@ -1217,6 +1234,7 @@ Partial Class FrmTecnologias
         Me.BtnImprimeClavePrincipal.Size = New System.Drawing.Size(77, 43)
         Me.BtnImprimeClavePrincipal.TabIndex = 126
         Me.BtnImprimeClavePrincipal.Text = "{{{Clave}}}"
+        Me.ToolTip1.SetToolTip(Me.BtnImprimeClavePrincipal, "Clave Principal de la Tabla")
         Me.BtnImprimeClavePrincipal.UseVisualStyleBackColor = False
         '
         'BtnImprimeTabla
@@ -1228,6 +1246,7 @@ Partial Class FrmTecnologias
         Me.BtnImprimeTabla.Size = New System.Drawing.Size(80, 43)
         Me.BtnImprimeTabla.TabIndex = 125
         Me.BtnImprimeTabla.Text = "{{{Tabla}}}"
+        Me.ToolTip1.SetToolTip(Me.BtnImprimeTabla, "Nombre de La Tabla tal como esta Generada")
         Me.BtnImprimeTabla.UseVisualStyleBackColor = False
         '
         'BtnImprimeCampos
@@ -1239,6 +1258,8 @@ Partial Class FrmTecnologias
         Me.BtnImprimeCampos.Size = New System.Drawing.Size(89, 43)
         Me.BtnImprimeCampos.TabIndex = 124
         Me.BtnImprimeCampos.Text = "{{{Campos}}}"
+        Me.ToolTip1.SetToolTip(Me.BtnImprimeCampos, "Campos de la Tabla, prefijos - sufijos - superior - inferior o multireplace son p" &
+        "or plantilla")
         Me.BtnImprimeCampos.UseVisualStyleBackColor = False
         '
         'BtnGuardarCodigo
@@ -1250,6 +1271,7 @@ Partial Class FrmTecnologias
         Me.BtnGuardarCodigo.Size = New System.Drawing.Size(49, 44)
         Me.BtnGuardarCodigo.TabIndex = 123
         Me.BtnGuardarCodigo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.ToolTip1.SetToolTip(Me.BtnGuardarCodigo, "Actualizar los cambios en el texto")
         Me.BtnGuardarCodigo.UseVisualStyleBackColor = True
         '
         'BtnSubirRemplazado
@@ -1299,6 +1321,7 @@ Partial Class FrmTecnologias
         Me.BtnRemplazar.Size = New System.Drawing.Size(49, 43)
         Me.BtnRemplazar.TabIndex = 118
         Me.BtnRemplazar.Text = "-"
+        Me.ToolTip1.SetToolTip(Me.BtnRemplazar, "Previsualizar Cambios")
         Me.BtnRemplazar.UseVisualStyleBackColor = False
         '
         'BtnBajarFuente
@@ -1311,6 +1334,7 @@ Partial Class FrmTecnologias
         Me.BtnBajarFuente.Size = New System.Drawing.Size(49, 43)
         Me.BtnBajarFuente.TabIndex = 117
         Me.BtnBajarFuente.Text = "-"
+        Me.ToolTip1.SetToolTip(Me.BtnBajarFuente, "Disminuir tamaño de letra")
         Me.BtnBajarFuente.UseVisualStyleBackColor = False
         '
         'BtnSubirFuente
@@ -1322,6 +1346,7 @@ Partial Class FrmTecnologias
         Me.BtnSubirFuente.Name = "BtnSubirFuente"
         Me.BtnSubirFuente.Size = New System.Drawing.Size(49, 43)
         Me.BtnSubirFuente.TabIndex = 116
+        Me.ToolTip1.SetToolTip(Me.BtnSubirFuente, "Aumentar Tamaño de Letra")
         Me.BtnSubirFuente.UseVisualStyleBackColor = False
         '
         'ContenidoComponenteRichTextBox
@@ -1342,6 +1367,7 @@ Partial Class FrmTecnologias
         Me.BtnBuscarYPintar.Name = "BtnBuscarYPintar"
         Me.BtnBuscarYPintar.Size = New System.Drawing.Size(49, 43)
         Me.BtnBuscarYPintar.TabIndex = 99
+        Me.ToolTip1.SetToolTip(Me.BtnBuscarYPintar, "Buscar en el Texto")
         Me.BtnBuscarYPintar.UseVisualStyleBackColor = False
         '
         'TabPage2
@@ -1781,6 +1807,14 @@ Partial Class FrmTecnologias
         '
         Me.SP_CARGA_CONVENSIONES_USADASTableAdapter.ClearBeforeFill = True
         '
+        'XTablaTextBox
+        '
+        Me.XTablaTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SP_Componentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDBindingSource, "XTabla", True))
+        Me.XTablaTextBox.Location = New System.Drawing.Point(797, 423)
+        Me.XTablaTextBox.Name = "XTablaTextBox"
+        Me.XTablaTextBox.Size = New System.Drawing.Size(100, 26)
+        Me.XTablaTextBox.TabIndex = 156
+        '
         'TecnologiasTableAdapter
         '
         Me.TecnologiasTableAdapter.ClearBeforeFill = True
@@ -1934,14 +1968,6 @@ Partial Class FrmTecnologias
         '
         Me.SP_RequerimientosPlantillas_EDICION_INSERTARTableAdapter.ClearBeforeFill = True
         '
-        'XTablaTextBox
-        '
-        Me.XTablaTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SP_Componentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDBindingSource, "XTabla", True))
-        Me.XTablaTextBox.Location = New System.Drawing.Point(797, 423)
-        Me.XTablaTextBox.Name = "XTablaTextBox"
-        Me.XTablaTextBox.Size = New System.Drawing.Size(100, 26)
-        Me.XTablaTextBox.TabIndex = 156
-        '
         'FrmTecnologias
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 18.0!)
@@ -1953,7 +1979,6 @@ Partial Class FrmTecnologias
         Me.Controls.Add(CampoComponenteIDLabel)
         Me.Controls.Add(Me.CampoComponenteIDTextBox)
         Me.Controls.Add(Me.TipoCampoIDTextBox)
-        Me.Controls.Add(GrupoTiposIDLabel1)
         Me.Controls.Add(Me.GrupoTiposIDTextBox2)
         Me.Controls.Add(NombreGrupoTipoDeDatoLabel1)
         Me.Controls.Add(Me.NombreGrupoTipoDeDatoTextBox1)
@@ -2194,4 +2219,6 @@ Partial Class FrmTecnologias
     Friend WithEvents XTablaCheckBox As CheckBox
     Friend WithEvents XTablaTextBox As TextBox
     Friend WithEvents BtnTablaPluralMinuscula As Button
+    Friend WithEvents OrdenTextBox As TextBox
+    Friend WithEvents ToolTip1 As ToolTip
 End Class
