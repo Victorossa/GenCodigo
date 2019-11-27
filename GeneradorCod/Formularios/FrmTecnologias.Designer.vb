@@ -1327,7 +1327,7 @@ Partial Class FrmTecnologias
         'ContenidoComponenteRichTextBox
         '
         Me.ContenidoComponenteRichTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SP_Componentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDBindingSource, "Codigo", True))
-        Me.ContenidoComponenteRichTextBox.Font = New System.Drawing.Font("Candara", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ContenidoComponenteRichTextBox.Font = New System.Drawing.Font("Candara", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ContenidoComponenteRichTextBox.Location = New System.Drawing.Point(3, 111)
         Me.ContenidoComponenteRichTextBox.Name = "ContenidoComponenteRichTextBox"
         Me.ContenidoComponenteRichTextBox.Size = New System.Drawing.Size(716, 459)

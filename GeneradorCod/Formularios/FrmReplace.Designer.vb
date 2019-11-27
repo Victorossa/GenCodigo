@@ -61,18 +61,16 @@ Partial Class FrmReplace
         Dim CampoIDLabel1 As System.Windows.Forms.Label
         Dim NombreCampoLabel1 As System.Windows.Forms.Label
         Dim TipoLabel1 As System.Windows.Forms.Label
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmReplace))
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.BtnBuscarYPintar = New System.Windows.Forms.Button()
         Me.SP_RequerimientosPlantillas_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView = New System.Windows.Forms.DataGridView()
         Me.DataGridViewTextBoxColumn5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.SP_RequerimientosPlantillas_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.DataSetAdministracion = New GeneradorCod.DataSetAdministracion()
         Me.SP_Plantillas_BUSQUEDA_SEGUN_PARAMETRO_TecnologiaDataGridView = New System.Windows.Forms.DataGridView()
-        Me.DataGridViewTextBoxColumn6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.SP_Plantillas_BUSQUEDA_SEGUN_PARAMETRO_TecnologiaBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.TecnologiasDataGridView = New System.Windows.Forms.DataGridView()
-        Me.DataGridViewTextBoxColumn7 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.TecnologiasBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.SP_Componentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView = New System.Windows.Forms.DataGridView()
         Me.DataGridViewTextBoxColumn8 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -86,8 +84,6 @@ Partial Class FrmReplace
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
         Me.SP_CARGA_TECNOLOGIAS_APLICADAS_A_PROYECTODataGridView = New System.Windows.Forms.DataGridView()
-        Me.DataGridViewTextBoxColumn12 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn13 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.SP_CARGA_TECNOLOGIAS_APLICADAS_A_PROYECTOBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.TabPage2 = New System.Windows.Forms.TabPage()
         Me.PanelAdministracion_ = New System.Windows.Forms.Panel()
@@ -101,7 +97,6 @@ Partial Class FrmReplace
         Me.ProyectosBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.NombreProyectoTextBox = New System.Windows.Forms.TextBox()
         Me.ProyectosDataGridView = New System.Windows.Forms.DataGridView()
-        Me.DataGridViewTextBoxColumn10 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ProyectoIDTextBox = New System.Windows.Forms.TextBox()
         Me.CodigoGeneradoTextBox = New System.Windows.Forms.TextBox()
         Me.CM1 = New System.Windows.Forms.ContextMenuStrip(Me.components)
@@ -132,8 +127,6 @@ Partial Class FrmReplace
         Me.RequerimientoTextBox = New System.Windows.Forms.TextBox()
         Me.CodigoTextBox = New System.Windows.Forms.TextBox()
         Me.SP_RegistroValorRequerimientos_SEGUN_ProyectoIDDataGridView = New System.Windows.Forms.DataGridView()
-        Me.DataGridViewTextBoxColumn3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.SP_RegistroValorRequerimientos_SEGUN_ProyectoIDBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.BtnRemplazar = New System.Windows.Forms.Button()
         Me.NombreComponenteTextBox = New System.Windows.Forms.TextBox()
@@ -238,6 +231,13 @@ Partial Class FrmReplace
         Me.SP_RegistroValorRequerimientos_SegunProyectoRequerimientoTableAdapter = New GeneradorCod.DataSetTablasYCamposTableAdapters.SP_RegistroValorRequerimientos_SegunProyectoRequerimientoTableAdapter()
         Me.SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1TableAdapter = New GeneradorCod.DataSetTablasYCamposTableAdapters.SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1TableAdapter()
         Me.SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaID1TableAdapter = New GeneradorCod.DataSetTablasYCamposTableAdapters.SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaID1TableAdapter()
+        Me.DataGridViewTextBoxColumn10 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn12 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn13 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn7 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         ComponenteIDLabel = New System.Windows.Forms.Label()
         PlantillaIDLabel = New System.Windows.Forms.Label()
         TecnologiaIDLabel = New System.Windows.Forms.Label()
@@ -394,7 +394,7 @@ Partial Class FrmReplace
         'CodigoGeneradoLabel
         '
         CodigoGeneradoLabel.AutoSize = True
-        CodigoGeneradoLabel.Location = New System.Drawing.Point(459, 4)
+        CodigoGeneradoLabel.Location = New System.Drawing.Point(537, 4)
         CodigoGeneradoLabel.Name = "CodigoGeneradoLabel"
         CodigoGeneradoLabel.Size = New System.Drawing.Size(93, 13)
         CodigoGeneradoLabel.TabIndex = 90
@@ -466,7 +466,7 @@ Partial Class FrmReplace
         'NombreTablaLabel
         '
         NombreTablaLabel.AutoSize = True
-        NombreTablaLabel.Location = New System.Drawing.Point(682, 75)
+        NombreTablaLabel.Location = New System.Drawing.Point(760, 75)
         NombreTablaLabel.Name = "NombreTablaLabel"
         NombreTablaLabel.Size = New System.Drawing.Size(77, 13)
         NombreTablaLabel.TabIndex = 138
@@ -511,7 +511,7 @@ Partial Class FrmReplace
         'NombreCampoLabel
         '
         NombreCampoLabel.AutoSize = True
-        NombreCampoLabel.Location = New System.Drawing.Point(685, 289)
+        NombreCampoLabel.Location = New System.Drawing.Point(763, 289)
         NombreCampoLabel.Name = "NombreCampoLabel"
         NombreCampoLabel.Size = New System.Drawing.Size(83, 13)
         NombreCampoLabel.TabIndex = 148
@@ -718,19 +718,12 @@ Partial Class FrmReplace
         Me.SP_Plantillas_BUSQUEDA_SEGUN_PARAMETRO_TecnologiaDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn6})
         Me.SP_Plantillas_BUSQUEDA_SEGUN_PARAMETRO_TecnologiaDataGridView.DataSource = Me.SP_Plantillas_BUSQUEDA_SEGUN_PARAMETRO_TecnologiaBindingSource
         Me.SP_Plantillas_BUSQUEDA_SEGUN_PARAMETRO_TecnologiaDataGridView.Dock = System.Windows.Forms.DockStyle.Right
-        Me.SP_Plantillas_BUSQUEDA_SEGUN_PARAMETRO_TecnologiaDataGridView.Location = New System.Drawing.Point(158, 3)
+        Me.SP_Plantillas_BUSQUEDA_SEGUN_PARAMETRO_TecnologiaDataGridView.Location = New System.Drawing.Point(192, 3)
         Me.SP_Plantillas_BUSQUEDA_SEGUN_PARAMETRO_TecnologiaDataGridView.Name = "SP_Plantillas_BUSQUEDA_SEGUN_PARAMETRO_TecnologiaDataGridView"
         Me.SP_Plantillas_BUSQUEDA_SEGUN_PARAMETRO_TecnologiaDataGridView.RowHeadersVisible = False
-        Me.SP_Plantillas_BUSQUEDA_SEGUN_PARAMETRO_TecnologiaDataGridView.Size = New System.Drawing.Size(146, 155)
+        Me.SP_Plantillas_BUSQUEDA_SEGUN_PARAMETRO_TecnologiaDataGridView.RowTemplate.Height = 27
+        Me.SP_Plantillas_BUSQUEDA_SEGUN_PARAMETRO_TecnologiaDataGridView.Size = New System.Drawing.Size(190, 155)
         Me.SP_Plantillas_BUSQUEDA_SEGUN_PARAMETRO_TecnologiaDataGridView.TabIndex = 94
-        '
-        'DataGridViewTextBoxColumn6
-        '
-        Me.DataGridViewTextBoxColumn6.DataPropertyName = "NombrePlantilla"
-        Me.DataGridViewTextBoxColumn6.HeaderText = "Nombre Plantilla"
-        Me.DataGridViewTextBoxColumn6.Name = "DataGridViewTextBoxColumn6"
-        Me.DataGridViewTextBoxColumn6.ReadOnly = True
-        Me.DataGridViewTextBoxColumn6.Width = 142
         '
         'SP_Plantillas_BUSQUEDA_SEGUN_PARAMETRO_TecnologiaBindingSource
         '
@@ -749,17 +742,9 @@ Partial Class FrmReplace
         Me.TecnologiasDataGridView.Margin = New System.Windows.Forms.Padding(4)
         Me.TecnologiasDataGridView.Name = "TecnologiasDataGridView"
         Me.TecnologiasDataGridView.RowHeadersVisible = False
-        Me.TecnologiasDataGridView.Size = New System.Drawing.Size(148, 155)
+        Me.TecnologiasDataGridView.RowTemplate.Height = 27
+        Me.TecnologiasDataGridView.Size = New System.Drawing.Size(182, 155)
         Me.TecnologiasDataGridView.TabIndex = 96
-        '
-        'DataGridViewTextBoxColumn7
-        '
-        Me.DataGridViewTextBoxColumn7.DataPropertyName = "NombreTecnologia"
-        DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.DataGridViewTextBoxColumn7.DefaultCellStyle = DataGridViewCellStyle1
-        Me.DataGridViewTextBoxColumn7.HeaderText = "Nombre Tecnologia"
-        Me.DataGridViewTextBoxColumn7.Name = "DataGridViewTextBoxColumn7"
-        Me.DataGridViewTextBoxColumn7.Width = 144
         '
         'TecnologiasBindingSource
         '
@@ -843,7 +828,7 @@ Partial Class FrmReplace
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Left
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(328, 588)
+        Me.Panel1.Size = New System.Drawing.Size(406, 592)
         Me.Panel1.TabIndex = 122
         '
         'TabControl1
@@ -853,7 +838,7 @@ Partial Class FrmReplace
         Me.TabControl1.Location = New System.Drawing.Point(8, 403)
         Me.TabControl1.Name = "TabControl1"
         Me.TabControl1.SelectedIndex = 0
-        Me.TabControl1.Size = New System.Drawing.Size(315, 187)
+        Me.TabControl1.Size = New System.Drawing.Size(393, 187)
         Me.TabControl1.TabIndex = 124
         '
         'TabPage1
@@ -862,7 +847,7 @@ Partial Class FrmReplace
         Me.TabPage1.Location = New System.Drawing.Point(4, 22)
         Me.TabPage1.Name = "TabPage1"
         Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage1.Size = New System.Drawing.Size(307, 161)
+        Me.TabPage1.Size = New System.Drawing.Size(385, 161)
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Text = "Tecnologias Aplicadas"
         Me.TabPage1.UseVisualStyleBackColor = True
@@ -878,24 +863,9 @@ Partial Class FrmReplace
         Me.SP_CARGA_TECNOLOGIAS_APLICADAS_A_PROYECTODataGridView.Location = New System.Drawing.Point(3, 3)
         Me.SP_CARGA_TECNOLOGIAS_APLICADAS_A_PROYECTODataGridView.Name = "SP_CARGA_TECNOLOGIAS_APLICADAS_A_PROYECTODataGridView"
         Me.SP_CARGA_TECNOLOGIAS_APLICADAS_A_PROYECTODataGridView.RowHeadersVisible = False
-        Me.SP_CARGA_TECNOLOGIAS_APLICADAS_A_PROYECTODataGridView.Size = New System.Drawing.Size(301, 155)
+        Me.SP_CARGA_TECNOLOGIAS_APLICADAS_A_PROYECTODataGridView.RowTemplate.Height = 27
+        Me.SP_CARGA_TECNOLOGIAS_APLICADAS_A_PROYECTODataGridView.Size = New System.Drawing.Size(379, 155)
         Me.SP_CARGA_TECNOLOGIAS_APLICADAS_A_PROYECTODataGridView.TabIndex = 124
-        '
-        'DataGridViewTextBoxColumn12
-        '
-        Me.DataGridViewTextBoxColumn12.DataPropertyName = "NombreTecnologia"
-        Me.DataGridViewTextBoxColumn12.HeaderText = "Tecnologia"
-        Me.DataGridViewTextBoxColumn12.Name = "DataGridViewTextBoxColumn12"
-        Me.DataGridViewTextBoxColumn12.ReadOnly = True
-        Me.DataGridViewTextBoxColumn12.Width = 148
-        '
-        'DataGridViewTextBoxColumn13
-        '
-        Me.DataGridViewTextBoxColumn13.DataPropertyName = "NombrePlantilla"
-        Me.DataGridViewTextBoxColumn13.HeaderText = "Plantilla"
-        Me.DataGridViewTextBoxColumn13.Name = "DataGridViewTextBoxColumn13"
-        Me.DataGridViewTextBoxColumn13.ReadOnly = True
-        Me.DataGridViewTextBoxColumn13.Width = 148
         '
         'SP_CARGA_TECNOLOGIAS_APLICADAS_A_PROYECTOBindingSource
         '
@@ -909,7 +879,7 @@ Partial Class FrmReplace
         Me.TabPage2.Location = New System.Drawing.Point(4, 22)
         Me.TabPage2.Name = "TabPage2"
         Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage2.Size = New System.Drawing.Size(307, 161)
+        Me.TabPage2.Size = New System.Drawing.Size(385, 161)
         Me.TabPage2.TabIndex = 1
         Me.TabPage2.Text = "Agregar Tecnologias"
         Me.TabPage2.UseVisualStyleBackColor = True
@@ -925,14 +895,14 @@ Partial Class FrmReplace
         Me.PanelAdministracion_.Controls.Add(Me.Guardar_Menu_Proyectos)
         Me.PanelAdministracion_.Location = New System.Drawing.Point(8, 3)
         Me.PanelAdministracion_.Name = "PanelAdministracion_"
-        Me.PanelAdministracion_.Size = New System.Drawing.Size(315, 46)
+        Me.PanelAdministracion_.Size = New System.Drawing.Size(393, 46)
         Me.PanelAdministracion_.TabIndex = 90
         '
         'Nuevo_Menu_Proyectos
         '
         Me.Nuevo_Menu_Proyectos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.Nuevo_Menu_Proyectos.Image = CType(resources.GetObject("Nuevo_Menu_Proyectos.Image"), System.Drawing.Image)
-        Me.Nuevo_Menu_Proyectos.Location = New System.Drawing.Point(22, 3)
+        Me.Nuevo_Menu_Proyectos.Location = New System.Drawing.Point(61, 3)
         Me.Nuevo_Menu_Proyectos.Name = "Nuevo_Menu_Proyectos"
         Me.Nuevo_Menu_Proyectos.Size = New System.Drawing.Size(40, 38)
         Me.Nuevo_Menu_Proyectos.TabIndex = 70
@@ -943,7 +913,7 @@ Partial Class FrmReplace
         '
         Me.Cancelar_Menu_Proyectos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.Cancelar_Menu_Proyectos.Image = CType(resources.GetObject("Cancelar_Menu_Proyectos.Image"), System.Drawing.Image)
-        Me.Cancelar_Menu_Proyectos.Location = New System.Drawing.Point(251, 3)
+        Me.Cancelar_Menu_Proyectos.Location = New System.Drawing.Point(290, 3)
         Me.Cancelar_Menu_Proyectos.Name = "Cancelar_Menu_Proyectos"
         Me.Cancelar_Menu_Proyectos.Size = New System.Drawing.Size(40, 38)
         Me.Cancelar_Menu_Proyectos.TabIndex = 75
@@ -954,7 +924,7 @@ Partial Class FrmReplace
         '
         Me.Eliminar_Menu_Proyectos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.Eliminar_Menu_Proyectos.Image = CType(resources.GetObject("Eliminar_Menu_Proyectos.Image"), System.Drawing.Image)
-        Me.Eliminar_Menu_Proyectos.Location = New System.Drawing.Point(206, 3)
+        Me.Eliminar_Menu_Proyectos.Location = New System.Drawing.Point(245, 3)
         Me.Eliminar_Menu_Proyectos.Name = "Eliminar_Menu_Proyectos"
         Me.Eliminar_Menu_Proyectos.Size = New System.Drawing.Size(40, 38)
         Me.Eliminar_Menu_Proyectos.TabIndex = 72
@@ -965,7 +935,7 @@ Partial Class FrmReplace
         '
         Me.Editar_Menu_Proyectos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.Editar_Menu_Proyectos.Image = CType(resources.GetObject("Editar_Menu_Proyectos.Image"), System.Drawing.Image)
-        Me.Editar_Menu_Proyectos.Location = New System.Drawing.Point(114, 3)
+        Me.Editar_Menu_Proyectos.Location = New System.Drawing.Point(153, 3)
         Me.Editar_Menu_Proyectos.Name = "Editar_Menu_Proyectos"
         Me.Editar_Menu_Proyectos.Size = New System.Drawing.Size(40, 38)
         Me.Editar_Menu_Proyectos.TabIndex = 74
@@ -976,7 +946,7 @@ Partial Class FrmReplace
         '
         Me.Actualizar_Menu_Proyectos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.Actualizar_Menu_Proyectos.Image = CType(resources.GetObject("Actualizar_Menu_Proyectos.Image"), System.Drawing.Image)
-        Me.Actualizar_Menu_Proyectos.Location = New System.Drawing.Point(160, 3)
+        Me.Actualizar_Menu_Proyectos.Location = New System.Drawing.Point(199, 3)
         Me.Actualizar_Menu_Proyectos.Name = "Actualizar_Menu_Proyectos"
         Me.Actualizar_Menu_Proyectos.Size = New System.Drawing.Size(40, 38)
         Me.Actualizar_Menu_Proyectos.TabIndex = 73
@@ -987,7 +957,7 @@ Partial Class FrmReplace
         '
         Me.Guardar_Menu_Proyectos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.Guardar_Menu_Proyectos.Image = CType(resources.GetObject("Guardar_Menu_Proyectos.Image"), System.Drawing.Image)
-        Me.Guardar_Menu_Proyectos.Location = New System.Drawing.Point(68, 3)
+        Me.Guardar_Menu_Proyectos.Location = New System.Drawing.Point(107, 3)
         Me.Guardar_Menu_Proyectos.Name = "Guardar_Menu_Proyectos"
         Me.Guardar_Menu_Proyectos.Size = New System.Drawing.Size(40, 38)
         Me.Guardar_Menu_Proyectos.TabIndex = 71
@@ -1000,7 +970,7 @@ Partial Class FrmReplace
         Me.DescripcionTextBox.Location = New System.Drawing.Point(8, 137)
         Me.DescripcionTextBox.Multiline = True
         Me.DescripcionTextBox.Name = "DescripcionTextBox"
-        Me.DescripcionTextBox.Size = New System.Drawing.Size(315, 105)
+        Me.DescripcionTextBox.Size = New System.Drawing.Size(393, 65)
         Me.DescripcionTextBox.TabIndex = 4
         '
         'ProyectosBindingSource
@@ -1014,7 +984,7 @@ Partial Class FrmReplace
         Me.NombreProyectoTextBox.Location = New System.Drawing.Point(8, 68)
         Me.NombreProyectoTextBox.Multiline = True
         Me.NombreProyectoTextBox.Name = "NombreProyectoTextBox"
-        Me.NombreProyectoTextBox.Size = New System.Drawing.Size(315, 50)
+        Me.NombreProyectoTextBox.Size = New System.Drawing.Size(393, 50)
         Me.NombreProyectoTextBox.TabIndex = 2
         '
         'ProyectosDataGridView
@@ -1024,18 +994,12 @@ Partial Class FrmReplace
         Me.ProyectosDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.ProyectosDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn10})
         Me.ProyectosDataGridView.DataSource = Me.ProyectosBindingSource
-        Me.ProyectosDataGridView.Location = New System.Drawing.Point(8, 248)
+        Me.ProyectosDataGridView.Location = New System.Drawing.Point(8, 208)
         Me.ProyectosDataGridView.Name = "ProyectosDataGridView"
         Me.ProyectosDataGridView.RowHeadersVisible = False
-        Me.ProyectosDataGridView.Size = New System.Drawing.Size(315, 149)
+        Me.ProyectosDataGridView.RowTemplate.Height = 27
+        Me.ProyectosDataGridView.Size = New System.Drawing.Size(393, 189)
         Me.ProyectosDataGridView.TabIndex = 0
-        '
-        'DataGridViewTextBoxColumn10
-        '
-        Me.DataGridViewTextBoxColumn10.DataPropertyName = "NombreProyecto"
-        Me.DataGridViewTextBoxColumn10.HeaderText = "Nombre Proyecto"
-        Me.DataGridViewTextBoxColumn10.Name = "DataGridViewTextBoxColumn10"
-        Me.DataGridViewTextBoxColumn10.Width = 311
         '
         'ProyectoIDTextBox
         '
@@ -1049,7 +1013,7 @@ Partial Class FrmReplace
         '
         Me.CodigoGeneradoTextBox.ContextMenuStrip = Me.CM1
         Me.CodigoGeneradoTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ProyectosBindingSource, "CodigoGenerado", True))
-        Me.CodigoGeneradoTextBox.Location = New System.Drawing.Point(334, 22)
+        Me.CodigoGeneradoTextBox.Location = New System.Drawing.Point(412, 22)
         Me.CodigoGeneradoTextBox.Multiline = True
         Me.CodigoGeneradoTextBox.Name = "CodigoGeneradoTextBox"
         Me.CodigoGeneradoTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
@@ -1185,7 +1149,7 @@ Partial Class FrmReplace
         Me.SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoIDDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoIDDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn14})
         Me.SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoIDDataGridView.DataSource = Me.SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoIDBindingSource
-        Me.SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoIDDataGridView.Location = New System.Drawing.Point(682, 117)
+        Me.SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoIDDataGridView.Location = New System.Drawing.Point(760, 117)
         Me.SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoIDDataGridView.Name = "SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoIDDataGridView"
         Me.SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoIDDataGridView.RowHeadersVisible = False
         Me.SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoIDDataGridView.Size = New System.Drawing.Size(281, 117)
@@ -1232,25 +1196,12 @@ Partial Class FrmReplace
         Me.SP_RegistroValorRequerimientos_SEGUN_ProyectoIDDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.SP_RegistroValorRequerimientos_SEGUN_ProyectoIDDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn3, Me.DataGridViewTextBoxColumn4})
         Me.SP_RegistroValorRequerimientos_SEGUN_ProyectoIDDataGridView.DataSource = Me.SP_RegistroValorRequerimientos_SEGUN_ProyectoIDBindingSource
-        Me.SP_RegistroValorRequerimientos_SEGUN_ProyectoIDDataGridView.Location = New System.Drawing.Point(334, 486)
+        Me.SP_RegistroValorRequerimientos_SEGUN_ProyectoIDDataGridView.Location = New System.Drawing.Point(412, 486)
         Me.SP_RegistroValorRequerimientos_SEGUN_ProyectoIDDataGridView.Name = "SP_RegistroValorRequerimientos_SEGUN_ProyectoIDDataGridView"
         Me.SP_RegistroValorRequerimientos_SEGUN_ProyectoIDDataGridView.RowHeadersVisible = False
+        Me.SP_RegistroValorRequerimientos_SEGUN_ProyectoIDDataGridView.RowTemplate.Height = 27
         Me.SP_RegistroValorRequerimientos_SEGUN_ProyectoIDDataGridView.Size = New System.Drawing.Size(342, 101)
         Me.SP_RegistroValorRequerimientos_SEGUN_ProyectoIDDataGridView.TabIndex = 131
-        '
-        'DataGridViewTextBoxColumn3
-        '
-        Me.DataGridViewTextBoxColumn3.DataPropertyName = "Requerimiento"
-        Me.DataGridViewTextBoxColumn3.HeaderText = "Requerimiento"
-        Me.DataGridViewTextBoxColumn3.Name = "DataGridViewTextBoxColumn3"
-        Me.DataGridViewTextBoxColumn3.Width = 138
-        '
-        'DataGridViewTextBoxColumn4
-        '
-        Me.DataGridViewTextBoxColumn4.DataPropertyName = "ValorRequerimiento"
-        Me.DataGridViewTextBoxColumn4.HeaderText = "Valor Requerimiento"
-        Me.DataGridViewTextBoxColumn4.Name = "DataGridViewTextBoxColumn4"
-        Me.DataGridViewTextBoxColumn4.Width = 139
         '
         'SP_RegistroValorRequerimientos_SEGUN_ProyectoIDBindingSource
         '
@@ -1308,7 +1259,7 @@ Partial Class FrmReplace
         Me.Panel2.Controls.Add(Me.Editar_Menu_TablasDeProyecto)
         Me.Panel2.Controls.Add(Me.Actualizar_Menu_TablasDeProyecto)
         Me.Panel2.Controls.Add(Me.Guardar_Menu_TablasDeProyecto)
-        Me.Panel2.Location = New System.Drawing.Point(682, 20)
+        Me.Panel2.Location = New System.Drawing.Point(760, 20)
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(281, 46)
         Me.Panel2.TabIndex = 138
@@ -1382,7 +1333,7 @@ Partial Class FrmReplace
         'NombreTablaTextBox
         '
         Me.NombreTablaTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoIDBindingSource, "NombreTabla", True))
-        Me.NombreTablaTextBox.Location = New System.Drawing.Point(682, 91)
+        Me.NombreTablaTextBox.Location = New System.Drawing.Point(760, 91)
         Me.NombreTablaTextBox.Name = "NombreTablaTextBox"
         Me.NombreTablaTextBox.Size = New System.Drawing.Size(281, 20)
         Me.NombreTablaTextBox.TabIndex = 139
@@ -1404,7 +1355,7 @@ Partial Class FrmReplace
         Me.Panel3.Controls.Add(Me.Editar_Menu_CamposDeTablas)
         Me.Panel3.Controls.Add(Me.Actualizar_Menu_CamposDeTablas)
         Me.Panel3.Controls.Add(Me.Guardar_Menu_CamposDeTablas)
-        Me.Panel3.Location = New System.Drawing.Point(682, 240)
+        Me.Panel3.Location = New System.Drawing.Point(760, 240)
         Me.Panel3.Name = "Panel3"
         Me.Panel3.Size = New System.Drawing.Size(281, 46)
         Me.Panel3.TabIndex = 141
@@ -1482,7 +1433,7 @@ Partial Class FrmReplace
         Me.Panel4.Controls.Add(Me.BtnCopiar)
         Me.Panel4.Controls.Add(Me.BtnBuscarYPintar)
         Me.Panel4.Controls.Add(Me.BtnRemplazar)
-        Me.Panel4.Location = New System.Drawing.Point(334, 432)
+        Me.Panel4.Location = New System.Drawing.Point(412, 432)
         Me.Panel4.Name = "Panel4"
         Me.Panel4.Size = New System.Drawing.Size(342, 50)
         Me.Panel4.TabIndex = 142
@@ -1532,7 +1483,7 @@ Partial Class FrmReplace
         Me.SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaIDDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaIDDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn9})
         Me.SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaIDDataGridView.DataSource = Me.SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaIDBindingSource
-        Me.SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaIDDataGridView.Location = New System.Drawing.Point(682, 362)
+        Me.SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaIDDataGridView.Location = New System.Drawing.Point(760, 362)
         Me.SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaIDDataGridView.Name = "SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaIDDataGridView"
         Me.SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaIDDataGridView.RowHeadersVisible = False
         Me.SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaIDDataGridView.Size = New System.Drawing.Size(281, 225)
@@ -1561,7 +1512,7 @@ Partial Class FrmReplace
         'NombreCampoTextBox
         '
         Me.NombreCampoTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaIDBindingSource, "NombreCampo", True))
-        Me.NombreCampoTextBox.Location = New System.Drawing.Point(682, 305)
+        Me.NombreCampoTextBox.Location = New System.Drawing.Point(760, 305)
         Me.NombreCampoTextBox.Name = "NombreCampoTextBox"
         Me.NombreCampoTextBox.Size = New System.Drawing.Size(281, 20)
         Me.NombreCampoTextBox.TabIndex = 149
@@ -1570,7 +1521,7 @@ Partial Class FrmReplace
         '
         Me.Cbo_TipoDato.FormattingEnabled = True
         Me.Cbo_TipoDato.Items.AddRange(New Object() {"boolean", "Date", "float", "numeric", "string"})
-        Me.Cbo_TipoDato.Location = New System.Drawing.Point(760, 335)
+        Me.Cbo_TipoDato.Location = New System.Drawing.Point(838, 335)
         Me.Cbo_TipoDato.Name = "Cbo_TipoDato"
         Me.Cbo_TipoDato.Size = New System.Drawing.Size(203, 21)
         Me.Cbo_TipoDato.Sorted = True
@@ -1579,7 +1530,7 @@ Partial Class FrmReplace
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(685, 339)
+        Me.Label2.Location = New System.Drawing.Point(763, 339)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(69, 13)
         Me.Label2.TabIndex = 151
@@ -1728,9 +1679,9 @@ Partial Class FrmReplace
         Me.Panel5.Controls.Add(RequerimientoLabel1)
         Me.Panel5.Controls.Add(Me.NombreComponenteTextBox)
         Me.Panel5.Controls.Add(NombreComponenteLabel)
-        Me.Panel5.Location = New System.Drawing.Point(969, 20)
+        Me.Panel5.Location = New System.Drawing.Point(1047, 20)
         Me.Panel5.Name = "Panel5"
-        Me.Panel5.Size = New System.Drawing.Size(327, 567)
+        Me.Panel5.Size = New System.Drawing.Size(86, 567)
         Me.Panel5.TabIndex = 159
         '
         'TipoTextBox1
@@ -2158,11 +2109,65 @@ Partial Class FrmReplace
         '
         Me.SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaID1TableAdapter.ClearBeforeFill = True
         '
+        'DataGridViewTextBoxColumn10
+        '
+        Me.DataGridViewTextBoxColumn10.DataPropertyName = "NombreProyecto"
+        Me.DataGridViewTextBoxColumn10.HeaderText = "Nombre Proyecto"
+        Me.DataGridViewTextBoxColumn10.Name = "DataGridViewTextBoxColumn10"
+        Me.DataGridViewTextBoxColumn10.Width = 389
+        '
+        'DataGridViewTextBoxColumn12
+        '
+        Me.DataGridViewTextBoxColumn12.DataPropertyName = "NombreTecnologia"
+        Me.DataGridViewTextBoxColumn12.HeaderText = "Tecnologia"
+        Me.DataGridViewTextBoxColumn12.Name = "DataGridViewTextBoxColumn12"
+        Me.DataGridViewTextBoxColumn12.ReadOnly = True
+        Me.DataGridViewTextBoxColumn12.Width = 195
+        '
+        'DataGridViewTextBoxColumn13
+        '
+        Me.DataGridViewTextBoxColumn13.DataPropertyName = "NombrePlantilla"
+        Me.DataGridViewTextBoxColumn13.HeaderText = "Plantilla"
+        Me.DataGridViewTextBoxColumn13.Name = "DataGridViewTextBoxColumn13"
+        Me.DataGridViewTextBoxColumn13.ReadOnly = True
+        Me.DataGridViewTextBoxColumn13.Width = 194
+        '
+        'DataGridViewTextBoxColumn7
+        '
+        Me.DataGridViewTextBoxColumn7.DataPropertyName = "NombreTecnologia"
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.DataGridViewTextBoxColumn7.DefaultCellStyle = DataGridViewCellStyle1
+        Me.DataGridViewTextBoxColumn7.HeaderText = "Nombre Tecnologia"
+        Me.DataGridViewTextBoxColumn7.Name = "DataGridViewTextBoxColumn7"
+        Me.DataGridViewTextBoxColumn7.Width = 178
+        '
+        'DataGridViewTextBoxColumn6
+        '
+        Me.DataGridViewTextBoxColumn6.DataPropertyName = "NombrePlantilla"
+        Me.DataGridViewTextBoxColumn6.HeaderText = "Nombre Plantilla"
+        Me.DataGridViewTextBoxColumn6.Name = "DataGridViewTextBoxColumn6"
+        Me.DataGridViewTextBoxColumn6.ReadOnly = True
+        Me.DataGridViewTextBoxColumn6.Width = 186
+        '
+        'DataGridViewTextBoxColumn3
+        '
+        Me.DataGridViewTextBoxColumn3.DataPropertyName = "Requerimiento"
+        Me.DataGridViewTextBoxColumn3.HeaderText = "Requerimiento"
+        Me.DataGridViewTextBoxColumn3.Name = "DataGridViewTextBoxColumn3"
+        Me.DataGridViewTextBoxColumn3.Width = 169
+        '
+        'DataGridViewTextBoxColumn4
+        '
+        Me.DataGridViewTextBoxColumn4.DataPropertyName = "ValorRequerimiento"
+        Me.DataGridViewTextBoxColumn4.HeaderText = "Valor Requerimiento"
+        Me.DataGridViewTextBoxColumn4.Name = "DataGridViewTextBoxColumn4"
+        Me.DataGridViewTextBoxColumn4.Width = 169
+        '
         'FrmReplace
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(967, 588)
+        Me.ClientSize = New System.Drawing.Size(1045, 592)
         Me.Controls.Add(Me.Panel5)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Cbo_TipoDato)
@@ -2328,8 +2333,6 @@ Partial Class FrmReplace
     Friend WithEvents SP_TablasDeProyecto_EDICION_ELIMINARTableAdapter As DataSetTablasYCamposTableAdapters.SP_TablasDeProyecto_EDICION_ELIMINARTableAdapter
     Friend WithEvents SP_TablasDeProyecto_EDICION_INSERTARBindingSource As BindingSource
     Friend WithEvents SP_TablasDeProyecto_EDICION_INSERTARTableAdapter As DataSetTablasYCamposTableAdapters.SP_TablasDeProyecto_EDICION_INSERTARTableAdapter
-    Friend WithEvents DataGridViewTextBoxColumn3 As DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn4 As DataGridViewTextBoxColumn
     Friend WithEvents Panel3 As Panel
     Friend WithEvents Nuevo_Menu_CamposDeTablas As Button
     Friend WithEvents Cancelar_Menu_CamposDeTablas As Button
@@ -2413,4 +2416,6 @@ Partial Class FrmReplace
     Friend WithEvents DataGridViewTextBoxColumn12 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn13 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn10 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn3 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn4 As DataGridViewTextBoxColumn
 End Class

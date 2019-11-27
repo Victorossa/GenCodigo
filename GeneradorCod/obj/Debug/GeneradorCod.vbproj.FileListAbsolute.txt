@@ -55,3 +55,5 @@ C:\www\GenCodigo\GenCodigo\GeneradorCod\obj\Debug\GeneradorCod.exe
 C:\www\GenCodigo\GenCodigo\GeneradorCod\obj\Debug\GeneradorCod.xml
 C:\www\GenCodigo\GenCodigo\GeneradorCod\obj\Debug\GeneradorCod.pdb
 C:\www\GenCodigo\GenCodigo\GeneradorCod\obj\Debug\GeneradorCod.vbprojAssemblyReference.cache
+C:\Users\programador1\source\repos\Nueva carpeta\GenCodigo\GeneradorCod\bin\Debug\BaseDeDatos\GeneradorCodigoBD.mdf
+C:\Users\programador1\source\repos\Nueva carpeta\GenCodigo\GeneradorCod\bin\Debug\BaseDeDatos\GeneradorCodigoBD_log.ldf
