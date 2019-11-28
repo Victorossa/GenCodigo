@@ -47,7 +47,7 @@ Partial Class FrmTecnologias
         Dim XTablaLabel As System.Windows.Forms.Label
         Dim XTablaLabel1 As System.Windows.Forms.Label
         Dim OrdenLabel As System.Windows.Forms.Label
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmTecnologias))
         Me.TecnologiasDataGridView = New System.Windows.Forms.DataGridView()
         Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -525,8 +525,8 @@ Partial Class FrmTecnologias
         'DataGridViewTextBoxColumn2
         '
         Me.DataGridViewTextBoxColumn2.DataPropertyName = "NombreTecnologia"
-        DataGridViewCellStyle3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.DataGridViewTextBoxColumn2.DefaultCellStyle = DataGridViewCellStyle3
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.DataGridViewTextBoxColumn2.DefaultCellStyle = DataGridViewCellStyle2
         Me.DataGridViewTextBoxColumn2.HeaderText = "Nombre Tecnologia"
         Me.DataGridViewTextBoxColumn2.Name = "DataGridViewTextBoxColumn2"
         Me.DataGridViewTextBoxColumn2.Width = 277
@@ -1611,7 +1611,7 @@ Partial Class FrmTecnologias
         'Cbo_TipoDato
         '
         Me.Cbo_TipoDato.FormattingEnabled = True
-        Me.Cbo_TipoDato.Items.AddRange(New Object() {"boolean", "Date", "float", "numeric", "string"})
+        Me.Cbo_TipoDato.Items.AddRange(New Object() {"boolean", "Date", "float", "numeric", "numeric (Clave)", "numeric (Relacionado)", "string"})
         Me.Cbo_TipoDato.Location = New System.Drawing.Point(116, 64)
         Me.Cbo_TipoDato.Name = "Cbo_TipoDato"
         Me.Cbo_TipoDato.Size = New System.Drawing.Size(211, 26)
