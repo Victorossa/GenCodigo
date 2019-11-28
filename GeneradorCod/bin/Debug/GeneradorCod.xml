@@ -632,6 +632,16 @@ Represents the strongly named DataTable class.
 Represents the strongly named DataTable class.
 </summary>
 </member>
+<member name="T:GeneradorCod.DataSetTablasYCampos.SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaID2DataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:GeneradorCod.DataSetTablasYCampos.SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID2DataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
 <member name="T:GeneradorCod.DataSetTablasYCampos.SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoIDRow">
 <summary>
 Represents strongly named DataRow class.
@@ -728,6 +738,16 @@ Represents strongly named DataRow class.
 </summary>
 </member>
 <member name="T:GeneradorCod.DataSetTablasYCampos.SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaID1Row">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:GeneradorCod.DataSetTablasYCampos.SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaID2Row">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:GeneradorCod.DataSetTablasYCampos.SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID2Row">
 <summary>
 Represents strongly named DataRow class.
 </summary>
@@ -832,6 +852,16 @@ Row event argument class
 Row event argument class
 </summary>
 </member>
+<member name="T:GeneradorCod.DataSetTablasYCampos.SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaID2RowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:GeneradorCod.DataSetTablasYCampos.SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID2RowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
 <member name="T:GeneradorCod.DataSetTablasYCamposTableAdapters.SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoIDTableAdapter">
 <summary>
 Represents the connection and commands used to retrieve and save data.
@@ -928,6 +958,16 @@ Represents the connection and commands used to retrieve and save data.
 </summary>
 </member>
 <member name="T:GeneradorCod.DataSetTablasYCamposTableAdapters.SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaID1TableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:GeneradorCod.DataSetTablasYCamposTableAdapters.SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaID2TableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:GeneradorCod.DataSetTablasYCamposTableAdapters.SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID2TableAdapter">
 <summary>
 Represents the connection and commands used to retrieve and save data.
 </summary>

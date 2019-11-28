@@ -18,6 +18,7 @@
             Cancelar_TablasDeProyecto()
             SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaID()
             SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID()
+            SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID2()
         Catch ex As System.Exception
             System.Windows.Forms.MessageBox.Show(ex.Message)
         End Try
@@ -588,6 +589,7 @@
         SP_CARGA_TECNOLOGIAS_APLICADAS_A_PROYECTO()
         'Carga Tablas del Proyecto
         SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID()
+        SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID2()
         SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1_RepetirTablas()
     End Sub
 
@@ -1202,6 +1204,7 @@
     End Sub
     Private Sub TablaIDTextBox_TextChanged_1(sender As Object, e As EventArgs) Handles TablaIDTextBox.TextChanged
         SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaID()
+        SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaID2()
     End Sub
 
     Private Sub TipoTextBox_TextChanged(sender As Object, e As EventArgs) Handles TipoTextBox.TextChanged
@@ -1327,4 +1330,52 @@
     End Sub
 
 
+
+
+
+
+    Private Sub AgregarTodasToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AgregarTodasToolStripMenuItem.Click
+        Dim contadorTecnologiasAplicadas = SP_Plantillas_BUSQUEDA_SEGUN_PARAMETRO_TecnologiaDataGridView.Rows.Count()
+        'Carga las tecnologias aplicadas y segun pide los requerimientos de de las plantillas de dichas tecnologias
+        While contadorTecnologiasAplicadas > 0
+            SP_Plantillas_BUSQUEDA_SEGUN_PARAMETRO_TecnologiaDataGridView.CurrentCell = SP_Plantillas_BUSQUEDA_SEGUN_PARAMETRO_TecnologiaDataGridView.Rows(0).Cells(0)
+            SP_ProyectosYTecnologias_EDICION_INSERTAR()
+            SP_Plantillas_BUSQUEDA_SEGUN_PARAMETRO_TecnologiaDataGridView.Rows.RemoveAt(0)
+            contadorTecnologiasAplicadas = contadorTecnologiasAplicadas - 1
+        End While
+        SP_CARGA_TECNOLOGIAS_APLICADAS_A_PROYECTO()
+        MsgBox("Se Crea Relación Del Proyecto " & NombreProyectoTextBox.Text & " con todas las Plantillas de la Tecnologia: " & NombreTecnologiaTextBox.Text, MsgBoxStyle.Information)
+    End Sub
+
+    Private Sub AgregarPlantillaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AgregarPlantillaToolStripMenuItem.Click
+        SP_ProyectosYTecnologias_EDICION_INSERTAR()
+        SP_CARGA_TECNOLOGIAS_APLICADAS_A_PROYECTO()
+        MsgBox("Se Crea Relación Del Proyecto" & NombreProyectoTextBox.Text & " con la tecnologia " & NombreTecnologiaTextBox.Text, MsgBoxStyle.Information)
+    End Sub
+
+
+    Private Sub SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID2()
+        Try
+            Me.SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID2TableAdapter.Fill(Me.DataSetTablasYCampos.SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID2, New System.Nullable(Of Integer)(CType(ProyectoIDTextBox.Text, Integer)))
+        Catch ex As System.Exception
+            'System.Windows.Forms.MessageBox.Show(ex.Message)
+        End Try
+    End Sub
+
+    Private Sub SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaID2()
+        Try
+            Me.SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaID2TableAdapter.Fill(Me.DataSetTablasYCampos.SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaID2, New System.Nullable(Of Integer)(CType(TablaIDTextBox2.Text, Integer)))
+        Catch ex As System.Exception
+            'System.Windows.Forms.MessageBox.Show(ex.Message)
+        End Try
+
+    End Sub
+
+
+
+
+
+    Private Sub TablaIDTextBox2_TextChanged(sender As Object, e As EventArgs) Handles TablaIDTextBox2.TextChanged
+        SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaID2()
+    End Sub
 End Class
