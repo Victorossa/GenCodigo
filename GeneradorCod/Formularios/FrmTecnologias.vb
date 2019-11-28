@@ -1705,10 +1705,154 @@
     Private Sub BtnMayusculaAMinuscula_Click(sender As Object, e As EventArgs) Handles BtnMayusculaAMinuscula.Click
         Me.ContenidoComponenteRichTextBox.Text = Me.ContenidoComponenteRichTextBox.Text.Insert(Me.ContenidoComponenteRichTextBox.SelectionStart, "{{{A=>-a}}}")
     End Sub
+    Dim table As New DataTable
+    Dim rowIndex As Integer
+    Private Sub ChkMover_CheckedChanged(sender As Object, e As EventArgs) Handles ChkMover.CheckedChanged
+        If ChkMover.Checked = True Then
+            SP_Plantillas_BUSQUEDA_SEGUN_PARAMETRO_TecnologiaDataGridView.Enabled = False
+            DGVEdicionPosicion.Visible = True
+            CargarGridEdicion()
+            BtnSubirFila.Enabled = True
+            BtnBajarFila.Enabled = True
+            Nuevo_Menu_Plantillas.Enabled = False
+            Editar_Menu_Plantillas.Enabled = False
+            Cancelar_Menu_Plantillas.Enabled = False
+        Else
+            ActualizarItems2()
+            SP_Plantillas_BUSQUEDA_SEGUN_PARAMETRO_TecnologiaDataGridView.Enabled = True
+            DGVEdicionPosicion.Visible = False
+            CargarGridEdicion()
+            BtnSubirFila.Enabled = False
+            BtnBajarFila.Enabled = False
+            Nuevo_Menu_Plantillas.Enabled = True
+            Editar_Menu_Plantillas.Enabled = True
+            Cancelar_Menu_Plantillas.Enabled = True
+        End If
+    End Sub
 
+    Private Sub ActualizarItems2()
 
+        'Define Variables de Control
+        Dim contadorfinal As Integer = DGVEdicionPosicion.Rows.Count
 
+        Dim contadorInicial As Integer = 1
+        While contadorfinal >= contadorInicial
+            'Se ubica en la primera fila
+            DGVEdicionPosicion.CurrentCell = DGVEdicionPosicion.Rows(0).Cells(0)
+            Try
+                ActualizarItem(Convert.ToString(DGVEdicionPosicion.CurrentRow.Cells(2).Value), contadorInicial)
+            Catch ex As System.Exception
+                'System.Windows.Forms.MessageBox.Show(ex.Message)
+            End Try
+            DGVEdicionPosicion.Rows.RemoveAt(0)
+            contadorInicial = contadorInicial + 1
+        End While
+        Cancelar_Plantillas()
+    End Sub
 
+    Private Sub ActualizarItem(IDPlantilla As Integer, item As Integer)
+        Try
+            'Crear un metodo que actualize solo el dato de la plantilla
+            'Me.SP_T_03_01_PlantillasDeProyecto_EDICION_ACTUALIZAR_Por_ItemTableAdapter.Fill(Me.DS_Plantilla.SP_T_03_01_PlantillasDeProyecto_EDICION_ACTUALIZAR_Por_Item,
+            '                                                                                New System.Nullable(Of Long)(CType(T_01_02_TiposDeProyectosIDTextBox.Text, Long)),
+            '                                                                                New System.Nullable(Of Long)(CType(IDPlantilla, Long)),
+            '                                                                                New System.Nullable(Of Long)(CType(item, Long)))
+        Catch ex As System.Exception
+            System.Windows.Forms.MessageBox.Show(ex.Message)
+        End Try
+
+    End Sub
+
+    Private Sub CargarGridEdicion()
+        CargarGridSeleccion()
+        With DGVEdicionPosicion
+            For Each columna As DataGridViewColumn In .Columns
+                'Ajustado
+                'columna.MinimumWidth = Int((.Width - .RowHeadersWidth) / .ColumnCount)
+                'columna.Width = Int((.Width - .RowHeadersWidth) / .ColumnCount)
+                DGVEdicionPosicion.Columns(0).Width = 319
+                DGVEdicionPosicion.Columns(1).Width = 30
+            Next
+        End With
+        DGVEdicionPosicion.AllowUserToAddRows = False
+        DGVEdicionPosicion.ColumnHeadersVisible = False
+    End Sub
+
+    Private Sub CargarGridSeleccion()
+
+        Try
+            ' Obtenemos un objeto DataTable con los datos
+            ' existentes en el control DataGridView.
+            '
+            table = Me.DataGridViewToDataTable(Me.SP_Plantillas_BUSQUEDA_SEGUN_PARAMETRO_TecnologiaDataGridView)
+
+            'MessageBox.Show(String.Format("Nº de filas añadidas: {0}", table.Rows.Count))
+
+            DGVEdicionPosicion.DataSource = table
+
+        Catch ex As Exception
+            ' Se ha producido un error.
+            MessageBox.Show(ex.Message)
+
+        End Try
+    End Sub
+
+    Private Function DataGridViewToDataTable(dgv As DataGridView) As DataTable
+
+        ' Si no es válido el control DataGridView,
+        ' devolvemos el valor Nothing.
+        '
+        If (dgv Is Nothing) Then Return Nothing
+
+        ' Creamos un nuevo objeto DataTable.
+        '
+        Dim dt As New DataTable()
+
+        ' Conforme recorremos las columnas existentes
+        ' en el control DataGridView, vamos creando
+        ' nuevas columnas en el objeto DataTable.
+        '
+        For Each col As DataGridViewColumn In dgv.Columns
+            Dim column As New DataColumn(col.Name, Type.GetType("System.String"))
+            dt.Columns.Add(column)
+        Next
+
+        ' Una vez creada la estructura del objeto DataTable,
+        ' recorremos las filas del control DataGridView para
+        ' rellenar de datos el objeto DataTable.
+        '
+        For Each viewRow As DataGridViewRow In dgv.Rows
+
+            ' Creamos una nueva fila en el objeto DataTable;
+            ' un objeto DataRow.
+            '
+            Dim row As DataRow = dt.NewRow()
+
+            For Each col As DataGridViewColumn In dgv.Columns
+
+                ' Valor de la celda actual del control DataGridView1.
+                '
+                Dim value As Object = viewRow.Cells(col.Name).Value
+
+                ' Si el valor es Nothing, le asignamos un valor NULL a la
+                ' columna del objeto DataTable; en caso contrario le asignamos
+                ' el valor de la celda del control DataGridView.
+                '
+                row.Item(col.Name) = If(value Is Nothing, DBNull.Value, value)
+
+            Next col        ' Siguiente columna
+
+            ' Añadimos la fila al objeto DataTable.
+            '
+            dt.Rows.Add(row)
+
+        Next viewRow ' Siguiente fila
+
+        ' Por último devolvemos el objeto DataTable creado.
+        '
+        Return dt
+
+    End Function
 
 
 

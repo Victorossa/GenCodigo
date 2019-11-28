@@ -1,0 +1,1016 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+GeneradorCod
+</name>
+</assembly>
+<members>
+<member name="T:GeneradorCod.My.Resources.Resources">
+<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
+</member>
+<member name="P:GeneradorCod.My.Resources.Resources.ResourceManager">
+<summary>
+  Returns the cached ResourceManager instance used by this class.
+</summary>
+</member>
+<member name="P:GeneradorCod.My.Resources.Resources.Culture">
+<summary>
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
+</summary>
+</member>
+<member name="T:GeneradorCod.DataSetAdministracion">
+<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member>
+<member name="T:GeneradorCod.DataSetAdministracion.SP_Tecnologias_EDICION_ACTUALIZARDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:GeneradorCod.DataSetAdministracion.TecnologiasDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:GeneradorCod.DataSetAdministracion.SP_Tecnologias_EDICION_ELIMINARDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:GeneradorCod.DataSetAdministracion.SP_Tecnologias_EDICION_INSERTARDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:GeneradorCod.DataSetAdministracion.SP_Plantillas_BUSQUEDA_SEGUN_PARAMETRO_TecnologiaDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:GeneradorCod.DataSetAdministracion.SP_Plantillas_EDICION_INSERTARDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:GeneradorCod.DataSetAdministracion.SP_Plantillas_EDICION_ACTUALIZARDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:GeneradorCod.DataSetAdministracion.SP_Plantillas_EDICION_ELIMINARDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:GeneradorCod.DataSetAdministracion.SP_Componentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:GeneradorCod.DataSetAdministracion.SP_Componentes_EDICION_ACTUALIZARDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:GeneradorCod.DataSetAdministracion.SP_Componentes_EDICION_ELIMINARDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:GeneradorCod.DataSetAdministracion.SP_Componentes_EDICION_INSERTARDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:GeneradorCod.DataSetAdministracion.SP_RequerimientosPlantillas_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:GeneradorCod.DataSetAdministracion.SP_RequerimientosPlantillas_EDICION_ELIMINARDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:GeneradorCod.DataSetAdministracion.SP_RequerimientosPlantillas_EDICION_ACTUALIZARDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:GeneradorCod.DataSetAdministracion.SP_RequerimientosPlantillas_EDICION_INSERTARDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:GeneradorCod.DataSetAdministracion.SP_Proyectos_EDICION_ACTUALIZARDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:GeneradorCod.DataSetAdministracion.SP_Proyectos_EDICION_ELIMINARDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:GeneradorCod.DataSetAdministracion.SP_Proyectos_EDICION_INSERTARDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:GeneradorCod.DataSetAdministracion.ProyectosDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:GeneradorCod.DataSetAdministracion.SP_CARGA_TECNOLOGIAS_APLICADAS_A_PROYECTODataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:GeneradorCod.DataSetAdministracion.SP_ProyectosYTecnologias_EDICION_INSERTARDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:GeneradorCod.DataSetAdministracion.ELIMINA_SEGUN_PROYECTODataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:GeneradorCod.DataSetAdministracion.SP_Tecnologias_EDICION_ACTUALIZARRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:GeneradorCod.DataSetAdministracion.TecnologiasRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:GeneradorCod.DataSetAdministracion.SP_Tecnologias_EDICION_ELIMINARRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:GeneradorCod.DataSetAdministracion.SP_Tecnologias_EDICION_INSERTARRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:GeneradorCod.DataSetAdministracion.SP_Plantillas_BUSQUEDA_SEGUN_PARAMETRO_TecnologiaRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:GeneradorCod.DataSetAdministracion.SP_Plantillas_EDICION_INSERTARRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:GeneradorCod.DataSetAdministracion.SP_Plantillas_EDICION_ACTUALIZARRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:GeneradorCod.DataSetAdministracion.SP_Plantillas_EDICION_ELIMINARRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:GeneradorCod.DataSetAdministracion.SP_Componentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:GeneradorCod.DataSetAdministracion.SP_Componentes_EDICION_ACTUALIZARRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:GeneradorCod.DataSetAdministracion.SP_Componentes_EDICION_ELIMINARRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:GeneradorCod.DataSetAdministracion.SP_Componentes_EDICION_INSERTARRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:GeneradorCod.DataSetAdministracion.SP_RequerimientosPlantillas_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:GeneradorCod.DataSetAdministracion.SP_RequerimientosPlantillas_EDICION_ELIMINARRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:GeneradorCod.DataSetAdministracion.SP_RequerimientosPlantillas_EDICION_ACTUALIZARRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:GeneradorCod.DataSetAdministracion.SP_RequerimientosPlantillas_EDICION_INSERTARRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:GeneradorCod.DataSetAdministracion.SP_Proyectos_EDICION_ACTUALIZARRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:GeneradorCod.DataSetAdministracion.SP_Proyectos_EDICION_ELIMINARRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:GeneradorCod.DataSetAdministracion.SP_Proyectos_EDICION_INSERTARRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:GeneradorCod.DataSetAdministracion.ProyectosRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:GeneradorCod.DataSetAdministracion.SP_CARGA_TECNOLOGIAS_APLICADAS_A_PROYECTORow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:GeneradorCod.DataSetAdministracion.SP_ProyectosYTecnologias_EDICION_INSERTARRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:GeneradorCod.DataSetAdministracion.ELIMINA_SEGUN_PROYECTORow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:GeneradorCod.DataSetAdministracion.SP_Tecnologias_EDICION_ACTUALIZARRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:GeneradorCod.DataSetAdministracion.TecnologiasRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:GeneradorCod.DataSetAdministracion.SP_Tecnologias_EDICION_ELIMINARRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:GeneradorCod.DataSetAdministracion.SP_Tecnologias_EDICION_INSERTARRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:GeneradorCod.DataSetAdministracion.SP_Plantillas_BUSQUEDA_SEGUN_PARAMETRO_TecnologiaRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:GeneradorCod.DataSetAdministracion.SP_Plantillas_EDICION_INSERTARRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:GeneradorCod.DataSetAdministracion.SP_Plantillas_EDICION_ACTUALIZARRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:GeneradorCod.DataSetAdministracion.SP_Plantillas_EDICION_ELIMINARRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:GeneradorCod.DataSetAdministracion.SP_Componentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:GeneradorCod.DataSetAdministracion.SP_Componentes_EDICION_ACTUALIZARRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:GeneradorCod.DataSetAdministracion.SP_Componentes_EDICION_ELIMINARRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:GeneradorCod.DataSetAdministracion.SP_Componentes_EDICION_INSERTARRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:GeneradorCod.DataSetAdministracion.SP_RequerimientosPlantillas_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:GeneradorCod.DataSetAdministracion.SP_RequerimientosPlantillas_EDICION_ELIMINARRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:GeneradorCod.DataSetAdministracion.SP_RequerimientosPlantillas_EDICION_ACTUALIZARRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:GeneradorCod.DataSetAdministracion.SP_RequerimientosPlantillas_EDICION_INSERTARRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:GeneradorCod.DataSetAdministracion.SP_Proyectos_EDICION_ACTUALIZARRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:GeneradorCod.DataSetAdministracion.SP_Proyectos_EDICION_ELIMINARRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:GeneradorCod.DataSetAdministracion.SP_Proyectos_EDICION_INSERTARRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:GeneradorCod.DataSetAdministracion.ProyectosRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:GeneradorCod.DataSetAdministracion.SP_CARGA_TECNOLOGIAS_APLICADAS_A_PROYECTORowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:GeneradorCod.DataSetAdministracion.SP_ProyectosYTecnologias_EDICION_INSERTARRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:GeneradorCod.DataSetAdministracion.ELIMINA_SEGUN_PROYECTORowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:GeneradorCod.DataSetAdministracionTableAdapters.SP_Tecnologias_EDICION_ACTUALIZARTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:GeneradorCod.DataSetAdministracionTableAdapters.TecnologiasTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:GeneradorCod.DataSetAdministracionTableAdapters.SP_Tecnologias_EDICION_ELIMINARTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:GeneradorCod.DataSetAdministracionTableAdapters.SP_Tecnologias_EDICION_INSERTARTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:GeneradorCod.DataSetAdministracionTableAdapters.SP_Plantillas_BUSQUEDA_SEGUN_PARAMETRO_TecnologiaTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:GeneradorCod.DataSetAdministracionTableAdapters.SP_Plantillas_EDICION_INSERTARTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:GeneradorCod.DataSetAdministracionTableAdapters.SP_Plantillas_EDICION_ACTUALIZARTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:GeneradorCod.DataSetAdministracionTableAdapters.SP_Plantillas_EDICION_ELIMINARTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:GeneradorCod.DataSetAdministracionTableAdapters.SP_Componentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:GeneradorCod.DataSetAdministracionTableAdapters.SP_Componentes_EDICION_ACTUALIZARTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:GeneradorCod.DataSetAdministracionTableAdapters.SP_Componentes_EDICION_ELIMINARTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:GeneradorCod.DataSetAdministracionTableAdapters.SP_Componentes_EDICION_INSERTARTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:GeneradorCod.DataSetAdministracionTableAdapters.SP_RequerimientosPlantillas_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:GeneradorCod.DataSetAdministracionTableAdapters.SP_RequerimientosPlantillas_EDICION_ELIMINARTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:GeneradorCod.DataSetAdministracionTableAdapters.SP_RequerimientosPlantillas_EDICION_ACTUALIZARTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:GeneradorCod.DataSetAdministracionTableAdapters.SP_RequerimientosPlantillas_EDICION_INSERTARTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:GeneradorCod.DataSetAdministracionTableAdapters.SP_Proyectos_EDICION_ACTUALIZARTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:GeneradorCod.DataSetAdministracionTableAdapters.SP_Proyectos_EDICION_ELIMINARTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:GeneradorCod.DataSetAdministracionTableAdapters.SP_Proyectos_EDICION_INSERTARTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:GeneradorCod.DataSetAdministracionTableAdapters.ProyectosTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:GeneradorCod.DataSetAdministracionTableAdapters.SP_CARGA_TECNOLOGIAS_APLICADAS_A_PROYECTOTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:GeneradorCod.DataSetAdministracionTableAdapters.SP_ProyectosYTecnologias_EDICION_INSERTARTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:GeneradorCod.DataSetAdministracionTableAdapters.ELIMINA_SEGUN_PROYECTOTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:GeneradorCod.DataSetAdministracionTableAdapters.TableAdapterManager">
+<summary>
+TableAdapterManager is used to coordinate TableAdapters in the dataset to enable Hierarchical Update scenarios
+</summary>
+</member>
+<member name="M:GeneradorCod.DataSetAdministracionTableAdapters.TableAdapterManager.UpdateUpdatedRows(GeneradorCod.DataSetAdministracion,System.Collections.Generic.List{System.Data.DataRow},System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Update rows in top-down order.
+</summary>
+</member>
+<member name="M:GeneradorCod.DataSetAdministracionTableAdapters.TableAdapterManager.UpdateInsertedRows(GeneradorCod.DataSetAdministracion,System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Insert rows in top-down order.
+</summary>
+</member>
+<member name="M:GeneradorCod.DataSetAdministracionTableAdapters.TableAdapterManager.UpdateDeletedRows(GeneradorCod.DataSetAdministracion,System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Delete rows in bottom-up order.
+</summary>
+</member>
+<member name="M:GeneradorCod.DataSetAdministracionTableAdapters.TableAdapterManager.GetRealUpdatedRows(System.Data.DataRow[],System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Remove inserted rows that become updated rows after calling TableAdapter.Update(inserted rows) first
+</summary>
+</member>
+<member name="M:GeneradorCod.DataSetAdministracionTableAdapters.TableAdapterManager.UpdateAll(GeneradorCod.DataSetAdministracion)">
+<summary>
+Update all changes to the dataset.
+</summary>
+</member>
+<member name="T:GeneradorCod.DataSetAdministracionTableAdapters.TableAdapterManager.UpdateOrderOption">
+<summary>
+Update Order Option
+</summary>
+</member>
+<member name="T:GeneradorCod.DataSetAdministracionTableAdapters.TableAdapterManager.SelfReferenceComparer">
+<summary>
+Used to sort self-referenced table's rows
+</summary>
+</member>
+<member name="T:GeneradorCod.DataSetTablasYCampos">
+<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member>
+<member name="T:GeneradorCod.DataSetTablasYCampos.SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoIDDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:GeneradorCod.DataSetTablasYCampos.SP_TablasDeProyecto_EDICION_ACTUALIZARDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:GeneradorCod.DataSetTablasYCampos.SP_TablasDeProyecto_EDICION_ELIMINARDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:GeneradorCod.DataSetTablasYCampos.SP_TablasDeProyecto_EDICION_INSERTARDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:GeneradorCod.DataSetTablasYCampos.SP_RegistroValorRequerimientos_EDICION_INSERTARDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:GeneradorCod.DataSetTablasYCampos.SP_ELIMINA_RegistroValorRequerimientos_SegunIDDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:GeneradorCod.DataSetTablasYCampos.SP_RegistroValorRequerimientos_SEGUN_ProyectoIDDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:GeneradorCod.DataSetTablasYCampos.SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaIDDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:GeneradorCod.DataSetTablasYCampos.SP_CamposDeTablas_EDICION_ELIMINARDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:GeneradorCod.DataSetTablasYCampos.SP_CamposDeTablas_EDICION_ACTUALIZARDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:GeneradorCod.DataSetTablasYCampos.SP_CamposDeTablas_EDICION_INSERTARDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:GeneradorCod.DataSetTablasYCampos.SP_CampoComponentes_Segun_Plantilla_TipoDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:GeneradorCod.DataSetTablasYCampos.SP_CampoComponentes_EDICION_ACTUALIZARDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:GeneradorCod.DataSetTablasYCampos.SP_CampoComponentes_EDICION_ELIMINARDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:GeneradorCod.DataSetTablasYCampos.SP_CampoComponentes_EDICION_INSERTARDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:GeneradorCod.DataSetTablasYCampos.SP_CampoComponentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:GeneradorCod.DataSetTablasYCampos.SP_RegistroValorRequerimientos_SegunProyectoRequerimientoDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:GeneradorCod.DataSetTablasYCampos.SP_CARGA_CONVENSIONES_USADASDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:GeneradorCod.DataSetTablasYCampos.SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1DataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:GeneradorCod.DataSetTablasYCampos.SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaID1DataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:GeneradorCod.DataSetTablasYCampos.SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaID2DataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:GeneradorCod.DataSetTablasYCampos.SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID2DataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:GeneradorCod.DataSetTablasYCampos.SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoIDRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:GeneradorCod.DataSetTablasYCampos.SP_TablasDeProyecto_EDICION_ACTUALIZARRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:GeneradorCod.DataSetTablasYCampos.SP_TablasDeProyecto_EDICION_ELIMINARRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:GeneradorCod.DataSetTablasYCampos.SP_TablasDeProyecto_EDICION_INSERTARRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:GeneradorCod.DataSetTablasYCampos.SP_RegistroValorRequerimientos_EDICION_INSERTARRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:GeneradorCod.DataSetTablasYCampos.SP_ELIMINA_RegistroValorRequerimientos_SegunIDRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:GeneradorCod.DataSetTablasYCampos.SP_RegistroValorRequerimientos_SEGUN_ProyectoIDRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:GeneradorCod.DataSetTablasYCampos.SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaIDRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:GeneradorCod.DataSetTablasYCampos.SP_CamposDeTablas_EDICION_ELIMINARRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:GeneradorCod.DataSetTablasYCampos.SP_CamposDeTablas_EDICION_ACTUALIZARRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:GeneradorCod.DataSetTablasYCampos.SP_CamposDeTablas_EDICION_INSERTARRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:GeneradorCod.DataSetTablasYCampos.SP_CampoComponentes_Segun_Plantilla_TipoRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:GeneradorCod.DataSetTablasYCampos.SP_CampoComponentes_EDICION_ACTUALIZARRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:GeneradorCod.DataSetTablasYCampos.SP_CampoComponentes_EDICION_ELIMINARRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:GeneradorCod.DataSetTablasYCampos.SP_CampoComponentes_EDICION_INSERTARRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:GeneradorCod.DataSetTablasYCampos.SP_CampoComponentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:GeneradorCod.DataSetTablasYCampos.SP_RegistroValorRequerimientos_SegunProyectoRequerimientoRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:GeneradorCod.DataSetTablasYCampos.SP_CARGA_CONVENSIONES_USADASRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:GeneradorCod.DataSetTablasYCampos.SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1Row">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:GeneradorCod.DataSetTablasYCampos.SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaID1Row">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:GeneradorCod.DataSetTablasYCampos.SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaID2Row">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:GeneradorCod.DataSetTablasYCampos.SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID2Row">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:GeneradorCod.DataSetTablasYCampos.SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoIDRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:GeneradorCod.DataSetTablasYCampos.SP_TablasDeProyecto_EDICION_ACTUALIZARRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:GeneradorCod.DataSetTablasYCampos.SP_TablasDeProyecto_EDICION_ELIMINARRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:GeneradorCod.DataSetTablasYCampos.SP_TablasDeProyecto_EDICION_INSERTARRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:GeneradorCod.DataSetTablasYCampos.SP_RegistroValorRequerimientos_EDICION_INSERTARRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:GeneradorCod.DataSetTablasYCampos.SP_ELIMINA_RegistroValorRequerimientos_SegunIDRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:GeneradorCod.DataSetTablasYCampos.SP_RegistroValorRequerimientos_SEGUN_ProyectoIDRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:GeneradorCod.DataSetTablasYCampos.SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaIDRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:GeneradorCod.DataSetTablasYCampos.SP_CamposDeTablas_EDICION_ELIMINARRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:GeneradorCod.DataSetTablasYCampos.SP_CamposDeTablas_EDICION_ACTUALIZARRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:GeneradorCod.DataSetTablasYCampos.SP_CamposDeTablas_EDICION_INSERTARRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:GeneradorCod.DataSetTablasYCampos.SP_CampoComponentes_Segun_Plantilla_TipoRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:GeneradorCod.DataSetTablasYCampos.SP_CampoComponentes_EDICION_ACTUALIZARRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:GeneradorCod.DataSetTablasYCampos.SP_CampoComponentes_EDICION_ELIMINARRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:GeneradorCod.DataSetTablasYCampos.SP_CampoComponentes_EDICION_INSERTARRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:GeneradorCod.DataSetTablasYCampos.SP_CampoComponentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:GeneradorCod.DataSetTablasYCampos.SP_RegistroValorRequerimientos_SegunProyectoRequerimientoRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:GeneradorCod.DataSetTablasYCampos.SP_CARGA_CONVENSIONES_USADASRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:GeneradorCod.DataSetTablasYCampos.SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1RowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:GeneradorCod.DataSetTablasYCampos.SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaID1RowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:GeneradorCod.DataSetTablasYCampos.SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaID2RowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:GeneradorCod.DataSetTablasYCampos.SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID2RowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:GeneradorCod.DataSetTablasYCamposTableAdapters.SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoIDTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:GeneradorCod.DataSetTablasYCamposTableAdapters.SP_TablasDeProyecto_EDICION_ACTUALIZARTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:GeneradorCod.DataSetTablasYCamposTableAdapters.SP_TablasDeProyecto_EDICION_ELIMINARTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:GeneradorCod.DataSetTablasYCamposTableAdapters.SP_TablasDeProyecto_EDICION_INSERTARTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:GeneradorCod.DataSetTablasYCamposTableAdapters.SP_RegistroValorRequerimientos_EDICION_INSERTARTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:GeneradorCod.DataSetTablasYCamposTableAdapters.SP_ELIMINA_RegistroValorRequerimientos_SegunIDTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:GeneradorCod.DataSetTablasYCamposTableAdapters.SP_RegistroValorRequerimientos_SEGUN_ProyectoIDTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:GeneradorCod.DataSetTablasYCamposTableAdapters.SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaIDTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:GeneradorCod.DataSetTablasYCamposTableAdapters.SP_CamposDeTablas_EDICION_ELIMINARTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:GeneradorCod.DataSetTablasYCamposTableAdapters.SP_CamposDeTablas_EDICION_ACTUALIZARTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:GeneradorCod.DataSetTablasYCamposTableAdapters.SP_CamposDeTablas_EDICION_INSERTARTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:GeneradorCod.DataSetTablasYCamposTableAdapters.SP_CampoComponentes_Segun_Plantilla_TipoTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:GeneradorCod.DataSetTablasYCamposTableAdapters.SP_CampoComponentes_EDICION_ACTUALIZARTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:GeneradorCod.DataSetTablasYCamposTableAdapters.SP_CampoComponentes_EDICION_ELIMINARTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:GeneradorCod.DataSetTablasYCamposTableAdapters.SP_CampoComponentes_EDICION_INSERTARTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:GeneradorCod.DataSetTablasYCamposTableAdapters.SP_CampoComponentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:GeneradorCod.DataSetTablasYCamposTableAdapters.SP_RegistroValorRequerimientos_SegunProyectoRequerimientoTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:GeneradorCod.DataSetTablasYCamposTableAdapters.SP_CARGA_CONVENSIONES_USADASTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:GeneradorCod.DataSetTablasYCamposTableAdapters.SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1TableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:GeneradorCod.DataSetTablasYCamposTableAdapters.SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaID1TableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:GeneradorCod.DataSetTablasYCamposTableAdapters.SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaID2TableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:GeneradorCod.DataSetTablasYCamposTableAdapters.SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID2TableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:GeneradorCod.DataSetTablasYCamposTableAdapters.TableAdapterManager">
+<summary>
+TableAdapterManager is used to coordinate TableAdapters in the dataset to enable Hierarchical Update scenarios
+</summary>
+</member>
+<member name="M:GeneradorCod.DataSetTablasYCamposTableAdapters.TableAdapterManager.UpdateUpdatedRows(GeneradorCod.DataSetTablasYCampos,System.Collections.Generic.List{System.Data.DataRow},System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Update rows in top-down order.
+</summary>
+</member>
+<member name="M:GeneradorCod.DataSetTablasYCamposTableAdapters.TableAdapterManager.UpdateInsertedRows(GeneradorCod.DataSetTablasYCampos,System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Insert rows in top-down order.
+</summary>
+</member>
+<member name="M:GeneradorCod.DataSetTablasYCamposTableAdapters.TableAdapterManager.UpdateDeletedRows(GeneradorCod.DataSetTablasYCampos,System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Delete rows in bottom-up order.
+</summary>
+</member>
+<member name="M:GeneradorCod.DataSetTablasYCamposTableAdapters.TableAdapterManager.GetRealUpdatedRows(System.Data.DataRow[],System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Remove inserted rows that become updated rows after calling TableAdapter.Update(inserted rows) first
+</summary>
+</member>
+<member name="M:GeneradorCod.DataSetTablasYCamposTableAdapters.TableAdapterManager.UpdateAll(GeneradorCod.DataSetTablasYCampos)">
+<summary>
+Update all changes to the dataset.
+</summary>
+</member>
+<member name="T:GeneradorCod.DataSetTablasYCamposTableAdapters.TableAdapterManager.UpdateOrderOption">
+<summary>
+Update Order Option
+</summary>
+</member>
+<member name="T:GeneradorCod.DataSetTablasYCamposTableAdapters.TableAdapterManager.SelfReferenceComparer">
+<summary>
+Used to sort self-referenced table's rows
+</summary>
+</member>
+</members>
+</doc>

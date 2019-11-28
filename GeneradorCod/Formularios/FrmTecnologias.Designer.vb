@@ -47,10 +47,10 @@ Partial Class FrmTecnologias
         Dim XTablaLabel As System.Windows.Forms.Label
         Dim XTablaLabel1 As System.Windows.Forms.Label
         Dim OrdenLabel As System.Windows.Forms.Label
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmTecnologias))
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.TecnologiasDataGridView = New System.Windows.Forms.DataGridView()
-        Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.TecnologiasBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.DataSetAdministracion = New GeneradorCod.DataSetAdministracion()
         Me.NombreTecnologiaTextBox = New System.Windows.Forms.TextBox()
@@ -69,7 +69,6 @@ Partial Class FrmTecnologias
         Me.SP_Plantillas_BUSQUEDA_SEGUN_PARAMETRO_TecnologiaBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.NombrePlantillaTextBox = New System.Windows.Forms.TextBox()
         Me.SP_Plantillas_BUSQUEDA_SEGUN_PARAMETRO_TecnologiaDataGridView = New System.Windows.Forms.DataGridView()
-        Me.DataGridViewTextBoxColumn4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Panel4 = New System.Windows.Forms.Panel()
         Me.Nuevo_Menu_Plantillas = New System.Windows.Forms.Button()
         Me.Cancelar_Menu_Plantillas = New System.Windows.Forms.Button()
@@ -212,6 +211,14 @@ Partial Class FrmTecnologias
         Me.SP_RequerimientosPlantillas_EDICION_INSERTARBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.SP_RequerimientosPlantillas_EDICION_INSERTARTableAdapter = New GeneradorCod.DataSetAdministracionTableAdapters.SP_RequerimientosPlantillas_EDICION_INSERTARTableAdapter()
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
+        Me.ChkMover = New System.Windows.Forms.CheckBox()
+        Me.BtnBajarFila = New System.Windows.Forms.Button()
+        Me.BtnSubirFila = New System.Windows.Forms.Button()
+        Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DGVEdicionPosicion = New System.Windows.Forms.DataGridView()
+        Me.TabPage4 = New System.Windows.Forms.TabPage()
+        Me.DataGridViewTextBoxColumn4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Orden = New System.Windows.Forms.DataGridViewTextBoxColumn()
         NombreTecnologiaLabel = New System.Windows.Forms.Label()
         TecnologiaIDLabel = New System.Windows.Forms.Label()
         NombrePlantillaLabel = New System.Windows.Forms.Label()
@@ -279,6 +286,8 @@ Partial Class FrmTecnologias
         CType(Me.SP_RequerimientosPlantillas_EDICION_ACTUALIZARBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.SP_RequerimientosPlantillas_EDICION_ELIMINARBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.SP_RequerimientosPlantillas_EDICION_INSERTARBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DGVEdicionPosicion, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.TabPage4.SuspendLayout()
         Me.SuspendLayout()
         '
         'NombreTecnologiaLabel
@@ -502,7 +511,7 @@ Partial Class FrmTecnologias
         'OrdenLabel
         '
         OrdenLabel.AutoSize = True
-        OrdenLabel.Location = New System.Drawing.Point(248, 52)
+        OrdenLabel.Location = New System.Drawing.Point(339, 52)
         OrdenLabel.Name = "OrdenLabel"
         OrdenLabel.Size = New System.Drawing.Size(40, 14)
         OrdenLabel.TabIndex = 95
@@ -519,17 +528,9 @@ Partial Class FrmTecnologias
         Me.TecnologiasDataGridView.Margin = New System.Windows.Forms.Padding(4)
         Me.TecnologiasDataGridView.Name = "TecnologiasDataGridView"
         Me.TecnologiasDataGridView.RowHeadersVisible = False
-        Me.TecnologiasDataGridView.Size = New System.Drawing.Size(281, 108)
+        Me.TecnologiasDataGridView.RowTemplate.Height = 27
+        Me.TecnologiasDataGridView.Size = New System.Drawing.Size(374, 169)
         Me.TecnologiasDataGridView.TabIndex = 1
-        '
-        'DataGridViewTextBoxColumn2
-        '
-        Me.DataGridViewTextBoxColumn2.DataPropertyName = "NombreTecnologia"
-        DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.DataGridViewTextBoxColumn2.DefaultCellStyle = DataGridViewCellStyle1
-        Me.DataGridViewTextBoxColumn2.HeaderText = "Nombre Tecnologia"
-        Me.DataGridViewTextBoxColumn2.Name = "DataGridViewTextBoxColumn2"
-        Me.DataGridViewTextBoxColumn2.Width = 277
         '
         'TecnologiasBindingSource
         '
@@ -547,7 +548,7 @@ Partial Class FrmTecnologias
         Me.NombreTecnologiaTextBox.Location = New System.Drawing.Point(5, 75)
         Me.NombreTecnologiaTextBox.Margin = New System.Windows.Forms.Padding(4)
         Me.NombreTecnologiaTextBox.Name = "NombreTecnologiaTextBox"
-        Me.NombreTecnologiaTextBox.Size = New System.Drawing.Size(281, 22)
+        Me.NombreTecnologiaTextBox.Size = New System.Drawing.Size(374, 22)
         Me.NombreTecnologiaTextBox.TabIndex = 2
         '
         'PanelAdministracion_
@@ -561,14 +562,14 @@ Partial Class FrmTecnologias
         Me.PanelAdministracion_.Controls.Add(Me.Guardar_Menu_Tecnologias)
         Me.PanelAdministracion_.Location = New System.Drawing.Point(6, 10)
         Me.PanelAdministracion_.Name = "PanelAdministracion_"
-        Me.PanelAdministracion_.Size = New System.Drawing.Size(278, 46)
+        Me.PanelAdministracion_.Size = New System.Drawing.Size(373, 46)
         Me.PanelAdministracion_.TabIndex = 90
         '
         'Nuevo_Menu_Tecnologias
         '
         Me.Nuevo_Menu_Tecnologias.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.Nuevo_Menu_Tecnologias.Image = CType(resources.GetObject("Nuevo_Menu_Tecnologias.Image"), System.Drawing.Image)
-        Me.Nuevo_Menu_Tecnologias.Location = New System.Drawing.Point(4, 3)
+        Me.Nuevo_Menu_Tecnologias.Location = New System.Drawing.Point(51, 3)
         Me.Nuevo_Menu_Tecnologias.Name = "Nuevo_Menu_Tecnologias"
         Me.Nuevo_Menu_Tecnologias.Size = New System.Drawing.Size(40, 38)
         Me.Nuevo_Menu_Tecnologias.TabIndex = 70
@@ -579,7 +580,7 @@ Partial Class FrmTecnologias
         '
         Me.Cancelar_Menu_Tecnologias.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.Cancelar_Menu_Tecnologias.Image = CType(resources.GetObject("Cancelar_Menu_Tecnologias.Image"), System.Drawing.Image)
-        Me.Cancelar_Menu_Tecnologias.Location = New System.Drawing.Point(233, 3)
+        Me.Cancelar_Menu_Tecnologias.Location = New System.Drawing.Point(280, 3)
         Me.Cancelar_Menu_Tecnologias.Name = "Cancelar_Menu_Tecnologias"
         Me.Cancelar_Menu_Tecnologias.Size = New System.Drawing.Size(40, 38)
         Me.Cancelar_Menu_Tecnologias.TabIndex = 75
@@ -590,7 +591,7 @@ Partial Class FrmTecnologias
         '
         Me.Eliminar_Menu_Tecnologias.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.Eliminar_Menu_Tecnologias.Image = CType(resources.GetObject("Eliminar_Menu_Tecnologias.Image"), System.Drawing.Image)
-        Me.Eliminar_Menu_Tecnologias.Location = New System.Drawing.Point(188, 3)
+        Me.Eliminar_Menu_Tecnologias.Location = New System.Drawing.Point(235, 3)
         Me.Eliminar_Menu_Tecnologias.Name = "Eliminar_Menu_Tecnologias"
         Me.Eliminar_Menu_Tecnologias.Size = New System.Drawing.Size(40, 38)
         Me.Eliminar_Menu_Tecnologias.TabIndex = 72
@@ -601,7 +602,7 @@ Partial Class FrmTecnologias
         '
         Me.Editar_Menu_Tecnologias.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.Editar_Menu_Tecnologias.Image = CType(resources.GetObject("Editar_Menu_Tecnologias.Image"), System.Drawing.Image)
-        Me.Editar_Menu_Tecnologias.Location = New System.Drawing.Point(96, 3)
+        Me.Editar_Menu_Tecnologias.Location = New System.Drawing.Point(143, 3)
         Me.Editar_Menu_Tecnologias.Name = "Editar_Menu_Tecnologias"
         Me.Editar_Menu_Tecnologias.Size = New System.Drawing.Size(40, 38)
         Me.Editar_Menu_Tecnologias.TabIndex = 74
@@ -612,7 +613,7 @@ Partial Class FrmTecnologias
         '
         Me.Actualizar_Menu_Tecnologias.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.Actualizar_Menu_Tecnologias.Image = CType(resources.GetObject("Actualizar_Menu_Tecnologias.Image"), System.Drawing.Image)
-        Me.Actualizar_Menu_Tecnologias.Location = New System.Drawing.Point(142, 3)
+        Me.Actualizar_Menu_Tecnologias.Location = New System.Drawing.Point(189, 3)
         Me.Actualizar_Menu_Tecnologias.Name = "Actualizar_Menu_Tecnologias"
         Me.Actualizar_Menu_Tecnologias.Size = New System.Drawing.Size(40, 38)
         Me.Actualizar_Menu_Tecnologias.TabIndex = 73
@@ -623,7 +624,7 @@ Partial Class FrmTecnologias
         '
         Me.Guardar_Menu_Tecnologias.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.Guardar_Menu_Tecnologias.Image = CType(resources.GetObject("Guardar_Menu_Tecnologias.Image"), System.Drawing.Image)
-        Me.Guardar_Menu_Tecnologias.Location = New System.Drawing.Point(50, 3)
+        Me.Guardar_Menu_Tecnologias.Location = New System.Drawing.Point(97, 3)
         Me.Guardar_Menu_Tecnologias.Name = "Guardar_Menu_Tecnologias"
         Me.Guardar_Menu_Tecnologias.Size = New System.Drawing.Size(40, 38)
         Me.Guardar_Menu_Tecnologias.TabIndex = 71
@@ -654,28 +655,28 @@ Partial Class FrmTecnologias
         Me.Panel1.Font = New System.Drawing.Font("Candara", 9.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(294, 609)
+        Me.Panel1.Size = New System.Drawing.Size(387, 609)
         Me.Panel1.TabIndex = 93
         '
         'Panel3
         '
         Me.Panel3.AutoScroll = True
+        Me.Panel3.Controls.Add(Me.SP_Plantillas_BUSQUEDA_SEGUN_PARAMETRO_TecnologiaDataGridView)
         Me.Panel3.Controls.Add(OrdenLabel)
         Me.Panel3.Controls.Add(Me.OrdenTextBox)
         Me.Panel3.Controls.Add(NombrePlantillaLabel)
         Me.Panel3.Controls.Add(Me.NombrePlantillaTextBox)
-        Me.Panel3.Controls.Add(Me.SP_Plantillas_BUSQUEDA_SEGUN_PARAMETRO_TecnologiaDataGridView)
         Me.Panel3.Controls.Add(Me.Panel4)
         Me.Panel3.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Panel3.Location = New System.Drawing.Point(0, 219)
+        Me.Panel3.Location = New System.Drawing.Point(0, 276)
         Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(292, 386)
+        Me.Panel3.Size = New System.Drawing.Size(383, 329)
         Me.Panel3.TabIndex = 94
         '
         'OrdenTextBox
         '
         Me.OrdenTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SP_Plantillas_BUSQUEDA_SEGUN_PARAMETRO_TecnologiaBindingSource, "Orden", True))
-        Me.OrdenTextBox.Location = New System.Drawing.Point(251, 69)
+        Me.OrdenTextBox.Location = New System.Drawing.Point(342, 69)
         Me.OrdenTextBox.Name = "OrdenTextBox"
         Me.OrdenTextBox.Size = New System.Drawing.Size(33, 22)
         Me.OrdenTextBox.TabIndex = 96
@@ -691,7 +692,7 @@ Partial Class FrmTecnologias
         Me.NombrePlantillaTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SP_Plantillas_BUSQUEDA_SEGUN_PARAMETRO_TecnologiaBindingSource, "NombrePlantilla", True))
         Me.NombrePlantillaTextBox.Location = New System.Drawing.Point(6, 69)
         Me.NombrePlantillaTextBox.Name = "NombrePlantillaTextBox"
-        Me.NombrePlantillaTextBox.Size = New System.Drawing.Size(239, 22)
+        Me.NombrePlantillaTextBox.Size = New System.Drawing.Size(330, 22)
         Me.NombrePlantillaTextBox.TabIndex = 95
         '
         'SP_Plantillas_BUSQUEDA_SEGUN_PARAMETRO_TecnologiaDataGridView
@@ -699,33 +700,30 @@ Partial Class FrmTecnologias
         Me.SP_Plantillas_BUSQUEDA_SEGUN_PARAMETRO_TecnologiaDataGridView.AllowUserToAddRows = False
         Me.SP_Plantillas_BUSQUEDA_SEGUN_PARAMETRO_TecnologiaDataGridView.AutoGenerateColumns = False
         Me.SP_Plantillas_BUSQUEDA_SEGUN_PARAMETRO_TecnologiaDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.SP_Plantillas_BUSQUEDA_SEGUN_PARAMETRO_TecnologiaDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn4})
+        Me.SP_Plantillas_BUSQUEDA_SEGUN_PARAMETRO_TecnologiaDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn4, Me.Orden})
         Me.SP_Plantillas_BUSQUEDA_SEGUN_PARAMETRO_TecnologiaDataGridView.DataSource = Me.SP_Plantillas_BUSQUEDA_SEGUN_PARAMETRO_TecnologiaBindingSource
-        Me.SP_Plantillas_BUSQUEDA_SEGUN_PARAMETRO_TecnologiaDataGridView.Location = New System.Drawing.Point(6, 97)
+        Me.SP_Plantillas_BUSQUEDA_SEGUN_PARAMETRO_TecnologiaDataGridView.Location = New System.Drawing.Point(6, 94)
         Me.SP_Plantillas_BUSQUEDA_SEGUN_PARAMETRO_TecnologiaDataGridView.Name = "SP_Plantillas_BUSQUEDA_SEGUN_PARAMETRO_TecnologiaDataGridView"
         Me.SP_Plantillas_BUSQUEDA_SEGUN_PARAMETRO_TecnologiaDataGridView.RowHeadersVisible = False
-        Me.SP_Plantillas_BUSQUEDA_SEGUN_PARAMETRO_TecnologiaDataGridView.Size = New System.Drawing.Size(278, 284)
+        Me.SP_Plantillas_BUSQUEDA_SEGUN_PARAMETRO_TecnologiaDataGridView.RowTemplate.Height = 27
+        Me.SP_Plantillas_BUSQUEDA_SEGUN_PARAMETRO_TecnologiaDataGridView.Size = New System.Drawing.Size(369, 225)
         Me.SP_Plantillas_BUSQUEDA_SEGUN_PARAMETRO_TecnologiaDataGridView.TabIndex = 94
-        '
-        'DataGridViewTextBoxColumn4
-        '
-        Me.DataGridViewTextBoxColumn4.DataPropertyName = "NombrePlantilla"
-        Me.DataGridViewTextBoxColumn4.HeaderText = "Nombre Plantilla"
-        Me.DataGridViewTextBoxColumn4.Name = "DataGridViewTextBoxColumn4"
-        Me.DataGridViewTextBoxColumn4.Width = 277
         '
         'Panel4
         '
         Me.Panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel4.Controls.Add(Me.ChkMover)
+        Me.Panel4.Controls.Add(Me.BtnBajarFila)
         Me.Panel4.Controls.Add(Me.Nuevo_Menu_Plantillas)
+        Me.Panel4.Controls.Add(Me.BtnSubirFila)
         Me.Panel4.Controls.Add(Me.Cancelar_Menu_Plantillas)
         Me.Panel4.Controls.Add(Me.Eliminar_Menu_Plantillas)
         Me.Panel4.Controls.Add(Me.Editar_Menu_Plantillas)
         Me.Panel4.Controls.Add(Me.Actualizar_Menu_Plantillas)
         Me.Panel4.Controls.Add(Me.Guardar_Menu_Plantillas)
-        Me.Panel4.Location = New System.Drawing.Point(6, 3)
+        Me.Panel4.Location = New System.Drawing.Point(6, 5)
         Me.Panel4.Name = "Panel4"
-        Me.Panel4.Size = New System.Drawing.Size(278, 46)
+        Me.Panel4.Size = New System.Drawing.Size(373, 44)
         Me.Panel4.TabIndex = 89
         '
         'Nuevo_Menu_Plantillas
@@ -804,7 +802,7 @@ Partial Class FrmTecnologias
         Me.Panel2.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel2.Location = New System.Drawing.Point(0, 0)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(290, 219)
+        Me.Panel2.Size = New System.Drawing.Size(383, 276)
         Me.Panel2.TabIndex = 94
         '
         'PlantillaIDTextBox
@@ -897,7 +895,7 @@ Partial Class FrmTecnologias
         Me.Panel6.Controls.Add(Me.Actualizar_Menu_Componentes)
         Me.Panel6.Controls.Add(Me.Editar_Menu_Componentes)
         Me.Panel6.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Panel6.Location = New System.Drawing.Point(294, 0)
+        Me.Panel6.Location = New System.Drawing.Point(387, 0)
         Me.Panel6.Name = "Panel6"
         Me.Panel6.Size = New System.Drawing.Size(146, 609)
         Me.Panel6.TabIndex = 96
@@ -978,6 +976,7 @@ Partial Class FrmTecnologias
         Me.SP_RequerimientosPlantillas_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView.Location = New System.Drawing.Point(6, 179)
         Me.SP_RequerimientosPlantillas_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView.Name = "SP_RequerimientosPlantillas_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView"
         Me.SP_RequerimientosPlantillas_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView.RowHeadersVisible = False
+        Me.SP_RequerimientosPlantillas_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView.RowTemplate.Height = 27
         Me.SP_RequerimientosPlantillas_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView.Size = New System.Drawing.Size(459, 391)
         Me.SP_RequerimientosPlantillas_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView.TabIndex = 107
         '
@@ -1139,7 +1138,8 @@ Partial Class FrmTecnologias
         Me.TabControl1.Controls.Add(Me.TabPage1)
         Me.TabControl1.Controls.Add(Me.TabPage2)
         Me.TabControl1.Controls.Add(Me.TabPage3)
-        Me.TabControl1.Location = New System.Drawing.Point(444, 0)
+        Me.TabControl1.Controls.Add(Me.TabPage4)
+        Me.TabControl1.Location = New System.Drawing.Point(535, 0)
         Me.TabControl1.Name = "TabControl1"
         Me.TabControl1.SelectedIndex = 0
         Me.TabControl1.Size = New System.Drawing.Size(733, 607)
@@ -1401,6 +1401,7 @@ Partial Class FrmTecnologias
         Me.SP_CARGA_CONVENSIONES_USADASDataGridView.Location = New System.Drawing.Point(471, 179)
         Me.SP_CARGA_CONVENSIONES_USADASDataGridView.Name = "SP_CARGA_CONVENSIONES_USADASDataGridView"
         Me.SP_CARGA_CONVENSIONES_USADASDataGridView.RowHeadersVisible = False
+        Me.SP_CARGA_CONVENSIONES_USADASDataGridView.RowTemplate.Height = 27
         Me.SP_CARGA_CONVENSIONES_USADASDataGridView.Size = New System.Drawing.Size(250, 391)
         Me.SP_CARGA_CONVENSIONES_USADASDataGridView.TabIndex = 110
         '
@@ -1565,6 +1566,7 @@ Partial Class FrmTecnologias
         Me.SP_CampoComponentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView.Location = New System.Drawing.Point(8, 364)
         Me.SP_CampoComponentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView.Name = "SP_CampoComponentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView"
         Me.SP_CampoComponentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView.RowHeadersVisible = False
+        Me.SP_CampoComponentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView.RowTemplate.Height = 27
         Me.SP_CampoComponentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView.Size = New System.Drawing.Size(711, 206)
         Me.SP_CampoComponentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView.TabIndex = 91
         '
@@ -1970,11 +1972,93 @@ Partial Class FrmTecnologias
         '
         Me.SP_RequerimientosPlantillas_EDICION_INSERTARTableAdapter.ClearBeforeFill = True
         '
+        'ChkMover
+        '
+        Me.ChkMover.AutoSize = True
+        Me.ChkMover.Font = New System.Drawing.Font("Candara", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ChkMover.Location = New System.Drawing.Point(279, 15)
+        Me.ChkMover.Name = "ChkMover"
+        Me.ChkMover.Size = New System.Drawing.Size(15, 14)
+        Me.ChkMover.TabIndex = 118
+        Me.ToolTip1.SetToolTip(Me.ChkMover, "Mover Posicion")
+        Me.ChkMover.UseVisualStyleBackColor = True
+        '
+        'BtnBajarFila
+        '
+        Me.BtnBajarFila.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.BtnBajarFila.Enabled = False
+        Me.BtnBajarFila.Image = CType(resources.GetObject("BtnBajarFila.Image"), System.Drawing.Image)
+        Me.BtnBajarFila.Location = New System.Drawing.Point(335, 3)
+        Me.BtnBajarFila.Name = "BtnBajarFila"
+        Me.BtnBajarFila.Size = New System.Drawing.Size(40, 38)
+        Me.BtnBajarFila.TabIndex = 121
+        Me.BtnBajarFila.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.ToolTip1.SetToolTip(Me.BtnBajarFila, "Bajar Paso")
+        Me.BtnBajarFila.UseVisualStyleBackColor = True
+        '
+        'BtnSubirFila
+        '
+        Me.BtnSubirFila.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.BtnSubirFila.Enabled = False
+        Me.BtnSubirFila.Image = CType(resources.GetObject("BtnSubirFila.Image"), System.Drawing.Image)
+        Me.BtnSubirFila.Location = New System.Drawing.Point(295, 3)
+        Me.BtnSubirFila.Name = "BtnSubirFila"
+        Me.BtnSubirFila.Size = New System.Drawing.Size(40, 38)
+        Me.BtnSubirFila.TabIndex = 122
+        Me.BtnSubirFila.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.ToolTip1.SetToolTip(Me.BtnSubirFila, "Subir Paso")
+        Me.BtnSubirFila.UseVisualStyleBackColor = True
+        '
+        'DataGridViewTextBoxColumn2
+        '
+        Me.DataGridViewTextBoxColumn2.DataPropertyName = "NombreTecnologia"
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.DataGridViewTextBoxColumn2.DefaultCellStyle = DataGridViewCellStyle1
+        Me.DataGridViewTextBoxColumn2.HeaderText = "Nombre Tecnologia"
+        Me.DataGridViewTextBoxColumn2.Name = "DataGridViewTextBoxColumn2"
+        Me.DataGridViewTextBoxColumn2.Width = 370
+        '
+        'DGVEdicionPosicion
+        '
+        Me.DGVEdicionPosicion.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DGVEdicionPosicion.Location = New System.Drawing.Point(11, 18)
+        Me.DGVEdicionPosicion.Name = "DGVEdicionPosicion"
+        Me.DGVEdicionPosicion.Size = New System.Drawing.Size(398, 416)
+        Me.DGVEdicionPosicion.TabIndex = 119
+        Me.DGVEdicionPosicion.Visible = False
+        '
+        'TabPage4
+        '
+        Me.TabPage4.Controls.Add(Me.DGVEdicionPosicion)
+        Me.TabPage4.Location = New System.Drawing.Point(4, 27)
+        Me.TabPage4.Name = "TabPage4"
+        Me.TabPage4.Padding = New System.Windows.Forms.Padding(3)
+        Me.TabPage4.Size = New System.Drawing.Size(725, 576)
+        Me.TabPage4.TabIndex = 3
+        Me.TabPage4.Text = "TabPage4"
+        Me.TabPage4.UseVisualStyleBackColor = True
+        '
+        'DataGridViewTextBoxColumn4
+        '
+        Me.DataGridViewTextBoxColumn4.DataPropertyName = "NombrePlantilla"
+        Me.DataGridViewTextBoxColumn4.HeaderText = "Nombre Plantilla"
+        Me.DataGridViewTextBoxColumn4.Name = "DataGridViewTextBoxColumn4"
+        Me.DataGridViewTextBoxColumn4.Width = 319
+        '
+        'Orden
+        '
+        Me.Orden.DataPropertyName = "Orden"
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter
+        Me.Orden.DefaultCellStyle = DataGridViewCellStyle2
+        Me.Orden.HeaderText = "#"
+        Me.Orden.Name = "Orden"
+        Me.Orden.Width = 30
+        '
         'FrmTecnologias
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 18.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1179, 609)
+        Me.ClientSize = New System.Drawing.Size(1274, 609)
         Me.Controls.Add(Me.TabControl1)
         Me.Controls.Add(XTablaLabel1)
         Me.Controls.Add(Me.XTablaTextBox)
@@ -2015,6 +2099,7 @@ Partial Class FrmTecnologias
         CType(Me.SP_Plantillas_BUSQUEDA_SEGUN_PARAMETRO_TecnologiaBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.SP_Plantillas_BUSQUEDA_SEGUN_PARAMETRO_TecnologiaDataGridView, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel4.ResumeLayout(False)
+        Me.Panel4.PerformLayout()
         Me.Panel2.ResumeLayout(False)
         Me.Panel2.PerformLayout()
         Me.Panel6.ResumeLayout(False)
@@ -2055,6 +2140,8 @@ Partial Class FrmTecnologias
         CType(Me.SP_RequerimientosPlantillas_EDICION_ACTUALIZARBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.SP_RequerimientosPlantillas_EDICION_ELIMINARBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.SP_RequerimientosPlantillas_EDICION_INSERTARBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DGVEdicionPosicion, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.TabPage4.ResumeLayout(False)
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -2081,7 +2168,6 @@ Partial Class FrmTecnologias
     Friend WithEvents SP_Tecnologias_EDICION_INSERTARBindingSource As BindingSource
     Friend WithEvents SP_Tecnologias_EDICION_INSERTARTableAdapter As DataSetAdministracionTableAdapters.SP_Tecnologias_EDICION_INSERTARTableAdapter
     Friend WithEvents ControlNulos As TextBox
-    Friend WithEvents DataGridViewTextBoxColumn2 As DataGridViewTextBoxColumn
     Friend WithEvents Panel1 As Panel
     Friend WithEvents Panel3 As Panel
     Friend WithEvents Panel4 As Panel
@@ -2096,7 +2182,6 @@ Partial Class FrmTecnologias
     Friend WithEvents SP_Plantillas_BUSQUEDA_SEGUN_PARAMETRO_TecnologiaTableAdapter As DataSetAdministracionTableAdapters.SP_Plantillas_BUSQUEDA_SEGUN_PARAMETRO_TecnologiaTableAdapter
     Friend WithEvents SP_Plantillas_BUSQUEDA_SEGUN_PARAMETRO_TecnologiaDataGridView As DataGridView
     Friend WithEvents NombrePlantillaTextBox As TextBox
-    Friend WithEvents DataGridViewTextBoxColumn4 As DataGridViewTextBoxColumn
     Friend WithEvents PlantillaIDTextBox As TextBox
     Friend WithEvents SP_Plantillas_EDICION_ACTUALIZARBindingSource As BindingSource
     Friend WithEvents SP_Plantillas_EDICION_ACTUALIZARTableAdapter As DataSetAdministracionTableAdapters.SP_Plantillas_EDICION_ACTUALIZARTableAdapter
@@ -2223,4 +2308,12 @@ Partial Class FrmTecnologias
     Friend WithEvents BtnTablaPluralMinuscula As Button
     Friend WithEvents OrdenTextBox As TextBox
     Friend WithEvents ToolTip1 As ToolTip
+    Friend WithEvents DataGridViewTextBoxColumn2 As DataGridViewTextBoxColumn
+    Friend WithEvents ChkMover As CheckBox
+    Friend WithEvents BtnBajarFila As Button
+    Friend WithEvents BtnSubirFila As Button
+    Friend WithEvents DGVEdicionPosicion As DataGridView
+    Friend WithEvents TabPage4 As TabPage
+    Friend WithEvents DataGridViewTextBoxColumn4 As DataGridViewTextBoxColumn
+    Friend WithEvents Orden As DataGridViewTextBoxColumn
 End Class
