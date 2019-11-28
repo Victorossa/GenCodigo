@@ -47,7 +47,7 @@ Partial Class FrmTecnologias
         Dim XTablaLabel As System.Windows.Forms.Label
         Dim XTablaLabel1 As System.Windows.Forms.Label
         Dim OrdenLabel As System.Windows.Forms.Label
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmTecnologias))
         Me.TecnologiasDataGridView = New System.Windows.Forms.DataGridView()
         Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -446,7 +446,7 @@ Partial Class FrmTecnologias
         '
         InferiorLabel.AutoSize = True
         InferiorLabel.Font = New System.Drawing.Font("Candara", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        InferiorLabel.Location = New System.Drawing.Point(49, 199)
+        InferiorLabel.Location = New System.Drawing.Point(44, 199)
         InferiorLabel.Name = "InferiorLabel"
         InferiorLabel.Size = New System.Drawing.Size(61, 18)
         InferiorLabel.TabIndex = 157
@@ -525,8 +525,8 @@ Partial Class FrmTecnologias
         'DataGridViewTextBoxColumn2
         '
         Me.DataGridViewTextBoxColumn2.DataPropertyName = "NombreTecnologia"
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.DataGridViewTextBoxColumn2.DefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.DataGridViewTextBoxColumn2.DefaultCellStyle = DataGridViewCellStyle1
         Me.DataGridViewTextBoxColumn2.HeaderText = "Nombre Tecnologia"
         Me.DataGridViewTextBoxColumn2.Name = "DataGridViewTextBoxColumn2"
         Me.DataGridViewTextBoxColumn2.Width = 277
@@ -1456,6 +1456,7 @@ Partial Class FrmTecnologias
         Me.MultiReplaceTextBox.Location = New System.Drawing.Point(333, 255)
         Me.MultiReplaceTextBox.Multiline = True
         Me.MultiReplaceTextBox.Name = "MultiReplaceTextBox"
+        Me.MultiReplaceTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
         Me.MultiReplaceTextBox.Size = New System.Drawing.Size(386, 101)
         Me.MultiReplaceTextBox.TabIndex = 163
         '
@@ -1479,6 +1480,7 @@ Partial Class FrmTecnologias
         Me.TxtPrevisualizar.Location = New System.Drawing.Point(333, 123)
         Me.TxtPrevisualizar.Multiline = True
         Me.TxtPrevisualizar.Name = "TxtPrevisualizar"
+        Me.TxtPrevisualizar.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
         Me.TxtPrevisualizar.Size = New System.Drawing.Size(386, 100)
         Me.TxtPrevisualizar.TabIndex = 161
         '
