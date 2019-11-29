@@ -1740,7 +1740,7 @@
             'Se ubica en la primera fila
             DGVEdicionPosicion.CurrentCell = DGVEdicionPosicion.Rows(0).Cells(0)
             Try
-                ActualizarItem(Convert.ToString(DGVEdicionPosicion.CurrentRow.Cells(2).Value), contadorInicial)
+                ActualizarItem(Convert.ToString(DGVEdicionPosicion.CurrentRow.Cells(2).Value), DGVEdicionPosicion.CurrentRow.Cells(1).Value, contadorInicial)
             Catch ex As System.Exception
                 'System.Windows.Forms.MessageBox.Show(ex.Message)
             End Try
@@ -1750,8 +1750,16 @@
         Cancelar_Plantillas()
     End Sub
 
-    Private Sub ActualizarItem(IDPlantilla As Integer, item As Integer)
+    Private Sub ActualizarItem(PlantillaID As Integer, Nombre As String, item As Integer)
         Try
+            PlantillaIDTextBox.Text = PlantillaID
+            NombrePlantillaTextBox.Text = Nombre
+            OrdenTextBox.Text = item
+            Me.SP_Plantillas_EDICION_ACTUALIZARTableAdapter.Fill(Me.DataSetAdministracion.SP_Plantillas_EDICION_ACTUALIZAR,
+                                                 New System.Nullable(Of Integer)(CType(PlantillaIDTextBox.Text, Integer)),
+                                                 New System.Nullable(Of Integer)(CType(TecnologiaIDTextBox.Text, Integer)),
+                                                 NombrePlantillaTextBox.Text,
+                                                 New System.Nullable(Of Integer)(CType(OrdenTextBox.Text, Integer)))
             'Crear un metodo que actualize solo el dato de la plantilla
             'Me.SP_T_03_01_PlantillasDeProyecto_EDICION_ACTUALIZAR_Por_ItemTableAdapter.Fill(Me.DS_Plantilla.SP_T_03_01_PlantillasDeProyecto_EDICION_ACTUALIZAR_Por_Item,
             '                                                                                New System.Nullable(Of Long)(CType(T_01_02_TiposDeProyectosIDTextBox.Text, Long)),
@@ -1770,8 +1778,9 @@
                 'Ajustado
                 'columna.MinimumWidth = Int((.Width - .RowHeadersWidth) / .ColumnCount)
                 'columna.Width = Int((.Width - .RowHeadersWidth) / .ColumnCount)
-                DGVEdicionPosicion.Columns(0).Width = 319
-                DGVEdicionPosicion.Columns(1).Width = 30
+                DGVEdicionPosicion.RowHeadersVisible = False
+                DGVEdicionPosicion.Columns(0).Width = 30
+                DGVEdicionPosicion.Columns(1).Width = 319
             Next
         End With
         DGVEdicionPosicion.AllowUserToAddRows = False
@@ -1853,6 +1862,54 @@
         Return dt
 
     End Function
+
+    Private Sub BtnSubirFila_Click(sender As Object, e As EventArgs) Handles BtnSubirFila.Click
+        Try
+            rowIndex = DGVEdicionPosicion.SelectedCells(0).OwningRow.Index
+            Dim row As DataRow
+            row = table.NewRow()
+
+            row(0) = Integer.Parse(DGVEdicionPosicion.Rows(rowIndex).Cells(0).Value.ToString())
+            row(1) = DGVEdicionPosicion.Rows(rowIndex).Cells(1).Value.ToString()
+            row(2) = Integer.Parse(DGVEdicionPosicion.Rows(rowIndex).Cells(2).Value.ToString())
+
+            'row(2) = DataGridView1.Rows(rowIndex).Cells(2).Value.ToString()
+            'row(3) = Integer.Parse(DataGridView1.Rows(rowIndex).Cells(3).Value.ToString())
+
+            If rowIndex > 0 Then
+                table.Rows.RemoveAt(rowIndex)
+
+                table.Rows.InsertAt(row, rowIndex - 1)
+                DGVEdicionPosicion.ClearSelection()
+
+                DGVEdicionPosicion.Rows(rowIndex - 1).Selected = True
+            End If
+        Catch ex As Exception
+            MessageBox.Show(ex.Message)
+        End Try
+    End Sub
+
+    Private Sub BtnBajarFila_Click(sender As Object, e As EventArgs) Handles BtnBajarFila.Click
+        Try
+            rowIndex = DGVEdicionPosicion.SelectedCells(0).OwningRow.Index
+            Dim row As DataRow
+            row = table.NewRow()
+
+            row(0) = Integer.Parse(DGVEdicionPosicion.Rows(rowIndex).Cells(0).Value.ToString())
+            row(1) = DGVEdicionPosicion.Rows(rowIndex).Cells(1).Value.ToString()
+            row(2) = Integer.Parse(DGVEdicionPosicion.Rows(rowIndex).Cells(2).Value.ToString())
+            If rowIndex < DGVEdicionPosicion.Rows.Count Then
+                table.Rows.RemoveAt(rowIndex)
+
+                table.Rows.InsertAt(row, rowIndex + 1)
+                DGVEdicionPosicion.ClearSelection()
+
+                DGVEdicionPosicion.Rows(rowIndex + 1).Selected = True
+            End If
+        Catch ex As Exception
+            MessageBox.Show(ex.Message)
+        End Try
+    End Sub
 
 
 
