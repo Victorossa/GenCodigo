@@ -1372,6 +1372,33 @@
             System.Windows.Forms.MessageBox.Show(ex.Message)
         End Try
     End Sub
+    Private Sub SP_CampoComponentes_EDICION_INSERTAR_Copia()
+        Try
+            Dim tipo As String = Cbo_TipoDato.Text
+            Dim Prefijo As String = PrefijoTextBox.Text
+            Dim Superior As String = SuperiorTextBox.Text
+            Dim Sufijo As String = SufijoTextBox.Text
+            Dim Inferior As String = InferiorTextBox.Text
+            Dim Separador As String = SeparadorCamposTextBox.Text
+            Dim Multi As String = MultiReplaceTextBox.Text
+
+            Me.SP_CampoComponentes_EDICION_INSERTARTableAdapter.Fill(Me.DataSetTablasYCampos.SP_CampoComponentes_EDICION_INSERTAR,
+                                                 New System.Nullable(Of Integer)(CType(PlantillaIDTextBox.Text, Integer)),
+                                                 tipo,
+                                                 Prefijo,
+                                                 Superior,
+                                                 Sufijo,
+                                                 Inferior,
+                                                 Separador,
+                                                 Multi)
+            SP_CampoComponentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaID()
+        Catch ex As System.Exception
+            System.Windows.Forms.MessageBox.Show(ex.Message)
+        End Try
+    End Sub
+    Private Sub CopiarRegistroToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CopiarRegistroToolStripMenuItem.Click
+        SP_CampoComponentes_EDICION_INSERTAR_Copia()
+    End Sub
     'Actualizar
     Private Sub SP_CampoComponentes_EDICION_ACTUALIZAR()
         Try
@@ -1910,6 +1937,8 @@
             MessageBox.Show(ex.Message)
         End Try
     End Sub
+
+
 
 
 
