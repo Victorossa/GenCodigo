@@ -33,19 +33,19 @@ Partial Public Class DataSetTablasYCampos
     
     Private tableSP_TablasDeProyecto_EDICION_INSERTAR As SP_TablasDeProyecto_EDICION_INSERTARDataTable
     
+    Private tableSP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1 As SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1DataTable
+    
+    Private tableSP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID2 As SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID2DataTable
+    
+    Private tableSP_RegistroValorRequerimientos_SegunProyectoRequerimiento As SP_RegistroValorRequerimientos_SegunProyectoRequerimientoDataTable
+    
+    Private tableSP_CARGA_CONVENSIONES_USADAS As SP_CARGA_CONVENSIONES_USADASDataTable
+    
     Private tableSP_RegistroValorRequerimientos_EDICION_INSERTAR As SP_RegistroValorRequerimientos_EDICION_INSERTARDataTable
     
     Private tableSP_ELIMINA_RegistroValorRequerimientos_SegunID As SP_ELIMINA_RegistroValorRequerimientos_SegunIDDataTable
     
     Private tableSP_RegistroValorRequerimientos_SEGUN_ProyectoID As SP_RegistroValorRequerimientos_SEGUN_ProyectoIDDataTable
-    
-    Private tableSP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaID As SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaIDDataTable
-    
-    Private tableSP_CamposDeTablas_EDICION_ELIMINAR As SP_CamposDeTablas_EDICION_ELIMINARDataTable
-    
-    Private tableSP_CamposDeTablas_EDICION_ACTUALIZAR As SP_CamposDeTablas_EDICION_ACTUALIZARDataTable
-    
-    Private tableSP_CamposDeTablas_EDICION_INSERTAR As SP_CamposDeTablas_EDICION_INSERTARDataTable
     
     Private tableSP_CampoComponentes_Segun_Plantilla_Tipo As SP_CampoComponentes_Segun_Plantilla_TipoDataTable
     
@@ -57,17 +57,17 @@ Partial Public Class DataSetTablasYCampos
     
     Private tableSP_CampoComponentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaID As SP_CampoComponentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataTable
     
-    Private tableSP_RegistroValorRequerimientos_SegunProyectoRequerimiento As SP_RegistroValorRequerimientos_SegunProyectoRequerimientoDataTable
+    Private tableSP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaID As SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaIDDataTable
     
-    Private tableSP_CARGA_CONVENSIONES_USADAS As SP_CARGA_CONVENSIONES_USADASDataTable
+    Private tableSP_CamposDeTablas_EDICION_ACTUALIZAR As SP_CamposDeTablas_EDICION_ACTUALIZARDataTable
     
-    Private tableSP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1 As SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1DataTable
+    Private tableSP_CamposDeTablas_EDICION_ELIMINAR As SP_CamposDeTablas_EDICION_ELIMINARDataTable
+    
+    Private tableSP_CamposDeTablas_EDICION_INSERTAR As SP_CamposDeTablas_EDICION_INSERTARDataTable
     
     Private tableSP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaID1 As SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaID1DataTable
     
     Private tableSP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaID2 As SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaID2DataTable
-    
-    Private tableSP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID2 As SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID2DataTable
     
     Private _schemaSerializationMode As Global.System.Data.SchemaSerializationMode = Global.System.Data.SchemaSerializationMode.IncludeSchema
     
@@ -110,6 +110,18 @@ Partial Public Class DataSetTablasYCampos
             If (Not (ds.Tables("SP_TablasDeProyecto_EDICION_INSERTAR")) Is Nothing) Then
                 MyBase.Tables.Add(New SP_TablasDeProyecto_EDICION_INSERTARDataTable(ds.Tables("SP_TablasDeProyecto_EDICION_INSERTAR")))
             End If
+            If (Not (ds.Tables("SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1")) Is Nothing) Then
+                MyBase.Tables.Add(New SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1DataTable(ds.Tables("SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1")))
+            End If
+            If (Not (ds.Tables("SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID2")) Is Nothing) Then
+                MyBase.Tables.Add(New SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID2DataTable(ds.Tables("SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID2")))
+            End If
+            If (Not (ds.Tables("SP_RegistroValorRequerimientos_SegunProyectoRequerimiento")) Is Nothing) Then
+                MyBase.Tables.Add(New SP_RegistroValorRequerimientos_SegunProyectoRequerimientoDataTable(ds.Tables("SP_RegistroValorRequerimientos_SegunProyectoRequerimiento")))
+            End If
+            If (Not (ds.Tables("SP_CARGA_CONVENSIONES_USADAS")) Is Nothing) Then
+                MyBase.Tables.Add(New SP_CARGA_CONVENSIONES_USADASDataTable(ds.Tables("SP_CARGA_CONVENSIONES_USADAS")))
+            End If
             If (Not (ds.Tables("SP_RegistroValorRequerimientos_EDICION_INSERTAR")) Is Nothing) Then
                 MyBase.Tables.Add(New SP_RegistroValorRequerimientos_EDICION_INSERTARDataTable(ds.Tables("SP_RegistroValorRequerimientos_EDICION_INSERTAR")))
             End If
@@ -118,18 +130,6 @@ Partial Public Class DataSetTablasYCampos
             End If
             If (Not (ds.Tables("SP_RegistroValorRequerimientos_SEGUN_ProyectoID")) Is Nothing) Then
                 MyBase.Tables.Add(New SP_RegistroValorRequerimientos_SEGUN_ProyectoIDDataTable(ds.Tables("SP_RegistroValorRequerimientos_SEGUN_ProyectoID")))
-            End If
-            If (Not (ds.Tables("SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaID")) Is Nothing) Then
-                MyBase.Tables.Add(New SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaIDDataTable(ds.Tables("SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaID")))
-            End If
-            If (Not (ds.Tables("SP_CamposDeTablas_EDICION_ELIMINAR")) Is Nothing) Then
-                MyBase.Tables.Add(New SP_CamposDeTablas_EDICION_ELIMINARDataTable(ds.Tables("SP_CamposDeTablas_EDICION_ELIMINAR")))
-            End If
-            If (Not (ds.Tables("SP_CamposDeTablas_EDICION_ACTUALIZAR")) Is Nothing) Then
-                MyBase.Tables.Add(New SP_CamposDeTablas_EDICION_ACTUALIZARDataTable(ds.Tables("SP_CamposDeTablas_EDICION_ACTUALIZAR")))
-            End If
-            If (Not (ds.Tables("SP_CamposDeTablas_EDICION_INSERTAR")) Is Nothing) Then
-                MyBase.Tables.Add(New SP_CamposDeTablas_EDICION_INSERTARDataTable(ds.Tables("SP_CamposDeTablas_EDICION_INSERTAR")))
             End If
             If (Not (ds.Tables("SP_CampoComponentes_Segun_Plantilla_Tipo")) Is Nothing) Then
                 MyBase.Tables.Add(New SP_CampoComponentes_Segun_Plantilla_TipoDataTable(ds.Tables("SP_CampoComponentes_Segun_Plantilla_Tipo")))
@@ -146,23 +146,23 @@ Partial Public Class DataSetTablasYCampos
             If (Not (ds.Tables("SP_CampoComponentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaID")) Is Nothing) Then
                 MyBase.Tables.Add(New SP_CampoComponentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataTable(ds.Tables("SP_CampoComponentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaID")))
             End If
-            If (Not (ds.Tables("SP_RegistroValorRequerimientos_SegunProyectoRequerimiento")) Is Nothing) Then
-                MyBase.Tables.Add(New SP_RegistroValorRequerimientos_SegunProyectoRequerimientoDataTable(ds.Tables("SP_RegistroValorRequerimientos_SegunProyectoRequerimiento")))
+            If (Not (ds.Tables("SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaID")) Is Nothing) Then
+                MyBase.Tables.Add(New SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaIDDataTable(ds.Tables("SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaID")))
             End If
-            If (Not (ds.Tables("SP_CARGA_CONVENSIONES_USADAS")) Is Nothing) Then
-                MyBase.Tables.Add(New SP_CARGA_CONVENSIONES_USADASDataTable(ds.Tables("SP_CARGA_CONVENSIONES_USADAS")))
+            If (Not (ds.Tables("SP_CamposDeTablas_EDICION_ACTUALIZAR")) Is Nothing) Then
+                MyBase.Tables.Add(New SP_CamposDeTablas_EDICION_ACTUALIZARDataTable(ds.Tables("SP_CamposDeTablas_EDICION_ACTUALIZAR")))
             End If
-            If (Not (ds.Tables("SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1")) Is Nothing) Then
-                MyBase.Tables.Add(New SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1DataTable(ds.Tables("SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1")))
+            If (Not (ds.Tables("SP_CamposDeTablas_EDICION_ELIMINAR")) Is Nothing) Then
+                MyBase.Tables.Add(New SP_CamposDeTablas_EDICION_ELIMINARDataTable(ds.Tables("SP_CamposDeTablas_EDICION_ELIMINAR")))
+            End If
+            If (Not (ds.Tables("SP_CamposDeTablas_EDICION_INSERTAR")) Is Nothing) Then
+                MyBase.Tables.Add(New SP_CamposDeTablas_EDICION_INSERTARDataTable(ds.Tables("SP_CamposDeTablas_EDICION_INSERTAR")))
             End If
             If (Not (ds.Tables("SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaID1")) Is Nothing) Then
                 MyBase.Tables.Add(New SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaID1DataTable(ds.Tables("SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaID1")))
             End If
             If (Not (ds.Tables("SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaID2")) Is Nothing) Then
                 MyBase.Tables.Add(New SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaID2DataTable(ds.Tables("SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaID2")))
-            End If
-            If (Not (ds.Tables("SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID2")) Is Nothing) Then
-                MyBase.Tables.Add(New SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID2DataTable(ds.Tables("SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID2")))
             End If
             Me.DataSetName = ds.DataSetName
             Me.Prefix = ds.Prefix
@@ -225,6 +225,46 @@ Partial Public Class DataSetTablasYCampos
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
      Global.System.ComponentModel.Browsable(false),  _
      Global.System.ComponentModel.DesignerSerializationVisibility(Global.System.ComponentModel.DesignerSerializationVisibility.Content)>  _
+    Public ReadOnly Property SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1() As SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1DataTable
+        Get
+            Return Me.tableSP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1
+        End Get
+    End Property
+    
+    <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
+     Global.System.ComponentModel.Browsable(false),  _
+     Global.System.ComponentModel.DesignerSerializationVisibility(Global.System.ComponentModel.DesignerSerializationVisibility.Content)>  _
+    Public ReadOnly Property SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID2() As SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID2DataTable
+        Get
+            Return Me.tableSP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID2
+        End Get
+    End Property
+    
+    <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
+     Global.System.ComponentModel.Browsable(false),  _
+     Global.System.ComponentModel.DesignerSerializationVisibility(Global.System.ComponentModel.DesignerSerializationVisibility.Content)>  _
+    Public ReadOnly Property SP_RegistroValorRequerimientos_SegunProyectoRequerimiento() As SP_RegistroValorRequerimientos_SegunProyectoRequerimientoDataTable
+        Get
+            Return Me.tableSP_RegistroValorRequerimientos_SegunProyectoRequerimiento
+        End Get
+    End Property
+    
+    <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
+     Global.System.ComponentModel.Browsable(false),  _
+     Global.System.ComponentModel.DesignerSerializationVisibility(Global.System.ComponentModel.DesignerSerializationVisibility.Content)>  _
+    Public ReadOnly Property SP_CARGA_CONVENSIONES_USADAS() As SP_CARGA_CONVENSIONES_USADASDataTable
+        Get
+            Return Me.tableSP_CARGA_CONVENSIONES_USADAS
+        End Get
+    End Property
+    
+    <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
+     Global.System.ComponentModel.Browsable(false),  _
+     Global.System.ComponentModel.DesignerSerializationVisibility(Global.System.ComponentModel.DesignerSerializationVisibility.Content)>  _
     Public ReadOnly Property SP_RegistroValorRequerimientos_EDICION_INSERTAR() As SP_RegistroValorRequerimientos_EDICION_INSERTARDataTable
         Get
             Return Me.tableSP_RegistroValorRequerimientos_EDICION_INSERTAR
@@ -248,46 +288,6 @@ Partial Public Class DataSetTablasYCampos
     Public ReadOnly Property SP_RegistroValorRequerimientos_SEGUN_ProyectoID() As SP_RegistroValorRequerimientos_SEGUN_ProyectoIDDataTable
         Get
             Return Me.tableSP_RegistroValorRequerimientos_SEGUN_ProyectoID
-        End Get
-    End Property
-    
-    <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
-     Global.System.ComponentModel.Browsable(false),  _
-     Global.System.ComponentModel.DesignerSerializationVisibility(Global.System.ComponentModel.DesignerSerializationVisibility.Content)>  _
-    Public ReadOnly Property SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaID() As SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaIDDataTable
-        Get
-            Return Me.tableSP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaID
-        End Get
-    End Property
-    
-    <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
-     Global.System.ComponentModel.Browsable(false),  _
-     Global.System.ComponentModel.DesignerSerializationVisibility(Global.System.ComponentModel.DesignerSerializationVisibility.Content)>  _
-    Public ReadOnly Property SP_CamposDeTablas_EDICION_ELIMINAR() As SP_CamposDeTablas_EDICION_ELIMINARDataTable
-        Get
-            Return Me.tableSP_CamposDeTablas_EDICION_ELIMINAR
-        End Get
-    End Property
-    
-    <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
-     Global.System.ComponentModel.Browsable(false),  _
-     Global.System.ComponentModel.DesignerSerializationVisibility(Global.System.ComponentModel.DesignerSerializationVisibility.Content)>  _
-    Public ReadOnly Property SP_CamposDeTablas_EDICION_ACTUALIZAR() As SP_CamposDeTablas_EDICION_ACTUALIZARDataTable
-        Get
-            Return Me.tableSP_CamposDeTablas_EDICION_ACTUALIZAR
-        End Get
-    End Property
-    
-    <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
-     Global.System.ComponentModel.Browsable(false),  _
-     Global.System.ComponentModel.DesignerSerializationVisibility(Global.System.ComponentModel.DesignerSerializationVisibility.Content)>  _
-    Public ReadOnly Property SP_CamposDeTablas_EDICION_INSERTAR() As SP_CamposDeTablas_EDICION_INSERTARDataTable
-        Get
-            Return Me.tableSP_CamposDeTablas_EDICION_INSERTAR
         End Get
     End Property
     
@@ -345,9 +345,9 @@ Partial Public Class DataSetTablasYCampos
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
      Global.System.ComponentModel.Browsable(false),  _
      Global.System.ComponentModel.DesignerSerializationVisibility(Global.System.ComponentModel.DesignerSerializationVisibility.Content)>  _
-    Public ReadOnly Property SP_RegistroValorRequerimientos_SegunProyectoRequerimiento() As SP_RegistroValorRequerimientos_SegunProyectoRequerimientoDataTable
+    Public ReadOnly Property SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaID() As SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaIDDataTable
         Get
-            Return Me.tableSP_RegistroValorRequerimientos_SegunProyectoRequerimiento
+            Return Me.tableSP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaID
         End Get
     End Property
     
@@ -355,9 +355,9 @@ Partial Public Class DataSetTablasYCampos
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
      Global.System.ComponentModel.Browsable(false),  _
      Global.System.ComponentModel.DesignerSerializationVisibility(Global.System.ComponentModel.DesignerSerializationVisibility.Content)>  _
-    Public ReadOnly Property SP_CARGA_CONVENSIONES_USADAS() As SP_CARGA_CONVENSIONES_USADASDataTable
+    Public ReadOnly Property SP_CamposDeTablas_EDICION_ACTUALIZAR() As SP_CamposDeTablas_EDICION_ACTUALIZARDataTable
         Get
-            Return Me.tableSP_CARGA_CONVENSIONES_USADAS
+            Return Me.tableSP_CamposDeTablas_EDICION_ACTUALIZAR
         End Get
     End Property
     
@@ -365,9 +365,19 @@ Partial Public Class DataSetTablasYCampos
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
      Global.System.ComponentModel.Browsable(false),  _
      Global.System.ComponentModel.DesignerSerializationVisibility(Global.System.ComponentModel.DesignerSerializationVisibility.Content)>  _
-    Public ReadOnly Property SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1() As SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1DataTable
+    Public ReadOnly Property SP_CamposDeTablas_EDICION_ELIMINAR() As SP_CamposDeTablas_EDICION_ELIMINARDataTable
         Get
-            Return Me.tableSP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1
+            Return Me.tableSP_CamposDeTablas_EDICION_ELIMINAR
+        End Get
+    End Property
+    
+    <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
+     Global.System.ComponentModel.Browsable(false),  _
+     Global.System.ComponentModel.DesignerSerializationVisibility(Global.System.ComponentModel.DesignerSerializationVisibility.Content)>  _
+    Public ReadOnly Property SP_CamposDeTablas_EDICION_INSERTAR() As SP_CamposDeTablas_EDICION_INSERTARDataTable
+        Get
+            Return Me.tableSP_CamposDeTablas_EDICION_INSERTAR
         End Get
     End Property
     
@@ -388,16 +398,6 @@ Partial Public Class DataSetTablasYCampos
     Public ReadOnly Property SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaID2() As SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaID2DataTable
         Get
             Return Me.tableSP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaID2
-        End Get
-    End Property
-    
-    <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
-     Global.System.ComponentModel.Browsable(false),  _
-     Global.System.ComponentModel.DesignerSerializationVisibility(Global.System.ComponentModel.DesignerSerializationVisibility.Content)>  _
-    Public ReadOnly Property SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID2() As SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID2DataTable
-        Get
-            Return Me.tableSP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID2
         End Get
     End Property
     
@@ -480,6 +480,18 @@ Partial Public Class DataSetTablasYCampos
             If (Not (ds.Tables("SP_TablasDeProyecto_EDICION_INSERTAR")) Is Nothing) Then
                 MyBase.Tables.Add(New SP_TablasDeProyecto_EDICION_INSERTARDataTable(ds.Tables("SP_TablasDeProyecto_EDICION_INSERTAR")))
             End If
+            If (Not (ds.Tables("SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1")) Is Nothing) Then
+                MyBase.Tables.Add(New SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1DataTable(ds.Tables("SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1")))
+            End If
+            If (Not (ds.Tables("SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID2")) Is Nothing) Then
+                MyBase.Tables.Add(New SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID2DataTable(ds.Tables("SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID2")))
+            End If
+            If (Not (ds.Tables("SP_RegistroValorRequerimientos_SegunProyectoRequerimiento")) Is Nothing) Then
+                MyBase.Tables.Add(New SP_RegistroValorRequerimientos_SegunProyectoRequerimientoDataTable(ds.Tables("SP_RegistroValorRequerimientos_SegunProyectoRequerimiento")))
+            End If
+            If (Not (ds.Tables("SP_CARGA_CONVENSIONES_USADAS")) Is Nothing) Then
+                MyBase.Tables.Add(New SP_CARGA_CONVENSIONES_USADASDataTable(ds.Tables("SP_CARGA_CONVENSIONES_USADAS")))
+            End If
             If (Not (ds.Tables("SP_RegistroValorRequerimientos_EDICION_INSERTAR")) Is Nothing) Then
                 MyBase.Tables.Add(New SP_RegistroValorRequerimientos_EDICION_INSERTARDataTable(ds.Tables("SP_RegistroValorRequerimientos_EDICION_INSERTAR")))
             End If
@@ -488,18 +500,6 @@ Partial Public Class DataSetTablasYCampos
             End If
             If (Not (ds.Tables("SP_RegistroValorRequerimientos_SEGUN_ProyectoID")) Is Nothing) Then
                 MyBase.Tables.Add(New SP_RegistroValorRequerimientos_SEGUN_ProyectoIDDataTable(ds.Tables("SP_RegistroValorRequerimientos_SEGUN_ProyectoID")))
-            End If
-            If (Not (ds.Tables("SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaID")) Is Nothing) Then
-                MyBase.Tables.Add(New SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaIDDataTable(ds.Tables("SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaID")))
-            End If
-            If (Not (ds.Tables("SP_CamposDeTablas_EDICION_ELIMINAR")) Is Nothing) Then
-                MyBase.Tables.Add(New SP_CamposDeTablas_EDICION_ELIMINARDataTable(ds.Tables("SP_CamposDeTablas_EDICION_ELIMINAR")))
-            End If
-            If (Not (ds.Tables("SP_CamposDeTablas_EDICION_ACTUALIZAR")) Is Nothing) Then
-                MyBase.Tables.Add(New SP_CamposDeTablas_EDICION_ACTUALIZARDataTable(ds.Tables("SP_CamposDeTablas_EDICION_ACTUALIZAR")))
-            End If
-            If (Not (ds.Tables("SP_CamposDeTablas_EDICION_INSERTAR")) Is Nothing) Then
-                MyBase.Tables.Add(New SP_CamposDeTablas_EDICION_INSERTARDataTable(ds.Tables("SP_CamposDeTablas_EDICION_INSERTAR")))
             End If
             If (Not (ds.Tables("SP_CampoComponentes_Segun_Plantilla_Tipo")) Is Nothing) Then
                 MyBase.Tables.Add(New SP_CampoComponentes_Segun_Plantilla_TipoDataTable(ds.Tables("SP_CampoComponentes_Segun_Plantilla_Tipo")))
@@ -516,23 +516,23 @@ Partial Public Class DataSetTablasYCampos
             If (Not (ds.Tables("SP_CampoComponentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaID")) Is Nothing) Then
                 MyBase.Tables.Add(New SP_CampoComponentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataTable(ds.Tables("SP_CampoComponentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaID")))
             End If
-            If (Not (ds.Tables("SP_RegistroValorRequerimientos_SegunProyectoRequerimiento")) Is Nothing) Then
-                MyBase.Tables.Add(New SP_RegistroValorRequerimientos_SegunProyectoRequerimientoDataTable(ds.Tables("SP_RegistroValorRequerimientos_SegunProyectoRequerimiento")))
+            If (Not (ds.Tables("SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaID")) Is Nothing) Then
+                MyBase.Tables.Add(New SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaIDDataTable(ds.Tables("SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaID")))
             End If
-            If (Not (ds.Tables("SP_CARGA_CONVENSIONES_USADAS")) Is Nothing) Then
-                MyBase.Tables.Add(New SP_CARGA_CONVENSIONES_USADASDataTable(ds.Tables("SP_CARGA_CONVENSIONES_USADAS")))
+            If (Not (ds.Tables("SP_CamposDeTablas_EDICION_ACTUALIZAR")) Is Nothing) Then
+                MyBase.Tables.Add(New SP_CamposDeTablas_EDICION_ACTUALIZARDataTable(ds.Tables("SP_CamposDeTablas_EDICION_ACTUALIZAR")))
             End If
-            If (Not (ds.Tables("SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1")) Is Nothing) Then
-                MyBase.Tables.Add(New SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1DataTable(ds.Tables("SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1")))
+            If (Not (ds.Tables("SP_CamposDeTablas_EDICION_ELIMINAR")) Is Nothing) Then
+                MyBase.Tables.Add(New SP_CamposDeTablas_EDICION_ELIMINARDataTable(ds.Tables("SP_CamposDeTablas_EDICION_ELIMINAR")))
+            End If
+            If (Not (ds.Tables("SP_CamposDeTablas_EDICION_INSERTAR")) Is Nothing) Then
+                MyBase.Tables.Add(New SP_CamposDeTablas_EDICION_INSERTARDataTable(ds.Tables("SP_CamposDeTablas_EDICION_INSERTAR")))
             End If
             If (Not (ds.Tables("SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaID1")) Is Nothing) Then
                 MyBase.Tables.Add(New SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaID1DataTable(ds.Tables("SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaID1")))
             End If
             If (Not (ds.Tables("SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaID2")) Is Nothing) Then
                 MyBase.Tables.Add(New SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaID2DataTable(ds.Tables("SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaID2")))
-            End If
-            If (Not (ds.Tables("SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID2")) Is Nothing) Then
-                MyBase.Tables.Add(New SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID2DataTable(ds.Tables("SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID2")))
             End If
             Me.DataSetName = ds.DataSetName
             Me.Prefix = ds.Prefix
@@ -590,6 +590,30 @@ Partial Public Class DataSetTablasYCampos
                 Me.tableSP_TablasDeProyecto_EDICION_INSERTAR.InitVars
             End If
         End If
+        Me.tableSP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1 = CType(MyBase.Tables("SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1"),SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1DataTable)
+        If (initTable = true) Then
+            If (Not (Me.tableSP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1) Is Nothing) Then
+                Me.tableSP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1.InitVars
+            End If
+        End If
+        Me.tableSP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID2 = CType(MyBase.Tables("SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID2"),SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID2DataTable)
+        If (initTable = true) Then
+            If (Not (Me.tableSP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID2) Is Nothing) Then
+                Me.tableSP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID2.InitVars
+            End If
+        End If
+        Me.tableSP_RegistroValorRequerimientos_SegunProyectoRequerimiento = CType(MyBase.Tables("SP_RegistroValorRequerimientos_SegunProyectoRequerimiento"),SP_RegistroValorRequerimientos_SegunProyectoRequerimientoDataTable)
+        If (initTable = true) Then
+            If (Not (Me.tableSP_RegistroValorRequerimientos_SegunProyectoRequerimiento) Is Nothing) Then
+                Me.tableSP_RegistroValorRequerimientos_SegunProyectoRequerimiento.InitVars
+            End If
+        End If
+        Me.tableSP_CARGA_CONVENSIONES_USADAS = CType(MyBase.Tables("SP_CARGA_CONVENSIONES_USADAS"),SP_CARGA_CONVENSIONES_USADASDataTable)
+        If (initTable = true) Then
+            If (Not (Me.tableSP_CARGA_CONVENSIONES_USADAS) Is Nothing) Then
+                Me.tableSP_CARGA_CONVENSIONES_USADAS.InitVars
+            End If
+        End If
         Me.tableSP_RegistroValorRequerimientos_EDICION_INSERTAR = CType(MyBase.Tables("SP_RegistroValorRequerimientos_EDICION_INSERTAR"),SP_RegistroValorRequerimientos_EDICION_INSERTARDataTable)
         If (initTable = true) Then
             If (Not (Me.tableSP_RegistroValorRequerimientos_EDICION_INSERTAR) Is Nothing) Then
@@ -606,30 +630,6 @@ Partial Public Class DataSetTablasYCampos
         If (initTable = true) Then
             If (Not (Me.tableSP_RegistroValorRequerimientos_SEGUN_ProyectoID) Is Nothing) Then
                 Me.tableSP_RegistroValorRequerimientos_SEGUN_ProyectoID.InitVars
-            End If
-        End If
-        Me.tableSP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaID = CType(MyBase.Tables("SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaID"),SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaIDDataTable)
-        If (initTable = true) Then
-            If (Not (Me.tableSP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaID) Is Nothing) Then
-                Me.tableSP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaID.InitVars
-            End If
-        End If
-        Me.tableSP_CamposDeTablas_EDICION_ELIMINAR = CType(MyBase.Tables("SP_CamposDeTablas_EDICION_ELIMINAR"),SP_CamposDeTablas_EDICION_ELIMINARDataTable)
-        If (initTable = true) Then
-            If (Not (Me.tableSP_CamposDeTablas_EDICION_ELIMINAR) Is Nothing) Then
-                Me.tableSP_CamposDeTablas_EDICION_ELIMINAR.InitVars
-            End If
-        End If
-        Me.tableSP_CamposDeTablas_EDICION_ACTUALIZAR = CType(MyBase.Tables("SP_CamposDeTablas_EDICION_ACTUALIZAR"),SP_CamposDeTablas_EDICION_ACTUALIZARDataTable)
-        If (initTable = true) Then
-            If (Not (Me.tableSP_CamposDeTablas_EDICION_ACTUALIZAR) Is Nothing) Then
-                Me.tableSP_CamposDeTablas_EDICION_ACTUALIZAR.InitVars
-            End If
-        End If
-        Me.tableSP_CamposDeTablas_EDICION_INSERTAR = CType(MyBase.Tables("SP_CamposDeTablas_EDICION_INSERTAR"),SP_CamposDeTablas_EDICION_INSERTARDataTable)
-        If (initTable = true) Then
-            If (Not (Me.tableSP_CamposDeTablas_EDICION_INSERTAR) Is Nothing) Then
-                Me.tableSP_CamposDeTablas_EDICION_INSERTAR.InitVars
             End If
         End If
         Me.tableSP_CampoComponentes_Segun_Plantilla_Tipo = CType(MyBase.Tables("SP_CampoComponentes_Segun_Plantilla_Tipo"),SP_CampoComponentes_Segun_Plantilla_TipoDataTable)
@@ -662,22 +662,28 @@ Partial Public Class DataSetTablasYCampos
                 Me.tableSP_CampoComponentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaID.InitVars
             End If
         End If
-        Me.tableSP_RegistroValorRequerimientos_SegunProyectoRequerimiento = CType(MyBase.Tables("SP_RegistroValorRequerimientos_SegunProyectoRequerimiento"),SP_RegistroValorRequerimientos_SegunProyectoRequerimientoDataTable)
+        Me.tableSP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaID = CType(MyBase.Tables("SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaID"),SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaIDDataTable)
         If (initTable = true) Then
-            If (Not (Me.tableSP_RegistroValorRequerimientos_SegunProyectoRequerimiento) Is Nothing) Then
-                Me.tableSP_RegistroValorRequerimientos_SegunProyectoRequerimiento.InitVars
+            If (Not (Me.tableSP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaID) Is Nothing) Then
+                Me.tableSP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaID.InitVars
             End If
         End If
-        Me.tableSP_CARGA_CONVENSIONES_USADAS = CType(MyBase.Tables("SP_CARGA_CONVENSIONES_USADAS"),SP_CARGA_CONVENSIONES_USADASDataTable)
+        Me.tableSP_CamposDeTablas_EDICION_ACTUALIZAR = CType(MyBase.Tables("SP_CamposDeTablas_EDICION_ACTUALIZAR"),SP_CamposDeTablas_EDICION_ACTUALIZARDataTable)
         If (initTable = true) Then
-            If (Not (Me.tableSP_CARGA_CONVENSIONES_USADAS) Is Nothing) Then
-                Me.tableSP_CARGA_CONVENSIONES_USADAS.InitVars
+            If (Not (Me.tableSP_CamposDeTablas_EDICION_ACTUALIZAR) Is Nothing) Then
+                Me.tableSP_CamposDeTablas_EDICION_ACTUALIZAR.InitVars
             End If
         End If
-        Me.tableSP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1 = CType(MyBase.Tables("SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1"),SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1DataTable)
+        Me.tableSP_CamposDeTablas_EDICION_ELIMINAR = CType(MyBase.Tables("SP_CamposDeTablas_EDICION_ELIMINAR"),SP_CamposDeTablas_EDICION_ELIMINARDataTable)
         If (initTable = true) Then
-            If (Not (Me.tableSP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1) Is Nothing) Then
-                Me.tableSP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1.InitVars
+            If (Not (Me.tableSP_CamposDeTablas_EDICION_ELIMINAR) Is Nothing) Then
+                Me.tableSP_CamposDeTablas_EDICION_ELIMINAR.InitVars
+            End If
+        End If
+        Me.tableSP_CamposDeTablas_EDICION_INSERTAR = CType(MyBase.Tables("SP_CamposDeTablas_EDICION_INSERTAR"),SP_CamposDeTablas_EDICION_INSERTARDataTable)
+        If (initTable = true) Then
+            If (Not (Me.tableSP_CamposDeTablas_EDICION_INSERTAR) Is Nothing) Then
+                Me.tableSP_CamposDeTablas_EDICION_INSERTAR.InitVars
             End If
         End If
         Me.tableSP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaID1 = CType(MyBase.Tables("SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaID1"),SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaID1DataTable)
@@ -690,12 +696,6 @@ Partial Public Class DataSetTablasYCampos
         If (initTable = true) Then
             If (Not (Me.tableSP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaID2) Is Nothing) Then
                 Me.tableSP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaID2.InitVars
-            End If
-        End If
-        Me.tableSP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID2 = CType(MyBase.Tables("SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID2"),SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID2DataTable)
-        If (initTable = true) Then
-            If (Not (Me.tableSP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID2) Is Nothing) Then
-                Me.tableSP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID2.InitVars
             End If
         End If
     End Sub
@@ -716,20 +716,20 @@ Partial Public Class DataSetTablasYCampos
         MyBase.Tables.Add(Me.tableSP_TablasDeProyecto_EDICION_ELIMINAR)
         Me.tableSP_TablasDeProyecto_EDICION_INSERTAR = New SP_TablasDeProyecto_EDICION_INSERTARDataTable()
         MyBase.Tables.Add(Me.tableSP_TablasDeProyecto_EDICION_INSERTAR)
+        Me.tableSP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1 = New SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1DataTable()
+        MyBase.Tables.Add(Me.tableSP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1)
+        Me.tableSP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID2 = New SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID2DataTable()
+        MyBase.Tables.Add(Me.tableSP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID2)
+        Me.tableSP_RegistroValorRequerimientos_SegunProyectoRequerimiento = New SP_RegistroValorRequerimientos_SegunProyectoRequerimientoDataTable()
+        MyBase.Tables.Add(Me.tableSP_RegistroValorRequerimientos_SegunProyectoRequerimiento)
+        Me.tableSP_CARGA_CONVENSIONES_USADAS = New SP_CARGA_CONVENSIONES_USADASDataTable()
+        MyBase.Tables.Add(Me.tableSP_CARGA_CONVENSIONES_USADAS)
         Me.tableSP_RegistroValorRequerimientos_EDICION_INSERTAR = New SP_RegistroValorRequerimientos_EDICION_INSERTARDataTable()
         MyBase.Tables.Add(Me.tableSP_RegistroValorRequerimientos_EDICION_INSERTAR)
         Me.tableSP_ELIMINA_RegistroValorRequerimientos_SegunID = New SP_ELIMINA_RegistroValorRequerimientos_SegunIDDataTable()
         MyBase.Tables.Add(Me.tableSP_ELIMINA_RegistroValorRequerimientos_SegunID)
         Me.tableSP_RegistroValorRequerimientos_SEGUN_ProyectoID = New SP_RegistroValorRequerimientos_SEGUN_ProyectoIDDataTable()
         MyBase.Tables.Add(Me.tableSP_RegistroValorRequerimientos_SEGUN_ProyectoID)
-        Me.tableSP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaID = New SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaIDDataTable()
-        MyBase.Tables.Add(Me.tableSP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaID)
-        Me.tableSP_CamposDeTablas_EDICION_ELIMINAR = New SP_CamposDeTablas_EDICION_ELIMINARDataTable()
-        MyBase.Tables.Add(Me.tableSP_CamposDeTablas_EDICION_ELIMINAR)
-        Me.tableSP_CamposDeTablas_EDICION_ACTUALIZAR = New SP_CamposDeTablas_EDICION_ACTUALIZARDataTable()
-        MyBase.Tables.Add(Me.tableSP_CamposDeTablas_EDICION_ACTUALIZAR)
-        Me.tableSP_CamposDeTablas_EDICION_INSERTAR = New SP_CamposDeTablas_EDICION_INSERTARDataTable()
-        MyBase.Tables.Add(Me.tableSP_CamposDeTablas_EDICION_INSERTAR)
         Me.tableSP_CampoComponentes_Segun_Plantilla_Tipo = New SP_CampoComponentes_Segun_Plantilla_TipoDataTable()
         MyBase.Tables.Add(Me.tableSP_CampoComponentes_Segun_Plantilla_Tipo)
         Me.tableSP_CampoComponentes_EDICION_ACTUALIZAR = New SP_CampoComponentes_EDICION_ACTUALIZARDataTable()
@@ -740,18 +740,18 @@ Partial Public Class DataSetTablasYCampos
         MyBase.Tables.Add(Me.tableSP_CampoComponentes_EDICION_INSERTAR)
         Me.tableSP_CampoComponentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaID = New SP_CampoComponentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataTable()
         MyBase.Tables.Add(Me.tableSP_CampoComponentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaID)
-        Me.tableSP_RegistroValorRequerimientos_SegunProyectoRequerimiento = New SP_RegistroValorRequerimientos_SegunProyectoRequerimientoDataTable()
-        MyBase.Tables.Add(Me.tableSP_RegistroValorRequerimientos_SegunProyectoRequerimiento)
-        Me.tableSP_CARGA_CONVENSIONES_USADAS = New SP_CARGA_CONVENSIONES_USADASDataTable()
-        MyBase.Tables.Add(Me.tableSP_CARGA_CONVENSIONES_USADAS)
-        Me.tableSP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1 = New SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1DataTable()
-        MyBase.Tables.Add(Me.tableSP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1)
+        Me.tableSP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaID = New SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaIDDataTable()
+        MyBase.Tables.Add(Me.tableSP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaID)
+        Me.tableSP_CamposDeTablas_EDICION_ACTUALIZAR = New SP_CamposDeTablas_EDICION_ACTUALIZARDataTable()
+        MyBase.Tables.Add(Me.tableSP_CamposDeTablas_EDICION_ACTUALIZAR)
+        Me.tableSP_CamposDeTablas_EDICION_ELIMINAR = New SP_CamposDeTablas_EDICION_ELIMINARDataTable()
+        MyBase.Tables.Add(Me.tableSP_CamposDeTablas_EDICION_ELIMINAR)
+        Me.tableSP_CamposDeTablas_EDICION_INSERTAR = New SP_CamposDeTablas_EDICION_INSERTARDataTable()
+        MyBase.Tables.Add(Me.tableSP_CamposDeTablas_EDICION_INSERTAR)
         Me.tableSP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaID1 = New SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaID1DataTable()
         MyBase.Tables.Add(Me.tableSP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaID1)
         Me.tableSP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaID2 = New SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaID2DataTable()
         MyBase.Tables.Add(Me.tableSP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaID2)
-        Me.tableSP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID2 = New SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID2DataTable()
-        MyBase.Tables.Add(Me.tableSP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID2)
     End Sub
     
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -780,6 +780,30 @@ Partial Public Class DataSetTablasYCampos
     
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+    Private Function ShouldSerializeSP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1() As Boolean
+        Return false
+    End Function
+    
+    <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+    Private Function ShouldSerializeSP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID2() As Boolean
+        Return false
+    End Function
+    
+    <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+    Private Function ShouldSerializeSP_RegistroValorRequerimientos_SegunProyectoRequerimiento() As Boolean
+        Return false
+    End Function
+    
+    <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+    Private Function ShouldSerializeSP_CARGA_CONVENSIONES_USADAS() As Boolean
+        Return false
+    End Function
+    
+    <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
     Private Function ShouldSerializeSP_RegistroValorRequerimientos_EDICION_INSERTAR() As Boolean
         Return false
     End Function
@@ -793,30 +817,6 @@ Partial Public Class DataSetTablasYCampos
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
     Private Function ShouldSerializeSP_RegistroValorRequerimientos_SEGUN_ProyectoID() As Boolean
-        Return false
-    End Function
-    
-    <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-    Private Function ShouldSerializeSP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaID() As Boolean
-        Return false
-    End Function
-    
-    <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-    Private Function ShouldSerializeSP_CamposDeTablas_EDICION_ELIMINAR() As Boolean
-        Return false
-    End Function
-    
-    <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-    Private Function ShouldSerializeSP_CamposDeTablas_EDICION_ACTUALIZAR() As Boolean
-        Return false
-    End Function
-    
-    <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-    Private Function ShouldSerializeSP_CamposDeTablas_EDICION_INSERTAR() As Boolean
         Return false
     End Function
     
@@ -852,19 +852,25 @@ Partial Public Class DataSetTablasYCampos
     
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-    Private Function ShouldSerializeSP_RegistroValorRequerimientos_SegunProyectoRequerimiento() As Boolean
+    Private Function ShouldSerializeSP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaID() As Boolean
         Return false
     End Function
     
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-    Private Function ShouldSerializeSP_CARGA_CONVENSIONES_USADAS() As Boolean
+    Private Function ShouldSerializeSP_CamposDeTablas_EDICION_ACTUALIZAR() As Boolean
         Return false
     End Function
     
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-    Private Function ShouldSerializeSP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1() As Boolean
+    Private Function ShouldSerializeSP_CamposDeTablas_EDICION_ELIMINAR() As Boolean
+        Return false
+    End Function
+    
+    <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+    Private Function ShouldSerializeSP_CamposDeTablas_EDICION_INSERTAR() As Boolean
         Return false
     End Function
     
@@ -877,12 +883,6 @@ Partial Public Class DataSetTablasYCampos
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
     Private Function ShouldSerializeSP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaID2() As Boolean
-        Return false
-    End Function
-    
-    <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-    Private Function ShouldSerializeSP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID2() As Boolean
         Return false
     End Function
     
@@ -957,6 +957,18 @@ Partial Public Class DataSetTablasYCampos
     Public Delegate Sub SP_TablasDeProyecto_EDICION_INSERTARRowChangeEventHandler(ByVal sender As Object, ByVal e As SP_TablasDeProyecto_EDICION_INSERTARRowChangeEvent)
     
     <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+    Public Delegate Sub SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1RowChangeEventHandler(ByVal sender As Object, ByVal e As SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1RowChangeEvent)
+    
+    <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+    Public Delegate Sub SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID2RowChangeEventHandler(ByVal sender As Object, ByVal e As SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID2RowChangeEvent)
+    
+    <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+    Public Delegate Sub SP_RegistroValorRequerimientos_SegunProyectoRequerimientoRowChangeEventHandler(ByVal sender As Object, ByVal e As SP_RegistroValorRequerimientos_SegunProyectoRequerimientoRowChangeEvent)
+    
+    <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+    Public Delegate Sub SP_CARGA_CONVENSIONES_USADASRowChangeEventHandler(ByVal sender As Object, ByVal e As SP_CARGA_CONVENSIONES_USADASRowChangeEvent)
+    
+    <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
     Public Delegate Sub SP_RegistroValorRequerimientos_EDICION_INSERTARRowChangeEventHandler(ByVal sender As Object, ByVal e As SP_RegistroValorRequerimientos_EDICION_INSERTARRowChangeEvent)
     
     <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
@@ -964,18 +976,6 @@ Partial Public Class DataSetTablasYCampos
     
     <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
     Public Delegate Sub SP_RegistroValorRequerimientos_SEGUN_ProyectoIDRowChangeEventHandler(ByVal sender As Object, ByVal e As SP_RegistroValorRequerimientos_SEGUN_ProyectoIDRowChangeEvent)
-    
-    <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-    Public Delegate Sub SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaIDRowChangeEventHandler(ByVal sender As Object, ByVal e As SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaIDRowChangeEvent)
-    
-    <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-    Public Delegate Sub SP_CamposDeTablas_EDICION_ELIMINARRowChangeEventHandler(ByVal sender As Object, ByVal e As SP_CamposDeTablas_EDICION_ELIMINARRowChangeEvent)
-    
-    <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-    Public Delegate Sub SP_CamposDeTablas_EDICION_ACTUALIZARRowChangeEventHandler(ByVal sender As Object, ByVal e As SP_CamposDeTablas_EDICION_ACTUALIZARRowChangeEvent)
-    
-    <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-    Public Delegate Sub SP_CamposDeTablas_EDICION_INSERTARRowChangeEventHandler(ByVal sender As Object, ByVal e As SP_CamposDeTablas_EDICION_INSERTARRowChangeEvent)
     
     <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
     Public Delegate Sub SP_CampoComponentes_Segun_Plantilla_TipoRowChangeEventHandler(ByVal sender As Object, ByVal e As SP_CampoComponentes_Segun_Plantilla_TipoRowChangeEvent)
@@ -993,22 +993,22 @@ Partial Public Class DataSetTablasYCampos
     Public Delegate Sub SP_CampoComponentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDRowChangeEventHandler(ByVal sender As Object, ByVal e As SP_CampoComponentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDRowChangeEvent)
     
     <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-    Public Delegate Sub SP_RegistroValorRequerimientos_SegunProyectoRequerimientoRowChangeEventHandler(ByVal sender As Object, ByVal e As SP_RegistroValorRequerimientos_SegunProyectoRequerimientoRowChangeEvent)
+    Public Delegate Sub SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaIDRowChangeEventHandler(ByVal sender As Object, ByVal e As SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaIDRowChangeEvent)
     
     <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-    Public Delegate Sub SP_CARGA_CONVENSIONES_USADASRowChangeEventHandler(ByVal sender As Object, ByVal e As SP_CARGA_CONVENSIONES_USADASRowChangeEvent)
+    Public Delegate Sub SP_CamposDeTablas_EDICION_ACTUALIZARRowChangeEventHandler(ByVal sender As Object, ByVal e As SP_CamposDeTablas_EDICION_ACTUALIZARRowChangeEvent)
     
     <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-    Public Delegate Sub SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1RowChangeEventHandler(ByVal sender As Object, ByVal e As SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1RowChangeEvent)
+    Public Delegate Sub SP_CamposDeTablas_EDICION_ELIMINARRowChangeEventHandler(ByVal sender As Object, ByVal e As SP_CamposDeTablas_EDICION_ELIMINARRowChangeEvent)
+    
+    <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+    Public Delegate Sub SP_CamposDeTablas_EDICION_INSERTARRowChangeEventHandler(ByVal sender As Object, ByVal e As SP_CamposDeTablas_EDICION_INSERTARRowChangeEvent)
     
     <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
     Public Delegate Sub SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaID1RowChangeEventHandler(ByVal sender As Object, ByVal e As SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaID1RowChangeEvent)
     
     <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
     Public Delegate Sub SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaID2RowChangeEventHandler(ByVal sender As Object, ByVal e As SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaID2RowChangeEvent)
-    
-    <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-    Public Delegate Sub SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID2RowChangeEventHandler(ByVal sender As Object, ByVal e As SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID2RowChangeEvent)
     
     '''<summary>
     '''Represents the strongly named DataTable class.
@@ -2026,6 +2026,1157 @@ Partial Public Class DataSetTablasYCampos
     '''</summary>
     <Global.System.Serializable(),  _
      Global.System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")>  _
+    Partial Public Class SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1DataTable
+        Inherits Global.System.Data.TypedTableBase(Of SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1Row)
+        
+        Private columnTablaID As Global.System.Data.DataColumn
+        
+        Private columnProyectoID As Global.System.Data.DataColumn
+        
+        Private columnNombreTabla As Global.System.Data.DataColumn
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Sub New()
+            MyBase.New
+            Me.TableName = "SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1"
+            Me.BeginInit
+            Me.InitClass
+            Me.EndInit
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Friend Sub New(ByVal table As Global.System.Data.DataTable)
+            MyBase.New
+            Me.TableName = table.TableName
+            If (table.CaseSensitive <> table.DataSet.CaseSensitive) Then
+                Me.CaseSensitive = table.CaseSensitive
+            End If
+            If (table.Locale.ToString <> table.DataSet.Locale.ToString) Then
+                Me.Locale = table.Locale
+            End If
+            If (table.Namespace <> table.DataSet.Namespace) Then
+                Me.Namespace = table.Namespace
+            End If
+            Me.Prefix = table.Prefix
+            Me.MinimumCapacity = table.MinimumCapacity
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Protected Sub New(ByVal info As Global.System.Runtime.Serialization.SerializationInfo, ByVal context As Global.System.Runtime.Serialization.StreamingContext)
+            MyBase.New(info, context)
+            Me.InitVars
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public ReadOnly Property TablaIDColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnTablaID
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public ReadOnly Property ProyectoIDColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnProyectoID
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public ReadOnly Property NombreTablaColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnNombreTabla
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
+         Global.System.ComponentModel.Browsable(false)>  _
+        Public ReadOnly Property Count() As Integer
+            Get
+                Return Me.Rows.Count
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Default ReadOnly Property Item(ByVal index As Integer) As SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1Row
+            Get
+                Return CType(Me.Rows(index),SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1Row)
+            End Get
+        End Property
+        
+        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Event SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1RowChanging As SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1RowChangeEventHandler
+        
+        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Event SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1RowChanged As SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1RowChangeEventHandler
+        
+        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Event SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1RowDeleting As SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1RowChangeEventHandler
+        
+        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Event SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1RowDeleted As SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1RowChangeEventHandler
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Overloads Sub AddSP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1Row(ByVal row As SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1Row)
+            Me.Rows.Add(row)
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Overloads Function AddSP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1Row(ByVal ProyectoID As Integer, ByVal NombreTabla As String) As SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1Row
+            Dim rowSP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1Row As SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1Row = CType(Me.NewRow,SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1Row)
+            Dim columnValuesArray() As Object = New Object() {Nothing, ProyectoID, NombreTabla}
+            rowSP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1Row.ItemArray = columnValuesArray
+            Me.Rows.Add(rowSP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1Row)
+            Return rowSP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1Row
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Function FindByTablaID(ByVal TablaID As Integer) As SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1Row
+            Return CType(Me.Rows.Find(New Object() {TablaID}),SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1Row)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Overrides Function Clone() As Global.System.Data.DataTable
+            Dim cln As SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1DataTable = CType(MyBase.Clone,SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1DataTable)
+            cln.InitVars
+            Return cln
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Protected Overrides Function CreateInstance() As Global.System.Data.DataTable
+            Return New SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1DataTable()
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Friend Sub InitVars()
+            Me.columnTablaID = MyBase.Columns("TablaID")
+            Me.columnProyectoID = MyBase.Columns("ProyectoID")
+            Me.columnNombreTabla = MyBase.Columns("NombreTabla")
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Private Sub InitClass()
+            Me.columnTablaID = New Global.System.Data.DataColumn("TablaID", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnTablaID)
+            Me.columnProyectoID = New Global.System.Data.DataColumn("ProyectoID", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnProyectoID)
+            Me.columnNombreTabla = New Global.System.Data.DataColumn("NombreTabla", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnNombreTabla)
+            Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnTablaID}, true))
+            Me.columnTablaID.AutoIncrement = true
+            Me.columnTablaID.AutoIncrementSeed = -1
+            Me.columnTablaID.AutoIncrementStep = -1
+            Me.columnTablaID.AllowDBNull = false
+            Me.columnTablaID.ReadOnly = true
+            Me.columnTablaID.Unique = true
+            Me.columnProyectoID.AllowDBNull = false
+            Me.columnNombreTabla.AllowDBNull = false
+            Me.columnNombreTabla.MaxLength = 200
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Function NewSP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1Row() As SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1Row
+            Return CType(Me.NewRow,SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1Row)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Protected Overrides Function NewRowFromBuilder(ByVal builder As Global.System.Data.DataRowBuilder) As Global.System.Data.DataRow
+            Return New SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1Row(builder)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Protected Overrides Function GetRowType() As Global.System.Type
+            Return GetType(SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1Row)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Protected Overrides Sub OnRowChanged(ByVal e As Global.System.Data.DataRowChangeEventArgs)
+            MyBase.OnRowChanged(e)
+            If (Not (Me.SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1RowChangedEvent) Is Nothing) Then
+                RaiseEvent SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1RowChanged(Me, New SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1RowChangeEvent(CType(e.Row,SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1Row), e.Action))
+            End If
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Protected Overrides Sub OnRowChanging(ByVal e As Global.System.Data.DataRowChangeEventArgs)
+            MyBase.OnRowChanging(e)
+            If (Not (Me.SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1RowChangingEvent) Is Nothing) Then
+                RaiseEvent SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1RowChanging(Me, New SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1RowChangeEvent(CType(e.Row,SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1Row), e.Action))
+            End If
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Protected Overrides Sub OnRowDeleted(ByVal e As Global.System.Data.DataRowChangeEventArgs)
+            MyBase.OnRowDeleted(e)
+            If (Not (Me.SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1RowDeletedEvent) Is Nothing) Then
+                RaiseEvent SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1RowDeleted(Me, New SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1RowChangeEvent(CType(e.Row,SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1Row), e.Action))
+            End If
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Protected Overrides Sub OnRowDeleting(ByVal e As Global.System.Data.DataRowChangeEventArgs)
+            MyBase.OnRowDeleting(e)
+            If (Not (Me.SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1RowDeletingEvent) Is Nothing) Then
+                RaiseEvent SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1RowDeleting(Me, New SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1RowChangeEvent(CType(e.Row,SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1Row), e.Action))
+            End If
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Sub RemoveSP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1Row(ByVal row As SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1Row)
+            Me.Rows.Remove(row)
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Shared Function GetTypedTableSchema(ByVal xs As Global.System.Xml.Schema.XmlSchemaSet) As Global.System.Xml.Schema.XmlSchemaComplexType
+            Dim type As Global.System.Xml.Schema.XmlSchemaComplexType = New Global.System.Xml.Schema.XmlSchemaComplexType()
+            Dim sequence As Global.System.Xml.Schema.XmlSchemaSequence = New Global.System.Xml.Schema.XmlSchemaSequence()
+            Dim ds As DataSetTablasYCampos = New DataSetTablasYCampos()
+            Dim any1 As Global.System.Xml.Schema.XmlSchemaAny = New Global.System.Xml.Schema.XmlSchemaAny()
+            any1.Namespace = "http://www.w3.org/2001/XMLSchema"
+            any1.MinOccurs = New Decimal(0)
+            any1.MaxOccurs = Decimal.MaxValue
+            any1.ProcessContents = Global.System.Xml.Schema.XmlSchemaContentProcessing.Lax
+            sequence.Items.Add(any1)
+            Dim any2 As Global.System.Xml.Schema.XmlSchemaAny = New Global.System.Xml.Schema.XmlSchemaAny()
+            any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1"
+            any2.MinOccurs = New Decimal(1)
+            any2.ProcessContents = Global.System.Xml.Schema.XmlSchemaContentProcessing.Lax
+            sequence.Items.Add(any2)
+            Dim attribute1 As Global.System.Xml.Schema.XmlSchemaAttribute = New Global.System.Xml.Schema.XmlSchemaAttribute()
+            attribute1.Name = "namespace"
+            attribute1.FixedValue = ds.Namespace
+            type.Attributes.Add(attribute1)
+            Dim attribute2 As Global.System.Xml.Schema.XmlSchemaAttribute = New Global.System.Xml.Schema.XmlSchemaAttribute()
+            attribute2.Name = "tableTypeName"
+            attribute2.FixedValue = "SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1DataTable"
+            type.Attributes.Add(attribute2)
+            type.Particle = sequence
+            Dim dsSchema As Global.System.Xml.Schema.XmlSchema = ds.GetSchemaSerializable
+            If xs.Contains(dsSchema.TargetNamespace) Then
+                Dim s1 As Global.System.IO.MemoryStream = New Global.System.IO.MemoryStream()
+                Dim s2 As Global.System.IO.MemoryStream = New Global.System.IO.MemoryStream()
+                Try 
+                    Dim schema As Global.System.Xml.Schema.XmlSchema = Nothing
+                    dsSchema.Write(s1)
+                    Dim schemas As Global.System.Collections.IEnumerator = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator
+                    Do While schemas.MoveNext
+                        schema = CType(schemas.Current,Global.System.Xml.Schema.XmlSchema)
+                        s2.SetLength(0)
+                        schema.Write(s2)
+                        If (s1.Length = s2.Length) Then
+                            s1.Position = 0
+                            s2.Position = 0
+                            
+                            Do While ((s1.Position <> s1.Length)  _
+                                        AndAlso (s1.ReadByte = s2.ReadByte))
+                                
+                                
+                            Loop
+                            If (s1.Position = s1.Length) Then
+                                Return type
+                            End If
+                        End If
+                        
+                    Loop
+                Finally
+                    If (Not (s1) Is Nothing) Then
+                        s1.Close
+                    End If
+                    If (Not (s2) Is Nothing) Then
+                        s2.Close
+                    End If
+                End Try
+            End If
+            xs.Add(dsSchema)
+            Return type
+        End Function
+    End Class
+    
+    '''<summary>
+    '''Represents the strongly named DataTable class.
+    '''</summary>
+    <Global.System.Serializable(),  _
+     Global.System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")>  _
+    Partial Public Class SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID2DataTable
+        Inherits Global.System.Data.TypedTableBase(Of SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID2Row)
+        
+        Private columnTablaID As Global.System.Data.DataColumn
+        
+        Private columnProyectoID As Global.System.Data.DataColumn
+        
+        Private columnNombreTabla As Global.System.Data.DataColumn
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Sub New()
+            MyBase.New
+            Me.TableName = "SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID2"
+            Me.BeginInit
+            Me.InitClass
+            Me.EndInit
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Friend Sub New(ByVal table As Global.System.Data.DataTable)
+            MyBase.New
+            Me.TableName = table.TableName
+            If (table.CaseSensitive <> table.DataSet.CaseSensitive) Then
+                Me.CaseSensitive = table.CaseSensitive
+            End If
+            If (table.Locale.ToString <> table.DataSet.Locale.ToString) Then
+                Me.Locale = table.Locale
+            End If
+            If (table.Namespace <> table.DataSet.Namespace) Then
+                Me.Namespace = table.Namespace
+            End If
+            Me.Prefix = table.Prefix
+            Me.MinimumCapacity = table.MinimumCapacity
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Protected Sub New(ByVal info As Global.System.Runtime.Serialization.SerializationInfo, ByVal context As Global.System.Runtime.Serialization.StreamingContext)
+            MyBase.New(info, context)
+            Me.InitVars
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public ReadOnly Property TablaIDColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnTablaID
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public ReadOnly Property ProyectoIDColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnProyectoID
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public ReadOnly Property NombreTablaColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnNombreTabla
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
+         Global.System.ComponentModel.Browsable(false)>  _
+        Public ReadOnly Property Count() As Integer
+            Get
+                Return Me.Rows.Count
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Default ReadOnly Property Item(ByVal index As Integer) As SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID2Row
+            Get
+                Return CType(Me.Rows(index),SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID2Row)
+            End Get
+        End Property
+        
+        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Event SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID2RowChanging As SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID2RowChangeEventHandler
+        
+        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Event SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID2RowChanged As SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID2RowChangeEventHandler
+        
+        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Event SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID2RowDeleting As SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID2RowChangeEventHandler
+        
+        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Event SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID2RowDeleted As SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID2RowChangeEventHandler
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Overloads Sub AddSP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID2Row(ByVal row As SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID2Row)
+            Me.Rows.Add(row)
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Overloads Function AddSP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID2Row(ByVal ProyectoID As Integer, ByVal NombreTabla As String) As SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID2Row
+            Dim rowSP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID2Row As SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID2Row = CType(Me.NewRow,SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID2Row)
+            Dim columnValuesArray() As Object = New Object() {Nothing, ProyectoID, NombreTabla}
+            rowSP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID2Row.ItemArray = columnValuesArray
+            Me.Rows.Add(rowSP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID2Row)
+            Return rowSP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID2Row
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Function FindByTablaID(ByVal TablaID As Integer) As SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID2Row
+            Return CType(Me.Rows.Find(New Object() {TablaID}),SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID2Row)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Overrides Function Clone() As Global.System.Data.DataTable
+            Dim cln As SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID2DataTable = CType(MyBase.Clone,SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID2DataTable)
+            cln.InitVars
+            Return cln
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Protected Overrides Function CreateInstance() As Global.System.Data.DataTable
+            Return New SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID2DataTable()
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Friend Sub InitVars()
+            Me.columnTablaID = MyBase.Columns("TablaID")
+            Me.columnProyectoID = MyBase.Columns("ProyectoID")
+            Me.columnNombreTabla = MyBase.Columns("NombreTabla")
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Private Sub InitClass()
+            Me.columnTablaID = New Global.System.Data.DataColumn("TablaID", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnTablaID)
+            Me.columnProyectoID = New Global.System.Data.DataColumn("ProyectoID", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnProyectoID)
+            Me.columnNombreTabla = New Global.System.Data.DataColumn("NombreTabla", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnNombreTabla)
+            Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnTablaID}, true))
+            Me.columnTablaID.AutoIncrement = true
+            Me.columnTablaID.AutoIncrementSeed = -1
+            Me.columnTablaID.AutoIncrementStep = -1
+            Me.columnTablaID.AllowDBNull = false
+            Me.columnTablaID.ReadOnly = true
+            Me.columnTablaID.Unique = true
+            Me.columnProyectoID.AllowDBNull = false
+            Me.columnNombreTabla.AllowDBNull = false
+            Me.columnNombreTabla.MaxLength = 200
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Function NewSP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID2Row() As SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID2Row
+            Return CType(Me.NewRow,SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID2Row)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Protected Overrides Function NewRowFromBuilder(ByVal builder As Global.System.Data.DataRowBuilder) As Global.System.Data.DataRow
+            Return New SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID2Row(builder)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Protected Overrides Function GetRowType() As Global.System.Type
+            Return GetType(SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID2Row)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Protected Overrides Sub OnRowChanged(ByVal e As Global.System.Data.DataRowChangeEventArgs)
+            MyBase.OnRowChanged(e)
+            If (Not (Me.SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID2RowChangedEvent) Is Nothing) Then
+                RaiseEvent SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID2RowChanged(Me, New SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID2RowChangeEvent(CType(e.Row,SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID2Row), e.Action))
+            End If
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Protected Overrides Sub OnRowChanging(ByVal e As Global.System.Data.DataRowChangeEventArgs)
+            MyBase.OnRowChanging(e)
+            If (Not (Me.SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID2RowChangingEvent) Is Nothing) Then
+                RaiseEvent SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID2RowChanging(Me, New SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID2RowChangeEvent(CType(e.Row,SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID2Row), e.Action))
+            End If
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Protected Overrides Sub OnRowDeleted(ByVal e As Global.System.Data.DataRowChangeEventArgs)
+            MyBase.OnRowDeleted(e)
+            If (Not (Me.SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID2RowDeletedEvent) Is Nothing) Then
+                RaiseEvent SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID2RowDeleted(Me, New SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID2RowChangeEvent(CType(e.Row,SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID2Row), e.Action))
+            End If
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Protected Overrides Sub OnRowDeleting(ByVal e As Global.System.Data.DataRowChangeEventArgs)
+            MyBase.OnRowDeleting(e)
+            If (Not (Me.SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID2RowDeletingEvent) Is Nothing) Then
+                RaiseEvent SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID2RowDeleting(Me, New SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID2RowChangeEvent(CType(e.Row,SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID2Row), e.Action))
+            End If
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Sub RemoveSP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID2Row(ByVal row As SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID2Row)
+            Me.Rows.Remove(row)
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Shared Function GetTypedTableSchema(ByVal xs As Global.System.Xml.Schema.XmlSchemaSet) As Global.System.Xml.Schema.XmlSchemaComplexType
+            Dim type As Global.System.Xml.Schema.XmlSchemaComplexType = New Global.System.Xml.Schema.XmlSchemaComplexType()
+            Dim sequence As Global.System.Xml.Schema.XmlSchemaSequence = New Global.System.Xml.Schema.XmlSchemaSequence()
+            Dim ds As DataSetTablasYCampos = New DataSetTablasYCampos()
+            Dim any1 As Global.System.Xml.Schema.XmlSchemaAny = New Global.System.Xml.Schema.XmlSchemaAny()
+            any1.Namespace = "http://www.w3.org/2001/XMLSchema"
+            any1.MinOccurs = New Decimal(0)
+            any1.MaxOccurs = Decimal.MaxValue
+            any1.ProcessContents = Global.System.Xml.Schema.XmlSchemaContentProcessing.Lax
+            sequence.Items.Add(any1)
+            Dim any2 As Global.System.Xml.Schema.XmlSchemaAny = New Global.System.Xml.Schema.XmlSchemaAny()
+            any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1"
+            any2.MinOccurs = New Decimal(1)
+            any2.ProcessContents = Global.System.Xml.Schema.XmlSchemaContentProcessing.Lax
+            sequence.Items.Add(any2)
+            Dim attribute1 As Global.System.Xml.Schema.XmlSchemaAttribute = New Global.System.Xml.Schema.XmlSchemaAttribute()
+            attribute1.Name = "namespace"
+            attribute1.FixedValue = ds.Namespace
+            type.Attributes.Add(attribute1)
+            Dim attribute2 As Global.System.Xml.Schema.XmlSchemaAttribute = New Global.System.Xml.Schema.XmlSchemaAttribute()
+            attribute2.Name = "tableTypeName"
+            attribute2.FixedValue = "SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID2DataTable"
+            type.Attributes.Add(attribute2)
+            type.Particle = sequence
+            Dim dsSchema As Global.System.Xml.Schema.XmlSchema = ds.GetSchemaSerializable
+            If xs.Contains(dsSchema.TargetNamespace) Then
+                Dim s1 As Global.System.IO.MemoryStream = New Global.System.IO.MemoryStream()
+                Dim s2 As Global.System.IO.MemoryStream = New Global.System.IO.MemoryStream()
+                Try 
+                    Dim schema As Global.System.Xml.Schema.XmlSchema = Nothing
+                    dsSchema.Write(s1)
+                    Dim schemas As Global.System.Collections.IEnumerator = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator
+                    Do While schemas.MoveNext
+                        schema = CType(schemas.Current,Global.System.Xml.Schema.XmlSchema)
+                        s2.SetLength(0)
+                        schema.Write(s2)
+                        If (s1.Length = s2.Length) Then
+                            s1.Position = 0
+                            s2.Position = 0
+                            
+                            Do While ((s1.Position <> s1.Length)  _
+                                        AndAlso (s1.ReadByte = s2.ReadByte))
+                                
+                                
+                            Loop
+                            If (s1.Position = s1.Length) Then
+                                Return type
+                            End If
+                        End If
+                        
+                    Loop
+                Finally
+                    If (Not (s1) Is Nothing) Then
+                        s1.Close
+                    End If
+                    If (Not (s2) Is Nothing) Then
+                        s2.Close
+                    End If
+                End Try
+            End If
+            xs.Add(dsSchema)
+            Return type
+        End Function
+    End Class
+    
+    '''<summary>
+    '''Represents the strongly named DataTable class.
+    '''</summary>
+    <Global.System.Serializable(),  _
+     Global.System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")>  _
+    Partial Public Class SP_RegistroValorRequerimientos_SegunProyectoRequerimientoDataTable
+        Inherits Global.System.Data.TypedTableBase(Of SP_RegistroValorRequerimientos_SegunProyectoRequerimientoRow)
+        
+        Private columnRegistroValorRequerimientoID As Global.System.Data.DataColumn
+        
+        Private columnProyectoID As Global.System.Data.DataColumn
+        
+        Private columnRequerimiento As Global.System.Data.DataColumn
+        
+        Private columnValorRequerimiento As Global.System.Data.DataColumn
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Sub New()
+            MyBase.New
+            Me.TableName = "SP_RegistroValorRequerimientos_SegunProyectoRequerimiento"
+            Me.BeginInit
+            Me.InitClass
+            Me.EndInit
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Friend Sub New(ByVal table As Global.System.Data.DataTable)
+            MyBase.New
+            Me.TableName = table.TableName
+            If (table.CaseSensitive <> table.DataSet.CaseSensitive) Then
+                Me.CaseSensitive = table.CaseSensitive
+            End If
+            If (table.Locale.ToString <> table.DataSet.Locale.ToString) Then
+                Me.Locale = table.Locale
+            End If
+            If (table.Namespace <> table.DataSet.Namespace) Then
+                Me.Namespace = table.Namespace
+            End If
+            Me.Prefix = table.Prefix
+            Me.MinimumCapacity = table.MinimumCapacity
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Protected Sub New(ByVal info As Global.System.Runtime.Serialization.SerializationInfo, ByVal context As Global.System.Runtime.Serialization.StreamingContext)
+            MyBase.New(info, context)
+            Me.InitVars
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public ReadOnly Property RegistroValorRequerimientoIDColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnRegistroValorRequerimientoID
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public ReadOnly Property ProyectoIDColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnProyectoID
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public ReadOnly Property RequerimientoColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnRequerimiento
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public ReadOnly Property ValorRequerimientoColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnValorRequerimiento
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
+         Global.System.ComponentModel.Browsable(false)>  _
+        Public ReadOnly Property Count() As Integer
+            Get
+                Return Me.Rows.Count
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Default ReadOnly Property Item(ByVal index As Integer) As SP_RegistroValorRequerimientos_SegunProyectoRequerimientoRow
+            Get
+                Return CType(Me.Rows(index),SP_RegistroValorRequerimientos_SegunProyectoRequerimientoRow)
+            End Get
+        End Property
+        
+        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Event SP_RegistroValorRequerimientos_SegunProyectoRequerimientoRowChanging As SP_RegistroValorRequerimientos_SegunProyectoRequerimientoRowChangeEventHandler
+        
+        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Event SP_RegistroValorRequerimientos_SegunProyectoRequerimientoRowChanged As SP_RegistroValorRequerimientos_SegunProyectoRequerimientoRowChangeEventHandler
+        
+        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Event SP_RegistroValorRequerimientos_SegunProyectoRequerimientoRowDeleting As SP_RegistroValorRequerimientos_SegunProyectoRequerimientoRowChangeEventHandler
+        
+        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Event SP_RegistroValorRequerimientos_SegunProyectoRequerimientoRowDeleted As SP_RegistroValorRequerimientos_SegunProyectoRequerimientoRowChangeEventHandler
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Overloads Sub AddSP_RegistroValorRequerimientos_SegunProyectoRequerimientoRow(ByVal row As SP_RegistroValorRequerimientos_SegunProyectoRequerimientoRow)
+            Me.Rows.Add(row)
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Overloads Function AddSP_RegistroValorRequerimientos_SegunProyectoRequerimientoRow(ByVal ProyectoID As Integer, ByVal Requerimiento As String, ByVal ValorRequerimiento As String) As SP_RegistroValorRequerimientos_SegunProyectoRequerimientoRow
+            Dim rowSP_RegistroValorRequerimientos_SegunProyectoRequerimientoRow As SP_RegistroValorRequerimientos_SegunProyectoRequerimientoRow = CType(Me.NewRow,SP_RegistroValorRequerimientos_SegunProyectoRequerimientoRow)
+            Dim columnValuesArray() As Object = New Object() {Nothing, ProyectoID, Requerimiento, ValorRequerimiento}
+            rowSP_RegistroValorRequerimientos_SegunProyectoRequerimientoRow.ItemArray = columnValuesArray
+            Me.Rows.Add(rowSP_RegistroValorRequerimientos_SegunProyectoRequerimientoRow)
+            Return rowSP_RegistroValorRequerimientos_SegunProyectoRequerimientoRow
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Function FindByRegistroValorRequerimientoID(ByVal RegistroValorRequerimientoID As Long) As SP_RegistroValorRequerimientos_SegunProyectoRequerimientoRow
+            Return CType(Me.Rows.Find(New Object() {RegistroValorRequerimientoID}),SP_RegistroValorRequerimientos_SegunProyectoRequerimientoRow)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Overrides Function Clone() As Global.System.Data.DataTable
+            Dim cln As SP_RegistroValorRequerimientos_SegunProyectoRequerimientoDataTable = CType(MyBase.Clone,SP_RegistroValorRequerimientos_SegunProyectoRequerimientoDataTable)
+            cln.InitVars
+            Return cln
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Protected Overrides Function CreateInstance() As Global.System.Data.DataTable
+            Return New SP_RegistroValorRequerimientos_SegunProyectoRequerimientoDataTable()
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Friend Sub InitVars()
+            Me.columnRegistroValorRequerimientoID = MyBase.Columns("RegistroValorRequerimientoID")
+            Me.columnProyectoID = MyBase.Columns("ProyectoID")
+            Me.columnRequerimiento = MyBase.Columns("Requerimiento")
+            Me.columnValorRequerimiento = MyBase.Columns("ValorRequerimiento")
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Private Sub InitClass()
+            Me.columnRegistroValorRequerimientoID = New Global.System.Data.DataColumn("RegistroValorRequerimientoID", GetType(Long), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnRegistroValorRequerimientoID)
+            Me.columnProyectoID = New Global.System.Data.DataColumn("ProyectoID", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnProyectoID)
+            Me.columnRequerimiento = New Global.System.Data.DataColumn("Requerimiento", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnRequerimiento)
+            Me.columnValorRequerimiento = New Global.System.Data.DataColumn("ValorRequerimiento", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnValorRequerimiento)
+            Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnRegistroValorRequerimientoID}, true))
+            Me.columnRegistroValorRequerimientoID.AutoIncrement = true
+            Me.columnRegistroValorRequerimientoID.AutoIncrementSeed = -1
+            Me.columnRegistroValorRequerimientoID.AutoIncrementStep = -1
+            Me.columnRegistroValorRequerimientoID.AllowDBNull = false
+            Me.columnRegistroValorRequerimientoID.ReadOnly = true
+            Me.columnRegistroValorRequerimientoID.Unique = true
+            Me.columnProyectoID.AllowDBNull = false
+            Me.columnRequerimiento.AllowDBNull = false
+            Me.columnRequerimiento.MaxLength = 500
+            Me.columnValorRequerimiento.AllowDBNull = false
+            Me.columnValorRequerimiento.MaxLength = 500
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Function NewSP_RegistroValorRequerimientos_SegunProyectoRequerimientoRow() As SP_RegistroValorRequerimientos_SegunProyectoRequerimientoRow
+            Return CType(Me.NewRow,SP_RegistroValorRequerimientos_SegunProyectoRequerimientoRow)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Protected Overrides Function NewRowFromBuilder(ByVal builder As Global.System.Data.DataRowBuilder) As Global.System.Data.DataRow
+            Return New SP_RegistroValorRequerimientos_SegunProyectoRequerimientoRow(builder)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Protected Overrides Function GetRowType() As Global.System.Type
+            Return GetType(SP_RegistroValorRequerimientos_SegunProyectoRequerimientoRow)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Protected Overrides Sub OnRowChanged(ByVal e As Global.System.Data.DataRowChangeEventArgs)
+            MyBase.OnRowChanged(e)
+            If (Not (Me.SP_RegistroValorRequerimientos_SegunProyectoRequerimientoRowChangedEvent) Is Nothing) Then
+                RaiseEvent SP_RegistroValorRequerimientos_SegunProyectoRequerimientoRowChanged(Me, New SP_RegistroValorRequerimientos_SegunProyectoRequerimientoRowChangeEvent(CType(e.Row,SP_RegistroValorRequerimientos_SegunProyectoRequerimientoRow), e.Action))
+            End If
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Protected Overrides Sub OnRowChanging(ByVal e As Global.System.Data.DataRowChangeEventArgs)
+            MyBase.OnRowChanging(e)
+            If (Not (Me.SP_RegistroValorRequerimientos_SegunProyectoRequerimientoRowChangingEvent) Is Nothing) Then
+                RaiseEvent SP_RegistroValorRequerimientos_SegunProyectoRequerimientoRowChanging(Me, New SP_RegistroValorRequerimientos_SegunProyectoRequerimientoRowChangeEvent(CType(e.Row,SP_RegistroValorRequerimientos_SegunProyectoRequerimientoRow), e.Action))
+            End If
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Protected Overrides Sub OnRowDeleted(ByVal e As Global.System.Data.DataRowChangeEventArgs)
+            MyBase.OnRowDeleted(e)
+            If (Not (Me.SP_RegistroValorRequerimientos_SegunProyectoRequerimientoRowDeletedEvent) Is Nothing) Then
+                RaiseEvent SP_RegistroValorRequerimientos_SegunProyectoRequerimientoRowDeleted(Me, New SP_RegistroValorRequerimientos_SegunProyectoRequerimientoRowChangeEvent(CType(e.Row,SP_RegistroValorRequerimientos_SegunProyectoRequerimientoRow), e.Action))
+            End If
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Protected Overrides Sub OnRowDeleting(ByVal e As Global.System.Data.DataRowChangeEventArgs)
+            MyBase.OnRowDeleting(e)
+            If (Not (Me.SP_RegistroValorRequerimientos_SegunProyectoRequerimientoRowDeletingEvent) Is Nothing) Then
+                RaiseEvent SP_RegistroValorRequerimientos_SegunProyectoRequerimientoRowDeleting(Me, New SP_RegistroValorRequerimientos_SegunProyectoRequerimientoRowChangeEvent(CType(e.Row,SP_RegistroValorRequerimientos_SegunProyectoRequerimientoRow), e.Action))
+            End If
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Sub RemoveSP_RegistroValorRequerimientos_SegunProyectoRequerimientoRow(ByVal row As SP_RegistroValorRequerimientos_SegunProyectoRequerimientoRow)
+            Me.Rows.Remove(row)
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Shared Function GetTypedTableSchema(ByVal xs As Global.System.Xml.Schema.XmlSchemaSet) As Global.System.Xml.Schema.XmlSchemaComplexType
+            Dim type As Global.System.Xml.Schema.XmlSchemaComplexType = New Global.System.Xml.Schema.XmlSchemaComplexType()
+            Dim sequence As Global.System.Xml.Schema.XmlSchemaSequence = New Global.System.Xml.Schema.XmlSchemaSequence()
+            Dim ds As DataSetTablasYCampos = New DataSetTablasYCampos()
+            Dim any1 As Global.System.Xml.Schema.XmlSchemaAny = New Global.System.Xml.Schema.XmlSchemaAny()
+            any1.Namespace = "http://www.w3.org/2001/XMLSchema"
+            any1.MinOccurs = New Decimal(0)
+            any1.MaxOccurs = Decimal.MaxValue
+            any1.ProcessContents = Global.System.Xml.Schema.XmlSchemaContentProcessing.Lax
+            sequence.Items.Add(any1)
+            Dim any2 As Global.System.Xml.Schema.XmlSchemaAny = New Global.System.Xml.Schema.XmlSchemaAny()
+            any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1"
+            any2.MinOccurs = New Decimal(1)
+            any2.ProcessContents = Global.System.Xml.Schema.XmlSchemaContentProcessing.Lax
+            sequence.Items.Add(any2)
+            Dim attribute1 As Global.System.Xml.Schema.XmlSchemaAttribute = New Global.System.Xml.Schema.XmlSchemaAttribute()
+            attribute1.Name = "namespace"
+            attribute1.FixedValue = ds.Namespace
+            type.Attributes.Add(attribute1)
+            Dim attribute2 As Global.System.Xml.Schema.XmlSchemaAttribute = New Global.System.Xml.Schema.XmlSchemaAttribute()
+            attribute2.Name = "tableTypeName"
+            attribute2.FixedValue = "SP_RegistroValorRequerimientos_SegunProyectoRequerimientoDataTable"
+            type.Attributes.Add(attribute2)
+            type.Particle = sequence
+            Dim dsSchema As Global.System.Xml.Schema.XmlSchema = ds.GetSchemaSerializable
+            If xs.Contains(dsSchema.TargetNamespace) Then
+                Dim s1 As Global.System.IO.MemoryStream = New Global.System.IO.MemoryStream()
+                Dim s2 As Global.System.IO.MemoryStream = New Global.System.IO.MemoryStream()
+                Try 
+                    Dim schema As Global.System.Xml.Schema.XmlSchema = Nothing
+                    dsSchema.Write(s1)
+                    Dim schemas As Global.System.Collections.IEnumerator = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator
+                    Do While schemas.MoveNext
+                        schema = CType(schemas.Current,Global.System.Xml.Schema.XmlSchema)
+                        s2.SetLength(0)
+                        schema.Write(s2)
+                        If (s1.Length = s2.Length) Then
+                            s1.Position = 0
+                            s2.Position = 0
+                            
+                            Do While ((s1.Position <> s1.Length)  _
+                                        AndAlso (s1.ReadByte = s2.ReadByte))
+                                
+                                
+                            Loop
+                            If (s1.Position = s1.Length) Then
+                                Return type
+                            End If
+                        End If
+                        
+                    Loop
+                Finally
+                    If (Not (s1) Is Nothing) Then
+                        s1.Close
+                    End If
+                    If (Not (s2) Is Nothing) Then
+                        s2.Close
+                    End If
+                End Try
+            End If
+            xs.Add(dsSchema)
+            Return type
+        End Function
+    End Class
+    
+    '''<summary>
+    '''Represents the strongly named DataTable class.
+    '''</summary>
+    <Global.System.Serializable(),  _
+     Global.System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")>  _
+    Partial Public Class SP_CARGA_CONVENSIONES_USADASDataTable
+        Inherits Global.System.Data.TypedTableBase(Of SP_CARGA_CONVENSIONES_USADASRow)
+        
+        Private columnCONVENSIONES As Global.System.Data.DataColumn
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Sub New()
+            MyBase.New
+            Me.TableName = "SP_CARGA_CONVENSIONES_USADAS"
+            Me.BeginInit
+            Me.InitClass
+            Me.EndInit
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Friend Sub New(ByVal table As Global.System.Data.DataTable)
+            MyBase.New
+            Me.TableName = table.TableName
+            If (table.CaseSensitive <> table.DataSet.CaseSensitive) Then
+                Me.CaseSensitive = table.CaseSensitive
+            End If
+            If (table.Locale.ToString <> table.DataSet.Locale.ToString) Then
+                Me.Locale = table.Locale
+            End If
+            If (table.Namespace <> table.DataSet.Namespace) Then
+                Me.Namespace = table.Namespace
+            End If
+            Me.Prefix = table.Prefix
+            Me.MinimumCapacity = table.MinimumCapacity
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Protected Sub New(ByVal info As Global.System.Runtime.Serialization.SerializationInfo, ByVal context As Global.System.Runtime.Serialization.StreamingContext)
+            MyBase.New(info, context)
+            Me.InitVars
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public ReadOnly Property CONVENSIONESColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnCONVENSIONES
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
+         Global.System.ComponentModel.Browsable(false)>  _
+        Public ReadOnly Property Count() As Integer
+            Get
+                Return Me.Rows.Count
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Default ReadOnly Property Item(ByVal index As Integer) As SP_CARGA_CONVENSIONES_USADASRow
+            Get
+                Return CType(Me.Rows(index),SP_CARGA_CONVENSIONES_USADASRow)
+            End Get
+        End Property
+        
+        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Event SP_CARGA_CONVENSIONES_USADASRowChanging As SP_CARGA_CONVENSIONES_USADASRowChangeEventHandler
+        
+        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Event SP_CARGA_CONVENSIONES_USADASRowChanged As SP_CARGA_CONVENSIONES_USADASRowChangeEventHandler
+        
+        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Event SP_CARGA_CONVENSIONES_USADASRowDeleting As SP_CARGA_CONVENSIONES_USADASRowChangeEventHandler
+        
+        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Event SP_CARGA_CONVENSIONES_USADASRowDeleted As SP_CARGA_CONVENSIONES_USADASRowChangeEventHandler
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Overloads Sub AddSP_CARGA_CONVENSIONES_USADASRow(ByVal row As SP_CARGA_CONVENSIONES_USADASRow)
+            Me.Rows.Add(row)
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Overloads Function AddSP_CARGA_CONVENSIONES_USADASRow(ByVal CONVENSIONES As String) As SP_CARGA_CONVENSIONES_USADASRow
+            Dim rowSP_CARGA_CONVENSIONES_USADASRow As SP_CARGA_CONVENSIONES_USADASRow = CType(Me.NewRow,SP_CARGA_CONVENSIONES_USADASRow)
+            Dim columnValuesArray() As Object = New Object() {CONVENSIONES}
+            rowSP_CARGA_CONVENSIONES_USADASRow.ItemArray = columnValuesArray
+            Me.Rows.Add(rowSP_CARGA_CONVENSIONES_USADASRow)
+            Return rowSP_CARGA_CONVENSIONES_USADASRow
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Overrides Function Clone() As Global.System.Data.DataTable
+            Dim cln As SP_CARGA_CONVENSIONES_USADASDataTable = CType(MyBase.Clone,SP_CARGA_CONVENSIONES_USADASDataTable)
+            cln.InitVars
+            Return cln
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Protected Overrides Function CreateInstance() As Global.System.Data.DataTable
+            Return New SP_CARGA_CONVENSIONES_USADASDataTable()
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Friend Sub InitVars()
+            Me.columnCONVENSIONES = MyBase.Columns("CONVENSIONES")
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Private Sub InitClass()
+            Me.columnCONVENSIONES = New Global.System.Data.DataColumn("CONVENSIONES", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnCONVENSIONES)
+            Me.columnCONVENSIONES.AllowDBNull = false
+            Me.columnCONVENSIONES.MaxLength = 500
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Function NewSP_CARGA_CONVENSIONES_USADASRow() As SP_CARGA_CONVENSIONES_USADASRow
+            Return CType(Me.NewRow,SP_CARGA_CONVENSIONES_USADASRow)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Protected Overrides Function NewRowFromBuilder(ByVal builder As Global.System.Data.DataRowBuilder) As Global.System.Data.DataRow
+            Return New SP_CARGA_CONVENSIONES_USADASRow(builder)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Protected Overrides Function GetRowType() As Global.System.Type
+            Return GetType(SP_CARGA_CONVENSIONES_USADASRow)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Protected Overrides Sub OnRowChanged(ByVal e As Global.System.Data.DataRowChangeEventArgs)
+            MyBase.OnRowChanged(e)
+            If (Not (Me.SP_CARGA_CONVENSIONES_USADASRowChangedEvent) Is Nothing) Then
+                RaiseEvent SP_CARGA_CONVENSIONES_USADASRowChanged(Me, New SP_CARGA_CONVENSIONES_USADASRowChangeEvent(CType(e.Row,SP_CARGA_CONVENSIONES_USADASRow), e.Action))
+            End If
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Protected Overrides Sub OnRowChanging(ByVal e As Global.System.Data.DataRowChangeEventArgs)
+            MyBase.OnRowChanging(e)
+            If (Not (Me.SP_CARGA_CONVENSIONES_USADASRowChangingEvent) Is Nothing) Then
+                RaiseEvent SP_CARGA_CONVENSIONES_USADASRowChanging(Me, New SP_CARGA_CONVENSIONES_USADASRowChangeEvent(CType(e.Row,SP_CARGA_CONVENSIONES_USADASRow), e.Action))
+            End If
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Protected Overrides Sub OnRowDeleted(ByVal e As Global.System.Data.DataRowChangeEventArgs)
+            MyBase.OnRowDeleted(e)
+            If (Not (Me.SP_CARGA_CONVENSIONES_USADASRowDeletedEvent) Is Nothing) Then
+                RaiseEvent SP_CARGA_CONVENSIONES_USADASRowDeleted(Me, New SP_CARGA_CONVENSIONES_USADASRowChangeEvent(CType(e.Row,SP_CARGA_CONVENSIONES_USADASRow), e.Action))
+            End If
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Protected Overrides Sub OnRowDeleting(ByVal e As Global.System.Data.DataRowChangeEventArgs)
+            MyBase.OnRowDeleting(e)
+            If (Not (Me.SP_CARGA_CONVENSIONES_USADASRowDeletingEvent) Is Nothing) Then
+                RaiseEvent SP_CARGA_CONVENSIONES_USADASRowDeleting(Me, New SP_CARGA_CONVENSIONES_USADASRowChangeEvent(CType(e.Row,SP_CARGA_CONVENSIONES_USADASRow), e.Action))
+            End If
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Sub RemoveSP_CARGA_CONVENSIONES_USADASRow(ByVal row As SP_CARGA_CONVENSIONES_USADASRow)
+            Me.Rows.Remove(row)
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Shared Function GetTypedTableSchema(ByVal xs As Global.System.Xml.Schema.XmlSchemaSet) As Global.System.Xml.Schema.XmlSchemaComplexType
+            Dim type As Global.System.Xml.Schema.XmlSchemaComplexType = New Global.System.Xml.Schema.XmlSchemaComplexType()
+            Dim sequence As Global.System.Xml.Schema.XmlSchemaSequence = New Global.System.Xml.Schema.XmlSchemaSequence()
+            Dim ds As DataSetTablasYCampos = New DataSetTablasYCampos()
+            Dim any1 As Global.System.Xml.Schema.XmlSchemaAny = New Global.System.Xml.Schema.XmlSchemaAny()
+            any1.Namespace = "http://www.w3.org/2001/XMLSchema"
+            any1.MinOccurs = New Decimal(0)
+            any1.MaxOccurs = Decimal.MaxValue
+            any1.ProcessContents = Global.System.Xml.Schema.XmlSchemaContentProcessing.Lax
+            sequence.Items.Add(any1)
+            Dim any2 As Global.System.Xml.Schema.XmlSchemaAny = New Global.System.Xml.Schema.XmlSchemaAny()
+            any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1"
+            any2.MinOccurs = New Decimal(1)
+            any2.ProcessContents = Global.System.Xml.Schema.XmlSchemaContentProcessing.Lax
+            sequence.Items.Add(any2)
+            Dim attribute1 As Global.System.Xml.Schema.XmlSchemaAttribute = New Global.System.Xml.Schema.XmlSchemaAttribute()
+            attribute1.Name = "namespace"
+            attribute1.FixedValue = ds.Namespace
+            type.Attributes.Add(attribute1)
+            Dim attribute2 As Global.System.Xml.Schema.XmlSchemaAttribute = New Global.System.Xml.Schema.XmlSchemaAttribute()
+            attribute2.Name = "tableTypeName"
+            attribute2.FixedValue = "SP_CARGA_CONVENSIONES_USADASDataTable"
+            type.Attributes.Add(attribute2)
+            type.Particle = sequence
+            Dim dsSchema As Global.System.Xml.Schema.XmlSchema = ds.GetSchemaSerializable
+            If xs.Contains(dsSchema.TargetNamespace) Then
+                Dim s1 As Global.System.IO.MemoryStream = New Global.System.IO.MemoryStream()
+                Dim s2 As Global.System.IO.MemoryStream = New Global.System.IO.MemoryStream()
+                Try 
+                    Dim schema As Global.System.Xml.Schema.XmlSchema = Nothing
+                    dsSchema.Write(s1)
+                    Dim schemas As Global.System.Collections.IEnumerator = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator
+                    Do While schemas.MoveNext
+                        schema = CType(schemas.Current,Global.System.Xml.Schema.XmlSchema)
+                        s2.SetLength(0)
+                        schema.Write(s2)
+                        If (s1.Length = s2.Length) Then
+                            s1.Position = 0
+                            s2.Position = 0
+                            
+                            Do While ((s1.Position <> s1.Length)  _
+                                        AndAlso (s1.ReadByte = s2.ReadByte))
+                                
+                                
+                            Loop
+                            If (s1.Position = s1.Length) Then
+                                Return type
+                            End If
+                        End If
+                        
+                    Loop
+                Finally
+                    If (Not (s1) Is Nothing) Then
+                        s1.Close
+                    End If
+                    If (Not (s2) Is Nothing) Then
+                        s2.Close
+                    End If
+                End Try
+            End If
+            xs.Add(dsSchema)
+            Return type
+        End Function
+    End Class
+    
+    '''<summary>
+    '''Represents the strongly named DataTable class.
+    '''</summary>
+    <Global.System.Serializable(),  _
+     Global.System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")>  _
     Partial Public Class SP_RegistroValorRequerimientos_EDICION_INSERTARDataTable
         Inherits Global.System.Data.TypedTableBase(Of SP_RegistroValorRequerimientos_EDICION_INSERTARRow)
         
@@ -2813,1031 +3964,6 @@ Partial Public Class DataSetTablasYCampos
     '''</summary>
     <Global.System.Serializable(),  _
      Global.System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")>  _
-    Partial Public Class SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaIDDataTable
-        Inherits Global.System.Data.TypedTableBase(Of SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaIDRow)
-        
-        Private columnCampoID As Global.System.Data.DataColumn
-        
-        Private columnTablaID As Global.System.Data.DataColumn
-        
-        Private columnNombreCampo As Global.System.Data.DataColumn
-        
-        Private columnTipo As Global.System.Data.DataColumn
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Sub New()
-            MyBase.New
-            Me.TableName = "SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaID"
-            Me.BeginInit
-            Me.InitClass
-            Me.EndInit
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Friend Sub New(ByVal table As Global.System.Data.DataTable)
-            MyBase.New
-            Me.TableName = table.TableName
-            If (table.CaseSensitive <> table.DataSet.CaseSensitive) Then
-                Me.CaseSensitive = table.CaseSensitive
-            End If
-            If (table.Locale.ToString <> table.DataSet.Locale.ToString) Then
-                Me.Locale = table.Locale
-            End If
-            If (table.Namespace <> table.DataSet.Namespace) Then
-                Me.Namespace = table.Namespace
-            End If
-            Me.Prefix = table.Prefix
-            Me.MinimumCapacity = table.MinimumCapacity
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Protected Sub New(ByVal info As Global.System.Runtime.Serialization.SerializationInfo, ByVal context As Global.System.Runtime.Serialization.StreamingContext)
-            MyBase.New(info, context)
-            Me.InitVars
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public ReadOnly Property CampoIDColumn() As Global.System.Data.DataColumn
-            Get
-                Return Me.columnCampoID
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public ReadOnly Property TablaIDColumn() As Global.System.Data.DataColumn
-            Get
-                Return Me.columnTablaID
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public ReadOnly Property NombreCampoColumn() As Global.System.Data.DataColumn
-            Get
-                Return Me.columnNombreCampo
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public ReadOnly Property TipoColumn() As Global.System.Data.DataColumn
-            Get
-                Return Me.columnTipo
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
-         Global.System.ComponentModel.Browsable(false)>  _
-        Public ReadOnly Property Count() As Integer
-            Get
-                Return Me.Rows.Count
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Default ReadOnly Property Item(ByVal index As Integer) As SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaIDRow
-            Get
-                Return CType(Me.Rows(index),SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaIDRow)
-            End Get
-        End Property
-        
-        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Event SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaIDRowChanging As SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaIDRowChangeEventHandler
-        
-        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Event SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaIDRowChanged As SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaIDRowChangeEventHandler
-        
-        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Event SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaIDRowDeleting As SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaIDRowChangeEventHandler
-        
-        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Event SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaIDRowDeleted As SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaIDRowChangeEventHandler
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Overloads Sub AddSP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaIDRow(ByVal row As SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaIDRow)
-            Me.Rows.Add(row)
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Overloads Function AddSP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaIDRow(ByVal TablaID As Integer, ByVal NombreCampo As String, ByVal Tipo As String) As SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaIDRow
-            Dim rowSP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaIDRow As SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaIDRow = CType(Me.NewRow,SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaIDRow)
-            Dim columnValuesArray() As Object = New Object() {Nothing, TablaID, NombreCampo, Tipo}
-            rowSP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaIDRow.ItemArray = columnValuesArray
-            Me.Rows.Add(rowSP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaIDRow)
-            Return rowSP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaIDRow
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Function FindByCampoID(ByVal CampoID As Integer) As SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaIDRow
-            Return CType(Me.Rows.Find(New Object() {CampoID}),SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaIDRow)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Overrides Function Clone() As Global.System.Data.DataTable
-            Dim cln As SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaIDDataTable = CType(MyBase.Clone,SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaIDDataTable)
-            cln.InitVars
-            Return cln
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Protected Overrides Function CreateInstance() As Global.System.Data.DataTable
-            Return New SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaIDDataTable()
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Friend Sub InitVars()
-            Me.columnCampoID = MyBase.Columns("CampoID")
-            Me.columnTablaID = MyBase.Columns("TablaID")
-            Me.columnNombreCampo = MyBase.Columns("NombreCampo")
-            Me.columnTipo = MyBase.Columns("Tipo")
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Private Sub InitClass()
-            Me.columnCampoID = New Global.System.Data.DataColumn("CampoID", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnCampoID)
-            Me.columnTablaID = New Global.System.Data.DataColumn("TablaID", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnTablaID)
-            Me.columnNombreCampo = New Global.System.Data.DataColumn("NombreCampo", GetType(String), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnNombreCampo)
-            Me.columnTipo = New Global.System.Data.DataColumn("Tipo", GetType(String), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnTipo)
-            Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnCampoID}, true))
-            Me.columnCampoID.AutoIncrement = true
-            Me.columnCampoID.AutoIncrementSeed = -1
-            Me.columnCampoID.AutoIncrementStep = -1
-            Me.columnCampoID.AllowDBNull = false
-            Me.columnCampoID.ReadOnly = true
-            Me.columnCampoID.Unique = true
-            Me.columnTablaID.AllowDBNull = false
-            Me.columnNombreCampo.AllowDBNull = false
-            Me.columnNombreCampo.MaxLength = 100
-            Me.columnTipo.MaxLength = 100
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Function NewSP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaIDRow() As SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaIDRow
-            Return CType(Me.NewRow,SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaIDRow)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Protected Overrides Function NewRowFromBuilder(ByVal builder As Global.System.Data.DataRowBuilder) As Global.System.Data.DataRow
-            Return New SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaIDRow(builder)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Protected Overrides Function GetRowType() As Global.System.Type
-            Return GetType(SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaIDRow)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Protected Overrides Sub OnRowChanged(ByVal e As Global.System.Data.DataRowChangeEventArgs)
-            MyBase.OnRowChanged(e)
-            If (Not (Me.SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaIDRowChangedEvent) Is Nothing) Then
-                RaiseEvent SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaIDRowChanged(Me, New SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaIDRowChangeEvent(CType(e.Row,SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaIDRow), e.Action))
-            End If
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Protected Overrides Sub OnRowChanging(ByVal e As Global.System.Data.DataRowChangeEventArgs)
-            MyBase.OnRowChanging(e)
-            If (Not (Me.SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaIDRowChangingEvent) Is Nothing) Then
-                RaiseEvent SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaIDRowChanging(Me, New SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaIDRowChangeEvent(CType(e.Row,SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaIDRow), e.Action))
-            End If
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Protected Overrides Sub OnRowDeleted(ByVal e As Global.System.Data.DataRowChangeEventArgs)
-            MyBase.OnRowDeleted(e)
-            If (Not (Me.SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaIDRowDeletedEvent) Is Nothing) Then
-                RaiseEvent SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaIDRowDeleted(Me, New SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaIDRowChangeEvent(CType(e.Row,SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaIDRow), e.Action))
-            End If
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Protected Overrides Sub OnRowDeleting(ByVal e As Global.System.Data.DataRowChangeEventArgs)
-            MyBase.OnRowDeleting(e)
-            If (Not (Me.SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaIDRowDeletingEvent) Is Nothing) Then
-                RaiseEvent SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaIDRowDeleting(Me, New SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaIDRowChangeEvent(CType(e.Row,SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaIDRow), e.Action))
-            End If
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Sub RemoveSP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaIDRow(ByVal row As SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaIDRow)
-            Me.Rows.Remove(row)
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Shared Function GetTypedTableSchema(ByVal xs As Global.System.Xml.Schema.XmlSchemaSet) As Global.System.Xml.Schema.XmlSchemaComplexType
-            Dim type As Global.System.Xml.Schema.XmlSchemaComplexType = New Global.System.Xml.Schema.XmlSchemaComplexType()
-            Dim sequence As Global.System.Xml.Schema.XmlSchemaSequence = New Global.System.Xml.Schema.XmlSchemaSequence()
-            Dim ds As DataSetTablasYCampos = New DataSetTablasYCampos()
-            Dim any1 As Global.System.Xml.Schema.XmlSchemaAny = New Global.System.Xml.Schema.XmlSchemaAny()
-            any1.Namespace = "http://www.w3.org/2001/XMLSchema"
-            any1.MinOccurs = New Decimal(0)
-            any1.MaxOccurs = Decimal.MaxValue
-            any1.ProcessContents = Global.System.Xml.Schema.XmlSchemaContentProcessing.Lax
-            sequence.Items.Add(any1)
-            Dim any2 As Global.System.Xml.Schema.XmlSchemaAny = New Global.System.Xml.Schema.XmlSchemaAny()
-            any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1"
-            any2.MinOccurs = New Decimal(1)
-            any2.ProcessContents = Global.System.Xml.Schema.XmlSchemaContentProcessing.Lax
-            sequence.Items.Add(any2)
-            Dim attribute1 As Global.System.Xml.Schema.XmlSchemaAttribute = New Global.System.Xml.Schema.XmlSchemaAttribute()
-            attribute1.Name = "namespace"
-            attribute1.FixedValue = ds.Namespace
-            type.Attributes.Add(attribute1)
-            Dim attribute2 As Global.System.Xml.Schema.XmlSchemaAttribute = New Global.System.Xml.Schema.XmlSchemaAttribute()
-            attribute2.Name = "tableTypeName"
-            attribute2.FixedValue = "SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaIDDataTable"
-            type.Attributes.Add(attribute2)
-            type.Particle = sequence
-            Dim dsSchema As Global.System.Xml.Schema.XmlSchema = ds.GetSchemaSerializable
-            If xs.Contains(dsSchema.TargetNamespace) Then
-                Dim s1 As Global.System.IO.MemoryStream = New Global.System.IO.MemoryStream()
-                Dim s2 As Global.System.IO.MemoryStream = New Global.System.IO.MemoryStream()
-                Try 
-                    Dim schema As Global.System.Xml.Schema.XmlSchema = Nothing
-                    dsSchema.Write(s1)
-                    Dim schemas As Global.System.Collections.IEnumerator = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator
-                    Do While schemas.MoveNext
-                        schema = CType(schemas.Current,Global.System.Xml.Schema.XmlSchema)
-                        s2.SetLength(0)
-                        schema.Write(s2)
-                        If (s1.Length = s2.Length) Then
-                            s1.Position = 0
-                            s2.Position = 0
-                            
-                            Do While ((s1.Position <> s1.Length)  _
-                                        AndAlso (s1.ReadByte = s2.ReadByte))
-                                
-                                
-                            Loop
-                            If (s1.Position = s1.Length) Then
-                                Return type
-                            End If
-                        End If
-                        
-                    Loop
-                Finally
-                    If (Not (s1) Is Nothing) Then
-                        s1.Close
-                    End If
-                    If (Not (s2) Is Nothing) Then
-                        s2.Close
-                    End If
-                End Try
-            End If
-            xs.Add(dsSchema)
-            Return type
-        End Function
-    End Class
-    
-    '''<summary>
-    '''Represents the strongly named DataTable class.
-    '''</summary>
-    <Global.System.Serializable(),  _
-     Global.System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")>  _
-    Partial Public Class SP_CamposDeTablas_EDICION_ELIMINARDataTable
-        Inherits Global.System.Data.TypedTableBase(Of SP_CamposDeTablas_EDICION_ELIMINARRow)
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Sub New()
-            MyBase.New
-            Me.TableName = "SP_CamposDeTablas_EDICION_ELIMINAR"
-            Me.BeginInit
-            Me.InitClass
-            Me.EndInit
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Friend Sub New(ByVal table As Global.System.Data.DataTable)
-            MyBase.New
-            Me.TableName = table.TableName
-            If (table.CaseSensitive <> table.DataSet.CaseSensitive) Then
-                Me.CaseSensitive = table.CaseSensitive
-            End If
-            If (table.Locale.ToString <> table.DataSet.Locale.ToString) Then
-                Me.Locale = table.Locale
-            End If
-            If (table.Namespace <> table.DataSet.Namespace) Then
-                Me.Namespace = table.Namespace
-            End If
-            Me.Prefix = table.Prefix
-            Me.MinimumCapacity = table.MinimumCapacity
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Protected Sub New(ByVal info As Global.System.Runtime.Serialization.SerializationInfo, ByVal context As Global.System.Runtime.Serialization.StreamingContext)
-            MyBase.New(info, context)
-            Me.InitVars
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
-         Global.System.ComponentModel.Browsable(false)>  _
-        Public ReadOnly Property Count() As Integer
-            Get
-                Return Me.Rows.Count
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Default ReadOnly Property Item(ByVal index As Integer) As SP_CamposDeTablas_EDICION_ELIMINARRow
-            Get
-                Return CType(Me.Rows(index),SP_CamposDeTablas_EDICION_ELIMINARRow)
-            End Get
-        End Property
-        
-        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Event SP_CamposDeTablas_EDICION_ELIMINARRowChanging As SP_CamposDeTablas_EDICION_ELIMINARRowChangeEventHandler
-        
-        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Event SP_CamposDeTablas_EDICION_ELIMINARRowChanged As SP_CamposDeTablas_EDICION_ELIMINARRowChangeEventHandler
-        
-        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Event SP_CamposDeTablas_EDICION_ELIMINARRowDeleting As SP_CamposDeTablas_EDICION_ELIMINARRowChangeEventHandler
-        
-        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Event SP_CamposDeTablas_EDICION_ELIMINARRowDeleted As SP_CamposDeTablas_EDICION_ELIMINARRowChangeEventHandler
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Overloads Sub AddSP_CamposDeTablas_EDICION_ELIMINARRow(ByVal row As SP_CamposDeTablas_EDICION_ELIMINARRow)
-            Me.Rows.Add(row)
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Overloads Function AddSP_CamposDeTablas_EDICION_ELIMINARRow() As SP_CamposDeTablas_EDICION_ELIMINARRow
-            Dim rowSP_CamposDeTablas_EDICION_ELIMINARRow As SP_CamposDeTablas_EDICION_ELIMINARRow = CType(Me.NewRow,SP_CamposDeTablas_EDICION_ELIMINARRow)
-            Dim columnValuesArray(-1) As Object
-            rowSP_CamposDeTablas_EDICION_ELIMINARRow.ItemArray = columnValuesArray
-            Me.Rows.Add(rowSP_CamposDeTablas_EDICION_ELIMINARRow)
-            Return rowSP_CamposDeTablas_EDICION_ELIMINARRow
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Overrides Function Clone() As Global.System.Data.DataTable
-            Dim cln As SP_CamposDeTablas_EDICION_ELIMINARDataTable = CType(MyBase.Clone,SP_CamposDeTablas_EDICION_ELIMINARDataTable)
-            cln.InitVars
-            Return cln
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Protected Overrides Function CreateInstance() As Global.System.Data.DataTable
-            Return New SP_CamposDeTablas_EDICION_ELIMINARDataTable()
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Friend Sub InitVars()
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Private Sub InitClass()
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Function NewSP_CamposDeTablas_EDICION_ELIMINARRow() As SP_CamposDeTablas_EDICION_ELIMINARRow
-            Return CType(Me.NewRow,SP_CamposDeTablas_EDICION_ELIMINARRow)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Protected Overrides Function NewRowFromBuilder(ByVal builder As Global.System.Data.DataRowBuilder) As Global.System.Data.DataRow
-            Return New SP_CamposDeTablas_EDICION_ELIMINARRow(builder)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Protected Overrides Function GetRowType() As Global.System.Type
-            Return GetType(SP_CamposDeTablas_EDICION_ELIMINARRow)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Protected Overrides Sub OnRowChanged(ByVal e As Global.System.Data.DataRowChangeEventArgs)
-            MyBase.OnRowChanged(e)
-            If (Not (Me.SP_CamposDeTablas_EDICION_ELIMINARRowChangedEvent) Is Nothing) Then
-                RaiseEvent SP_CamposDeTablas_EDICION_ELIMINARRowChanged(Me, New SP_CamposDeTablas_EDICION_ELIMINARRowChangeEvent(CType(e.Row,SP_CamposDeTablas_EDICION_ELIMINARRow), e.Action))
-            End If
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Protected Overrides Sub OnRowChanging(ByVal e As Global.System.Data.DataRowChangeEventArgs)
-            MyBase.OnRowChanging(e)
-            If (Not (Me.SP_CamposDeTablas_EDICION_ELIMINARRowChangingEvent) Is Nothing) Then
-                RaiseEvent SP_CamposDeTablas_EDICION_ELIMINARRowChanging(Me, New SP_CamposDeTablas_EDICION_ELIMINARRowChangeEvent(CType(e.Row,SP_CamposDeTablas_EDICION_ELIMINARRow), e.Action))
-            End If
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Protected Overrides Sub OnRowDeleted(ByVal e As Global.System.Data.DataRowChangeEventArgs)
-            MyBase.OnRowDeleted(e)
-            If (Not (Me.SP_CamposDeTablas_EDICION_ELIMINARRowDeletedEvent) Is Nothing) Then
-                RaiseEvent SP_CamposDeTablas_EDICION_ELIMINARRowDeleted(Me, New SP_CamposDeTablas_EDICION_ELIMINARRowChangeEvent(CType(e.Row,SP_CamposDeTablas_EDICION_ELIMINARRow), e.Action))
-            End If
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Protected Overrides Sub OnRowDeleting(ByVal e As Global.System.Data.DataRowChangeEventArgs)
-            MyBase.OnRowDeleting(e)
-            If (Not (Me.SP_CamposDeTablas_EDICION_ELIMINARRowDeletingEvent) Is Nothing) Then
-                RaiseEvent SP_CamposDeTablas_EDICION_ELIMINARRowDeleting(Me, New SP_CamposDeTablas_EDICION_ELIMINARRowChangeEvent(CType(e.Row,SP_CamposDeTablas_EDICION_ELIMINARRow), e.Action))
-            End If
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Sub RemoveSP_CamposDeTablas_EDICION_ELIMINARRow(ByVal row As SP_CamposDeTablas_EDICION_ELIMINARRow)
-            Me.Rows.Remove(row)
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Shared Function GetTypedTableSchema(ByVal xs As Global.System.Xml.Schema.XmlSchemaSet) As Global.System.Xml.Schema.XmlSchemaComplexType
-            Dim type As Global.System.Xml.Schema.XmlSchemaComplexType = New Global.System.Xml.Schema.XmlSchemaComplexType()
-            Dim sequence As Global.System.Xml.Schema.XmlSchemaSequence = New Global.System.Xml.Schema.XmlSchemaSequence()
-            Dim ds As DataSetTablasYCampos = New DataSetTablasYCampos()
-            Dim any1 As Global.System.Xml.Schema.XmlSchemaAny = New Global.System.Xml.Schema.XmlSchemaAny()
-            any1.Namespace = "http://www.w3.org/2001/XMLSchema"
-            any1.MinOccurs = New Decimal(0)
-            any1.MaxOccurs = Decimal.MaxValue
-            any1.ProcessContents = Global.System.Xml.Schema.XmlSchemaContentProcessing.Lax
-            sequence.Items.Add(any1)
-            Dim any2 As Global.System.Xml.Schema.XmlSchemaAny = New Global.System.Xml.Schema.XmlSchemaAny()
-            any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1"
-            any2.MinOccurs = New Decimal(1)
-            any2.ProcessContents = Global.System.Xml.Schema.XmlSchemaContentProcessing.Lax
-            sequence.Items.Add(any2)
-            Dim attribute1 As Global.System.Xml.Schema.XmlSchemaAttribute = New Global.System.Xml.Schema.XmlSchemaAttribute()
-            attribute1.Name = "namespace"
-            attribute1.FixedValue = ds.Namespace
-            type.Attributes.Add(attribute1)
-            Dim attribute2 As Global.System.Xml.Schema.XmlSchemaAttribute = New Global.System.Xml.Schema.XmlSchemaAttribute()
-            attribute2.Name = "tableTypeName"
-            attribute2.FixedValue = "SP_CamposDeTablas_EDICION_ELIMINARDataTable"
-            type.Attributes.Add(attribute2)
-            type.Particle = sequence
-            Dim dsSchema As Global.System.Xml.Schema.XmlSchema = ds.GetSchemaSerializable
-            If xs.Contains(dsSchema.TargetNamespace) Then
-                Dim s1 As Global.System.IO.MemoryStream = New Global.System.IO.MemoryStream()
-                Dim s2 As Global.System.IO.MemoryStream = New Global.System.IO.MemoryStream()
-                Try 
-                    Dim schema As Global.System.Xml.Schema.XmlSchema = Nothing
-                    dsSchema.Write(s1)
-                    Dim schemas As Global.System.Collections.IEnumerator = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator
-                    Do While schemas.MoveNext
-                        schema = CType(schemas.Current,Global.System.Xml.Schema.XmlSchema)
-                        s2.SetLength(0)
-                        schema.Write(s2)
-                        If (s1.Length = s2.Length) Then
-                            s1.Position = 0
-                            s2.Position = 0
-                            
-                            Do While ((s1.Position <> s1.Length)  _
-                                        AndAlso (s1.ReadByte = s2.ReadByte))
-                                
-                                
-                            Loop
-                            If (s1.Position = s1.Length) Then
-                                Return type
-                            End If
-                        End If
-                        
-                    Loop
-                Finally
-                    If (Not (s1) Is Nothing) Then
-                        s1.Close
-                    End If
-                    If (Not (s2) Is Nothing) Then
-                        s2.Close
-                    End If
-                End Try
-            End If
-            xs.Add(dsSchema)
-            Return type
-        End Function
-    End Class
-    
-    '''<summary>
-    '''Represents the strongly named DataTable class.
-    '''</summary>
-    <Global.System.Serializable(),  _
-     Global.System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")>  _
-    Partial Public Class SP_CamposDeTablas_EDICION_ACTUALIZARDataTable
-        Inherits Global.System.Data.TypedTableBase(Of SP_CamposDeTablas_EDICION_ACTUALIZARRow)
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Sub New()
-            MyBase.New
-            Me.TableName = "SP_CamposDeTablas_EDICION_ACTUALIZAR"
-            Me.BeginInit
-            Me.InitClass
-            Me.EndInit
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Friend Sub New(ByVal table As Global.System.Data.DataTable)
-            MyBase.New
-            Me.TableName = table.TableName
-            If (table.CaseSensitive <> table.DataSet.CaseSensitive) Then
-                Me.CaseSensitive = table.CaseSensitive
-            End If
-            If (table.Locale.ToString <> table.DataSet.Locale.ToString) Then
-                Me.Locale = table.Locale
-            End If
-            If (table.Namespace <> table.DataSet.Namespace) Then
-                Me.Namespace = table.Namespace
-            End If
-            Me.Prefix = table.Prefix
-            Me.MinimumCapacity = table.MinimumCapacity
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Protected Sub New(ByVal info As Global.System.Runtime.Serialization.SerializationInfo, ByVal context As Global.System.Runtime.Serialization.StreamingContext)
-            MyBase.New(info, context)
-            Me.InitVars
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
-         Global.System.ComponentModel.Browsable(false)>  _
-        Public ReadOnly Property Count() As Integer
-            Get
-                Return Me.Rows.Count
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Default ReadOnly Property Item(ByVal index As Integer) As SP_CamposDeTablas_EDICION_ACTUALIZARRow
-            Get
-                Return CType(Me.Rows(index),SP_CamposDeTablas_EDICION_ACTUALIZARRow)
-            End Get
-        End Property
-        
-        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Event SP_CamposDeTablas_EDICION_ACTUALIZARRowChanging As SP_CamposDeTablas_EDICION_ACTUALIZARRowChangeEventHandler
-        
-        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Event SP_CamposDeTablas_EDICION_ACTUALIZARRowChanged As SP_CamposDeTablas_EDICION_ACTUALIZARRowChangeEventHandler
-        
-        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Event SP_CamposDeTablas_EDICION_ACTUALIZARRowDeleting As SP_CamposDeTablas_EDICION_ACTUALIZARRowChangeEventHandler
-        
-        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Event SP_CamposDeTablas_EDICION_ACTUALIZARRowDeleted As SP_CamposDeTablas_EDICION_ACTUALIZARRowChangeEventHandler
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Overloads Sub AddSP_CamposDeTablas_EDICION_ACTUALIZARRow(ByVal row As SP_CamposDeTablas_EDICION_ACTUALIZARRow)
-            Me.Rows.Add(row)
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Overloads Function AddSP_CamposDeTablas_EDICION_ACTUALIZARRow() As SP_CamposDeTablas_EDICION_ACTUALIZARRow
-            Dim rowSP_CamposDeTablas_EDICION_ACTUALIZARRow As SP_CamposDeTablas_EDICION_ACTUALIZARRow = CType(Me.NewRow,SP_CamposDeTablas_EDICION_ACTUALIZARRow)
-            Dim columnValuesArray(-1) As Object
-            rowSP_CamposDeTablas_EDICION_ACTUALIZARRow.ItemArray = columnValuesArray
-            Me.Rows.Add(rowSP_CamposDeTablas_EDICION_ACTUALIZARRow)
-            Return rowSP_CamposDeTablas_EDICION_ACTUALIZARRow
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Overrides Function Clone() As Global.System.Data.DataTable
-            Dim cln As SP_CamposDeTablas_EDICION_ACTUALIZARDataTable = CType(MyBase.Clone,SP_CamposDeTablas_EDICION_ACTUALIZARDataTable)
-            cln.InitVars
-            Return cln
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Protected Overrides Function CreateInstance() As Global.System.Data.DataTable
-            Return New SP_CamposDeTablas_EDICION_ACTUALIZARDataTable()
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Friend Sub InitVars()
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Private Sub InitClass()
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Function NewSP_CamposDeTablas_EDICION_ACTUALIZARRow() As SP_CamposDeTablas_EDICION_ACTUALIZARRow
-            Return CType(Me.NewRow,SP_CamposDeTablas_EDICION_ACTUALIZARRow)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Protected Overrides Function NewRowFromBuilder(ByVal builder As Global.System.Data.DataRowBuilder) As Global.System.Data.DataRow
-            Return New SP_CamposDeTablas_EDICION_ACTUALIZARRow(builder)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Protected Overrides Function GetRowType() As Global.System.Type
-            Return GetType(SP_CamposDeTablas_EDICION_ACTUALIZARRow)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Protected Overrides Sub OnRowChanged(ByVal e As Global.System.Data.DataRowChangeEventArgs)
-            MyBase.OnRowChanged(e)
-            If (Not (Me.SP_CamposDeTablas_EDICION_ACTUALIZARRowChangedEvent) Is Nothing) Then
-                RaiseEvent SP_CamposDeTablas_EDICION_ACTUALIZARRowChanged(Me, New SP_CamposDeTablas_EDICION_ACTUALIZARRowChangeEvent(CType(e.Row,SP_CamposDeTablas_EDICION_ACTUALIZARRow), e.Action))
-            End If
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Protected Overrides Sub OnRowChanging(ByVal e As Global.System.Data.DataRowChangeEventArgs)
-            MyBase.OnRowChanging(e)
-            If (Not (Me.SP_CamposDeTablas_EDICION_ACTUALIZARRowChangingEvent) Is Nothing) Then
-                RaiseEvent SP_CamposDeTablas_EDICION_ACTUALIZARRowChanging(Me, New SP_CamposDeTablas_EDICION_ACTUALIZARRowChangeEvent(CType(e.Row,SP_CamposDeTablas_EDICION_ACTUALIZARRow), e.Action))
-            End If
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Protected Overrides Sub OnRowDeleted(ByVal e As Global.System.Data.DataRowChangeEventArgs)
-            MyBase.OnRowDeleted(e)
-            If (Not (Me.SP_CamposDeTablas_EDICION_ACTUALIZARRowDeletedEvent) Is Nothing) Then
-                RaiseEvent SP_CamposDeTablas_EDICION_ACTUALIZARRowDeleted(Me, New SP_CamposDeTablas_EDICION_ACTUALIZARRowChangeEvent(CType(e.Row,SP_CamposDeTablas_EDICION_ACTUALIZARRow), e.Action))
-            End If
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Protected Overrides Sub OnRowDeleting(ByVal e As Global.System.Data.DataRowChangeEventArgs)
-            MyBase.OnRowDeleting(e)
-            If (Not (Me.SP_CamposDeTablas_EDICION_ACTUALIZARRowDeletingEvent) Is Nothing) Then
-                RaiseEvent SP_CamposDeTablas_EDICION_ACTUALIZARRowDeleting(Me, New SP_CamposDeTablas_EDICION_ACTUALIZARRowChangeEvent(CType(e.Row,SP_CamposDeTablas_EDICION_ACTUALIZARRow), e.Action))
-            End If
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Sub RemoveSP_CamposDeTablas_EDICION_ACTUALIZARRow(ByVal row As SP_CamposDeTablas_EDICION_ACTUALIZARRow)
-            Me.Rows.Remove(row)
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Shared Function GetTypedTableSchema(ByVal xs As Global.System.Xml.Schema.XmlSchemaSet) As Global.System.Xml.Schema.XmlSchemaComplexType
-            Dim type As Global.System.Xml.Schema.XmlSchemaComplexType = New Global.System.Xml.Schema.XmlSchemaComplexType()
-            Dim sequence As Global.System.Xml.Schema.XmlSchemaSequence = New Global.System.Xml.Schema.XmlSchemaSequence()
-            Dim ds As DataSetTablasYCampos = New DataSetTablasYCampos()
-            Dim any1 As Global.System.Xml.Schema.XmlSchemaAny = New Global.System.Xml.Schema.XmlSchemaAny()
-            any1.Namespace = "http://www.w3.org/2001/XMLSchema"
-            any1.MinOccurs = New Decimal(0)
-            any1.MaxOccurs = Decimal.MaxValue
-            any1.ProcessContents = Global.System.Xml.Schema.XmlSchemaContentProcessing.Lax
-            sequence.Items.Add(any1)
-            Dim any2 As Global.System.Xml.Schema.XmlSchemaAny = New Global.System.Xml.Schema.XmlSchemaAny()
-            any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1"
-            any2.MinOccurs = New Decimal(1)
-            any2.ProcessContents = Global.System.Xml.Schema.XmlSchemaContentProcessing.Lax
-            sequence.Items.Add(any2)
-            Dim attribute1 As Global.System.Xml.Schema.XmlSchemaAttribute = New Global.System.Xml.Schema.XmlSchemaAttribute()
-            attribute1.Name = "namespace"
-            attribute1.FixedValue = ds.Namespace
-            type.Attributes.Add(attribute1)
-            Dim attribute2 As Global.System.Xml.Schema.XmlSchemaAttribute = New Global.System.Xml.Schema.XmlSchemaAttribute()
-            attribute2.Name = "tableTypeName"
-            attribute2.FixedValue = "SP_CamposDeTablas_EDICION_ACTUALIZARDataTable"
-            type.Attributes.Add(attribute2)
-            type.Particle = sequence
-            Dim dsSchema As Global.System.Xml.Schema.XmlSchema = ds.GetSchemaSerializable
-            If xs.Contains(dsSchema.TargetNamespace) Then
-                Dim s1 As Global.System.IO.MemoryStream = New Global.System.IO.MemoryStream()
-                Dim s2 As Global.System.IO.MemoryStream = New Global.System.IO.MemoryStream()
-                Try 
-                    Dim schema As Global.System.Xml.Schema.XmlSchema = Nothing
-                    dsSchema.Write(s1)
-                    Dim schemas As Global.System.Collections.IEnumerator = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator
-                    Do While schemas.MoveNext
-                        schema = CType(schemas.Current,Global.System.Xml.Schema.XmlSchema)
-                        s2.SetLength(0)
-                        schema.Write(s2)
-                        If (s1.Length = s2.Length) Then
-                            s1.Position = 0
-                            s2.Position = 0
-                            
-                            Do While ((s1.Position <> s1.Length)  _
-                                        AndAlso (s1.ReadByte = s2.ReadByte))
-                                
-                                
-                            Loop
-                            If (s1.Position = s1.Length) Then
-                                Return type
-                            End If
-                        End If
-                        
-                    Loop
-                Finally
-                    If (Not (s1) Is Nothing) Then
-                        s1.Close
-                    End If
-                    If (Not (s2) Is Nothing) Then
-                        s2.Close
-                    End If
-                End Try
-            End If
-            xs.Add(dsSchema)
-            Return type
-        End Function
-    End Class
-    
-    '''<summary>
-    '''Represents the strongly named DataTable class.
-    '''</summary>
-    <Global.System.Serializable(),  _
-     Global.System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")>  _
-    Partial Public Class SP_CamposDeTablas_EDICION_INSERTARDataTable
-        Inherits Global.System.Data.TypedTableBase(Of SP_CamposDeTablas_EDICION_INSERTARRow)
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Sub New()
-            MyBase.New
-            Me.TableName = "SP_CamposDeTablas_EDICION_INSERTAR"
-            Me.BeginInit
-            Me.InitClass
-            Me.EndInit
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Friend Sub New(ByVal table As Global.System.Data.DataTable)
-            MyBase.New
-            Me.TableName = table.TableName
-            If (table.CaseSensitive <> table.DataSet.CaseSensitive) Then
-                Me.CaseSensitive = table.CaseSensitive
-            End If
-            If (table.Locale.ToString <> table.DataSet.Locale.ToString) Then
-                Me.Locale = table.Locale
-            End If
-            If (table.Namespace <> table.DataSet.Namespace) Then
-                Me.Namespace = table.Namespace
-            End If
-            Me.Prefix = table.Prefix
-            Me.MinimumCapacity = table.MinimumCapacity
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Protected Sub New(ByVal info As Global.System.Runtime.Serialization.SerializationInfo, ByVal context As Global.System.Runtime.Serialization.StreamingContext)
-            MyBase.New(info, context)
-            Me.InitVars
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
-         Global.System.ComponentModel.Browsable(false)>  _
-        Public ReadOnly Property Count() As Integer
-            Get
-                Return Me.Rows.Count
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Default ReadOnly Property Item(ByVal index As Integer) As SP_CamposDeTablas_EDICION_INSERTARRow
-            Get
-                Return CType(Me.Rows(index),SP_CamposDeTablas_EDICION_INSERTARRow)
-            End Get
-        End Property
-        
-        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Event SP_CamposDeTablas_EDICION_INSERTARRowChanging As SP_CamposDeTablas_EDICION_INSERTARRowChangeEventHandler
-        
-        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Event SP_CamposDeTablas_EDICION_INSERTARRowChanged As SP_CamposDeTablas_EDICION_INSERTARRowChangeEventHandler
-        
-        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Event SP_CamposDeTablas_EDICION_INSERTARRowDeleting As SP_CamposDeTablas_EDICION_INSERTARRowChangeEventHandler
-        
-        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Event SP_CamposDeTablas_EDICION_INSERTARRowDeleted As SP_CamposDeTablas_EDICION_INSERTARRowChangeEventHandler
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Overloads Sub AddSP_CamposDeTablas_EDICION_INSERTARRow(ByVal row As SP_CamposDeTablas_EDICION_INSERTARRow)
-            Me.Rows.Add(row)
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Overloads Function AddSP_CamposDeTablas_EDICION_INSERTARRow() As SP_CamposDeTablas_EDICION_INSERTARRow
-            Dim rowSP_CamposDeTablas_EDICION_INSERTARRow As SP_CamposDeTablas_EDICION_INSERTARRow = CType(Me.NewRow,SP_CamposDeTablas_EDICION_INSERTARRow)
-            Dim columnValuesArray(-1) As Object
-            rowSP_CamposDeTablas_EDICION_INSERTARRow.ItemArray = columnValuesArray
-            Me.Rows.Add(rowSP_CamposDeTablas_EDICION_INSERTARRow)
-            Return rowSP_CamposDeTablas_EDICION_INSERTARRow
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Overrides Function Clone() As Global.System.Data.DataTable
-            Dim cln As SP_CamposDeTablas_EDICION_INSERTARDataTable = CType(MyBase.Clone,SP_CamposDeTablas_EDICION_INSERTARDataTable)
-            cln.InitVars
-            Return cln
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Protected Overrides Function CreateInstance() As Global.System.Data.DataTable
-            Return New SP_CamposDeTablas_EDICION_INSERTARDataTable()
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Friend Sub InitVars()
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Private Sub InitClass()
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Function NewSP_CamposDeTablas_EDICION_INSERTARRow() As SP_CamposDeTablas_EDICION_INSERTARRow
-            Return CType(Me.NewRow,SP_CamposDeTablas_EDICION_INSERTARRow)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Protected Overrides Function NewRowFromBuilder(ByVal builder As Global.System.Data.DataRowBuilder) As Global.System.Data.DataRow
-            Return New SP_CamposDeTablas_EDICION_INSERTARRow(builder)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Protected Overrides Function GetRowType() As Global.System.Type
-            Return GetType(SP_CamposDeTablas_EDICION_INSERTARRow)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Protected Overrides Sub OnRowChanged(ByVal e As Global.System.Data.DataRowChangeEventArgs)
-            MyBase.OnRowChanged(e)
-            If (Not (Me.SP_CamposDeTablas_EDICION_INSERTARRowChangedEvent) Is Nothing) Then
-                RaiseEvent SP_CamposDeTablas_EDICION_INSERTARRowChanged(Me, New SP_CamposDeTablas_EDICION_INSERTARRowChangeEvent(CType(e.Row,SP_CamposDeTablas_EDICION_INSERTARRow), e.Action))
-            End If
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Protected Overrides Sub OnRowChanging(ByVal e As Global.System.Data.DataRowChangeEventArgs)
-            MyBase.OnRowChanging(e)
-            If (Not (Me.SP_CamposDeTablas_EDICION_INSERTARRowChangingEvent) Is Nothing) Then
-                RaiseEvent SP_CamposDeTablas_EDICION_INSERTARRowChanging(Me, New SP_CamposDeTablas_EDICION_INSERTARRowChangeEvent(CType(e.Row,SP_CamposDeTablas_EDICION_INSERTARRow), e.Action))
-            End If
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Protected Overrides Sub OnRowDeleted(ByVal e As Global.System.Data.DataRowChangeEventArgs)
-            MyBase.OnRowDeleted(e)
-            If (Not (Me.SP_CamposDeTablas_EDICION_INSERTARRowDeletedEvent) Is Nothing) Then
-                RaiseEvent SP_CamposDeTablas_EDICION_INSERTARRowDeleted(Me, New SP_CamposDeTablas_EDICION_INSERTARRowChangeEvent(CType(e.Row,SP_CamposDeTablas_EDICION_INSERTARRow), e.Action))
-            End If
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Protected Overrides Sub OnRowDeleting(ByVal e As Global.System.Data.DataRowChangeEventArgs)
-            MyBase.OnRowDeleting(e)
-            If (Not (Me.SP_CamposDeTablas_EDICION_INSERTARRowDeletingEvent) Is Nothing) Then
-                RaiseEvent SP_CamposDeTablas_EDICION_INSERTARRowDeleting(Me, New SP_CamposDeTablas_EDICION_INSERTARRowChangeEvent(CType(e.Row,SP_CamposDeTablas_EDICION_INSERTARRow), e.Action))
-            End If
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Sub RemoveSP_CamposDeTablas_EDICION_INSERTARRow(ByVal row As SP_CamposDeTablas_EDICION_INSERTARRow)
-            Me.Rows.Remove(row)
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Shared Function GetTypedTableSchema(ByVal xs As Global.System.Xml.Schema.XmlSchemaSet) As Global.System.Xml.Schema.XmlSchemaComplexType
-            Dim type As Global.System.Xml.Schema.XmlSchemaComplexType = New Global.System.Xml.Schema.XmlSchemaComplexType()
-            Dim sequence As Global.System.Xml.Schema.XmlSchemaSequence = New Global.System.Xml.Schema.XmlSchemaSequence()
-            Dim ds As DataSetTablasYCampos = New DataSetTablasYCampos()
-            Dim any1 As Global.System.Xml.Schema.XmlSchemaAny = New Global.System.Xml.Schema.XmlSchemaAny()
-            any1.Namespace = "http://www.w3.org/2001/XMLSchema"
-            any1.MinOccurs = New Decimal(0)
-            any1.MaxOccurs = Decimal.MaxValue
-            any1.ProcessContents = Global.System.Xml.Schema.XmlSchemaContentProcessing.Lax
-            sequence.Items.Add(any1)
-            Dim any2 As Global.System.Xml.Schema.XmlSchemaAny = New Global.System.Xml.Schema.XmlSchemaAny()
-            any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1"
-            any2.MinOccurs = New Decimal(1)
-            any2.ProcessContents = Global.System.Xml.Schema.XmlSchemaContentProcessing.Lax
-            sequence.Items.Add(any2)
-            Dim attribute1 As Global.System.Xml.Schema.XmlSchemaAttribute = New Global.System.Xml.Schema.XmlSchemaAttribute()
-            attribute1.Name = "namespace"
-            attribute1.FixedValue = ds.Namespace
-            type.Attributes.Add(attribute1)
-            Dim attribute2 As Global.System.Xml.Schema.XmlSchemaAttribute = New Global.System.Xml.Schema.XmlSchemaAttribute()
-            attribute2.Name = "tableTypeName"
-            attribute2.FixedValue = "SP_CamposDeTablas_EDICION_INSERTARDataTable"
-            type.Attributes.Add(attribute2)
-            type.Particle = sequence
-            Dim dsSchema As Global.System.Xml.Schema.XmlSchema = ds.GetSchemaSerializable
-            If xs.Contains(dsSchema.TargetNamespace) Then
-                Dim s1 As Global.System.IO.MemoryStream = New Global.System.IO.MemoryStream()
-                Dim s2 As Global.System.IO.MemoryStream = New Global.System.IO.MemoryStream()
-                Try 
-                    Dim schema As Global.System.Xml.Schema.XmlSchema = Nothing
-                    dsSchema.Write(s1)
-                    Dim schemas As Global.System.Collections.IEnumerator = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator
-                    Do While schemas.MoveNext
-                        schema = CType(schemas.Current,Global.System.Xml.Schema.XmlSchema)
-                        s2.SetLength(0)
-                        schema.Write(s2)
-                        If (s1.Length = s2.Length) Then
-                            s1.Position = 0
-                            s2.Position = 0
-                            
-                            Do While ((s1.Position <> s1.Length)  _
-                                        AndAlso (s1.ReadByte = s2.ReadByte))
-                                
-                                
-                            Loop
-                            If (s1.Position = s1.Length) Then
-                                Return type
-                            End If
-                        End If
-                        
-                    Loop
-                Finally
-                    If (Not (s1) Is Nothing) Then
-                        s1.Close
-                    End If
-                    If (Not (s2) Is Nothing) Then
-                        s2.Close
-                    End If
-                End Try
-            End If
-            xs.Add(dsSchema)
-            Return type
-        End Function
-    End Class
-    
-    '''<summary>
-    '''Represents the strongly named DataTable class.
-    '''</summary>
-    <Global.System.Serializable(),  _
-     Global.System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")>  _
     Partial Public Class SP_CampoComponentes_Segun_Plantilla_TipoDataTable
         Inherits Global.System.Data.TypedTableBase(Of SP_CampoComponentes_Segun_Plantilla_TipoRow)
         
@@ -3854,8 +3980,6 @@ Partial Public Class DataSetTablasYCampos
         Private columnSufijo As Global.System.Data.DataColumn
         
         Private columnInferior As Global.System.Data.DataColumn
-        
-        Private columnMultiremplazo As Global.System.Data.DataColumn
         
         Private columnSeparadorCampos As Global.System.Data.DataColumn
         
@@ -3954,14 +4078,6 @@ Partial Public Class DataSetTablasYCampos
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public ReadOnly Property MultiremplazoColumn() As Global.System.Data.DataColumn
-            Get
-                Return Me.columnMultiremplazo
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Public ReadOnly Property SeparadorCamposColumn() As Global.System.Data.DataColumn
             Get
                 Return Me.columnSeparadorCampos
@@ -4013,9 +4129,9 @@ Partial Public Class DataSetTablasYCampos
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Overloads Function AddSP_CampoComponentes_Segun_Plantilla_TipoRow(ByVal PlantillaID As Integer, ByVal Tipo As String, ByVal Prefijo As String, ByVal Superior As String, ByVal Sufijo As String, ByVal Inferior As String, ByVal Multiremplazo As String, ByVal SeparadorCampos As String, ByVal MultiReplace As String) As SP_CampoComponentes_Segun_Plantilla_TipoRow
+        Public Overloads Function AddSP_CampoComponentes_Segun_Plantilla_TipoRow(ByVal PlantillaID As Integer, ByVal Tipo As String, ByVal Prefijo As String, ByVal Superior As String, ByVal Sufijo As String, ByVal Inferior As String, ByVal SeparadorCampos As String, ByVal MultiReplace As String) As SP_CampoComponentes_Segun_Plantilla_TipoRow
             Dim rowSP_CampoComponentes_Segun_Plantilla_TipoRow As SP_CampoComponentes_Segun_Plantilla_TipoRow = CType(Me.NewRow,SP_CampoComponentes_Segun_Plantilla_TipoRow)
-            Dim columnValuesArray() As Object = New Object() {Nothing, PlantillaID, Tipo, Prefijo, Superior, Sufijo, Inferior, Multiremplazo, SeparadorCampos, MultiReplace}
+            Dim columnValuesArray() As Object = New Object() {Nothing, PlantillaID, Tipo, Prefijo, Superior, Sufijo, Inferior, SeparadorCampos, MultiReplace}
             rowSP_CampoComponentes_Segun_Plantilla_TipoRow.ItemArray = columnValuesArray
             Me.Rows.Add(rowSP_CampoComponentes_Segun_Plantilla_TipoRow)
             Return rowSP_CampoComponentes_Segun_Plantilla_TipoRow
@@ -4051,7 +4167,6 @@ Partial Public Class DataSetTablasYCampos
             Me.columnSuperior = MyBase.Columns("Superior")
             Me.columnSufijo = MyBase.Columns("Sufijo")
             Me.columnInferior = MyBase.Columns("Inferior")
-            Me.columnMultiremplazo = MyBase.Columns("Multiremplazo")
             Me.columnSeparadorCampos = MyBase.Columns("SeparadorCampos")
             Me.columnMultiReplace = MyBase.Columns("MultiReplace")
         End Sub
@@ -4073,8 +4188,6 @@ Partial Public Class DataSetTablasYCampos
             MyBase.Columns.Add(Me.columnSufijo)
             Me.columnInferior = New Global.System.Data.DataColumn("Inferior", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnInferior)
-            Me.columnMultiremplazo = New Global.System.Data.DataColumn("Multiremplazo", GetType(String), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnMultiremplazo)
             Me.columnSeparadorCampos = New Global.System.Data.DataColumn("SeparadorCampos", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnSeparadorCampos)
             Me.columnMultiReplace = New Global.System.Data.DataColumn("MultiReplace", GetType(String), Nothing, Global.System.Data.MappingType.Element)
@@ -4093,8 +4206,7 @@ Partial Public Class DataSetTablasYCampos
             Me.columnSuperior.MaxLength = 200
             Me.columnSufijo.MaxLength = 200
             Me.columnInferior.MaxLength = 200
-            Me.columnMultiremplazo.MaxLength = 2147483647
-            Me.columnSeparadorCampos.MaxLength = 2147483647
+            Me.columnSeparadorCampos.MaxLength = 50
             Me.columnMultiReplace.MaxLength = 2147483647
         End Sub
         
@@ -5189,7 +5301,7 @@ Partial Public Class DataSetTablasYCampos
             Me.columnSuperior.MaxLength = 200
             Me.columnSufijo.MaxLength = 200
             Me.columnInferior.MaxLength = 200
-            Me.columnSeparadorCampos.MaxLength = 2147483647
+            Me.columnSeparadorCampos.MaxLength = 50
             Me.columnMultiReplace.MaxLength = 2147483647
         End Sub
         
@@ -5325,583 +5437,22 @@ Partial Public Class DataSetTablasYCampos
     '''</summary>
     <Global.System.Serializable(),  _
      Global.System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")>  _
-    Partial Public Class SP_RegistroValorRequerimientos_SegunProyectoRequerimientoDataTable
-        Inherits Global.System.Data.TypedTableBase(Of SP_RegistroValorRequerimientos_SegunProyectoRequerimientoRow)
+    Partial Public Class SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaIDDataTable
+        Inherits Global.System.Data.TypedTableBase(Of SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaIDRow)
         
-        Private columnRegistroValorRequerimientoID As Global.System.Data.DataColumn
-        
-        Private columnProyectoID As Global.System.Data.DataColumn
-        
-        Private columnRequerimiento As Global.System.Data.DataColumn
-        
-        Private columnValorRequerimiento As Global.System.Data.DataColumn
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Sub New()
-            MyBase.New
-            Me.TableName = "SP_RegistroValorRequerimientos_SegunProyectoRequerimiento"
-            Me.BeginInit
-            Me.InitClass
-            Me.EndInit
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Friend Sub New(ByVal table As Global.System.Data.DataTable)
-            MyBase.New
-            Me.TableName = table.TableName
-            If (table.CaseSensitive <> table.DataSet.CaseSensitive) Then
-                Me.CaseSensitive = table.CaseSensitive
-            End If
-            If (table.Locale.ToString <> table.DataSet.Locale.ToString) Then
-                Me.Locale = table.Locale
-            End If
-            If (table.Namespace <> table.DataSet.Namespace) Then
-                Me.Namespace = table.Namespace
-            End If
-            Me.Prefix = table.Prefix
-            Me.MinimumCapacity = table.MinimumCapacity
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Protected Sub New(ByVal info As Global.System.Runtime.Serialization.SerializationInfo, ByVal context As Global.System.Runtime.Serialization.StreamingContext)
-            MyBase.New(info, context)
-            Me.InitVars
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public ReadOnly Property RegistroValorRequerimientoIDColumn() As Global.System.Data.DataColumn
-            Get
-                Return Me.columnRegistroValorRequerimientoID
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public ReadOnly Property ProyectoIDColumn() As Global.System.Data.DataColumn
-            Get
-                Return Me.columnProyectoID
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public ReadOnly Property RequerimientoColumn() As Global.System.Data.DataColumn
-            Get
-                Return Me.columnRequerimiento
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public ReadOnly Property ValorRequerimientoColumn() As Global.System.Data.DataColumn
-            Get
-                Return Me.columnValorRequerimiento
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
-         Global.System.ComponentModel.Browsable(false)>  _
-        Public ReadOnly Property Count() As Integer
-            Get
-                Return Me.Rows.Count
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Default ReadOnly Property Item(ByVal index As Integer) As SP_RegistroValorRequerimientos_SegunProyectoRequerimientoRow
-            Get
-                Return CType(Me.Rows(index),SP_RegistroValorRequerimientos_SegunProyectoRequerimientoRow)
-            End Get
-        End Property
-        
-        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Event SP_RegistroValorRequerimientos_SegunProyectoRequerimientoRowChanging As SP_RegistroValorRequerimientos_SegunProyectoRequerimientoRowChangeEventHandler
-        
-        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Event SP_RegistroValorRequerimientos_SegunProyectoRequerimientoRowChanged As SP_RegistroValorRequerimientos_SegunProyectoRequerimientoRowChangeEventHandler
-        
-        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Event SP_RegistroValorRequerimientos_SegunProyectoRequerimientoRowDeleting As SP_RegistroValorRequerimientos_SegunProyectoRequerimientoRowChangeEventHandler
-        
-        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Event SP_RegistroValorRequerimientos_SegunProyectoRequerimientoRowDeleted As SP_RegistroValorRequerimientos_SegunProyectoRequerimientoRowChangeEventHandler
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Overloads Sub AddSP_RegistroValorRequerimientos_SegunProyectoRequerimientoRow(ByVal row As SP_RegistroValorRequerimientos_SegunProyectoRequerimientoRow)
-            Me.Rows.Add(row)
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Overloads Function AddSP_RegistroValorRequerimientos_SegunProyectoRequerimientoRow(ByVal ProyectoID As Integer, ByVal Requerimiento As String, ByVal ValorRequerimiento As String) As SP_RegistroValorRequerimientos_SegunProyectoRequerimientoRow
-            Dim rowSP_RegistroValorRequerimientos_SegunProyectoRequerimientoRow As SP_RegistroValorRequerimientos_SegunProyectoRequerimientoRow = CType(Me.NewRow,SP_RegistroValorRequerimientos_SegunProyectoRequerimientoRow)
-            Dim columnValuesArray() As Object = New Object() {Nothing, ProyectoID, Requerimiento, ValorRequerimiento}
-            rowSP_RegistroValorRequerimientos_SegunProyectoRequerimientoRow.ItemArray = columnValuesArray
-            Me.Rows.Add(rowSP_RegistroValorRequerimientos_SegunProyectoRequerimientoRow)
-            Return rowSP_RegistroValorRequerimientos_SegunProyectoRequerimientoRow
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Function FindByRegistroValorRequerimientoID(ByVal RegistroValorRequerimientoID As Long) As SP_RegistroValorRequerimientos_SegunProyectoRequerimientoRow
-            Return CType(Me.Rows.Find(New Object() {RegistroValorRequerimientoID}),SP_RegistroValorRequerimientos_SegunProyectoRequerimientoRow)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Overrides Function Clone() As Global.System.Data.DataTable
-            Dim cln As SP_RegistroValorRequerimientos_SegunProyectoRequerimientoDataTable = CType(MyBase.Clone,SP_RegistroValorRequerimientos_SegunProyectoRequerimientoDataTable)
-            cln.InitVars
-            Return cln
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Protected Overrides Function CreateInstance() As Global.System.Data.DataTable
-            Return New SP_RegistroValorRequerimientos_SegunProyectoRequerimientoDataTable()
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Friend Sub InitVars()
-            Me.columnRegistroValorRequerimientoID = MyBase.Columns("RegistroValorRequerimientoID")
-            Me.columnProyectoID = MyBase.Columns("ProyectoID")
-            Me.columnRequerimiento = MyBase.Columns("Requerimiento")
-            Me.columnValorRequerimiento = MyBase.Columns("ValorRequerimiento")
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Private Sub InitClass()
-            Me.columnRegistroValorRequerimientoID = New Global.System.Data.DataColumn("RegistroValorRequerimientoID", GetType(Long), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnRegistroValorRequerimientoID)
-            Me.columnProyectoID = New Global.System.Data.DataColumn("ProyectoID", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnProyectoID)
-            Me.columnRequerimiento = New Global.System.Data.DataColumn("Requerimiento", GetType(String), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnRequerimiento)
-            Me.columnValorRequerimiento = New Global.System.Data.DataColumn("ValorRequerimiento", GetType(String), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnValorRequerimiento)
-            Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnRegistroValorRequerimientoID}, true))
-            Me.columnRegistroValorRequerimientoID.AutoIncrement = true
-            Me.columnRegistroValorRequerimientoID.AutoIncrementSeed = -1
-            Me.columnRegistroValorRequerimientoID.AutoIncrementStep = -1
-            Me.columnRegistroValorRequerimientoID.AllowDBNull = false
-            Me.columnRegistroValorRequerimientoID.ReadOnly = true
-            Me.columnRegistroValorRequerimientoID.Unique = true
-            Me.columnProyectoID.AllowDBNull = false
-            Me.columnRequerimiento.AllowDBNull = false
-            Me.columnRequerimiento.MaxLength = 500
-            Me.columnValorRequerimiento.AllowDBNull = false
-            Me.columnValorRequerimiento.MaxLength = 500
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Function NewSP_RegistroValorRequerimientos_SegunProyectoRequerimientoRow() As SP_RegistroValorRequerimientos_SegunProyectoRequerimientoRow
-            Return CType(Me.NewRow,SP_RegistroValorRequerimientos_SegunProyectoRequerimientoRow)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Protected Overrides Function NewRowFromBuilder(ByVal builder As Global.System.Data.DataRowBuilder) As Global.System.Data.DataRow
-            Return New SP_RegistroValorRequerimientos_SegunProyectoRequerimientoRow(builder)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Protected Overrides Function GetRowType() As Global.System.Type
-            Return GetType(SP_RegistroValorRequerimientos_SegunProyectoRequerimientoRow)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Protected Overrides Sub OnRowChanged(ByVal e As Global.System.Data.DataRowChangeEventArgs)
-            MyBase.OnRowChanged(e)
-            If (Not (Me.SP_RegistroValorRequerimientos_SegunProyectoRequerimientoRowChangedEvent) Is Nothing) Then
-                RaiseEvent SP_RegistroValorRequerimientos_SegunProyectoRequerimientoRowChanged(Me, New SP_RegistroValorRequerimientos_SegunProyectoRequerimientoRowChangeEvent(CType(e.Row,SP_RegistroValorRequerimientos_SegunProyectoRequerimientoRow), e.Action))
-            End If
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Protected Overrides Sub OnRowChanging(ByVal e As Global.System.Data.DataRowChangeEventArgs)
-            MyBase.OnRowChanging(e)
-            If (Not (Me.SP_RegistroValorRequerimientos_SegunProyectoRequerimientoRowChangingEvent) Is Nothing) Then
-                RaiseEvent SP_RegistroValorRequerimientos_SegunProyectoRequerimientoRowChanging(Me, New SP_RegistroValorRequerimientos_SegunProyectoRequerimientoRowChangeEvent(CType(e.Row,SP_RegistroValorRequerimientos_SegunProyectoRequerimientoRow), e.Action))
-            End If
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Protected Overrides Sub OnRowDeleted(ByVal e As Global.System.Data.DataRowChangeEventArgs)
-            MyBase.OnRowDeleted(e)
-            If (Not (Me.SP_RegistroValorRequerimientos_SegunProyectoRequerimientoRowDeletedEvent) Is Nothing) Then
-                RaiseEvent SP_RegistroValorRequerimientos_SegunProyectoRequerimientoRowDeleted(Me, New SP_RegistroValorRequerimientos_SegunProyectoRequerimientoRowChangeEvent(CType(e.Row,SP_RegistroValorRequerimientos_SegunProyectoRequerimientoRow), e.Action))
-            End If
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Protected Overrides Sub OnRowDeleting(ByVal e As Global.System.Data.DataRowChangeEventArgs)
-            MyBase.OnRowDeleting(e)
-            If (Not (Me.SP_RegistroValorRequerimientos_SegunProyectoRequerimientoRowDeletingEvent) Is Nothing) Then
-                RaiseEvent SP_RegistroValorRequerimientos_SegunProyectoRequerimientoRowDeleting(Me, New SP_RegistroValorRequerimientos_SegunProyectoRequerimientoRowChangeEvent(CType(e.Row,SP_RegistroValorRequerimientos_SegunProyectoRequerimientoRow), e.Action))
-            End If
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Sub RemoveSP_RegistroValorRequerimientos_SegunProyectoRequerimientoRow(ByVal row As SP_RegistroValorRequerimientos_SegunProyectoRequerimientoRow)
-            Me.Rows.Remove(row)
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Shared Function GetTypedTableSchema(ByVal xs As Global.System.Xml.Schema.XmlSchemaSet) As Global.System.Xml.Schema.XmlSchemaComplexType
-            Dim type As Global.System.Xml.Schema.XmlSchemaComplexType = New Global.System.Xml.Schema.XmlSchemaComplexType()
-            Dim sequence As Global.System.Xml.Schema.XmlSchemaSequence = New Global.System.Xml.Schema.XmlSchemaSequence()
-            Dim ds As DataSetTablasYCampos = New DataSetTablasYCampos()
-            Dim any1 As Global.System.Xml.Schema.XmlSchemaAny = New Global.System.Xml.Schema.XmlSchemaAny()
-            any1.Namespace = "http://www.w3.org/2001/XMLSchema"
-            any1.MinOccurs = New Decimal(0)
-            any1.MaxOccurs = Decimal.MaxValue
-            any1.ProcessContents = Global.System.Xml.Schema.XmlSchemaContentProcessing.Lax
-            sequence.Items.Add(any1)
-            Dim any2 As Global.System.Xml.Schema.XmlSchemaAny = New Global.System.Xml.Schema.XmlSchemaAny()
-            any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1"
-            any2.MinOccurs = New Decimal(1)
-            any2.ProcessContents = Global.System.Xml.Schema.XmlSchemaContentProcessing.Lax
-            sequence.Items.Add(any2)
-            Dim attribute1 As Global.System.Xml.Schema.XmlSchemaAttribute = New Global.System.Xml.Schema.XmlSchemaAttribute()
-            attribute1.Name = "namespace"
-            attribute1.FixedValue = ds.Namespace
-            type.Attributes.Add(attribute1)
-            Dim attribute2 As Global.System.Xml.Schema.XmlSchemaAttribute = New Global.System.Xml.Schema.XmlSchemaAttribute()
-            attribute2.Name = "tableTypeName"
-            attribute2.FixedValue = "SP_RegistroValorRequerimientos_SegunProyectoRequerimientoDataTable"
-            type.Attributes.Add(attribute2)
-            type.Particle = sequence
-            Dim dsSchema As Global.System.Xml.Schema.XmlSchema = ds.GetSchemaSerializable
-            If xs.Contains(dsSchema.TargetNamespace) Then
-                Dim s1 As Global.System.IO.MemoryStream = New Global.System.IO.MemoryStream()
-                Dim s2 As Global.System.IO.MemoryStream = New Global.System.IO.MemoryStream()
-                Try 
-                    Dim schema As Global.System.Xml.Schema.XmlSchema = Nothing
-                    dsSchema.Write(s1)
-                    Dim schemas As Global.System.Collections.IEnumerator = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator
-                    Do While schemas.MoveNext
-                        schema = CType(schemas.Current,Global.System.Xml.Schema.XmlSchema)
-                        s2.SetLength(0)
-                        schema.Write(s2)
-                        If (s1.Length = s2.Length) Then
-                            s1.Position = 0
-                            s2.Position = 0
-                            
-                            Do While ((s1.Position <> s1.Length)  _
-                                        AndAlso (s1.ReadByte = s2.ReadByte))
-                                
-                                
-                            Loop
-                            If (s1.Position = s1.Length) Then
-                                Return type
-                            End If
-                        End If
-                        
-                    Loop
-                Finally
-                    If (Not (s1) Is Nothing) Then
-                        s1.Close
-                    End If
-                    If (Not (s2) Is Nothing) Then
-                        s2.Close
-                    End If
-                End Try
-            End If
-            xs.Add(dsSchema)
-            Return type
-        End Function
-    End Class
-    
-    '''<summary>
-    '''Represents the strongly named DataTable class.
-    '''</summary>
-    <Global.System.Serializable(),  _
-     Global.System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")>  _
-    Partial Public Class SP_CARGA_CONVENSIONES_USADASDataTable
-        Inherits Global.System.Data.TypedTableBase(Of SP_CARGA_CONVENSIONES_USADASRow)
-        
-        Private columnCONVENSIONES As Global.System.Data.DataColumn
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Sub New()
-            MyBase.New
-            Me.TableName = "SP_CARGA_CONVENSIONES_USADAS"
-            Me.BeginInit
-            Me.InitClass
-            Me.EndInit
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Friend Sub New(ByVal table As Global.System.Data.DataTable)
-            MyBase.New
-            Me.TableName = table.TableName
-            If (table.CaseSensitive <> table.DataSet.CaseSensitive) Then
-                Me.CaseSensitive = table.CaseSensitive
-            End If
-            If (table.Locale.ToString <> table.DataSet.Locale.ToString) Then
-                Me.Locale = table.Locale
-            End If
-            If (table.Namespace <> table.DataSet.Namespace) Then
-                Me.Namespace = table.Namespace
-            End If
-            Me.Prefix = table.Prefix
-            Me.MinimumCapacity = table.MinimumCapacity
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Protected Sub New(ByVal info As Global.System.Runtime.Serialization.SerializationInfo, ByVal context As Global.System.Runtime.Serialization.StreamingContext)
-            MyBase.New(info, context)
-            Me.InitVars
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public ReadOnly Property CONVENSIONESColumn() As Global.System.Data.DataColumn
-            Get
-                Return Me.columnCONVENSIONES
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
-         Global.System.ComponentModel.Browsable(false)>  _
-        Public ReadOnly Property Count() As Integer
-            Get
-                Return Me.Rows.Count
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Default ReadOnly Property Item(ByVal index As Integer) As SP_CARGA_CONVENSIONES_USADASRow
-            Get
-                Return CType(Me.Rows(index),SP_CARGA_CONVENSIONES_USADASRow)
-            End Get
-        End Property
-        
-        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Event SP_CARGA_CONVENSIONES_USADASRowChanging As SP_CARGA_CONVENSIONES_USADASRowChangeEventHandler
-        
-        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Event SP_CARGA_CONVENSIONES_USADASRowChanged As SP_CARGA_CONVENSIONES_USADASRowChangeEventHandler
-        
-        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Event SP_CARGA_CONVENSIONES_USADASRowDeleting As SP_CARGA_CONVENSIONES_USADASRowChangeEventHandler
-        
-        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Event SP_CARGA_CONVENSIONES_USADASRowDeleted As SP_CARGA_CONVENSIONES_USADASRowChangeEventHandler
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Overloads Sub AddSP_CARGA_CONVENSIONES_USADASRow(ByVal row As SP_CARGA_CONVENSIONES_USADASRow)
-            Me.Rows.Add(row)
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Overloads Function AddSP_CARGA_CONVENSIONES_USADASRow(ByVal CONVENSIONES As String) As SP_CARGA_CONVENSIONES_USADASRow
-            Dim rowSP_CARGA_CONVENSIONES_USADASRow As SP_CARGA_CONVENSIONES_USADASRow = CType(Me.NewRow,SP_CARGA_CONVENSIONES_USADASRow)
-            Dim columnValuesArray() As Object = New Object() {CONVENSIONES}
-            rowSP_CARGA_CONVENSIONES_USADASRow.ItemArray = columnValuesArray
-            Me.Rows.Add(rowSP_CARGA_CONVENSIONES_USADASRow)
-            Return rowSP_CARGA_CONVENSIONES_USADASRow
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Overrides Function Clone() As Global.System.Data.DataTable
-            Dim cln As SP_CARGA_CONVENSIONES_USADASDataTable = CType(MyBase.Clone,SP_CARGA_CONVENSIONES_USADASDataTable)
-            cln.InitVars
-            Return cln
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Protected Overrides Function CreateInstance() As Global.System.Data.DataTable
-            Return New SP_CARGA_CONVENSIONES_USADASDataTable()
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Friend Sub InitVars()
-            Me.columnCONVENSIONES = MyBase.Columns("CONVENSIONES")
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Private Sub InitClass()
-            Me.columnCONVENSIONES = New Global.System.Data.DataColumn("CONVENSIONES", GetType(String), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnCONVENSIONES)
-            Me.columnCONVENSIONES.AllowDBNull = false
-            Me.columnCONVENSIONES.MaxLength = 500
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Function NewSP_CARGA_CONVENSIONES_USADASRow() As SP_CARGA_CONVENSIONES_USADASRow
-            Return CType(Me.NewRow,SP_CARGA_CONVENSIONES_USADASRow)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Protected Overrides Function NewRowFromBuilder(ByVal builder As Global.System.Data.DataRowBuilder) As Global.System.Data.DataRow
-            Return New SP_CARGA_CONVENSIONES_USADASRow(builder)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Protected Overrides Function GetRowType() As Global.System.Type
-            Return GetType(SP_CARGA_CONVENSIONES_USADASRow)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Protected Overrides Sub OnRowChanged(ByVal e As Global.System.Data.DataRowChangeEventArgs)
-            MyBase.OnRowChanged(e)
-            If (Not (Me.SP_CARGA_CONVENSIONES_USADASRowChangedEvent) Is Nothing) Then
-                RaiseEvent SP_CARGA_CONVENSIONES_USADASRowChanged(Me, New SP_CARGA_CONVENSIONES_USADASRowChangeEvent(CType(e.Row,SP_CARGA_CONVENSIONES_USADASRow), e.Action))
-            End If
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Protected Overrides Sub OnRowChanging(ByVal e As Global.System.Data.DataRowChangeEventArgs)
-            MyBase.OnRowChanging(e)
-            If (Not (Me.SP_CARGA_CONVENSIONES_USADASRowChangingEvent) Is Nothing) Then
-                RaiseEvent SP_CARGA_CONVENSIONES_USADASRowChanging(Me, New SP_CARGA_CONVENSIONES_USADASRowChangeEvent(CType(e.Row,SP_CARGA_CONVENSIONES_USADASRow), e.Action))
-            End If
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Protected Overrides Sub OnRowDeleted(ByVal e As Global.System.Data.DataRowChangeEventArgs)
-            MyBase.OnRowDeleted(e)
-            If (Not (Me.SP_CARGA_CONVENSIONES_USADASRowDeletedEvent) Is Nothing) Then
-                RaiseEvent SP_CARGA_CONVENSIONES_USADASRowDeleted(Me, New SP_CARGA_CONVENSIONES_USADASRowChangeEvent(CType(e.Row,SP_CARGA_CONVENSIONES_USADASRow), e.Action))
-            End If
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Protected Overrides Sub OnRowDeleting(ByVal e As Global.System.Data.DataRowChangeEventArgs)
-            MyBase.OnRowDeleting(e)
-            If (Not (Me.SP_CARGA_CONVENSIONES_USADASRowDeletingEvent) Is Nothing) Then
-                RaiseEvent SP_CARGA_CONVENSIONES_USADASRowDeleting(Me, New SP_CARGA_CONVENSIONES_USADASRowChangeEvent(CType(e.Row,SP_CARGA_CONVENSIONES_USADASRow), e.Action))
-            End If
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Sub RemoveSP_CARGA_CONVENSIONES_USADASRow(ByVal row As SP_CARGA_CONVENSIONES_USADASRow)
-            Me.Rows.Remove(row)
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Shared Function GetTypedTableSchema(ByVal xs As Global.System.Xml.Schema.XmlSchemaSet) As Global.System.Xml.Schema.XmlSchemaComplexType
-            Dim type As Global.System.Xml.Schema.XmlSchemaComplexType = New Global.System.Xml.Schema.XmlSchemaComplexType()
-            Dim sequence As Global.System.Xml.Schema.XmlSchemaSequence = New Global.System.Xml.Schema.XmlSchemaSequence()
-            Dim ds As DataSetTablasYCampos = New DataSetTablasYCampos()
-            Dim any1 As Global.System.Xml.Schema.XmlSchemaAny = New Global.System.Xml.Schema.XmlSchemaAny()
-            any1.Namespace = "http://www.w3.org/2001/XMLSchema"
-            any1.MinOccurs = New Decimal(0)
-            any1.MaxOccurs = Decimal.MaxValue
-            any1.ProcessContents = Global.System.Xml.Schema.XmlSchemaContentProcessing.Lax
-            sequence.Items.Add(any1)
-            Dim any2 As Global.System.Xml.Schema.XmlSchemaAny = New Global.System.Xml.Schema.XmlSchemaAny()
-            any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1"
-            any2.MinOccurs = New Decimal(1)
-            any2.ProcessContents = Global.System.Xml.Schema.XmlSchemaContentProcessing.Lax
-            sequence.Items.Add(any2)
-            Dim attribute1 As Global.System.Xml.Schema.XmlSchemaAttribute = New Global.System.Xml.Schema.XmlSchemaAttribute()
-            attribute1.Name = "namespace"
-            attribute1.FixedValue = ds.Namespace
-            type.Attributes.Add(attribute1)
-            Dim attribute2 As Global.System.Xml.Schema.XmlSchemaAttribute = New Global.System.Xml.Schema.XmlSchemaAttribute()
-            attribute2.Name = "tableTypeName"
-            attribute2.FixedValue = "SP_CARGA_CONVENSIONES_USADASDataTable"
-            type.Attributes.Add(attribute2)
-            type.Particle = sequence
-            Dim dsSchema As Global.System.Xml.Schema.XmlSchema = ds.GetSchemaSerializable
-            If xs.Contains(dsSchema.TargetNamespace) Then
-                Dim s1 As Global.System.IO.MemoryStream = New Global.System.IO.MemoryStream()
-                Dim s2 As Global.System.IO.MemoryStream = New Global.System.IO.MemoryStream()
-                Try 
-                    Dim schema As Global.System.Xml.Schema.XmlSchema = Nothing
-                    dsSchema.Write(s1)
-                    Dim schemas As Global.System.Collections.IEnumerator = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator
-                    Do While schemas.MoveNext
-                        schema = CType(schemas.Current,Global.System.Xml.Schema.XmlSchema)
-                        s2.SetLength(0)
-                        schema.Write(s2)
-                        If (s1.Length = s2.Length) Then
-                            s1.Position = 0
-                            s2.Position = 0
-                            
-                            Do While ((s1.Position <> s1.Length)  _
-                                        AndAlso (s1.ReadByte = s2.ReadByte))
-                                
-                                
-                            Loop
-                            If (s1.Position = s1.Length) Then
-                                Return type
-                            End If
-                        End If
-                        
-                    Loop
-                Finally
-                    If (Not (s1) Is Nothing) Then
-                        s1.Close
-                    End If
-                    If (Not (s2) Is Nothing) Then
-                        s2.Close
-                    End If
-                End Try
-            End If
-            xs.Add(dsSchema)
-            Return type
-        End Function
-    End Class
-    
-    '''<summary>
-    '''Represents the strongly named DataTable class.
-    '''</summary>
-    <Global.System.Serializable(),  _
-     Global.System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")>  _
-    Partial Public Class SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1DataTable
-        Inherits Global.System.Data.TypedTableBase(Of SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1Row)
+        Private columnCampoID As Global.System.Data.DataColumn
         
         Private columnTablaID As Global.System.Data.DataColumn
         
-        Private columnProyectoID As Global.System.Data.DataColumn
+        Private columnTipo As Global.System.Data.DataColumn
         
-        Private columnNombreTabla As Global.System.Data.DataColumn
+        Private columnNombreCampo As Global.System.Data.DataColumn
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Public Sub New()
             MyBase.New
-            Me.TableName = "SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1"
+            Me.TableName = "SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaID"
             Me.BeginInit
             Me.InitClass
             Me.EndInit
@@ -5931,6 +5482,14 @@ Partial Public Class DataSetTablasYCampos
             MyBase.New(info, context)
             Me.InitVars
         End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public ReadOnly Property CampoIDColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnCampoID
+            End Get
+        End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
@@ -5942,17 +5501,17 @@ Partial Public Class DataSetTablasYCampos
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public ReadOnly Property ProyectoIDColumn() As Global.System.Data.DataColumn
+        Public ReadOnly Property TipoColumn() As Global.System.Data.DataColumn
             Get
-                Return Me.columnProyectoID
+                Return Me.columnTipo
             End Get
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public ReadOnly Property NombreTablaColumn() As Global.System.Data.DataColumn
+        Public ReadOnly Property NombreCampoColumn() As Global.System.Data.DataColumn
             Get
-                Return Me.columnNombreTabla
+                Return Me.columnNombreCampo
             End Get
         End Property
         
@@ -5967,50 +5526,50 @@ Partial Public Class DataSetTablasYCampos
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Default ReadOnly Property Item(ByVal index As Integer) As SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1Row
+        Public Default ReadOnly Property Item(ByVal index As Integer) As SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaIDRow
             Get
-                Return CType(Me.Rows(index),SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1Row)
+                Return CType(Me.Rows(index),SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaIDRow)
             End Get
         End Property
         
         <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Event SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1RowChanging As SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1RowChangeEventHandler
+        Public Event SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaIDRowChanging As SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaIDRowChangeEventHandler
         
         <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Event SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1RowChanged As SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1RowChangeEventHandler
+        Public Event SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaIDRowChanged As SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaIDRowChangeEventHandler
         
         <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Event SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1RowDeleting As SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1RowChangeEventHandler
+        Public Event SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaIDRowDeleting As SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaIDRowChangeEventHandler
         
         <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Event SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1RowDeleted As SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1RowChangeEventHandler
+        Public Event SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaIDRowDeleted As SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaIDRowChangeEventHandler
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Overloads Sub AddSP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1Row(ByVal row As SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1Row)
+        Public Overloads Sub AddSP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaIDRow(ByVal row As SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaIDRow)
             Me.Rows.Add(row)
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Overloads Function AddSP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1Row(ByVal ProyectoID As Integer, ByVal NombreTabla As String) As SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1Row
-            Dim rowSP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1Row As SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1Row = CType(Me.NewRow,SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1Row)
-            Dim columnValuesArray() As Object = New Object() {Nothing, ProyectoID, NombreTabla}
-            rowSP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1Row.ItemArray = columnValuesArray
-            Me.Rows.Add(rowSP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1Row)
-            Return rowSP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1Row
+        Public Overloads Function AddSP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaIDRow(ByVal TablaID As Integer, ByVal Tipo As String, ByVal NombreCampo As String) As SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaIDRow
+            Dim rowSP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaIDRow As SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaIDRow = CType(Me.NewRow,SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaIDRow)
+            Dim columnValuesArray() As Object = New Object() {Nothing, TablaID, Tipo, NombreCampo}
+            rowSP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaIDRow.ItemArray = columnValuesArray
+            Me.Rows.Add(rowSP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaIDRow)
+            Return rowSP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaIDRow
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Function FindByTablaID(ByVal TablaID As Integer) As SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1Row
-            Return CType(Me.Rows.Find(New Object() {TablaID}),SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1Row)
+        Public Function FindByCampoID(ByVal CampoID As Integer) As SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaIDRow
+            Return CType(Me.Rows.Find(New Object() {CampoID}),SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaIDRow)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Public Overrides Function Clone() As Global.System.Data.DataTable
-            Dim cln As SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1DataTable = CType(MyBase.Clone,SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1DataTable)
+            Dim cln As SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaIDDataTable = CType(MyBase.Clone,SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaIDDataTable)
             cln.InitVars
             Return cln
         End Function
@@ -6018,62 +5577,66 @@ Partial Public Class DataSetTablasYCampos
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Protected Overrides Function CreateInstance() As Global.System.Data.DataTable
-            Return New SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1DataTable()
+            Return New SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaIDDataTable()
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Friend Sub InitVars()
+            Me.columnCampoID = MyBase.Columns("CampoID")
             Me.columnTablaID = MyBase.Columns("TablaID")
-            Me.columnProyectoID = MyBase.Columns("ProyectoID")
-            Me.columnNombreTabla = MyBase.Columns("NombreTabla")
+            Me.columnTipo = MyBase.Columns("Tipo")
+            Me.columnNombreCampo = MyBase.Columns("NombreCampo")
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Private Sub InitClass()
+            Me.columnCampoID = New Global.System.Data.DataColumn("CampoID", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnCampoID)
             Me.columnTablaID = New Global.System.Data.DataColumn("TablaID", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnTablaID)
-            Me.columnProyectoID = New Global.System.Data.DataColumn("ProyectoID", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnProyectoID)
-            Me.columnNombreTabla = New Global.System.Data.DataColumn("NombreTabla", GetType(String), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnNombreTabla)
-            Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnTablaID}, true))
-            Me.columnTablaID.AutoIncrement = true
-            Me.columnTablaID.AutoIncrementSeed = -1
-            Me.columnTablaID.AutoIncrementStep = -1
+            Me.columnTipo = New Global.System.Data.DataColumn("Tipo", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnTipo)
+            Me.columnNombreCampo = New Global.System.Data.DataColumn("NombreCampo", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnNombreCampo)
+            Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnCampoID}, true))
+            Me.columnCampoID.AutoIncrement = true
+            Me.columnCampoID.AutoIncrementSeed = -1
+            Me.columnCampoID.AutoIncrementStep = -1
+            Me.columnCampoID.AllowDBNull = false
+            Me.columnCampoID.ReadOnly = true
+            Me.columnCampoID.Unique = true
             Me.columnTablaID.AllowDBNull = false
-            Me.columnTablaID.ReadOnly = true
-            Me.columnTablaID.Unique = true
-            Me.columnProyectoID.AllowDBNull = false
-            Me.columnNombreTabla.AllowDBNull = false
-            Me.columnNombreTabla.MaxLength = 200
+            Me.columnTipo.MaxLength = 100
+            Me.columnNombreCampo.AllowDBNull = false
+            Me.columnNombreCampo.MaxLength = 100
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Function NewSP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1Row() As SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1Row
-            Return CType(Me.NewRow,SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1Row)
+        Public Function NewSP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaIDRow() As SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaIDRow
+            Return CType(Me.NewRow,SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaIDRow)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Protected Overrides Function NewRowFromBuilder(ByVal builder As Global.System.Data.DataRowBuilder) As Global.System.Data.DataRow
-            Return New SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1Row(builder)
+            Return New SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaIDRow(builder)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Protected Overrides Function GetRowType() As Global.System.Type
-            Return GetType(SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1Row)
+            Return GetType(SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaIDRow)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Protected Overrides Sub OnRowChanged(ByVal e As Global.System.Data.DataRowChangeEventArgs)
             MyBase.OnRowChanged(e)
-            If (Not (Me.SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1RowChangedEvent) Is Nothing) Then
-                RaiseEvent SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1RowChanged(Me, New SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1RowChangeEvent(CType(e.Row,SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1Row), e.Action))
+            If (Not (Me.SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaIDRowChangedEvent) Is Nothing) Then
+                RaiseEvent SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaIDRowChanged(Me, New SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaIDRowChangeEvent(CType(e.Row,SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaIDRow), e.Action))
             End If
         End Sub
         
@@ -6081,8 +5644,8 @@ Partial Public Class DataSetTablasYCampos
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Protected Overrides Sub OnRowChanging(ByVal e As Global.System.Data.DataRowChangeEventArgs)
             MyBase.OnRowChanging(e)
-            If (Not (Me.SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1RowChangingEvent) Is Nothing) Then
-                RaiseEvent SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1RowChanging(Me, New SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1RowChangeEvent(CType(e.Row,SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1Row), e.Action))
+            If (Not (Me.SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaIDRowChangingEvent) Is Nothing) Then
+                RaiseEvent SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaIDRowChanging(Me, New SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaIDRowChangeEvent(CType(e.Row,SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaIDRow), e.Action))
             End If
         End Sub
         
@@ -6090,8 +5653,8 @@ Partial Public Class DataSetTablasYCampos
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Protected Overrides Sub OnRowDeleted(ByVal e As Global.System.Data.DataRowChangeEventArgs)
             MyBase.OnRowDeleted(e)
-            If (Not (Me.SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1RowDeletedEvent) Is Nothing) Then
-                RaiseEvent SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1RowDeleted(Me, New SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1RowChangeEvent(CType(e.Row,SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1Row), e.Action))
+            If (Not (Me.SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaIDRowDeletedEvent) Is Nothing) Then
+                RaiseEvent SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaIDRowDeleted(Me, New SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaIDRowChangeEvent(CType(e.Row,SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaIDRow), e.Action))
             End If
         End Sub
         
@@ -6099,14 +5662,14 @@ Partial Public Class DataSetTablasYCampos
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Protected Overrides Sub OnRowDeleting(ByVal e As Global.System.Data.DataRowChangeEventArgs)
             MyBase.OnRowDeleting(e)
-            If (Not (Me.SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1RowDeletingEvent) Is Nothing) Then
-                RaiseEvent SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1RowDeleting(Me, New SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1RowChangeEvent(CType(e.Row,SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1Row), e.Action))
+            If (Not (Me.SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaIDRowDeletingEvent) Is Nothing) Then
+                RaiseEvent SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaIDRowDeleting(Me, New SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaIDRowChangeEvent(CType(e.Row,SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaIDRow), e.Action))
             End If
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Sub RemoveSP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1Row(ByVal row As SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1Row)
+        Public Sub RemoveSP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaIDRow(ByVal row As SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaIDRow)
             Me.Rows.Remove(row)
         End Sub
         
@@ -6133,7 +5696,724 @@ Partial Public Class DataSetTablasYCampos
             type.Attributes.Add(attribute1)
             Dim attribute2 As Global.System.Xml.Schema.XmlSchemaAttribute = New Global.System.Xml.Schema.XmlSchemaAttribute()
             attribute2.Name = "tableTypeName"
-            attribute2.FixedValue = "SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1DataTable"
+            attribute2.FixedValue = "SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaIDDataTable"
+            type.Attributes.Add(attribute2)
+            type.Particle = sequence
+            Dim dsSchema As Global.System.Xml.Schema.XmlSchema = ds.GetSchemaSerializable
+            If xs.Contains(dsSchema.TargetNamespace) Then
+                Dim s1 As Global.System.IO.MemoryStream = New Global.System.IO.MemoryStream()
+                Dim s2 As Global.System.IO.MemoryStream = New Global.System.IO.MemoryStream()
+                Try 
+                    Dim schema As Global.System.Xml.Schema.XmlSchema = Nothing
+                    dsSchema.Write(s1)
+                    Dim schemas As Global.System.Collections.IEnumerator = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator
+                    Do While schemas.MoveNext
+                        schema = CType(schemas.Current,Global.System.Xml.Schema.XmlSchema)
+                        s2.SetLength(0)
+                        schema.Write(s2)
+                        If (s1.Length = s2.Length) Then
+                            s1.Position = 0
+                            s2.Position = 0
+                            
+                            Do While ((s1.Position <> s1.Length)  _
+                                        AndAlso (s1.ReadByte = s2.ReadByte))
+                                
+                                
+                            Loop
+                            If (s1.Position = s1.Length) Then
+                                Return type
+                            End If
+                        End If
+                        
+                    Loop
+                Finally
+                    If (Not (s1) Is Nothing) Then
+                        s1.Close
+                    End If
+                    If (Not (s2) Is Nothing) Then
+                        s2.Close
+                    End If
+                End Try
+            End If
+            xs.Add(dsSchema)
+            Return type
+        End Function
+    End Class
+    
+    '''<summary>
+    '''Represents the strongly named DataTable class.
+    '''</summary>
+    <Global.System.Serializable(),  _
+     Global.System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")>  _
+    Partial Public Class SP_CamposDeTablas_EDICION_ACTUALIZARDataTable
+        Inherits Global.System.Data.TypedTableBase(Of SP_CamposDeTablas_EDICION_ACTUALIZARRow)
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Sub New()
+            MyBase.New
+            Me.TableName = "SP_CamposDeTablas_EDICION_ACTUALIZAR"
+            Me.BeginInit
+            Me.InitClass
+            Me.EndInit
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Friend Sub New(ByVal table As Global.System.Data.DataTable)
+            MyBase.New
+            Me.TableName = table.TableName
+            If (table.CaseSensitive <> table.DataSet.CaseSensitive) Then
+                Me.CaseSensitive = table.CaseSensitive
+            End If
+            If (table.Locale.ToString <> table.DataSet.Locale.ToString) Then
+                Me.Locale = table.Locale
+            End If
+            If (table.Namespace <> table.DataSet.Namespace) Then
+                Me.Namespace = table.Namespace
+            End If
+            Me.Prefix = table.Prefix
+            Me.MinimumCapacity = table.MinimumCapacity
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Protected Sub New(ByVal info As Global.System.Runtime.Serialization.SerializationInfo, ByVal context As Global.System.Runtime.Serialization.StreamingContext)
+            MyBase.New(info, context)
+            Me.InitVars
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
+         Global.System.ComponentModel.Browsable(false)>  _
+        Public ReadOnly Property Count() As Integer
+            Get
+                Return Me.Rows.Count
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Default ReadOnly Property Item(ByVal index As Integer) As SP_CamposDeTablas_EDICION_ACTUALIZARRow
+            Get
+                Return CType(Me.Rows(index),SP_CamposDeTablas_EDICION_ACTUALIZARRow)
+            End Get
+        End Property
+        
+        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Event SP_CamposDeTablas_EDICION_ACTUALIZARRowChanging As SP_CamposDeTablas_EDICION_ACTUALIZARRowChangeEventHandler
+        
+        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Event SP_CamposDeTablas_EDICION_ACTUALIZARRowChanged As SP_CamposDeTablas_EDICION_ACTUALIZARRowChangeEventHandler
+        
+        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Event SP_CamposDeTablas_EDICION_ACTUALIZARRowDeleting As SP_CamposDeTablas_EDICION_ACTUALIZARRowChangeEventHandler
+        
+        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Event SP_CamposDeTablas_EDICION_ACTUALIZARRowDeleted As SP_CamposDeTablas_EDICION_ACTUALIZARRowChangeEventHandler
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Overloads Sub AddSP_CamposDeTablas_EDICION_ACTUALIZARRow(ByVal row As SP_CamposDeTablas_EDICION_ACTUALIZARRow)
+            Me.Rows.Add(row)
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Overloads Function AddSP_CamposDeTablas_EDICION_ACTUALIZARRow() As SP_CamposDeTablas_EDICION_ACTUALIZARRow
+            Dim rowSP_CamposDeTablas_EDICION_ACTUALIZARRow As SP_CamposDeTablas_EDICION_ACTUALIZARRow = CType(Me.NewRow,SP_CamposDeTablas_EDICION_ACTUALIZARRow)
+            Dim columnValuesArray(-1) As Object
+            rowSP_CamposDeTablas_EDICION_ACTUALIZARRow.ItemArray = columnValuesArray
+            Me.Rows.Add(rowSP_CamposDeTablas_EDICION_ACTUALIZARRow)
+            Return rowSP_CamposDeTablas_EDICION_ACTUALIZARRow
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Overrides Function Clone() As Global.System.Data.DataTable
+            Dim cln As SP_CamposDeTablas_EDICION_ACTUALIZARDataTable = CType(MyBase.Clone,SP_CamposDeTablas_EDICION_ACTUALIZARDataTable)
+            cln.InitVars
+            Return cln
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Protected Overrides Function CreateInstance() As Global.System.Data.DataTable
+            Return New SP_CamposDeTablas_EDICION_ACTUALIZARDataTable()
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Friend Sub InitVars()
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Private Sub InitClass()
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Function NewSP_CamposDeTablas_EDICION_ACTUALIZARRow() As SP_CamposDeTablas_EDICION_ACTUALIZARRow
+            Return CType(Me.NewRow,SP_CamposDeTablas_EDICION_ACTUALIZARRow)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Protected Overrides Function NewRowFromBuilder(ByVal builder As Global.System.Data.DataRowBuilder) As Global.System.Data.DataRow
+            Return New SP_CamposDeTablas_EDICION_ACTUALIZARRow(builder)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Protected Overrides Function GetRowType() As Global.System.Type
+            Return GetType(SP_CamposDeTablas_EDICION_ACTUALIZARRow)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Protected Overrides Sub OnRowChanged(ByVal e As Global.System.Data.DataRowChangeEventArgs)
+            MyBase.OnRowChanged(e)
+            If (Not (Me.SP_CamposDeTablas_EDICION_ACTUALIZARRowChangedEvent) Is Nothing) Then
+                RaiseEvent SP_CamposDeTablas_EDICION_ACTUALIZARRowChanged(Me, New SP_CamposDeTablas_EDICION_ACTUALIZARRowChangeEvent(CType(e.Row,SP_CamposDeTablas_EDICION_ACTUALIZARRow), e.Action))
+            End If
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Protected Overrides Sub OnRowChanging(ByVal e As Global.System.Data.DataRowChangeEventArgs)
+            MyBase.OnRowChanging(e)
+            If (Not (Me.SP_CamposDeTablas_EDICION_ACTUALIZARRowChangingEvent) Is Nothing) Then
+                RaiseEvent SP_CamposDeTablas_EDICION_ACTUALIZARRowChanging(Me, New SP_CamposDeTablas_EDICION_ACTUALIZARRowChangeEvent(CType(e.Row,SP_CamposDeTablas_EDICION_ACTUALIZARRow), e.Action))
+            End If
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Protected Overrides Sub OnRowDeleted(ByVal e As Global.System.Data.DataRowChangeEventArgs)
+            MyBase.OnRowDeleted(e)
+            If (Not (Me.SP_CamposDeTablas_EDICION_ACTUALIZARRowDeletedEvent) Is Nothing) Then
+                RaiseEvent SP_CamposDeTablas_EDICION_ACTUALIZARRowDeleted(Me, New SP_CamposDeTablas_EDICION_ACTUALIZARRowChangeEvent(CType(e.Row,SP_CamposDeTablas_EDICION_ACTUALIZARRow), e.Action))
+            End If
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Protected Overrides Sub OnRowDeleting(ByVal e As Global.System.Data.DataRowChangeEventArgs)
+            MyBase.OnRowDeleting(e)
+            If (Not (Me.SP_CamposDeTablas_EDICION_ACTUALIZARRowDeletingEvent) Is Nothing) Then
+                RaiseEvent SP_CamposDeTablas_EDICION_ACTUALIZARRowDeleting(Me, New SP_CamposDeTablas_EDICION_ACTUALIZARRowChangeEvent(CType(e.Row,SP_CamposDeTablas_EDICION_ACTUALIZARRow), e.Action))
+            End If
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Sub RemoveSP_CamposDeTablas_EDICION_ACTUALIZARRow(ByVal row As SP_CamposDeTablas_EDICION_ACTUALIZARRow)
+            Me.Rows.Remove(row)
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Shared Function GetTypedTableSchema(ByVal xs As Global.System.Xml.Schema.XmlSchemaSet) As Global.System.Xml.Schema.XmlSchemaComplexType
+            Dim type As Global.System.Xml.Schema.XmlSchemaComplexType = New Global.System.Xml.Schema.XmlSchemaComplexType()
+            Dim sequence As Global.System.Xml.Schema.XmlSchemaSequence = New Global.System.Xml.Schema.XmlSchemaSequence()
+            Dim ds As DataSetTablasYCampos = New DataSetTablasYCampos()
+            Dim any1 As Global.System.Xml.Schema.XmlSchemaAny = New Global.System.Xml.Schema.XmlSchemaAny()
+            any1.Namespace = "http://www.w3.org/2001/XMLSchema"
+            any1.MinOccurs = New Decimal(0)
+            any1.MaxOccurs = Decimal.MaxValue
+            any1.ProcessContents = Global.System.Xml.Schema.XmlSchemaContentProcessing.Lax
+            sequence.Items.Add(any1)
+            Dim any2 As Global.System.Xml.Schema.XmlSchemaAny = New Global.System.Xml.Schema.XmlSchemaAny()
+            any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1"
+            any2.MinOccurs = New Decimal(1)
+            any2.ProcessContents = Global.System.Xml.Schema.XmlSchemaContentProcessing.Lax
+            sequence.Items.Add(any2)
+            Dim attribute1 As Global.System.Xml.Schema.XmlSchemaAttribute = New Global.System.Xml.Schema.XmlSchemaAttribute()
+            attribute1.Name = "namespace"
+            attribute1.FixedValue = ds.Namespace
+            type.Attributes.Add(attribute1)
+            Dim attribute2 As Global.System.Xml.Schema.XmlSchemaAttribute = New Global.System.Xml.Schema.XmlSchemaAttribute()
+            attribute2.Name = "tableTypeName"
+            attribute2.FixedValue = "SP_CamposDeTablas_EDICION_ACTUALIZARDataTable"
+            type.Attributes.Add(attribute2)
+            type.Particle = sequence
+            Dim dsSchema As Global.System.Xml.Schema.XmlSchema = ds.GetSchemaSerializable
+            If xs.Contains(dsSchema.TargetNamespace) Then
+                Dim s1 As Global.System.IO.MemoryStream = New Global.System.IO.MemoryStream()
+                Dim s2 As Global.System.IO.MemoryStream = New Global.System.IO.MemoryStream()
+                Try 
+                    Dim schema As Global.System.Xml.Schema.XmlSchema = Nothing
+                    dsSchema.Write(s1)
+                    Dim schemas As Global.System.Collections.IEnumerator = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator
+                    Do While schemas.MoveNext
+                        schema = CType(schemas.Current,Global.System.Xml.Schema.XmlSchema)
+                        s2.SetLength(0)
+                        schema.Write(s2)
+                        If (s1.Length = s2.Length) Then
+                            s1.Position = 0
+                            s2.Position = 0
+                            
+                            Do While ((s1.Position <> s1.Length)  _
+                                        AndAlso (s1.ReadByte = s2.ReadByte))
+                                
+                                
+                            Loop
+                            If (s1.Position = s1.Length) Then
+                                Return type
+                            End If
+                        End If
+                        
+                    Loop
+                Finally
+                    If (Not (s1) Is Nothing) Then
+                        s1.Close
+                    End If
+                    If (Not (s2) Is Nothing) Then
+                        s2.Close
+                    End If
+                End Try
+            End If
+            xs.Add(dsSchema)
+            Return type
+        End Function
+    End Class
+    
+    '''<summary>
+    '''Represents the strongly named DataTable class.
+    '''</summary>
+    <Global.System.Serializable(),  _
+     Global.System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")>  _
+    Partial Public Class SP_CamposDeTablas_EDICION_ELIMINARDataTable
+        Inherits Global.System.Data.TypedTableBase(Of SP_CamposDeTablas_EDICION_ELIMINARRow)
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Sub New()
+            MyBase.New
+            Me.TableName = "SP_CamposDeTablas_EDICION_ELIMINAR"
+            Me.BeginInit
+            Me.InitClass
+            Me.EndInit
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Friend Sub New(ByVal table As Global.System.Data.DataTable)
+            MyBase.New
+            Me.TableName = table.TableName
+            If (table.CaseSensitive <> table.DataSet.CaseSensitive) Then
+                Me.CaseSensitive = table.CaseSensitive
+            End If
+            If (table.Locale.ToString <> table.DataSet.Locale.ToString) Then
+                Me.Locale = table.Locale
+            End If
+            If (table.Namespace <> table.DataSet.Namespace) Then
+                Me.Namespace = table.Namespace
+            End If
+            Me.Prefix = table.Prefix
+            Me.MinimumCapacity = table.MinimumCapacity
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Protected Sub New(ByVal info As Global.System.Runtime.Serialization.SerializationInfo, ByVal context As Global.System.Runtime.Serialization.StreamingContext)
+            MyBase.New(info, context)
+            Me.InitVars
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
+         Global.System.ComponentModel.Browsable(false)>  _
+        Public ReadOnly Property Count() As Integer
+            Get
+                Return Me.Rows.Count
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Default ReadOnly Property Item(ByVal index As Integer) As SP_CamposDeTablas_EDICION_ELIMINARRow
+            Get
+                Return CType(Me.Rows(index),SP_CamposDeTablas_EDICION_ELIMINARRow)
+            End Get
+        End Property
+        
+        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Event SP_CamposDeTablas_EDICION_ELIMINARRowChanging As SP_CamposDeTablas_EDICION_ELIMINARRowChangeEventHandler
+        
+        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Event SP_CamposDeTablas_EDICION_ELIMINARRowChanged As SP_CamposDeTablas_EDICION_ELIMINARRowChangeEventHandler
+        
+        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Event SP_CamposDeTablas_EDICION_ELIMINARRowDeleting As SP_CamposDeTablas_EDICION_ELIMINARRowChangeEventHandler
+        
+        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Event SP_CamposDeTablas_EDICION_ELIMINARRowDeleted As SP_CamposDeTablas_EDICION_ELIMINARRowChangeEventHandler
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Overloads Sub AddSP_CamposDeTablas_EDICION_ELIMINARRow(ByVal row As SP_CamposDeTablas_EDICION_ELIMINARRow)
+            Me.Rows.Add(row)
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Overloads Function AddSP_CamposDeTablas_EDICION_ELIMINARRow() As SP_CamposDeTablas_EDICION_ELIMINARRow
+            Dim rowSP_CamposDeTablas_EDICION_ELIMINARRow As SP_CamposDeTablas_EDICION_ELIMINARRow = CType(Me.NewRow,SP_CamposDeTablas_EDICION_ELIMINARRow)
+            Dim columnValuesArray(-1) As Object
+            rowSP_CamposDeTablas_EDICION_ELIMINARRow.ItemArray = columnValuesArray
+            Me.Rows.Add(rowSP_CamposDeTablas_EDICION_ELIMINARRow)
+            Return rowSP_CamposDeTablas_EDICION_ELIMINARRow
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Overrides Function Clone() As Global.System.Data.DataTable
+            Dim cln As SP_CamposDeTablas_EDICION_ELIMINARDataTable = CType(MyBase.Clone,SP_CamposDeTablas_EDICION_ELIMINARDataTable)
+            cln.InitVars
+            Return cln
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Protected Overrides Function CreateInstance() As Global.System.Data.DataTable
+            Return New SP_CamposDeTablas_EDICION_ELIMINARDataTable()
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Friend Sub InitVars()
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Private Sub InitClass()
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Function NewSP_CamposDeTablas_EDICION_ELIMINARRow() As SP_CamposDeTablas_EDICION_ELIMINARRow
+            Return CType(Me.NewRow,SP_CamposDeTablas_EDICION_ELIMINARRow)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Protected Overrides Function NewRowFromBuilder(ByVal builder As Global.System.Data.DataRowBuilder) As Global.System.Data.DataRow
+            Return New SP_CamposDeTablas_EDICION_ELIMINARRow(builder)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Protected Overrides Function GetRowType() As Global.System.Type
+            Return GetType(SP_CamposDeTablas_EDICION_ELIMINARRow)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Protected Overrides Sub OnRowChanged(ByVal e As Global.System.Data.DataRowChangeEventArgs)
+            MyBase.OnRowChanged(e)
+            If (Not (Me.SP_CamposDeTablas_EDICION_ELIMINARRowChangedEvent) Is Nothing) Then
+                RaiseEvent SP_CamposDeTablas_EDICION_ELIMINARRowChanged(Me, New SP_CamposDeTablas_EDICION_ELIMINARRowChangeEvent(CType(e.Row,SP_CamposDeTablas_EDICION_ELIMINARRow), e.Action))
+            End If
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Protected Overrides Sub OnRowChanging(ByVal e As Global.System.Data.DataRowChangeEventArgs)
+            MyBase.OnRowChanging(e)
+            If (Not (Me.SP_CamposDeTablas_EDICION_ELIMINARRowChangingEvent) Is Nothing) Then
+                RaiseEvent SP_CamposDeTablas_EDICION_ELIMINARRowChanging(Me, New SP_CamposDeTablas_EDICION_ELIMINARRowChangeEvent(CType(e.Row,SP_CamposDeTablas_EDICION_ELIMINARRow), e.Action))
+            End If
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Protected Overrides Sub OnRowDeleted(ByVal e As Global.System.Data.DataRowChangeEventArgs)
+            MyBase.OnRowDeleted(e)
+            If (Not (Me.SP_CamposDeTablas_EDICION_ELIMINARRowDeletedEvent) Is Nothing) Then
+                RaiseEvent SP_CamposDeTablas_EDICION_ELIMINARRowDeleted(Me, New SP_CamposDeTablas_EDICION_ELIMINARRowChangeEvent(CType(e.Row,SP_CamposDeTablas_EDICION_ELIMINARRow), e.Action))
+            End If
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Protected Overrides Sub OnRowDeleting(ByVal e As Global.System.Data.DataRowChangeEventArgs)
+            MyBase.OnRowDeleting(e)
+            If (Not (Me.SP_CamposDeTablas_EDICION_ELIMINARRowDeletingEvent) Is Nothing) Then
+                RaiseEvent SP_CamposDeTablas_EDICION_ELIMINARRowDeleting(Me, New SP_CamposDeTablas_EDICION_ELIMINARRowChangeEvent(CType(e.Row,SP_CamposDeTablas_EDICION_ELIMINARRow), e.Action))
+            End If
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Sub RemoveSP_CamposDeTablas_EDICION_ELIMINARRow(ByVal row As SP_CamposDeTablas_EDICION_ELIMINARRow)
+            Me.Rows.Remove(row)
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Shared Function GetTypedTableSchema(ByVal xs As Global.System.Xml.Schema.XmlSchemaSet) As Global.System.Xml.Schema.XmlSchemaComplexType
+            Dim type As Global.System.Xml.Schema.XmlSchemaComplexType = New Global.System.Xml.Schema.XmlSchemaComplexType()
+            Dim sequence As Global.System.Xml.Schema.XmlSchemaSequence = New Global.System.Xml.Schema.XmlSchemaSequence()
+            Dim ds As DataSetTablasYCampos = New DataSetTablasYCampos()
+            Dim any1 As Global.System.Xml.Schema.XmlSchemaAny = New Global.System.Xml.Schema.XmlSchemaAny()
+            any1.Namespace = "http://www.w3.org/2001/XMLSchema"
+            any1.MinOccurs = New Decimal(0)
+            any1.MaxOccurs = Decimal.MaxValue
+            any1.ProcessContents = Global.System.Xml.Schema.XmlSchemaContentProcessing.Lax
+            sequence.Items.Add(any1)
+            Dim any2 As Global.System.Xml.Schema.XmlSchemaAny = New Global.System.Xml.Schema.XmlSchemaAny()
+            any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1"
+            any2.MinOccurs = New Decimal(1)
+            any2.ProcessContents = Global.System.Xml.Schema.XmlSchemaContentProcessing.Lax
+            sequence.Items.Add(any2)
+            Dim attribute1 As Global.System.Xml.Schema.XmlSchemaAttribute = New Global.System.Xml.Schema.XmlSchemaAttribute()
+            attribute1.Name = "namespace"
+            attribute1.FixedValue = ds.Namespace
+            type.Attributes.Add(attribute1)
+            Dim attribute2 As Global.System.Xml.Schema.XmlSchemaAttribute = New Global.System.Xml.Schema.XmlSchemaAttribute()
+            attribute2.Name = "tableTypeName"
+            attribute2.FixedValue = "SP_CamposDeTablas_EDICION_ELIMINARDataTable"
+            type.Attributes.Add(attribute2)
+            type.Particle = sequence
+            Dim dsSchema As Global.System.Xml.Schema.XmlSchema = ds.GetSchemaSerializable
+            If xs.Contains(dsSchema.TargetNamespace) Then
+                Dim s1 As Global.System.IO.MemoryStream = New Global.System.IO.MemoryStream()
+                Dim s2 As Global.System.IO.MemoryStream = New Global.System.IO.MemoryStream()
+                Try 
+                    Dim schema As Global.System.Xml.Schema.XmlSchema = Nothing
+                    dsSchema.Write(s1)
+                    Dim schemas As Global.System.Collections.IEnumerator = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator
+                    Do While schemas.MoveNext
+                        schema = CType(schemas.Current,Global.System.Xml.Schema.XmlSchema)
+                        s2.SetLength(0)
+                        schema.Write(s2)
+                        If (s1.Length = s2.Length) Then
+                            s1.Position = 0
+                            s2.Position = 0
+                            
+                            Do While ((s1.Position <> s1.Length)  _
+                                        AndAlso (s1.ReadByte = s2.ReadByte))
+                                
+                                
+                            Loop
+                            If (s1.Position = s1.Length) Then
+                                Return type
+                            End If
+                        End If
+                        
+                    Loop
+                Finally
+                    If (Not (s1) Is Nothing) Then
+                        s1.Close
+                    End If
+                    If (Not (s2) Is Nothing) Then
+                        s2.Close
+                    End If
+                End Try
+            End If
+            xs.Add(dsSchema)
+            Return type
+        End Function
+    End Class
+    
+    '''<summary>
+    '''Represents the strongly named DataTable class.
+    '''</summary>
+    <Global.System.Serializable(),  _
+     Global.System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")>  _
+    Partial Public Class SP_CamposDeTablas_EDICION_INSERTARDataTable
+        Inherits Global.System.Data.TypedTableBase(Of SP_CamposDeTablas_EDICION_INSERTARRow)
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Sub New()
+            MyBase.New
+            Me.TableName = "SP_CamposDeTablas_EDICION_INSERTAR"
+            Me.BeginInit
+            Me.InitClass
+            Me.EndInit
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Friend Sub New(ByVal table As Global.System.Data.DataTable)
+            MyBase.New
+            Me.TableName = table.TableName
+            If (table.CaseSensitive <> table.DataSet.CaseSensitive) Then
+                Me.CaseSensitive = table.CaseSensitive
+            End If
+            If (table.Locale.ToString <> table.DataSet.Locale.ToString) Then
+                Me.Locale = table.Locale
+            End If
+            If (table.Namespace <> table.DataSet.Namespace) Then
+                Me.Namespace = table.Namespace
+            End If
+            Me.Prefix = table.Prefix
+            Me.MinimumCapacity = table.MinimumCapacity
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Protected Sub New(ByVal info As Global.System.Runtime.Serialization.SerializationInfo, ByVal context As Global.System.Runtime.Serialization.StreamingContext)
+            MyBase.New(info, context)
+            Me.InitVars
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
+         Global.System.ComponentModel.Browsable(false)>  _
+        Public ReadOnly Property Count() As Integer
+            Get
+                Return Me.Rows.Count
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Default ReadOnly Property Item(ByVal index As Integer) As SP_CamposDeTablas_EDICION_INSERTARRow
+            Get
+                Return CType(Me.Rows(index),SP_CamposDeTablas_EDICION_INSERTARRow)
+            End Get
+        End Property
+        
+        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Event SP_CamposDeTablas_EDICION_INSERTARRowChanging As SP_CamposDeTablas_EDICION_INSERTARRowChangeEventHandler
+        
+        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Event SP_CamposDeTablas_EDICION_INSERTARRowChanged As SP_CamposDeTablas_EDICION_INSERTARRowChangeEventHandler
+        
+        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Event SP_CamposDeTablas_EDICION_INSERTARRowDeleting As SP_CamposDeTablas_EDICION_INSERTARRowChangeEventHandler
+        
+        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Event SP_CamposDeTablas_EDICION_INSERTARRowDeleted As SP_CamposDeTablas_EDICION_INSERTARRowChangeEventHandler
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Overloads Sub AddSP_CamposDeTablas_EDICION_INSERTARRow(ByVal row As SP_CamposDeTablas_EDICION_INSERTARRow)
+            Me.Rows.Add(row)
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Overloads Function AddSP_CamposDeTablas_EDICION_INSERTARRow() As SP_CamposDeTablas_EDICION_INSERTARRow
+            Dim rowSP_CamposDeTablas_EDICION_INSERTARRow As SP_CamposDeTablas_EDICION_INSERTARRow = CType(Me.NewRow,SP_CamposDeTablas_EDICION_INSERTARRow)
+            Dim columnValuesArray(-1) As Object
+            rowSP_CamposDeTablas_EDICION_INSERTARRow.ItemArray = columnValuesArray
+            Me.Rows.Add(rowSP_CamposDeTablas_EDICION_INSERTARRow)
+            Return rowSP_CamposDeTablas_EDICION_INSERTARRow
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Overrides Function Clone() As Global.System.Data.DataTable
+            Dim cln As SP_CamposDeTablas_EDICION_INSERTARDataTable = CType(MyBase.Clone,SP_CamposDeTablas_EDICION_INSERTARDataTable)
+            cln.InitVars
+            Return cln
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Protected Overrides Function CreateInstance() As Global.System.Data.DataTable
+            Return New SP_CamposDeTablas_EDICION_INSERTARDataTable()
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Friend Sub InitVars()
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Private Sub InitClass()
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Function NewSP_CamposDeTablas_EDICION_INSERTARRow() As SP_CamposDeTablas_EDICION_INSERTARRow
+            Return CType(Me.NewRow,SP_CamposDeTablas_EDICION_INSERTARRow)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Protected Overrides Function NewRowFromBuilder(ByVal builder As Global.System.Data.DataRowBuilder) As Global.System.Data.DataRow
+            Return New SP_CamposDeTablas_EDICION_INSERTARRow(builder)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Protected Overrides Function GetRowType() As Global.System.Type
+            Return GetType(SP_CamposDeTablas_EDICION_INSERTARRow)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Protected Overrides Sub OnRowChanged(ByVal e As Global.System.Data.DataRowChangeEventArgs)
+            MyBase.OnRowChanged(e)
+            If (Not (Me.SP_CamposDeTablas_EDICION_INSERTARRowChangedEvent) Is Nothing) Then
+                RaiseEvent SP_CamposDeTablas_EDICION_INSERTARRowChanged(Me, New SP_CamposDeTablas_EDICION_INSERTARRowChangeEvent(CType(e.Row,SP_CamposDeTablas_EDICION_INSERTARRow), e.Action))
+            End If
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Protected Overrides Sub OnRowChanging(ByVal e As Global.System.Data.DataRowChangeEventArgs)
+            MyBase.OnRowChanging(e)
+            If (Not (Me.SP_CamposDeTablas_EDICION_INSERTARRowChangingEvent) Is Nothing) Then
+                RaiseEvent SP_CamposDeTablas_EDICION_INSERTARRowChanging(Me, New SP_CamposDeTablas_EDICION_INSERTARRowChangeEvent(CType(e.Row,SP_CamposDeTablas_EDICION_INSERTARRow), e.Action))
+            End If
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Protected Overrides Sub OnRowDeleted(ByVal e As Global.System.Data.DataRowChangeEventArgs)
+            MyBase.OnRowDeleted(e)
+            If (Not (Me.SP_CamposDeTablas_EDICION_INSERTARRowDeletedEvent) Is Nothing) Then
+                RaiseEvent SP_CamposDeTablas_EDICION_INSERTARRowDeleted(Me, New SP_CamposDeTablas_EDICION_INSERTARRowChangeEvent(CType(e.Row,SP_CamposDeTablas_EDICION_INSERTARRow), e.Action))
+            End If
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Protected Overrides Sub OnRowDeleting(ByVal e As Global.System.Data.DataRowChangeEventArgs)
+            MyBase.OnRowDeleting(e)
+            If (Not (Me.SP_CamposDeTablas_EDICION_INSERTARRowDeletingEvent) Is Nothing) Then
+                RaiseEvent SP_CamposDeTablas_EDICION_INSERTARRowDeleting(Me, New SP_CamposDeTablas_EDICION_INSERTARRowChangeEvent(CType(e.Row,SP_CamposDeTablas_EDICION_INSERTARRow), e.Action))
+            End If
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Sub RemoveSP_CamposDeTablas_EDICION_INSERTARRow(ByVal row As SP_CamposDeTablas_EDICION_INSERTARRow)
+            Me.Rows.Remove(row)
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Shared Function GetTypedTableSchema(ByVal xs As Global.System.Xml.Schema.XmlSchemaSet) As Global.System.Xml.Schema.XmlSchemaComplexType
+            Dim type As Global.System.Xml.Schema.XmlSchemaComplexType = New Global.System.Xml.Schema.XmlSchemaComplexType()
+            Dim sequence As Global.System.Xml.Schema.XmlSchemaSequence = New Global.System.Xml.Schema.XmlSchemaSequence()
+            Dim ds As DataSetTablasYCampos = New DataSetTablasYCampos()
+            Dim any1 As Global.System.Xml.Schema.XmlSchemaAny = New Global.System.Xml.Schema.XmlSchemaAny()
+            any1.Namespace = "http://www.w3.org/2001/XMLSchema"
+            any1.MinOccurs = New Decimal(0)
+            any1.MaxOccurs = Decimal.MaxValue
+            any1.ProcessContents = Global.System.Xml.Schema.XmlSchemaContentProcessing.Lax
+            sequence.Items.Add(any1)
+            Dim any2 As Global.System.Xml.Schema.XmlSchemaAny = New Global.System.Xml.Schema.XmlSchemaAny()
+            any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1"
+            any2.MinOccurs = New Decimal(1)
+            any2.ProcessContents = Global.System.Xml.Schema.XmlSchemaContentProcessing.Lax
+            sequence.Items.Add(any2)
+            Dim attribute1 As Global.System.Xml.Schema.XmlSchemaAttribute = New Global.System.Xml.Schema.XmlSchemaAttribute()
+            attribute1.Name = "namespace"
+            attribute1.FixedValue = ds.Namespace
+            type.Attributes.Add(attribute1)
+            Dim attribute2 As Global.System.Xml.Schema.XmlSchemaAttribute = New Global.System.Xml.Schema.XmlSchemaAttribute()
+            attribute2.Name = "tableTypeName"
+            attribute2.FixedValue = "SP_CamposDeTablas_EDICION_INSERTARDataTable"
             type.Attributes.Add(attribute2)
             type.Particle = sequence
             Dim dsSchema As Global.System.Xml.Schema.XmlSchema = ds.GetSchemaSerializable
@@ -6189,9 +6469,9 @@ Partial Public Class DataSetTablasYCampos
         
         Private columnTablaID As Global.System.Data.DataColumn
         
-        Private columnNombreCampo As Global.System.Data.DataColumn
-        
         Private columnTipo As Global.System.Data.DataColumn
+        
+        Private columnNombreCampo As Global.System.Data.DataColumn
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
@@ -6246,17 +6526,17 @@ Partial Public Class DataSetTablasYCampos
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public ReadOnly Property NombreCampoColumn() As Global.System.Data.DataColumn
+        Public ReadOnly Property TipoColumn() As Global.System.Data.DataColumn
             Get
-                Return Me.columnNombreCampo
+                Return Me.columnTipo
             End Get
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public ReadOnly Property TipoColumn() As Global.System.Data.DataColumn
+        Public ReadOnly Property NombreCampoColumn() As Global.System.Data.DataColumn
             Get
-                Return Me.columnTipo
+                Return Me.columnNombreCampo
             End Get
         End Property
         
@@ -6297,9 +6577,9 @@ Partial Public Class DataSetTablasYCampos
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Overloads Function AddSP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaID1Row(ByVal TablaID As Integer, ByVal NombreCampo As String, ByVal Tipo As String) As SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaID1Row
+        Public Overloads Function AddSP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaID1Row(ByVal TablaID As Integer, ByVal Tipo As String, ByVal NombreCampo As String) As SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaID1Row
             Dim rowSP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaID1Row As SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaID1Row = CType(Me.NewRow,SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaID1Row)
-            Dim columnValuesArray() As Object = New Object() {Nothing, TablaID, NombreCampo, Tipo}
+            Dim columnValuesArray() As Object = New Object() {Nothing, TablaID, Tipo, NombreCampo}
             rowSP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaID1Row.ItemArray = columnValuesArray
             Me.Rows.Add(rowSP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaID1Row)
             Return rowSP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaID1Row
@@ -6330,8 +6610,8 @@ Partial Public Class DataSetTablasYCampos
         Friend Sub InitVars()
             Me.columnCampoID = MyBase.Columns("CampoID")
             Me.columnTablaID = MyBase.Columns("TablaID")
-            Me.columnNombreCampo = MyBase.Columns("NombreCampo")
             Me.columnTipo = MyBase.Columns("Tipo")
+            Me.columnNombreCampo = MyBase.Columns("NombreCampo")
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -6341,10 +6621,10 @@ Partial Public Class DataSetTablasYCampos
             MyBase.Columns.Add(Me.columnCampoID)
             Me.columnTablaID = New Global.System.Data.DataColumn("TablaID", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnTablaID)
-            Me.columnNombreCampo = New Global.System.Data.DataColumn("NombreCampo", GetType(String), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnNombreCampo)
             Me.columnTipo = New Global.System.Data.DataColumn("Tipo", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnTipo)
+            Me.columnNombreCampo = New Global.System.Data.DataColumn("NombreCampo", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnNombreCampo)
             Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnCampoID}, true))
             Me.columnCampoID.AutoIncrement = true
             Me.columnCampoID.AutoIncrementSeed = -1
@@ -6353,9 +6633,9 @@ Partial Public Class DataSetTablasYCampos
             Me.columnCampoID.ReadOnly = true
             Me.columnCampoID.Unique = true
             Me.columnTablaID.AllowDBNull = false
+            Me.columnTipo.MaxLength = 100
             Me.columnNombreCampo.AllowDBNull = false
             Me.columnNombreCampo.MaxLength = 100
-            Me.columnTipo.MaxLength = 100
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -6794,300 +7074,6 @@ Partial Public Class DataSetTablasYCampos
     End Class
     
     '''<summary>
-    '''Represents the strongly named DataTable class.
-    '''</summary>
-    <Global.System.Serializable(),  _
-     Global.System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")>  _
-    Partial Public Class SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID2DataTable
-        Inherits Global.System.Data.TypedTableBase(Of SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID2Row)
-        
-        Private columnTablaID As Global.System.Data.DataColumn
-        
-        Private columnProyectoID As Global.System.Data.DataColumn
-        
-        Private columnNombreTabla As Global.System.Data.DataColumn
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Sub New()
-            MyBase.New
-            Me.TableName = "SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID2"
-            Me.BeginInit
-            Me.InitClass
-            Me.EndInit
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Friend Sub New(ByVal table As Global.System.Data.DataTable)
-            MyBase.New
-            Me.TableName = table.TableName
-            If (table.CaseSensitive <> table.DataSet.CaseSensitive) Then
-                Me.CaseSensitive = table.CaseSensitive
-            End If
-            If (table.Locale.ToString <> table.DataSet.Locale.ToString) Then
-                Me.Locale = table.Locale
-            End If
-            If (table.Namespace <> table.DataSet.Namespace) Then
-                Me.Namespace = table.Namespace
-            End If
-            Me.Prefix = table.Prefix
-            Me.MinimumCapacity = table.MinimumCapacity
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Protected Sub New(ByVal info As Global.System.Runtime.Serialization.SerializationInfo, ByVal context As Global.System.Runtime.Serialization.StreamingContext)
-            MyBase.New(info, context)
-            Me.InitVars
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public ReadOnly Property TablaIDColumn() As Global.System.Data.DataColumn
-            Get
-                Return Me.columnTablaID
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public ReadOnly Property ProyectoIDColumn() As Global.System.Data.DataColumn
-            Get
-                Return Me.columnProyectoID
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public ReadOnly Property NombreTablaColumn() As Global.System.Data.DataColumn
-            Get
-                Return Me.columnNombreTabla
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
-         Global.System.ComponentModel.Browsable(false)>  _
-        Public ReadOnly Property Count() As Integer
-            Get
-                Return Me.Rows.Count
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Default ReadOnly Property Item(ByVal index As Integer) As SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID2Row
-            Get
-                Return CType(Me.Rows(index),SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID2Row)
-            End Get
-        End Property
-        
-        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Event SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID2RowChanging As SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID2RowChangeEventHandler
-        
-        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Event SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID2RowChanged As SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID2RowChangeEventHandler
-        
-        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Event SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID2RowDeleting As SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID2RowChangeEventHandler
-        
-        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Event SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID2RowDeleted As SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID2RowChangeEventHandler
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Overloads Sub AddSP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID2Row(ByVal row As SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID2Row)
-            Me.Rows.Add(row)
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Overloads Function AddSP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID2Row(ByVal ProyectoID As Integer, ByVal NombreTabla As String) As SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID2Row
-            Dim rowSP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID2Row As SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID2Row = CType(Me.NewRow,SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID2Row)
-            Dim columnValuesArray() As Object = New Object() {Nothing, ProyectoID, NombreTabla}
-            rowSP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID2Row.ItemArray = columnValuesArray
-            Me.Rows.Add(rowSP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID2Row)
-            Return rowSP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID2Row
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Function FindByTablaID(ByVal TablaID As Integer) As SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID2Row
-            Return CType(Me.Rows.Find(New Object() {TablaID}),SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID2Row)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Overrides Function Clone() As Global.System.Data.DataTable
-            Dim cln As SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID2DataTable = CType(MyBase.Clone,SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID2DataTable)
-            cln.InitVars
-            Return cln
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Protected Overrides Function CreateInstance() As Global.System.Data.DataTable
-            Return New SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID2DataTable()
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Friend Sub InitVars()
-            Me.columnTablaID = MyBase.Columns("TablaID")
-            Me.columnProyectoID = MyBase.Columns("ProyectoID")
-            Me.columnNombreTabla = MyBase.Columns("NombreTabla")
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Private Sub InitClass()
-            Me.columnTablaID = New Global.System.Data.DataColumn("TablaID", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnTablaID)
-            Me.columnProyectoID = New Global.System.Data.DataColumn("ProyectoID", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnProyectoID)
-            Me.columnNombreTabla = New Global.System.Data.DataColumn("NombreTabla", GetType(String), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnNombreTabla)
-            Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnTablaID}, true))
-            Me.columnTablaID.AutoIncrement = true
-            Me.columnTablaID.AutoIncrementSeed = -1
-            Me.columnTablaID.AutoIncrementStep = -1
-            Me.columnTablaID.AllowDBNull = false
-            Me.columnTablaID.ReadOnly = true
-            Me.columnTablaID.Unique = true
-            Me.columnProyectoID.AllowDBNull = false
-            Me.columnNombreTabla.AllowDBNull = false
-            Me.columnNombreTabla.MaxLength = 200
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Function NewSP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID2Row() As SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID2Row
-            Return CType(Me.NewRow,SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID2Row)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Protected Overrides Function NewRowFromBuilder(ByVal builder As Global.System.Data.DataRowBuilder) As Global.System.Data.DataRow
-            Return New SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID2Row(builder)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Protected Overrides Function GetRowType() As Global.System.Type
-            Return GetType(SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID2Row)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Protected Overrides Sub OnRowChanged(ByVal e As Global.System.Data.DataRowChangeEventArgs)
-            MyBase.OnRowChanged(e)
-            If (Not (Me.SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID2RowChangedEvent) Is Nothing) Then
-                RaiseEvent SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID2RowChanged(Me, New SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID2RowChangeEvent(CType(e.Row,SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID2Row), e.Action))
-            End If
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Protected Overrides Sub OnRowChanging(ByVal e As Global.System.Data.DataRowChangeEventArgs)
-            MyBase.OnRowChanging(e)
-            If (Not (Me.SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID2RowChangingEvent) Is Nothing) Then
-                RaiseEvent SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID2RowChanging(Me, New SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID2RowChangeEvent(CType(e.Row,SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID2Row), e.Action))
-            End If
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Protected Overrides Sub OnRowDeleted(ByVal e As Global.System.Data.DataRowChangeEventArgs)
-            MyBase.OnRowDeleted(e)
-            If (Not (Me.SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID2RowDeletedEvent) Is Nothing) Then
-                RaiseEvent SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID2RowDeleted(Me, New SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID2RowChangeEvent(CType(e.Row,SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID2Row), e.Action))
-            End If
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Protected Overrides Sub OnRowDeleting(ByVal e As Global.System.Data.DataRowChangeEventArgs)
-            MyBase.OnRowDeleting(e)
-            If (Not (Me.SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID2RowDeletingEvent) Is Nothing) Then
-                RaiseEvent SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID2RowDeleting(Me, New SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID2RowChangeEvent(CType(e.Row,SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID2Row), e.Action))
-            End If
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Sub RemoveSP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID2Row(ByVal row As SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID2Row)
-            Me.Rows.Remove(row)
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Shared Function GetTypedTableSchema(ByVal xs As Global.System.Xml.Schema.XmlSchemaSet) As Global.System.Xml.Schema.XmlSchemaComplexType
-            Dim type As Global.System.Xml.Schema.XmlSchemaComplexType = New Global.System.Xml.Schema.XmlSchemaComplexType()
-            Dim sequence As Global.System.Xml.Schema.XmlSchemaSequence = New Global.System.Xml.Schema.XmlSchemaSequence()
-            Dim ds As DataSetTablasYCampos = New DataSetTablasYCampos()
-            Dim any1 As Global.System.Xml.Schema.XmlSchemaAny = New Global.System.Xml.Schema.XmlSchemaAny()
-            any1.Namespace = "http://www.w3.org/2001/XMLSchema"
-            any1.MinOccurs = New Decimal(0)
-            any1.MaxOccurs = Decimal.MaxValue
-            any1.ProcessContents = Global.System.Xml.Schema.XmlSchemaContentProcessing.Lax
-            sequence.Items.Add(any1)
-            Dim any2 As Global.System.Xml.Schema.XmlSchemaAny = New Global.System.Xml.Schema.XmlSchemaAny()
-            any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1"
-            any2.MinOccurs = New Decimal(1)
-            any2.ProcessContents = Global.System.Xml.Schema.XmlSchemaContentProcessing.Lax
-            sequence.Items.Add(any2)
-            Dim attribute1 As Global.System.Xml.Schema.XmlSchemaAttribute = New Global.System.Xml.Schema.XmlSchemaAttribute()
-            attribute1.Name = "namespace"
-            attribute1.FixedValue = ds.Namespace
-            type.Attributes.Add(attribute1)
-            Dim attribute2 As Global.System.Xml.Schema.XmlSchemaAttribute = New Global.System.Xml.Schema.XmlSchemaAttribute()
-            attribute2.Name = "tableTypeName"
-            attribute2.FixedValue = "SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID2DataTable"
-            type.Attributes.Add(attribute2)
-            type.Particle = sequence
-            Dim dsSchema As Global.System.Xml.Schema.XmlSchema = ds.GetSchemaSerializable
-            If xs.Contains(dsSchema.TargetNamespace) Then
-                Dim s1 As Global.System.IO.MemoryStream = New Global.System.IO.MemoryStream()
-                Dim s2 As Global.System.IO.MemoryStream = New Global.System.IO.MemoryStream()
-                Try 
-                    Dim schema As Global.System.Xml.Schema.XmlSchema = Nothing
-                    dsSchema.Write(s1)
-                    Dim schemas As Global.System.Collections.IEnumerator = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator
-                    Do While schemas.MoveNext
-                        schema = CType(schemas.Current,Global.System.Xml.Schema.XmlSchema)
-                        s2.SetLength(0)
-                        schema.Write(s2)
-                        If (s1.Length = s2.Length) Then
-                            s1.Position = 0
-                            s2.Position = 0
-                            
-                            Do While ((s1.Position <> s1.Length)  _
-                                        AndAlso (s1.ReadByte = s2.ReadByte))
-                                
-                                
-                            Loop
-                            If (s1.Position = s1.Length) Then
-                                Return type
-                            End If
-                        End If
-                        
-                    Loop
-                Finally
-                    If (Not (s1) Is Nothing) Then
-                        s1.Close
-                    End If
-                    If (Not (s2) Is Nothing) Then
-                        s2.Close
-                    End If
-                End Try
-            End If
-            xs.Add(dsSchema)
-            Return type
-        End Function
-    End Class
-    
-    '''<summary>
     '''Represents strongly named DataRow class.
     '''</summary>
     Partial Public Class SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoIDRow
@@ -7187,6 +7173,191 @@ Partial Public Class DataSetTablasYCampos
     '''<summary>
     '''Represents strongly named DataRow class.
     '''</summary>
+    Partial Public Class SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1Row
+        Inherits Global.System.Data.DataRow
+        
+        Private tableSP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1 As SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1DataTable
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Friend Sub New(ByVal rb As Global.System.Data.DataRowBuilder)
+            MyBase.New(rb)
+            Me.tableSP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1 = CType(Me.Table,SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1DataTable)
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Property TablaID() As Integer
+            Get
+                Return CType(Me(Me.tableSP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1.TablaIDColumn),Integer)
+            End Get
+            Set
+                Me(Me.tableSP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1.TablaIDColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Property ProyectoID() As Integer
+            Get
+                Return CType(Me(Me.tableSP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1.ProyectoIDColumn),Integer)
+            End Get
+            Set
+                Me(Me.tableSP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1.ProyectoIDColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Property NombreTabla() As String
+            Get
+                Return CType(Me(Me.tableSP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1.NombreTablaColumn),String)
+            End Get
+            Set
+                Me(Me.tableSP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1.NombreTablaColumn) = value
+            End Set
+        End Property
+    End Class
+    
+    '''<summary>
+    '''Represents strongly named DataRow class.
+    '''</summary>
+    Partial Public Class SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID2Row
+        Inherits Global.System.Data.DataRow
+        
+        Private tableSP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID2 As SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID2DataTable
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Friend Sub New(ByVal rb As Global.System.Data.DataRowBuilder)
+            MyBase.New(rb)
+            Me.tableSP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID2 = CType(Me.Table,SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID2DataTable)
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Property TablaID() As Integer
+            Get
+                Return CType(Me(Me.tableSP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID2.TablaIDColumn),Integer)
+            End Get
+            Set
+                Me(Me.tableSP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID2.TablaIDColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Property ProyectoID() As Integer
+            Get
+                Return CType(Me(Me.tableSP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID2.ProyectoIDColumn),Integer)
+            End Get
+            Set
+                Me(Me.tableSP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID2.ProyectoIDColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Property NombreTabla() As String
+            Get
+                Return CType(Me(Me.tableSP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID2.NombreTablaColumn),String)
+            End Get
+            Set
+                Me(Me.tableSP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID2.NombreTablaColumn) = value
+            End Set
+        End Property
+    End Class
+    
+    '''<summary>
+    '''Represents strongly named DataRow class.
+    '''</summary>
+    Partial Public Class SP_RegistroValorRequerimientos_SegunProyectoRequerimientoRow
+        Inherits Global.System.Data.DataRow
+        
+        Private tableSP_RegistroValorRequerimientos_SegunProyectoRequerimiento As SP_RegistroValorRequerimientos_SegunProyectoRequerimientoDataTable
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Friend Sub New(ByVal rb As Global.System.Data.DataRowBuilder)
+            MyBase.New(rb)
+            Me.tableSP_RegistroValorRequerimientos_SegunProyectoRequerimiento = CType(Me.Table,SP_RegistroValorRequerimientos_SegunProyectoRequerimientoDataTable)
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Property RegistroValorRequerimientoID() As Long
+            Get
+                Return CType(Me(Me.tableSP_RegistroValorRequerimientos_SegunProyectoRequerimiento.RegistroValorRequerimientoIDColumn),Long)
+            End Get
+            Set
+                Me(Me.tableSP_RegistroValorRequerimientos_SegunProyectoRequerimiento.RegistroValorRequerimientoIDColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Property ProyectoID() As Integer
+            Get
+                Return CType(Me(Me.tableSP_RegistroValorRequerimientos_SegunProyectoRequerimiento.ProyectoIDColumn),Integer)
+            End Get
+            Set
+                Me(Me.tableSP_RegistroValorRequerimientos_SegunProyectoRequerimiento.ProyectoIDColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Property Requerimiento() As String
+            Get
+                Return CType(Me(Me.tableSP_RegistroValorRequerimientos_SegunProyectoRequerimiento.RequerimientoColumn),String)
+            End Get
+            Set
+                Me(Me.tableSP_RegistroValorRequerimientos_SegunProyectoRequerimiento.RequerimientoColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Property ValorRequerimiento() As String
+            Get
+                Return CType(Me(Me.tableSP_RegistroValorRequerimientos_SegunProyectoRequerimiento.ValorRequerimientoColumn),String)
+            End Get
+            Set
+                Me(Me.tableSP_RegistroValorRequerimientos_SegunProyectoRequerimiento.ValorRequerimientoColumn) = value
+            End Set
+        End Property
+    End Class
+    
+    '''<summary>
+    '''Represents strongly named DataRow class.
+    '''</summary>
+    Partial Public Class SP_CARGA_CONVENSIONES_USADASRow
+        Inherits Global.System.Data.DataRow
+        
+        Private tableSP_CARGA_CONVENSIONES_USADAS As SP_CARGA_CONVENSIONES_USADASDataTable
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Friend Sub New(ByVal rb As Global.System.Data.DataRowBuilder)
+            MyBase.New(rb)
+            Me.tableSP_CARGA_CONVENSIONES_USADAS = CType(Me.Table,SP_CARGA_CONVENSIONES_USADASDataTable)
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Property CONVENSIONES() As String
+            Get
+                Return CType(Me(Me.tableSP_CARGA_CONVENSIONES_USADAS.CONVENSIONESColumn),String)
+            End Get
+            Set
+                Me(Me.tableSP_CARGA_CONVENSIONES_USADAS.CONVENSIONESColumn) = value
+            End Set
+        End Property
+    End Class
+    
+    '''<summary>
+    '''Represents strongly named DataRow class.
+    '''</summary>
     Partial Public Class SP_RegistroValorRequerimientos_EDICION_INSERTARRow
         Inherits Global.System.Data.DataRow
         
@@ -7274,131 +7445,6 @@ Partial Public Class DataSetTablasYCampos
                 Me(Me.tableSP_RegistroValorRequerimientos_SEGUN_ProyectoID.ValorRequerimientoColumn) = value
             End Set
         End Property
-    End Class
-    
-    '''<summary>
-    '''Represents strongly named DataRow class.
-    '''</summary>
-    Partial Public Class SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaIDRow
-        Inherits Global.System.Data.DataRow
-        
-        Private tableSP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaID As SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaIDDataTable
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Friend Sub New(ByVal rb As Global.System.Data.DataRowBuilder)
-            MyBase.New(rb)
-            Me.tableSP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaID = CType(Me.Table,SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaIDDataTable)
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Property CampoID() As Integer
-            Get
-                Return CType(Me(Me.tableSP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaID.CampoIDColumn),Integer)
-            End Get
-            Set
-                Me(Me.tableSP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaID.CampoIDColumn) = value
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Property TablaID() As Integer
-            Get
-                Return CType(Me(Me.tableSP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaID.TablaIDColumn),Integer)
-            End Get
-            Set
-                Me(Me.tableSP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaID.TablaIDColumn) = value
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Property NombreCampo() As String
-            Get
-                Return CType(Me(Me.tableSP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaID.NombreCampoColumn),String)
-            End Get
-            Set
-                Me(Me.tableSP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaID.NombreCampoColumn) = value
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Property Tipo() As String
-            Get
-                Try 
-                    Return CType(Me(Me.tableSP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaID.TipoColumn),String)
-                Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'Tipo' de la tabla 'SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAM"& _ 
-                            "ETRO_TablaID' es DBNull.", e)
-                End Try
-            End Get
-            Set
-                Me(Me.tableSP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaID.TipoColumn) = value
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Function IsTipoNull() As Boolean
-            Return Me.IsNull(Me.tableSP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaID.TipoColumn)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Sub SetTipoNull()
-            Me(Me.tableSP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaID.TipoColumn) = Global.System.Convert.DBNull
-        End Sub
-    End Class
-    
-    '''<summary>
-    '''Represents strongly named DataRow class.
-    '''</summary>
-    Partial Public Class SP_CamposDeTablas_EDICION_ELIMINARRow
-        Inherits Global.System.Data.DataRow
-        
-        Private tableSP_CamposDeTablas_EDICION_ELIMINAR As SP_CamposDeTablas_EDICION_ELIMINARDataTable
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Friend Sub New(ByVal rb As Global.System.Data.DataRowBuilder)
-            MyBase.New(rb)
-            Me.tableSP_CamposDeTablas_EDICION_ELIMINAR = CType(Me.Table,SP_CamposDeTablas_EDICION_ELIMINARDataTable)
-        End Sub
-    End Class
-    
-    '''<summary>
-    '''Represents strongly named DataRow class.
-    '''</summary>
-    Partial Public Class SP_CamposDeTablas_EDICION_ACTUALIZARRow
-        Inherits Global.System.Data.DataRow
-        
-        Private tableSP_CamposDeTablas_EDICION_ACTUALIZAR As SP_CamposDeTablas_EDICION_ACTUALIZARDataTable
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Friend Sub New(ByVal rb As Global.System.Data.DataRowBuilder)
-            MyBase.New(rb)
-            Me.tableSP_CamposDeTablas_EDICION_ACTUALIZAR = CType(Me.Table,SP_CamposDeTablas_EDICION_ACTUALIZARDataTable)
-        End Sub
-    End Class
-    
-    '''<summary>
-    '''Represents strongly named DataRow class.
-    '''</summary>
-    Partial Public Class SP_CamposDeTablas_EDICION_INSERTARRow
-        Inherits Global.System.Data.DataRow
-        
-        Private tableSP_CamposDeTablas_EDICION_INSERTAR As SP_CamposDeTablas_EDICION_INSERTARDataTable
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Friend Sub New(ByVal rb As Global.System.Data.DataRowBuilder)
-            MyBase.New(rb)
-            Me.tableSP_CamposDeTablas_EDICION_INSERTAR = CType(Me.Table,SP_CamposDeTablas_EDICION_INSERTARDataTable)
-        End Sub
     End Class
     
     '''<summary>
@@ -7515,22 +7561,6 @@ Partial Public Class DataSetTablasYCampos
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Property Multiremplazo() As String
-            Get
-                Try 
-                    Return CType(Me(Me.tableSP_CampoComponentes_Segun_Plantilla_Tipo.MultiremplazoColumn),String)
-                Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'Multiremplazo' de la tabla 'SP_CampoComponentes_Segun_Pla"& _ 
-                            "ntilla_Tipo' es DBNull.", e)
-                End Try
-            End Get
-            Set
-                Me(Me.tableSP_CampoComponentes_Segun_Plantilla_Tipo.MultiremplazoColumn) = value
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Public Property SeparadorCampos() As String
             Get
                 Try 
@@ -7607,18 +7637,6 @@ Partial Public Class DataSetTablasYCampos
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Public Sub SetInferiorNull()
             Me(Me.tableSP_CampoComponentes_Segun_Plantilla_Tipo.InferiorColumn) = Global.System.Convert.DBNull
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Function IsMultiremplazoNull() As Boolean
-            Return Me.IsNull(Me.tableSP_CampoComponentes_Segun_Plantilla_Tipo.MultiremplazoColumn)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Sub SetMultiremplazoNull()
-            Me(Me.tableSP_CampoComponentes_Segun_Plantilla_Tipo.MultiremplazoColumn) = Global.System.Convert.DBNull
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -7914,137 +7932,126 @@ Partial Public Class DataSetTablasYCampos
     '''<summary>
     '''Represents strongly named DataRow class.
     '''</summary>
-    Partial Public Class SP_RegistroValorRequerimientos_SegunProyectoRequerimientoRow
+    Partial Public Class SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaIDRow
         Inherits Global.System.Data.DataRow
         
-        Private tableSP_RegistroValorRequerimientos_SegunProyectoRequerimiento As SP_RegistroValorRequerimientos_SegunProyectoRequerimientoDataTable
+        Private tableSP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaID As SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaIDDataTable
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Friend Sub New(ByVal rb As Global.System.Data.DataRowBuilder)
             MyBase.New(rb)
-            Me.tableSP_RegistroValorRequerimientos_SegunProyectoRequerimiento = CType(Me.Table,SP_RegistroValorRequerimientos_SegunProyectoRequerimientoDataTable)
+            Me.tableSP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaID = CType(Me.Table,SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaIDDataTable)
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Property RegistroValorRequerimientoID() As Long
+        Public Property CampoID() As Integer
             Get
-                Return CType(Me(Me.tableSP_RegistroValorRequerimientos_SegunProyectoRequerimiento.RegistroValorRequerimientoIDColumn),Long)
+                Return CType(Me(Me.tableSP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaID.CampoIDColumn),Integer)
             End Get
             Set
-                Me(Me.tableSP_RegistroValorRequerimientos_SegunProyectoRequerimiento.RegistroValorRequerimientoIDColumn) = value
+                Me(Me.tableSP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaID.CampoIDColumn) = value
             End Set
         End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Property ProyectoID() As Integer
-            Get
-                Return CType(Me(Me.tableSP_RegistroValorRequerimientos_SegunProyectoRequerimiento.ProyectoIDColumn),Integer)
-            End Get
-            Set
-                Me(Me.tableSP_RegistroValorRequerimientos_SegunProyectoRequerimiento.ProyectoIDColumn) = value
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Property Requerimiento() As String
-            Get
-                Return CType(Me(Me.tableSP_RegistroValorRequerimientos_SegunProyectoRequerimiento.RequerimientoColumn),String)
-            End Get
-            Set
-                Me(Me.tableSP_RegistroValorRequerimientos_SegunProyectoRequerimiento.RequerimientoColumn) = value
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Property ValorRequerimiento() As String
-            Get
-                Return CType(Me(Me.tableSP_RegistroValorRequerimientos_SegunProyectoRequerimiento.ValorRequerimientoColumn),String)
-            End Get
-            Set
-                Me(Me.tableSP_RegistroValorRequerimientos_SegunProyectoRequerimiento.ValorRequerimientoColumn) = value
-            End Set
-        End Property
-    End Class
-    
-    '''<summary>
-    '''Represents strongly named DataRow class.
-    '''</summary>
-    Partial Public Class SP_CARGA_CONVENSIONES_USADASRow
-        Inherits Global.System.Data.DataRow
-        
-        Private tableSP_CARGA_CONVENSIONES_USADAS As SP_CARGA_CONVENSIONES_USADASDataTable
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Friend Sub New(ByVal rb As Global.System.Data.DataRowBuilder)
-            MyBase.New(rb)
-            Me.tableSP_CARGA_CONVENSIONES_USADAS = CType(Me.Table,SP_CARGA_CONVENSIONES_USADASDataTable)
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Property CONVENSIONES() As String
-            Get
-                Return CType(Me(Me.tableSP_CARGA_CONVENSIONES_USADAS.CONVENSIONESColumn),String)
-            End Get
-            Set
-                Me(Me.tableSP_CARGA_CONVENSIONES_USADAS.CONVENSIONESColumn) = value
-            End Set
-        End Property
-    End Class
-    
-    '''<summary>
-    '''Represents strongly named DataRow class.
-    '''</summary>
-    Partial Public Class SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1Row
-        Inherits Global.System.Data.DataRow
-        
-        Private tableSP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1 As SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1DataTable
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Friend Sub New(ByVal rb As Global.System.Data.DataRowBuilder)
-            MyBase.New(rb)
-            Me.tableSP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1 = CType(Me.Table,SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1DataTable)
-        End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Public Property TablaID() As Integer
             Get
-                Return CType(Me(Me.tableSP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1.TablaIDColumn),Integer)
+                Return CType(Me(Me.tableSP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaID.TablaIDColumn),Integer)
             End Get
             Set
-                Me(Me.tableSP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1.TablaIDColumn) = value
+                Me(Me.tableSP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaID.TablaIDColumn) = value
             End Set
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Property ProyectoID() As Integer
+        Public Property Tipo() As String
             Get
-                Return CType(Me(Me.tableSP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1.ProyectoIDColumn),Integer)
+                Try 
+                    Return CType(Me(Me.tableSP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaID.TipoColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'Tipo' de la tabla 'SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAM"& _ 
+                            "ETRO_TablaID' es DBNull.", e)
+                End Try
             End Get
             Set
-                Me(Me.tableSP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1.ProyectoIDColumn) = value
+                Me(Me.tableSP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaID.TipoColumn) = value
             End Set
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Property NombreTabla() As String
+        Public Property NombreCampo() As String
             Get
-                Return CType(Me(Me.tableSP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1.NombreTablaColumn),String)
+                Return CType(Me(Me.tableSP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaID.NombreCampoColumn),String)
             End Get
             Set
-                Me(Me.tableSP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1.NombreTablaColumn) = value
+                Me(Me.tableSP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaID.NombreCampoColumn) = value
             End Set
         End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Function IsTipoNull() As Boolean
+            Return Me.IsNull(Me.tableSP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaID.TipoColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Sub SetTipoNull()
+            Me(Me.tableSP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaID.TipoColumn) = Global.System.Convert.DBNull
+        End Sub
+    End Class
+    
+    '''<summary>
+    '''Represents strongly named DataRow class.
+    '''</summary>
+    Partial Public Class SP_CamposDeTablas_EDICION_ACTUALIZARRow
+        Inherits Global.System.Data.DataRow
+        
+        Private tableSP_CamposDeTablas_EDICION_ACTUALIZAR As SP_CamposDeTablas_EDICION_ACTUALIZARDataTable
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Friend Sub New(ByVal rb As Global.System.Data.DataRowBuilder)
+            MyBase.New(rb)
+            Me.tableSP_CamposDeTablas_EDICION_ACTUALIZAR = CType(Me.Table,SP_CamposDeTablas_EDICION_ACTUALIZARDataTable)
+        End Sub
+    End Class
+    
+    '''<summary>
+    '''Represents strongly named DataRow class.
+    '''</summary>
+    Partial Public Class SP_CamposDeTablas_EDICION_ELIMINARRow
+        Inherits Global.System.Data.DataRow
+        
+        Private tableSP_CamposDeTablas_EDICION_ELIMINAR As SP_CamposDeTablas_EDICION_ELIMINARDataTable
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Friend Sub New(ByVal rb As Global.System.Data.DataRowBuilder)
+            MyBase.New(rb)
+            Me.tableSP_CamposDeTablas_EDICION_ELIMINAR = CType(Me.Table,SP_CamposDeTablas_EDICION_ELIMINARDataTable)
+        End Sub
+    End Class
+    
+    '''<summary>
+    '''Represents strongly named DataRow class.
+    '''</summary>
+    Partial Public Class SP_CamposDeTablas_EDICION_INSERTARRow
+        Inherits Global.System.Data.DataRow
+        
+        Private tableSP_CamposDeTablas_EDICION_INSERTAR As SP_CamposDeTablas_EDICION_INSERTARDataTable
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Friend Sub New(ByVal rb As Global.System.Data.DataRowBuilder)
+            MyBase.New(rb)
+            Me.tableSP_CamposDeTablas_EDICION_INSERTAR = CType(Me.Table,SP_CamposDeTablas_EDICION_INSERTARDataTable)
+        End Sub
     End Class
     
     '''<summary>
@@ -8086,17 +8093,6 @@ Partial Public Class DataSetTablasYCampos
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Property NombreCampo() As String
-            Get
-                Return CType(Me(Me.tableSP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaID1.NombreCampoColumn),String)
-            End Get
-            Set
-                Me(Me.tableSP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaID1.NombreCampoColumn) = value
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Public Property Tipo() As String
             Get
                 Try 
@@ -8108,6 +8104,17 @@ Partial Public Class DataSetTablasYCampos
             End Get
             Set
                 Me(Me.tableSP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaID1.TipoColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Property NombreCampo() As String
+            Get
+                Return CType(Me(Me.tableSP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaID1.NombreCampoColumn),String)
+            End Get
+            Set
+                Me(Me.tableSP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaID1.NombreCampoColumn) = value
             End Set
         End Property
         
@@ -8199,55 +8206,6 @@ Partial Public Class DataSetTablasYCampos
         Public Sub SetTipoNull()
             Me(Me.tableSP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaID2.TipoColumn) = Global.System.Convert.DBNull
         End Sub
-    End Class
-    
-    '''<summary>
-    '''Represents strongly named DataRow class.
-    '''</summary>
-    Partial Public Class SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID2Row
-        Inherits Global.System.Data.DataRow
-        
-        Private tableSP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID2 As SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID2DataTable
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Friend Sub New(ByVal rb As Global.System.Data.DataRowBuilder)
-            MyBase.New(rb)
-            Me.tableSP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID2 = CType(Me.Table,SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID2DataTable)
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Property TablaID() As Integer
-            Get
-                Return CType(Me(Me.tableSP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID2.TablaIDColumn),Integer)
-            End Get
-            Set
-                Me(Me.tableSP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID2.TablaIDColumn) = value
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Property ProyectoID() As Integer
-            Get
-                Return CType(Me(Me.tableSP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID2.ProyectoIDColumn),Integer)
-            End Get
-            Set
-                Me(Me.tableSP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID2.ProyectoIDColumn) = value
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Property NombreTabla() As String
-            Get
-                Return CType(Me(Me.tableSP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID2.NombreTablaColumn),String)
-            End Get
-            Set
-                Me(Me.tableSP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID2.NombreTablaColumn) = value
-            End Set
-        End Property
     End Class
     
     '''<summary>
@@ -8398,6 +8356,150 @@ Partial Public Class DataSetTablasYCampos
     '''Row event argument class
     '''</summary>
     <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+    Public Class SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1RowChangeEvent
+        Inherits Global.System.EventArgs
+        
+        Private eventRow As SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1Row
+        
+        Private eventAction As Global.System.Data.DataRowAction
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Sub New(ByVal row As SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1Row, ByVal action As Global.System.Data.DataRowAction)
+            MyBase.New
+            Me.eventRow = row
+            Me.eventAction = action
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public ReadOnly Property Row() As SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1Row
+            Get
+                Return Me.eventRow
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public ReadOnly Property Action() As Global.System.Data.DataRowAction
+            Get
+                Return Me.eventAction
+            End Get
+        End Property
+    End Class
+    
+    '''<summary>
+    '''Row event argument class
+    '''</summary>
+    <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+    Public Class SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID2RowChangeEvent
+        Inherits Global.System.EventArgs
+        
+        Private eventRow As SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID2Row
+        
+        Private eventAction As Global.System.Data.DataRowAction
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Sub New(ByVal row As SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID2Row, ByVal action As Global.System.Data.DataRowAction)
+            MyBase.New
+            Me.eventRow = row
+            Me.eventAction = action
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public ReadOnly Property Row() As SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID2Row
+            Get
+                Return Me.eventRow
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public ReadOnly Property Action() As Global.System.Data.DataRowAction
+            Get
+                Return Me.eventAction
+            End Get
+        End Property
+    End Class
+    
+    '''<summary>
+    '''Row event argument class
+    '''</summary>
+    <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+    Public Class SP_RegistroValorRequerimientos_SegunProyectoRequerimientoRowChangeEvent
+        Inherits Global.System.EventArgs
+        
+        Private eventRow As SP_RegistroValorRequerimientos_SegunProyectoRequerimientoRow
+        
+        Private eventAction As Global.System.Data.DataRowAction
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Sub New(ByVal row As SP_RegistroValorRequerimientos_SegunProyectoRequerimientoRow, ByVal action As Global.System.Data.DataRowAction)
+            MyBase.New
+            Me.eventRow = row
+            Me.eventAction = action
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public ReadOnly Property Row() As SP_RegistroValorRequerimientos_SegunProyectoRequerimientoRow
+            Get
+                Return Me.eventRow
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public ReadOnly Property Action() As Global.System.Data.DataRowAction
+            Get
+                Return Me.eventAction
+            End Get
+        End Property
+    End Class
+    
+    '''<summary>
+    '''Row event argument class
+    '''</summary>
+    <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+    Public Class SP_CARGA_CONVENSIONES_USADASRowChangeEvent
+        Inherits Global.System.EventArgs
+        
+        Private eventRow As SP_CARGA_CONVENSIONES_USADASRow
+        
+        Private eventAction As Global.System.Data.DataRowAction
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Sub New(ByVal row As SP_CARGA_CONVENSIONES_USADASRow, ByVal action As Global.System.Data.DataRowAction)
+            MyBase.New
+            Me.eventRow = row
+            Me.eventAction = action
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public ReadOnly Property Row() As SP_CARGA_CONVENSIONES_USADASRow
+            Get
+                Return Me.eventRow
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public ReadOnly Property Action() As Global.System.Data.DataRowAction
+            Get
+                Return Me.eventAction
+            End Get
+        End Property
+    End Class
+    
+    '''<summary>
+    '''Row event argument class
+    '''</summary>
+    <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
     Public Class SP_RegistroValorRequerimientos_EDICION_INSERTARRowChangeEvent
         Inherits Global.System.EventArgs
         
@@ -8488,150 +8590,6 @@ Partial Public Class DataSetTablasYCampos
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Public ReadOnly Property Row() As SP_RegistroValorRequerimientos_SEGUN_ProyectoIDRow
-            Get
-                Return Me.eventRow
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public ReadOnly Property Action() As Global.System.Data.DataRowAction
-            Get
-                Return Me.eventAction
-            End Get
-        End Property
-    End Class
-    
-    '''<summary>
-    '''Row event argument class
-    '''</summary>
-    <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-    Public Class SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaIDRowChangeEvent
-        Inherits Global.System.EventArgs
-        
-        Private eventRow As SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaIDRow
-        
-        Private eventAction As Global.System.Data.DataRowAction
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Sub New(ByVal row As SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaIDRow, ByVal action As Global.System.Data.DataRowAction)
-            MyBase.New
-            Me.eventRow = row
-            Me.eventAction = action
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public ReadOnly Property Row() As SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaIDRow
-            Get
-                Return Me.eventRow
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public ReadOnly Property Action() As Global.System.Data.DataRowAction
-            Get
-                Return Me.eventAction
-            End Get
-        End Property
-    End Class
-    
-    '''<summary>
-    '''Row event argument class
-    '''</summary>
-    <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-    Public Class SP_CamposDeTablas_EDICION_ELIMINARRowChangeEvent
-        Inherits Global.System.EventArgs
-        
-        Private eventRow As SP_CamposDeTablas_EDICION_ELIMINARRow
-        
-        Private eventAction As Global.System.Data.DataRowAction
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Sub New(ByVal row As SP_CamposDeTablas_EDICION_ELIMINARRow, ByVal action As Global.System.Data.DataRowAction)
-            MyBase.New
-            Me.eventRow = row
-            Me.eventAction = action
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public ReadOnly Property Row() As SP_CamposDeTablas_EDICION_ELIMINARRow
-            Get
-                Return Me.eventRow
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public ReadOnly Property Action() As Global.System.Data.DataRowAction
-            Get
-                Return Me.eventAction
-            End Get
-        End Property
-    End Class
-    
-    '''<summary>
-    '''Row event argument class
-    '''</summary>
-    <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-    Public Class SP_CamposDeTablas_EDICION_ACTUALIZARRowChangeEvent
-        Inherits Global.System.EventArgs
-        
-        Private eventRow As SP_CamposDeTablas_EDICION_ACTUALIZARRow
-        
-        Private eventAction As Global.System.Data.DataRowAction
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Sub New(ByVal row As SP_CamposDeTablas_EDICION_ACTUALIZARRow, ByVal action As Global.System.Data.DataRowAction)
-            MyBase.New
-            Me.eventRow = row
-            Me.eventAction = action
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public ReadOnly Property Row() As SP_CamposDeTablas_EDICION_ACTUALIZARRow
-            Get
-                Return Me.eventRow
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public ReadOnly Property Action() As Global.System.Data.DataRowAction
-            Get
-                Return Me.eventAction
-            End Get
-        End Property
-    End Class
-    
-    '''<summary>
-    '''Row event argument class
-    '''</summary>
-    <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-    Public Class SP_CamposDeTablas_EDICION_INSERTARRowChangeEvent
-        Inherits Global.System.EventArgs
-        
-        Private eventRow As SP_CamposDeTablas_EDICION_INSERTARRow
-        
-        Private eventAction As Global.System.Data.DataRowAction
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Sub New(ByVal row As SP_CamposDeTablas_EDICION_INSERTARRow, ByVal action As Global.System.Data.DataRowAction)
-            MyBase.New
-            Me.eventRow = row
-            Me.eventAction = action
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public ReadOnly Property Row() As SP_CamposDeTablas_EDICION_INSERTARRow
             Get
                 Return Me.eventRow
             End Get
@@ -8830,16 +8788,16 @@ Partial Public Class DataSetTablasYCampos
     '''Row event argument class
     '''</summary>
     <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-    Public Class SP_RegistroValorRequerimientos_SegunProyectoRequerimientoRowChangeEvent
+    Public Class SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaIDRowChangeEvent
         Inherits Global.System.EventArgs
         
-        Private eventRow As SP_RegistroValorRequerimientos_SegunProyectoRequerimientoRow
+        Private eventRow As SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaIDRow
         
         Private eventAction As Global.System.Data.DataRowAction
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Sub New(ByVal row As SP_RegistroValorRequerimientos_SegunProyectoRequerimientoRow, ByVal action As Global.System.Data.DataRowAction)
+        Public Sub New(ByVal row As SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaIDRow, ByVal action As Global.System.Data.DataRowAction)
             MyBase.New
             Me.eventRow = row
             Me.eventAction = action
@@ -8847,7 +8805,7 @@ Partial Public Class DataSetTablasYCampos
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public ReadOnly Property Row() As SP_RegistroValorRequerimientos_SegunProyectoRequerimientoRow
+        Public ReadOnly Property Row() As SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaIDRow
             Get
                 Return Me.eventRow
             End Get
@@ -8866,16 +8824,16 @@ Partial Public Class DataSetTablasYCampos
     '''Row event argument class
     '''</summary>
     <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-    Public Class SP_CARGA_CONVENSIONES_USADASRowChangeEvent
+    Public Class SP_CamposDeTablas_EDICION_ACTUALIZARRowChangeEvent
         Inherits Global.System.EventArgs
         
-        Private eventRow As SP_CARGA_CONVENSIONES_USADASRow
+        Private eventRow As SP_CamposDeTablas_EDICION_ACTUALIZARRow
         
         Private eventAction As Global.System.Data.DataRowAction
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Sub New(ByVal row As SP_CARGA_CONVENSIONES_USADASRow, ByVal action As Global.System.Data.DataRowAction)
+        Public Sub New(ByVal row As SP_CamposDeTablas_EDICION_ACTUALIZARRow, ByVal action As Global.System.Data.DataRowAction)
             MyBase.New
             Me.eventRow = row
             Me.eventAction = action
@@ -8883,7 +8841,7 @@ Partial Public Class DataSetTablasYCampos
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public ReadOnly Property Row() As SP_CARGA_CONVENSIONES_USADASRow
+        Public ReadOnly Property Row() As SP_CamposDeTablas_EDICION_ACTUALIZARRow
             Get
                 Return Me.eventRow
             End Get
@@ -8902,16 +8860,16 @@ Partial Public Class DataSetTablasYCampos
     '''Row event argument class
     '''</summary>
     <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-    Public Class SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1RowChangeEvent
+    Public Class SP_CamposDeTablas_EDICION_ELIMINARRowChangeEvent
         Inherits Global.System.EventArgs
         
-        Private eventRow As SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1Row
+        Private eventRow As SP_CamposDeTablas_EDICION_ELIMINARRow
         
         Private eventAction As Global.System.Data.DataRowAction
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Sub New(ByVal row As SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1Row, ByVal action As Global.System.Data.DataRowAction)
+        Public Sub New(ByVal row As SP_CamposDeTablas_EDICION_ELIMINARRow, ByVal action As Global.System.Data.DataRowAction)
             MyBase.New
             Me.eventRow = row
             Me.eventAction = action
@@ -8919,7 +8877,43 @@ Partial Public Class DataSetTablasYCampos
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public ReadOnly Property Row() As SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1Row
+        Public ReadOnly Property Row() As SP_CamposDeTablas_EDICION_ELIMINARRow
+            Get
+                Return Me.eventRow
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public ReadOnly Property Action() As Global.System.Data.DataRowAction
+            Get
+                Return Me.eventAction
+            End Get
+        End Property
+    End Class
+    
+    '''<summary>
+    '''Row event argument class
+    '''</summary>
+    <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+    Public Class SP_CamposDeTablas_EDICION_INSERTARRowChangeEvent
+        Inherits Global.System.EventArgs
+        
+        Private eventRow As SP_CamposDeTablas_EDICION_INSERTARRow
+        
+        Private eventAction As Global.System.Data.DataRowAction
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Sub New(ByVal row As SP_CamposDeTablas_EDICION_INSERTARRow, ByVal action As Global.System.Data.DataRowAction)
+            MyBase.New
+            Me.eventRow = row
+            Me.eventAction = action
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public ReadOnly Property Row() As SP_CamposDeTablas_EDICION_INSERTARRow
             Get
                 Return Me.eventRow
             End Get
@@ -8992,42 +8986,6 @@ Partial Public Class DataSetTablasYCampos
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Public ReadOnly Property Row() As SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaID2Row
-            Get
-                Return Me.eventRow
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public ReadOnly Property Action() As Global.System.Data.DataRowAction
-            Get
-                Return Me.eventAction
-            End Get
-        End Property
-    End Class
-    
-    '''<summary>
-    '''Row event argument class
-    '''</summary>
-    <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-    Public Class SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID2RowChangeEvent
-        Inherits Global.System.EventArgs
-        
-        Private eventRow As SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID2Row
-        
-        Private eventAction As Global.System.Data.DataRowAction
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Sub New(ByVal row As SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID2Row, ByVal action As Global.System.Data.DataRowAction)
-            MyBase.New
-            Me.eventRow = row
-            Me.eventAction = action
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public ReadOnly Property Row() As SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID2Row
             Get
                 Return Me.eventRow
             End Get
@@ -9182,7 +9140,7 @@ Namespace DataSetTablasYCamposTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Private Sub InitConnection()
             Me._connection = New Global.System.Data.SqlClient.SqlConnection()
-            Me._connection.ConnectionString = Global.GeneradorCod.My.MySettings.Default.GeneradorCodigoBDConnectionString
+            Me._connection.ConnectionString = Global.GeneradorCod.My.MySettings.Default.GeneradorBDConnectionString
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -9370,7 +9328,7 @@ Namespace DataSetTablasYCamposTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Private Sub InitConnection()
             Me._connection = New Global.System.Data.SqlClient.SqlConnection()
-            Me._connection.ConnectionString = Global.GeneradorCod.My.MySettings.Default.GeneradorCodigoBDConnectionString
+            Me._connection.ConnectionString = Global.GeneradorCod.My.MySettings.Default.GeneradorBDConnectionString
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -9641,7 +9599,7 @@ Namespace DataSetTablasYCamposTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Private Sub InitConnection()
             Me._connection = New Global.System.Data.SqlClient.SqlConnection()
-            Me._connection.ConnectionString = Global.GeneradorCod.My.MySettings.Default.GeneradorCodigoBDConnectionString
+            Me._connection.ConnectionString = Global.GeneradorCod.My.MySettings.Default.GeneradorBDConnectionString
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -9881,7 +9839,7 @@ Namespace DataSetTablasYCamposTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Private Sub InitConnection()
             Me._connection = New Global.System.Data.SqlClient.SqlConnection()
-            Me._connection.ConnectionString = Global.GeneradorCod.My.MySettings.Default.GeneradorCodigoBDConnectionString
+            Me._connection.ConnectionString = Global.GeneradorCod.My.MySettings.Default.GeneradorBDConnectionString
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -9997,6 +9955,753 @@ Namespace DataSetTablasYCamposTableAdapters
                     Me.Adapter.InsertCommand.Connection.Close
                 End If
             End Try
+        End Function
+    End Class
+    
+    '''<summary>
+    '''Represents the connection and commands used to retrieve and save data.
+    '''</summary>
+    <Global.System.ComponentModel.DesignerCategoryAttribute("code"),  _
+     Global.System.ComponentModel.ToolboxItem(true),  _
+     Global.System.ComponentModel.DataObjectAttribute(true),  _
+     Global.System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner"& _ 
+        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"),  _
+     Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
+    Partial Public Class SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1TableAdapter
+        Inherits Global.System.ComponentModel.Component
+        
+        Private WithEvents _adapter As Global.System.Data.SqlClient.SqlDataAdapter
+        
+        Private _connection As Global.System.Data.SqlClient.SqlConnection
+        
+        Private _transaction As Global.System.Data.SqlClient.SqlTransaction
+        
+        Private _commandCollection() As Global.System.Data.SqlClient.SqlCommand
+        
+        Private _clearBeforeFill As Boolean
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Sub New()
+            MyBase.New
+            Me.ClearBeforeFill = true
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Protected Friend ReadOnly Property Adapter() As Global.System.Data.SqlClient.SqlDataAdapter
+            Get
+                If (Me._adapter Is Nothing) Then
+                    Me.InitAdapter
+                End If
+                Return Me._adapter
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Friend Property Connection() As Global.System.Data.SqlClient.SqlConnection
+            Get
+                If (Me._connection Is Nothing) Then
+                    Me.InitConnection
+                End If
+                Return Me._connection
+            End Get
+            Set
+                Me._connection = value
+                If (Not (Me.Adapter.InsertCommand) Is Nothing) Then
+                    Me.Adapter.InsertCommand.Connection = value
+                End If
+                If (Not (Me.Adapter.DeleteCommand) Is Nothing) Then
+                    Me.Adapter.DeleteCommand.Connection = value
+                End If
+                If (Not (Me.Adapter.UpdateCommand) Is Nothing) Then
+                    Me.Adapter.UpdateCommand.Connection = value
+                End If
+                Dim i As Integer = 0
+                Do While (i < Me.CommandCollection.Length)
+                    If (Not (Me.CommandCollection(i)) Is Nothing) Then
+                        CType(Me.CommandCollection(i),Global.System.Data.SqlClient.SqlCommand).Connection = value
+                    End If
+                    i = (i + 1)
+                Loop
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Friend Property Transaction() As Global.System.Data.SqlClient.SqlTransaction
+            Get
+                Return Me._transaction
+            End Get
+            Set
+                Me._transaction = value
+                Dim i As Integer = 0
+                Do While (i < Me.CommandCollection.Length)
+                    Me.CommandCollection(i).Transaction = Me._transaction
+                    i = (i + 1)
+                Loop
+                If ((Not (Me.Adapter) Is Nothing)  _
+                            AndAlso (Not (Me.Adapter.DeleteCommand) Is Nothing)) Then
+                    Me.Adapter.DeleteCommand.Transaction = Me._transaction
+                End If
+                If ((Not (Me.Adapter) Is Nothing)  _
+                            AndAlso (Not (Me.Adapter.InsertCommand) Is Nothing)) Then
+                    Me.Adapter.InsertCommand.Transaction = Me._transaction
+                End If
+                If ((Not (Me.Adapter) Is Nothing)  _
+                            AndAlso (Not (Me.Adapter.UpdateCommand) Is Nothing)) Then
+                    Me.Adapter.UpdateCommand.Transaction = Me._transaction
+                End If
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Protected ReadOnly Property CommandCollection() As Global.System.Data.SqlClient.SqlCommand()
+            Get
+                If (Me._commandCollection Is Nothing) Then
+                    Me.InitCommandCollection
+                End If
+                Return Me._commandCollection
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Property ClearBeforeFill() As Boolean
+            Get
+                Return Me._clearBeforeFill
+            End Get
+            Set
+                Me._clearBeforeFill = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Private Sub InitAdapter()
+            Me._adapter = New Global.System.Data.SqlClient.SqlDataAdapter()
+            Dim tableMapping As Global.System.Data.Common.DataTableMapping = New Global.System.Data.Common.DataTableMapping()
+            tableMapping.SourceTable = "Table"
+            tableMapping.DataSetTable = "SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1"
+            tableMapping.ColumnMappings.Add("TablaID", "TablaID")
+            tableMapping.ColumnMappings.Add("ProyectoID", "ProyectoID")
+            tableMapping.ColumnMappings.Add("NombreTabla", "NombreTabla")
+            Me._adapter.TableMappings.Add(tableMapping)
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Private Sub InitConnection()
+            Me._connection = New Global.System.Data.SqlClient.SqlConnection()
+            Me._connection.ConnectionString = Global.GeneradorCod.My.MySettings.Default.GeneradorBDConnectionString
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Private Sub InitCommandCollection()
+            Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(0) {}
+            Me._commandCollection(0) = New Global.System.Data.SqlClient.SqlCommand()
+            Me._commandCollection(0).Connection = Me.Connection
+            Me._commandCollection(0).CommandText = "dbo.SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID"
+            Me._commandCollection(0).CommandType = Global.System.Data.CommandType.StoredProcedure
+            Me._commandCollection(0).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@RETURN_VALUE", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.ReturnValue, 10, 0, Nothing, Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(0).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@ProyectoID", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 10, 0, Nothing, Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, true)>  _
+        Public Overloads Overridable Function Fill(ByVal dataTable As DataSetTablasYCampos.SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1DataTable, ByVal ProyectoID As Global.System.Nullable(Of Integer)) As Integer
+            Me.Adapter.SelectCommand = Me.CommandCollection(0)
+            If (ProyectoID.HasValue = true) Then
+                Me.Adapter.SelectCommand.Parameters(1).Value = CType(ProyectoID.Value,Integer)
+            Else
+                Me.Adapter.SelectCommand.Parameters(1).Value = Global.System.DBNull.Value
+            End If
+            If (Me.ClearBeforeFill = true) Then
+                dataTable.Clear
+            End If
+            Dim returnValue As Integer = Me.Adapter.Fill(dataTable)
+            Return returnValue
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], true)>  _
+        Public Overloads Overridable Function GetData(ByVal ProyectoID As Global.System.Nullable(Of Integer)) As DataSetTablasYCampos.SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1DataTable
+            Me.Adapter.SelectCommand = Me.CommandCollection(0)
+            If (ProyectoID.HasValue = true) Then
+                Me.Adapter.SelectCommand.Parameters(1).Value = CType(ProyectoID.Value,Integer)
+            Else
+                Me.Adapter.SelectCommand.Parameters(1).Value = Global.System.DBNull.Value
+            End If
+            Dim dataTable As DataSetTablasYCampos.SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1DataTable = New DataSetTablasYCampos.SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1DataTable()
+            Me.Adapter.Fill(dataTable)
+            Return dataTable
+        End Function
+    End Class
+    
+    '''<summary>
+    '''Represents the connection and commands used to retrieve and save data.
+    '''</summary>
+    <Global.System.ComponentModel.DesignerCategoryAttribute("code"),  _
+     Global.System.ComponentModel.ToolboxItem(true),  _
+     Global.System.ComponentModel.DataObjectAttribute(true),  _
+     Global.System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner"& _ 
+        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"),  _
+     Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
+    Partial Public Class SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID2TableAdapter
+        Inherits Global.System.ComponentModel.Component
+        
+        Private WithEvents _adapter As Global.System.Data.SqlClient.SqlDataAdapter
+        
+        Private _connection As Global.System.Data.SqlClient.SqlConnection
+        
+        Private _transaction As Global.System.Data.SqlClient.SqlTransaction
+        
+        Private _commandCollection() As Global.System.Data.SqlClient.SqlCommand
+        
+        Private _clearBeforeFill As Boolean
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Sub New()
+            MyBase.New
+            Me.ClearBeforeFill = true
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Protected Friend ReadOnly Property Adapter() As Global.System.Data.SqlClient.SqlDataAdapter
+            Get
+                If (Me._adapter Is Nothing) Then
+                    Me.InitAdapter
+                End If
+                Return Me._adapter
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Friend Property Connection() As Global.System.Data.SqlClient.SqlConnection
+            Get
+                If (Me._connection Is Nothing) Then
+                    Me.InitConnection
+                End If
+                Return Me._connection
+            End Get
+            Set
+                Me._connection = value
+                If (Not (Me.Adapter.InsertCommand) Is Nothing) Then
+                    Me.Adapter.InsertCommand.Connection = value
+                End If
+                If (Not (Me.Adapter.DeleteCommand) Is Nothing) Then
+                    Me.Adapter.DeleteCommand.Connection = value
+                End If
+                If (Not (Me.Adapter.UpdateCommand) Is Nothing) Then
+                    Me.Adapter.UpdateCommand.Connection = value
+                End If
+                Dim i As Integer = 0
+                Do While (i < Me.CommandCollection.Length)
+                    If (Not (Me.CommandCollection(i)) Is Nothing) Then
+                        CType(Me.CommandCollection(i),Global.System.Data.SqlClient.SqlCommand).Connection = value
+                    End If
+                    i = (i + 1)
+                Loop
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Friend Property Transaction() As Global.System.Data.SqlClient.SqlTransaction
+            Get
+                Return Me._transaction
+            End Get
+            Set
+                Me._transaction = value
+                Dim i As Integer = 0
+                Do While (i < Me.CommandCollection.Length)
+                    Me.CommandCollection(i).Transaction = Me._transaction
+                    i = (i + 1)
+                Loop
+                If ((Not (Me.Adapter) Is Nothing)  _
+                            AndAlso (Not (Me.Adapter.DeleteCommand) Is Nothing)) Then
+                    Me.Adapter.DeleteCommand.Transaction = Me._transaction
+                End If
+                If ((Not (Me.Adapter) Is Nothing)  _
+                            AndAlso (Not (Me.Adapter.InsertCommand) Is Nothing)) Then
+                    Me.Adapter.InsertCommand.Transaction = Me._transaction
+                End If
+                If ((Not (Me.Adapter) Is Nothing)  _
+                            AndAlso (Not (Me.Adapter.UpdateCommand) Is Nothing)) Then
+                    Me.Adapter.UpdateCommand.Transaction = Me._transaction
+                End If
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Protected ReadOnly Property CommandCollection() As Global.System.Data.SqlClient.SqlCommand()
+            Get
+                If (Me._commandCollection Is Nothing) Then
+                    Me.InitCommandCollection
+                End If
+                Return Me._commandCollection
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Property ClearBeforeFill() As Boolean
+            Get
+                Return Me._clearBeforeFill
+            End Get
+            Set
+                Me._clearBeforeFill = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Private Sub InitAdapter()
+            Me._adapter = New Global.System.Data.SqlClient.SqlDataAdapter()
+            Dim tableMapping As Global.System.Data.Common.DataTableMapping = New Global.System.Data.Common.DataTableMapping()
+            tableMapping.SourceTable = "Table"
+            tableMapping.DataSetTable = "SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID2"
+            tableMapping.ColumnMappings.Add("TablaID", "TablaID")
+            tableMapping.ColumnMappings.Add("ProyectoID", "ProyectoID")
+            tableMapping.ColumnMappings.Add("NombreTabla", "NombreTabla")
+            Me._adapter.TableMappings.Add(tableMapping)
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Private Sub InitConnection()
+            Me._connection = New Global.System.Data.SqlClient.SqlConnection()
+            Me._connection.ConnectionString = Global.GeneradorCod.My.MySettings.Default.GeneradorBDConnectionString
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Private Sub InitCommandCollection()
+            Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(0) {}
+            Me._commandCollection(0) = New Global.System.Data.SqlClient.SqlCommand()
+            Me._commandCollection(0).Connection = Me.Connection
+            Me._commandCollection(0).CommandText = "dbo.SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID"
+            Me._commandCollection(0).CommandType = Global.System.Data.CommandType.StoredProcedure
+            Me._commandCollection(0).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@RETURN_VALUE", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.ReturnValue, 10, 0, Nothing, Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(0).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@ProyectoID", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 10, 0, Nothing, Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, true)>  _
+        Public Overloads Overridable Function Fill(ByVal dataTable As DataSetTablasYCampos.SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID2DataTable, ByVal ProyectoID As Global.System.Nullable(Of Integer)) As Integer
+            Me.Adapter.SelectCommand = Me.CommandCollection(0)
+            If (ProyectoID.HasValue = true) Then
+                Me.Adapter.SelectCommand.Parameters(1).Value = CType(ProyectoID.Value,Integer)
+            Else
+                Me.Adapter.SelectCommand.Parameters(1).Value = Global.System.DBNull.Value
+            End If
+            If (Me.ClearBeforeFill = true) Then
+                dataTable.Clear
+            End If
+            Dim returnValue As Integer = Me.Adapter.Fill(dataTable)
+            Return returnValue
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], true)>  _
+        Public Overloads Overridable Function GetData(ByVal ProyectoID As Global.System.Nullable(Of Integer)) As DataSetTablasYCampos.SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID2DataTable
+            Me.Adapter.SelectCommand = Me.CommandCollection(0)
+            If (ProyectoID.HasValue = true) Then
+                Me.Adapter.SelectCommand.Parameters(1).Value = CType(ProyectoID.Value,Integer)
+            Else
+                Me.Adapter.SelectCommand.Parameters(1).Value = Global.System.DBNull.Value
+            End If
+            Dim dataTable As DataSetTablasYCampos.SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID2DataTable = New DataSetTablasYCampos.SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID2DataTable()
+            Me.Adapter.Fill(dataTable)
+            Return dataTable
+        End Function
+    End Class
+    
+    '''<summary>
+    '''Represents the connection and commands used to retrieve and save data.
+    '''</summary>
+    <Global.System.ComponentModel.DesignerCategoryAttribute("code"),  _
+     Global.System.ComponentModel.ToolboxItem(true),  _
+     Global.System.ComponentModel.DataObjectAttribute(true),  _
+     Global.System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner"& _ 
+        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"),  _
+     Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
+    Partial Public Class SP_RegistroValorRequerimientos_SegunProyectoRequerimientoTableAdapter
+        Inherits Global.System.ComponentModel.Component
+        
+        Private WithEvents _adapter As Global.System.Data.SqlClient.SqlDataAdapter
+        
+        Private _connection As Global.System.Data.SqlClient.SqlConnection
+        
+        Private _transaction As Global.System.Data.SqlClient.SqlTransaction
+        
+        Private _commandCollection() As Global.System.Data.SqlClient.SqlCommand
+        
+        Private _clearBeforeFill As Boolean
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Sub New()
+            MyBase.New
+            Me.ClearBeforeFill = true
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Protected Friend ReadOnly Property Adapter() As Global.System.Data.SqlClient.SqlDataAdapter
+            Get
+                If (Me._adapter Is Nothing) Then
+                    Me.InitAdapter
+                End If
+                Return Me._adapter
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Friend Property Connection() As Global.System.Data.SqlClient.SqlConnection
+            Get
+                If (Me._connection Is Nothing) Then
+                    Me.InitConnection
+                End If
+                Return Me._connection
+            End Get
+            Set
+                Me._connection = value
+                If (Not (Me.Adapter.InsertCommand) Is Nothing) Then
+                    Me.Adapter.InsertCommand.Connection = value
+                End If
+                If (Not (Me.Adapter.DeleteCommand) Is Nothing) Then
+                    Me.Adapter.DeleteCommand.Connection = value
+                End If
+                If (Not (Me.Adapter.UpdateCommand) Is Nothing) Then
+                    Me.Adapter.UpdateCommand.Connection = value
+                End If
+                Dim i As Integer = 0
+                Do While (i < Me.CommandCollection.Length)
+                    If (Not (Me.CommandCollection(i)) Is Nothing) Then
+                        CType(Me.CommandCollection(i),Global.System.Data.SqlClient.SqlCommand).Connection = value
+                    End If
+                    i = (i + 1)
+                Loop
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Friend Property Transaction() As Global.System.Data.SqlClient.SqlTransaction
+            Get
+                Return Me._transaction
+            End Get
+            Set
+                Me._transaction = value
+                Dim i As Integer = 0
+                Do While (i < Me.CommandCollection.Length)
+                    Me.CommandCollection(i).Transaction = Me._transaction
+                    i = (i + 1)
+                Loop
+                If ((Not (Me.Adapter) Is Nothing)  _
+                            AndAlso (Not (Me.Adapter.DeleteCommand) Is Nothing)) Then
+                    Me.Adapter.DeleteCommand.Transaction = Me._transaction
+                End If
+                If ((Not (Me.Adapter) Is Nothing)  _
+                            AndAlso (Not (Me.Adapter.InsertCommand) Is Nothing)) Then
+                    Me.Adapter.InsertCommand.Transaction = Me._transaction
+                End If
+                If ((Not (Me.Adapter) Is Nothing)  _
+                            AndAlso (Not (Me.Adapter.UpdateCommand) Is Nothing)) Then
+                    Me.Adapter.UpdateCommand.Transaction = Me._transaction
+                End If
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Protected ReadOnly Property CommandCollection() As Global.System.Data.SqlClient.SqlCommand()
+            Get
+                If (Me._commandCollection Is Nothing) Then
+                    Me.InitCommandCollection
+                End If
+                Return Me._commandCollection
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Property ClearBeforeFill() As Boolean
+            Get
+                Return Me._clearBeforeFill
+            End Get
+            Set
+                Me._clearBeforeFill = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Private Sub InitAdapter()
+            Me._adapter = New Global.System.Data.SqlClient.SqlDataAdapter()
+            Dim tableMapping As Global.System.Data.Common.DataTableMapping = New Global.System.Data.Common.DataTableMapping()
+            tableMapping.SourceTable = "Table"
+            tableMapping.DataSetTable = "SP_RegistroValorRequerimientos_SegunProyectoRequerimiento"
+            tableMapping.ColumnMappings.Add("RegistroValorRequerimientoID", "RegistroValorRequerimientoID")
+            tableMapping.ColumnMappings.Add("ProyectoID", "ProyectoID")
+            tableMapping.ColumnMappings.Add("Requerimiento", "Requerimiento")
+            tableMapping.ColumnMappings.Add("ValorRequerimiento", "ValorRequerimiento")
+            Me._adapter.TableMappings.Add(tableMapping)
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Private Sub InitConnection()
+            Me._connection = New Global.System.Data.SqlClient.SqlConnection()
+            Me._connection.ConnectionString = Global.GeneradorCod.My.MySettings.Default.GeneradorBDConnectionString
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Private Sub InitCommandCollection()
+            Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(0) {}
+            Me._commandCollection(0) = New Global.System.Data.SqlClient.SqlCommand()
+            Me._commandCollection(0).Connection = Me.Connection
+            Me._commandCollection(0).CommandText = "dbo.SP_RegistroValorRequerimientos_SegunProyectoRequerimiento"
+            Me._commandCollection(0).CommandType = Global.System.Data.CommandType.StoredProcedure
+            Me._commandCollection(0).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@RETURN_VALUE", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.ReturnValue, 10, 0, Nothing, Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(0).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@ProyectoID", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 10, 0, Nothing, Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(0).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Requerimiento", Global.System.Data.SqlDbType.VarChar, 500, Global.System.Data.ParameterDirection.Input, 0, 0, Nothing, Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, true)>  _
+        Public Overloads Overridable Function Fill(ByVal dataTable As DataSetTablasYCampos.SP_RegistroValorRequerimientos_SegunProyectoRequerimientoDataTable, ByVal ProyectoID As Global.System.Nullable(Of Integer), ByVal Requerimiento As String) As Integer
+            Me.Adapter.SelectCommand = Me.CommandCollection(0)
+            If (ProyectoID.HasValue = true) Then
+                Me.Adapter.SelectCommand.Parameters(1).Value = CType(ProyectoID.Value,Integer)
+            Else
+                Me.Adapter.SelectCommand.Parameters(1).Value = Global.System.DBNull.Value
+            End If
+            If (Requerimiento Is Nothing) Then
+                Me.Adapter.SelectCommand.Parameters(2).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.SelectCommand.Parameters(2).Value = CType(Requerimiento,String)
+            End If
+            If (Me.ClearBeforeFill = true) Then
+                dataTable.Clear
+            End If
+            Dim returnValue As Integer = Me.Adapter.Fill(dataTable)
+            Return returnValue
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], true)>  _
+        Public Overloads Overridable Function GetData(ByVal ProyectoID As Global.System.Nullable(Of Integer), ByVal Requerimiento As String) As DataSetTablasYCampos.SP_RegistroValorRequerimientos_SegunProyectoRequerimientoDataTable
+            Me.Adapter.SelectCommand = Me.CommandCollection(0)
+            If (ProyectoID.HasValue = true) Then
+                Me.Adapter.SelectCommand.Parameters(1).Value = CType(ProyectoID.Value,Integer)
+            Else
+                Me.Adapter.SelectCommand.Parameters(1).Value = Global.System.DBNull.Value
+            End If
+            If (Requerimiento Is Nothing) Then
+                Me.Adapter.SelectCommand.Parameters(2).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.SelectCommand.Parameters(2).Value = CType(Requerimiento,String)
+            End If
+            Dim dataTable As DataSetTablasYCampos.SP_RegistroValorRequerimientos_SegunProyectoRequerimientoDataTable = New DataSetTablasYCampos.SP_RegistroValorRequerimientos_SegunProyectoRequerimientoDataTable()
+            Me.Adapter.Fill(dataTable)
+            Return dataTable
+        End Function
+    End Class
+    
+    '''<summary>
+    '''Represents the connection and commands used to retrieve and save data.
+    '''</summary>
+    <Global.System.ComponentModel.DesignerCategoryAttribute("code"),  _
+     Global.System.ComponentModel.ToolboxItem(true),  _
+     Global.System.ComponentModel.DataObjectAttribute(true),  _
+     Global.System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner"& _ 
+        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"),  _
+     Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
+    Partial Public Class SP_CARGA_CONVENSIONES_USADASTableAdapter
+        Inherits Global.System.ComponentModel.Component
+        
+        Private WithEvents _adapter As Global.System.Data.SqlClient.SqlDataAdapter
+        
+        Private _connection As Global.System.Data.SqlClient.SqlConnection
+        
+        Private _transaction As Global.System.Data.SqlClient.SqlTransaction
+        
+        Private _commandCollection() As Global.System.Data.SqlClient.SqlCommand
+        
+        Private _clearBeforeFill As Boolean
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Sub New()
+            MyBase.New
+            Me.ClearBeforeFill = true
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Protected Friend ReadOnly Property Adapter() As Global.System.Data.SqlClient.SqlDataAdapter
+            Get
+                If (Me._adapter Is Nothing) Then
+                    Me.InitAdapter
+                End If
+                Return Me._adapter
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Friend Property Connection() As Global.System.Data.SqlClient.SqlConnection
+            Get
+                If (Me._connection Is Nothing) Then
+                    Me.InitConnection
+                End If
+                Return Me._connection
+            End Get
+            Set
+                Me._connection = value
+                If (Not (Me.Adapter.InsertCommand) Is Nothing) Then
+                    Me.Adapter.InsertCommand.Connection = value
+                End If
+                If (Not (Me.Adapter.DeleteCommand) Is Nothing) Then
+                    Me.Adapter.DeleteCommand.Connection = value
+                End If
+                If (Not (Me.Adapter.UpdateCommand) Is Nothing) Then
+                    Me.Adapter.UpdateCommand.Connection = value
+                End If
+                Dim i As Integer = 0
+                Do While (i < Me.CommandCollection.Length)
+                    If (Not (Me.CommandCollection(i)) Is Nothing) Then
+                        CType(Me.CommandCollection(i),Global.System.Data.SqlClient.SqlCommand).Connection = value
+                    End If
+                    i = (i + 1)
+                Loop
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Friend Property Transaction() As Global.System.Data.SqlClient.SqlTransaction
+            Get
+                Return Me._transaction
+            End Get
+            Set
+                Me._transaction = value
+                Dim i As Integer = 0
+                Do While (i < Me.CommandCollection.Length)
+                    Me.CommandCollection(i).Transaction = Me._transaction
+                    i = (i + 1)
+                Loop
+                If ((Not (Me.Adapter) Is Nothing)  _
+                            AndAlso (Not (Me.Adapter.DeleteCommand) Is Nothing)) Then
+                    Me.Adapter.DeleteCommand.Transaction = Me._transaction
+                End If
+                If ((Not (Me.Adapter) Is Nothing)  _
+                            AndAlso (Not (Me.Adapter.InsertCommand) Is Nothing)) Then
+                    Me.Adapter.InsertCommand.Transaction = Me._transaction
+                End If
+                If ((Not (Me.Adapter) Is Nothing)  _
+                            AndAlso (Not (Me.Adapter.UpdateCommand) Is Nothing)) Then
+                    Me.Adapter.UpdateCommand.Transaction = Me._transaction
+                End If
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Protected ReadOnly Property CommandCollection() As Global.System.Data.SqlClient.SqlCommand()
+            Get
+                If (Me._commandCollection Is Nothing) Then
+                    Me.InitCommandCollection
+                End If
+                Return Me._commandCollection
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Property ClearBeforeFill() As Boolean
+            Get
+                Return Me._clearBeforeFill
+            End Get
+            Set
+                Me._clearBeforeFill = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Private Sub InitAdapter()
+            Me._adapter = New Global.System.Data.SqlClient.SqlDataAdapter()
+            Dim tableMapping As Global.System.Data.Common.DataTableMapping = New Global.System.Data.Common.DataTableMapping()
+            tableMapping.SourceTable = "Table"
+            tableMapping.DataSetTable = "SP_CARGA_CONVENSIONES_USADAS"
+            tableMapping.ColumnMappings.Add("CONVENSIONES", "CONVENSIONES")
+            Me._adapter.TableMappings.Add(tableMapping)
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Private Sub InitConnection()
+            Me._connection = New Global.System.Data.SqlClient.SqlConnection()
+            Me._connection.ConnectionString = Global.GeneradorCod.My.MySettings.Default.GeneradorBDConnectionString
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Private Sub InitCommandCollection()
+            Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(0) {}
+            Me._commandCollection(0) = New Global.System.Data.SqlClient.SqlCommand()
+            Me._commandCollection(0).Connection = Me.Connection
+            Me._commandCollection(0).CommandText = "dbo.SP_CARGA_CONVENSIONES_USADAS"
+            Me._commandCollection(0).CommandType = Global.System.Data.CommandType.StoredProcedure
+            Me._commandCollection(0).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@RETURN_VALUE", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.ReturnValue, 10, 0, Nothing, Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, true)>  _
+        Public Overloads Overridable Function Fill(ByVal dataTable As DataSetTablasYCampos.SP_CARGA_CONVENSIONES_USADASDataTable) As Integer
+            Me.Adapter.SelectCommand = Me.CommandCollection(0)
+            If (Me.ClearBeforeFill = true) Then
+                dataTable.Clear
+            End If
+            Dim returnValue As Integer = Me.Adapter.Fill(dataTable)
+            Return returnValue
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], true)>  _
+        Public Overloads Overridable Function GetData() As DataSetTablasYCampos.SP_CARGA_CONVENSIONES_USADASDataTable
+            Me.Adapter.SelectCommand = Me.CommandCollection(0)
+            Dim dataTable As DataSetTablasYCampos.SP_CARGA_CONVENSIONES_USADASDataTable = New DataSetTablasYCampos.SP_CARGA_CONVENSIONES_USADASDataTable()
+            Me.Adapter.Fill(dataTable)
+            Return dataTable
         End Function
     End Class
     
@@ -10138,7 +10843,7 @@ Namespace DataSetTablasYCamposTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Private Sub InitConnection()
             Me._connection = New Global.System.Data.SqlClient.SqlConnection()
-            Me._connection.ConnectionString = Global.GeneradorCod.My.MySettings.Default.GeneradorCodigoBDConnectionString
+            Me._connection.ConnectionString = Global.GeneradorCod.My.MySettings.Default.GeneradorBDConnectionString
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -10409,7 +11114,7 @@ Namespace DataSetTablasYCamposTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Private Sub InitConnection()
             Me._connection = New Global.System.Data.SqlClient.SqlConnection()
-            Me._connection.ConnectionString = Global.GeneradorCod.My.MySettings.Default.GeneradorCodigoBDConnectionString
+            Me._connection.ConnectionString = Global.GeneradorCod.My.MySettings.Default.GeneradorBDConnectionString
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -10650,7 +11355,7 @@ Namespace DataSetTablasYCamposTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Private Sub InitConnection()
             Me._connection = New Global.System.Data.SqlClient.SqlConnection()
-            Me._connection.ConnectionString = Global.GeneradorCod.My.MySettings.Default.GeneradorCodigoBDConnectionString
+            Me._connection.ConnectionString = Global.GeneradorCod.My.MySettings.Default.GeneradorBDConnectionString
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -10697,996 +11402,6 @@ Namespace DataSetTablasYCamposTableAdapters
             Dim dataTable As DataSetTablasYCampos.SP_RegistroValorRequerimientos_SEGUN_ProyectoIDDataTable = New DataSetTablasYCampos.SP_RegistroValorRequerimientos_SEGUN_ProyectoIDDataTable()
             Me.Adapter.Fill(dataTable)
             Return dataTable
-        End Function
-    End Class
-    
-    '''<summary>
-    '''Represents the connection and commands used to retrieve and save data.
-    '''</summary>
-    <Global.System.ComponentModel.DesignerCategoryAttribute("code"),  _
-     Global.System.ComponentModel.ToolboxItem(true),  _
-     Global.System.ComponentModel.DataObjectAttribute(true),  _
-     Global.System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner"& _ 
-        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"),  _
-     Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
-    Partial Public Class SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaIDTableAdapter
-        Inherits Global.System.ComponentModel.Component
-        
-        Private WithEvents _adapter As Global.System.Data.SqlClient.SqlDataAdapter
-        
-        Private _connection As Global.System.Data.SqlClient.SqlConnection
-        
-        Private _transaction As Global.System.Data.SqlClient.SqlTransaction
-        
-        Private _commandCollection() As Global.System.Data.SqlClient.SqlCommand
-        
-        Private _clearBeforeFill As Boolean
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Sub New()
-            MyBase.New
-            Me.ClearBeforeFill = true
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Protected Friend ReadOnly Property Adapter() As Global.System.Data.SqlClient.SqlDataAdapter
-            Get
-                If (Me._adapter Is Nothing) Then
-                    Me.InitAdapter
-                End If
-                Return Me._adapter
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Friend Property Connection() As Global.System.Data.SqlClient.SqlConnection
-            Get
-                If (Me._connection Is Nothing) Then
-                    Me.InitConnection
-                End If
-                Return Me._connection
-            End Get
-            Set
-                Me._connection = value
-                If (Not (Me.Adapter.InsertCommand) Is Nothing) Then
-                    Me.Adapter.InsertCommand.Connection = value
-                End If
-                If (Not (Me.Adapter.DeleteCommand) Is Nothing) Then
-                    Me.Adapter.DeleteCommand.Connection = value
-                End If
-                If (Not (Me.Adapter.UpdateCommand) Is Nothing) Then
-                    Me.Adapter.UpdateCommand.Connection = value
-                End If
-                Dim i As Integer = 0
-                Do While (i < Me.CommandCollection.Length)
-                    If (Not (Me.CommandCollection(i)) Is Nothing) Then
-                        CType(Me.CommandCollection(i),Global.System.Data.SqlClient.SqlCommand).Connection = value
-                    End If
-                    i = (i + 1)
-                Loop
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Friend Property Transaction() As Global.System.Data.SqlClient.SqlTransaction
-            Get
-                Return Me._transaction
-            End Get
-            Set
-                Me._transaction = value
-                Dim i As Integer = 0
-                Do While (i < Me.CommandCollection.Length)
-                    Me.CommandCollection(i).Transaction = Me._transaction
-                    i = (i + 1)
-                Loop
-                If ((Not (Me.Adapter) Is Nothing)  _
-                            AndAlso (Not (Me.Adapter.DeleteCommand) Is Nothing)) Then
-                    Me.Adapter.DeleteCommand.Transaction = Me._transaction
-                End If
-                If ((Not (Me.Adapter) Is Nothing)  _
-                            AndAlso (Not (Me.Adapter.InsertCommand) Is Nothing)) Then
-                    Me.Adapter.InsertCommand.Transaction = Me._transaction
-                End If
-                If ((Not (Me.Adapter) Is Nothing)  _
-                            AndAlso (Not (Me.Adapter.UpdateCommand) Is Nothing)) Then
-                    Me.Adapter.UpdateCommand.Transaction = Me._transaction
-                End If
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Protected ReadOnly Property CommandCollection() As Global.System.Data.SqlClient.SqlCommand()
-            Get
-                If (Me._commandCollection Is Nothing) Then
-                    Me.InitCommandCollection
-                End If
-                Return Me._commandCollection
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Property ClearBeforeFill() As Boolean
-            Get
-                Return Me._clearBeforeFill
-            End Get
-            Set
-                Me._clearBeforeFill = value
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Private Sub InitAdapter()
-            Me._adapter = New Global.System.Data.SqlClient.SqlDataAdapter()
-            Dim tableMapping As Global.System.Data.Common.DataTableMapping = New Global.System.Data.Common.DataTableMapping()
-            tableMapping.SourceTable = "Table"
-            tableMapping.DataSetTable = "SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaID"
-            tableMapping.ColumnMappings.Add("CampoID", "CampoID")
-            tableMapping.ColumnMappings.Add("TablaID", "TablaID")
-            tableMapping.ColumnMappings.Add("NombreCampo", "NombreCampo")
-            tableMapping.ColumnMappings.Add("Tipo", "Tipo")
-            Me._adapter.TableMappings.Add(tableMapping)
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Private Sub InitConnection()
-            Me._connection = New Global.System.Data.SqlClient.SqlConnection()
-            Me._connection.ConnectionString = Global.GeneradorCod.My.MySettings.Default.GeneradorCodigoBDConnectionString
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Private Sub InitCommandCollection()
-            Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(0) {}
-            Me._commandCollection(0) = New Global.System.Data.SqlClient.SqlCommand()
-            Me._commandCollection(0).Connection = Me.Connection
-            Me._commandCollection(0).CommandText = "dbo.SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaID"
-            Me._commandCollection(0).CommandType = Global.System.Data.CommandType.StoredProcedure
-            Me._commandCollection(0).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@RETURN_VALUE", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.ReturnValue, 10, 0, Nothing, Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._commandCollection(0).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@TablaID", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 10, 0, Nothing, Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
-         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, true)>  _
-        Public Overloads Overridable Function Fill(ByVal dataTable As DataSetTablasYCampos.SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaIDDataTable, ByVal TablaID As Global.System.Nullable(Of Integer)) As Integer
-            Me.Adapter.SelectCommand = Me.CommandCollection(0)
-            If (TablaID.HasValue = true) Then
-                Me.Adapter.SelectCommand.Parameters(1).Value = CType(TablaID.Value,Integer)
-            Else
-                Me.Adapter.SelectCommand.Parameters(1).Value = Global.System.DBNull.Value
-            End If
-            If (Me.ClearBeforeFill = true) Then
-                dataTable.Clear
-            End If
-            Dim returnValue As Integer = Me.Adapter.Fill(dataTable)
-            Return returnValue
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
-         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], true)>  _
-        Public Overloads Overridable Function GetData(ByVal TablaID As Global.System.Nullable(Of Integer)) As DataSetTablasYCampos.SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaIDDataTable
-            Me.Adapter.SelectCommand = Me.CommandCollection(0)
-            If (TablaID.HasValue = true) Then
-                Me.Adapter.SelectCommand.Parameters(1).Value = CType(TablaID.Value,Integer)
-            Else
-                Me.Adapter.SelectCommand.Parameters(1).Value = Global.System.DBNull.Value
-            End If
-            Dim dataTable As DataSetTablasYCampos.SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaIDDataTable = New DataSetTablasYCampos.SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaIDDataTable()
-            Me.Adapter.Fill(dataTable)
-            Return dataTable
-        End Function
-    End Class
-    
-    '''<summary>
-    '''Represents the connection and commands used to retrieve and save data.
-    '''</summary>
-    <Global.System.ComponentModel.DesignerCategoryAttribute("code"),  _
-     Global.System.ComponentModel.ToolboxItem(true),  _
-     Global.System.ComponentModel.DataObjectAttribute(true),  _
-     Global.System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner"& _ 
-        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"),  _
-     Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
-    Partial Public Class SP_CamposDeTablas_EDICION_ELIMINARTableAdapter
-        Inherits Global.System.ComponentModel.Component
-        
-        Private WithEvents _adapter As Global.System.Data.SqlClient.SqlDataAdapter
-        
-        Private _connection As Global.System.Data.SqlClient.SqlConnection
-        
-        Private _transaction As Global.System.Data.SqlClient.SqlTransaction
-        
-        Private _commandCollection() As Global.System.Data.SqlClient.SqlCommand
-        
-        Private _clearBeforeFill As Boolean
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Sub New()
-            MyBase.New
-            Me.ClearBeforeFill = true
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Protected Friend ReadOnly Property Adapter() As Global.System.Data.SqlClient.SqlDataAdapter
-            Get
-                If (Me._adapter Is Nothing) Then
-                    Me.InitAdapter
-                End If
-                Return Me._adapter
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Friend Property Connection() As Global.System.Data.SqlClient.SqlConnection
-            Get
-                If (Me._connection Is Nothing) Then
-                    Me.InitConnection
-                End If
-                Return Me._connection
-            End Get
-            Set
-                Me._connection = value
-                If (Not (Me.Adapter.InsertCommand) Is Nothing) Then
-                    Me.Adapter.InsertCommand.Connection = value
-                End If
-                If (Not (Me.Adapter.DeleteCommand) Is Nothing) Then
-                    Me.Adapter.DeleteCommand.Connection = value
-                End If
-                If (Not (Me.Adapter.UpdateCommand) Is Nothing) Then
-                    Me.Adapter.UpdateCommand.Connection = value
-                End If
-                Dim i As Integer = 0
-                Do While (i < Me.CommandCollection.Length)
-                    If (Not (Me.CommandCollection(i)) Is Nothing) Then
-                        CType(Me.CommandCollection(i),Global.System.Data.SqlClient.SqlCommand).Connection = value
-                    End If
-                    i = (i + 1)
-                Loop
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Friend Property Transaction() As Global.System.Data.SqlClient.SqlTransaction
-            Get
-                Return Me._transaction
-            End Get
-            Set
-                Me._transaction = value
-                Dim i As Integer = 0
-                Do While (i < Me.CommandCollection.Length)
-                    Me.CommandCollection(i).Transaction = Me._transaction
-                    i = (i + 1)
-                Loop
-                If ((Not (Me.Adapter) Is Nothing)  _
-                            AndAlso (Not (Me.Adapter.DeleteCommand) Is Nothing)) Then
-                    Me.Adapter.DeleteCommand.Transaction = Me._transaction
-                End If
-                If ((Not (Me.Adapter) Is Nothing)  _
-                            AndAlso (Not (Me.Adapter.InsertCommand) Is Nothing)) Then
-                    Me.Adapter.InsertCommand.Transaction = Me._transaction
-                End If
-                If ((Not (Me.Adapter) Is Nothing)  _
-                            AndAlso (Not (Me.Adapter.UpdateCommand) Is Nothing)) Then
-                    Me.Adapter.UpdateCommand.Transaction = Me._transaction
-                End If
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Protected ReadOnly Property CommandCollection() As Global.System.Data.SqlClient.SqlCommand()
-            Get
-                If (Me._commandCollection Is Nothing) Then
-                    Me.InitCommandCollection
-                End If
-                Return Me._commandCollection
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Property ClearBeforeFill() As Boolean
-            Get
-                Return Me._clearBeforeFill
-            End Get
-            Set
-                Me._clearBeforeFill = value
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Private Sub InitAdapter()
-            Me._adapter = New Global.System.Data.SqlClient.SqlDataAdapter()
-            Me._adapter.DeleteCommand = New Global.System.Data.SqlClient.SqlCommand()
-            Me._adapter.DeleteCommand.Connection = Me.Connection
-            Me._adapter.DeleteCommand.CommandText = "dbo.SP_CamposDeTablas_EDICION_ELIMINAR"
-            Me._adapter.DeleteCommand.CommandType = Global.System.Data.CommandType.StoredProcedure
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@RETURN_VALUE", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.ReturnValue, 10, 0, Nothing, Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@CampoID", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 10, 0, "", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Private Sub InitConnection()
-            Me._connection = New Global.System.Data.SqlClient.SqlConnection()
-            Me._connection.ConnectionString = Global.GeneradorCod.My.MySettings.Default.GeneradorCodigoBDConnectionString
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Private Sub InitCommandCollection()
-            Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(0) {}
-            Me._commandCollection(0) = New Global.System.Data.SqlClient.SqlCommand()
-            Me._commandCollection(0).Connection = Me.Connection
-            Me._commandCollection(0).CommandText = "dbo.SP_CamposDeTablas_EDICION_ELIMINAR"
-            Me._commandCollection(0).CommandType = Global.System.Data.CommandType.StoredProcedure
-            Me._commandCollection(0).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@RETURN_VALUE", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.ReturnValue, 10, 0, Nothing, Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._commandCollection(0).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@CampoID", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 10, 0, Nothing, Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
-         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, true)>  _
-        Public Overloads Overridable Function Fill(ByVal dataTable As DataSetTablasYCampos.SP_CamposDeTablas_EDICION_ELIMINARDataTable, ByVal CampoID As Global.System.Nullable(Of Integer)) As Integer
-            Me.Adapter.SelectCommand = Me.CommandCollection(0)
-            If (CampoID.HasValue = true) Then
-                Me.Adapter.SelectCommand.Parameters(1).Value = CType(CampoID.Value,Integer)
-            Else
-                Me.Adapter.SelectCommand.Parameters(1).Value = Global.System.DBNull.Value
-            End If
-            If (Me.ClearBeforeFill = true) Then
-                dataTable.Clear
-            End If
-            Dim returnValue As Integer = Me.Adapter.Fill(dataTable)
-            Return returnValue
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
-         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], true)>  _
-        Public Overloads Overridable Function GetData(ByVal CampoID As Global.System.Nullable(Of Integer)) As DataSetTablasYCampos.SP_CamposDeTablas_EDICION_ELIMINARDataTable
-            Me.Adapter.SelectCommand = Me.CommandCollection(0)
-            If (CampoID.HasValue = true) Then
-                Me.Adapter.SelectCommand.Parameters(1).Value = CType(CampoID.Value,Integer)
-            Else
-                Me.Adapter.SelectCommand.Parameters(1).Value = Global.System.DBNull.Value
-            End If
-            Dim dataTable As DataSetTablasYCampos.SP_CamposDeTablas_EDICION_ELIMINARDataTable = New DataSetTablasYCampos.SP_CamposDeTablas_EDICION_ELIMINARDataTable()
-            Me.Adapter.Fill(dataTable)
-            Return dataTable
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
-        Public Overloads Overridable Function Update(ByVal dataTable As DataSetTablasYCampos.SP_CamposDeTablas_EDICION_ELIMINARDataTable) As Integer
-            Return Me.Adapter.Update(dataTable)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
-        Public Overloads Overridable Function Update(ByVal dataSet As DataSetTablasYCampos) As Integer
-            Return Me.Adapter.Update(dataSet, "SP_CamposDeTablas_EDICION_ELIMINAR")
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
-        Public Overloads Overridable Function Update(ByVal dataRow As Global.System.Data.DataRow) As Integer
-            Return Me.Adapter.Update(New Global.System.Data.DataRow() {dataRow})
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
-        Public Overloads Overridable Function Update(ByVal dataRows() As Global.System.Data.DataRow) As Integer
-            Return Me.Adapter.Update(dataRows)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
-         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Delete, true)>  _
-        Public Overloads Overridable Function Delete(ByVal CampoID As Global.System.Nullable(Of Integer)) As Integer
-            If (CampoID.HasValue = true) Then
-                Me.Adapter.DeleteCommand.Parameters(1).Value = CType(CampoID.Value,Integer)
-            Else
-                Me.Adapter.DeleteCommand.Parameters(1).Value = Global.System.DBNull.Value
-            End If
-            Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.DeleteCommand.Connection.State
-            If ((Me.Adapter.DeleteCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
-                        <> Global.System.Data.ConnectionState.Open) Then
-                Me.Adapter.DeleteCommand.Connection.Open
-            End If
-            Try 
-                Dim returnValue As Integer = Me.Adapter.DeleteCommand.ExecuteNonQuery
-                Return returnValue
-            Finally
-                If (previousConnectionState = Global.System.Data.ConnectionState.Closed) Then
-                    Me.Adapter.DeleteCommand.Connection.Close
-                End If
-            End Try
-        End Function
-    End Class
-    
-    '''<summary>
-    '''Represents the connection and commands used to retrieve and save data.
-    '''</summary>
-    <Global.System.ComponentModel.DesignerCategoryAttribute("code"),  _
-     Global.System.ComponentModel.ToolboxItem(true),  _
-     Global.System.ComponentModel.DataObjectAttribute(true),  _
-     Global.System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner"& _ 
-        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"),  _
-     Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
-    Partial Public Class SP_CamposDeTablas_EDICION_ACTUALIZARTableAdapter
-        Inherits Global.System.ComponentModel.Component
-        
-        Private WithEvents _adapter As Global.System.Data.SqlClient.SqlDataAdapter
-        
-        Private _connection As Global.System.Data.SqlClient.SqlConnection
-        
-        Private _transaction As Global.System.Data.SqlClient.SqlTransaction
-        
-        Private _commandCollection() As Global.System.Data.SqlClient.SqlCommand
-        
-        Private _clearBeforeFill As Boolean
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Sub New()
-            MyBase.New
-            Me.ClearBeforeFill = true
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Protected Friend ReadOnly Property Adapter() As Global.System.Data.SqlClient.SqlDataAdapter
-            Get
-                If (Me._adapter Is Nothing) Then
-                    Me.InitAdapter
-                End If
-                Return Me._adapter
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Friend Property Connection() As Global.System.Data.SqlClient.SqlConnection
-            Get
-                If (Me._connection Is Nothing) Then
-                    Me.InitConnection
-                End If
-                Return Me._connection
-            End Get
-            Set
-                Me._connection = value
-                If (Not (Me.Adapter.InsertCommand) Is Nothing) Then
-                    Me.Adapter.InsertCommand.Connection = value
-                End If
-                If (Not (Me.Adapter.DeleteCommand) Is Nothing) Then
-                    Me.Adapter.DeleteCommand.Connection = value
-                End If
-                If (Not (Me.Adapter.UpdateCommand) Is Nothing) Then
-                    Me.Adapter.UpdateCommand.Connection = value
-                End If
-                Dim i As Integer = 0
-                Do While (i < Me.CommandCollection.Length)
-                    If (Not (Me.CommandCollection(i)) Is Nothing) Then
-                        CType(Me.CommandCollection(i),Global.System.Data.SqlClient.SqlCommand).Connection = value
-                    End If
-                    i = (i + 1)
-                Loop
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Friend Property Transaction() As Global.System.Data.SqlClient.SqlTransaction
-            Get
-                Return Me._transaction
-            End Get
-            Set
-                Me._transaction = value
-                Dim i As Integer = 0
-                Do While (i < Me.CommandCollection.Length)
-                    Me.CommandCollection(i).Transaction = Me._transaction
-                    i = (i + 1)
-                Loop
-                If ((Not (Me.Adapter) Is Nothing)  _
-                            AndAlso (Not (Me.Adapter.DeleteCommand) Is Nothing)) Then
-                    Me.Adapter.DeleteCommand.Transaction = Me._transaction
-                End If
-                If ((Not (Me.Adapter) Is Nothing)  _
-                            AndAlso (Not (Me.Adapter.InsertCommand) Is Nothing)) Then
-                    Me.Adapter.InsertCommand.Transaction = Me._transaction
-                End If
-                If ((Not (Me.Adapter) Is Nothing)  _
-                            AndAlso (Not (Me.Adapter.UpdateCommand) Is Nothing)) Then
-                    Me.Adapter.UpdateCommand.Transaction = Me._transaction
-                End If
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Protected ReadOnly Property CommandCollection() As Global.System.Data.SqlClient.SqlCommand()
-            Get
-                If (Me._commandCollection Is Nothing) Then
-                    Me.InitCommandCollection
-                End If
-                Return Me._commandCollection
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Property ClearBeforeFill() As Boolean
-            Get
-                Return Me._clearBeforeFill
-            End Get
-            Set
-                Me._clearBeforeFill = value
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Private Sub InitAdapter()
-            Me._adapter = New Global.System.Data.SqlClient.SqlDataAdapter()
-            Me._adapter.UpdateCommand = New Global.System.Data.SqlClient.SqlCommand()
-            Me._adapter.UpdateCommand.Connection = Me.Connection
-            Me._adapter.UpdateCommand.CommandText = "dbo.SP_CamposDeTablas_EDICION_ACTUALIZAR"
-            Me._adapter.UpdateCommand.CommandType = Global.System.Data.CommandType.StoredProcedure
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@RETURN_VALUE", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.ReturnValue, 10, 0, Nothing, Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@CampoID", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 10, 0, "", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@TablaID", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 10, 0, "", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Tipo", Global.System.Data.SqlDbType.VarChar, 100, Global.System.Data.ParameterDirection.Input, 0, 0, "", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@NombreCampo", Global.System.Data.SqlDbType.VarChar, 100, Global.System.Data.ParameterDirection.Input, 0, 0, "", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Private Sub InitConnection()
-            Me._connection = New Global.System.Data.SqlClient.SqlConnection()
-            Me._connection.ConnectionString = Global.GeneradorCod.My.MySettings.Default.GeneradorCodigoBDConnectionString
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Private Sub InitCommandCollection()
-            Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(0) {}
-            Me._commandCollection(0) = New Global.System.Data.SqlClient.SqlCommand()
-            Me._commandCollection(0).Connection = Me.Connection
-            Me._commandCollection(0).CommandText = "dbo.SP_CamposDeTablas_EDICION_ACTUALIZAR"
-            Me._commandCollection(0).CommandType = Global.System.Data.CommandType.StoredProcedure
-            Me._commandCollection(0).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@RETURN_VALUE", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.ReturnValue, 10, 0, Nothing, Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._commandCollection(0).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@CampoID", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 10, 0, Nothing, Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._commandCollection(0).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@TablaID", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 10, 0, Nothing, Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._commandCollection(0).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Tipo", Global.System.Data.SqlDbType.VarChar, 100, Global.System.Data.ParameterDirection.Input, 0, 0, Nothing, Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._commandCollection(0).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@NombreCampo", Global.System.Data.SqlDbType.VarChar, 100, Global.System.Data.ParameterDirection.Input, 0, 0, Nothing, Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
-         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, true)>  _
-        Public Overloads Overridable Function Fill(ByVal dataTable As DataSetTablasYCampos.SP_CamposDeTablas_EDICION_ACTUALIZARDataTable, ByVal CampoID As Global.System.Nullable(Of Integer), ByVal TablaID As Global.System.Nullable(Of Integer), ByVal Tipo As String, ByVal NombreCampo As String) As Integer
-            Me.Adapter.SelectCommand = Me.CommandCollection(0)
-            If (CampoID.HasValue = true) Then
-                Me.Adapter.SelectCommand.Parameters(1).Value = CType(CampoID.Value,Integer)
-            Else
-                Me.Adapter.SelectCommand.Parameters(1).Value = Global.System.DBNull.Value
-            End If
-            If (TablaID.HasValue = true) Then
-                Me.Adapter.SelectCommand.Parameters(2).Value = CType(TablaID.Value,Integer)
-            Else
-                Me.Adapter.SelectCommand.Parameters(2).Value = Global.System.DBNull.Value
-            End If
-            If (Tipo Is Nothing) Then
-                Me.Adapter.SelectCommand.Parameters(3).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.SelectCommand.Parameters(3).Value = CType(Tipo,String)
-            End If
-            If (NombreCampo Is Nothing) Then
-                Me.Adapter.SelectCommand.Parameters(4).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.SelectCommand.Parameters(4).Value = CType(NombreCampo,String)
-            End If
-            If (Me.ClearBeforeFill = true) Then
-                dataTable.Clear
-            End If
-            Dim returnValue As Integer = Me.Adapter.Fill(dataTable)
-            Return returnValue
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
-         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], true)>  _
-        Public Overloads Overridable Function GetData(ByVal CampoID As Global.System.Nullable(Of Integer), ByVal TablaID As Global.System.Nullable(Of Integer), ByVal Tipo As String, ByVal NombreCampo As String) As DataSetTablasYCampos.SP_CamposDeTablas_EDICION_ACTUALIZARDataTable
-            Me.Adapter.SelectCommand = Me.CommandCollection(0)
-            If (CampoID.HasValue = true) Then
-                Me.Adapter.SelectCommand.Parameters(1).Value = CType(CampoID.Value,Integer)
-            Else
-                Me.Adapter.SelectCommand.Parameters(1).Value = Global.System.DBNull.Value
-            End If
-            If (TablaID.HasValue = true) Then
-                Me.Adapter.SelectCommand.Parameters(2).Value = CType(TablaID.Value,Integer)
-            Else
-                Me.Adapter.SelectCommand.Parameters(2).Value = Global.System.DBNull.Value
-            End If
-            If (Tipo Is Nothing) Then
-                Me.Adapter.SelectCommand.Parameters(3).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.SelectCommand.Parameters(3).Value = CType(Tipo,String)
-            End If
-            If (NombreCampo Is Nothing) Then
-                Me.Adapter.SelectCommand.Parameters(4).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.SelectCommand.Parameters(4).Value = CType(NombreCampo,String)
-            End If
-            Dim dataTable As DataSetTablasYCampos.SP_CamposDeTablas_EDICION_ACTUALIZARDataTable = New DataSetTablasYCampos.SP_CamposDeTablas_EDICION_ACTUALIZARDataTable()
-            Me.Adapter.Fill(dataTable)
-            Return dataTable
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
-        Public Overloads Overridable Function Update(ByVal dataTable As DataSetTablasYCampos.SP_CamposDeTablas_EDICION_ACTUALIZARDataTable) As Integer
-            Return Me.Adapter.Update(dataTable)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
-        Public Overloads Overridable Function Update(ByVal dataSet As DataSetTablasYCampos) As Integer
-            Return Me.Adapter.Update(dataSet, "SP_CamposDeTablas_EDICION_ACTUALIZAR")
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
-        Public Overloads Overridable Function Update(ByVal dataRow As Global.System.Data.DataRow) As Integer
-            Return Me.Adapter.Update(New Global.System.Data.DataRow() {dataRow})
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
-        Public Overloads Overridable Function Update(ByVal dataRows() As Global.System.Data.DataRow) As Integer
-            Return Me.Adapter.Update(dataRows)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
-         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
-        Public Overloads Overridable Function Update(ByVal CampoID As Global.System.Nullable(Of Integer), ByVal TablaID As Global.System.Nullable(Of Integer), ByVal Tipo As String, ByVal NombreCampo As String) As Integer
-            If (CampoID.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(1).Value = CType(CampoID.Value,Integer)
-            Else
-                Me.Adapter.UpdateCommand.Parameters(1).Value = Global.System.DBNull.Value
-            End If
-            If (TablaID.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(2).Value = CType(TablaID.Value,Integer)
-            Else
-                Me.Adapter.UpdateCommand.Parameters(2).Value = Global.System.DBNull.Value
-            End If
-            If (Tipo Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(3).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.UpdateCommand.Parameters(3).Value = CType(Tipo,String)
-            End If
-            If (NombreCampo Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(4).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.UpdateCommand.Parameters(4).Value = CType(NombreCampo,String)
-            End If
-            Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.UpdateCommand.Connection.State
-            If ((Me.Adapter.UpdateCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
-                        <> Global.System.Data.ConnectionState.Open) Then
-                Me.Adapter.UpdateCommand.Connection.Open
-            End If
-            Try 
-                Dim returnValue As Integer = Me.Adapter.UpdateCommand.ExecuteNonQuery
-                Return returnValue
-            Finally
-                If (previousConnectionState = Global.System.Data.ConnectionState.Closed) Then
-                    Me.Adapter.UpdateCommand.Connection.Close
-                End If
-            End Try
-        End Function
-    End Class
-    
-    '''<summary>
-    '''Represents the connection and commands used to retrieve and save data.
-    '''</summary>
-    <Global.System.ComponentModel.DesignerCategoryAttribute("code"),  _
-     Global.System.ComponentModel.ToolboxItem(true),  _
-     Global.System.ComponentModel.DataObjectAttribute(true),  _
-     Global.System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner"& _ 
-        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"),  _
-     Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
-    Partial Public Class SP_CamposDeTablas_EDICION_INSERTARTableAdapter
-        Inherits Global.System.ComponentModel.Component
-        
-        Private WithEvents _adapter As Global.System.Data.SqlClient.SqlDataAdapter
-        
-        Private _connection As Global.System.Data.SqlClient.SqlConnection
-        
-        Private _transaction As Global.System.Data.SqlClient.SqlTransaction
-        
-        Private _commandCollection() As Global.System.Data.SqlClient.SqlCommand
-        
-        Private _clearBeforeFill As Boolean
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Sub New()
-            MyBase.New
-            Me.ClearBeforeFill = true
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Protected Friend ReadOnly Property Adapter() As Global.System.Data.SqlClient.SqlDataAdapter
-            Get
-                If (Me._adapter Is Nothing) Then
-                    Me.InitAdapter
-                End If
-                Return Me._adapter
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Friend Property Connection() As Global.System.Data.SqlClient.SqlConnection
-            Get
-                If (Me._connection Is Nothing) Then
-                    Me.InitConnection
-                End If
-                Return Me._connection
-            End Get
-            Set
-                Me._connection = value
-                If (Not (Me.Adapter.InsertCommand) Is Nothing) Then
-                    Me.Adapter.InsertCommand.Connection = value
-                End If
-                If (Not (Me.Adapter.DeleteCommand) Is Nothing) Then
-                    Me.Adapter.DeleteCommand.Connection = value
-                End If
-                If (Not (Me.Adapter.UpdateCommand) Is Nothing) Then
-                    Me.Adapter.UpdateCommand.Connection = value
-                End If
-                Dim i As Integer = 0
-                Do While (i < Me.CommandCollection.Length)
-                    If (Not (Me.CommandCollection(i)) Is Nothing) Then
-                        CType(Me.CommandCollection(i),Global.System.Data.SqlClient.SqlCommand).Connection = value
-                    End If
-                    i = (i + 1)
-                Loop
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Friend Property Transaction() As Global.System.Data.SqlClient.SqlTransaction
-            Get
-                Return Me._transaction
-            End Get
-            Set
-                Me._transaction = value
-                Dim i As Integer = 0
-                Do While (i < Me.CommandCollection.Length)
-                    Me.CommandCollection(i).Transaction = Me._transaction
-                    i = (i + 1)
-                Loop
-                If ((Not (Me.Adapter) Is Nothing)  _
-                            AndAlso (Not (Me.Adapter.DeleteCommand) Is Nothing)) Then
-                    Me.Adapter.DeleteCommand.Transaction = Me._transaction
-                End If
-                If ((Not (Me.Adapter) Is Nothing)  _
-                            AndAlso (Not (Me.Adapter.InsertCommand) Is Nothing)) Then
-                    Me.Adapter.InsertCommand.Transaction = Me._transaction
-                End If
-                If ((Not (Me.Adapter) Is Nothing)  _
-                            AndAlso (Not (Me.Adapter.UpdateCommand) Is Nothing)) Then
-                    Me.Adapter.UpdateCommand.Transaction = Me._transaction
-                End If
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Protected ReadOnly Property CommandCollection() As Global.System.Data.SqlClient.SqlCommand()
-            Get
-                If (Me._commandCollection Is Nothing) Then
-                    Me.InitCommandCollection
-                End If
-                Return Me._commandCollection
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Property ClearBeforeFill() As Boolean
-            Get
-                Return Me._clearBeforeFill
-            End Get
-            Set
-                Me._clearBeforeFill = value
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Private Sub InitAdapter()
-            Me._adapter = New Global.System.Data.SqlClient.SqlDataAdapter()
-            Me._adapter.InsertCommand = New Global.System.Data.SqlClient.SqlCommand()
-            Me._adapter.InsertCommand.Connection = Me.Connection
-            Me._adapter.InsertCommand.CommandText = "dbo.SP_CamposDeTablas_EDICION_INSERTAR"
-            Me._adapter.InsertCommand.CommandType = Global.System.Data.CommandType.StoredProcedure
-            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@RETURN_VALUE", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.ReturnValue, 10, 0, Nothing, Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@TablaID", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 10, 0, "", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Tipo", Global.System.Data.SqlDbType.VarChar, 100, Global.System.Data.ParameterDirection.Input, 0, 0, "", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@NombreCampo", Global.System.Data.SqlDbType.VarChar, 100, Global.System.Data.ParameterDirection.Input, 0, 0, "", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Private Sub InitConnection()
-            Me._connection = New Global.System.Data.SqlClient.SqlConnection()
-            Me._connection.ConnectionString = Global.GeneradorCod.My.MySettings.Default.GeneradorCodigoBDConnectionString
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Private Sub InitCommandCollection()
-            Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(0) {}
-            Me._commandCollection(0) = New Global.System.Data.SqlClient.SqlCommand()
-            Me._commandCollection(0).Connection = Me.Connection
-            Me._commandCollection(0).CommandText = "dbo.SP_CamposDeTablas_EDICION_INSERTAR"
-            Me._commandCollection(0).CommandType = Global.System.Data.CommandType.StoredProcedure
-            Me._commandCollection(0).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@RETURN_VALUE", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.ReturnValue, 10, 0, Nothing, Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._commandCollection(0).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@TablaID", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 10, 0, Nothing, Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._commandCollection(0).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Tipo", Global.System.Data.SqlDbType.VarChar, 100, Global.System.Data.ParameterDirection.Input, 0, 0, Nothing, Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._commandCollection(0).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@NombreCampo", Global.System.Data.SqlDbType.VarChar, 100, Global.System.Data.ParameterDirection.Input, 0, 0, Nothing, Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
-         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, true)>  _
-        Public Overloads Overridable Function Fill(ByVal dataTable As DataSetTablasYCampos.SP_CamposDeTablas_EDICION_INSERTARDataTable, ByVal TablaID As Global.System.Nullable(Of Integer), ByVal Tipo As String, ByVal NombreCampo As String) As Integer
-            Me.Adapter.SelectCommand = Me.CommandCollection(0)
-            If (TablaID.HasValue = true) Then
-                Me.Adapter.SelectCommand.Parameters(1).Value = CType(TablaID.Value,Integer)
-            Else
-                Me.Adapter.SelectCommand.Parameters(1).Value = Global.System.DBNull.Value
-            End If
-            If (Tipo Is Nothing) Then
-                Me.Adapter.SelectCommand.Parameters(2).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.SelectCommand.Parameters(2).Value = CType(Tipo,String)
-            End If
-            If (NombreCampo Is Nothing) Then
-                Me.Adapter.SelectCommand.Parameters(3).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.SelectCommand.Parameters(3).Value = CType(NombreCampo,String)
-            End If
-            If (Me.ClearBeforeFill = true) Then
-                dataTable.Clear
-            End If
-            Dim returnValue As Integer = Me.Adapter.Fill(dataTable)
-            Return returnValue
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
-         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], true)>  _
-        Public Overloads Overridable Function GetData(ByVal TablaID As Global.System.Nullable(Of Integer), ByVal Tipo As String, ByVal NombreCampo As String) As DataSetTablasYCampos.SP_CamposDeTablas_EDICION_INSERTARDataTable
-            Me.Adapter.SelectCommand = Me.CommandCollection(0)
-            If (TablaID.HasValue = true) Then
-                Me.Adapter.SelectCommand.Parameters(1).Value = CType(TablaID.Value,Integer)
-            Else
-                Me.Adapter.SelectCommand.Parameters(1).Value = Global.System.DBNull.Value
-            End If
-            If (Tipo Is Nothing) Then
-                Me.Adapter.SelectCommand.Parameters(2).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.SelectCommand.Parameters(2).Value = CType(Tipo,String)
-            End If
-            If (NombreCampo Is Nothing) Then
-                Me.Adapter.SelectCommand.Parameters(3).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.SelectCommand.Parameters(3).Value = CType(NombreCampo,String)
-            End If
-            Dim dataTable As DataSetTablasYCampos.SP_CamposDeTablas_EDICION_INSERTARDataTable = New DataSetTablasYCampos.SP_CamposDeTablas_EDICION_INSERTARDataTable()
-            Me.Adapter.Fill(dataTable)
-            Return dataTable
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
-        Public Overloads Overridable Function Update(ByVal dataTable As DataSetTablasYCampos.SP_CamposDeTablas_EDICION_INSERTARDataTable) As Integer
-            Return Me.Adapter.Update(dataTable)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
-        Public Overloads Overridable Function Update(ByVal dataSet As DataSetTablasYCampos) As Integer
-            Return Me.Adapter.Update(dataSet, "SP_CamposDeTablas_EDICION_INSERTAR")
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
-        Public Overloads Overridable Function Update(ByVal dataRow As Global.System.Data.DataRow) As Integer
-            Return Me.Adapter.Update(New Global.System.Data.DataRow() {dataRow})
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
-        Public Overloads Overridable Function Update(ByVal dataRows() As Global.System.Data.DataRow) As Integer
-            Return Me.Adapter.Update(dataRows)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
-         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Insert, true)>  _
-        Public Overloads Overridable Function Insert(ByVal TablaID As Global.System.Nullable(Of Integer), ByVal Tipo As String, ByVal NombreCampo As String) As Integer
-            If (TablaID.HasValue = true) Then
-                Me.Adapter.InsertCommand.Parameters(1).Value = CType(TablaID.Value,Integer)
-            Else
-                Me.Adapter.InsertCommand.Parameters(1).Value = Global.System.DBNull.Value
-            End If
-            If (Tipo Is Nothing) Then
-                Me.Adapter.InsertCommand.Parameters(2).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.InsertCommand.Parameters(2).Value = CType(Tipo,String)
-            End If
-            If (NombreCampo Is Nothing) Then
-                Me.Adapter.InsertCommand.Parameters(3).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.InsertCommand.Parameters(3).Value = CType(NombreCampo,String)
-            End If
-            Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.InsertCommand.Connection.State
-            If ((Me.Adapter.InsertCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
-                        <> Global.System.Data.ConnectionState.Open) Then
-                Me.Adapter.InsertCommand.Connection.Open
-            End If
-            Try 
-                Dim returnValue As Integer = Me.Adapter.InsertCommand.ExecuteNonQuery
-                Return returnValue
-            Finally
-                If (previousConnectionState = Global.System.Data.ConnectionState.Closed) Then
-                    Me.Adapter.InsertCommand.Connection.Close
-                End If
-            End Try
         End Function
     End Class
     
@@ -11824,7 +11539,6 @@ Namespace DataSetTablasYCamposTableAdapters
             tableMapping.ColumnMappings.Add("Superior", "Superior")
             tableMapping.ColumnMappings.Add("Sufijo", "Sufijo")
             tableMapping.ColumnMappings.Add("Inferior", "Inferior")
-            tableMapping.ColumnMappings.Add("Multiremplazo", "Multiremplazo")
             tableMapping.ColumnMappings.Add("SeparadorCampos", "SeparadorCampos")
             tableMapping.ColumnMappings.Add("MultiReplace", "MultiReplace")
             Me._adapter.TableMappings.Add(tableMapping)
@@ -11834,7 +11548,7 @@ Namespace DataSetTablasYCamposTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Private Sub InitConnection()
             Me._connection = New Global.System.Data.SqlClient.SqlConnection()
-            Me._connection.ConnectionString = Global.GeneradorCod.My.MySettings.Default.GeneradorCodigoBDConnectionString
+            Me._connection.ConnectionString = Global.GeneradorCod.My.MySettings.Default.GeneradorBDConnectionString
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -12039,7 +11753,7 @@ Namespace DataSetTablasYCamposTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Private Sub InitConnection()
             Me._connection = New Global.System.Data.SqlClient.SqlConnection()
-            Me._connection.ConnectionString = Global.GeneradorCod.My.MySettings.Default.GeneradorCodigoBDConnectionString
+            Me._connection.ConnectionString = Global.GeneradorCod.My.MySettings.Default.GeneradorBDConnectionString
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -12406,7 +12120,7 @@ Namespace DataSetTablasYCamposTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Private Sub InitConnection()
             Me._connection = New Global.System.Data.SqlClient.SqlConnection()
-            Me._connection.ConnectionString = Global.GeneradorCod.My.MySettings.Default.GeneradorCodigoBDConnectionString
+            Me._connection.ConnectionString = Global.GeneradorCod.My.MySettings.Default.GeneradorBDConnectionString
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -12652,7 +12366,7 @@ Namespace DataSetTablasYCamposTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Private Sub InitConnection()
             Me._connection = New Global.System.Data.SqlClient.SqlConnection()
-            Me._connection.ConnectionString = Global.GeneradorCod.My.MySettings.Default.GeneradorCodigoBDConnectionString
+            Me._connection.ConnectionString = Global.GeneradorCod.My.MySettings.Default.GeneradorBDConnectionString
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -13010,7 +12724,7 @@ Namespace DataSetTablasYCamposTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Private Sub InitConnection()
             Me._connection = New Global.System.Data.SqlClient.SqlConnection()
-            Me._connection.ConnectionString = Global.GeneradorCod.My.MySettings.Default.GeneradorCodigoBDConnectionString
+            Me._connection.ConnectionString = Global.GeneradorCod.My.MySettings.Default.GeneradorBDConnectionString
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -13069,7 +12783,7 @@ Namespace DataSetTablasYCamposTableAdapters
      Global.System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner"& _ 
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"),  _
      Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
-    Partial Public Class SP_RegistroValorRequerimientos_SegunProyectoRequerimientoTableAdapter
+    Partial Public Class SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaIDTableAdapter
         Inherits Global.System.ComponentModel.Component
         
         Private WithEvents _adapter As Global.System.Data.SqlClient.SqlDataAdapter
@@ -13186,383 +12900,11 @@ Namespace DataSetTablasYCamposTableAdapters
             Me._adapter = New Global.System.Data.SqlClient.SqlDataAdapter()
             Dim tableMapping As Global.System.Data.Common.DataTableMapping = New Global.System.Data.Common.DataTableMapping()
             tableMapping.SourceTable = "Table"
-            tableMapping.DataSetTable = "SP_RegistroValorRequerimientos_SegunProyectoRequerimiento"
-            tableMapping.ColumnMappings.Add("RegistroValorRequerimientoID", "RegistroValorRequerimientoID")
-            tableMapping.ColumnMappings.Add("ProyectoID", "ProyectoID")
-            tableMapping.ColumnMappings.Add("Requerimiento", "Requerimiento")
-            tableMapping.ColumnMappings.Add("ValorRequerimiento", "ValorRequerimiento")
-            Me._adapter.TableMappings.Add(tableMapping)
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Private Sub InitConnection()
-            Me._connection = New Global.System.Data.SqlClient.SqlConnection()
-            Me._connection.ConnectionString = Global.GeneradorCod.My.MySettings.Default.GeneradorCodigoBDConnectionString
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Private Sub InitCommandCollection()
-            Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(0) {}
-            Me._commandCollection(0) = New Global.System.Data.SqlClient.SqlCommand()
-            Me._commandCollection(0).Connection = Me.Connection
-            Me._commandCollection(0).CommandText = "dbo.SP_RegistroValorRequerimientos_SegunProyectoRequerimiento"
-            Me._commandCollection(0).CommandType = Global.System.Data.CommandType.StoredProcedure
-            Me._commandCollection(0).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@RETURN_VALUE", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.ReturnValue, 10, 0, Nothing, Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._commandCollection(0).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@ProyectoID", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 10, 0, Nothing, Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._commandCollection(0).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Requerimiento", Global.System.Data.SqlDbType.VarChar, 500, Global.System.Data.ParameterDirection.Input, 0, 0, Nothing, Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
-         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, true)>  _
-        Public Overloads Overridable Function Fill(ByVal dataTable As DataSetTablasYCampos.SP_RegistroValorRequerimientos_SegunProyectoRequerimientoDataTable, ByVal ProyectoID As Global.System.Nullable(Of Integer), ByVal Requerimiento As String) As Integer
-            Me.Adapter.SelectCommand = Me.CommandCollection(0)
-            If (ProyectoID.HasValue = true) Then
-                Me.Adapter.SelectCommand.Parameters(1).Value = CType(ProyectoID.Value,Integer)
-            Else
-                Me.Adapter.SelectCommand.Parameters(1).Value = Global.System.DBNull.Value
-            End If
-            If (Requerimiento Is Nothing) Then
-                Me.Adapter.SelectCommand.Parameters(2).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.SelectCommand.Parameters(2).Value = CType(Requerimiento,String)
-            End If
-            If (Me.ClearBeforeFill = true) Then
-                dataTable.Clear
-            End If
-            Dim returnValue As Integer = Me.Adapter.Fill(dataTable)
-            Return returnValue
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
-         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], true)>  _
-        Public Overloads Overridable Function GetData(ByVal ProyectoID As Global.System.Nullable(Of Integer), ByVal Requerimiento As String) As DataSetTablasYCampos.SP_RegistroValorRequerimientos_SegunProyectoRequerimientoDataTable
-            Me.Adapter.SelectCommand = Me.CommandCollection(0)
-            If (ProyectoID.HasValue = true) Then
-                Me.Adapter.SelectCommand.Parameters(1).Value = CType(ProyectoID.Value,Integer)
-            Else
-                Me.Adapter.SelectCommand.Parameters(1).Value = Global.System.DBNull.Value
-            End If
-            If (Requerimiento Is Nothing) Then
-                Me.Adapter.SelectCommand.Parameters(2).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.SelectCommand.Parameters(2).Value = CType(Requerimiento,String)
-            End If
-            Dim dataTable As DataSetTablasYCampos.SP_RegistroValorRequerimientos_SegunProyectoRequerimientoDataTable = New DataSetTablasYCampos.SP_RegistroValorRequerimientos_SegunProyectoRequerimientoDataTable()
-            Me.Adapter.Fill(dataTable)
-            Return dataTable
-        End Function
-    End Class
-    
-    '''<summary>
-    '''Represents the connection and commands used to retrieve and save data.
-    '''</summary>
-    <Global.System.ComponentModel.DesignerCategoryAttribute("code"),  _
-     Global.System.ComponentModel.ToolboxItem(true),  _
-     Global.System.ComponentModel.DataObjectAttribute(true),  _
-     Global.System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner"& _ 
-        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"),  _
-     Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
-    Partial Public Class SP_CARGA_CONVENSIONES_USADASTableAdapter
-        Inherits Global.System.ComponentModel.Component
-        
-        Private WithEvents _adapter As Global.System.Data.SqlClient.SqlDataAdapter
-        
-        Private _connection As Global.System.Data.SqlClient.SqlConnection
-        
-        Private _transaction As Global.System.Data.SqlClient.SqlTransaction
-        
-        Private _commandCollection() As Global.System.Data.SqlClient.SqlCommand
-        
-        Private _clearBeforeFill As Boolean
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Sub New()
-            MyBase.New
-            Me.ClearBeforeFill = true
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Protected Friend ReadOnly Property Adapter() As Global.System.Data.SqlClient.SqlDataAdapter
-            Get
-                If (Me._adapter Is Nothing) Then
-                    Me.InitAdapter
-                End If
-                Return Me._adapter
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Friend Property Connection() As Global.System.Data.SqlClient.SqlConnection
-            Get
-                If (Me._connection Is Nothing) Then
-                    Me.InitConnection
-                End If
-                Return Me._connection
-            End Get
-            Set
-                Me._connection = value
-                If (Not (Me.Adapter.InsertCommand) Is Nothing) Then
-                    Me.Adapter.InsertCommand.Connection = value
-                End If
-                If (Not (Me.Adapter.DeleteCommand) Is Nothing) Then
-                    Me.Adapter.DeleteCommand.Connection = value
-                End If
-                If (Not (Me.Adapter.UpdateCommand) Is Nothing) Then
-                    Me.Adapter.UpdateCommand.Connection = value
-                End If
-                Dim i As Integer = 0
-                Do While (i < Me.CommandCollection.Length)
-                    If (Not (Me.CommandCollection(i)) Is Nothing) Then
-                        CType(Me.CommandCollection(i),Global.System.Data.SqlClient.SqlCommand).Connection = value
-                    End If
-                    i = (i + 1)
-                Loop
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Friend Property Transaction() As Global.System.Data.SqlClient.SqlTransaction
-            Get
-                Return Me._transaction
-            End Get
-            Set
-                Me._transaction = value
-                Dim i As Integer = 0
-                Do While (i < Me.CommandCollection.Length)
-                    Me.CommandCollection(i).Transaction = Me._transaction
-                    i = (i + 1)
-                Loop
-                If ((Not (Me.Adapter) Is Nothing)  _
-                            AndAlso (Not (Me.Adapter.DeleteCommand) Is Nothing)) Then
-                    Me.Adapter.DeleteCommand.Transaction = Me._transaction
-                End If
-                If ((Not (Me.Adapter) Is Nothing)  _
-                            AndAlso (Not (Me.Adapter.InsertCommand) Is Nothing)) Then
-                    Me.Adapter.InsertCommand.Transaction = Me._transaction
-                End If
-                If ((Not (Me.Adapter) Is Nothing)  _
-                            AndAlso (Not (Me.Adapter.UpdateCommand) Is Nothing)) Then
-                    Me.Adapter.UpdateCommand.Transaction = Me._transaction
-                End If
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Protected ReadOnly Property CommandCollection() As Global.System.Data.SqlClient.SqlCommand()
-            Get
-                If (Me._commandCollection Is Nothing) Then
-                    Me.InitCommandCollection
-                End If
-                Return Me._commandCollection
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Property ClearBeforeFill() As Boolean
-            Get
-                Return Me._clearBeforeFill
-            End Get
-            Set
-                Me._clearBeforeFill = value
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Private Sub InitAdapter()
-            Me._adapter = New Global.System.Data.SqlClient.SqlDataAdapter()
-            Dim tableMapping As Global.System.Data.Common.DataTableMapping = New Global.System.Data.Common.DataTableMapping()
-            tableMapping.SourceTable = "Table"
-            tableMapping.DataSetTable = "SP_CARGA_CONVENSIONES_USADAS"
-            tableMapping.ColumnMappings.Add("CONVENSIONES", "CONVENSIONES")
-            Me._adapter.TableMappings.Add(tableMapping)
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Private Sub InitConnection()
-            Me._connection = New Global.System.Data.SqlClient.SqlConnection()
-            Me._connection.ConnectionString = Global.GeneradorCod.My.MySettings.Default.GeneradorCodigoBDConnectionString
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Private Sub InitCommandCollection()
-            Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(0) {}
-            Me._commandCollection(0) = New Global.System.Data.SqlClient.SqlCommand()
-            Me._commandCollection(0).Connection = Me.Connection
-            Me._commandCollection(0).CommandText = "dbo.SP_CARGA_CONVENSIONES_USADAS"
-            Me._commandCollection(0).CommandType = Global.System.Data.CommandType.StoredProcedure
-            Me._commandCollection(0).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@RETURN_VALUE", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.ReturnValue, 10, 0, Nothing, Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
-         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, true)>  _
-        Public Overloads Overridable Function Fill(ByVal dataTable As DataSetTablasYCampos.SP_CARGA_CONVENSIONES_USADASDataTable) As Integer
-            Me.Adapter.SelectCommand = Me.CommandCollection(0)
-            If (Me.ClearBeforeFill = true) Then
-                dataTable.Clear
-            End If
-            Dim returnValue As Integer = Me.Adapter.Fill(dataTable)
-            Return returnValue
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
-         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], true)>  _
-        Public Overloads Overridable Function GetData() As DataSetTablasYCampos.SP_CARGA_CONVENSIONES_USADASDataTable
-            Me.Adapter.SelectCommand = Me.CommandCollection(0)
-            Dim dataTable As DataSetTablasYCampos.SP_CARGA_CONVENSIONES_USADASDataTable = New DataSetTablasYCampos.SP_CARGA_CONVENSIONES_USADASDataTable()
-            Me.Adapter.Fill(dataTable)
-            Return dataTable
-        End Function
-    End Class
-    
-    '''<summary>
-    '''Represents the connection and commands used to retrieve and save data.
-    '''</summary>
-    <Global.System.ComponentModel.DesignerCategoryAttribute("code"),  _
-     Global.System.ComponentModel.ToolboxItem(true),  _
-     Global.System.ComponentModel.DataObjectAttribute(true),  _
-     Global.System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner"& _ 
-        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"),  _
-     Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
-    Partial Public Class SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1TableAdapter
-        Inherits Global.System.ComponentModel.Component
-        
-        Private WithEvents _adapter As Global.System.Data.SqlClient.SqlDataAdapter
-        
-        Private _connection As Global.System.Data.SqlClient.SqlConnection
-        
-        Private _transaction As Global.System.Data.SqlClient.SqlTransaction
-        
-        Private _commandCollection() As Global.System.Data.SqlClient.SqlCommand
-        
-        Private _clearBeforeFill As Boolean
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Sub New()
-            MyBase.New
-            Me.ClearBeforeFill = true
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Protected Friend ReadOnly Property Adapter() As Global.System.Data.SqlClient.SqlDataAdapter
-            Get
-                If (Me._adapter Is Nothing) Then
-                    Me.InitAdapter
-                End If
-                Return Me._adapter
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Friend Property Connection() As Global.System.Data.SqlClient.SqlConnection
-            Get
-                If (Me._connection Is Nothing) Then
-                    Me.InitConnection
-                End If
-                Return Me._connection
-            End Get
-            Set
-                Me._connection = value
-                If (Not (Me.Adapter.InsertCommand) Is Nothing) Then
-                    Me.Adapter.InsertCommand.Connection = value
-                End If
-                If (Not (Me.Adapter.DeleteCommand) Is Nothing) Then
-                    Me.Adapter.DeleteCommand.Connection = value
-                End If
-                If (Not (Me.Adapter.UpdateCommand) Is Nothing) Then
-                    Me.Adapter.UpdateCommand.Connection = value
-                End If
-                Dim i As Integer = 0
-                Do While (i < Me.CommandCollection.Length)
-                    If (Not (Me.CommandCollection(i)) Is Nothing) Then
-                        CType(Me.CommandCollection(i),Global.System.Data.SqlClient.SqlCommand).Connection = value
-                    End If
-                    i = (i + 1)
-                Loop
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Friend Property Transaction() As Global.System.Data.SqlClient.SqlTransaction
-            Get
-                Return Me._transaction
-            End Get
-            Set
-                Me._transaction = value
-                Dim i As Integer = 0
-                Do While (i < Me.CommandCollection.Length)
-                    Me.CommandCollection(i).Transaction = Me._transaction
-                    i = (i + 1)
-                Loop
-                If ((Not (Me.Adapter) Is Nothing)  _
-                            AndAlso (Not (Me.Adapter.DeleteCommand) Is Nothing)) Then
-                    Me.Adapter.DeleteCommand.Transaction = Me._transaction
-                End If
-                If ((Not (Me.Adapter) Is Nothing)  _
-                            AndAlso (Not (Me.Adapter.InsertCommand) Is Nothing)) Then
-                    Me.Adapter.InsertCommand.Transaction = Me._transaction
-                End If
-                If ((Not (Me.Adapter) Is Nothing)  _
-                            AndAlso (Not (Me.Adapter.UpdateCommand) Is Nothing)) Then
-                    Me.Adapter.UpdateCommand.Transaction = Me._transaction
-                End If
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Protected ReadOnly Property CommandCollection() As Global.System.Data.SqlClient.SqlCommand()
-            Get
-                If (Me._commandCollection Is Nothing) Then
-                    Me.InitCommandCollection
-                End If
-                Return Me._commandCollection
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Property ClearBeforeFill() As Boolean
-            Get
-                Return Me._clearBeforeFill
-            End Get
-            Set
-                Me._clearBeforeFill = value
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Private Sub InitAdapter()
-            Me._adapter = New Global.System.Data.SqlClient.SqlDataAdapter()
-            Dim tableMapping As Global.System.Data.Common.DataTableMapping = New Global.System.Data.Common.DataTableMapping()
-            tableMapping.SourceTable = "Table"
-            tableMapping.DataSetTable = "SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1"
+            tableMapping.DataSetTable = "SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaID"
+            tableMapping.ColumnMappings.Add("CampoID", "CampoID")
             tableMapping.ColumnMappings.Add("TablaID", "TablaID")
-            tableMapping.ColumnMappings.Add("ProyectoID", "ProyectoID")
-            tableMapping.ColumnMappings.Add("NombreTabla", "NombreTabla")
+            tableMapping.ColumnMappings.Add("Tipo", "Tipo")
+            tableMapping.ColumnMappings.Add("NombreCampo", "NombreCampo")
             Me._adapter.TableMappings.Add(tableMapping)
         End Sub
         
@@ -13570,7 +12912,7 @@ Namespace DataSetTablasYCamposTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Private Sub InitConnection()
             Me._connection = New Global.System.Data.SqlClient.SqlConnection()
-            Me._connection.ConnectionString = Global.GeneradorCod.My.MySettings.Default.GeneradorCodigoBDConnectionString
+            Me._connection.ConnectionString = Global.GeneradorCod.My.MySettings.Default.GeneradorBDConnectionString
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -13579,20 +12921,20 @@ Namespace DataSetTablasYCamposTableAdapters
             Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(0) {}
             Me._commandCollection(0) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(0).Connection = Me.Connection
-            Me._commandCollection(0).CommandText = "dbo.SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID"
+            Me._commandCollection(0).CommandText = "dbo.SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaID"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.StoredProcedure
             Me._commandCollection(0).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@RETURN_VALUE", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.ReturnValue, 10, 0, Nothing, Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._commandCollection(0).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@ProyectoID", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 10, 0, Nothing, Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(0).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@TablaID", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 10, 0, Nothing, Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, true)>  _
-        Public Overloads Overridable Function Fill(ByVal dataTable As DataSetTablasYCampos.SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1DataTable, ByVal ProyectoID As Global.System.Nullable(Of Integer)) As Integer
+        Public Overloads Overridable Function Fill(ByVal dataTable As DataSetTablasYCampos.SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaIDDataTable, ByVal TablaID As Global.System.Nullable(Of Integer)) As Integer
             Me.Adapter.SelectCommand = Me.CommandCollection(0)
-            If (ProyectoID.HasValue = true) Then
-                Me.Adapter.SelectCommand.Parameters(1).Value = CType(ProyectoID.Value,Integer)
+            If (TablaID.HasValue = true) Then
+                Me.Adapter.SelectCommand.Parameters(1).Value = CType(TablaID.Value,Integer)
             Else
                 Me.Adapter.SelectCommand.Parameters(1).Value = Global.System.DBNull.Value
             End If
@@ -13607,16 +12949,818 @@ Namespace DataSetTablasYCamposTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], true)>  _
-        Public Overloads Overridable Function GetData(ByVal ProyectoID As Global.System.Nullable(Of Integer)) As DataSetTablasYCampos.SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1DataTable
+        Public Overloads Overridable Function GetData(ByVal TablaID As Global.System.Nullable(Of Integer)) As DataSetTablasYCampos.SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaIDDataTable
             Me.Adapter.SelectCommand = Me.CommandCollection(0)
-            If (ProyectoID.HasValue = true) Then
-                Me.Adapter.SelectCommand.Parameters(1).Value = CType(ProyectoID.Value,Integer)
+            If (TablaID.HasValue = true) Then
+                Me.Adapter.SelectCommand.Parameters(1).Value = CType(TablaID.Value,Integer)
             Else
                 Me.Adapter.SelectCommand.Parameters(1).Value = Global.System.DBNull.Value
             End If
-            Dim dataTable As DataSetTablasYCampos.SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1DataTable = New DataSetTablasYCampos.SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1DataTable()
+            Dim dataTable As DataSetTablasYCampos.SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaIDDataTable = New DataSetTablasYCampos.SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaIDDataTable()
             Me.Adapter.Fill(dataTable)
             Return dataTable
+        End Function
+    End Class
+    
+    '''<summary>
+    '''Represents the connection and commands used to retrieve and save data.
+    '''</summary>
+    <Global.System.ComponentModel.DesignerCategoryAttribute("code"),  _
+     Global.System.ComponentModel.ToolboxItem(true),  _
+     Global.System.ComponentModel.DataObjectAttribute(true),  _
+     Global.System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner"& _ 
+        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"),  _
+     Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
+    Partial Public Class SP_CamposDeTablas_EDICION_ACTUALIZARTableAdapter
+        Inherits Global.System.ComponentModel.Component
+        
+        Private WithEvents _adapter As Global.System.Data.SqlClient.SqlDataAdapter
+        
+        Private _connection As Global.System.Data.SqlClient.SqlConnection
+        
+        Private _transaction As Global.System.Data.SqlClient.SqlTransaction
+        
+        Private _commandCollection() As Global.System.Data.SqlClient.SqlCommand
+        
+        Private _clearBeforeFill As Boolean
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Sub New()
+            MyBase.New
+            Me.ClearBeforeFill = true
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Protected Friend ReadOnly Property Adapter() As Global.System.Data.SqlClient.SqlDataAdapter
+            Get
+                If (Me._adapter Is Nothing) Then
+                    Me.InitAdapter
+                End If
+                Return Me._adapter
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Friend Property Connection() As Global.System.Data.SqlClient.SqlConnection
+            Get
+                If (Me._connection Is Nothing) Then
+                    Me.InitConnection
+                End If
+                Return Me._connection
+            End Get
+            Set
+                Me._connection = value
+                If (Not (Me.Adapter.InsertCommand) Is Nothing) Then
+                    Me.Adapter.InsertCommand.Connection = value
+                End If
+                If (Not (Me.Adapter.DeleteCommand) Is Nothing) Then
+                    Me.Adapter.DeleteCommand.Connection = value
+                End If
+                If (Not (Me.Adapter.UpdateCommand) Is Nothing) Then
+                    Me.Adapter.UpdateCommand.Connection = value
+                End If
+                Dim i As Integer = 0
+                Do While (i < Me.CommandCollection.Length)
+                    If (Not (Me.CommandCollection(i)) Is Nothing) Then
+                        CType(Me.CommandCollection(i),Global.System.Data.SqlClient.SqlCommand).Connection = value
+                    End If
+                    i = (i + 1)
+                Loop
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Friend Property Transaction() As Global.System.Data.SqlClient.SqlTransaction
+            Get
+                Return Me._transaction
+            End Get
+            Set
+                Me._transaction = value
+                Dim i As Integer = 0
+                Do While (i < Me.CommandCollection.Length)
+                    Me.CommandCollection(i).Transaction = Me._transaction
+                    i = (i + 1)
+                Loop
+                If ((Not (Me.Adapter) Is Nothing)  _
+                            AndAlso (Not (Me.Adapter.DeleteCommand) Is Nothing)) Then
+                    Me.Adapter.DeleteCommand.Transaction = Me._transaction
+                End If
+                If ((Not (Me.Adapter) Is Nothing)  _
+                            AndAlso (Not (Me.Adapter.InsertCommand) Is Nothing)) Then
+                    Me.Adapter.InsertCommand.Transaction = Me._transaction
+                End If
+                If ((Not (Me.Adapter) Is Nothing)  _
+                            AndAlso (Not (Me.Adapter.UpdateCommand) Is Nothing)) Then
+                    Me.Adapter.UpdateCommand.Transaction = Me._transaction
+                End If
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Protected ReadOnly Property CommandCollection() As Global.System.Data.SqlClient.SqlCommand()
+            Get
+                If (Me._commandCollection Is Nothing) Then
+                    Me.InitCommandCollection
+                End If
+                Return Me._commandCollection
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Property ClearBeforeFill() As Boolean
+            Get
+                Return Me._clearBeforeFill
+            End Get
+            Set
+                Me._clearBeforeFill = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Private Sub InitAdapter()
+            Me._adapter = New Global.System.Data.SqlClient.SqlDataAdapter()
+            Me._adapter.UpdateCommand = New Global.System.Data.SqlClient.SqlCommand()
+            Me._adapter.UpdateCommand.Connection = Me.Connection
+            Me._adapter.UpdateCommand.CommandText = "dbo.SP_CamposDeTablas_EDICION_ACTUALIZAR"
+            Me._adapter.UpdateCommand.CommandType = Global.System.Data.CommandType.StoredProcedure
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@RETURN_VALUE", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.ReturnValue, 10, 0, Nothing, Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@CampoID", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 10, 0, "", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@TablaID", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 10, 0, "", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Tipo", Global.System.Data.SqlDbType.VarChar, 100, Global.System.Data.ParameterDirection.Input, 0, 0, "", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@NombreCampo", Global.System.Data.SqlDbType.VarChar, 100, Global.System.Data.ParameterDirection.Input, 0, 0, "", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Private Sub InitConnection()
+            Me._connection = New Global.System.Data.SqlClient.SqlConnection()
+            Me._connection.ConnectionString = Global.GeneradorCod.My.MySettings.Default.GeneradorBDConnectionString
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Private Sub InitCommandCollection()
+            Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(0) {}
+            Me._commandCollection(0) = New Global.System.Data.SqlClient.SqlCommand()
+            Me._commandCollection(0).Connection = Me.Connection
+            Me._commandCollection(0).CommandText = "dbo.SP_CamposDeTablas_EDICION_ACTUALIZAR"
+            Me._commandCollection(0).CommandType = Global.System.Data.CommandType.StoredProcedure
+            Me._commandCollection(0).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@RETURN_VALUE", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.ReturnValue, 10, 0, Nothing, Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(0).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@CampoID", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 10, 0, Nothing, Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(0).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@TablaID", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 10, 0, Nothing, Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(0).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Tipo", Global.System.Data.SqlDbType.VarChar, 100, Global.System.Data.ParameterDirection.Input, 0, 0, Nothing, Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(0).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@NombreCampo", Global.System.Data.SqlDbType.VarChar, 100, Global.System.Data.ParameterDirection.Input, 0, 0, Nothing, Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, true)>  _
+        Public Overloads Overridable Function Fill(ByVal dataTable As DataSetTablasYCampos.SP_CamposDeTablas_EDICION_ACTUALIZARDataTable, ByVal CampoID As Global.System.Nullable(Of Integer), ByVal TablaID As Global.System.Nullable(Of Integer), ByVal Tipo As String, ByVal NombreCampo As String) As Integer
+            Me.Adapter.SelectCommand = Me.CommandCollection(0)
+            If (CampoID.HasValue = true) Then
+                Me.Adapter.SelectCommand.Parameters(1).Value = CType(CampoID.Value,Integer)
+            Else
+                Me.Adapter.SelectCommand.Parameters(1).Value = Global.System.DBNull.Value
+            End If
+            If (TablaID.HasValue = true) Then
+                Me.Adapter.SelectCommand.Parameters(2).Value = CType(TablaID.Value,Integer)
+            Else
+                Me.Adapter.SelectCommand.Parameters(2).Value = Global.System.DBNull.Value
+            End If
+            If (Tipo Is Nothing) Then
+                Me.Adapter.SelectCommand.Parameters(3).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.SelectCommand.Parameters(3).Value = CType(Tipo,String)
+            End If
+            If (NombreCampo Is Nothing) Then
+                Me.Adapter.SelectCommand.Parameters(4).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.SelectCommand.Parameters(4).Value = CType(NombreCampo,String)
+            End If
+            If (Me.ClearBeforeFill = true) Then
+                dataTable.Clear
+            End If
+            Dim returnValue As Integer = Me.Adapter.Fill(dataTable)
+            Return returnValue
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], true)>  _
+        Public Overloads Overridable Function GetData(ByVal CampoID As Global.System.Nullable(Of Integer), ByVal TablaID As Global.System.Nullable(Of Integer), ByVal Tipo As String, ByVal NombreCampo As String) As DataSetTablasYCampos.SP_CamposDeTablas_EDICION_ACTUALIZARDataTable
+            Me.Adapter.SelectCommand = Me.CommandCollection(0)
+            If (CampoID.HasValue = true) Then
+                Me.Adapter.SelectCommand.Parameters(1).Value = CType(CampoID.Value,Integer)
+            Else
+                Me.Adapter.SelectCommand.Parameters(1).Value = Global.System.DBNull.Value
+            End If
+            If (TablaID.HasValue = true) Then
+                Me.Adapter.SelectCommand.Parameters(2).Value = CType(TablaID.Value,Integer)
+            Else
+                Me.Adapter.SelectCommand.Parameters(2).Value = Global.System.DBNull.Value
+            End If
+            If (Tipo Is Nothing) Then
+                Me.Adapter.SelectCommand.Parameters(3).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.SelectCommand.Parameters(3).Value = CType(Tipo,String)
+            End If
+            If (NombreCampo Is Nothing) Then
+                Me.Adapter.SelectCommand.Parameters(4).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.SelectCommand.Parameters(4).Value = CType(NombreCampo,String)
+            End If
+            Dim dataTable As DataSetTablasYCampos.SP_CamposDeTablas_EDICION_ACTUALIZARDataTable = New DataSetTablasYCampos.SP_CamposDeTablas_EDICION_ACTUALIZARDataTable()
+            Me.Adapter.Fill(dataTable)
+            Return dataTable
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
+        Public Overloads Overridable Function Update(ByVal dataTable As DataSetTablasYCampos.SP_CamposDeTablas_EDICION_ACTUALIZARDataTable) As Integer
+            Return Me.Adapter.Update(dataTable)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
+        Public Overloads Overridable Function Update(ByVal dataSet As DataSetTablasYCampos) As Integer
+            Return Me.Adapter.Update(dataSet, "SP_CamposDeTablas_EDICION_ACTUALIZAR")
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
+        Public Overloads Overridable Function Update(ByVal dataRow As Global.System.Data.DataRow) As Integer
+            Return Me.Adapter.Update(New Global.System.Data.DataRow() {dataRow})
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
+        Public Overloads Overridable Function Update(ByVal dataRows() As Global.System.Data.DataRow) As Integer
+            Return Me.Adapter.Update(dataRows)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
+        Public Overloads Overridable Function Update(ByVal CampoID As Global.System.Nullable(Of Integer), ByVal TablaID As Global.System.Nullable(Of Integer), ByVal Tipo As String, ByVal NombreCampo As String) As Integer
+            If (CampoID.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(1).Value = CType(CampoID.Value,Integer)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(1).Value = Global.System.DBNull.Value
+            End If
+            If (TablaID.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(2).Value = CType(TablaID.Value,Integer)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(2).Value = Global.System.DBNull.Value
+            End If
+            If (Tipo Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(3).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(3).Value = CType(Tipo,String)
+            End If
+            If (NombreCampo Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(4).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(4).Value = CType(NombreCampo,String)
+            End If
+            Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.UpdateCommand.Connection.State
+            If ((Me.Adapter.UpdateCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
+                        <> Global.System.Data.ConnectionState.Open) Then
+                Me.Adapter.UpdateCommand.Connection.Open
+            End If
+            Try 
+                Dim returnValue As Integer = Me.Adapter.UpdateCommand.ExecuteNonQuery
+                Return returnValue
+            Finally
+                If (previousConnectionState = Global.System.Data.ConnectionState.Closed) Then
+                    Me.Adapter.UpdateCommand.Connection.Close
+                End If
+            End Try
+        End Function
+    End Class
+    
+    '''<summary>
+    '''Represents the connection and commands used to retrieve and save data.
+    '''</summary>
+    <Global.System.ComponentModel.DesignerCategoryAttribute("code"),  _
+     Global.System.ComponentModel.ToolboxItem(true),  _
+     Global.System.ComponentModel.DataObjectAttribute(true),  _
+     Global.System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner"& _ 
+        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"),  _
+     Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
+    Partial Public Class SP_CamposDeTablas_EDICION_ELIMINARTableAdapter
+        Inherits Global.System.ComponentModel.Component
+        
+        Private WithEvents _adapter As Global.System.Data.SqlClient.SqlDataAdapter
+        
+        Private _connection As Global.System.Data.SqlClient.SqlConnection
+        
+        Private _transaction As Global.System.Data.SqlClient.SqlTransaction
+        
+        Private _commandCollection() As Global.System.Data.SqlClient.SqlCommand
+        
+        Private _clearBeforeFill As Boolean
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Sub New()
+            MyBase.New
+            Me.ClearBeforeFill = true
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Protected Friend ReadOnly Property Adapter() As Global.System.Data.SqlClient.SqlDataAdapter
+            Get
+                If (Me._adapter Is Nothing) Then
+                    Me.InitAdapter
+                End If
+                Return Me._adapter
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Friend Property Connection() As Global.System.Data.SqlClient.SqlConnection
+            Get
+                If (Me._connection Is Nothing) Then
+                    Me.InitConnection
+                End If
+                Return Me._connection
+            End Get
+            Set
+                Me._connection = value
+                If (Not (Me.Adapter.InsertCommand) Is Nothing) Then
+                    Me.Adapter.InsertCommand.Connection = value
+                End If
+                If (Not (Me.Adapter.DeleteCommand) Is Nothing) Then
+                    Me.Adapter.DeleteCommand.Connection = value
+                End If
+                If (Not (Me.Adapter.UpdateCommand) Is Nothing) Then
+                    Me.Adapter.UpdateCommand.Connection = value
+                End If
+                Dim i As Integer = 0
+                Do While (i < Me.CommandCollection.Length)
+                    If (Not (Me.CommandCollection(i)) Is Nothing) Then
+                        CType(Me.CommandCollection(i),Global.System.Data.SqlClient.SqlCommand).Connection = value
+                    End If
+                    i = (i + 1)
+                Loop
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Friend Property Transaction() As Global.System.Data.SqlClient.SqlTransaction
+            Get
+                Return Me._transaction
+            End Get
+            Set
+                Me._transaction = value
+                Dim i As Integer = 0
+                Do While (i < Me.CommandCollection.Length)
+                    Me.CommandCollection(i).Transaction = Me._transaction
+                    i = (i + 1)
+                Loop
+                If ((Not (Me.Adapter) Is Nothing)  _
+                            AndAlso (Not (Me.Adapter.DeleteCommand) Is Nothing)) Then
+                    Me.Adapter.DeleteCommand.Transaction = Me._transaction
+                End If
+                If ((Not (Me.Adapter) Is Nothing)  _
+                            AndAlso (Not (Me.Adapter.InsertCommand) Is Nothing)) Then
+                    Me.Adapter.InsertCommand.Transaction = Me._transaction
+                End If
+                If ((Not (Me.Adapter) Is Nothing)  _
+                            AndAlso (Not (Me.Adapter.UpdateCommand) Is Nothing)) Then
+                    Me.Adapter.UpdateCommand.Transaction = Me._transaction
+                End If
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Protected ReadOnly Property CommandCollection() As Global.System.Data.SqlClient.SqlCommand()
+            Get
+                If (Me._commandCollection Is Nothing) Then
+                    Me.InitCommandCollection
+                End If
+                Return Me._commandCollection
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Property ClearBeforeFill() As Boolean
+            Get
+                Return Me._clearBeforeFill
+            End Get
+            Set
+                Me._clearBeforeFill = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Private Sub InitAdapter()
+            Me._adapter = New Global.System.Data.SqlClient.SqlDataAdapter()
+            Me._adapter.DeleteCommand = New Global.System.Data.SqlClient.SqlCommand()
+            Me._adapter.DeleteCommand.Connection = Me.Connection
+            Me._adapter.DeleteCommand.CommandText = "dbo.SP_CamposDeTablas_EDICION_ELIMINAR"
+            Me._adapter.DeleteCommand.CommandType = Global.System.Data.CommandType.StoredProcedure
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@RETURN_VALUE", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.ReturnValue, 10, 0, Nothing, Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@CampoID", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 10, 0, "", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Private Sub InitConnection()
+            Me._connection = New Global.System.Data.SqlClient.SqlConnection()
+            Me._connection.ConnectionString = Global.GeneradorCod.My.MySettings.Default.GeneradorBDConnectionString
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Private Sub InitCommandCollection()
+            Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(0) {}
+            Me._commandCollection(0) = New Global.System.Data.SqlClient.SqlCommand()
+            Me._commandCollection(0).Connection = Me.Connection
+            Me._commandCollection(0).CommandText = "dbo.SP_CamposDeTablas_EDICION_ELIMINAR"
+            Me._commandCollection(0).CommandType = Global.System.Data.CommandType.StoredProcedure
+            Me._commandCollection(0).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@RETURN_VALUE", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.ReturnValue, 10, 0, Nothing, Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(0).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@CampoID", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 10, 0, Nothing, Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, true)>  _
+        Public Overloads Overridable Function Fill(ByVal dataTable As DataSetTablasYCampos.SP_CamposDeTablas_EDICION_ELIMINARDataTable, ByVal CampoID As Global.System.Nullable(Of Integer)) As Integer
+            Me.Adapter.SelectCommand = Me.CommandCollection(0)
+            If (CampoID.HasValue = true) Then
+                Me.Adapter.SelectCommand.Parameters(1).Value = CType(CampoID.Value,Integer)
+            Else
+                Me.Adapter.SelectCommand.Parameters(1).Value = Global.System.DBNull.Value
+            End If
+            If (Me.ClearBeforeFill = true) Then
+                dataTable.Clear
+            End If
+            Dim returnValue As Integer = Me.Adapter.Fill(dataTable)
+            Return returnValue
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], true)>  _
+        Public Overloads Overridable Function GetData(ByVal CampoID As Global.System.Nullable(Of Integer)) As DataSetTablasYCampos.SP_CamposDeTablas_EDICION_ELIMINARDataTable
+            Me.Adapter.SelectCommand = Me.CommandCollection(0)
+            If (CampoID.HasValue = true) Then
+                Me.Adapter.SelectCommand.Parameters(1).Value = CType(CampoID.Value,Integer)
+            Else
+                Me.Adapter.SelectCommand.Parameters(1).Value = Global.System.DBNull.Value
+            End If
+            Dim dataTable As DataSetTablasYCampos.SP_CamposDeTablas_EDICION_ELIMINARDataTable = New DataSetTablasYCampos.SP_CamposDeTablas_EDICION_ELIMINARDataTable()
+            Me.Adapter.Fill(dataTable)
+            Return dataTable
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
+        Public Overloads Overridable Function Update(ByVal dataTable As DataSetTablasYCampos.SP_CamposDeTablas_EDICION_ELIMINARDataTable) As Integer
+            Return Me.Adapter.Update(dataTable)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
+        Public Overloads Overridable Function Update(ByVal dataSet As DataSetTablasYCampos) As Integer
+            Return Me.Adapter.Update(dataSet, "SP_CamposDeTablas_EDICION_ELIMINAR")
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
+        Public Overloads Overridable Function Update(ByVal dataRow As Global.System.Data.DataRow) As Integer
+            Return Me.Adapter.Update(New Global.System.Data.DataRow() {dataRow})
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
+        Public Overloads Overridable Function Update(ByVal dataRows() As Global.System.Data.DataRow) As Integer
+            Return Me.Adapter.Update(dataRows)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Delete, true)>  _
+        Public Overloads Overridable Function Delete(ByVal CampoID As Global.System.Nullable(Of Integer)) As Integer
+            If (CampoID.HasValue = true) Then
+                Me.Adapter.DeleteCommand.Parameters(1).Value = CType(CampoID.Value,Integer)
+            Else
+                Me.Adapter.DeleteCommand.Parameters(1).Value = Global.System.DBNull.Value
+            End If
+            Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.DeleteCommand.Connection.State
+            If ((Me.Adapter.DeleteCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
+                        <> Global.System.Data.ConnectionState.Open) Then
+                Me.Adapter.DeleteCommand.Connection.Open
+            End If
+            Try 
+                Dim returnValue As Integer = Me.Adapter.DeleteCommand.ExecuteNonQuery
+                Return returnValue
+            Finally
+                If (previousConnectionState = Global.System.Data.ConnectionState.Closed) Then
+                    Me.Adapter.DeleteCommand.Connection.Close
+                End If
+            End Try
+        End Function
+    End Class
+    
+    '''<summary>
+    '''Represents the connection and commands used to retrieve and save data.
+    '''</summary>
+    <Global.System.ComponentModel.DesignerCategoryAttribute("code"),  _
+     Global.System.ComponentModel.ToolboxItem(true),  _
+     Global.System.ComponentModel.DataObjectAttribute(true),  _
+     Global.System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner"& _ 
+        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"),  _
+     Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
+    Partial Public Class SP_CamposDeTablas_EDICION_INSERTARTableAdapter
+        Inherits Global.System.ComponentModel.Component
+        
+        Private WithEvents _adapter As Global.System.Data.SqlClient.SqlDataAdapter
+        
+        Private _connection As Global.System.Data.SqlClient.SqlConnection
+        
+        Private _transaction As Global.System.Data.SqlClient.SqlTransaction
+        
+        Private _commandCollection() As Global.System.Data.SqlClient.SqlCommand
+        
+        Private _clearBeforeFill As Boolean
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Sub New()
+            MyBase.New
+            Me.ClearBeforeFill = true
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Protected Friend ReadOnly Property Adapter() As Global.System.Data.SqlClient.SqlDataAdapter
+            Get
+                If (Me._adapter Is Nothing) Then
+                    Me.InitAdapter
+                End If
+                Return Me._adapter
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Friend Property Connection() As Global.System.Data.SqlClient.SqlConnection
+            Get
+                If (Me._connection Is Nothing) Then
+                    Me.InitConnection
+                End If
+                Return Me._connection
+            End Get
+            Set
+                Me._connection = value
+                If (Not (Me.Adapter.InsertCommand) Is Nothing) Then
+                    Me.Adapter.InsertCommand.Connection = value
+                End If
+                If (Not (Me.Adapter.DeleteCommand) Is Nothing) Then
+                    Me.Adapter.DeleteCommand.Connection = value
+                End If
+                If (Not (Me.Adapter.UpdateCommand) Is Nothing) Then
+                    Me.Adapter.UpdateCommand.Connection = value
+                End If
+                Dim i As Integer = 0
+                Do While (i < Me.CommandCollection.Length)
+                    If (Not (Me.CommandCollection(i)) Is Nothing) Then
+                        CType(Me.CommandCollection(i),Global.System.Data.SqlClient.SqlCommand).Connection = value
+                    End If
+                    i = (i + 1)
+                Loop
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Friend Property Transaction() As Global.System.Data.SqlClient.SqlTransaction
+            Get
+                Return Me._transaction
+            End Get
+            Set
+                Me._transaction = value
+                Dim i As Integer = 0
+                Do While (i < Me.CommandCollection.Length)
+                    Me.CommandCollection(i).Transaction = Me._transaction
+                    i = (i + 1)
+                Loop
+                If ((Not (Me.Adapter) Is Nothing)  _
+                            AndAlso (Not (Me.Adapter.DeleteCommand) Is Nothing)) Then
+                    Me.Adapter.DeleteCommand.Transaction = Me._transaction
+                End If
+                If ((Not (Me.Adapter) Is Nothing)  _
+                            AndAlso (Not (Me.Adapter.InsertCommand) Is Nothing)) Then
+                    Me.Adapter.InsertCommand.Transaction = Me._transaction
+                End If
+                If ((Not (Me.Adapter) Is Nothing)  _
+                            AndAlso (Not (Me.Adapter.UpdateCommand) Is Nothing)) Then
+                    Me.Adapter.UpdateCommand.Transaction = Me._transaction
+                End If
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Protected ReadOnly Property CommandCollection() As Global.System.Data.SqlClient.SqlCommand()
+            Get
+                If (Me._commandCollection Is Nothing) Then
+                    Me.InitCommandCollection
+                End If
+                Return Me._commandCollection
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Property ClearBeforeFill() As Boolean
+            Get
+                Return Me._clearBeforeFill
+            End Get
+            Set
+                Me._clearBeforeFill = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Private Sub InitAdapter()
+            Me._adapter = New Global.System.Data.SqlClient.SqlDataAdapter()
+            Me._adapter.InsertCommand = New Global.System.Data.SqlClient.SqlCommand()
+            Me._adapter.InsertCommand.Connection = Me.Connection
+            Me._adapter.InsertCommand.CommandText = "dbo.SP_CamposDeTablas_EDICION_INSERTAR"
+            Me._adapter.InsertCommand.CommandType = Global.System.Data.CommandType.StoredProcedure
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@RETURN_VALUE", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.ReturnValue, 10, 0, Nothing, Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@TablaID", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 10, 0, "", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Tipo", Global.System.Data.SqlDbType.VarChar, 100, Global.System.Data.ParameterDirection.Input, 0, 0, "", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@NombreCampo", Global.System.Data.SqlDbType.VarChar, 100, Global.System.Data.ParameterDirection.Input, 0, 0, "", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Private Sub InitConnection()
+            Me._connection = New Global.System.Data.SqlClient.SqlConnection()
+            Me._connection.ConnectionString = Global.GeneradorCod.My.MySettings.Default.GeneradorBDConnectionString
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Private Sub InitCommandCollection()
+            Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(0) {}
+            Me._commandCollection(0) = New Global.System.Data.SqlClient.SqlCommand()
+            Me._commandCollection(0).Connection = Me.Connection
+            Me._commandCollection(0).CommandText = "dbo.SP_CamposDeTablas_EDICION_INSERTAR"
+            Me._commandCollection(0).CommandType = Global.System.Data.CommandType.StoredProcedure
+            Me._commandCollection(0).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@RETURN_VALUE", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.ReturnValue, 10, 0, Nothing, Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(0).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@TablaID", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 10, 0, Nothing, Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(0).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Tipo", Global.System.Data.SqlDbType.VarChar, 100, Global.System.Data.ParameterDirection.Input, 0, 0, Nothing, Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(0).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@NombreCampo", Global.System.Data.SqlDbType.VarChar, 100, Global.System.Data.ParameterDirection.Input, 0, 0, Nothing, Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, true)>  _
+        Public Overloads Overridable Function Fill(ByVal dataTable As DataSetTablasYCampos.SP_CamposDeTablas_EDICION_INSERTARDataTable, ByVal TablaID As Global.System.Nullable(Of Integer), ByVal Tipo As String, ByVal NombreCampo As String) As Integer
+            Me.Adapter.SelectCommand = Me.CommandCollection(0)
+            If (TablaID.HasValue = true) Then
+                Me.Adapter.SelectCommand.Parameters(1).Value = CType(TablaID.Value,Integer)
+            Else
+                Me.Adapter.SelectCommand.Parameters(1).Value = Global.System.DBNull.Value
+            End If
+            If (Tipo Is Nothing) Then
+                Me.Adapter.SelectCommand.Parameters(2).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.SelectCommand.Parameters(2).Value = CType(Tipo,String)
+            End If
+            If (NombreCampo Is Nothing) Then
+                Me.Adapter.SelectCommand.Parameters(3).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.SelectCommand.Parameters(3).Value = CType(NombreCampo,String)
+            End If
+            If (Me.ClearBeforeFill = true) Then
+                dataTable.Clear
+            End If
+            Dim returnValue As Integer = Me.Adapter.Fill(dataTable)
+            Return returnValue
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], true)>  _
+        Public Overloads Overridable Function GetData(ByVal TablaID As Global.System.Nullable(Of Integer), ByVal Tipo As String, ByVal NombreCampo As String) As DataSetTablasYCampos.SP_CamposDeTablas_EDICION_INSERTARDataTable
+            Me.Adapter.SelectCommand = Me.CommandCollection(0)
+            If (TablaID.HasValue = true) Then
+                Me.Adapter.SelectCommand.Parameters(1).Value = CType(TablaID.Value,Integer)
+            Else
+                Me.Adapter.SelectCommand.Parameters(1).Value = Global.System.DBNull.Value
+            End If
+            If (Tipo Is Nothing) Then
+                Me.Adapter.SelectCommand.Parameters(2).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.SelectCommand.Parameters(2).Value = CType(Tipo,String)
+            End If
+            If (NombreCampo Is Nothing) Then
+                Me.Adapter.SelectCommand.Parameters(3).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.SelectCommand.Parameters(3).Value = CType(NombreCampo,String)
+            End If
+            Dim dataTable As DataSetTablasYCampos.SP_CamposDeTablas_EDICION_INSERTARDataTable = New DataSetTablasYCampos.SP_CamposDeTablas_EDICION_INSERTARDataTable()
+            Me.Adapter.Fill(dataTable)
+            Return dataTable
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
+        Public Overloads Overridable Function Update(ByVal dataTable As DataSetTablasYCampos.SP_CamposDeTablas_EDICION_INSERTARDataTable) As Integer
+            Return Me.Adapter.Update(dataTable)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
+        Public Overloads Overridable Function Update(ByVal dataSet As DataSetTablasYCampos) As Integer
+            Return Me.Adapter.Update(dataSet, "SP_CamposDeTablas_EDICION_INSERTAR")
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
+        Public Overloads Overridable Function Update(ByVal dataRow As Global.System.Data.DataRow) As Integer
+            Return Me.Adapter.Update(New Global.System.Data.DataRow() {dataRow})
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
+        Public Overloads Overridable Function Update(ByVal dataRows() As Global.System.Data.DataRow) As Integer
+            Return Me.Adapter.Update(dataRows)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Insert, true)>  _
+        Public Overloads Overridable Function Insert(ByVal TablaID As Global.System.Nullable(Of Integer), ByVal Tipo As String, ByVal NombreCampo As String) As Integer
+            If (TablaID.HasValue = true) Then
+                Me.Adapter.InsertCommand.Parameters(1).Value = CType(TablaID.Value,Integer)
+            Else
+                Me.Adapter.InsertCommand.Parameters(1).Value = Global.System.DBNull.Value
+            End If
+            If (Tipo Is Nothing) Then
+                Me.Adapter.InsertCommand.Parameters(2).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.InsertCommand.Parameters(2).Value = CType(Tipo,String)
+            End If
+            If (NombreCampo Is Nothing) Then
+                Me.Adapter.InsertCommand.Parameters(3).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.InsertCommand.Parameters(3).Value = CType(NombreCampo,String)
+            End If
+            Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.InsertCommand.Connection.State
+            If ((Me.Adapter.InsertCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
+                        <> Global.System.Data.ConnectionState.Open) Then
+                Me.Adapter.InsertCommand.Connection.Open
+            End If
+            Try 
+                Dim returnValue As Integer = Me.Adapter.InsertCommand.ExecuteNonQuery
+                Return returnValue
+            Finally
+                If (previousConnectionState = Global.System.Data.ConnectionState.Closed) Then
+                    Me.Adapter.InsertCommand.Connection.Close
+                End If
+            End Try
         End Function
     End Class
     
@@ -13749,8 +13893,8 @@ Namespace DataSetTablasYCamposTableAdapters
             tableMapping.DataSetTable = "SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaID1"
             tableMapping.ColumnMappings.Add("CampoID", "CampoID")
             tableMapping.ColumnMappings.Add("TablaID", "TablaID")
-            tableMapping.ColumnMappings.Add("NombreCampo", "NombreCampo")
             tableMapping.ColumnMappings.Add("Tipo", "Tipo")
+            tableMapping.ColumnMappings.Add("NombreCampo", "NombreCampo")
             Me._adapter.TableMappings.Add(tableMapping)
         End Sub
         
@@ -13758,7 +13902,7 @@ Namespace DataSetTablasYCamposTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Private Sub InitConnection()
             Me._connection = New Global.System.Data.SqlClient.SqlConnection()
-            Me._connection.ConnectionString = Global.GeneradorCod.My.MySettings.Default.GeneradorCodigoBDConnectionString
+            Me._connection.ConnectionString = Global.GeneradorCod.My.MySettings.Default.GeneradorBDConnectionString
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -13997,193 +14141,6 @@ Namespace DataSetTablasYCamposTableAdapters
     End Class
     
     '''<summary>
-    '''Represents the connection and commands used to retrieve and save data.
-    '''</summary>
-    <Global.System.ComponentModel.DesignerCategoryAttribute("code"),  _
-     Global.System.ComponentModel.ToolboxItem(true),  _
-     Global.System.ComponentModel.DataObjectAttribute(true),  _
-     Global.System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner"& _ 
-        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"),  _
-     Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
-    Partial Public Class SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID2TableAdapter
-        Inherits Global.System.ComponentModel.Component
-        
-        Private WithEvents _adapter As Global.System.Data.SqlClient.SqlDataAdapter
-        
-        Private _connection As Global.System.Data.SqlClient.SqlConnection
-        
-        Private _transaction As Global.System.Data.SqlClient.SqlTransaction
-        
-        Private _commandCollection() As Global.System.Data.SqlClient.SqlCommand
-        
-        Private _clearBeforeFill As Boolean
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Sub New()
-            MyBase.New
-            Me.ClearBeforeFill = true
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Protected Friend ReadOnly Property Adapter() As Global.System.Data.SqlClient.SqlDataAdapter
-            Get
-                If (Me._adapter Is Nothing) Then
-                    Me.InitAdapter
-                End If
-                Return Me._adapter
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Friend Property Connection() As Global.System.Data.SqlClient.SqlConnection
-            Get
-                If (Me._connection Is Nothing) Then
-                    Me.InitConnection
-                End If
-                Return Me._connection
-            End Get
-            Set
-                Me._connection = value
-                If (Not (Me.Adapter.InsertCommand) Is Nothing) Then
-                    Me.Adapter.InsertCommand.Connection = value
-                End If
-                If (Not (Me.Adapter.DeleteCommand) Is Nothing) Then
-                    Me.Adapter.DeleteCommand.Connection = value
-                End If
-                If (Not (Me.Adapter.UpdateCommand) Is Nothing) Then
-                    Me.Adapter.UpdateCommand.Connection = value
-                End If
-                Dim i As Integer = 0
-                Do While (i < Me.CommandCollection.Length)
-                    If (Not (Me.CommandCollection(i)) Is Nothing) Then
-                        CType(Me.CommandCollection(i),Global.System.Data.SqlClient.SqlCommand).Connection = value
-                    End If
-                    i = (i + 1)
-                Loop
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Friend Property Transaction() As Global.System.Data.SqlClient.SqlTransaction
-            Get
-                Return Me._transaction
-            End Get
-            Set
-                Me._transaction = value
-                Dim i As Integer = 0
-                Do While (i < Me.CommandCollection.Length)
-                    Me.CommandCollection(i).Transaction = Me._transaction
-                    i = (i + 1)
-                Loop
-                If ((Not (Me.Adapter) Is Nothing)  _
-                            AndAlso (Not (Me.Adapter.DeleteCommand) Is Nothing)) Then
-                    Me.Adapter.DeleteCommand.Transaction = Me._transaction
-                End If
-                If ((Not (Me.Adapter) Is Nothing)  _
-                            AndAlso (Not (Me.Adapter.InsertCommand) Is Nothing)) Then
-                    Me.Adapter.InsertCommand.Transaction = Me._transaction
-                End If
-                If ((Not (Me.Adapter) Is Nothing)  _
-                            AndAlso (Not (Me.Adapter.UpdateCommand) Is Nothing)) Then
-                    Me.Adapter.UpdateCommand.Transaction = Me._transaction
-                End If
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Protected ReadOnly Property CommandCollection() As Global.System.Data.SqlClient.SqlCommand()
-            Get
-                If (Me._commandCollection Is Nothing) Then
-                    Me.InitCommandCollection
-                End If
-                Return Me._commandCollection
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Property ClearBeforeFill() As Boolean
-            Get
-                Return Me._clearBeforeFill
-            End Get
-            Set
-                Me._clearBeforeFill = value
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Private Sub InitAdapter()
-            Me._adapter = New Global.System.Data.SqlClient.SqlDataAdapter()
-            Dim tableMapping As Global.System.Data.Common.DataTableMapping = New Global.System.Data.Common.DataTableMapping()
-            tableMapping.SourceTable = "Table"
-            tableMapping.DataSetTable = "SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID2"
-            tableMapping.ColumnMappings.Add("TablaID", "TablaID")
-            tableMapping.ColumnMappings.Add("ProyectoID", "ProyectoID")
-            tableMapping.ColumnMappings.Add("NombreTabla", "NombreTabla")
-            Me._adapter.TableMappings.Add(tableMapping)
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Private Sub InitConnection()
-            Me._connection = New Global.System.Data.SqlClient.SqlConnection()
-            Me._connection.ConnectionString = Global.GeneradorCod.My.MySettings.Default.GeneradorBDConnectionString
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Private Sub InitCommandCollection()
-            Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(0) {}
-            Me._commandCollection(0) = New Global.System.Data.SqlClient.SqlCommand()
-            Me._commandCollection(0).Connection = Me.Connection
-            Me._commandCollection(0).CommandText = "dbo.SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID"
-            Me._commandCollection(0).CommandType = Global.System.Data.CommandType.StoredProcedure
-            Me._commandCollection(0).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@RETURN_VALUE", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.ReturnValue, 10, 0, Nothing, Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._commandCollection(0).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@ProyectoID", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 10, 0, Nothing, Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
-         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, true)>  _
-        Public Overloads Overridable Function Fill(ByVal dataTable As DataSetTablasYCampos.SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID2DataTable, ByVal ProyectoID As Global.System.Nullable(Of Integer)) As Integer
-            Me.Adapter.SelectCommand = Me.CommandCollection(0)
-            If (ProyectoID.HasValue = true) Then
-                Me.Adapter.SelectCommand.Parameters(1).Value = CType(ProyectoID.Value,Integer)
-            Else
-                Me.Adapter.SelectCommand.Parameters(1).Value = Global.System.DBNull.Value
-            End If
-            If (Me.ClearBeforeFill = true) Then
-                dataTable.Clear
-            End If
-            Dim returnValue As Integer = Me.Adapter.Fill(dataTable)
-            Return returnValue
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
-         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], true)>  _
-        Public Overloads Overridable Function GetData(ByVal ProyectoID As Global.System.Nullable(Of Integer)) As DataSetTablasYCampos.SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID2DataTable
-            Me.Adapter.SelectCommand = Me.CommandCollection(0)
-            If (ProyectoID.HasValue = true) Then
-                Me.Adapter.SelectCommand.Parameters(1).Value = CType(ProyectoID.Value,Integer)
-            Else
-                Me.Adapter.SelectCommand.Parameters(1).Value = Global.System.DBNull.Value
-            End If
-            Dim dataTable As DataSetTablasYCampos.SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID2DataTable = New DataSetTablasYCampos.SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID2DataTable()
-            Me.Adapter.Fill(dataTable)
-            Return dataTable
-        End Function
-    End Class
-    
-    '''<summary>
     '''TableAdapterManager is used to coordinate TableAdapters in the dataset to enable Hierarchical Update scenarios
     '''</summary>
     <Global.System.ComponentModel.DesignerCategoryAttribute("code"),  _
@@ -14206,17 +14163,17 @@ Namespace DataSetTablasYCamposTableAdapters
         
         Private _sP_ELIMINA_RegistroValorRequerimientos_SegunIDTableAdapter As SP_ELIMINA_RegistroValorRequerimientos_SegunIDTableAdapter
         
-        Private _sP_CamposDeTablas_EDICION_ELIMINARTableAdapter As SP_CamposDeTablas_EDICION_ELIMINARTableAdapter
-        
-        Private _sP_CamposDeTablas_EDICION_ACTUALIZARTableAdapter As SP_CamposDeTablas_EDICION_ACTUALIZARTableAdapter
-        
-        Private _sP_CamposDeTablas_EDICION_INSERTARTableAdapter As SP_CamposDeTablas_EDICION_INSERTARTableAdapter
-        
         Private _sP_CampoComponentes_EDICION_ACTUALIZARTableAdapter As SP_CampoComponentes_EDICION_ACTUALIZARTableAdapter
         
         Private _sP_CampoComponentes_EDICION_ELIMINARTableAdapter As SP_CampoComponentes_EDICION_ELIMINARTableAdapter
         
         Private _sP_CampoComponentes_EDICION_INSERTARTableAdapter As SP_CampoComponentes_EDICION_INSERTARTableAdapter
+        
+        Private _sP_CamposDeTablas_EDICION_ACTUALIZARTableAdapter As SP_CamposDeTablas_EDICION_ACTUALIZARTableAdapter
+        
+        Private _sP_CamposDeTablas_EDICION_ELIMINARTableAdapter As SP_CamposDeTablas_EDICION_ELIMINARTableAdapter
+        
+        Private _sP_CamposDeTablas_EDICION_INSERTARTableAdapter As SP_CamposDeTablas_EDICION_INSERTARTableAdapter
         
         Private _backupDataSetBeforeUpdate As Boolean
         
@@ -14308,48 +14265,6 @@ Namespace DataSetTablasYCamposTableAdapters
          Global.System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso"& _ 
             "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3"& _ 
             "a", "System.Drawing.Design.UITypeEditor")>  _
-        Public Property SP_CamposDeTablas_EDICION_ELIMINARTableAdapter() As SP_CamposDeTablas_EDICION_ELIMINARTableAdapter
-            Get
-                Return Me._sP_CamposDeTablas_EDICION_ELIMINARTableAdapter
-            End Get
-            Set
-                Me._sP_CamposDeTablas_EDICION_ELIMINARTableAdapter = value
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
-         Global.System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso"& _ 
-            "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3"& _ 
-            "a", "System.Drawing.Design.UITypeEditor")>  _
-        Public Property SP_CamposDeTablas_EDICION_ACTUALIZARTableAdapter() As SP_CamposDeTablas_EDICION_ACTUALIZARTableAdapter
-            Get
-                Return Me._sP_CamposDeTablas_EDICION_ACTUALIZARTableAdapter
-            End Get
-            Set
-                Me._sP_CamposDeTablas_EDICION_ACTUALIZARTableAdapter = value
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
-         Global.System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso"& _ 
-            "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3"& _ 
-            "a", "System.Drawing.Design.UITypeEditor")>  _
-        Public Property SP_CamposDeTablas_EDICION_INSERTARTableAdapter() As SP_CamposDeTablas_EDICION_INSERTARTableAdapter
-            Get
-                Return Me._sP_CamposDeTablas_EDICION_INSERTARTableAdapter
-            End Get
-            Set
-                Me._sP_CamposDeTablas_EDICION_INSERTARTableAdapter = value
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
-         Global.System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso"& _ 
-            "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3"& _ 
-            "a", "System.Drawing.Design.UITypeEditor")>  _
         Public Property SP_CampoComponentes_EDICION_ACTUALIZARTableAdapter() As SP_CampoComponentes_EDICION_ACTUALIZARTableAdapter
             Get
                 Return Me._sP_CampoComponentes_EDICION_ACTUALIZARTableAdapter
@@ -14384,6 +14299,48 @@ Namespace DataSetTablasYCamposTableAdapters
             End Get
             Set
                 Me._sP_CampoComponentes_EDICION_INSERTARTableAdapter = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
+         Global.System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso"& _ 
+            "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3"& _ 
+            "a", "System.Drawing.Design.UITypeEditor")>  _
+        Public Property SP_CamposDeTablas_EDICION_ACTUALIZARTableAdapter() As SP_CamposDeTablas_EDICION_ACTUALIZARTableAdapter
+            Get
+                Return Me._sP_CamposDeTablas_EDICION_ACTUALIZARTableAdapter
+            End Get
+            Set
+                Me._sP_CamposDeTablas_EDICION_ACTUALIZARTableAdapter = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
+         Global.System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso"& _ 
+            "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3"& _ 
+            "a", "System.Drawing.Design.UITypeEditor")>  _
+        Public Property SP_CamposDeTablas_EDICION_ELIMINARTableAdapter() As SP_CamposDeTablas_EDICION_ELIMINARTableAdapter
+            Get
+                Return Me._sP_CamposDeTablas_EDICION_ELIMINARTableAdapter
+            End Get
+            Set
+                Me._sP_CamposDeTablas_EDICION_ELIMINARTableAdapter = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
+         Global.System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso"& _ 
+            "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3"& _ 
+            "a", "System.Drawing.Design.UITypeEditor")>  _
+        Public Property SP_CamposDeTablas_EDICION_INSERTARTableAdapter() As SP_CamposDeTablas_EDICION_INSERTARTableAdapter
+            Get
+                Return Me._sP_CamposDeTablas_EDICION_INSERTARTableAdapter
+            End Get
+            Set
+                Me._sP_CamposDeTablas_EDICION_INSERTARTableAdapter = value
             End Set
         End Property
         
@@ -14426,18 +14383,6 @@ Namespace DataSetTablasYCamposTableAdapters
                             AndAlso (Not (Me._sP_ELIMINA_RegistroValorRequerimientos_SegunIDTableAdapter.Connection) Is Nothing)) Then
                     Return Me._sP_ELIMINA_RegistroValorRequerimientos_SegunIDTableAdapter.Connection
                 End If
-                If ((Not (Me._sP_CamposDeTablas_EDICION_ELIMINARTableAdapter) Is Nothing)  _
-                            AndAlso (Not (Me._sP_CamposDeTablas_EDICION_ELIMINARTableAdapter.Connection) Is Nothing)) Then
-                    Return Me._sP_CamposDeTablas_EDICION_ELIMINARTableAdapter.Connection
-                End If
-                If ((Not (Me._sP_CamposDeTablas_EDICION_ACTUALIZARTableAdapter) Is Nothing)  _
-                            AndAlso (Not (Me._sP_CamposDeTablas_EDICION_ACTUALIZARTableAdapter.Connection) Is Nothing)) Then
-                    Return Me._sP_CamposDeTablas_EDICION_ACTUALIZARTableAdapter.Connection
-                End If
-                If ((Not (Me._sP_CamposDeTablas_EDICION_INSERTARTableAdapter) Is Nothing)  _
-                            AndAlso (Not (Me._sP_CamposDeTablas_EDICION_INSERTARTableAdapter.Connection) Is Nothing)) Then
-                    Return Me._sP_CamposDeTablas_EDICION_INSERTARTableAdapter.Connection
-                End If
                 If ((Not (Me._sP_CampoComponentes_EDICION_ACTUALIZARTableAdapter) Is Nothing)  _
                             AndAlso (Not (Me._sP_CampoComponentes_EDICION_ACTUALIZARTableAdapter.Connection) Is Nothing)) Then
                     Return Me._sP_CampoComponentes_EDICION_ACTUALIZARTableAdapter.Connection
@@ -14449,6 +14394,18 @@ Namespace DataSetTablasYCamposTableAdapters
                 If ((Not (Me._sP_CampoComponentes_EDICION_INSERTARTableAdapter) Is Nothing)  _
                             AndAlso (Not (Me._sP_CampoComponentes_EDICION_INSERTARTableAdapter.Connection) Is Nothing)) Then
                     Return Me._sP_CampoComponentes_EDICION_INSERTARTableAdapter.Connection
+                End If
+                If ((Not (Me._sP_CamposDeTablas_EDICION_ACTUALIZARTableAdapter) Is Nothing)  _
+                            AndAlso (Not (Me._sP_CamposDeTablas_EDICION_ACTUALIZARTableAdapter.Connection) Is Nothing)) Then
+                    Return Me._sP_CamposDeTablas_EDICION_ACTUALIZARTableAdapter.Connection
+                End If
+                If ((Not (Me._sP_CamposDeTablas_EDICION_ELIMINARTableAdapter) Is Nothing)  _
+                            AndAlso (Not (Me._sP_CamposDeTablas_EDICION_ELIMINARTableAdapter.Connection) Is Nothing)) Then
+                    Return Me._sP_CamposDeTablas_EDICION_ELIMINARTableAdapter.Connection
+                End If
+                If ((Not (Me._sP_CamposDeTablas_EDICION_INSERTARTableAdapter) Is Nothing)  _
+                            AndAlso (Not (Me._sP_CamposDeTablas_EDICION_INSERTARTableAdapter.Connection) Is Nothing)) Then
+                    Return Me._sP_CamposDeTablas_EDICION_INSERTARTableAdapter.Connection
                 End If
                 Return Nothing
             End Get
@@ -14478,15 +14435,6 @@ Namespace DataSetTablasYCamposTableAdapters
                 If (Not (Me._sP_ELIMINA_RegistroValorRequerimientos_SegunIDTableAdapter) Is Nothing) Then
                     count = (count + 1)
                 End If
-                If (Not (Me._sP_CamposDeTablas_EDICION_ELIMINARTableAdapter) Is Nothing) Then
-                    count = (count + 1)
-                End If
-                If (Not (Me._sP_CamposDeTablas_EDICION_ACTUALIZARTableAdapter) Is Nothing) Then
-                    count = (count + 1)
-                End If
-                If (Not (Me._sP_CamposDeTablas_EDICION_INSERTARTableAdapter) Is Nothing) Then
-                    count = (count + 1)
-                End If
                 If (Not (Me._sP_CampoComponentes_EDICION_ACTUALIZARTableAdapter) Is Nothing) Then
                     count = (count + 1)
                 End If
@@ -14494,6 +14442,15 @@ Namespace DataSetTablasYCamposTableAdapters
                     count = (count + 1)
                 End If
                 If (Not (Me._sP_CampoComponentes_EDICION_INSERTARTableAdapter) Is Nothing) Then
+                    count = (count + 1)
+                End If
+                If (Not (Me._sP_CamposDeTablas_EDICION_ACTUALIZARTableAdapter) Is Nothing) Then
+                    count = (count + 1)
+                End If
+                If (Not (Me._sP_CamposDeTablas_EDICION_ELIMINARTableAdapter) Is Nothing) Then
+                    count = (count + 1)
+                End If
+                If (Not (Me._sP_CamposDeTablas_EDICION_INSERTARTableAdapter) Is Nothing) Then
                     count = (count + 1)
                 End If
                 Return count
@@ -14507,6 +14464,33 @@ Namespace DataSetTablasYCamposTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Private Function UpdateUpdatedRows(ByVal dataSet As DataSetTablasYCampos, ByVal allChangedRows As Global.System.Collections.Generic.List(Of Global.System.Data.DataRow), ByVal allAddedRows As Global.System.Collections.Generic.List(Of Global.System.Data.DataRow)) As Integer
             Dim result As Integer = 0
+            If (Not (Me._sP_CamposDeTablas_EDICION_INSERTARTableAdapter) Is Nothing) Then
+                Dim updatedRows() As Global.System.Data.DataRow = dataSet.SP_CamposDeTablas_EDICION_INSERTAR.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
+                updatedRows = Me.GetRealUpdatedRows(updatedRows, allAddedRows)
+                If ((Not (updatedRows) Is Nothing)  _
+                            AndAlso (0 < updatedRows.Length)) Then
+                    result = (result + Me._sP_CamposDeTablas_EDICION_INSERTARTableAdapter.Update(updatedRows))
+                    allChangedRows.AddRange(updatedRows)
+                End If
+            End If
+            If (Not (Me._sP_CamposDeTablas_EDICION_ELIMINARTableAdapter) Is Nothing) Then
+                Dim updatedRows() As Global.System.Data.DataRow = dataSet.SP_CamposDeTablas_EDICION_ELIMINAR.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
+                updatedRows = Me.GetRealUpdatedRows(updatedRows, allAddedRows)
+                If ((Not (updatedRows) Is Nothing)  _
+                            AndAlso (0 < updatedRows.Length)) Then
+                    result = (result + Me._sP_CamposDeTablas_EDICION_ELIMINARTableAdapter.Update(updatedRows))
+                    allChangedRows.AddRange(updatedRows)
+                End If
+            End If
+            If (Not (Me._sP_CamposDeTablas_EDICION_ACTUALIZARTableAdapter) Is Nothing) Then
+                Dim updatedRows() As Global.System.Data.DataRow = dataSet.SP_CamposDeTablas_EDICION_ACTUALIZAR.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
+                updatedRows = Me.GetRealUpdatedRows(updatedRows, allAddedRows)
+                If ((Not (updatedRows) Is Nothing)  _
+                            AndAlso (0 < updatedRows.Length)) Then
+                    result = (result + Me._sP_CamposDeTablas_EDICION_ACTUALIZARTableAdapter.Update(updatedRows))
+                    allChangedRows.AddRange(updatedRows)
+                End If
+            End If
             If (Not (Me._sP_CampoComponentes_EDICION_INSERTARTableAdapter) Is Nothing) Then
                 Dim updatedRows() As Global.System.Data.DataRow = dataSet.SP_CampoComponentes_EDICION_INSERTAR.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
                 updatedRows = Me.GetRealUpdatedRows(updatedRows, allAddedRows)
@@ -14531,33 +14515,6 @@ Namespace DataSetTablasYCamposTableAdapters
                 If ((Not (updatedRows) Is Nothing)  _
                             AndAlso (0 < updatedRows.Length)) Then
                     result = (result + Me._sP_CampoComponentes_EDICION_ACTUALIZARTableAdapter.Update(updatedRows))
-                    allChangedRows.AddRange(updatedRows)
-                End If
-            End If
-            If (Not (Me._sP_CamposDeTablas_EDICION_INSERTARTableAdapter) Is Nothing) Then
-                Dim updatedRows() As Global.System.Data.DataRow = dataSet.SP_CamposDeTablas_EDICION_INSERTAR.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
-                updatedRows = Me.GetRealUpdatedRows(updatedRows, allAddedRows)
-                If ((Not (updatedRows) Is Nothing)  _
-                            AndAlso (0 < updatedRows.Length)) Then
-                    result = (result + Me._sP_CamposDeTablas_EDICION_INSERTARTableAdapter.Update(updatedRows))
-                    allChangedRows.AddRange(updatedRows)
-                End If
-            End If
-            If (Not (Me._sP_CamposDeTablas_EDICION_ACTUALIZARTableAdapter) Is Nothing) Then
-                Dim updatedRows() As Global.System.Data.DataRow = dataSet.SP_CamposDeTablas_EDICION_ACTUALIZAR.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
-                updatedRows = Me.GetRealUpdatedRows(updatedRows, allAddedRows)
-                If ((Not (updatedRows) Is Nothing)  _
-                            AndAlso (0 < updatedRows.Length)) Then
-                    result = (result + Me._sP_CamposDeTablas_EDICION_ACTUALIZARTableAdapter.Update(updatedRows))
-                    allChangedRows.AddRange(updatedRows)
-                End If
-            End If
-            If (Not (Me._sP_CamposDeTablas_EDICION_ELIMINARTableAdapter) Is Nothing) Then
-                Dim updatedRows() As Global.System.Data.DataRow = dataSet.SP_CamposDeTablas_EDICION_ELIMINAR.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
-                updatedRows = Me.GetRealUpdatedRows(updatedRows, allAddedRows)
-                If ((Not (updatedRows) Is Nothing)  _
-                            AndAlso (0 < updatedRows.Length)) Then
-                    result = (result + Me._sP_CamposDeTablas_EDICION_ELIMINARTableAdapter.Update(updatedRows))
                     allChangedRows.AddRange(updatedRows)
                 End If
             End If
@@ -14616,6 +14573,30 @@ Namespace DataSetTablasYCamposTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Private Function UpdateInsertedRows(ByVal dataSet As DataSetTablasYCampos, ByVal allAddedRows As Global.System.Collections.Generic.List(Of Global.System.Data.DataRow)) As Integer
             Dim result As Integer = 0
+            If (Not (Me._sP_CamposDeTablas_EDICION_INSERTARTableAdapter) Is Nothing) Then
+                Dim addedRows() As Global.System.Data.DataRow = dataSet.SP_CamposDeTablas_EDICION_INSERTAR.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
+                If ((Not (addedRows) Is Nothing)  _
+                            AndAlso (0 < addedRows.Length)) Then
+                    result = (result + Me._sP_CamposDeTablas_EDICION_INSERTARTableAdapter.Update(addedRows))
+                    allAddedRows.AddRange(addedRows)
+                End If
+            End If
+            If (Not (Me._sP_CamposDeTablas_EDICION_ELIMINARTableAdapter) Is Nothing) Then
+                Dim addedRows() As Global.System.Data.DataRow = dataSet.SP_CamposDeTablas_EDICION_ELIMINAR.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
+                If ((Not (addedRows) Is Nothing)  _
+                            AndAlso (0 < addedRows.Length)) Then
+                    result = (result + Me._sP_CamposDeTablas_EDICION_ELIMINARTableAdapter.Update(addedRows))
+                    allAddedRows.AddRange(addedRows)
+                End If
+            End If
+            If (Not (Me._sP_CamposDeTablas_EDICION_ACTUALIZARTableAdapter) Is Nothing) Then
+                Dim addedRows() As Global.System.Data.DataRow = dataSet.SP_CamposDeTablas_EDICION_ACTUALIZAR.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
+                If ((Not (addedRows) Is Nothing)  _
+                            AndAlso (0 < addedRows.Length)) Then
+                    result = (result + Me._sP_CamposDeTablas_EDICION_ACTUALIZARTableAdapter.Update(addedRows))
+                    allAddedRows.AddRange(addedRows)
+                End If
+            End If
             If (Not (Me._sP_CampoComponentes_EDICION_INSERTARTableAdapter) Is Nothing) Then
                 Dim addedRows() As Global.System.Data.DataRow = dataSet.SP_CampoComponentes_EDICION_INSERTAR.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
                 If ((Not (addedRows) Is Nothing)  _
@@ -14637,30 +14618,6 @@ Namespace DataSetTablasYCamposTableAdapters
                 If ((Not (addedRows) Is Nothing)  _
                             AndAlso (0 < addedRows.Length)) Then
                     result = (result + Me._sP_CampoComponentes_EDICION_ACTUALIZARTableAdapter.Update(addedRows))
-                    allAddedRows.AddRange(addedRows)
-                End If
-            End If
-            If (Not (Me._sP_CamposDeTablas_EDICION_INSERTARTableAdapter) Is Nothing) Then
-                Dim addedRows() As Global.System.Data.DataRow = dataSet.SP_CamposDeTablas_EDICION_INSERTAR.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
-                If ((Not (addedRows) Is Nothing)  _
-                            AndAlso (0 < addedRows.Length)) Then
-                    result = (result + Me._sP_CamposDeTablas_EDICION_INSERTARTableAdapter.Update(addedRows))
-                    allAddedRows.AddRange(addedRows)
-                End If
-            End If
-            If (Not (Me._sP_CamposDeTablas_EDICION_ACTUALIZARTableAdapter) Is Nothing) Then
-                Dim addedRows() As Global.System.Data.DataRow = dataSet.SP_CamposDeTablas_EDICION_ACTUALIZAR.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
-                If ((Not (addedRows) Is Nothing)  _
-                            AndAlso (0 < addedRows.Length)) Then
-                    result = (result + Me._sP_CamposDeTablas_EDICION_ACTUALIZARTableAdapter.Update(addedRows))
-                    allAddedRows.AddRange(addedRows)
-                End If
-            End If
-            If (Not (Me._sP_CamposDeTablas_EDICION_ELIMINARTableAdapter) Is Nothing) Then
-                Dim addedRows() As Global.System.Data.DataRow = dataSet.SP_CamposDeTablas_EDICION_ELIMINAR.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
-                If ((Not (addedRows) Is Nothing)  _
-                            AndAlso (0 < addedRows.Length)) Then
-                    result = (result + Me._sP_CamposDeTablas_EDICION_ELIMINARTableAdapter.Update(addedRows))
                     allAddedRows.AddRange(addedRows)
                 End If
             End If
@@ -14754,30 +14711,6 @@ Namespace DataSetTablasYCamposTableAdapters
                     allChangedRows.AddRange(deletedRows)
                 End If
             End If
-            If (Not (Me._sP_CamposDeTablas_EDICION_ELIMINARTableAdapter) Is Nothing) Then
-                Dim deletedRows() As Global.System.Data.DataRow = dataSet.SP_CamposDeTablas_EDICION_ELIMINAR.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
-                If ((Not (deletedRows) Is Nothing)  _
-                            AndAlso (0 < deletedRows.Length)) Then
-                    result = (result + Me._sP_CamposDeTablas_EDICION_ELIMINARTableAdapter.Update(deletedRows))
-                    allChangedRows.AddRange(deletedRows)
-                End If
-            End If
-            If (Not (Me._sP_CamposDeTablas_EDICION_ACTUALIZARTableAdapter) Is Nothing) Then
-                Dim deletedRows() As Global.System.Data.DataRow = dataSet.SP_CamposDeTablas_EDICION_ACTUALIZAR.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
-                If ((Not (deletedRows) Is Nothing)  _
-                            AndAlso (0 < deletedRows.Length)) Then
-                    result = (result + Me._sP_CamposDeTablas_EDICION_ACTUALIZARTableAdapter.Update(deletedRows))
-                    allChangedRows.AddRange(deletedRows)
-                End If
-            End If
-            If (Not (Me._sP_CamposDeTablas_EDICION_INSERTARTableAdapter) Is Nothing) Then
-                Dim deletedRows() As Global.System.Data.DataRow = dataSet.SP_CamposDeTablas_EDICION_INSERTAR.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
-                If ((Not (deletedRows) Is Nothing)  _
-                            AndAlso (0 < deletedRows.Length)) Then
-                    result = (result + Me._sP_CamposDeTablas_EDICION_INSERTARTableAdapter.Update(deletedRows))
-                    allChangedRows.AddRange(deletedRows)
-                End If
-            End If
             If (Not (Me._sP_CampoComponentes_EDICION_ACTUALIZARTableAdapter) Is Nothing) Then
                 Dim deletedRows() As Global.System.Data.DataRow = dataSet.SP_CampoComponentes_EDICION_ACTUALIZAR.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
                 If ((Not (deletedRows) Is Nothing)  _
@@ -14799,6 +14732,30 @@ Namespace DataSetTablasYCamposTableAdapters
                 If ((Not (deletedRows) Is Nothing)  _
                             AndAlso (0 < deletedRows.Length)) Then
                     result = (result + Me._sP_CampoComponentes_EDICION_INSERTARTableAdapter.Update(deletedRows))
+                    allChangedRows.AddRange(deletedRows)
+                End If
+            End If
+            If (Not (Me._sP_CamposDeTablas_EDICION_ACTUALIZARTableAdapter) Is Nothing) Then
+                Dim deletedRows() As Global.System.Data.DataRow = dataSet.SP_CamposDeTablas_EDICION_ACTUALIZAR.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
+                If ((Not (deletedRows) Is Nothing)  _
+                            AndAlso (0 < deletedRows.Length)) Then
+                    result = (result + Me._sP_CamposDeTablas_EDICION_ACTUALIZARTableAdapter.Update(deletedRows))
+                    allChangedRows.AddRange(deletedRows)
+                End If
+            End If
+            If (Not (Me._sP_CamposDeTablas_EDICION_ELIMINARTableAdapter) Is Nothing) Then
+                Dim deletedRows() As Global.System.Data.DataRow = dataSet.SP_CamposDeTablas_EDICION_ELIMINAR.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
+                If ((Not (deletedRows) Is Nothing)  _
+                            AndAlso (0 < deletedRows.Length)) Then
+                    result = (result + Me._sP_CamposDeTablas_EDICION_ELIMINARTableAdapter.Update(deletedRows))
+                    allChangedRows.AddRange(deletedRows)
+                End If
+            End If
+            If (Not (Me._sP_CamposDeTablas_EDICION_INSERTARTableAdapter) Is Nothing) Then
+                Dim deletedRows() As Global.System.Data.DataRow = dataSet.SP_CamposDeTablas_EDICION_INSERTAR.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
+                If ((Not (deletedRows) Is Nothing)  _
+                            AndAlso (0 < deletedRows.Length)) Then
+                    result = (result + Me._sP_CamposDeTablas_EDICION_INSERTARTableAdapter.Update(deletedRows))
                     allChangedRows.AddRange(deletedRows)
                 End If
             End If
@@ -14868,21 +14825,6 @@ Namespace DataSetTablasYCamposTableAdapters
                 Throw New Global.System.ArgumentException("Todos los TableAdapters administrados por un TableAdapterManager deben usar la mi"& _ 
                         "sma cadena de conexión.")
             End If
-            If ((Not (Me._sP_CamposDeTablas_EDICION_ELIMINARTableAdapter) Is Nothing)  _
-                        AndAlso (Me.MatchTableAdapterConnection(Me._sP_CamposDeTablas_EDICION_ELIMINARTableAdapter.Connection) = false)) Then
-                Throw New Global.System.ArgumentException("Todos los TableAdapters administrados por un TableAdapterManager deben usar la mi"& _ 
-                        "sma cadena de conexión.")
-            End If
-            If ((Not (Me._sP_CamposDeTablas_EDICION_ACTUALIZARTableAdapter) Is Nothing)  _
-                        AndAlso (Me.MatchTableAdapterConnection(Me._sP_CamposDeTablas_EDICION_ACTUALIZARTableAdapter.Connection) = false)) Then
-                Throw New Global.System.ArgumentException("Todos los TableAdapters administrados por un TableAdapterManager deben usar la mi"& _ 
-                        "sma cadena de conexión.")
-            End If
-            If ((Not (Me._sP_CamposDeTablas_EDICION_INSERTARTableAdapter) Is Nothing)  _
-                        AndAlso (Me.MatchTableAdapterConnection(Me._sP_CamposDeTablas_EDICION_INSERTARTableAdapter.Connection) = false)) Then
-                Throw New Global.System.ArgumentException("Todos los TableAdapters administrados por un TableAdapterManager deben usar la mi"& _ 
-                        "sma cadena de conexión.")
-            End If
             If ((Not (Me._sP_CampoComponentes_EDICION_ACTUALIZARTableAdapter) Is Nothing)  _
                         AndAlso (Me.MatchTableAdapterConnection(Me._sP_CampoComponentes_EDICION_ACTUALIZARTableAdapter.Connection) = false)) Then
                 Throw New Global.System.ArgumentException("Todos los TableAdapters administrados por un TableAdapterManager deben usar la mi"& _ 
@@ -14895,6 +14837,21 @@ Namespace DataSetTablasYCamposTableAdapters
             End If
             If ((Not (Me._sP_CampoComponentes_EDICION_INSERTARTableAdapter) Is Nothing)  _
                         AndAlso (Me.MatchTableAdapterConnection(Me._sP_CampoComponentes_EDICION_INSERTARTableAdapter.Connection) = false)) Then
+                Throw New Global.System.ArgumentException("Todos los TableAdapters administrados por un TableAdapterManager deben usar la mi"& _ 
+                        "sma cadena de conexión.")
+            End If
+            If ((Not (Me._sP_CamposDeTablas_EDICION_ACTUALIZARTableAdapter) Is Nothing)  _
+                        AndAlso (Me.MatchTableAdapterConnection(Me._sP_CamposDeTablas_EDICION_ACTUALIZARTableAdapter.Connection) = false)) Then
+                Throw New Global.System.ArgumentException("Todos los TableAdapters administrados por un TableAdapterManager deben usar la mi"& _ 
+                        "sma cadena de conexión.")
+            End If
+            If ((Not (Me._sP_CamposDeTablas_EDICION_ELIMINARTableAdapter) Is Nothing)  _
+                        AndAlso (Me.MatchTableAdapterConnection(Me._sP_CamposDeTablas_EDICION_ELIMINARTableAdapter.Connection) = false)) Then
+                Throw New Global.System.ArgumentException("Todos los TableAdapters administrados por un TableAdapterManager deben usar la mi"& _ 
+                        "sma cadena de conexión.")
+            End If
+            If ((Not (Me._sP_CamposDeTablas_EDICION_INSERTARTableAdapter) Is Nothing)  _
+                        AndAlso (Me.MatchTableAdapterConnection(Me._sP_CamposDeTablas_EDICION_INSERTARTableAdapter.Connection) = false)) Then
                 Throw New Global.System.ArgumentException("Todos los TableAdapters administrados por un TableAdapterManager deben usar la mi"& _ 
                         "sma cadena de conexión.")
             End If
@@ -14975,33 +14932,6 @@ Namespace DataSetTablasYCamposTableAdapters
                         adaptersWithAcceptChangesDuringUpdate.Add(Me._sP_ELIMINA_RegistroValorRequerimientos_SegunIDTableAdapter.Adapter)
                     End If
                 End If
-                If (Not (Me._sP_CamposDeTablas_EDICION_ELIMINARTableAdapter) Is Nothing) Then
-                    revertConnections.Add(Me._sP_CamposDeTablas_EDICION_ELIMINARTableAdapter, Me._sP_CamposDeTablas_EDICION_ELIMINARTableAdapter.Connection)
-                    Me._sP_CamposDeTablas_EDICION_ELIMINARTableAdapter.Connection = CType(workConnection,Global.System.Data.SqlClient.SqlConnection)
-                    Me._sP_CamposDeTablas_EDICION_ELIMINARTableAdapter.Transaction = CType(workTransaction,Global.System.Data.SqlClient.SqlTransaction)
-                    If Me._sP_CamposDeTablas_EDICION_ELIMINARTableAdapter.Adapter.AcceptChangesDuringUpdate Then
-                        Me._sP_CamposDeTablas_EDICION_ELIMINARTableAdapter.Adapter.AcceptChangesDuringUpdate = false
-                        adaptersWithAcceptChangesDuringUpdate.Add(Me._sP_CamposDeTablas_EDICION_ELIMINARTableAdapter.Adapter)
-                    End If
-                End If
-                If (Not (Me._sP_CamposDeTablas_EDICION_ACTUALIZARTableAdapter) Is Nothing) Then
-                    revertConnections.Add(Me._sP_CamposDeTablas_EDICION_ACTUALIZARTableAdapter, Me._sP_CamposDeTablas_EDICION_ACTUALIZARTableAdapter.Connection)
-                    Me._sP_CamposDeTablas_EDICION_ACTUALIZARTableAdapter.Connection = CType(workConnection,Global.System.Data.SqlClient.SqlConnection)
-                    Me._sP_CamposDeTablas_EDICION_ACTUALIZARTableAdapter.Transaction = CType(workTransaction,Global.System.Data.SqlClient.SqlTransaction)
-                    If Me._sP_CamposDeTablas_EDICION_ACTUALIZARTableAdapter.Adapter.AcceptChangesDuringUpdate Then
-                        Me._sP_CamposDeTablas_EDICION_ACTUALIZARTableAdapter.Adapter.AcceptChangesDuringUpdate = false
-                        adaptersWithAcceptChangesDuringUpdate.Add(Me._sP_CamposDeTablas_EDICION_ACTUALIZARTableAdapter.Adapter)
-                    End If
-                End If
-                If (Not (Me._sP_CamposDeTablas_EDICION_INSERTARTableAdapter) Is Nothing) Then
-                    revertConnections.Add(Me._sP_CamposDeTablas_EDICION_INSERTARTableAdapter, Me._sP_CamposDeTablas_EDICION_INSERTARTableAdapter.Connection)
-                    Me._sP_CamposDeTablas_EDICION_INSERTARTableAdapter.Connection = CType(workConnection,Global.System.Data.SqlClient.SqlConnection)
-                    Me._sP_CamposDeTablas_EDICION_INSERTARTableAdapter.Transaction = CType(workTransaction,Global.System.Data.SqlClient.SqlTransaction)
-                    If Me._sP_CamposDeTablas_EDICION_INSERTARTableAdapter.Adapter.AcceptChangesDuringUpdate Then
-                        Me._sP_CamposDeTablas_EDICION_INSERTARTableAdapter.Adapter.AcceptChangesDuringUpdate = false
-                        adaptersWithAcceptChangesDuringUpdate.Add(Me._sP_CamposDeTablas_EDICION_INSERTARTableAdapter.Adapter)
-                    End If
-                End If
                 If (Not (Me._sP_CampoComponentes_EDICION_ACTUALIZARTableAdapter) Is Nothing) Then
                     revertConnections.Add(Me._sP_CampoComponentes_EDICION_ACTUALIZARTableAdapter, Me._sP_CampoComponentes_EDICION_ACTUALIZARTableAdapter.Connection)
                     Me._sP_CampoComponentes_EDICION_ACTUALIZARTableAdapter.Connection = CType(workConnection,Global.System.Data.SqlClient.SqlConnection)
@@ -15027,6 +14957,33 @@ Namespace DataSetTablasYCamposTableAdapters
                     If Me._sP_CampoComponentes_EDICION_INSERTARTableAdapter.Adapter.AcceptChangesDuringUpdate Then
                         Me._sP_CampoComponentes_EDICION_INSERTARTableAdapter.Adapter.AcceptChangesDuringUpdate = false
                         adaptersWithAcceptChangesDuringUpdate.Add(Me._sP_CampoComponentes_EDICION_INSERTARTableAdapter.Adapter)
+                    End If
+                End If
+                If (Not (Me._sP_CamposDeTablas_EDICION_ACTUALIZARTableAdapter) Is Nothing) Then
+                    revertConnections.Add(Me._sP_CamposDeTablas_EDICION_ACTUALIZARTableAdapter, Me._sP_CamposDeTablas_EDICION_ACTUALIZARTableAdapter.Connection)
+                    Me._sP_CamposDeTablas_EDICION_ACTUALIZARTableAdapter.Connection = CType(workConnection,Global.System.Data.SqlClient.SqlConnection)
+                    Me._sP_CamposDeTablas_EDICION_ACTUALIZARTableAdapter.Transaction = CType(workTransaction,Global.System.Data.SqlClient.SqlTransaction)
+                    If Me._sP_CamposDeTablas_EDICION_ACTUALIZARTableAdapter.Adapter.AcceptChangesDuringUpdate Then
+                        Me._sP_CamposDeTablas_EDICION_ACTUALIZARTableAdapter.Adapter.AcceptChangesDuringUpdate = false
+                        adaptersWithAcceptChangesDuringUpdate.Add(Me._sP_CamposDeTablas_EDICION_ACTUALIZARTableAdapter.Adapter)
+                    End If
+                End If
+                If (Not (Me._sP_CamposDeTablas_EDICION_ELIMINARTableAdapter) Is Nothing) Then
+                    revertConnections.Add(Me._sP_CamposDeTablas_EDICION_ELIMINARTableAdapter, Me._sP_CamposDeTablas_EDICION_ELIMINARTableAdapter.Connection)
+                    Me._sP_CamposDeTablas_EDICION_ELIMINARTableAdapter.Connection = CType(workConnection,Global.System.Data.SqlClient.SqlConnection)
+                    Me._sP_CamposDeTablas_EDICION_ELIMINARTableAdapter.Transaction = CType(workTransaction,Global.System.Data.SqlClient.SqlTransaction)
+                    If Me._sP_CamposDeTablas_EDICION_ELIMINARTableAdapter.Adapter.AcceptChangesDuringUpdate Then
+                        Me._sP_CamposDeTablas_EDICION_ELIMINARTableAdapter.Adapter.AcceptChangesDuringUpdate = false
+                        adaptersWithAcceptChangesDuringUpdate.Add(Me._sP_CamposDeTablas_EDICION_ELIMINARTableAdapter.Adapter)
+                    End If
+                End If
+                If (Not (Me._sP_CamposDeTablas_EDICION_INSERTARTableAdapter) Is Nothing) Then
+                    revertConnections.Add(Me._sP_CamposDeTablas_EDICION_INSERTARTableAdapter, Me._sP_CamposDeTablas_EDICION_INSERTARTableAdapter.Connection)
+                    Me._sP_CamposDeTablas_EDICION_INSERTARTableAdapter.Connection = CType(workConnection,Global.System.Data.SqlClient.SqlConnection)
+                    Me._sP_CamposDeTablas_EDICION_INSERTARTableAdapter.Transaction = CType(workTransaction,Global.System.Data.SqlClient.SqlTransaction)
+                    If Me._sP_CamposDeTablas_EDICION_INSERTARTableAdapter.Adapter.AcceptChangesDuringUpdate Then
+                        Me._sP_CamposDeTablas_EDICION_INSERTARTableAdapter.Adapter.AcceptChangesDuringUpdate = false
+                        adaptersWithAcceptChangesDuringUpdate.Add(Me._sP_CamposDeTablas_EDICION_INSERTARTableAdapter.Adapter)
                     End If
                 End If
                 '
@@ -15109,18 +15066,6 @@ Namespace DataSetTablasYCamposTableAdapters
                     Me._sP_ELIMINA_RegistroValorRequerimientos_SegunIDTableAdapter.Connection = CType(revertConnections(Me._sP_ELIMINA_RegistroValorRequerimientos_SegunIDTableAdapter),Global.System.Data.SqlClient.SqlConnection)
                     Me._sP_ELIMINA_RegistroValorRequerimientos_SegunIDTableAdapter.Transaction = Nothing
                 End If
-                If (Not (Me._sP_CamposDeTablas_EDICION_ELIMINARTableAdapter) Is Nothing) Then
-                    Me._sP_CamposDeTablas_EDICION_ELIMINARTableAdapter.Connection = CType(revertConnections(Me._sP_CamposDeTablas_EDICION_ELIMINARTableAdapter),Global.System.Data.SqlClient.SqlConnection)
-                    Me._sP_CamposDeTablas_EDICION_ELIMINARTableAdapter.Transaction = Nothing
-                End If
-                If (Not (Me._sP_CamposDeTablas_EDICION_ACTUALIZARTableAdapter) Is Nothing) Then
-                    Me._sP_CamposDeTablas_EDICION_ACTUALIZARTableAdapter.Connection = CType(revertConnections(Me._sP_CamposDeTablas_EDICION_ACTUALIZARTableAdapter),Global.System.Data.SqlClient.SqlConnection)
-                    Me._sP_CamposDeTablas_EDICION_ACTUALIZARTableAdapter.Transaction = Nothing
-                End If
-                If (Not (Me._sP_CamposDeTablas_EDICION_INSERTARTableAdapter) Is Nothing) Then
-                    Me._sP_CamposDeTablas_EDICION_INSERTARTableAdapter.Connection = CType(revertConnections(Me._sP_CamposDeTablas_EDICION_INSERTARTableAdapter),Global.System.Data.SqlClient.SqlConnection)
-                    Me._sP_CamposDeTablas_EDICION_INSERTARTableAdapter.Transaction = Nothing
-                End If
                 If (Not (Me._sP_CampoComponentes_EDICION_ACTUALIZARTableAdapter) Is Nothing) Then
                     Me._sP_CampoComponentes_EDICION_ACTUALIZARTableAdapter.Connection = CType(revertConnections(Me._sP_CampoComponentes_EDICION_ACTUALIZARTableAdapter),Global.System.Data.SqlClient.SqlConnection)
                     Me._sP_CampoComponentes_EDICION_ACTUALIZARTableAdapter.Transaction = Nothing
@@ -15132,6 +15077,18 @@ Namespace DataSetTablasYCamposTableAdapters
                 If (Not (Me._sP_CampoComponentes_EDICION_INSERTARTableAdapter) Is Nothing) Then
                     Me._sP_CampoComponentes_EDICION_INSERTARTableAdapter.Connection = CType(revertConnections(Me._sP_CampoComponentes_EDICION_INSERTARTableAdapter),Global.System.Data.SqlClient.SqlConnection)
                     Me._sP_CampoComponentes_EDICION_INSERTARTableAdapter.Transaction = Nothing
+                End If
+                If (Not (Me._sP_CamposDeTablas_EDICION_ACTUALIZARTableAdapter) Is Nothing) Then
+                    Me._sP_CamposDeTablas_EDICION_ACTUALIZARTableAdapter.Connection = CType(revertConnections(Me._sP_CamposDeTablas_EDICION_ACTUALIZARTableAdapter),Global.System.Data.SqlClient.SqlConnection)
+                    Me._sP_CamposDeTablas_EDICION_ACTUALIZARTableAdapter.Transaction = Nothing
+                End If
+                If (Not (Me._sP_CamposDeTablas_EDICION_ELIMINARTableAdapter) Is Nothing) Then
+                    Me._sP_CamposDeTablas_EDICION_ELIMINARTableAdapter.Connection = CType(revertConnections(Me._sP_CamposDeTablas_EDICION_ELIMINARTableAdapter),Global.System.Data.SqlClient.SqlConnection)
+                    Me._sP_CamposDeTablas_EDICION_ELIMINARTableAdapter.Transaction = Nothing
+                End If
+                If (Not (Me._sP_CamposDeTablas_EDICION_INSERTARTableAdapter) Is Nothing) Then
+                    Me._sP_CamposDeTablas_EDICION_INSERTARTableAdapter.Connection = CType(revertConnections(Me._sP_CamposDeTablas_EDICION_INSERTARTableAdapter),Global.System.Data.SqlClient.SqlConnection)
+                    Me._sP_CamposDeTablas_EDICION_INSERTARTableAdapter.Transaction = Nothing
                 End If
                 If (0 < adaptersWithAcceptChangesDuringUpdate.Count) Then
                     Dim adapters((adaptersWithAcceptChangesDuringUpdate.Count) - 1) As Global.System.Data.Common.DataAdapter

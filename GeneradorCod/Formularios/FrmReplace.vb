@@ -19,6 +19,7 @@
             SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaID()
             SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID()
             SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID2()
+            Cancelar_CamposDeTablas()
         Catch ex As System.Exception
             System.Windows.Forms.MessageBox.Show(ex.Message)
         End Try
@@ -703,6 +704,10 @@
         Bloquear_Objetos_TablasDeProyecto()
         Parar_Timer_TablasDeProyecto()
         Timer_Ubicar_En_Fila_TablasDeProyecto()
+        SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoIDDataGridView.Location = New Point(708, 117)
+        SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaIDDataGridView.Location = New Point(708, 362)
+        SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoIDDataGridView.Width = 358
+        SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaIDDataGridView.Width = 358
     End Sub
     'Insertar
     Private Sub SP_TablasDeProyecto_EDICION_INSERTAR()
@@ -1381,11 +1386,14 @@
             SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaIDDataGridView.Location = New Point(708, 362)
             SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoIDDataGridView.Width = 174
             SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaIDDataGridView.Width = 174
+            Nuevo_Menu_TablasDeProyecto.Enabled = False
+            Editar_Menu_TablasDeProyecto.Enabled = False
         Else
             SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoIDDataGridView.Location = New Point(708, 117)
             SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaIDDataGridView.Location = New Point(708, 362)
             SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoIDDataGridView.Width = 358
             SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaIDDataGridView.Width = 358
+            Cancelar_TablasDeProyecto()
         End If
     End Sub
 End Class

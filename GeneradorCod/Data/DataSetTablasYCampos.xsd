@@ -10,7 +10,7 @@
         <Tables>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoIDTableAdapter" GeneratorDataComponentClassName="SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoIDTableAdapter" Name="SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID" UserDataComponentName="SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoIDTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="GeneradorCodigoBDConnectionString (MySettings)" DbObjectName="GeneradorCodigoBD.dbo.SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID" DbObjectType="StoredProcedure" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="GeneradorBDConnectionString (MySettings)" DbObjectName="[C:\WWW\GENCODIGO\GENCODIGOCONBD\GENCODIGO\GENERADORCOD\BASEDEDATOS\GENERADORCODIGOBD.MDF].dbo.SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID" DbObjectType="StoredProcedure" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
                     <CommandText>dbo.SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID</CommandText>
@@ -31,7 +31,7 @@
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="SP_TablasDeProyecto_EDICION_ACTUALIZARTableAdapter" GeneratorDataComponentClassName="SP_TablasDeProyecto_EDICION_ACTUALIZARTableAdapter" Name="SP_TablasDeProyecto_EDICION_ACTUALIZAR" UserDataComponentName="SP_TablasDeProyecto_EDICION_ACTUALIZARTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="GeneradorCodigoBDConnectionString (MySettings)" DbObjectName="GeneradorCodigoBD.dbo.SP_TablasDeProyecto_EDICION_ACTUALIZAR" DbObjectType="StoredProcedure" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="GeneradorBDConnectionString (MySettings)" DbObjectName="[C:\WWW\GENCODIGO\GENCODIGOCONBD\GENCODIGO\GENERADORCOD\BASEDEDATOS\GENERADORCODIGOBD.MDF].dbo.SP_TablasDeProyecto_EDICION_ACTUALIZAR" DbObjectType="StoredProcedure" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
                     <CommandText>dbo.SP_TablasDeProyecto_EDICION_ACTUALIZAR</CommandText>
@@ -61,7 +61,7 @@
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="SP_TablasDeProyecto_EDICION_ELIMINARTableAdapter" GeneratorDataComponentClassName="SP_TablasDeProyecto_EDICION_ELIMINARTableAdapter" Name="SP_TablasDeProyecto_EDICION_ELIMINAR" UserDataComponentName="SP_TablasDeProyecto_EDICION_ELIMINARTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="GeneradorCodigoBDConnectionString (MySettings)" DbObjectName="GeneradorCodigoBD.dbo.SP_TablasDeProyecto_EDICION_ELIMINAR" DbObjectType="StoredProcedure" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="GeneradorBDConnectionString (MySettings)" DbObjectName="[C:\WWW\GENCODIGO\GENCODIGOCONBD\GENCODIGO\GENERADORCOD\BASEDEDATOS\GENERADORCODIGOBD.MDF].dbo.SP_TablasDeProyecto_EDICION_ELIMINAR" DbObjectType="StoredProcedure" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
                     <CommandText>dbo.SP_TablasDeProyecto_EDICION_ELIMINAR</CommandText>
@@ -87,7 +87,7 @@
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="SP_TablasDeProyecto_EDICION_INSERTARTableAdapter" GeneratorDataComponentClassName="SP_TablasDeProyecto_EDICION_INSERTARTableAdapter" Name="SP_TablasDeProyecto_EDICION_INSERTAR" UserDataComponentName="SP_TablasDeProyecto_EDICION_INSERTARTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="GeneradorCodigoBDConnectionString (MySettings)" DbObjectName="GeneradorCodigoBD.dbo.SP_TablasDeProyecto_EDICION_INSERTAR" DbObjectType="StoredProcedure" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="GeneradorBDConnectionString (MySettings)" DbObjectName="[C:\WWW\GENCODIGO\GENCODIGOCONBD\GENCODIGO\GENERADORCOD\BASEDEDATOS\GENERADORCODIGOBD.MDF].dbo.SP_TablasDeProyecto_EDICION_INSERTAR" DbObjectType="StoredProcedure" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <InsertCommand>
                   <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
                     <CommandText>dbo.SP_TablasDeProyecto_EDICION_INSERTAR</CommandText>
@@ -113,9 +113,92 @@
             <Mappings />
             <Sources />
           </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1TableAdapter" GeneratorDataComponentClassName="SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1TableAdapter" Name="SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1" UserDataComponentName="SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1TableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="GeneradorBDConnectionString (MySettings)" DbObjectName="[C:\WWW\GENCODIGO\GENCODIGOCONBD\GENCODIGO\GENERADORCOD\BASEDEDATOS\GENERADORCODIGOBD.MDF].dbo.SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID" DbObjectType="StoredProcedure" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
+                    <CommandText>dbo.SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="ReturnValue" ParameterName="@RETURN_VALUE" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@ProyectoID" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="TablaID" DataSetColumn="TablaID" />
+              <Mapping SourceColumn="ProyectoID" DataSetColumn="ProyectoID" />
+              <Mapping SourceColumn="NombreTabla" DataSetColumn="NombreTabla" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID2TableAdapter" GeneratorDataComponentClassName="SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID2TableAdapter" Name="SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID2" UserDataComponentName="SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID2TableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="GeneradorBDConnectionString (MySettings)" DbObjectName="[C:\WWW\GENCODIGO\GENCODIGOCONBD\GENCODIGO\GENERADORCOD\BASEDEDATOS\GENERADORCODIGOBD.MDF].dbo.SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID" DbObjectType="StoredProcedure" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
+                    <CommandText>dbo.SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="ReturnValue" ParameterName="@RETURN_VALUE" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@ProyectoID" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="TablaID" DataSetColumn="TablaID" />
+              <Mapping SourceColumn="ProyectoID" DataSetColumn="ProyectoID" />
+              <Mapping SourceColumn="NombreTabla" DataSetColumn="NombreTabla" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="SP_RegistroValorRequerimientos_SegunProyectoRequerimientoTableAdapter" GeneratorDataComponentClassName="SP_RegistroValorRequerimientos_SegunProyectoRequerimientoTableAdapter" Name="SP_RegistroValorRequerimientos_SegunProyectoRequerimiento" UserDataComponentName="SP_RegistroValorRequerimientos_SegunProyectoRequerimientoTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="GeneradorBDConnectionString (MySettings)" DbObjectName="[C:\WWW\GENCODIGO\GENCODIGOCONBD\GENCODIGO\GENERADORCOD\BASEDEDATOS\GENERADORCODIGOBD.MDF].dbo.SP_RegistroValorRequerimientos_SegunProyectoRequerimiento" DbObjectType="StoredProcedure" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
+                    <CommandText>dbo.SP_RegistroValorRequerimientos_SegunProyectoRequerimiento</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="ReturnValue" ParameterName="@RETURN_VALUE" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@ProyectoID" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="varchar" DbType="AnsiString" Direction="Input" ParameterName="@Requerimiento" Precision="0" ProviderType="VarChar" Scale="0" Size="500" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="RegistroValorRequerimientoID" DataSetColumn="RegistroValorRequerimientoID" />
+              <Mapping SourceColumn="ProyectoID" DataSetColumn="ProyectoID" />
+              <Mapping SourceColumn="Requerimiento" DataSetColumn="Requerimiento" />
+              <Mapping SourceColumn="ValorRequerimiento" DataSetColumn="ValorRequerimiento" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="SP_CARGA_CONVENSIONES_USADASTableAdapter" GeneratorDataComponentClassName="SP_CARGA_CONVENSIONES_USADASTableAdapter" Name="SP_CARGA_CONVENSIONES_USADAS" UserDataComponentName="SP_CARGA_CONVENSIONES_USADASTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="GeneradorBDConnectionString (MySettings)" DbObjectName="[C:\WWW\GENCODIGO\GENCODIGOCONBD\GENCODIGO\GENERADORCOD\BASEDEDATOS\GENERADORCODIGOBD.MDF].dbo.SP_CARGA_CONVENSIONES_USADAS" DbObjectType="StoredProcedure" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
+                    <CommandText>dbo.SP_CARGA_CONVENSIONES_USADAS</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="ReturnValue" ParameterName="@RETURN_VALUE" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="CONVENSIONES" DataSetColumn="CONVENSIONES" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="SP_RegistroValorRequerimientos_EDICION_INSERTARTableAdapter" GeneratorDataComponentClassName="SP_RegistroValorRequerimientos_EDICION_INSERTARTableAdapter" Name="SP_RegistroValorRequerimientos_EDICION_INSERTAR" UserDataComponentName="SP_RegistroValorRequerimientos_EDICION_INSERTARTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="GeneradorCodigoBDConnectionString (MySettings)" DbObjectName="GeneradorCodigoBD.dbo.SP_RegistroValorRequerimientos_EDICION_INSERTAR" DbObjectType="StoredProcedure" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="GeneradorBDConnectionString (MySettings)" DbObjectName="[C:\WWW\GENCODIGO\GENCODIGOCONBD\GENCODIGO\GENERADORCOD\BASEDEDATOS\GENERADORCODIGOBD.MDF].dbo.SP_RegistroValorRequerimientos_EDICION_INSERTAR" DbObjectType="StoredProcedure" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <InsertCommand>
                   <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
                     <CommandText>dbo.SP_RegistroValorRequerimientos_EDICION_INSERTAR</CommandText>
@@ -145,7 +228,7 @@
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="SP_ELIMINA_RegistroValorRequerimientos_SegunIDTableAdapter" GeneratorDataComponentClassName="SP_ELIMINA_RegistroValorRequerimientos_SegunIDTableAdapter" Name="SP_ELIMINA_RegistroValorRequerimientos_SegunID" UserDataComponentName="SP_ELIMINA_RegistroValorRequerimientos_SegunIDTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="GeneradorCodigoBDConnectionString (MySettings)" DbObjectName="GeneradorCodigoBD.dbo.SP_ELIMINA_RegistroValorRequerimientos_SegunID" DbObjectType="StoredProcedure" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="GeneradorBDConnectionString (MySettings)" DbObjectName="[C:\WWW\GENCODIGO\GENCODIGOCONBD\GENCODIGO\GENERADORCOD\BASEDEDATOS\GENERADORCODIGOBD.MDF].dbo.SP_ELIMINA_RegistroValorRequerimientos_SegunID" DbObjectType="StoredProcedure" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
                     <CommandText>dbo.SP_ELIMINA_RegistroValorRequerimientos_SegunID</CommandText>
@@ -171,7 +254,7 @@
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="SP_RegistroValorRequerimientos_SEGUN_ProyectoIDTableAdapter" GeneratorDataComponentClassName="SP_RegistroValorRequerimientos_SEGUN_ProyectoIDTableAdapter" Name="SP_RegistroValorRequerimientos_SEGUN_ProyectoID" UserDataComponentName="SP_RegistroValorRequerimientos_SEGUN_ProyectoIDTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="GeneradorCodigoBDConnectionString (MySettings)" DbObjectName="GeneradorCodigoBD.dbo.SP_RegistroValorRequerimientos_SEGUN_ProyectoID" DbObjectType="StoredProcedure" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="GeneradorBDConnectionString (MySettings)" DbObjectName="[C:\WWW\GENCODIGO\GENCODIGOCONBD\GENCODIGO\GENERADORCOD\BASEDEDATOS\GENERADORCODIGOBD.MDF].dbo.SP_RegistroValorRequerimientos_SEGUN_ProyectoID" DbObjectType="StoredProcedure" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
                     <CommandText>dbo.SP_RegistroValorRequerimientos_SEGUN_ProyectoID</CommandText>
@@ -191,119 +274,9 @@
             </Mappings>
             <Sources />
           </TableAdapter>
-          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaIDTableAdapter" GeneratorDataComponentClassName="SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaIDTableAdapter" Name="SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaID" UserDataComponentName="SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaIDTableAdapter">
-            <MainSource>
-              <DbSource ConnectionRef="GeneradorCodigoBDConnectionString (MySettings)" DbObjectName="GeneradorCodigoBD.dbo.SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaID" DbObjectType="StoredProcedure" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
-                <SelectCommand>
-                  <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
-                    <CommandText>dbo.SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaID</CommandText>
-                    <Parameters>
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="ReturnValue" ParameterName="@RETURN_VALUE" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@TablaID" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
-                    </Parameters>
-                  </DbCommand>
-                </SelectCommand>
-              </DbSource>
-            </MainSource>
-            <Mappings>
-              <Mapping SourceColumn="CampoID" DataSetColumn="CampoID" />
-              <Mapping SourceColumn="TablaID" DataSetColumn="TablaID" />
-              <Mapping SourceColumn="NombreCampo" DataSetColumn="NombreCampo" />
-              <Mapping SourceColumn="Tipo" DataSetColumn="Tipo" />
-            </Mappings>
-            <Sources />
-          </TableAdapter>
-          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="SP_CamposDeTablas_EDICION_ELIMINARTableAdapter" GeneratorDataComponentClassName="SP_CamposDeTablas_EDICION_ELIMINARTableAdapter" Name="SP_CamposDeTablas_EDICION_ELIMINAR" UserDataComponentName="SP_CamposDeTablas_EDICION_ELIMINARTableAdapter">
-            <MainSource>
-              <DbSource ConnectionRef="GeneradorCodigoBDConnectionString (MySettings)" DbObjectName="GeneradorCodigoBD.dbo.SP_CamposDeTablas_EDICION_ELIMINAR" DbObjectType="StoredProcedure" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
-                <DeleteCommand>
-                  <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
-                    <CommandText>dbo.SP_CamposDeTablas_EDICION_ELIMINAR</CommandText>
-                    <Parameters>
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="ReturnValue" ParameterName="@RETURN_VALUE" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@CampoID" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumn="" SourceColumnNullMapping="false" SourceVersion="Current" />
-                    </Parameters>
-                  </DbCommand>
-                </DeleteCommand>
-                <SelectCommand>
-                  <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
-                    <CommandText>dbo.SP_CamposDeTablas_EDICION_ELIMINAR</CommandText>
-                    <Parameters>
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="ReturnValue" ParameterName="@RETURN_VALUE" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@CampoID" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
-                    </Parameters>
-                  </DbCommand>
-                </SelectCommand>
-              </DbSource>
-            </MainSource>
-            <Mappings />
-            <Sources />
-          </TableAdapter>
-          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="SP_CamposDeTablas_EDICION_ACTUALIZARTableAdapter" GeneratorDataComponentClassName="SP_CamposDeTablas_EDICION_ACTUALIZARTableAdapter" Name="SP_CamposDeTablas_EDICION_ACTUALIZAR" UserDataComponentName="SP_CamposDeTablas_EDICION_ACTUALIZARTableAdapter">
-            <MainSource>
-              <DbSource ConnectionRef="GeneradorCodigoBDConnectionString (MySettings)" DbObjectName="GeneradorCodigoBD.dbo.SP_CamposDeTablas_EDICION_ACTUALIZAR" DbObjectType="StoredProcedure" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
-                <SelectCommand>
-                  <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
-                    <CommandText>dbo.SP_CamposDeTablas_EDICION_ACTUALIZAR</CommandText>
-                    <Parameters>
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="ReturnValue" ParameterName="@RETURN_VALUE" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@CampoID" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@TablaID" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="varchar" DbType="AnsiString" Direction="Input" ParameterName="@Tipo" Precision="0" ProviderType="VarChar" Scale="0" Size="100" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="varchar" DbType="AnsiString" Direction="Input" ParameterName="@NombreCampo" Precision="0" ProviderType="VarChar" Scale="0" Size="100" SourceColumnNullMapping="false" SourceVersion="Current" />
-                    </Parameters>
-                  </DbCommand>
-                </SelectCommand>
-                <UpdateCommand>
-                  <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
-                    <CommandText>dbo.SP_CamposDeTablas_EDICION_ACTUALIZAR</CommandText>
-                    <Parameters>
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="ReturnValue" ParameterName="@RETURN_VALUE" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@CampoID" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumn="" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@TablaID" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumn="" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="varchar" DbType="AnsiString" Direction="Input" ParameterName="@Tipo" Precision="0" ProviderType="VarChar" Scale="0" Size="100" SourceColumn="" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="varchar" DbType="AnsiString" Direction="Input" ParameterName="@NombreCampo" Precision="0" ProviderType="VarChar" Scale="0" Size="100" SourceColumn="" SourceColumnNullMapping="false" SourceVersion="Current" />
-                    </Parameters>
-                  </DbCommand>
-                </UpdateCommand>
-              </DbSource>
-            </MainSource>
-            <Mappings />
-            <Sources />
-          </TableAdapter>
-          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="SP_CamposDeTablas_EDICION_INSERTARTableAdapter" GeneratorDataComponentClassName="SP_CamposDeTablas_EDICION_INSERTARTableAdapter" Name="SP_CamposDeTablas_EDICION_INSERTAR" UserDataComponentName="SP_CamposDeTablas_EDICION_INSERTARTableAdapter">
-            <MainSource>
-              <DbSource ConnectionRef="GeneradorCodigoBDConnectionString (MySettings)" DbObjectName="GeneradorCodigoBD.dbo.SP_CamposDeTablas_EDICION_INSERTAR" DbObjectType="StoredProcedure" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
-                <InsertCommand>
-                  <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
-                    <CommandText>dbo.SP_CamposDeTablas_EDICION_INSERTAR</CommandText>
-                    <Parameters>
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="ReturnValue" ParameterName="@RETURN_VALUE" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@TablaID" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumn="" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="varchar" DbType="AnsiString" Direction="Input" ParameterName="@Tipo" Precision="0" ProviderType="VarChar" Scale="0" Size="100" SourceColumn="" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="varchar" DbType="AnsiString" Direction="Input" ParameterName="@NombreCampo" Precision="0" ProviderType="VarChar" Scale="0" Size="100" SourceColumn="" SourceColumnNullMapping="false" SourceVersion="Current" />
-                    </Parameters>
-                  </DbCommand>
-                </InsertCommand>
-                <SelectCommand>
-                  <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
-                    <CommandText>dbo.SP_CamposDeTablas_EDICION_INSERTAR</CommandText>
-                    <Parameters>
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="ReturnValue" ParameterName="@RETURN_VALUE" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@TablaID" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="varchar" DbType="AnsiString" Direction="Input" ParameterName="@Tipo" Precision="0" ProviderType="VarChar" Scale="0" Size="100" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="varchar" DbType="AnsiString" Direction="Input" ParameterName="@NombreCampo" Precision="0" ProviderType="VarChar" Scale="0" Size="100" SourceColumnNullMapping="false" SourceVersion="Current" />
-                    </Parameters>
-                  </DbCommand>
-                </SelectCommand>
-              </DbSource>
-            </MainSource>
-            <Mappings />
-            <Sources />
-          </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="SP_CampoComponentes_Segun_Plantilla_TipoTableAdapter" GeneratorDataComponentClassName="SP_CampoComponentes_Segun_Plantilla_TipoTableAdapter" Name="SP_CampoComponentes_Segun_Plantilla_Tipo" UserDataComponentName="SP_CampoComponentes_Segun_Plantilla_TipoTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="GeneradorCodigoBDConnectionString (MySettings)" DbObjectName="GeneradorCodigoBD.dbo.SP_CampoComponentes_Segun_Plantilla_Tipo" DbObjectType="StoredProcedure" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="GeneradorBDConnectionString (MySettings)" DbObjectName="[C:\WWW\GENCODIGO\GENCODIGOCONBD\GENCODIGO\GENERADORCOD\BASEDEDATOS\GENERADORCODIGOBD.MDF].dbo.SP_CampoComponentes_Segun_Plantilla_Tipo" DbObjectType="StoredProcedure" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
                     <CommandText>dbo.SP_CampoComponentes_Segun_Plantilla_Tipo</CommandText>
@@ -324,7 +297,6 @@
               <Mapping SourceColumn="Superior" DataSetColumn="Superior" />
               <Mapping SourceColumn="Sufijo" DataSetColumn="Sufijo" />
               <Mapping SourceColumn="Inferior" DataSetColumn="Inferior" />
-              <Mapping SourceColumn="Multiremplazo" DataSetColumn="Multiremplazo" />
               <Mapping SourceColumn="SeparadorCampos" DataSetColumn="SeparadorCampos" />
               <Mapping SourceColumn="MultiReplace" DataSetColumn="MultiReplace" />
             </Mappings>
@@ -332,7 +304,7 @@
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="SP_CampoComponentes_EDICION_ACTUALIZARTableAdapter" GeneratorDataComponentClassName="SP_CampoComponentes_EDICION_ACTUALIZARTableAdapter" Name="SP_CampoComponentes_EDICION_ACTUALIZAR" UserDataComponentName="SP_CampoComponentes_EDICION_ACTUALIZARTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="GeneradorCodigoBDConnectionString (MySettings)" DbObjectName="GeneradorCodigoBD.dbo.SP_CampoComponentes_EDICION_ACTUALIZAR" DbObjectType="StoredProcedure" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="GeneradorBDConnectionString (MySettings)" DbObjectName="[C:\WWW\GENCODIGO\GENCODIGOCONBD\GENCODIGO\GENERADORCOD\BASEDEDATOS\GENERADORCODIGOBD.MDF].dbo.SP_CampoComponentes_EDICION_ACTUALIZAR" DbObjectType="StoredProcedure" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
                     <CommandText>dbo.SP_CampoComponentes_EDICION_ACTUALIZAR</CommandText>
@@ -374,7 +346,7 @@
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="SP_CampoComponentes_EDICION_ELIMINARTableAdapter" GeneratorDataComponentClassName="SP_CampoComponentes_EDICION_ELIMINARTableAdapter" Name="SP_CampoComponentes_EDICION_ELIMINAR" UserDataComponentName="SP_CampoComponentes_EDICION_ELIMINARTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="GeneradorCodigoBDConnectionString (MySettings)" DbObjectName="GeneradorCodigoBD.dbo.SP_CampoComponentes_EDICION_ELIMINAR" DbObjectType="StoredProcedure" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="GeneradorBDConnectionString (MySettings)" DbObjectName="[C:\WWW\GENCODIGO\GENCODIGOCONBD\GENCODIGO\GENERADORCOD\BASEDEDATOS\GENERADORCODIGOBD.MDF].dbo.SP_CampoComponentes_EDICION_ELIMINAR" DbObjectType="StoredProcedure" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
                     <CommandText>dbo.SP_CampoComponentes_EDICION_ELIMINAR</CommandText>
@@ -400,7 +372,7 @@
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="SP_CampoComponentes_EDICION_INSERTARTableAdapter" GeneratorDataComponentClassName="SP_CampoComponentes_EDICION_INSERTARTableAdapter" Name="SP_CampoComponentes_EDICION_INSERTAR" UserDataComponentName="SP_CampoComponentes_EDICION_INSERTARTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="GeneradorCodigoBDConnectionString (MySettings)" DbObjectName="GeneradorCodigoBD.dbo.SP_CampoComponentes_EDICION_INSERTAR" DbObjectType="StoredProcedure" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="GeneradorBDConnectionString (MySettings)" DbObjectName="[C:\WWW\GENCODIGO\GENCODIGOCONBD\GENCODIGO\GENERADORCOD\BASEDEDATOS\GENERADORCODIGOBD.MDF].dbo.SP_CampoComponentes_EDICION_INSERTAR" DbObjectType="StoredProcedure" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <InsertCommand>
                   <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
                     <CommandText>dbo.SP_CampoComponentes_EDICION_INSERTAR</CommandText>
@@ -440,7 +412,7 @@
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="SP_CampoComponentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDTableAdapter" GeneratorDataComponentClassName="SP_CampoComponentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDTableAdapter" Name="SP_CampoComponentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaID" UserDataComponentName="SP_CampoComponentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="GeneradorCodigoBDConnectionString (MySettings)" DbObjectName="GeneradorCodigoBD.dbo.SP_CampoComponentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaID" DbObjectType="StoredProcedure" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="GeneradorBDConnectionString (MySettings)" DbObjectName="[C:\WWW\GENCODIGO\GENCODIGOCONBD\GENCODIGO\GENERADORCOD\BASEDEDATOS\GENERADORCODIGOBD.MDF].dbo.SP_CampoComponentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaID" DbObjectType="StoredProcedure" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
                     <CommandText>dbo.SP_CampoComponentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaID</CommandText>
@@ -465,71 +437,9 @@
             </Mappings>
             <Sources />
           </TableAdapter>
-          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="SP_RegistroValorRequerimientos_SegunProyectoRequerimientoTableAdapter" GeneratorDataComponentClassName="SP_RegistroValorRequerimientos_SegunProyectoRequerimientoTableAdapter" Name="SP_RegistroValorRequerimientos_SegunProyectoRequerimiento" UserDataComponentName="SP_RegistroValorRequerimientos_SegunProyectoRequerimientoTableAdapter">
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaIDTableAdapter" GeneratorDataComponentClassName="SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaIDTableAdapter" Name="SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaID" UserDataComponentName="SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaIDTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="GeneradorCodigoBDConnectionString (MySettings)" DbObjectName="GeneradorCodigoBD.dbo.SP_RegistroValorRequerimientos_SegunProyectoRequerimiento" DbObjectType="StoredProcedure" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
-                <SelectCommand>
-                  <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
-                    <CommandText>dbo.SP_RegistroValorRequerimientos_SegunProyectoRequerimiento</CommandText>
-                    <Parameters>
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="ReturnValue" ParameterName="@RETURN_VALUE" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@ProyectoID" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="varchar" DbType="AnsiString" Direction="Input" ParameterName="@Requerimiento" Precision="0" ProviderType="VarChar" Scale="0" Size="500" SourceColumnNullMapping="false" SourceVersion="Current" />
-                    </Parameters>
-                  </DbCommand>
-                </SelectCommand>
-              </DbSource>
-            </MainSource>
-            <Mappings>
-              <Mapping SourceColumn="RegistroValorRequerimientoID" DataSetColumn="RegistroValorRequerimientoID" />
-              <Mapping SourceColumn="ProyectoID" DataSetColumn="ProyectoID" />
-              <Mapping SourceColumn="Requerimiento" DataSetColumn="Requerimiento" />
-              <Mapping SourceColumn="ValorRequerimiento" DataSetColumn="ValorRequerimiento" />
-            </Mappings>
-            <Sources />
-          </TableAdapter>
-          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="SP_CARGA_CONVENSIONES_USADASTableAdapter" GeneratorDataComponentClassName="SP_CARGA_CONVENSIONES_USADASTableAdapter" Name="SP_CARGA_CONVENSIONES_USADAS" UserDataComponentName="SP_CARGA_CONVENSIONES_USADASTableAdapter">
-            <MainSource>
-              <DbSource ConnectionRef="GeneradorCodigoBDConnectionString (MySettings)" DbObjectName="GeneradorCodigoBD.dbo.SP_CARGA_CONVENSIONES_USADAS" DbObjectType="StoredProcedure" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
-                <SelectCommand>
-                  <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
-                    <CommandText>dbo.SP_CARGA_CONVENSIONES_USADAS</CommandText>
-                    <Parameters>
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="ReturnValue" ParameterName="@RETURN_VALUE" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
-                    </Parameters>
-                  </DbCommand>
-                </SelectCommand>
-              </DbSource>
-            </MainSource>
-            <Mappings>
-              <Mapping SourceColumn="CONVENSIONES" DataSetColumn="CONVENSIONES" />
-            </Mappings>
-            <Sources />
-          </TableAdapter>
-          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1TableAdapter" GeneratorDataComponentClassName="SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1TableAdapter" Name="SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1" UserDataComponentName="SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1TableAdapter">
-            <MainSource>
-              <DbSource ConnectionRef="GeneradorCodigoBDConnectionString (MySettings)" DbObjectName="GeneradorCodigoBD.dbo.SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID" DbObjectType="StoredProcedure" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
-                <SelectCommand>
-                  <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
-                    <CommandText>dbo.SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID</CommandText>
-                    <Parameters>
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="ReturnValue" ParameterName="@RETURN_VALUE" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@ProyectoID" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
-                    </Parameters>
-                  </DbCommand>
-                </SelectCommand>
-              </DbSource>
-            </MainSource>
-            <Mappings>
-              <Mapping SourceColumn="TablaID" DataSetColumn="TablaID" />
-              <Mapping SourceColumn="ProyectoID" DataSetColumn="ProyectoID" />
-              <Mapping SourceColumn="NombreTabla" DataSetColumn="NombreTabla" />
-            </Mappings>
-            <Sources />
-          </TableAdapter>
-          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaID1TableAdapter" GeneratorDataComponentClassName="SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaID1TableAdapter" Name="SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaID1" UserDataComponentName="SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaID1TableAdapter">
-            <MainSource>
-              <DbSource ConnectionRef="GeneradorCodigoBDConnectionString (MySettings)" DbObjectName="GeneradorCodigoBD.dbo.SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaID" DbObjectType="StoredProcedure" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="GeneradorBDConnectionString (MySettings)" DbObjectName="[C:\WWW\GENCODIGO\GENCODIGOCONBD\GENCODIGO\GENERADORCOD\BASEDEDATOS\GENERADORCODIGOBD.MDF].dbo.SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaID" DbObjectType="StoredProcedure" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
                     <CommandText>dbo.SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaID</CommandText>
@@ -544,8 +454,118 @@
             <Mappings>
               <Mapping SourceColumn="CampoID" DataSetColumn="CampoID" />
               <Mapping SourceColumn="TablaID" DataSetColumn="TablaID" />
-              <Mapping SourceColumn="NombreCampo" DataSetColumn="NombreCampo" />
               <Mapping SourceColumn="Tipo" DataSetColumn="Tipo" />
+              <Mapping SourceColumn="NombreCampo" DataSetColumn="NombreCampo" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="SP_CamposDeTablas_EDICION_ACTUALIZARTableAdapter" GeneratorDataComponentClassName="SP_CamposDeTablas_EDICION_ACTUALIZARTableAdapter" Name="SP_CamposDeTablas_EDICION_ACTUALIZAR" UserDataComponentName="SP_CamposDeTablas_EDICION_ACTUALIZARTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="GeneradorBDConnectionString (MySettings)" DbObjectName="[C:\WWW\GENCODIGO\GENCODIGOCONBD\GENCODIGO\GENERADORCOD\BASEDEDATOS\GENERADORCODIGOBD.MDF].dbo.SP_CamposDeTablas_EDICION_ACTUALIZAR" DbObjectType="StoredProcedure" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
+                    <CommandText>dbo.SP_CamposDeTablas_EDICION_ACTUALIZAR</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="ReturnValue" ParameterName="@RETURN_VALUE" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@CampoID" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@TablaID" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="varchar" DbType="AnsiString" Direction="Input" ParameterName="@Tipo" Precision="0" ProviderType="VarChar" Scale="0" Size="100" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="varchar" DbType="AnsiString" Direction="Input" ParameterName="@NombreCampo" Precision="0" ProviderType="VarChar" Scale="0" Size="100" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+                <UpdateCommand>
+                  <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
+                    <CommandText>dbo.SP_CamposDeTablas_EDICION_ACTUALIZAR</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="ReturnValue" ParameterName="@RETURN_VALUE" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@CampoID" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumn="" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@TablaID" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumn="" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="varchar" DbType="AnsiString" Direction="Input" ParameterName="@Tipo" Precision="0" ProviderType="VarChar" Scale="0" Size="100" SourceColumn="" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="varchar" DbType="AnsiString" Direction="Input" ParameterName="@NombreCampo" Precision="0" ProviderType="VarChar" Scale="0" Size="100" SourceColumn="" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </UpdateCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings />
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="SP_CamposDeTablas_EDICION_ELIMINARTableAdapter" GeneratorDataComponentClassName="SP_CamposDeTablas_EDICION_ELIMINARTableAdapter" Name="SP_CamposDeTablas_EDICION_ELIMINAR" UserDataComponentName="SP_CamposDeTablas_EDICION_ELIMINARTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="GeneradorBDConnectionString (MySettings)" DbObjectName="[C:\WWW\GENCODIGO\GENCODIGOCONBD\GENCODIGO\GENERADORCOD\BASEDEDATOS\GENERADORCODIGOBD.MDF].dbo.SP_CamposDeTablas_EDICION_ELIMINAR" DbObjectType="StoredProcedure" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <DeleteCommand>
+                  <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
+                    <CommandText>dbo.SP_CamposDeTablas_EDICION_ELIMINAR</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="ReturnValue" ParameterName="@RETURN_VALUE" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@CampoID" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumn="" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </DeleteCommand>
+                <SelectCommand>
+                  <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
+                    <CommandText>dbo.SP_CamposDeTablas_EDICION_ELIMINAR</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="ReturnValue" ParameterName="@RETURN_VALUE" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@CampoID" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings />
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="SP_CamposDeTablas_EDICION_INSERTARTableAdapter" GeneratorDataComponentClassName="SP_CamposDeTablas_EDICION_INSERTARTableAdapter" Name="SP_CamposDeTablas_EDICION_INSERTAR" UserDataComponentName="SP_CamposDeTablas_EDICION_INSERTARTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="GeneradorBDConnectionString (MySettings)" DbObjectName="[C:\WWW\GENCODIGO\GENCODIGOCONBD\GENCODIGO\GENERADORCOD\BASEDEDATOS\GENERADORCODIGOBD.MDF].dbo.SP_CamposDeTablas_EDICION_INSERTAR" DbObjectType="StoredProcedure" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <InsertCommand>
+                  <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
+                    <CommandText>dbo.SP_CamposDeTablas_EDICION_INSERTAR</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="ReturnValue" ParameterName="@RETURN_VALUE" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@TablaID" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumn="" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="varchar" DbType="AnsiString" Direction="Input" ParameterName="@Tipo" Precision="0" ProviderType="VarChar" Scale="0" Size="100" SourceColumn="" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="varchar" DbType="AnsiString" Direction="Input" ParameterName="@NombreCampo" Precision="0" ProviderType="VarChar" Scale="0" Size="100" SourceColumn="" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </InsertCommand>
+                <SelectCommand>
+                  <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
+                    <CommandText>dbo.SP_CamposDeTablas_EDICION_INSERTAR</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="ReturnValue" ParameterName="@RETURN_VALUE" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@TablaID" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="varchar" DbType="AnsiString" Direction="Input" ParameterName="@Tipo" Precision="0" ProviderType="VarChar" Scale="0" Size="100" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="varchar" DbType="AnsiString" Direction="Input" ParameterName="@NombreCampo" Precision="0" ProviderType="VarChar" Scale="0" Size="100" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings />
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaID1TableAdapter" GeneratorDataComponentClassName="SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaID1TableAdapter" Name="SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaID1" UserDataComponentName="SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaID1TableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="GeneradorBDConnectionString (MySettings)" DbObjectName="[C:\WWW\GENCODIGO\GENCODIGOCONBD\GENCODIGO\GENERADORCOD\BASEDEDATOS\GENERADORCODIGOBD.MDF].dbo.SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaID" DbObjectType="StoredProcedure" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
+                    <CommandText>dbo.SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaID</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="ReturnValue" ParameterName="@RETURN_VALUE" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@TablaID" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="CampoID" DataSetColumn="CampoID" />
+              <Mapping SourceColumn="TablaID" DataSetColumn="TablaID" />
+              <Mapping SourceColumn="Tipo" DataSetColumn="Tipo" />
+              <Mapping SourceColumn="NombreCampo" DataSetColumn="NombreCampo" />
             </Mappings>
             <Sources />
           </TableAdapter>
@@ -571,27 +591,6 @@
             </Mappings>
             <Sources />
           </TableAdapter>
-          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID2TableAdapter" GeneratorDataComponentClassName="SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID2TableAdapter" Name="SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID2" UserDataComponentName="SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID2TableAdapter">
-            <MainSource>
-              <DbSource ConnectionRef="GeneradorBDConnectionString (MySettings)" DbObjectName="[C:\WWW\GENCODIGO\GENCODIGOCONBD\GENCODIGO\GENERADORCOD\BASEDEDATOS\GENERADORCODIGOBD.MDF].dbo.SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID" DbObjectType="StoredProcedure" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
-                <SelectCommand>
-                  <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
-                    <CommandText>dbo.SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID</CommandText>
-                    <Parameters>
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="ReturnValue" ParameterName="@RETURN_VALUE" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@ProyectoID" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
-                    </Parameters>
-                  </DbCommand>
-                </SelectCommand>
-              </DbSource>
-            </MainSource>
-            <Mappings>
-              <Mapping SourceColumn="TablaID" DataSetColumn="TablaID" />
-              <Mapping SourceColumn="ProyectoID" DataSetColumn="ProyectoID" />
-              <Mapping SourceColumn="NombreTabla" DataSetColumn="NombreTabla" />
-            </Mappings>
-            <Sources />
-          </TableAdapter>
         </Tables>
         <Sources />
       </DataSource>
@@ -600,7 +599,7 @@
   <xs:element name="DataSetTablasYCampos" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DataSetTablasYCampos" msprop:Generator_UserDSName="DataSetTablasYCampos">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID" msprop:Generator_TableClassName="SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoIDDataTable" msprop:Generator_TableVarName="tableSP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID" msprop:Generator_RowChangedName="SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoIDRowChanged" msprop:Generator_TablePropName="SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID" msprop:Generator_RowDeletingName="SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoIDRowDeleting" msprop:Generator_RowChangingName="SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoIDRowChanging" msprop:Generator_RowEvHandlerName="SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoIDRowChangeEventHandler" msprop:Generator_RowDeletedName="SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoIDRowDeleted" msprop:Generator_RowClassName="SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoIDRow" msprop:Generator_UserTableName="SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID" msprop:Generator_RowEvArgName="SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoIDRowChangeEvent">
+        <xs:element name="SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID" msprop:Generator_TableClassName="SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoIDDataTable" msprop:Generator_TableVarName="tableSP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID" msprop:Generator_TablePropName="SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID" msprop:Generator_RowDeletingName="SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoIDRowDeleting" msprop:Generator_RowChangingName="SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoIDRowChanging" msprop:Generator_RowEvHandlerName="SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoIDRowChangeEventHandler" msprop:Generator_RowDeletedName="SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoIDRowDeleted" msprop:Generator_UserTableName="SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID" msprop:Generator_RowChangedName="SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoIDRowChanged" msprop:Generator_RowEvArgName="SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoIDRowChangeEvent" msprop:Generator_RowClassName="SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoIDRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="TablaID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnTablaID" msprop:Generator_ColumnPropNameInRow="TablaID" msprop:Generator_ColumnPropNameInTable="TablaIDColumn" msprop:Generator_UserColumnName="TablaID" type="xs:int" />
@@ -615,23 +614,88 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="SP_TablasDeProyecto_EDICION_ACTUALIZAR" msprop:Generator_TableClassName="SP_TablasDeProyecto_EDICION_ACTUALIZARDataTable" msprop:Generator_TableVarName="tableSP_TablasDeProyecto_EDICION_ACTUALIZAR" msprop:Generator_RowChangedName="SP_TablasDeProyecto_EDICION_ACTUALIZARRowChanged" msprop:Generator_TablePropName="SP_TablasDeProyecto_EDICION_ACTUALIZAR" msprop:Generator_RowDeletingName="SP_TablasDeProyecto_EDICION_ACTUALIZARRowDeleting" msprop:Generator_RowChangingName="SP_TablasDeProyecto_EDICION_ACTUALIZARRowChanging" msprop:Generator_RowEvHandlerName="SP_TablasDeProyecto_EDICION_ACTUALIZARRowChangeEventHandler" msprop:Generator_RowDeletedName="SP_TablasDeProyecto_EDICION_ACTUALIZARRowDeleted" msprop:Generator_RowClassName="SP_TablasDeProyecto_EDICION_ACTUALIZARRow" msprop:Generator_UserTableName="SP_TablasDeProyecto_EDICION_ACTUALIZAR" msprop:Generator_RowEvArgName="SP_TablasDeProyecto_EDICION_ACTUALIZARRowChangeEvent">
+        <xs:element name="SP_TablasDeProyecto_EDICION_ACTUALIZAR" msprop:Generator_TableClassName="SP_TablasDeProyecto_EDICION_ACTUALIZARDataTable" msprop:Generator_TableVarName="tableSP_TablasDeProyecto_EDICION_ACTUALIZAR" msprop:Generator_TablePropName="SP_TablasDeProyecto_EDICION_ACTUALIZAR" msprop:Generator_RowDeletingName="SP_TablasDeProyecto_EDICION_ACTUALIZARRowDeleting" msprop:Generator_RowChangingName="SP_TablasDeProyecto_EDICION_ACTUALIZARRowChanging" msprop:Generator_RowEvHandlerName="SP_TablasDeProyecto_EDICION_ACTUALIZARRowChangeEventHandler" msprop:Generator_RowDeletedName="SP_TablasDeProyecto_EDICION_ACTUALIZARRowDeleted" msprop:Generator_UserTableName="SP_TablasDeProyecto_EDICION_ACTUALIZAR" msprop:Generator_RowChangedName="SP_TablasDeProyecto_EDICION_ACTUALIZARRowChanged" msprop:Generator_RowEvArgName="SP_TablasDeProyecto_EDICION_ACTUALIZARRowChangeEvent" msprop:Generator_RowClassName="SP_TablasDeProyecto_EDICION_ACTUALIZARRow">
           <xs:complexType>
           </xs:complexType>
         </xs:element>
-        <xs:element name="SP_TablasDeProyecto_EDICION_ELIMINAR" msprop:Generator_TableClassName="SP_TablasDeProyecto_EDICION_ELIMINARDataTable" msprop:Generator_TableVarName="tableSP_TablasDeProyecto_EDICION_ELIMINAR" msprop:Generator_RowChangedName="SP_TablasDeProyecto_EDICION_ELIMINARRowChanged" msprop:Generator_TablePropName="SP_TablasDeProyecto_EDICION_ELIMINAR" msprop:Generator_RowDeletingName="SP_TablasDeProyecto_EDICION_ELIMINARRowDeleting" msprop:Generator_RowChangingName="SP_TablasDeProyecto_EDICION_ELIMINARRowChanging" msprop:Generator_RowEvHandlerName="SP_TablasDeProyecto_EDICION_ELIMINARRowChangeEventHandler" msprop:Generator_RowDeletedName="SP_TablasDeProyecto_EDICION_ELIMINARRowDeleted" msprop:Generator_RowClassName="SP_TablasDeProyecto_EDICION_ELIMINARRow" msprop:Generator_UserTableName="SP_TablasDeProyecto_EDICION_ELIMINAR" msprop:Generator_RowEvArgName="SP_TablasDeProyecto_EDICION_ELIMINARRowChangeEvent">
+        <xs:element name="SP_TablasDeProyecto_EDICION_ELIMINAR" msprop:Generator_TableClassName="SP_TablasDeProyecto_EDICION_ELIMINARDataTable" msprop:Generator_TableVarName="tableSP_TablasDeProyecto_EDICION_ELIMINAR" msprop:Generator_TablePropName="SP_TablasDeProyecto_EDICION_ELIMINAR" msprop:Generator_RowDeletingName="SP_TablasDeProyecto_EDICION_ELIMINARRowDeleting" msprop:Generator_RowChangingName="SP_TablasDeProyecto_EDICION_ELIMINARRowChanging" msprop:Generator_RowEvHandlerName="SP_TablasDeProyecto_EDICION_ELIMINARRowChangeEventHandler" msprop:Generator_RowDeletedName="SP_TablasDeProyecto_EDICION_ELIMINARRowDeleted" msprop:Generator_UserTableName="SP_TablasDeProyecto_EDICION_ELIMINAR" msprop:Generator_RowChangedName="SP_TablasDeProyecto_EDICION_ELIMINARRowChanged" msprop:Generator_RowEvArgName="SP_TablasDeProyecto_EDICION_ELIMINARRowChangeEvent" msprop:Generator_RowClassName="SP_TablasDeProyecto_EDICION_ELIMINARRow">
           <xs:complexType>
           </xs:complexType>
         </xs:element>
-        <xs:element name="SP_TablasDeProyecto_EDICION_INSERTAR" msprop:Generator_TableClassName="SP_TablasDeProyecto_EDICION_INSERTARDataTable" msprop:Generator_TableVarName="tableSP_TablasDeProyecto_EDICION_INSERTAR" msprop:Generator_RowChangedName="SP_TablasDeProyecto_EDICION_INSERTARRowChanged" msprop:Generator_TablePropName="SP_TablasDeProyecto_EDICION_INSERTAR" msprop:Generator_RowDeletingName="SP_TablasDeProyecto_EDICION_INSERTARRowDeleting" msprop:Generator_RowChangingName="SP_TablasDeProyecto_EDICION_INSERTARRowChanging" msprop:Generator_RowEvHandlerName="SP_TablasDeProyecto_EDICION_INSERTARRowChangeEventHandler" msprop:Generator_RowDeletedName="SP_TablasDeProyecto_EDICION_INSERTARRowDeleted" msprop:Generator_RowClassName="SP_TablasDeProyecto_EDICION_INSERTARRow" msprop:Generator_UserTableName="SP_TablasDeProyecto_EDICION_INSERTAR" msprop:Generator_RowEvArgName="SP_TablasDeProyecto_EDICION_INSERTARRowChangeEvent">
+        <xs:element name="SP_TablasDeProyecto_EDICION_INSERTAR" msprop:Generator_TableClassName="SP_TablasDeProyecto_EDICION_INSERTARDataTable" msprop:Generator_TableVarName="tableSP_TablasDeProyecto_EDICION_INSERTAR" msprop:Generator_TablePropName="SP_TablasDeProyecto_EDICION_INSERTAR" msprop:Generator_RowDeletingName="SP_TablasDeProyecto_EDICION_INSERTARRowDeleting" msprop:Generator_RowChangingName="SP_TablasDeProyecto_EDICION_INSERTARRowChanging" msprop:Generator_RowEvHandlerName="SP_TablasDeProyecto_EDICION_INSERTARRowChangeEventHandler" msprop:Generator_RowDeletedName="SP_TablasDeProyecto_EDICION_INSERTARRowDeleted" msprop:Generator_UserTableName="SP_TablasDeProyecto_EDICION_INSERTAR" msprop:Generator_RowChangedName="SP_TablasDeProyecto_EDICION_INSERTARRowChanged" msprop:Generator_RowEvArgName="SP_TablasDeProyecto_EDICION_INSERTARRowChangeEvent" msprop:Generator_RowClassName="SP_TablasDeProyecto_EDICION_INSERTARRow">
           <xs:complexType>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1" msprop:Generator_TableClassName="SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1DataTable" msprop:Generator_TableVarName="tableSP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1" msprop:Generator_TablePropName="SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1" msprop:Generator_RowDeletingName="SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1RowDeleting" msprop:Generator_RowChangingName="SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1RowChanging" msprop:Generator_RowEvHandlerName="SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1RowChangeEventHandler" msprop:Generator_RowDeletedName="SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1RowDeleted" msprop:Generator_UserTableName="SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1" msprop:Generator_RowChangedName="SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1RowChanged" msprop:Generator_RowEvArgName="SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1RowChangeEvent" msprop:Generator_RowClassName="SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1Row">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="TablaID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnTablaID" msprop:Generator_ColumnPropNameInRow="TablaID" msprop:Generator_ColumnPropNameInTable="TablaIDColumn" msprop:Generator_UserColumnName="TablaID" type="xs:int" />
+              <xs:element name="ProyectoID" msprop:Generator_ColumnVarNameInTable="columnProyectoID" msprop:Generator_ColumnPropNameInRow="ProyectoID" msprop:Generator_ColumnPropNameInTable="ProyectoIDColumn" msprop:Generator_UserColumnName="ProyectoID" type="xs:int" />
+              <xs:element name="NombreTabla" msprop:Generator_ColumnVarNameInTable="columnNombreTabla" msprop:Generator_ColumnPropNameInRow="NombreTabla" msprop:Generator_ColumnPropNameInTable="NombreTablaColumn" msprop:Generator_UserColumnName="NombreTabla">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="200" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID2" msprop:Generator_TableClassName="SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID2DataTable" msprop:Generator_TableVarName="tableSP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID2" msprop:Generator_TablePropName="SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID2" msprop:Generator_RowDeletingName="SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID2RowDeleting" msprop:Generator_RowChangingName="SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID2RowChanging" msprop:Generator_RowEvHandlerName="SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID2RowChangeEventHandler" msprop:Generator_RowDeletedName="SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID2RowDeleted" msprop:Generator_UserTableName="SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID2" msprop:Generator_RowChangedName="SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID2RowChanged" msprop:Generator_RowEvArgName="SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID2RowChangeEvent" msprop:Generator_RowClassName="SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID2Row">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="TablaID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnTablaID" msprop:Generator_ColumnPropNameInRow="TablaID" msprop:Generator_ColumnPropNameInTable="TablaIDColumn" msprop:Generator_UserColumnName="TablaID" type="xs:int" />
+              <xs:element name="ProyectoID" msprop:Generator_ColumnVarNameInTable="columnProyectoID" msprop:Generator_ColumnPropNameInRow="ProyectoID" msprop:Generator_ColumnPropNameInTable="ProyectoIDColumn" msprop:Generator_UserColumnName="ProyectoID" type="xs:int" />
+              <xs:element name="NombreTabla" msprop:Generator_ColumnVarNameInTable="columnNombreTabla" msprop:Generator_ColumnPropNameInRow="NombreTabla" msprop:Generator_ColumnPropNameInTable="NombreTablaColumn" msprop:Generator_UserColumnName="NombreTabla">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="200" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="SP_RegistroValorRequerimientos_SegunProyectoRequerimiento" msprop:Generator_TableClassName="SP_RegistroValorRequerimientos_SegunProyectoRequerimientoDataTable" msprop:Generator_TableVarName="tableSP_RegistroValorRequerimientos_SegunProyectoRequerimiento" msprop:Generator_TablePropName="SP_RegistroValorRequerimientos_SegunProyectoRequerimiento" msprop:Generator_RowDeletingName="SP_RegistroValorRequerimientos_SegunProyectoRequerimientoRowDeleting" msprop:Generator_RowChangingName="SP_RegistroValorRequerimientos_SegunProyectoRequerimientoRowChanging" msprop:Generator_RowEvHandlerName="SP_RegistroValorRequerimientos_SegunProyectoRequerimientoRowChangeEventHandler" msprop:Generator_RowDeletedName="SP_RegistroValorRequerimientos_SegunProyectoRequerimientoRowDeleted" msprop:Generator_UserTableName="SP_RegistroValorRequerimientos_SegunProyectoRequerimiento" msprop:Generator_RowChangedName="SP_RegistroValorRequerimientos_SegunProyectoRequerimientoRowChanged" msprop:Generator_RowEvArgName="SP_RegistroValorRequerimientos_SegunProyectoRequerimientoRowChangeEvent" msprop:Generator_RowClassName="SP_RegistroValorRequerimientos_SegunProyectoRequerimientoRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="RegistroValorRequerimientoID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnRegistroValorRequerimientoID" msprop:Generator_ColumnPropNameInRow="RegistroValorRequerimientoID" msprop:Generator_ColumnPropNameInTable="RegistroValorRequerimientoIDColumn" msprop:Generator_UserColumnName="RegistroValorRequerimientoID" type="xs:long" />
+              <xs:element name="ProyectoID" msprop:Generator_ColumnVarNameInTable="columnProyectoID" msprop:Generator_ColumnPropNameInRow="ProyectoID" msprop:Generator_ColumnPropNameInTable="ProyectoIDColumn" msprop:Generator_UserColumnName="ProyectoID" type="xs:int" />
+              <xs:element name="Requerimiento" msprop:Generator_ColumnVarNameInTable="columnRequerimiento" msprop:Generator_ColumnPropNameInRow="Requerimiento" msprop:Generator_ColumnPropNameInTable="RequerimientoColumn" msprop:Generator_UserColumnName="Requerimiento">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="500" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ValorRequerimiento" msprop:Generator_ColumnVarNameInTable="columnValorRequerimiento" msprop:Generator_ColumnPropNameInRow="ValorRequerimiento" msprop:Generator_ColumnPropNameInTable="ValorRequerimientoColumn" msprop:Generator_UserColumnName="ValorRequerimiento">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="500" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="SP_CARGA_CONVENSIONES_USADAS" msprop:Generator_TableClassName="SP_CARGA_CONVENSIONES_USADASDataTable" msprop:Generator_TableVarName="tableSP_CARGA_CONVENSIONES_USADAS" msprop:Generator_TablePropName="SP_CARGA_CONVENSIONES_USADAS" msprop:Generator_RowDeletingName="SP_CARGA_CONVENSIONES_USADASRowDeleting" msprop:Generator_RowChangingName="SP_CARGA_CONVENSIONES_USADASRowChanging" msprop:Generator_RowEvHandlerName="SP_CARGA_CONVENSIONES_USADASRowChangeEventHandler" msprop:Generator_RowDeletedName="SP_CARGA_CONVENSIONES_USADASRowDeleted" msprop:Generator_UserTableName="SP_CARGA_CONVENSIONES_USADAS" msprop:Generator_RowChangedName="SP_CARGA_CONVENSIONES_USADASRowChanged" msprop:Generator_RowEvArgName="SP_CARGA_CONVENSIONES_USADASRowChangeEvent" msprop:Generator_RowClassName="SP_CARGA_CONVENSIONES_USADASRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="CONVENSIONES" msprop:Generator_ColumnVarNameInTable="columnCONVENSIONES" msprop:Generator_ColumnPropNameInRow="CONVENSIONES" msprop:Generator_ColumnPropNameInTable="CONVENSIONESColumn" msprop:Generator_UserColumnName="CONVENSIONES">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="500" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
           </xs:complexType>
         </xs:element>
         <xs:element name="SP_RegistroValorRequerimientos_EDICION_INSERTAR" msprop:Generator_TableClassName="SP_RegistroValorRequerimientos_EDICION_INSERTARDataTable" msprop:Generator_TableVarName="tableSP_RegistroValorRequerimientos_EDICION_INSERTAR" msprop:Generator_TablePropName="SP_RegistroValorRequerimientos_EDICION_INSERTAR" msprop:Generator_RowDeletingName="SP_RegistroValorRequerimientos_EDICION_INSERTARRowDeleting" msprop:Generator_RowChangingName="SP_RegistroValorRequerimientos_EDICION_INSERTARRowChanging" msprop:Generator_RowEvHandlerName="SP_RegistroValorRequerimientos_EDICION_INSERTARRowChangeEventHandler" msprop:Generator_RowDeletedName="SP_RegistroValorRequerimientos_EDICION_INSERTARRowDeleted" msprop:Generator_UserTableName="SP_RegistroValorRequerimientos_EDICION_INSERTAR" msprop:Generator_RowChangedName="SP_RegistroValorRequerimientos_EDICION_INSERTARRowChanged" msprop:Generator_RowEvArgName="SP_RegistroValorRequerimientos_EDICION_INSERTARRowChangeEvent" msprop:Generator_RowClassName="SP_RegistroValorRequerimientos_EDICION_INSERTARRow">
           <xs:complexType>
           </xs:complexType>
         </xs:element>
-        <xs:element name="SP_ELIMINA_RegistroValorRequerimientos_SegunID" msprop:Generator_TableClassName="SP_ELIMINA_RegistroValorRequerimientos_SegunIDDataTable" msprop:Generator_TableVarName="tableSP_ELIMINA_RegistroValorRequerimientos_SegunID" msprop:Generator_RowChangedName="SP_ELIMINA_RegistroValorRequerimientos_SegunIDRowChanged" msprop:Generator_TablePropName="SP_ELIMINA_RegistroValorRequerimientos_SegunID" msprop:Generator_RowDeletingName="SP_ELIMINA_RegistroValorRequerimientos_SegunIDRowDeleting" msprop:Generator_RowChangingName="SP_ELIMINA_RegistroValorRequerimientos_SegunIDRowChanging" msprop:Generator_RowEvHandlerName="SP_ELIMINA_RegistroValorRequerimientos_SegunIDRowChangeEventHandler" msprop:Generator_RowDeletedName="SP_ELIMINA_RegistroValorRequerimientos_SegunIDRowDeleted" msprop:Generator_RowClassName="SP_ELIMINA_RegistroValorRequerimientos_SegunIDRow" msprop:Generator_UserTableName="SP_ELIMINA_RegistroValorRequerimientos_SegunID" msprop:Generator_RowEvArgName="SP_ELIMINA_RegistroValorRequerimientos_SegunIDRowChangeEvent">
+        <xs:element name="SP_ELIMINA_RegistroValorRequerimientos_SegunID" msprop:Generator_TableClassName="SP_ELIMINA_RegistroValorRequerimientos_SegunIDDataTable" msprop:Generator_TableVarName="tableSP_ELIMINA_RegistroValorRequerimientos_SegunID" msprop:Generator_TablePropName="SP_ELIMINA_RegistroValorRequerimientos_SegunID" msprop:Generator_RowDeletingName="SP_ELIMINA_RegistroValorRequerimientos_SegunIDRowDeleting" msprop:Generator_RowChangingName="SP_ELIMINA_RegistroValorRequerimientos_SegunIDRowChanging" msprop:Generator_RowEvHandlerName="SP_ELIMINA_RegistroValorRequerimientos_SegunIDRowChangeEventHandler" msprop:Generator_RowDeletedName="SP_ELIMINA_RegistroValorRequerimientos_SegunIDRowDeleted" msprop:Generator_UserTableName="SP_ELIMINA_RegistroValorRequerimientos_SegunID" msprop:Generator_RowChangedName="SP_ELIMINA_RegistroValorRequerimientos_SegunIDRowChanged" msprop:Generator_RowEvArgName="SP_ELIMINA_RegistroValorRequerimientos_SegunIDRowChangeEvent" msprop:Generator_RowClassName="SP_ELIMINA_RegistroValorRequerimientos_SegunIDRow">
           <xs:complexType>
           </xs:complexType>
         </xs:element>
@@ -657,41 +721,7 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaID" msprop:Generator_TableClassName="SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaIDDataTable" msprop:Generator_TableVarName="tableSP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaID" msprop:Generator_TablePropName="SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaID" msprop:Generator_RowDeletingName="SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaIDRowDeleting" msprop:Generator_RowChangingName="SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaIDRowChanging" msprop:Generator_RowEvHandlerName="SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaIDRowChangeEventHandler" msprop:Generator_RowDeletedName="SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaIDRowDeleted" msprop:Generator_UserTableName="SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaID" msprop:Generator_RowChangedName="SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaIDRowChanged" msprop:Generator_RowEvArgName="SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaIDRowChangeEvent" msprop:Generator_RowClassName="SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaIDRow">
-          <xs:complexType>
-            <xs:sequence>
-              <xs:element name="CampoID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnCampoID" msprop:Generator_ColumnPropNameInRow="CampoID" msprop:Generator_ColumnPropNameInTable="CampoIDColumn" msprop:Generator_UserColumnName="CampoID" type="xs:int" />
-              <xs:element name="TablaID" msprop:Generator_ColumnVarNameInTable="columnTablaID" msprop:Generator_ColumnPropNameInRow="TablaID" msprop:Generator_ColumnPropNameInTable="TablaIDColumn" msprop:Generator_UserColumnName="TablaID" type="xs:int" />
-              <xs:element name="NombreCampo" msprop:Generator_ColumnVarNameInTable="columnNombreCampo" msprop:Generator_ColumnPropNameInRow="NombreCampo" msprop:Generator_ColumnPropNameInTable="NombreCampoColumn" msprop:Generator_UserColumnName="NombreCampo">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="100" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="Tipo" msprop:Generator_ColumnVarNameInTable="columnTipo" msprop:Generator_ColumnPropNameInRow="Tipo" msprop:Generator_ColumnPropNameInTable="TipoColumn" msprop:Generator_UserColumnName="Tipo" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="100" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-            </xs:sequence>
-          </xs:complexType>
-        </xs:element>
-        <xs:element name="SP_CamposDeTablas_EDICION_ELIMINAR" msprop:Generator_TableClassName="SP_CamposDeTablas_EDICION_ELIMINARDataTable" msprop:Generator_TableVarName="tableSP_CamposDeTablas_EDICION_ELIMINAR" msprop:Generator_TablePropName="SP_CamposDeTablas_EDICION_ELIMINAR" msprop:Generator_RowDeletingName="SP_CamposDeTablas_EDICION_ELIMINARRowDeleting" msprop:Generator_RowChangingName="SP_CamposDeTablas_EDICION_ELIMINARRowChanging" msprop:Generator_RowEvHandlerName="SP_CamposDeTablas_EDICION_ELIMINARRowChangeEventHandler" msprop:Generator_RowDeletedName="SP_CamposDeTablas_EDICION_ELIMINARRowDeleted" msprop:Generator_UserTableName="SP_CamposDeTablas_EDICION_ELIMINAR" msprop:Generator_RowChangedName="SP_CamposDeTablas_EDICION_ELIMINARRowChanged" msprop:Generator_RowEvArgName="SP_CamposDeTablas_EDICION_ELIMINARRowChangeEvent" msprop:Generator_RowClassName="SP_CamposDeTablas_EDICION_ELIMINARRow">
-          <xs:complexType>
-          </xs:complexType>
-        </xs:element>
-        <xs:element name="SP_CamposDeTablas_EDICION_ACTUALIZAR" msprop:Generator_TableClassName="SP_CamposDeTablas_EDICION_ACTUALIZARDataTable" msprop:Generator_TableVarName="tableSP_CamposDeTablas_EDICION_ACTUALIZAR" msprop:Generator_TablePropName="SP_CamposDeTablas_EDICION_ACTUALIZAR" msprop:Generator_RowDeletingName="SP_CamposDeTablas_EDICION_ACTUALIZARRowDeleting" msprop:Generator_RowChangingName="SP_CamposDeTablas_EDICION_ACTUALIZARRowChanging" msprop:Generator_RowEvHandlerName="SP_CamposDeTablas_EDICION_ACTUALIZARRowChangeEventHandler" msprop:Generator_RowDeletedName="SP_CamposDeTablas_EDICION_ACTUALIZARRowDeleted" msprop:Generator_UserTableName="SP_CamposDeTablas_EDICION_ACTUALIZAR" msprop:Generator_RowChangedName="SP_CamposDeTablas_EDICION_ACTUALIZARRowChanged" msprop:Generator_RowEvArgName="SP_CamposDeTablas_EDICION_ACTUALIZARRowChangeEvent" msprop:Generator_RowClassName="SP_CamposDeTablas_EDICION_ACTUALIZARRow">
-          <xs:complexType>
-          </xs:complexType>
-        </xs:element>
-        <xs:element name="SP_CamposDeTablas_EDICION_INSERTAR" msprop:Generator_TableClassName="SP_CamposDeTablas_EDICION_INSERTARDataTable" msprop:Generator_TableVarName="tableSP_CamposDeTablas_EDICION_INSERTAR" msprop:Generator_TablePropName="SP_CamposDeTablas_EDICION_INSERTAR" msprop:Generator_RowDeletingName="SP_CamposDeTablas_EDICION_INSERTARRowDeleting" msprop:Generator_RowChangingName="SP_CamposDeTablas_EDICION_INSERTARRowChanging" msprop:Generator_RowEvHandlerName="SP_CamposDeTablas_EDICION_INSERTARRowChangeEventHandler" msprop:Generator_RowDeletedName="SP_CamposDeTablas_EDICION_INSERTARRowDeleted" msprop:Generator_UserTableName="SP_CamposDeTablas_EDICION_INSERTAR" msprop:Generator_RowChangedName="SP_CamposDeTablas_EDICION_INSERTARRowChanged" msprop:Generator_RowEvArgName="SP_CamposDeTablas_EDICION_INSERTARRowChangeEvent" msprop:Generator_RowClassName="SP_CamposDeTablas_EDICION_INSERTARRow">
-          <xs:complexType>
-          </xs:complexType>
-        </xs:element>
-        <xs:element name="SP_CampoComponentes_Segun_Plantilla_Tipo" msprop:Generator_TableClassName="SP_CampoComponentes_Segun_Plantilla_TipoDataTable" msprop:Generator_TableVarName="tableSP_CampoComponentes_Segun_Plantilla_Tipo" msprop:Generator_RowChangedName="SP_CampoComponentes_Segun_Plantilla_TipoRowChanged" msprop:Generator_TablePropName="SP_CampoComponentes_Segun_Plantilla_Tipo" msprop:Generator_RowDeletingName="SP_CampoComponentes_Segun_Plantilla_TipoRowDeleting" msprop:Generator_RowChangingName="SP_CampoComponentes_Segun_Plantilla_TipoRowChanging" msprop:Generator_RowEvHandlerName="SP_CampoComponentes_Segun_Plantilla_TipoRowChangeEventHandler" msprop:Generator_RowDeletedName="SP_CampoComponentes_Segun_Plantilla_TipoRowDeleted" msprop:Generator_RowClassName="SP_CampoComponentes_Segun_Plantilla_TipoRow" msprop:Generator_UserTableName="SP_CampoComponentes_Segun_Plantilla_Tipo" msprop:Generator_RowEvArgName="SP_CampoComponentes_Segun_Plantilla_TipoRowChangeEvent">
+        <xs:element name="SP_CampoComponentes_Segun_Plantilla_Tipo" msprop:Generator_TableClassName="SP_CampoComponentes_Segun_Plantilla_TipoDataTable" msprop:Generator_TableVarName="tableSP_CampoComponentes_Segun_Plantilla_Tipo" msprop:Generator_TablePropName="SP_CampoComponentes_Segun_Plantilla_Tipo" msprop:Generator_RowDeletingName="SP_CampoComponentes_Segun_Plantilla_TipoRowDeleting" msprop:Generator_RowChangingName="SP_CampoComponentes_Segun_Plantilla_TipoRowChanging" msprop:Generator_RowEvHandlerName="SP_CampoComponentes_Segun_Plantilla_TipoRowChangeEventHandler" msprop:Generator_RowDeletedName="SP_CampoComponentes_Segun_Plantilla_TipoRowDeleted" msprop:Generator_UserTableName="SP_CampoComponentes_Segun_Plantilla_Tipo" msprop:Generator_RowChangedName="SP_CampoComponentes_Segun_Plantilla_TipoRowChanged" msprop:Generator_RowEvArgName="SP_CampoComponentes_Segun_Plantilla_TipoRowChangeEvent" msprop:Generator_RowClassName="SP_CampoComponentes_Segun_Plantilla_TipoRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="CampoComponenteID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnCampoComponenteID" msprop:Generator_ColumnPropNameInRow="CampoComponenteID" msprop:Generator_ColumnPropNameInTable="CampoComponenteIDColumn" msprop:Generator_UserColumnName="CampoComponenteID" type="xs:int" />
@@ -731,17 +761,10 @@
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="Multiremplazo" msprop:Generator_ColumnVarNameInTable="columnMultiremplazo" msprop:Generator_ColumnPropNameInRow="Multiremplazo" msprop:Generator_ColumnPropNameInTable="MultiremplazoColumn" msprop:Generator_UserColumnName="Multiremplazo" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="2147483647" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
               <xs:element name="SeparadorCampos" msprop:Generator_ColumnVarNameInTable="columnSeparadorCampos" msprop:Generator_ColumnPropNameInRow="SeparadorCampos" msprop:Generator_ColumnPropNameInTable="SeparadorCamposColumn" msprop:Generator_UserColumnName="SeparadorCampos" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
-                    <xs:maxLength value="2147483647" />
+                    <xs:maxLength value="50" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
@@ -810,7 +833,7 @@
               <xs:element name="SeparadorCampos" msprop:Generator_ColumnVarNameInTable="columnSeparadorCampos" msprop:Generator_ColumnPropNameInRow="SeparadorCampos" msprop:Generator_ColumnPropNameInTable="SeparadorCamposColumn" msprop:Generator_UserColumnName="SeparadorCampos" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
-                    <xs:maxLength value="2147483647" />
+                    <xs:maxLength value="50" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
@@ -824,61 +847,18 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="SP_RegistroValorRequerimientos_SegunProyectoRequerimiento" msprop:Generator_TableClassName="SP_RegistroValorRequerimientos_SegunProyectoRequerimientoDataTable" msprop:Generator_TableVarName="tableSP_RegistroValorRequerimientos_SegunProyectoRequerimiento" msprop:Generator_TablePropName="SP_RegistroValorRequerimientos_SegunProyectoRequerimiento" msprop:Generator_RowDeletingName="SP_RegistroValorRequerimientos_SegunProyectoRequerimientoRowDeleting" msprop:Generator_RowChangingName="SP_RegistroValorRequerimientos_SegunProyectoRequerimientoRowChanging" msprop:Generator_RowEvHandlerName="SP_RegistroValorRequerimientos_SegunProyectoRequerimientoRowChangeEventHandler" msprop:Generator_RowDeletedName="SP_RegistroValorRequerimientos_SegunProyectoRequerimientoRowDeleted" msprop:Generator_UserTableName="SP_RegistroValorRequerimientos_SegunProyectoRequerimiento" msprop:Generator_RowChangedName="SP_RegistroValorRequerimientos_SegunProyectoRequerimientoRowChanged" msprop:Generator_RowEvArgName="SP_RegistroValorRequerimientos_SegunProyectoRequerimientoRowChangeEvent" msprop:Generator_RowClassName="SP_RegistroValorRequerimientos_SegunProyectoRequerimientoRow">
-          <xs:complexType>
-            <xs:sequence>
-              <xs:element name="RegistroValorRequerimientoID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnRegistroValorRequerimientoID" msprop:Generator_ColumnPropNameInRow="RegistroValorRequerimientoID" msprop:Generator_ColumnPropNameInTable="RegistroValorRequerimientoIDColumn" msprop:Generator_UserColumnName="RegistroValorRequerimientoID" type="xs:long" />
-              <xs:element name="ProyectoID" msprop:Generator_ColumnVarNameInTable="columnProyectoID" msprop:Generator_ColumnPropNameInRow="ProyectoID" msprop:Generator_ColumnPropNameInTable="ProyectoIDColumn" msprop:Generator_UserColumnName="ProyectoID" type="xs:int" />
-              <xs:element name="Requerimiento" msprop:Generator_ColumnVarNameInTable="columnRequerimiento" msprop:Generator_ColumnPropNameInRow="Requerimiento" msprop:Generator_ColumnPropNameInTable="RequerimientoColumn" msprop:Generator_UserColumnName="Requerimiento">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="500" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="ValorRequerimiento" msprop:Generator_ColumnVarNameInTable="columnValorRequerimiento" msprop:Generator_ColumnPropNameInRow="ValorRequerimiento" msprop:Generator_ColumnPropNameInTable="ValorRequerimientoColumn" msprop:Generator_UserColumnName="ValorRequerimiento">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="500" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-            </xs:sequence>
-          </xs:complexType>
-        </xs:element>
-        <xs:element name="SP_CARGA_CONVENSIONES_USADAS" msprop:Generator_TableClassName="SP_CARGA_CONVENSIONES_USADASDataTable" msprop:Generator_TableVarName="tableSP_CARGA_CONVENSIONES_USADAS" msprop:Generator_TablePropName="SP_CARGA_CONVENSIONES_USADAS" msprop:Generator_RowDeletingName="SP_CARGA_CONVENSIONES_USADASRowDeleting" msprop:Generator_RowChangingName="SP_CARGA_CONVENSIONES_USADASRowChanging" msprop:Generator_RowEvHandlerName="SP_CARGA_CONVENSIONES_USADASRowChangeEventHandler" msprop:Generator_RowDeletedName="SP_CARGA_CONVENSIONES_USADASRowDeleted" msprop:Generator_UserTableName="SP_CARGA_CONVENSIONES_USADAS" msprop:Generator_RowChangedName="SP_CARGA_CONVENSIONES_USADASRowChanged" msprop:Generator_RowEvArgName="SP_CARGA_CONVENSIONES_USADASRowChangeEvent" msprop:Generator_RowClassName="SP_CARGA_CONVENSIONES_USADASRow">
-          <xs:complexType>
-            <xs:sequence>
-              <xs:element name="CONVENSIONES" msprop:Generator_ColumnVarNameInTable="columnCONVENSIONES" msprop:Generator_ColumnPropNameInRow="CONVENSIONES" msprop:Generator_ColumnPropNameInTable="CONVENSIONESColumn" msprop:Generator_UserColumnName="CONVENSIONES">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="500" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-            </xs:sequence>
-          </xs:complexType>
-        </xs:element>
-        <xs:element name="SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1" msprop:Generator_TableClassName="SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1DataTable" msprop:Generator_TableVarName="tableSP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1" msprop:Generator_TablePropName="SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1" msprop:Generator_RowDeletingName="SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1RowDeleting" msprop:Generator_RowChangingName="SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1RowChanging" msprop:Generator_RowEvHandlerName="SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1RowChangeEventHandler" msprop:Generator_RowDeletedName="SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1RowDeleted" msprop:Generator_UserTableName="SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1" msprop:Generator_RowChangedName="SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1RowChanged" msprop:Generator_RowEvArgName="SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1RowChangeEvent" msprop:Generator_RowClassName="SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1Row">
-          <xs:complexType>
-            <xs:sequence>
-              <xs:element name="TablaID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnTablaID" msprop:Generator_ColumnPropNameInRow="TablaID" msprop:Generator_ColumnPropNameInTable="TablaIDColumn" msprop:Generator_UserColumnName="TablaID" type="xs:int" />
-              <xs:element name="ProyectoID" msprop:Generator_ColumnVarNameInTable="columnProyectoID" msprop:Generator_ColumnPropNameInRow="ProyectoID" msprop:Generator_ColumnPropNameInTable="ProyectoIDColumn" msprop:Generator_UserColumnName="ProyectoID" type="xs:int" />
-              <xs:element name="NombreTabla" msprop:Generator_ColumnVarNameInTable="columnNombreTabla" msprop:Generator_ColumnPropNameInRow="NombreTabla" msprop:Generator_ColumnPropNameInTable="NombreTablaColumn" msprop:Generator_UserColumnName="NombreTabla">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="200" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-            </xs:sequence>
-          </xs:complexType>
-        </xs:element>
-        <xs:element name="SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaID1" msprop:Generator_TableClassName="SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaID1DataTable" msprop:Generator_TableVarName="tableSP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaID1" msprop:Generator_RowChangedName="SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaID1RowChanged" msprop:Generator_TablePropName="SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaID1" msprop:Generator_RowDeletingName="SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaID1RowDeleting" msprop:Generator_RowChangingName="SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaID1RowChanging" msprop:Generator_RowEvHandlerName="SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaID1RowChangeEventHandler" msprop:Generator_RowDeletedName="SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaID1RowDeleted" msprop:Generator_RowClassName="SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaID1Row" msprop:Generator_UserTableName="SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaID1" msprop:Generator_RowEvArgName="SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaID1RowChangeEvent">
+        <xs:element name="SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaID" msprop:Generator_TableClassName="SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaIDDataTable" msprop:Generator_TableVarName="tableSP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaID" msprop:Generator_TablePropName="SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaID" msprop:Generator_RowDeletingName="SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaIDRowDeleting" msprop:Generator_RowChangingName="SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaIDRowChanging" msprop:Generator_RowEvHandlerName="SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaIDRowChangeEventHandler" msprop:Generator_RowDeletedName="SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaIDRowDeleted" msprop:Generator_UserTableName="SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaID" msprop:Generator_RowChangedName="SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaIDRowChanged" msprop:Generator_RowEvArgName="SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaIDRowChangeEvent" msprop:Generator_RowClassName="SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaIDRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="CampoID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnCampoID" msprop:Generator_ColumnPropNameInRow="CampoID" msprop:Generator_ColumnPropNameInTable="CampoIDColumn" msprop:Generator_UserColumnName="CampoID" type="xs:int" />
               <xs:element name="TablaID" msprop:Generator_ColumnVarNameInTable="columnTablaID" msprop:Generator_ColumnPropNameInRow="TablaID" msprop:Generator_ColumnPropNameInTable="TablaIDColumn" msprop:Generator_UserColumnName="TablaID" type="xs:int" />
+              <xs:element name="Tipo" msprop:Generator_ColumnVarNameInTable="columnTipo" msprop:Generator_ColumnPropNameInRow="Tipo" msprop:Generator_ColumnPropNameInTable="TipoColumn" msprop:Generator_UserColumnName="Tipo" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
               <xs:element name="NombreCampo" msprop:Generator_ColumnVarNameInTable="columnNombreCampo" msprop:Generator_ColumnPropNameInRow="NombreCampo" msprop:Generator_ColumnPropNameInTable="NombreCampoColumn" msprop:Generator_UserColumnName="NombreCampo">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
@@ -886,7 +866,34 @@
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="SP_CamposDeTablas_EDICION_ACTUALIZAR" msprop:Generator_TableClassName="SP_CamposDeTablas_EDICION_ACTUALIZARDataTable" msprop:Generator_TableVarName="tableSP_CamposDeTablas_EDICION_ACTUALIZAR" msprop:Generator_TablePropName="SP_CamposDeTablas_EDICION_ACTUALIZAR" msprop:Generator_RowDeletingName="SP_CamposDeTablas_EDICION_ACTUALIZARRowDeleting" msprop:Generator_RowChangingName="SP_CamposDeTablas_EDICION_ACTUALIZARRowChanging" msprop:Generator_RowEvHandlerName="SP_CamposDeTablas_EDICION_ACTUALIZARRowChangeEventHandler" msprop:Generator_RowDeletedName="SP_CamposDeTablas_EDICION_ACTUALIZARRowDeleted" msprop:Generator_UserTableName="SP_CamposDeTablas_EDICION_ACTUALIZAR" msprop:Generator_RowChangedName="SP_CamposDeTablas_EDICION_ACTUALIZARRowChanged" msprop:Generator_RowEvArgName="SP_CamposDeTablas_EDICION_ACTUALIZARRowChangeEvent" msprop:Generator_RowClassName="SP_CamposDeTablas_EDICION_ACTUALIZARRow">
+          <xs:complexType>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="SP_CamposDeTablas_EDICION_ELIMINAR" msprop:Generator_TableClassName="SP_CamposDeTablas_EDICION_ELIMINARDataTable" msprop:Generator_TableVarName="tableSP_CamposDeTablas_EDICION_ELIMINAR" msprop:Generator_TablePropName="SP_CamposDeTablas_EDICION_ELIMINAR" msprop:Generator_RowDeletingName="SP_CamposDeTablas_EDICION_ELIMINARRowDeleting" msprop:Generator_RowChangingName="SP_CamposDeTablas_EDICION_ELIMINARRowChanging" msprop:Generator_RowEvHandlerName="SP_CamposDeTablas_EDICION_ELIMINARRowChangeEventHandler" msprop:Generator_RowDeletedName="SP_CamposDeTablas_EDICION_ELIMINARRowDeleted" msprop:Generator_UserTableName="SP_CamposDeTablas_EDICION_ELIMINAR" msprop:Generator_RowChangedName="SP_CamposDeTablas_EDICION_ELIMINARRowChanged" msprop:Generator_RowEvArgName="SP_CamposDeTablas_EDICION_ELIMINARRowChangeEvent" msprop:Generator_RowClassName="SP_CamposDeTablas_EDICION_ELIMINARRow">
+          <xs:complexType>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="SP_CamposDeTablas_EDICION_INSERTAR" msprop:Generator_TableClassName="SP_CamposDeTablas_EDICION_INSERTARDataTable" msprop:Generator_TableVarName="tableSP_CamposDeTablas_EDICION_INSERTAR" msprop:Generator_TablePropName="SP_CamposDeTablas_EDICION_INSERTAR" msprop:Generator_RowDeletingName="SP_CamposDeTablas_EDICION_INSERTARRowDeleting" msprop:Generator_RowChangingName="SP_CamposDeTablas_EDICION_INSERTARRowChanging" msprop:Generator_RowEvHandlerName="SP_CamposDeTablas_EDICION_INSERTARRowChangeEventHandler" msprop:Generator_RowDeletedName="SP_CamposDeTablas_EDICION_INSERTARRowDeleted" msprop:Generator_UserTableName="SP_CamposDeTablas_EDICION_INSERTAR" msprop:Generator_RowChangedName="SP_CamposDeTablas_EDICION_INSERTARRowChanged" msprop:Generator_RowEvArgName="SP_CamposDeTablas_EDICION_INSERTARRowChangeEvent" msprop:Generator_RowClassName="SP_CamposDeTablas_EDICION_INSERTARRow">
+          <xs:complexType>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaID1" msprop:Generator_TableClassName="SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaID1DataTable" msprop:Generator_TableVarName="tableSP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaID1" msprop:Generator_TablePropName="SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaID1" msprop:Generator_RowDeletingName="SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaID1RowDeleting" msprop:Generator_RowChangingName="SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaID1RowChanging" msprop:Generator_RowEvHandlerName="SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaID1RowChangeEventHandler" msprop:Generator_RowDeletedName="SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaID1RowDeleted" msprop:Generator_UserTableName="SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaID1" msprop:Generator_RowChangedName="SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaID1RowChanged" msprop:Generator_RowEvArgName="SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaID1RowChangeEvent" msprop:Generator_RowClassName="SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaID1Row">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="CampoID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnCampoID" msprop:Generator_ColumnPropNameInRow="CampoID" msprop:Generator_ColumnPropNameInTable="CampoIDColumn" msprop:Generator_UserColumnName="CampoID" type="xs:int" />
+              <xs:element name="TablaID" msprop:Generator_ColumnVarNameInTable="columnTablaID" msprop:Generator_ColumnPropNameInRow="TablaID" msprop:Generator_ColumnPropNameInTable="TablaIDColumn" msprop:Generator_UserColumnName="TablaID" type="xs:int" />
               <xs:element name="Tipo" msprop:Generator_ColumnVarNameInTable="columnTipo" msprop:Generator_ColumnPropNameInRow="Tipo" msprop:Generator_ColumnPropNameInTable="TipoColumn" msprop:Generator_UserColumnName="Tipo" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="NombreCampo" msprop:Generator_ColumnVarNameInTable="columnNombreCampo" msprop:Generator_ColumnPropNameInRow="NombreCampo" msprop:Generator_ColumnPropNameInTable="NombreCampoColumn" msprop:Generator_UserColumnName="NombreCampo">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="100" />
@@ -918,34 +925,27 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID2" msprop:Generator_TableClassName="SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID2DataTable" msprop:Generator_TableVarName="tableSP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID2" msprop:Generator_TablePropName="SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID2" msprop:Generator_RowDeletingName="SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID2RowDeleting" msprop:Generator_RowChangingName="SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID2RowChanging" msprop:Generator_RowEvHandlerName="SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID2RowChangeEventHandler" msprop:Generator_RowDeletedName="SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID2RowDeleted" msprop:Generator_UserTableName="SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID2" msprop:Generator_RowChangedName="SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID2RowChanged" msprop:Generator_RowEvArgName="SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID2RowChangeEvent" msprop:Generator_RowClassName="SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID2Row">
-          <xs:complexType>
-            <xs:sequence>
-              <xs:element name="TablaID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnTablaID" msprop:Generator_ColumnPropNameInRow="TablaID" msprop:Generator_ColumnPropNameInTable="TablaIDColumn" msprop:Generator_UserColumnName="TablaID" type="xs:int" />
-              <xs:element name="ProyectoID" msprop:Generator_ColumnVarNameInTable="columnProyectoID" msprop:Generator_ColumnPropNameInRow="ProyectoID" msprop:Generator_ColumnPropNameInTable="ProyectoIDColumn" msprop:Generator_UserColumnName="ProyectoID" type="xs:int" />
-              <xs:element name="NombreTabla" msprop:Generator_ColumnVarNameInTable="columnNombreTabla" msprop:Generator_ColumnPropNameInRow="NombreTabla" msprop:Generator_ColumnPropNameInTable="NombreTablaColumn" msprop:Generator_UserColumnName="NombreTabla">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="200" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-            </xs:sequence>
-          </xs:complexType>
-        </xs:element>
       </xs:choice>
     </xs:complexType>
     <xs:unique name="Constraint1" msdata:PrimaryKey="true">
       <xs:selector xpath=".//mstns:SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID" />
       <xs:field xpath="mstns:TablaID" />
     </xs:unique>
+    <xs:unique name="SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1" />
+      <xs:field xpath="mstns:TablaID" />
+    </xs:unique>
+    <xs:unique name="SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID2_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID2" />
+      <xs:field xpath="mstns:TablaID" />
+    </xs:unique>
+    <xs:unique name="SP_RegistroValorRequerimientos_SegunProyectoRequerimiento_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:SP_RegistroValorRequerimientos_SegunProyectoRequerimiento" />
+      <xs:field xpath="mstns:RegistroValorRequerimientoID" />
+    </xs:unique>
     <xs:unique name="SP_RegistroValorRequerimientos_SEGUN_ProyectoID_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
       <xs:selector xpath=".//mstns:SP_RegistroValorRequerimientos_SEGUN_ProyectoID" />
       <xs:field xpath="mstns:RegistroValorRequerimientoID" />
-    </xs:unique>
-    <xs:unique name="SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaID_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
-      <xs:selector xpath=".//mstns:SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaID" />
-      <xs:field xpath="mstns:CampoID" />
     </xs:unique>
     <xs:unique name="SP_CampoComponentes_Segun_Plantilla_Tipo_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
       <xs:selector xpath=".//mstns:SP_CampoComponentes_Segun_Plantilla_Tipo" />
@@ -955,13 +955,9 @@
       <xs:selector xpath=".//mstns:SP_CampoComponentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaID" />
       <xs:field xpath="mstns:CampoComponenteID" />
     </xs:unique>
-    <xs:unique name="SP_RegistroValorRequerimientos_SegunProyectoRequerimiento_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
-      <xs:selector xpath=".//mstns:SP_RegistroValorRequerimientos_SegunProyectoRequerimiento" />
-      <xs:field xpath="mstns:RegistroValorRequerimientoID" />
-    </xs:unique>
-    <xs:unique name="SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
-      <xs:selector xpath=".//mstns:SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1" />
-      <xs:field xpath="mstns:TablaID" />
+    <xs:unique name="SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaID_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaID" />
+      <xs:field xpath="mstns:CampoID" />
     </xs:unique>
     <xs:unique name="SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaID1_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
       <xs:selector xpath=".//mstns:SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaID1" />
@@ -970,10 +966,6 @@
     <xs:unique name="SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaID2_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
       <xs:selector xpath=".//mstns:SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaID2" />
       <xs:field xpath="mstns:CampoID" />
-    </xs:unique>
-    <xs:unique name="SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID2_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
-      <xs:selector xpath=".//mstns:SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID2" />
-      <xs:field xpath="mstns:TablaID" />
     </xs:unique>
   </xs:element>
 </xs:schema>

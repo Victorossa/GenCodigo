@@ -163,6 +163,8 @@ Partial Class FrmTecnologias
         Me.DataGridViewTextBoxColumn11 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.MultiReplace = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn12 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.CM_TiposDatos = New System.Windows.Forms.ContextMenuStrip(Me.components)
+        Me.CopiarRegistroToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.Cbo_TipoDato = New System.Windows.Forms.ComboBox()
         Me.Panel7 = New System.Windows.Forms.Panel()
         Me.BtnPrevisualizar = New System.Windows.Forms.Button()
@@ -220,8 +222,7 @@ Partial Class FrmTecnologias
         Me.SP_RequerimientosPlantillas_EDICION_INSERTARBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.SP_RequerimientosPlantillas_EDICION_INSERTARTableAdapter = New GeneradorCod.DataSetAdministracionTableAdapters.SP_RequerimientosPlantillas_EDICION_INSERTARTableAdapter()
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
-        Me.CM_TiposDatos = New System.Windows.Forms.ContextMenuStrip(Me.components)
-        Me.CopiarRegistroToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.TabPage5 = New System.Windows.Forms.TabPage()
         NombreTecnologiaLabel = New System.Windows.Forms.Label()
         TecnologiaIDLabel = New System.Windows.Forms.Label()
         NombrePlantillaLabel = New System.Windows.Forms.Label()
@@ -273,6 +274,7 @@ Partial Class FrmTecnologias
         CType(Me.SP_CampoComponentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel8.SuspendLayout()
         CType(Me.SP_CampoComponentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.CM_TiposDatos.SuspendLayout()
         Me.Panel7.SuspendLayout()
         CType(Me.SP_CampoComponentes_EDICION_ACTUALIZARBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.SP_CampoComponentes_EDICION_ELIMINARBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -290,7 +292,6 @@ Partial Class FrmTecnologias
         CType(Me.SP_RequerimientosPlantillas_EDICION_ACTUALIZARBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.SP_RequerimientosPlantillas_EDICION_ELIMINARBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.SP_RequerimientosPlantillas_EDICION_INSERTARBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.CM_TiposDatos.SuspendLayout()
         Me.SuspendLayout()
         '
         'NombreTecnologiaLabel
@@ -1222,6 +1223,7 @@ Partial Class FrmTecnologias
         Me.TabControl1.Controls.Add(Me.TabPage2)
         Me.TabControl1.Controls.Add(Me.TabPage3)
         Me.TabControl1.Controls.Add(Me.TabPage4)
+        Me.TabControl1.Controls.Add(Me.TabPage5)
         Me.TabControl1.Location = New System.Drawing.Point(535, 0)
         Me.TabControl1.Name = "TabControl1"
         Me.TabControl1.SelectedIndex = 0
@@ -1469,7 +1471,7 @@ Partial Class FrmTecnologias
         Me.TabPage2.Location = New System.Drawing.Point(4, 27)
         Me.TabPage2.Name = "TabPage2"
         Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage2.Size = New System.Drawing.Size(37, 576)
+        Me.TabPage2.Size = New System.Drawing.Size(725, 576)
         Me.TabPage2.TabIndex = 1
         Me.TabPage2.Text = "Requerimientos"
         Me.TabPage2.UseVisualStyleBackColor = True
@@ -1696,6 +1698,18 @@ Partial Class FrmTecnologias
         Me.DataGridViewTextBoxColumn12.HeaderText = "Separador Campos"
         Me.DataGridViewTextBoxColumn12.Name = "DataGridViewTextBoxColumn12"
         '
+        'CM_TiposDatos
+        '
+        Me.CM_TiposDatos.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CopiarRegistroToolStripMenuItem})
+        Me.CM_TiposDatos.Name = "CM_TiposDatos"
+        Me.CM_TiposDatos.Size = New System.Drawing.Size(156, 26)
+        '
+        'CopiarRegistroToolStripMenuItem
+        '
+        Me.CopiarRegistroToolStripMenuItem.Name = "CopiarRegistroToolStripMenuItem"
+        Me.CopiarRegistroToolStripMenuItem.Size = New System.Drawing.Size(155, 22)
+        Me.CopiarRegistroToolStripMenuItem.Text = "Copiar Registro"
+        '
         'Cbo_TipoDato
         '
         Me.Cbo_TipoDato.FormattingEnabled = True
@@ -1803,7 +1817,7 @@ Partial Class FrmTecnologias
         Me.TabPage4.Location = New System.Drawing.Point(4, 27)
         Me.TabPage4.Name = "TabPage4"
         Me.TabPage4.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage4.Size = New System.Drawing.Size(37, 576)
+        Me.TabPage4.Size = New System.Drawing.Size(725, 576)
         Me.TabPage4.TabIndex = 3
         Me.TabPage4.Text = "Campos Relacionados"
         Me.TabPage4.UseVisualStyleBackColor = True
@@ -2066,17 +2080,15 @@ Partial Class FrmTecnologias
         '
         Me.SP_RequerimientosPlantillas_EDICION_INSERTARTableAdapter.ClearBeforeFill = True
         '
-        'CM_TiposDatos
+        'TabPage5
         '
-        Me.CM_TiposDatos.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CopiarRegistroToolStripMenuItem})
-        Me.CM_TiposDatos.Name = "CM_TiposDatos"
-        Me.CM_TiposDatos.Size = New System.Drawing.Size(181, 48)
-        '
-        'CopiarRegistroToolStripMenuItem
-        '
-        Me.CopiarRegistroToolStripMenuItem.Name = "CopiarRegistroToolStripMenuItem"
-        Me.CopiarRegistroToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
-        Me.CopiarRegistroToolStripMenuItem.Text = "Copiar Registro"
+        Me.TabPage5.Location = New System.Drawing.Point(4, 27)
+        Me.TabPage5.Name = "TabPage5"
+        Me.TabPage5.Padding = New System.Windows.Forms.Padding(3)
+        Me.TabPage5.Size = New System.Drawing.Size(725, 576)
+        Me.TabPage5.TabIndex = 4
+        Me.TabPage5.Text = "Imagen"
+        Me.TabPage5.UseVisualStyleBackColor = True
         '
         'FrmTecnologias
         '
@@ -2148,6 +2160,7 @@ Partial Class FrmTecnologias
         Me.Panel8.ResumeLayout(False)
         Me.Panel8.PerformLayout()
         CType(Me.SP_CampoComponentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.CM_TiposDatos.ResumeLayout(False)
         Me.Panel7.ResumeLayout(False)
         CType(Me.SP_CampoComponentes_EDICION_ACTUALIZARBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.SP_CampoComponentes_EDICION_ELIMINARBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
@@ -2165,7 +2178,6 @@ Partial Class FrmTecnologias
         CType(Me.SP_RequerimientosPlantillas_EDICION_ACTUALIZARBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.SP_RequerimientosPlantillas_EDICION_ELIMINARBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.SP_RequerimientosPlantillas_EDICION_INSERTARBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.CM_TiposDatos.ResumeLayout(False)
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -2343,4 +2355,5 @@ Partial Class FrmTecnologias
     Friend WithEvents Column1 As DataGridViewTextBoxColumn
     Friend WithEvents CM_TiposDatos As ContextMenuStrip
     Friend WithEvents CopiarRegistroToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents TabPage5 As TabPage
 End Class
