@@ -14,11 +14,11 @@
         DtRemplazos.Columns("DataGridViewTextBoxColumn4").ColumnName = "Valor"
         Dim ValorTemporal As String
         Dim TextoRemplazado As String
-        '2- Trunca la tabla de replace para limpiar su contenido 
-        AccesoDatos.TruncaReplace()
-        '3- Guarda el texto que llega con los parametros para luego ir siendo actualizado cada vez que se haga un replace
-        AccesoDatos.InsertaArchivoRepalce(TextoComoParametro)
-        ''Para iniciar el ciclo
+        ''2- Trunca la tabla de replace para limpiar su contenido 
+        'AccesoDatos.TruncaReplace()
+        ''3- Guarda el texto que llega con los parametros para luego ir siendo actualizado cada vez que se haga un replace
+        'AccesoDatos.InsertaArchivoRepalce(TextoComoParametro)
+        '''Para iniciar el ciclo
         For Each row As DataRow In DtRemplazos.Rows
             Dim Clave As String = CStr(row("Clave"))
             Dim Valor As String = CStr(row("Valor"))

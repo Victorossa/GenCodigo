@@ -41,7 +41,7 @@ Partial Class FrmReplace
         Dim NombreTablaLabel As System.Windows.Forms.Label
         Dim TablaIDLabel As System.Windows.Forms.Label
         Dim TipoCampoIDLabel As System.Windows.Forms.Label
-        Dim GrupoTiposIDLabel As System.Windows.Forms.Label
+
         Dim CampoIDLabel As System.Windows.Forms.Label
         Dim NombreCampoLabel As System.Windows.Forms.Label
         Dim TipoLabel As System.Windows.Forms.Label
@@ -163,9 +163,9 @@ Partial Class FrmReplace
         Me.Panel4 = New System.Windows.Forms.Panel()
         Me.BtnLimpiar = New System.Windows.Forms.Button()
         Me.BtnCopiar = New System.Windows.Forms.Button()
-        Me.SP_TiposDeCampos_BUSQUEDA_SEGUN_PARAMETRO_GrupoTiposIDBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+
         Me.TipoCampoIDTextBox = New System.Windows.Forms.TextBox()
-        Me.GrupoTiposIDTextBox = New System.Windows.Forms.TextBox()
+
         Me.SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaIDDataGridView = New System.Windows.Forms.DataGridView()
         Me.SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaIDBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.CampoIDTextBox = New System.Windows.Forms.TextBox()
@@ -275,7 +275,7 @@ Partial Class FrmReplace
         NombreTablaLabel = New System.Windows.Forms.Label()
         TablaIDLabel = New System.Windows.Forms.Label()
         TipoCampoIDLabel = New System.Windows.Forms.Label()
-        GrupoTiposIDLabel = New System.Windows.Forms.Label()
+
         CampoIDLabel = New System.Windows.Forms.Label()
         NombreCampoLabel = New System.Windows.Forms.Label()
         TipoLabel = New System.Windows.Forms.Label()
@@ -330,7 +330,7 @@ Partial Class FrmReplace
         Me.Panel2.SuspendLayout()
         Me.Panel3.SuspendLayout()
         Me.Panel4.SuspendLayout()
-        CType(Me.SP_TiposDeCampos_BUSQUEDA_SEGUN_PARAMETRO_GrupoTiposIDBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+
         CType(Me.SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaIDDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaIDBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.SP_CampoComponentes_Segun_Plantilla_TipoBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -516,14 +516,7 @@ Partial Class FrmReplace
         TipoCampoIDLabel.TabIndex = 144
         TipoCampoIDLabel.Text = "Tipo Campo ID:"
         '
-        'GrupoTiposIDLabel
-        '
-        GrupoTiposIDLabel.AutoSize = True
-        GrupoTiposIDLabel.Location = New System.Drawing.Point(51, 651)
-        GrupoTiposIDLabel.Name = "GrupoTiposIDLabel"
-        GrupoTiposIDLabel.Size = New System.Drawing.Size(82, 13)
-        GrupoTiposIDLabel.TabIndex = 145
-        GrupoTiposIDLabel.Text = "Grupo Tipos ID:"
+
         '
         'CampoIDLabel
         '
@@ -1572,21 +1565,9 @@ Partial Class FrmReplace
         Me.BtnCopiar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.BtnCopiar.UseVisualStyleBackColor = True
         '
-        'TipoCampoIDTextBox
+
         '
-        Me.TipoCampoIDTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SP_CARGA_TECNOLOGIAS_APLICADAS_A_PROYECTOBindingSource, "GrupoTiposID", True))
-        Me.TipoCampoIDTextBox.Location = New System.Drawing.Point(139, 387)
-        Me.TipoCampoIDTextBox.Name = "TipoCampoIDTextBox"
-        Me.TipoCampoIDTextBox.Size = New System.Drawing.Size(102, 20)
-        Me.TipoCampoIDTextBox.TabIndex = 145
-        '
-        'GrupoTiposIDTextBox
-        '
-        Me.GrupoTiposIDTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SP_Plantillas_BUSQUEDA_SEGUN_PARAMETRO_TecnologiaBindingSource, "GrupoTiposID", True))
-        Me.GrupoTiposIDTextBox.Location = New System.Drawing.Point(139, 648)
-        Me.GrupoTiposIDTextBox.Name = "GrupoTiposIDTextBox"
-        Me.GrupoTiposIDTextBox.Size = New System.Drawing.Size(101, 20)
-        Me.GrupoTiposIDTextBox.TabIndex = 146
+
         '
         'SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaIDDataGridView
         '
@@ -1763,9 +1744,9 @@ Partial Class FrmReplace
         Me.Panel5.Controls.Add(Me.CampoIDTextBox)
         Me.Panel5.Controls.Add(Me.TablaIDTextBox)
         Me.Panel5.Controls.Add(TablaIDLabel)
-        Me.Panel5.Controls.Add(GrupoTiposIDLabel)
+
         Me.Panel5.Controls.Add(Me.PlantillaIDTextBox)
-        Me.Panel5.Controls.Add(Me.GrupoTiposIDTextBox)
+
         Me.Panel5.Controls.Add(Me.TecnologiaIDTextBox)
         Me.Panel5.Controls.Add(TipoCampoIDLabel)
         Me.Panel5.Controls.Add(TecnologiaIDLabel)
@@ -2399,7 +2380,7 @@ Partial Class FrmReplace
         Me.Panel2.PerformLayout()
         Me.Panel3.ResumeLayout(False)
         Me.Panel4.ResumeLayout(False)
-        CType(Me.SP_TiposDeCampos_BUSQUEDA_SEGUN_PARAMETRO_GrupoTiposIDBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+
         CType(Me.SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaIDDataGridView, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaIDBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.SP_CampoComponentes_Segun_Plantilla_TipoBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
@@ -2523,9 +2504,9 @@ Partial Class FrmReplace
     Friend WithEvents Actualizar_Menu_CamposDeTablas As Button
     Friend WithEvents Guardar_Menu_CamposDeTablas As Button
     Friend WithEvents Panel4 As Panel
-    Friend WithEvents SP_TiposDeCampos_BUSQUEDA_SEGUN_PARAMETRO_GrupoTiposIDBindingSource As BindingSource
+
     Friend WithEvents TipoCampoIDTextBox As TextBox
-    Friend WithEvents GrupoTiposIDTextBox As TextBox
+
     Friend WithEvents SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaIDBindingSource As BindingSource
     Friend WithEvents SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaIDTableAdapter As DataSetTablasYCamposTableAdapters.SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaIDTableAdapter
     Friend WithEvents SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaIDDataGridView As DataGridView

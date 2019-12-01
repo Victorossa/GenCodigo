@@ -33,7 +33,7 @@ Partial Class FrmTecnologias
         Dim OrdenDePeticionLabel As System.Windows.Forms.Label
         Dim EnunciadoLabel As System.Windows.Forms.Label
         Dim RequerimientoPlantillaIDLabel As System.Windows.Forms.Label
-        Dim GrupoTiposIDLabel As System.Windows.Forms.Label
+
         Dim NombreGrupoTipoDeDatoLabel1 As System.Windows.Forms.Label
         Dim CampoComponenteIDLabel As System.Windows.Forms.Label
         Dim TipoLabel As System.Windows.Forms.Label
@@ -117,7 +117,7 @@ Partial Class FrmTecnologias
         Me.RequerimientoPlantillaIDTextBox = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.GrupoTiposIDTextBox = New System.Windows.Forms.TextBox()
+
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
         Me.BtnTablaPluralMinuscula = New System.Windows.Forms.Button()
@@ -175,9 +175,9 @@ Partial Class FrmTecnologias
         Me.Actualizar_Menu_CampoComponentes = New System.Windows.Forms.Button()
         Me.Guardar_Menu_CampoComponentes = New System.Windows.Forms.Button()
         Me.TabPage4 = New System.Windows.Forms.TabPage()
-        Me.GrupoTiposIDTextBox1 = New System.Windows.Forms.TextBox()
+
         Me.NombreGrupoTipoDeDatoTextBox1 = New System.Windows.Forms.TextBox()
-        Me.GrupoTiposIDTextBox2 = New System.Windows.Forms.TextBox()
+
         Me.TipoCampoIDTextBox = New System.Windows.Forms.TextBox()
         Me.CampoComponenteIDTextBox = New System.Windows.Forms.TextBox()
         Me.TipoTextBox = New System.Windows.Forms.TextBox()
@@ -233,7 +233,7 @@ Partial Class FrmTecnologias
         OrdenDePeticionLabel = New System.Windows.Forms.Label()
         EnunciadoLabel = New System.Windows.Forms.Label()
         RequerimientoPlantillaIDLabel = New System.Windows.Forms.Label()
-        GrupoTiposIDLabel = New System.Windows.Forms.Label()
+
         NombreGrupoTipoDeDatoLabel1 = New System.Windows.Forms.Label()
         CampoComponenteIDLabel = New System.Windows.Forms.Label()
         TipoLabel = New System.Windows.Forms.Label()
@@ -387,15 +387,7 @@ Partial Class FrmTecnologias
         RequerimientoPlantillaIDLabel.Text = "Requerimiento Plantilla ID:"
         AddHandler RequerimientoPlantillaIDLabel.Click, AddressOf Me.RequerimientoPlantillaIDLabel_Click
         '
-        'GrupoTiposIDLabel
-        '
-        GrupoTiposIDLabel.AutoSize = True
-        GrupoTiposIDLabel.Location = New System.Drawing.Point(689, 232)
-        GrupoTiposIDLabel.Name = "GrupoTiposIDLabel"
-        GrupoTiposIDLabel.Size = New System.Drawing.Size(102, 18)
-        GrupoTiposIDLabel.TabIndex = 116
-        GrupoTiposIDLabel.Text = "Grupo Tipos ID:"
-        AddHandler GrupoTiposIDLabel.Click, AddressOf Me.GrupoTiposIDLabel_Click
+
         '
         'NombreGrupoTipoDeDatoLabel1
         '
@@ -1209,13 +1201,7 @@ Partial Class FrmTecnologias
         Me.Label2.Size = New System.Drawing.Size(99, 18)
         Me.Label2.TabIndex = 114
         Me.Label2.Text = "Remplazar por:"
-        '
-        'GrupoTiposIDTextBox
-        '
-        Me.GrupoTiposIDTextBox.Location = New System.Drawing.Point(797, 69)
-        Me.GrupoTiposIDTextBox.Name = "GrupoTiposIDTextBox"
-        Me.GrupoTiposIDTextBox.Size = New System.Drawing.Size(100, 26)
-        Me.GrupoTiposIDTextBox.TabIndex = 115
+
         '
         'TabControl1
         '
@@ -1822,12 +1808,7 @@ Partial Class FrmTecnologias
         Me.TabPage4.Text = "Campos Relacionados"
         Me.TabPage4.UseVisualStyleBackColor = True
         '
-        'GrupoTiposIDTextBox1
-        '
-        Me.GrupoTiposIDTextBox1.Location = New System.Drawing.Point(797, 229)
-        Me.GrupoTiposIDTextBox1.Name = "GrupoTiposIDTextBox1"
-        Me.GrupoTiposIDTextBox1.Size = New System.Drawing.Size(100, 26)
-        Me.GrupoTiposIDTextBox1.TabIndex = 117
+
         '
         'NombreGrupoTipoDeDatoTextBox1
         '
@@ -1836,13 +1817,7 @@ Partial Class FrmTecnologias
         Me.NombreGrupoTipoDeDatoTextBox1.Size = New System.Drawing.Size(100, 26)
         Me.NombreGrupoTipoDeDatoTextBox1.TabIndex = 119
         '
-        'GrupoTiposIDTextBox2
-        '
-        Me.GrupoTiposIDTextBox2.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SP_Plantillas_BUSQUEDA_SEGUN_PARAMETRO_TecnologiaBindingSource, "GrupoTiposID", True))
-        Me.GrupoTiposIDTextBox2.Location = New System.Drawing.Point(797, 293)
-        Me.GrupoTiposIDTextBox2.Name = "GrupoTiposIDTextBox2"
-        Me.GrupoTiposIDTextBox2.Size = New System.Drawing.Size(100, 26)
-        Me.GrupoTiposIDTextBox2.TabIndex = 120
+
         '
         'TipoCampoIDTextBox
         '
@@ -2101,14 +2076,14 @@ Partial Class FrmTecnologias
         Me.Controls.Add(CampoComponenteIDLabel)
         Me.Controls.Add(Me.CampoComponenteIDTextBox)
         Me.Controls.Add(Me.TipoCampoIDTextBox)
-        Me.Controls.Add(Me.GrupoTiposIDTextBox2)
+
         Me.Controls.Add(NombreGrupoTipoDeDatoLabel1)
         Me.Controls.Add(Me.NombreGrupoTipoDeDatoTextBox1)
-        Me.Controls.Add(GrupoTiposIDLabel)
+
         Me.Controls.Add(TipoLabel)
-        Me.Controls.Add(Me.GrupoTiposIDTextBox1)
+
         Me.Controls.Add(Me.TipoTextBox)
-        Me.Controls.Add(Me.GrupoTiposIDTextBox)
+
         Me.Controls.Add(RequerimientoPlantillaIDLabel)
         Me.Controls.Add(Me.RequerimientoPlantillaIDTextBox)
         Me.Controls.Add(ComponenteIDLabel)
@@ -2269,7 +2244,7 @@ Partial Class FrmTecnologias
     Friend WithEvents RequerimientoPlantillaIDTextBox As TextBox
     Friend WithEvents Label1 As Label
     Friend WithEvents Label2 As Label
-    Friend WithEvents GrupoTiposIDTextBox As TextBox
+
     Friend WithEvents TabControl1 As TabControl
     Friend WithEvents TabPage1 As TabPage
     Friend WithEvents TabPage2 As TabPage
@@ -2286,9 +2261,9 @@ Partial Class FrmTecnologias
     Friend WithEvents BtnGuardarCodigo As Button
     Friend WithEvents DataSetTablasYCampos As DataSetTablasYCampos
     Friend WithEvents TableAdapterManager1 As DataSetTablasYCamposTableAdapters.TableAdapterManager
-    Friend WithEvents GrupoTiposIDTextBox1 As TextBox
+
     Friend WithEvents NombreGrupoTipoDeDatoTextBox1 As TextBox
-    Friend WithEvents GrupoTiposIDTextBox2 As TextBox
+
     Friend WithEvents BtnImprimeTabla As Button
     Friend WithEvents BtnImprimeCampos As Button
     Friend WithEvents TipoCampoIDTextBox As TextBox

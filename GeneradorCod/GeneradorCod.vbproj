@@ -102,78 +102,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Data\AccesoDatos.vb" />
-    <Compile Include="Data\AccesoDatosEF\ArchivoReplace.vb">
-      <DependentUpon>DBModels.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Data\AccesoDatosEF\Componentes.vb">
-      <DependentUpon>DBModels.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Data\AccesoDatosEF\DBModels.Context.vb">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DBModels.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Data\AccesoDatosEF\DBModels.Designer.vb">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DBModels.edmx</DependentUpon>
-    </Compile>
-    <Compile Include="Data\AccesoDatosEF\DBModels.vb">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DBModels.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Data\AccesoDatosEF\GruposDeTiposDeDatos.vb">
-      <DependentUpon>DBModels.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Data\AccesoDatosEF\Plantillas.vb">
-      <DependentUpon>DBModels.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Data\AccesoDatosEF\Proyectos.vb">
-      <DependentUpon>DBModels.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Data\AccesoDatosEF\ProyectosYTecnologias.vb">
-      <DependentUpon>DBModels.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Data\AccesoDatosEF\RegistroValorRequerimientos.vb">
-      <DependentUpon>DBModels.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Data\AccesoDatosEF\RequerimientosPlantillas.vb">
-      <DependentUpon>DBModels.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Data\AccesoDatosEF\SP_CARGA_TECNOLOGIAS_APLICADAS_A_PROYECTO_Result.vb">
-      <DependentUpon>DBModels.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Data\AccesoDatosEF\SP_Componentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaID_Result.vb">
-      <DependentUpon>DBModels.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Data\AccesoDatosEF\SP_GruposDeTiposDeDatos_BUSQUEDA_SEGUN_PARAMETRO_GrupoTiposID_Result.vb">
-      <DependentUpon>DBModels.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Data\AccesoDatosEF\SP_Plantillas_BUSQUEDA_SEGUN_PARAMETRO_Tecnologia_Result.vb">
-      <DependentUpon>DBModels.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Data\AccesoDatosEF\SP_RegistroValorRequerimientos_SEGUN_ProyectoID_Result.vb">
-      <DependentUpon>DBModels.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Data\AccesoDatosEF\SP_RequerimientosPlantillas_BUSQUEDA_SEGUN_PARAMETRO_PlantillaID_Result.vb">
-      <DependentUpon>DBModels.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Data\AccesoDatosEF\SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID_Result.vb">
-      <DependentUpon>DBModels.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Data\AccesoDatosEF\TablasDeProyecto.vb">
-      <DependentUpon>DBModels.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Data\AccesoDatosEF\Tecnologias.vb">
-      <DependentUpon>DBModels.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Data\AccesoDatosEF\TiposDeDatos.vb">
-      <DependentUpon>DBModels.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Data\AccesoDatosEF\View_ProyectosYTecnologias.vb">
-      <DependentUpon>DBModels.tt</DependentUpon>
-    </Compile>
     <Compile Include="Data\DataSetAdministracion.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -235,6 +163,7 @@
   <ItemGroup>
     <EmbeddedResource Include="Formularios\FrmReplace.resx">
       <DependentUpon>FrmReplace.vb</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\FrmTecnologias.resx">
       <DependentUpon>FrmTecnologias.vb</DependentUpon>
@@ -253,13 +182,6 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <EntityDeploy Include="Data\AccesoDatosEF\DBModels.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>DBModels.Designer.vb</LastGenOutput>
-    </EntityDeploy>
-    <None Include="Data\AccesoDatosEF\DBModels.edmx.diagram">
-      <DependentUpon>DBModels.edmx</DependentUpon>
-    </None>
     <None Include="Data\DataSetAdministracion.xsc">
       <DependentUpon>DataSetAdministracion.xsd</DependentUpon>
     </None>
@@ -309,6 +231,7 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="BaseDeDatos\GeneradorCodigoBD.mdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
@@ -316,16 +239,6 @@
     <Content Include="BaseDeDatos\GeneradorCodigoBD_log.ldf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>GeneradorCodigoBD.mdf</DependentUpon>
-    </Content>
-    <Content Include="Data\AccesoDatosEF\DBModels.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>DBModels.edmx</DependentUpon>
-      <LastGenOutput>DBModels.Context.vb</LastGenOutput>
-    </Content>
-    <Content Include="Data\AccesoDatosEF\DBModels.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>DBModels.edmx</DependentUpon>
-      <LastGenOutput>DBModels.vb</LastGenOutput>
     </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />

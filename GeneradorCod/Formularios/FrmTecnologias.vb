@@ -1223,11 +1223,12 @@
 
     Private Sub SP_Componentes_EDICION_ACTUALIZAR_SoloCodigo()
         Try
+
             Me.SP_Componentes_EDICION_ACTUALIZARTableAdapter.Fill(Me.DataSetAdministracion.SP_Componentes_EDICION_ACTUALIZAR,
                                                  New System.Nullable(Of Integer)(CType(ComponenteIDTextBox.Text, Integer)),
                                                  New System.Nullable(Of Integer)(CType(PlantillaIDTextBox.Text, Integer)),
                                                  NombreComponenteTextBox.Text,
-                                                 ContenidoComponenteRichTextBox.Text,
+                                                 ContenidoComponenteRichTextBox.Rtf,
                                                  XTablaTextBox.Text)
         Catch ex As System.Exception
             System.Windows.Forms.MessageBox.Show(ex.Message)
@@ -1287,17 +1288,7 @@
 
     End Sub
 
-    Private Sub GrupoTiposIDLabel_Click(sender As Object, e As EventArgs)
 
-    End Sub
-
-    Private Sub GrupoTiposIDTextBox1_TextChanged(sender As Object, e As EventArgs) Handles GrupoTiposIDTextBox1.TextChanged
-
-    End Sub
-
-    Private Sub GrupoTiposIDTextBox_TextChanged(sender As Object, e As EventArgs) Handles GrupoTiposIDTextBox.TextChanged
-
-    End Sub
 
     Private Sub RequerimientoPlantillaIDLabel_Click(sender As Object, e As EventArgs)
 
