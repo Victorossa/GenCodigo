@@ -33,7 +33,6 @@ Partial Class FrmTecnologias
         Dim OrdenDePeticionLabel As System.Windows.Forms.Label
         Dim EnunciadoLabel As System.Windows.Forms.Label
         Dim RequerimientoPlantillaIDLabel As System.Windows.Forms.Label
-
         Dim NombreGrupoTipoDeDatoLabel1 As System.Windows.Forms.Label
         Dim CampoComponenteIDLabel As System.Windows.Forms.Label
         Dim TipoLabel As System.Windows.Forms.Label
@@ -117,7 +116,6 @@ Partial Class FrmTecnologias
         Me.RequerimientoPlantillaIDTextBox = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
-
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
         Me.BtnTablaPluralMinuscula = New System.Windows.Forms.Button()
@@ -175,9 +173,7 @@ Partial Class FrmTecnologias
         Me.Actualizar_Menu_CampoComponentes = New System.Windows.Forms.Button()
         Me.Guardar_Menu_CampoComponentes = New System.Windows.Forms.Button()
         Me.TabPage4 = New System.Windows.Forms.TabPage()
-
         Me.NombreGrupoTipoDeDatoTextBox1 = New System.Windows.Forms.TextBox()
-
         Me.TipoCampoIDTextBox = New System.Windows.Forms.TextBox()
         Me.CampoComponenteIDTextBox = New System.Windows.Forms.TextBox()
         Me.TipoTextBox = New System.Windows.Forms.TextBox()
@@ -222,7 +218,6 @@ Partial Class FrmTecnologias
         Me.SP_RequerimientosPlantillas_EDICION_INSERTARBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.SP_RequerimientosPlantillas_EDICION_INSERTARTableAdapter = New GeneradorCod.DataSetAdministracionTableAdapters.SP_RequerimientosPlantillas_EDICION_INSERTARTableAdapter()
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
-        Me.TabPage5 = New System.Windows.Forms.TabPage()
         NombreTecnologiaLabel = New System.Windows.Forms.Label()
         TecnologiaIDLabel = New System.Windows.Forms.Label()
         NombrePlantillaLabel = New System.Windows.Forms.Label()
@@ -233,7 +228,6 @@ Partial Class FrmTecnologias
         OrdenDePeticionLabel = New System.Windows.Forms.Label()
         EnunciadoLabel = New System.Windows.Forms.Label()
         RequerimientoPlantillaIDLabel = New System.Windows.Forms.Label()
-
         NombreGrupoTipoDeDatoLabel1 = New System.Windows.Forms.Label()
         CampoComponenteIDLabel = New System.Windows.Forms.Label()
         TipoLabel = New System.Windows.Forms.Label()
@@ -386,8 +380,6 @@ Partial Class FrmTecnologias
         RequerimientoPlantillaIDLabel.TabIndex = 110
         RequerimientoPlantillaIDLabel.Text = "Requerimiento Plantilla ID:"
         AddHandler RequerimientoPlantillaIDLabel.Click, AddressOf Me.RequerimientoPlantillaIDLabel_Click
-        '
-
         '
         'NombreGrupoTipoDeDatoLabel1
         '
@@ -1201,7 +1193,6 @@ Partial Class FrmTecnologias
         Me.Label2.Size = New System.Drawing.Size(99, 18)
         Me.Label2.TabIndex = 114
         Me.Label2.Text = "Remplazar por:"
-
         '
         'TabControl1
         '
@@ -1209,7 +1200,6 @@ Partial Class FrmTecnologias
         Me.TabControl1.Controls.Add(Me.TabPage2)
         Me.TabControl1.Controls.Add(Me.TabPage3)
         Me.TabControl1.Controls.Add(Me.TabPage4)
-        Me.TabControl1.Controls.Add(Me.TabPage5)
         Me.TabControl1.Location = New System.Drawing.Point(535, 0)
         Me.TabControl1.Name = "TabControl1"
         Me.TabControl1.SelectedIndex = 0
@@ -1808,16 +1798,12 @@ Partial Class FrmTecnologias
         Me.TabPage4.Text = "Campos Relacionados"
         Me.TabPage4.UseVisualStyleBackColor = True
         '
-
-        '
         'NombreGrupoTipoDeDatoTextBox1
         '
         Me.NombreGrupoTipoDeDatoTextBox1.Location = New System.Drawing.Point(797, 261)
         Me.NombreGrupoTipoDeDatoTextBox1.Name = "NombreGrupoTipoDeDatoTextBox1"
         Me.NombreGrupoTipoDeDatoTextBox1.Size = New System.Drawing.Size(100, 26)
         Me.NombreGrupoTipoDeDatoTextBox1.TabIndex = 119
-        '
-
         '
         'TipoCampoIDTextBox
         '
@@ -2055,16 +2041,6 @@ Partial Class FrmTecnologias
         '
         Me.SP_RequerimientosPlantillas_EDICION_INSERTARTableAdapter.ClearBeforeFill = True
         '
-        'TabPage5
-        '
-        Me.TabPage5.Location = New System.Drawing.Point(4, 27)
-        Me.TabPage5.Name = "TabPage5"
-        Me.TabPage5.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage5.Size = New System.Drawing.Size(725, 576)
-        Me.TabPage5.TabIndex = 4
-        Me.TabPage5.Text = "Imagen"
-        Me.TabPage5.UseVisualStyleBackColor = True
-        '
         'FrmTecnologias
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 18.0!)
@@ -2076,14 +2052,10 @@ Partial Class FrmTecnologias
         Me.Controls.Add(CampoComponenteIDLabel)
         Me.Controls.Add(Me.CampoComponenteIDTextBox)
         Me.Controls.Add(Me.TipoCampoIDTextBox)
-
         Me.Controls.Add(NombreGrupoTipoDeDatoLabel1)
         Me.Controls.Add(Me.NombreGrupoTipoDeDatoTextBox1)
-
         Me.Controls.Add(TipoLabel)
-
         Me.Controls.Add(Me.TipoTextBox)
-
         Me.Controls.Add(RequerimientoPlantillaIDLabel)
         Me.Controls.Add(Me.RequerimientoPlantillaIDTextBox)
         Me.Controls.Add(ComponenteIDLabel)
@@ -2330,5 +2302,4 @@ Partial Class FrmTecnologias
     Friend WithEvents Column1 As DataGridViewTextBoxColumn
     Friend WithEvents CM_TiposDatos As ContextMenuStrip
     Friend WithEvents CopiarRegistroToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents TabPage5 As TabPage
 End Class

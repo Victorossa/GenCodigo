@@ -77,5 +77,3 @@ C:\www\GenCodigo\GenCodigoConBD\GenCodigo\GeneradorCod\obj\Debug\GeneradorCod.ex
 C:\www\GenCodigo\GenCodigoConBD\GenCodigo\GeneradorCod\obj\Debug\GeneradorCod.xml
 C:\www\GenCodigo\GenCodigoConBD\GenCodigo\GeneradorCod\obj\Debug\GeneradorCod.pdb
 C:\www\GenCodigo\GenCodigoConBD\GenCodigo\GeneradorCod\obj\Debug\GeneradorCod.vbprojAssemblyReference.cache
-C:\www\GenCodigo\GenCodigoConBD\GenCodigo\GeneradorCod\bin\Debug\BaseDeDatos\GeneradorCodigoBD.mdf
-C:\www\GenCodigo\GenCodigoConBD\GenCodigo\GeneradorCod\bin\Debug\BaseDeDatos\GeneradorCodigoBD_log.ldf

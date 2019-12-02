@@ -183,7 +183,6 @@
         NombreTecnologiaTextBox.Enabled = False
     End Sub
 #End Region
-
 #Region "Timer de Botones"
     'Declaraciones de Timers de Botones
     Private WithEvents Timer_Guardar_Menu_Tecnologias As Timer
@@ -561,14 +560,20 @@
     End Sub
 
     Private Sub PlantillaIDTextBox_TextChanged(sender As Object, e As EventArgs) Handles PlantillaIDTextBox.TextChanged
-        SP_Componentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaID()
-        SP_RequerimientosPlantillas_BUSQUEDA_SEGUN_PARAMETRO_PlantillaID()
-        SP_CampoComponentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaID()
+        Try
+            SP_Componentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaID()
+            SP_RequerimientosPlantillas_BUSQUEDA_SEGUN_PARAMETRO_PlantillaID()
+            SP_CampoComponentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaID()
+            ContenidoComponenteRichTextBox.Rtf = ContenidoComponenteRichTextBox.Text
+        Catch ex As Exception
+
+        End Try
     End Sub
 
     Private Sub SP_Componentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaID()
         Try
             Me.SP_Componentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDTableAdapter.Fill(Me.DataSetAdministracion.SP_Componentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaID, New System.Nullable(Of Integer)(CType(PlantillaIDTextBox.Text, Integer)))
+            ContenidoComponenteRichTextBox.Rtf = ContenidoComponenteRichTextBox.Text
         Catch ex As System.Exception
             'System.Windows.Forms.MessageBox.Show(ex.Message)
         End Try
@@ -602,7 +607,7 @@
             Me.SP_Componentes_EDICION_INSERTARTableAdapter.Fill(Me.DataSetAdministracion.SP_Componentes_EDICION_INSERTAR,
                                                  New System.Nullable(Of Integer)(CType(PlantillaIDTextBox.Text, Integer)),
                                                  NombreComponenteTextBox.Text,
-                                                 ContenidoComponenteRichTextBox.Text,
+                                                 ContenidoComponenteRichTextBox.Rtf,
                                                  XTablaTextBox.Text)
             SP_Componentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaID()
             MsgBox("El Dato Fue Guardado Exitosamente", MsgBoxStyle.Information, "Guardar Dato")
@@ -617,7 +622,7 @@
                                                  New System.Nullable(Of Integer)(CType(ComponenteIDTextBox.Text, Integer)),
                                                  New System.Nullable(Of Integer)(CType(PlantillaIDTextBox.Text, Integer)),
                                                  NombreComponenteTextBox.Text,
-                                                 ContenidoComponenteRichTextBox.Text,
+                                                 ContenidoComponenteRichTextBox.Rtf,
                                                  XTablaTextBox.Text)
             SP_Componentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaID()
             MsgBox("El Dato Fue Actualizado Exitosamente", MsgBoxStyle.Information, "Actualizar Dato")
@@ -693,7 +698,6 @@
         Cancelar_Componentes()
     End Sub
 #End Region
-
 #Region "Eventos sobre Objetos "
     'Control de Nulos
     Public Sub Control_Nulos_Componentes()
@@ -809,7 +813,6 @@
         XTablaCheckBox.Enabled = False
     End Sub
 #End Region
-
 #Region "Timer de Botones"
     'Declaraciones de Timers de Botones
     Private WithEvents Timer_Guardar_Menu_Componentes As Timer
@@ -1102,7 +1105,6 @@
         OrdenDePeticionTextBox.Enabled = False
     End Sub
 #End Region
-
 #Region "Timer de Botones"
     'Declaraciones de Timers de Botones
     Private WithEvents Timer_Guardar_Menu_RequerimientosPlantillas As Timer
