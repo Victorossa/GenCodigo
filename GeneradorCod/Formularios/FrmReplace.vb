@@ -129,7 +129,7 @@
 
     Private Sub BtnRemplazar_Click(sender As Object, e As EventArgs) Handles BtnRemplazar.Click
         'Limpia
-        CodigoGeneradoTextBox.Text = ""
+        CodigoGeneradoRichTextBox.Text = ""
         'Cuenta las tecnologias aplicadas al proyecto
         Dim contadorTecnologiasAplicadas = SP_CARGA_TECNOLOGIAS_APLICADAS_A_PROYECTODataGridView.Rows.Count()
         'Recorre el grid con las tecnologias aplicadas
@@ -148,20 +148,29 @@
         End While
         SP_CARGA_TECNOLOGIAS_APLICADAS_A_PROYECTO()
     End Sub
+
+    Private Sub BtnPrevisualizar_Click(sender As Object, e As EventArgs) Handles BtnPrevisualizar.Click
+        Try
+            CodigoGeneradoRichTextBox.Rtf = CodigoGeneradoRichTextBox.Text
+        Catch ex As Exception
+            System.Windows.Forms.MessageBox.Show(ex.Message)
+        End Try
+    End Sub
+
     Public Sub RecorrerComponentesHaciendoReplace()
         Dim contadorComponentes = SP_Componentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView.Rows.Count()
         While contadorComponentes > 0
             'Se ubica en la primera fila
             SP_Componentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView.CurrentCell = SP_Componentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView.Rows(0).Cells(0)
             If XTablaCheckBox.Checked = False Then
-                CodigoGeneradoTextBox.Text = CodigoGeneradoTextBox.Text & vbCrLf & "                              " & NombreTecnologiaTextBox1.Text & vbCrLf & NombreComponenteTextBox.Text & vbCrLf & CodigoTextBox.Text & vbCrLf & "++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++" & vbCrLf & vbCrLf
+                CodigoGeneradoRichTextBox.Text = CodigoGeneradoRichTextBox.Text & vbCrLf & "                              " & NombreTecnologiaTextBox1.Text & vbCrLf & vbCrLf & NombreComponenteTextBox.Text & vbCrLf & CodigoTextBox.Text & vbCrLf & "++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++" & vbCrLf & vbCrLf
             Else
-                CodigoGeneradoTextBox.Text = CodigoGeneradoTextBox.Text & vbCrLf & NombreComponenteTextBox.Text & TablasDeAplicacion(CodigoTextBox.Text) & vbCrLf & "++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++" & vbCrLf & vbCrLf
+                CodigoGeneradoRichTextBox.Text = CodigoGeneradoRichTextBox.Text & vbCrLf & "                              " & NombreTecnologiaTextBox1.Text & vbCrLf & vbCrLf & NombreComponenteTextBox.Text & TablasDeAplicacion(CodigoTextBox.Text) & vbCrLf & vbCrLf & "++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++" & vbCrLf & vbCrLf
             End If
             SP_Componentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView.Rows.RemoveAt(0)
             contadorComponentes = contadorComponentes - 1
         End While
-        RemplazarEnResultado(CodigoGeneradoTextBox.Text, NombreTablaTextBox1.Text)
+        RemplazarEnResultado(CodigoGeneradoRichTextBox.Text, NombreTablaTextBox1.Text)
     End Sub
 
     Public Sub RemplazarEnResultado(textoBase As String, NombreTabla As String)
@@ -176,7 +185,7 @@
         While contadorRequerimientos > 0
             'Se ubica en la primera fila
             SP_RegistroValorRequerimientos_SEGUN_ProyectoIDDataGridView.CurrentCell = SP_RegistroValorRequerimientos_SEGUN_ProyectoIDDataGridView.Rows(0).Cells(0)
-            CodigoGeneradoTextBox.Text = CodigoGeneradoTextBox.Text.Replace(RequerimientoTextBox1.Text, ValorRequerimientoTextBox1.Text)
+            CodigoGeneradoRichTextBox.Text = CodigoGeneradoRichTextBox.Text.Replace(RequerimientoTextBox1.Text, ValorRequerimientoTextBox1.Text)
             SP_RegistroValorRequerimientos_SEGUN_ProyectoIDDataGridView.Rows.RemoveAt(0)
             contadorRequerimientos = contadorRequerimientos - 1
         End While
@@ -187,7 +196,7 @@
             Me.SP_Proyectos_EDICION_ACTUALIZARTableAdapter.Fill(Me.DataSetAdministracion.SP_Proyectos_EDICION_ACTUALIZAR,
                                                  New System.Nullable(Of Integer)(CType(ProyectoIDTextBox.Text, Integer)),
                                                  NombreProyectoTextBox.Text,
-                                                 CodigoGeneradoTextBox.Text,
+                                                 CodigoGeneradoRichTextBox.Text,
                                                  DescripcionTextBox.Text)
         Catch ex As System.Exception
             System.Windows.Forms.MessageBox.Show(ex.Message)
@@ -315,13 +324,14 @@
         Bloquear_Objetos_Proyectos()
         Parar_Timer_Proyectos()
         Timer_Ubicar_En_Fila_Proyectos()
+
     End Sub
     'Insertar
     Private Sub SP_Proyectos_EDICION_INSERTAR()
         Try
             Me.SP_Proyectos_EDICION_INSERTARTableAdapter.Fill(Me.DataSetAdministracion.SP_Proyectos_EDICION_INSERTAR,
                                                  NombreProyectoTextBox.Text,
-                                                 CodigoGeneradoTextBox.Text,
+                                                 CodigoGeneradoRichTextBox.Text,
                                                  DescripcionTextBox.Text)
             Me.ProyectosTableAdapter.Fill(Me.DataSetAdministracion.Proyectos)
             MsgBox("El Dato Fue Guardado Exitosamente", MsgBoxStyle.Information, "Guardar Dato")
@@ -335,7 +345,7 @@
             Me.SP_Proyectos_EDICION_ACTUALIZARTableAdapter.Fill(Me.DataSetAdministracion.SP_Proyectos_EDICION_ACTUALIZAR,
                                                  New System.Nullable(Of Integer)(CType(ProyectoIDTextBox.Text, Integer)),
                                                  NombreProyectoTextBox.Text,
-                                                 CodigoGeneradoTextBox.Text,
+                                                 CodigoGeneradoRichTextBox.Text,
                                                  DescripcionTextBox.Text)
             Me.ProyectosTableAdapter.Fill(Me.DataSetAdministracion.Proyectos)
             MsgBox("El Dato Fue Actualizado Exitosamente", MsgBoxStyle.Information, "Actualizar Dato")
@@ -1230,28 +1240,30 @@
         SP_CampoComponentes_Segun_Plantilla_TipoTable()
     End Sub
 
-    Private Sub CodigoGeneradoTextBox_MouseDoubleClick(sender As Object, e As MouseEventArgs) Handles CodigoGeneradoTextBox.MouseDoubleClick
-        CodigoGeneradoTextBox.SendToBack()
-        CodigoGeneradoTextBox.Dock = DockStyle.None
+    Private Sub CodigoGeneradoRichTextBox_MouseDoubleClick(sender As Object, e As MouseEventArgs) Handles CodigoGeneradoRichTextBox.MouseDoubleClick
+        CodigoGeneradoRichTextBox.SendToBack()
+        CodigoGeneradoRichTextBox.Dock = DockStyle.None
     End Sub
 
     Private Sub MaximizarCodigoGeneradoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles MaximizarCodigoGeneradoToolStripMenuItem.Click
-        CodigoGeneradoTextBox.BringToFront()
-        CodigoGeneradoTextBox.Dock = DockStyle.Fill
+        CodigoGeneradoRichTextBox.BringToFront()
+        CodigoGeneradoRichTextBox.Dock = DockStyle.Fill
     End Sub
 
 #End Region
 
 
     Private Sub BtnCopiar_Click(sender As Object, e As EventArgs) Handles BtnCopiar.Click
-        If CodigoGeneradoTextBox.Text <> "" Then
-            Clipboard.SetText(CodigoGeneradoTextBox.Text)
+        If CodigoGeneradoRichTextBox.Text <> "" Then
+            Clipboard.SetText(CodigoGeneradoRichTextBox.Text)
         End If
     End Sub
     Private Sub BtnLimpiar_Click(sender As Object, e As EventArgs) Handles BtnLimpiar.Click
-        CodigoGeneradoTextBox.Text = ""
+        CodigoGeneradoRichTextBox.Text = ""
         SP_Proyectos_EDICION_ACTUALIZAR_CodigoRemplazado()
     End Sub
+
+
     Private Sub SP_RegistroValorRequerimientos_SegunProyectoRequerimiento()
         Try
             Me.SP_RegistroValorRequerimientos_SegunProyectoRequerimientoTableAdapter.Fill(Me.DataSetTablasYCampos.SP_RegistroValorRequerimientos_SegunProyectoRequerimiento, New System.Nullable(Of Integer)(CType(ProyectoIDTextBox.Text, Integer)), RequerimientoTextBox.Text)
@@ -1369,14 +1381,14 @@
 
     Private Sub SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaID2()
         Try
-            Me.SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaID2TableAdapter.Fill(Me.DataSetTablasYCampos.SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaID2, New System.Nullable(Of Integer)(CType(TablaIDTextBox2.Text, Integer)))
+            Me.SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaID2TableAdapter.Fill(Me.DataSetTablasYCampos.SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaID2, New System.Nullable(Of Integer)(CType(TI_.Text, Integer)))
         Catch ex As System.Exception
             'System.Windows.Forms.MessageBox.Show(ex.Message)
         End Try
 
     End Sub
 
-    Private Sub TablaIDTextBox2_TextChanged(sender As Object, e As EventArgs) Handles TablaIDTextBox2.TextChanged
+    Private Sub TablaIDTextBox2_TextChanged(sender As Object, e As EventArgs) Handles TI_.TextChanged
         SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaID2()
     End Sub
 
@@ -1396,4 +1408,6 @@
             Cancelar_TablasDeProyecto()
         End If
     End Sub
+
+
 End Class

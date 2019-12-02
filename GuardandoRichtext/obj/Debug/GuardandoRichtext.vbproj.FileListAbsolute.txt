@@ -10,3 +10,14 @@ C:\www\GenCodigo\GenCodigoConBD\GenCodigo\GuardandoRichtext\obj\Debug\GuardandoR
 C:\www\GenCodigo\GenCodigoConBD\GenCodigo\GuardandoRichtext\obj\Debug\GuardandoRichtext.exe
 C:\www\GenCodigo\GenCodigoConBD\GenCodigo\GuardandoRichtext\obj\Debug\GuardandoRichtext.xml
 C:\www\GenCodigo\GenCodigoConBD\GenCodigo\GuardandoRichtext\obj\Debug\GuardandoRichtext.pdb
+C:\Users\programador1\source\repos\Nueva carpeta\GenCodigo\GuardandoRichtext\bin\Debug\GuardandoRichtext.exe.config
+C:\Users\programador1\source\repos\Nueva carpeta\GenCodigo\GuardandoRichtext\bin\Debug\GuardandoRichtext.exe
+C:\Users\programador1\source\repos\Nueva carpeta\GenCodigo\GuardandoRichtext\bin\Debug\GuardandoRichtext.pdb
+C:\Users\programador1\source\repos\Nueva carpeta\GenCodigo\GuardandoRichtext\bin\Debug\GuardandoRichtext.xml
+C:\Users\programador1\source\repos\Nueva carpeta\GenCodigo\GuardandoRichtext\obj\Debug\GuardandoRichtext.vbprojAssemblyReference.cache
+C:\Users\programador1\source\repos\Nueva carpeta\GenCodigo\GuardandoRichtext\obj\Debug\GuardandoRichtext.Form1.resources
+C:\Users\programador1\source\repos\Nueva carpeta\GenCodigo\GuardandoRichtext\obj\Debug\GuardandoRichtext.Resources.resources
+C:\Users\programador1\source\repos\Nueva carpeta\GenCodigo\GuardandoRichtext\obj\Debug\GuardandoRichtext.vbproj.GenerateResource.cache
+C:\Users\programador1\source\repos\Nueva carpeta\GenCodigo\GuardandoRichtext\obj\Debug\GuardandoRichtext.exe
+C:\Users\programador1\source\repos\Nueva carpeta\GenCodigo\GuardandoRichtext\obj\Debug\GuardandoRichtext.xml
+C:\Users\programador1\source\repos\Nueva carpeta\GenCodigo\GuardandoRichtext\obj\Debug\GuardandoRichtext.pdb

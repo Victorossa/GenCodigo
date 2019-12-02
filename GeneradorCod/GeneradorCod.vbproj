@@ -119,6 +119,12 @@
       <DependentUpon>DataSetTablasYCampos.xsd</DependentUpon>
     </Compile>
     <Compile Include="Data\ProcesamientoTexto.vb" />
+    <Compile Include="Formularios\FrmInicio.Designer.vb">
+      <DependentUpon>FrmInicio.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\FrmInicio.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Formularios\FrmReplace.Designer.vb">
       <DependentUpon>FrmReplace.vb</DependentUpon>
     </Compile>
@@ -161,6 +167,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Formularios\FrmInicio.resx">
+      <DependentUpon>FrmInicio.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\FrmReplace.resx">
       <DependentUpon>FrmReplace.vb</DependentUpon>
       <SubType>Designer</SubType>
@@ -233,6 +242,13 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="BaseDeDatos\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Recursos\FondoPLE0.jpg" />
+    <Content Include="Recursos\FondoPLE1.jpg" />
+    <Content Include="Recursos\FondoPLE2.jpg" />
+    <Content Include="Recursos\FondoPLE3.jpg" />
+    <Content Include="Recursos\FondoPLE4.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

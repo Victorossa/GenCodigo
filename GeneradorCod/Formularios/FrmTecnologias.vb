@@ -564,7 +564,7 @@
             SP_Componentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaID()
             SP_RequerimientosPlantillas_BUSQUEDA_SEGUN_PARAMETRO_PlantillaID()
             SP_CampoComponentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaID()
-            ContenidoComponenteRichTextBox.Rtf = ContenidoComponenteRichTextBox.Text
+            'ContenidoComponenteRichTextBox.Rtf = ContenidoComponenteRichTextBox.Text
         Catch ex As Exception
 
         End Try
@@ -573,7 +573,7 @@
     Private Sub SP_Componentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaID()
         Try
             Me.SP_Componentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDTableAdapter.Fill(Me.DataSetAdministracion.SP_Componentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaID, New System.Nullable(Of Integer)(CType(PlantillaIDTextBox.Text, Integer)))
-            ContenidoComponenteRichTextBox.Rtf = ContenidoComponenteRichTextBox.Text
+            'ContenidoComponenteRichTextBox.Rtf = ContenidoComponenteRichTextBox.Text
         Catch ex As System.Exception
             'System.Windows.Forms.MessageBox.Show(ex.Message)
         End Try
@@ -607,7 +607,7 @@
             Me.SP_Componentes_EDICION_INSERTARTableAdapter.Fill(Me.DataSetAdministracion.SP_Componentes_EDICION_INSERTAR,
                                                  New System.Nullable(Of Integer)(CType(PlantillaIDTextBox.Text, Integer)),
                                                  NombreComponenteTextBox.Text,
-                                                 ContenidoComponenteRichTextBox.Rtf,
+                                                 ContenidoComponenteRichTextBox.Text,
                                                  XTablaTextBox.Text)
             SP_Componentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaID()
             MsgBox("El Dato Fue Guardado Exitosamente", MsgBoxStyle.Information, "Guardar Dato")
@@ -622,7 +622,7 @@
                                                  New System.Nullable(Of Integer)(CType(ComponenteIDTextBox.Text, Integer)),
                                                  New System.Nullable(Of Integer)(CType(PlantillaIDTextBox.Text, Integer)),
                                                  NombreComponenteTextBox.Text,
-                                                 ContenidoComponenteRichTextBox.Rtf,
+                                                 ContenidoComponenteRichTextBox.Text,
                                                  XTablaTextBox.Text)
             SP_Componentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaID()
             MsgBox("El Dato Fue Actualizado Exitosamente", MsgBoxStyle.Information, "Actualizar Dato")
@@ -650,6 +650,7 @@
         Limpiar_Objetos_Componentes()
         NombreComponenteTextBox.Enabled = True
         NombreComponenteTextBox.Focus()
+        XTablaTextBox.Text = False
     End Sub
     'Guardar
     Private Sub Guardar_Menu_Componentes_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Guardar_Menu_Componentes.Click
@@ -878,7 +879,12 @@
         Timer_Ubicacion_Componentes.Start()
     End Sub
     Private Sub SP_Componentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView_CellMouseClick(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewCellMouseEventArgs) Handles SP_Componentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView.CellMouseClick
-        X_Componentes = SP_Componentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView.CurrentRow.Index
+        Try
+            X_Componentes = SP_Componentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView.CurrentRow.Index
+            'ContenidoComponenteRichTextBox.Rtf = ContenidoComponenteRichTextBox.Text
+        Catch ex As Exception
+
+        End Try
     End Sub
     Private Sub Ubicar_En_Fila_Componentes()
         Try
@@ -1230,7 +1236,7 @@
                                                  New System.Nullable(Of Integer)(CType(ComponenteIDTextBox.Text, Integer)),
                                                  New System.Nullable(Of Integer)(CType(PlantillaIDTextBox.Text, Integer)),
                                                  NombreComponenteTextBox.Text,
-                                                 ContenidoComponenteRichTextBox.Rtf,
+                                                 ContenidoComponenteRichTextBox.Text,
                                                  XTablaTextBox.Text)
         Catch ex As System.Exception
             System.Windows.Forms.MessageBox.Show(ex.Message)
@@ -1263,12 +1269,12 @@
     End Sub
 
     Private Sub BtnGuardarCodigo_Click(sender As Object, e As EventArgs) Handles BtnGuardarCodigo.Click
-        If MsgBox("Desea Actualizar este codigo?", MsgBoxStyle.YesNo) = MsgBoxResult.Yes Then
-            SP_Componentes_EDICION_ACTUALIZAR_SoloCodigo()
-            MsgBox("Se actualizo la plantilla", MsgBoxStyle.Information)
-        Else
-            MsgBox("Se Cancelo la Instrucción", MsgBoxStyle.Information)
-        End If
+        'If MsgBox("Desea Actualizar este codigo?", MsgBoxStyle.YesNo) = MsgBoxResult.Yes Then
+        SP_Componentes_EDICION_ACTUALIZAR_SoloCodigo()
+        MsgBox("Se actualizo la plantilla", MsgBoxStyle.Information)
+        'Else
+        '    MsgBox("Se Cancelo la Instrucción", MsgBoxStyle.Information)
+        'End If
     End Sub
 
 
@@ -1725,6 +1731,33 @@
     Private Sub BtnMayusculaAMinuscula_Click(sender As Object, e As EventArgs) Handles BtnMayusculaAMinuscula.Click
         Me.ContenidoComponenteRichTextBox.Text = Me.ContenidoComponenteRichTextBox.Text.Insert(Me.ContenidoComponenteRichTextBox.SelectionStart, "{{{A=>-a}}}")
     End Sub
+
+    Private Sub BtnIzquierda_Click(sender As Object, e As EventArgs) Handles BtnIzquierda.Click
+        Me.ContenidoComponenteRichTextBox.SelectionAlignment = HorizontalAlignment.Left
+    End Sub
+
+    Private Sub BtnCentrar_Click(sender As Object, e As EventArgs) Handles BtnCentrar.Click
+        Me.ContenidoComponenteRichTextBox.SelectionAlignment = HorizontalAlignment.Center
+    End Sub
+
+    Private Sub BtnDerecha_Click(sender As Object, e As EventArgs) Handles BtnDerecha.Click
+        Me.ContenidoComponenteRichTextBox.SelectionAlignment = HorizontalAlignment.Right
+    End Sub
+
+    Private Sub BtnFuentes_Click(sender As Object, e As EventArgs) Handles BtnFuentes.Click
+        Dim f As New FontDialog
+        f.ShowDialog()
+        Me.ContenidoComponenteRichTextBox.SelectionFont = f.Font
+    End Sub
+
+    Private Sub BtnColor_Click(sender As Object, e As EventArgs) Handles BtnColor.Click
+        Dim c As New ColorDialog
+        c.ShowDialog()
+        Me.ContenidoComponenteRichTextBox.SelectionColor = c.Color
+    End Sub
+
+
+
     Dim table As New DataTable
     Dim rowIndex As Integer
     Private Sub ChkMover_CheckedChanged(sender As Object, e As EventArgs) Handles ChkMover.CheckedChanged
@@ -1930,6 +1963,16 @@
             MessageBox.Show(ex.Message)
         End Try
     End Sub
+
+    Private Sub DGVEdicionPosicion_CellMouseClick(sender As Object, e As DataGridViewCellMouseEventArgs) Handles DGVEdicionPosicion.CellMouseClick
+        'ContenidoComponenteRichTextBox.Rtf = ContenidoComponenteRichTextBox.Text
+    End Sub
+
+    Private Sub BtnConvertir_Click(sender As Object, e As EventArgs) Handles BtnConvertir.Click
+        ContenidoComponenteRichTextBox.Rtf = ContenidoComponenteRichTextBox.Text
+    End Sub
+
+
 
 
 

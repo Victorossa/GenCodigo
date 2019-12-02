@@ -118,6 +118,11 @@ Partial Class FrmTecnologias
         Me.Label2 = New System.Windows.Forms.Label()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
+        Me.BtnColor = New System.Windows.Forms.Button()
+        Me.BtnFuentes = New System.Windows.Forms.Button()
+        Me.BtnDerecha = New System.Windows.Forms.Button()
+        Me.BtnCentrar = New System.Windows.Forms.Button()
+        Me.BtnIzquierda = New System.Windows.Forms.Button()
         Me.BtnTablaPluralMinuscula = New System.Windows.Forms.Button()
         Me.BtnMayusculaAMinuscula = New System.Windows.Forms.Button()
         Me.BtnTablaPlural = New System.Windows.Forms.Button()
@@ -218,6 +223,7 @@ Partial Class FrmTecnologias
         Me.SP_RequerimientosPlantillas_EDICION_INSERTARBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.SP_RequerimientosPlantillas_EDICION_INSERTARTableAdapter = New GeneradorCod.DataSetAdministracionTableAdapters.SP_RequerimientosPlantillas_EDICION_INSERTARTableAdapter()
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
+        Me.BtnConvertir = New System.Windows.Forms.Button()
         NombreTecnologiaLabel = New System.Windows.Forms.Label()
         TecnologiaIDLabel = New System.Windows.Forms.Label()
         NombrePlantillaLabel = New System.Windows.Forms.Label()
@@ -1208,6 +1214,12 @@ Partial Class FrmTecnologias
         '
         'TabPage1
         '
+        Me.TabPage1.Controls.Add(Me.BtnConvertir)
+        Me.TabPage1.Controls.Add(Me.BtnColor)
+        Me.TabPage1.Controls.Add(Me.BtnFuentes)
+        Me.TabPage1.Controls.Add(Me.BtnDerecha)
+        Me.TabPage1.Controls.Add(Me.BtnCentrar)
+        Me.TabPage1.Controls.Add(Me.BtnIzquierda)
         Me.TabPage1.Controls.Add(Me.BtnTablaPluralMinuscula)
         Me.TabPage1.Controls.Add(Me.BtnMayusculaAMinuscula)
         Me.TabPage1.Controls.Add(Me.BtnTablaPlural)
@@ -1236,6 +1248,51 @@ Partial Class FrmTecnologias
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Text = "Busqueda y Remplazo"
         Me.TabPage1.UseVisualStyleBackColor = True
+        '
+        'BtnColor
+        '
+        Me.BtnColor.Location = New System.Drawing.Point(637, 541)
+        Me.BtnColor.Name = "BtnColor"
+        Me.BtnColor.Size = New System.Drawing.Size(75, 28)
+        Me.BtnColor.TabIndex = 140
+        Me.BtnColor.Text = "Color"
+        Me.BtnColor.UseVisualStyleBackColor = True
+        '
+        'BtnFuentes
+        '
+        Me.BtnFuentes.Location = New System.Drawing.Point(556, 541)
+        Me.BtnFuentes.Name = "BtnFuentes"
+        Me.BtnFuentes.Size = New System.Drawing.Size(75, 28)
+        Me.BtnFuentes.TabIndex = 139
+        Me.BtnFuentes.Text = "Fuente"
+        Me.BtnFuentes.UseVisualStyleBackColor = True
+        '
+        'BtnDerecha
+        '
+        Me.BtnDerecha.Location = New System.Drawing.Point(168, 541)
+        Me.BtnDerecha.Name = "BtnDerecha"
+        Me.BtnDerecha.Size = New System.Drawing.Size(75, 28)
+        Me.BtnDerecha.TabIndex = 138
+        Me.BtnDerecha.Text = "Derecha"
+        Me.BtnDerecha.UseVisualStyleBackColor = True
+        '
+        'BtnCentrar
+        '
+        Me.BtnCentrar.Location = New System.Drawing.Point(87, 541)
+        Me.BtnCentrar.Name = "BtnCentrar"
+        Me.BtnCentrar.Size = New System.Drawing.Size(75, 28)
+        Me.BtnCentrar.TabIndex = 137
+        Me.BtnCentrar.Text = "Centrar"
+        Me.BtnCentrar.UseVisualStyleBackColor = True
+        '
+        'BtnIzquierda
+        '
+        Me.BtnIzquierda.Location = New System.Drawing.Point(6, 541)
+        Me.BtnIzquierda.Name = "BtnIzquierda"
+        Me.BtnIzquierda.Size = New System.Drawing.Size(75, 28)
+        Me.BtnIzquierda.TabIndex = 136
+        Me.BtnIzquierda.Text = "Izquierda"
+        Me.BtnIzquierda.UseVisualStyleBackColor = True
         '
         'BtnTablaPluralMinuscula
         '
@@ -1416,7 +1473,7 @@ Partial Class FrmTecnologias
         Me.ContenidoComponenteRichTextBox.Font = New System.Drawing.Font("Candara", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ContenidoComponenteRichTextBox.Location = New System.Drawing.Point(3, 111)
         Me.ContenidoComponenteRichTextBox.Name = "ContenidoComponenteRichTextBox"
-        Me.ContenidoComponenteRichTextBox.Size = New System.Drawing.Size(716, 459)
+        Me.ContenidoComponenteRichTextBox.Size = New System.Drawing.Size(716, 423)
         Me.ContenidoComponenteRichTextBox.TabIndex = 115
         Me.ContenidoComponenteRichTextBox.Text = ""
         '
@@ -1447,7 +1504,7 @@ Partial Class FrmTecnologias
         Me.TabPage2.Location = New System.Drawing.Point(4, 27)
         Me.TabPage2.Name = "TabPage2"
         Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage2.Size = New System.Drawing.Size(725, 576)
+        Me.TabPage2.Size = New System.Drawing.Size(58, 576)
         Me.TabPage2.TabIndex = 1
         Me.TabPage2.Text = "Requerimientos"
         Me.TabPage2.UseVisualStyleBackColor = True
@@ -1507,7 +1564,7 @@ Partial Class FrmTecnologias
         Me.TabPage3.Location = New System.Drawing.Point(4, 27)
         Me.TabPage3.Name = "TabPage3"
         Me.TabPage3.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage3.Size = New System.Drawing.Size(725, 576)
+        Me.TabPage3.Size = New System.Drawing.Size(58, 576)
         Me.TabPage3.TabIndex = 2
         Me.TabPage3.Text = "Tipos de Datos Campos"
         Me.TabPage3.UseVisualStyleBackColor = True
@@ -1793,7 +1850,7 @@ Partial Class FrmTecnologias
         Me.TabPage4.Location = New System.Drawing.Point(4, 27)
         Me.TabPage4.Name = "TabPage4"
         Me.TabPage4.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage4.Size = New System.Drawing.Size(725, 576)
+        Me.TabPage4.Size = New System.Drawing.Size(58, 576)
         Me.TabPage4.TabIndex = 3
         Me.TabPage4.Text = "Campos Relacionados"
         Me.TabPage4.UseVisualStyleBackColor = True
@@ -2040,6 +2097,15 @@ Partial Class FrmTecnologias
         'SP_RequerimientosPlantillas_EDICION_INSERTARTableAdapter
         '
         Me.SP_RequerimientosPlantillas_EDICION_INSERTARTableAdapter.ClearBeforeFill = True
+        '
+        'BtnConvertir
+        '
+        Me.BtnConvertir.Location = New System.Drawing.Point(249, 541)
+        Me.BtnConvertir.Name = "BtnConvertir"
+        Me.BtnConvertir.Size = New System.Drawing.Size(75, 28)
+        Me.BtnConvertir.TabIndex = 141
+        Me.BtnConvertir.Text = "Conv"
+        Me.BtnConvertir.UseVisualStyleBackColor = True
         '
         'FrmTecnologias
         '
@@ -2302,4 +2368,10 @@ Partial Class FrmTecnologias
     Friend WithEvents Column1 As DataGridViewTextBoxColumn
     Friend WithEvents CM_TiposDatos As ContextMenuStrip
     Friend WithEvents CopiarRegistroToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents BtnColor As Button
+    Friend WithEvents BtnFuentes As Button
+    Friend WithEvents BtnDerecha As Button
+    Friend WithEvents BtnCentrar As Button
+    Friend WithEvents BtnIzquierda As Button
+    Friend WithEvents BtnConvertir As Button
 End Class
