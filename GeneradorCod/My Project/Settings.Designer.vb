@@ -15,7 +15,7 @@ Option Explicit On
 Namespace My
     
     <Global.System.Runtime.CompilerServices.CompilerGeneratedAttribute(),  _
-     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "16.3.0.0"),  _
+     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "15.9.0.0"),  _
      Global.System.ComponentModel.EditorBrowsableAttribute(Global.System.ComponentModel.EditorBrowsableState.Advanced)>  _
     Partial Friend NotInheritable Class MySettings
         Inherits Global.System.Configuration.ApplicationSettingsBase
@@ -58,7 +58,18 @@ Namespace My
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.Configuration.SpecialSettingAttribute(Global.System.Configuration.SpecialSetting.ConnectionString),  _
          Global.System.Configuration.DefaultSettingValueAttribute("Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\BaseDeDatos\G"& _ 
-            "eneradorCodigoBD.mdf;Integrated Security=True")>  _
+            "eneradorCodigoBD.mdf;Integrated Security=True;Connect Timeout=30")>  _
+        Public ReadOnly Property GeneradorBDConnectionString() As String
+            Get
+                Return CType(Me("GeneradorBDConnectionString"),String)
+            End Get
+        End Property
+        
+        <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.SpecialSettingAttribute(Global.System.Configuration.SpecialSetting.ConnectionString),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-63U4E7U;Initial Catalog=GeneradorCodigoBD;Integrated Security"& _ 
+            "=True")>  _
         Public ReadOnly Property GeneradorCodigoBDConnectionString() As String
             Get
                 Return CType(Me("GeneradorCodigoBDConnectionString"),String)
@@ -68,11 +79,10 @@ Namespace My
         <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.Configuration.SpecialSettingAttribute(Global.System.Configuration.SpecialSetting.ConnectionString),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\BaseDeDatos\G"& _ 
-            "eneradorCodigoBD.mdf;Integrated Security=True;Connect Timeout=30")>  _
-        Public ReadOnly Property GeneradorBDConnectionString() As String
+         Global.System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-63U4E7U;Initial Catalog=PLE_DB;Integrated Security=True")>  _
+        Public ReadOnly Property PLE_DBConnectionString() As String
             Get
-                Return CType(Me("GeneradorBDConnectionString"),String)
+                Return CType(Me("PLE_DBConnectionString"),String)
             End Get
         End Property
     End Class
