@@ -33,7 +33,6 @@ C:\Users\programador1\source\repos\Nueva carpeta\GenCodigo\PLE\bin\Debug\EntityF
 C:\Users\programador1\source\repos\Nueva carpeta\GenCodigo\PLE\bin\Debug\EntityFramework.SqlServer.dll
 C:\Users\programador1\source\repos\Nueva carpeta\GenCodigo\PLE\bin\Debug\EntityFramework.xml
 C:\Users\programador1\source\repos\Nueva carpeta\GenCodigo\PLE\bin\Debug\EntityFramework.SqlServer.xml
-C:\Users\programador1\source\repos\Nueva carpeta\GenCodigo\PLE\obj\Debug\PLE.vbprojAssemblyReference.cache
 C:\Users\programador1\source\repos\Nueva carpeta\GenCodigo\PLE\obj\Debug\PLE.FrmGeneracionDeProyectos.resources
 C:\Users\programador1\source\repos\Nueva carpeta\GenCodigo\PLE\obj\Debug\PLE.FrmInicio.resources
 C:\Users\programador1\source\repos\Nueva carpeta\GenCodigo\PLE\obj\Debug\PLE.FrmPlantillas.resources
@@ -43,3 +42,4 @@ C:\Users\programador1\source\repos\Nueva carpeta\GenCodigo\PLE\obj\Debug\PLE.vbp
 C:\Users\programador1\source\repos\Nueva carpeta\GenCodigo\PLE\obj\Debug\PLE.exe
 C:\Users\programador1\source\repos\Nueva carpeta\GenCodigo\PLE\obj\Debug\PLE.xml
 C:\Users\programador1\source\repos\Nueva carpeta\GenCodigo\PLE\obj\Debug\PLE.pdb
+C:\Users\programador1\source\repos\Nueva carpeta\GenCodigo\PLE\obj\Debug\PLE.vbprojAssemblyReference.cache

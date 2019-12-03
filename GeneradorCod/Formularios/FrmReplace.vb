@@ -1414,5 +1414,58 @@
         End If
     End Sub
 
+#Region "Relaciones Entre Tablas"
+    'Busca si hay relaciones
+    Private Sub SP_RegistroRelacionesTablas_BUSQUEDA_SEGUN_PARAMETRO_TD_CTD_TI_CTI()
+        'Try
+        '    Me.SP_RegistroRelacionesTablas_BUSQUEDA_SEGUN_PARAMETRO_TD_CTD_TI_CTITableAdapter.Fill(Me.DataSetTablasYCampos.SP_RegistroRelacionesTablas_BUSQUEDA_SEGUN_PARAMETRO_TD_CTD_TI_CTI,
+        '                                                                                           New System.Nullable(Of Integer)(CType(TD_.Text, Integer)),
+        '                                                                                           New System.Nullable(Of Integer)(CType(CTD_.Text, Integer)),
+        '                                                                                           New System.Nullable(Of Integer)(CType(TI_.Text, Integer)),
+        '                                                                                           New System.Nullable(Of Integer)(CType(CTI_.Text, Integer)))
+        'Catch ex As System.Exception
+        '    System.Windows.Forms.MessageBox.Show(ex.Message)
+        'End Try
 
+    End Sub
+
+    Private Sub SP_RegistroRelacionesTablas_EDICION_INSERTAR()
+        Try
+            Me.SP_RegistroRelacionesTablas_EDICION_INSERTARTableAdapter.Fill(Me.DataSetTablasYCampos.SP_RegistroRelacionesTablas_EDICION_INSERTAR, New System.Nullable(Of Integer)(CType(TD_.Text, Integer)), New System.Nullable(Of Integer)(CType(CTD_.Text, Integer)), New System.Nullable(Of Integer)(CType(TI_.Text, Integer)), New System.Nullable(Of Integer)(CType(CTI_.Text, Integer)))
+        Catch ex As System.Exception
+            System.Windows.Forms.MessageBox.Show(ex.Message)
+        End Try
+
+    End Sub
+
+    Private Sub CrearRelacionToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CrearRelacionToolStripMenuItem.Click
+        If Chk_Rel.Checked = True Then
+            BUSCA PRIMERO QUE LA RELACION NO EXISTA EN EL REGISTRO SP_RegistroRelacionesTablas_BUSQUEDA_SEGUN_PARAMETRO_TD_CTD_TI_CTI
+            If TipoCTD.Text = "numeric" Or TipoCTD.Text = "numeric (Clave)" Then
+                If TipoCTI.Text = "numeric" Or TipoCTI.Text = "numeric (Clave)" Then
+                    SP_RegistroRelacionesTablas_EDICION_INSERTAR()
+                    MsgBox("Relacion entre las dos Tablas Creada Exitosamente")
+                End If
+            Else
+                MsgBox("Los tipos de datos de los campos de esta relación no son correctos, verifica el tipo de dato", MsgBoxStyle.Information)
+            End If
+        End If
+    End Sub
+
+    Private Sub SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaID2DataGridView_CellMouseDoubleClick(sender As Object, e As DataGridViewCellMouseEventArgs) Handles SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaID2DataGridView.CellMouseDoubleClick
+        If Chk_Rel.Checked = True Then
+            BUSCA PRIMERO QUE LA RELACION NO EXISTA EN EL REGISTRO SP_RegistroRelacionesTablas_BUSQUEDA_SEGUN_PARAMETRO_TD_CTD_TI_CTI
+            If TipoCTD.Text = "numeric" Or TipoCTD.Text = "numeric (Clave)" Then
+                If TipoCTI.Text = "numeric" Or TipoCTI.Text = "numeric (Clave)" Then
+                    SP_RegistroRelacionesTablas_EDICION_INSERTAR()
+                    MsgBox("Relacion entre las dos Tablas Creada Exitosamente")
+                End If
+            Else
+                MsgBox("Los tipos de datos de los campos de esta relación no son correctos, verifica el tipo de dato", MsgBoxStyle.Information)
+            End If
+        End If
+    End Sub
+
+
+#End Region
 End Class
