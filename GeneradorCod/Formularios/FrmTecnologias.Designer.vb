@@ -118,6 +118,8 @@ Partial Class FrmTecnologias
         Me.Label2 = New System.Windows.Forms.Label()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
+        Me.BtnCamposRelacionados = New System.Windows.Forms.Button()
+        Me.BtnConvertir = New System.Windows.Forms.Button()
         Me.BtnColor = New System.Windows.Forms.Button()
         Me.BtnFuentes = New System.Windows.Forms.Button()
         Me.BtnDerecha = New System.Windows.Forms.Button()
@@ -223,7 +225,18 @@ Partial Class FrmTecnologias
         Me.SP_RequerimientosPlantillas_EDICION_INSERTARBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.SP_RequerimientosPlantillas_EDICION_INSERTARTableAdapter = New GeneradorCod.DataSetAdministracionTableAdapters.SP_RequerimientosPlantillas_EDICION_INSERTARTableAdapter()
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
-        Me.BtnConvertir = New System.Windows.Forms.Button()
+        Me.Button1 = New System.Windows.Forms.Button()
+        Me.Button2 = New System.Windows.Forms.Button()
+        Me.Button3 = New System.Windows.Forms.Button()
+        Me.Button4 = New System.Windows.Forms.Button()
+        Me.Panel9 = New System.Windows.Forms.Panel()
+        Me.Nuevo_Menu_ = New System.Windows.Forms.Button()
+        Me.Cancelar_Menu_ = New System.Windows.Forms.Button()
+        Me.Eliminar_Menu_ = New System.Windows.Forms.Button()
+        Me.Editar_Menu_ = New System.Windows.Forms.Button()
+        Me.Actualizar_Menu_ = New System.Windows.Forms.Button()
+        Me.Guardar_Menu_ = New System.Windows.Forms.Button()
+        Me.TextBox1 = New System.Windows.Forms.TextBox()
         NombreTecnologiaLabel = New System.Windows.Forms.Label()
         TecnologiaIDLabel = New System.Windows.Forms.Label()
         NombrePlantillaLabel = New System.Windows.Forms.Label()
@@ -276,6 +289,7 @@ Partial Class FrmTecnologias
         CType(Me.SP_CampoComponentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.CM_TiposDatos.SuspendLayout()
         Me.Panel7.SuspendLayout()
+        Me.TabPage4.SuspendLayout()
         CType(Me.SP_CampoComponentes_EDICION_ACTUALIZARBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.SP_CampoComponentes_EDICION_ELIMINARBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.SP_CampoComponentes_EDICION_INSERTARBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -292,6 +306,7 @@ Partial Class FrmTecnologias
         CType(Me.SP_RequerimientosPlantillas_EDICION_ACTUALIZARBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.SP_RequerimientosPlantillas_EDICION_ELIMINARBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.SP_RequerimientosPlantillas_EDICION_INSERTARBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel9.SuspendLayout()
         Me.SuspendLayout()
         '
         'NombreTecnologiaLabel
@@ -323,13 +338,10 @@ Partial Class FrmTecnologias
         '
         'PlantillaIDLabel
         '
-        PlantillaIDLabel.AutoSize = True
-        PlantillaIDLabel.Location = New System.Drawing.Point(715, 136)
+        PlantillaIDLabel.Location = New System.Drawing.Point(0, 0)
         PlantillaIDLabel.Name = "PlantillaIDLabel"
-        PlantillaIDLabel.Size = New System.Drawing.Size(76, 18)
-        PlantillaIDLabel.TabIndex = 93
-        PlantillaIDLabel.Text = "Plantilla ID:"
-        AddHandler PlantillaIDLabel.Click, AddressOf Me.PlantillaIDLabel_Click
+        PlantillaIDLabel.Size = New System.Drawing.Size(100, 23)
+        PlantillaIDLabel.TabIndex = 160
         '
         'NombreComponenteLabel
         '
@@ -342,13 +354,10 @@ Partial Class FrmTecnologias
         '
         'ComponenteIDLabel
         '
-        ComponenteIDLabel.AutoSize = True
-        ComponenteIDLabel.Location = New System.Drawing.Point(684, 168)
+        ComponenteIDLabel.Location = New System.Drawing.Point(0, 0)
         ComponenteIDLabel.Name = "ComponenteIDLabel"
-        ComponenteIDLabel.Size = New System.Drawing.Size(107, 18)
-        ComponenteIDLabel.TabIndex = 97
-        ComponenteIDLabel.Text = "Componente ID:"
-        AddHandler ComponenteIDLabel.Click, AddressOf Me.ComponenteIDLabel_Click
+        ComponenteIDLabel.Size = New System.Drawing.Size(100, 23)
+        ComponenteIDLabel.TabIndex = 159
         '
         'RequerimientoLabel
         '
@@ -379,23 +388,17 @@ Partial Class FrmTecnologias
         '
         'RequerimientoPlantillaIDLabel
         '
-        RequerimientoPlantillaIDLabel.AutoSize = True
-        RequerimientoPlantillaIDLabel.Location = New System.Drawing.Point(622, 200)
+        RequerimientoPlantillaIDLabel.Location = New System.Drawing.Point(0, 0)
         RequerimientoPlantillaIDLabel.Name = "RequerimientoPlantillaIDLabel"
-        RequerimientoPlantillaIDLabel.Size = New System.Drawing.Size(169, 18)
-        RequerimientoPlantillaIDLabel.TabIndex = 110
-        RequerimientoPlantillaIDLabel.Text = "Requerimiento Plantilla ID:"
-        AddHandler RequerimientoPlantillaIDLabel.Click, AddressOf Me.RequerimientoPlantillaIDLabel_Click
+        RequerimientoPlantillaIDLabel.Size = New System.Drawing.Size(100, 23)
+        RequerimientoPlantillaIDLabel.TabIndex = 158
         '
         'NombreGrupoTipoDeDatoLabel1
         '
-        NombreGrupoTipoDeDatoLabel1.AutoSize = True
-        NombreGrupoTipoDeDatoLabel1.Location = New System.Drawing.Point(607, 264)
+        NombreGrupoTipoDeDatoLabel1.Location = New System.Drawing.Point(0, 0)
         NombreGrupoTipoDeDatoLabel1.Name = "NombreGrupoTipoDeDatoLabel1"
-        NombreGrupoTipoDeDatoLabel1.Size = New System.Drawing.Size(184, 18)
-        NombreGrupoTipoDeDatoLabel1.TabIndex = 118
-        NombreGrupoTipoDeDatoLabel1.Text = "Nombre Grupo Tipo De Dato:"
-        AddHandler NombreGrupoTipoDeDatoLabel1.Click, AddressOf Me.NombreGrupoTipoDeDatoLabel1_Click
+        NombreGrupoTipoDeDatoLabel1.Size = New System.Drawing.Size(100, 23)
+        NombreGrupoTipoDeDatoLabel1.TabIndex = 157
         '
         'CampoComponenteIDLabel
         '
@@ -1214,6 +1217,7 @@ Partial Class FrmTecnologias
         '
         'TabPage1
         '
+        Me.TabPage1.Controls.Add(Me.BtnCamposRelacionados)
         Me.TabPage1.Controls.Add(Me.BtnConvertir)
         Me.TabPage1.Controls.Add(Me.BtnColor)
         Me.TabPage1.Controls.Add(Me.BtnFuentes)
@@ -1248,6 +1252,27 @@ Partial Class FrmTecnologias
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Text = "Busqueda y Remplazo"
         Me.TabPage1.UseVisualStyleBackColor = True
+        '
+        'BtnCamposRelacionados
+        '
+        Me.BtnCamposRelacionados.BackColor = System.Drawing.Color.White
+        Me.BtnCamposRelacionados.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnCamposRelacionados.Location = New System.Drawing.Point(629, 82)
+        Me.BtnCamposRelacionados.Name = "BtnCamposRelacionados"
+        Me.BtnCamposRelacionados.Size = New System.Drawing.Size(89, 25)
+        Me.BtnCamposRelacionados.TabIndex = 142
+        Me.BtnCamposRelacionados.Text = "{{{Camp-Rel}}}"
+        Me.ToolTip1.SetToolTip(Me.BtnCamposRelacionados, "Campos Relacionados de la Tabla")
+        Me.BtnCamposRelacionados.UseVisualStyleBackColor = False
+        '
+        'BtnConvertir
+        '
+        Me.BtnConvertir.Location = New System.Drawing.Point(249, 541)
+        Me.BtnConvertir.Name = "BtnConvertir"
+        Me.BtnConvertir.Size = New System.Drawing.Size(75, 28)
+        Me.BtnConvertir.TabIndex = 141
+        Me.BtnConvertir.Text = "Conv"
+        Me.BtnConvertir.UseVisualStyleBackColor = True
         '
         'BtnColor
         '
@@ -1297,10 +1322,10 @@ Partial Class FrmTecnologias
         'BtnTablaPluralMinuscula
         '
         Me.BtnTablaPluralMinuscula.BackColor = System.Drawing.Color.White
-        Me.BtnTablaPluralMinuscula.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnTablaPluralMinuscula.Location = New System.Drawing.Point(616, 61)
+        Me.BtnTablaPluralMinuscula.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnTablaPluralMinuscula.Location = New System.Drawing.Point(555, 55)
         Me.BtnTablaPluralMinuscula.Name = "BtnTablaPluralMinuscula"
-        Me.BtnTablaPluralMinuscula.Size = New System.Drawing.Size(102, 43)
+        Me.BtnTablaPluralMinuscula.Size = New System.Drawing.Size(80, 25)
         Me.BtnTablaPluralMinuscula.TabIndex = 130
         Me.BtnTablaPluralMinuscula.Text = "{{{TPlurMin}}}"
         Me.ToolTip1.SetToolTip(Me.BtnTablaPluralMinuscula, "Tabla en Plural y en Minuscula")
@@ -1309,10 +1334,10 @@ Partial Class FrmTecnologias
         'BtnMayusculaAMinuscula
         '
         Me.BtnMayusculaAMinuscula.BackColor = System.Drawing.Color.White
-        Me.BtnMayusculaAMinuscula.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnMayusculaAMinuscula.Location = New System.Drawing.Point(532, 62)
+        Me.BtnMayusculaAMinuscula.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnMayusculaAMinuscula.Location = New System.Drawing.Point(483, 82)
         Me.BtnMayusculaAMinuscula.Name = "BtnMayusculaAMinuscula"
-        Me.BtnMayusculaAMinuscula.Size = New System.Drawing.Size(78, 43)
+        Me.BtnMayusculaAMinuscula.Size = New System.Drawing.Size(78, 25)
         Me.BtnMayusculaAMinuscula.TabIndex = 129
         Me.BtnMayusculaAMinuscula.Text = "{{{A=>-a}}}"
         Me.ToolTip1.SetToolTip(Me.BtnMayusculaAMinuscula, "Nombre de la Tabla en Minusculas, y donde tenga mayusculas se le antecede un gion" &
@@ -1322,10 +1347,10 @@ Partial Class FrmTecnologias
         'BtnTablaPlural
         '
         Me.BtnTablaPlural.BackColor = System.Drawing.Color.White
-        Me.BtnTablaPlural.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnTablaPlural.Location = New System.Drawing.Point(448, 62)
+        Me.BtnTablaPlural.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnTablaPlural.Location = New System.Drawing.Point(411, 55)
         Me.BtnTablaPlural.Name = "BtnTablaPlural"
-        Me.BtnTablaPlural.Size = New System.Drawing.Size(78, 43)
+        Me.BtnTablaPlural.Size = New System.Drawing.Size(78, 25)
         Me.BtnTablaPlural.TabIndex = 128
         Me.BtnTablaPlural.Text = "{{{TPlur}}}"
         Me.ToolTip1.SetToolTip(Me.BtnTablaPlural, "Nombre de la Tabla en Plural")
@@ -1334,10 +1359,10 @@ Partial Class FrmTecnologias
         'BtnTablaMinuscula
         '
         Me.BtnTablaMinuscula.BackColor = System.Drawing.Color.White
-        Me.BtnTablaMinuscula.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnTablaMinuscula.Location = New System.Drawing.Point(363, 62)
+        Me.BtnTablaMinuscula.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnTablaMinuscula.Location = New System.Drawing.Point(337, 82)
         Me.BtnTablaMinuscula.Name = "BtnTablaMinuscula"
-        Me.BtnTablaMinuscula.Size = New System.Drawing.Size(79, 43)
+        Me.BtnTablaMinuscula.Size = New System.Drawing.Size(79, 25)
         Me.BtnTablaMinuscula.TabIndex = 127
         Me.BtnTablaMinuscula.Text = "{{{Tmin}}}"
         Me.ToolTip1.SetToolTip(Me.BtnTablaMinuscula, "Nombre de la Tabla en Minuscula")
@@ -1346,7 +1371,7 @@ Partial Class FrmTecnologias
         'BtnImprimeClavePrincipal
         '
         Me.BtnImprimeClavePrincipal.BackColor = System.Drawing.Color.White
-        Me.BtnImprimeClavePrincipal.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnImprimeClavePrincipal.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnImprimeClavePrincipal.Location = New System.Drawing.Point(573, 7)
         Me.BtnImprimeClavePrincipal.Name = "BtnImprimeClavePrincipal"
         Me.BtnImprimeClavePrincipal.Size = New System.Drawing.Size(77, 43)
@@ -1358,7 +1383,7 @@ Partial Class FrmTecnologias
         'BtnImprimeTabla
         '
         Me.BtnImprimeTabla.BackColor = System.Drawing.Color.White
-        Me.BtnImprimeTabla.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnImprimeTabla.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnImprimeTabla.Location = New System.Drawing.Point(487, 7)
         Me.BtnImprimeTabla.Name = "BtnImprimeTabla"
         Me.BtnImprimeTabla.Size = New System.Drawing.Size(80, 43)
@@ -1370,10 +1395,10 @@ Partial Class FrmTecnologias
         'BtnImprimeCampos
         '
         Me.BtnImprimeCampos.BackColor = System.Drawing.Color.White
-        Me.BtnImprimeCampos.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnImprimeCampos.Location = New System.Drawing.Point(268, 62)
+        Me.BtnImprimeCampos.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnImprimeCampos.Location = New System.Drawing.Point(268, 55)
         Me.BtnImprimeCampos.Name = "BtnImprimeCampos"
-        Me.BtnImprimeCampos.Size = New System.Drawing.Size(89, 43)
+        Me.BtnImprimeCampos.Size = New System.Drawing.Size(75, 25)
         Me.BtnImprimeCampos.TabIndex = 124
         Me.BtnImprimeCampos.Text = "{{{Campos}}}"
         Me.ToolTip1.SetToolTip(Me.BtnImprimeCampos, "Campos de la Tabla, prefijos - sufijos - superior - inferior o multireplace son p" &
@@ -1422,7 +1447,7 @@ Partial Class FrmTecnologias
         'RBPermitirEspacios
         '
         Me.RBPermitirEspacios.AutoSize = True
-        Me.RBPermitirEspacios.Location = New System.Drawing.Point(251, 86)
+        Me.RBPermitirEspacios.Location = New System.Drawing.Point(254, 86)
         Me.RBPermitirEspacios.Name = "RBPermitirEspacios"
         Me.RBPermitirEspacios.Size = New System.Drawing.Size(14, 13)
         Me.RBPermitirEspacios.TabIndex = 119
@@ -1504,7 +1529,7 @@ Partial Class FrmTecnologias
         Me.TabPage2.Location = New System.Drawing.Point(4, 27)
         Me.TabPage2.Name = "TabPage2"
         Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage2.Size = New System.Drawing.Size(58, 576)
+        Me.TabPage2.Size = New System.Drawing.Size(725, 576)
         Me.TabPage2.TabIndex = 1
         Me.TabPage2.Text = "Requerimientos"
         Me.TabPage2.UseVisualStyleBackColor = True
@@ -1564,7 +1589,7 @@ Partial Class FrmTecnologias
         Me.TabPage3.Location = New System.Drawing.Point(4, 27)
         Me.TabPage3.Name = "TabPage3"
         Me.TabPage3.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage3.Size = New System.Drawing.Size(58, 576)
+        Me.TabPage3.Size = New System.Drawing.Size(725, 576)
         Me.TabPage3.TabIndex = 2
         Me.TabPage3.Text = "Tipos de Datos Campos"
         Me.TabPage3.UseVisualStyleBackColor = True
@@ -1847,10 +1872,16 @@ Partial Class FrmTecnologias
         '
         'TabPage4
         '
+        Me.TabPage4.Controls.Add(Me.TextBox1)
+        Me.TabPage4.Controls.Add(Me.Panel9)
+        Me.TabPage4.Controls.Add(Me.Button3)
+        Me.TabPage4.Controls.Add(Me.Button4)
+        Me.TabPage4.Controls.Add(Me.Button2)
+        Me.TabPage4.Controls.Add(Me.Button1)
         Me.TabPage4.Location = New System.Drawing.Point(4, 27)
         Me.TabPage4.Name = "TabPage4"
         Me.TabPage4.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage4.Size = New System.Drawing.Size(58, 576)
+        Me.TabPage4.Size = New System.Drawing.Size(725, 576)
         Me.TabPage4.TabIndex = 3
         Me.TabPage4.Text = "Campos Relacionados"
         Me.TabPage4.UseVisualStyleBackColor = True
@@ -2098,14 +2129,141 @@ Partial Class FrmTecnologias
         '
         Me.SP_RequerimientosPlantillas_EDICION_INSERTARTableAdapter.ClearBeforeFill = True
         '
-        'BtnConvertir
+        'Button1
         '
-        Me.BtnConvertir.Location = New System.Drawing.Point(249, 541)
-        Me.BtnConvertir.Name = "BtnConvertir"
-        Me.BtnConvertir.Size = New System.Drawing.Size(75, 28)
-        Me.BtnConvertir.TabIndex = 141
-        Me.BtnConvertir.Text = "Conv"
-        Me.BtnConvertir.UseVisualStyleBackColor = True
+        Me.Button1.BackColor = System.Drawing.Color.White
+        Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button1.Location = New System.Drawing.Point(36, 79)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(137, 43)
+        Me.Button1.TabIndex = 126
+        Me.Button1.Text = "{{{Tabla_Dep}}}"
+        Me.ToolTip1.SetToolTip(Me.Button1, "Nombre de La Tabla tal como esta Generada")
+        Me.Button1.UseVisualStyleBackColor = False
+        '
+        'Button2
+        '
+        Me.Button2.BackColor = System.Drawing.Color.White
+        Me.Button2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button2.Location = New System.Drawing.Point(550, 79)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(137, 43)
+        Me.Button2.TabIndex = 127
+        Me.Button2.Text = "{{{Tabla_Ind}}}"
+        Me.ToolTip1.SetToolTip(Me.Button2, "Nombre de La Tabla tal como esta Generada")
+        Me.Button2.UseVisualStyleBackColor = False
+        '
+        'Button3
+        '
+        Me.Button3.BackColor = System.Drawing.Color.White
+        Me.Button3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button3.Location = New System.Drawing.Point(507, 126)
+        Me.Button3.Name = "Button3"
+        Me.Button3.Size = New System.Drawing.Size(142, 43)
+        Me.Button3.TabIndex = 129
+        Me.Button3.Text = "{{{Campo_Ind}}}"
+        Me.ToolTip1.SetToolTip(Me.Button3, "Nombre de La Tabla tal como esta Generada")
+        Me.Button3.UseVisualStyleBackColor = False
+        '
+        'Button4
+        '
+        Me.Button4.BackColor = System.Drawing.Color.White
+        Me.Button4.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button4.Location = New System.Drawing.Point(75, 126)
+        Me.Button4.Name = "Button4"
+        Me.Button4.Size = New System.Drawing.Size(146, 43)
+        Me.Button4.TabIndex = 128
+        Me.Button4.Text = "{{{Campo_Dep}}}"
+        Me.ToolTip1.SetToolTip(Me.Button4, "Nombre de La Tabla tal como esta Generada")
+        Me.Button4.UseVisualStyleBackColor = False
+        '
+        'Panel9
+        '
+        Me.Panel9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel9.Controls.Add(Me.Nuevo_Menu_)
+        Me.Panel9.Controls.Add(Me.Cancelar_Menu_)
+        Me.Panel9.Controls.Add(Me.Eliminar_Menu_)
+        Me.Panel9.Controls.Add(Me.Editar_Menu_)
+        Me.Panel9.Controls.Add(Me.Actualizar_Menu_)
+        Me.Panel9.Controls.Add(Me.Guardar_Menu_)
+        Me.Panel9.Location = New System.Drawing.Point(6, 6)
+        Me.Panel9.Name = "Panel9"
+        Me.Panel9.Size = New System.Drawing.Size(278, 46)
+        Me.Panel9.TabIndex = 130
+        '
+        'Nuevo_Menu_
+        '
+        Me.Nuevo_Menu_.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Nuevo_Menu_.Image = CType(resources.GetObject("Nuevo_Menu_.Image"), System.Drawing.Image)
+        Me.Nuevo_Menu_.Location = New System.Drawing.Point(4, 3)
+        Me.Nuevo_Menu_.Name = "Nuevo_Menu_"
+        Me.Nuevo_Menu_.Size = New System.Drawing.Size(40, 38)
+        Me.Nuevo_Menu_.TabIndex = 70
+        Me.Nuevo_Menu_.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.Nuevo_Menu_.UseVisualStyleBackColor = True
+        '
+        'Cancelar_Menu_
+        '
+        Me.Cancelar_Menu_.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Cancelar_Menu_.Image = CType(resources.GetObject("Cancelar_Menu_.Image"), System.Drawing.Image)
+        Me.Cancelar_Menu_.Location = New System.Drawing.Point(233, 3)
+        Me.Cancelar_Menu_.Name = "Cancelar_Menu_"
+        Me.Cancelar_Menu_.Size = New System.Drawing.Size(40, 38)
+        Me.Cancelar_Menu_.TabIndex = 75
+        Me.Cancelar_Menu_.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.Cancelar_Menu_.UseVisualStyleBackColor = True
+        '
+        'Eliminar_Menu_
+        '
+        Me.Eliminar_Menu_.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Eliminar_Menu_.Image = CType(resources.GetObject("Eliminar_Menu_.Image"), System.Drawing.Image)
+        Me.Eliminar_Menu_.Location = New System.Drawing.Point(188, 3)
+        Me.Eliminar_Menu_.Name = "Eliminar_Menu_"
+        Me.Eliminar_Menu_.Size = New System.Drawing.Size(40, 38)
+        Me.Eliminar_Menu_.TabIndex = 72
+        Me.Eliminar_Menu_.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.Eliminar_Menu_.UseVisualStyleBackColor = True
+        '
+        'Editar_Menu_
+        '
+        Me.Editar_Menu_.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Editar_Menu_.Image = CType(resources.GetObject("Editar_Menu_.Image"), System.Drawing.Image)
+        Me.Editar_Menu_.Location = New System.Drawing.Point(96, 3)
+        Me.Editar_Menu_.Name = "Editar_Menu_"
+        Me.Editar_Menu_.Size = New System.Drawing.Size(40, 38)
+        Me.Editar_Menu_.TabIndex = 74
+        Me.Editar_Menu_.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.Editar_Menu_.UseVisualStyleBackColor = True
+        '
+        'Actualizar_Menu_
+        '
+        Me.Actualizar_Menu_.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Actualizar_Menu_.Image = CType(resources.GetObject("Actualizar_Menu_.Image"), System.Drawing.Image)
+        Me.Actualizar_Menu_.Location = New System.Drawing.Point(142, 3)
+        Me.Actualizar_Menu_.Name = "Actualizar_Menu_"
+        Me.Actualizar_Menu_.Size = New System.Drawing.Size(40, 38)
+        Me.Actualizar_Menu_.TabIndex = 73
+        Me.Actualizar_Menu_.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.Actualizar_Menu_.UseVisualStyleBackColor = True
+        '
+        'Guardar_Menu_
+        '
+        Me.Guardar_Menu_.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Guardar_Menu_.Image = CType(resources.GetObject("Guardar_Menu_.Image"), System.Drawing.Image)
+        Me.Guardar_Menu_.Location = New System.Drawing.Point(50, 3)
+        Me.Guardar_Menu_.Name = "Guardar_Menu_"
+        Me.Guardar_Menu_.Size = New System.Drawing.Size(40, 38)
+        Me.Guardar_Menu_.TabIndex = 71
+        Me.Guardar_Menu_.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.Guardar_Menu_.UseVisualStyleBackColor = True
+        '
+        'TextBox1
+        '
+        Me.TextBox1.Location = New System.Drawing.Point(6, 194)
+        Me.TextBox1.Multiline = True
+        Me.TextBox1.Name = "TextBox1"
+        Me.TextBox1.Size = New System.Drawing.Size(713, 376)
+        Me.TextBox1.TabIndex = 131
         '
         'FrmTecnologias
         '
@@ -2175,6 +2333,8 @@ Partial Class FrmTecnologias
         CType(Me.SP_CampoComponentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView, System.ComponentModel.ISupportInitialize).EndInit()
         Me.CM_TiposDatos.ResumeLayout(False)
         Me.Panel7.ResumeLayout(False)
+        Me.TabPage4.ResumeLayout(False)
+        Me.TabPage4.PerformLayout()
         CType(Me.SP_CampoComponentes_EDICION_ACTUALIZARBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.SP_CampoComponentes_EDICION_ELIMINARBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.SP_CampoComponentes_EDICION_INSERTARBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
@@ -2191,6 +2351,7 @@ Partial Class FrmTecnologias
         CType(Me.SP_RequerimientosPlantillas_EDICION_ACTUALIZARBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.SP_RequerimientosPlantillas_EDICION_ELIMINARBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.SP_RequerimientosPlantillas_EDICION_INSERTARBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Panel9.ResumeLayout(False)
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -2374,4 +2535,17 @@ Partial Class FrmTecnologias
     Friend WithEvents BtnCentrar As Button
     Friend WithEvents BtnIzquierda As Button
     Friend WithEvents BtnConvertir As Button
+    Friend WithEvents BtnCamposRelacionados As Button
+    Friend WithEvents Button3 As Button
+    Friend WithEvents Button4 As Button
+    Friend WithEvents Button2 As Button
+    Friend WithEvents Button1 As Button
+    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents Panel9 As Panel
+    Friend WithEvents Nuevo_Menu_ As Button
+    Friend WithEvents Cancelar_Menu_ As Button
+    Friend WithEvents Eliminar_Menu_ As Button
+    Friend WithEvents Editar_Menu_ As Button
+    Friend WithEvents Actualizar_Menu_ As Button
+    Friend WithEvents Guardar_Menu_ As Button
 End Class

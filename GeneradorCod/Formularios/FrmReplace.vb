@@ -296,7 +296,9 @@
         NombreTablaTextBox1.Text = NombreTablaTextBox.Text
         Return CodigoGenerado
     End Function
-
+    Function CamposRelacionados()
+        MsgBox("Campos Relacionados")
+    End Function
     Function CapturaClavePrincipal()
         Try
             'Se ubica en la primera fila
@@ -1321,6 +1323,9 @@
         If Not InStr(Contenido, "{{{Campos}}}") Then
             Dim Campos = GenerarCampos()
             ContenidoGenerado = ContenidoGenerado.Replace("{{{Campos}}}", Campos)
+        End If
+        If InStr(Contenido, "{{{Camp-Rel}}}") Then
+            CamposRelacionados()
         End If
         Return ContenidoGenerado
     End Function

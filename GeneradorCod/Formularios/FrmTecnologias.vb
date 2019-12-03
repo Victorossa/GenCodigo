@@ -1278,52 +1278,6 @@
     End Sub
 
 
-    Private Sub Label4_Click(sender As Object, e As EventArgs)
-
-    End Sub
-
-
-
-    Private Sub TipoCampoIDTextBox_TextChanged(sender As Object, e As EventArgs) Handles TipoCampoIDTextBox.TextChanged
-
-    End Sub
-
-    Private Sub NombreGrupoTipoDeDatoLabel1_Click(sender As Object, e As EventArgs)
-
-    End Sub
-
-    Private Sub NombreGrupoTipoDeDatoTextBox1_TextChanged(sender As Object, e As EventArgs) Handles NombreGrupoTipoDeDatoTextBox1.TextChanged
-
-    End Sub
-
-
-
-    Private Sub RequerimientoPlantillaIDLabel_Click(sender As Object, e As EventArgs)
-
-    End Sub
-
-    Private Sub RequerimientoPlantillaIDTextBox_TextChanged(sender As Object, e As EventArgs) Handles RequerimientoPlantillaIDTextBox.TextChanged
-
-    End Sub
-
-    Private Sub ComponenteIDLabel_Click(sender As Object, e As EventArgs)
-
-    End Sub
-
-    Private Sub ComponenteIDTextBox_TextChanged(sender As Object, e As EventArgs) Handles ComponenteIDTextBox.TextChanged
-
-    End Sub
-
-    Private Sub PlantillaIDLabel_Click(sender As Object, e As EventArgs)
-
-    End Sub
-
-    Private Sub ControlNulos_TextChanged(sender As Object, e As EventArgs) Handles ControlNulos.TextChanged
-
-    End Sub
-
-
-
     Private Sub TipoTextBox_TextChanged(sender As Object, e As EventArgs) Handles TipoTextBox.TextChanged
         Cbo_TipoDato.Text = TipoTextBox.Text
     End Sub
@@ -1724,6 +1678,9 @@
     Private Sub BtnTablaPluralMinuscula_Click(sender As Object, e As EventArgs) Handles BtnTablaPluralMinuscula.Click
         Me.ContenidoComponenteRichTextBox.Text = Me.ContenidoComponenteRichTextBox.Text.Insert(Me.ContenidoComponenteRichTextBox.SelectionStart, "{{{TPlurMin}}}")
     End Sub
+    Private Sub BtnCamposRelacionados_Click(sender As Object, e As EventArgs) Handles BtnCamposRelacionados.Click
+        Me.ContenidoComponenteRichTextBox.Text = Me.ContenidoComponenteRichTextBox.Text.Insert(Me.ContenidoComponenteRichTextBox.SelectionStart, "{{{Camp-Rel}}}")
+    End Sub
 
     Private Sub SP_CARGA_CONVENSIONES_USADASDataGridView_CellMouseDoubleClick(sender As Object, e As DataGridViewCellMouseEventArgs) Handles SP_CARGA_CONVENSIONES_USADASDataGridView.CellMouseDoubleClick
         RequerimientoTextBox.Text = CONVENSIONESTextBox.Text
@@ -1971,6 +1928,10 @@
     Private Sub BtnConvertir_Click(sender As Object, e As EventArgs) Handles BtnConvertir.Click
         ContenidoComponenteRichTextBox.Rtf = ContenidoComponenteRichTextBox.Text
     End Sub
+
+
+
+
 
 
 
