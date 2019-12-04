@@ -12,6 +12,8 @@
             SP_CampoComponentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaID()
             Cancelar_CampoComponentes()
             Me.SP_CARGA_CONVENSIONES_USADASTableAdapter.Fill(Me.DataSetTablasYCampos.SP_CARGA_CONVENSIONES_USADAS)
+            SP_TablasRelacionadas_BUSQUEDA_SEGUN_PARAMETRO_PlantillaID()
+            Cancelar_TablasRelacionadas()
         Catch ex As System.Exception
             System.Windows.Forms.MessageBox.Show(ex.Message)
         End Try
@@ -564,6 +566,7 @@
             SP_Componentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaID()
             SP_RequerimientosPlantillas_BUSQUEDA_SEGUN_PARAMETRO_PlantillaID()
             SP_CampoComponentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaID()
+            SP_TablasRelacionadas_BUSQUEDA_SEGUN_PARAMETRO_PlantillaID()
             'ContenidoComponenteRichTextBox.Rtf = ContenidoComponenteRichTextBox.Text
         Catch ex As Exception
 
@@ -1940,7 +1943,259 @@
 
 
 
+
+
 #End Region
 
+
+
+#Region "Campos Requeridos"
+#Region "Procedimientos"
+    Private Sub SP_TablasRelacionadas_BUSQUEDA_SEGUN_PARAMETRO_PlantillaID()
+        Try
+            Me.SP_TablasRelacionadas_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDTableAdapter.Fill(Me.DataSetTablasYCampos.SP_TablasRelacionadas_BUSQUEDA_SEGUN_PARAMETRO_PlantillaID, New System.Nullable(Of Integer)(CType(PlantillaIDTextBox.Text, Integer)))
+        Catch ex As System.Exception
+            'System.Windows.Forms.MessageBox.Show(ex.Message)
+        End Try
+
+    End Sub
+
+#End Region
+    Sub Cancelar_TablasRelacionadas()
+        'Botones Del Menu
+        Nuevo_Menu_TablasRelacionadas.Enabled = True
+        Guardar_Menu_TablasRelacionadas.Enabled = False
+        Editar_Menu_TablasRelacionadas.Enabled = True
+        Actualizar_Menu_TablasRelacionadas.Enabled = False
+        Eliminar_Menu_TablasRelacionadas.Enabled = False
+        'Grid
+        SP_TablasRelacionadas_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView.Enabled = True
+        'Cargar Datos de Tabla Actualizados
+        SP_TablasRelacionadas_BUSQUEDA_SEGUN_PARAMETRO_PlantillaID()
+        Bloquear_Objetos_TablasRelacionadas()
+        Parar_Timer_TablasRelacionadas()
+        Timer_Ubicar_En_Fila_TablasRelacionadas()
+    End Sub
+    'Insertar
+    Private Sub SP_TablasRelacionadas_EDICION_INSERTAR()
+        Try
+            Me.SP_TablasRelacionadas_EDICION_INSERTARTableAdapter.Fill(Me.DataSetTablasYCampos.SP_TablasRelacionadas_EDICION_INSERTAR,
+                                                 New System.Nullable(Of Integer)(CType(PlantillaIDTextBox.Text, Integer)),
+                                                 ContenidoRelacionTextBox.Text)
+            SP_TablasRelacionadas_BUSQUEDA_SEGUN_PARAMETRO_PlantillaID()
+            MsgBox("El Dato Fue Guardado Exitosamente", MsgBoxStyle.Information, "Guardar Dato")
+        Catch ex As System.Exception
+            System.Windows.Forms.MessageBox.Show(ex.Message)
+        End Try
+    End Sub
+    'Actualizar
+    Private Sub SP_TablasRelacionadas_EDICION_ACTUALIZAR()
+        Try
+            Me.SP_TablasRelacionadas_EDICION_ACTUALIZARTableAdapter.Fill(Me.DataSetTablasYCampos.SP_TablasRelacionadas_EDICION_ACTUALIZAR,
+                                                 New System.Nullable(Of Integer)(CType(RelacionTablasIDTextBox.Text, Integer)),
+                                                 New System.Nullable(Of Integer)(CType(PlantillaIDTextBox.Text, Integer)),
+                                                 ContenidoRelacionTextBox.Text)
+            SP_TablasRelacionadas_BUSQUEDA_SEGUN_PARAMETRO_PlantillaID()
+            MsgBox("El Dato Fue Actualizado Exitosamente", MsgBoxStyle.Information, "Actualizar Dato")
+        Catch ex As System.Exception
+            System.Windows.Forms.MessageBox.Show(ex.Message)
+        End Try
+    End Sub
+    'Eliminar
+    Private Sub SP_TablasRelacionadas_EDICION_ELIMINAR()
+        Try
+            Me.SP_TablasRelacionadas_EDICION_ELIMINARTableAdapter.Fill(Me.DataSetTablasYCampos.SP_TablasRelacionadas_EDICION_ELIMINAR, New System.Nullable(Of Long)(CType(RelacionTablasIDTextBox.Text, Long)))
+            SP_TablasRelacionadas_BUSQUEDA_SEGUN_PARAMETRO_PlantillaID()
+            MsgBox("El Dato Fue Eliminado Exitosamente de la Base de Datos", MsgBoxStyle.Information, "Eliminación de Dato")
+        Catch ex As System.Exception
+            System.Windows.Forms.MessageBox.Show(ex.Message)
+        End Try
+    End Sub
+#End Region
+#Region "Menus"
+    'Nuevo 
+    Private Sub Nuevo_Menu_TablasRelacionadas_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Nuevo_Menu_TablasRelacionadas.Click
+        Nuevo_Menu_TablasRelacionadas.Enabled = False
+        Editar_Menu_TablasRelacionadas.Enabled = False
+        SP_TablasRelacionadas_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView.Enabled = False
+        Limpiar_Objetos_TablasRelacionadas()
+        ContenidoRelacionTextBox.Enabled = True
+        ContenidoRelacionTextBox.Focus()
+    End Sub
+    'Guardar
+    Private Sub Guardar_Menu_TablasRelacionadas_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Guardar_Menu_TablasRelacionadas.Click
+        Control_Nulos_TablasRelacionadas()
+
+        If ControlNulos.Text = "" Then ' Then
+            SP_TablasRelacionadas_EDICION_INSERTAR()
+            Cancelar_TablasRelacionadas()
+            Parar_Timer_TablasRelacionadas()
+        End If
+    End Sub
+    'Editar
+    Private Sub Editar_Menu_TablasRelacionadas_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Editar_Menu_TablasRelacionadas.Click
+        Nuevo_Menu_TablasRelacionadas.Enabled = False
+        Guardar_Menu_TablasRelacionadas.Enabled = False
+        Editar_Menu_TablasRelacionadas.Enabled = False
+        Actualizar_Menu_TablasRelacionadas.Enabled = True
+        Eliminar_Menu_TablasRelacionadas.Enabled = True
+        SP_TablasRelacionadas_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView.Enabled = False
+        Desbloquear_Objetos_TablasRelacionadas()
+        Timer_Actualizar_TablasRelacionadas()
+        Timer_Eliminar_TablasRelacionadas()
+    End Sub
+    'Actualizar
+    Private Sub Actualizar_Menu_TablasRelacionadas_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Actualizar_Menu_TablasRelacionadas.Click
+        Control_Nulos_TablasRelacionadas()
+
+        If ControlNulos.Text = "" Then ' Then
+            SP_TablasRelacionadas_EDICION_ACTUALIZAR()
+            Cancelar_TablasRelacionadas()
+            Parar_Timer_TablasRelacionadas()
+        End If
+    End Sub
+    Private Sub Eliminar_Menu_TablasRelacionadas_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Eliminar_Menu_TablasRelacionadas.Click
+        If MsgBox("Desea Eliminar Este Dato?", MsgBoxStyle.YesNo) = MsgBoxResult.Yes Then
+            SP_TablasRelacionadas_EDICION_ELIMINAR()
+            Cancelar_TablasRelacionadas()
+            Parar_Timer_TablasRelacionadas()
+        Else
+            MsgBox("Se Cancelo la Eliminación del Dato", MsgBoxStyle.Information)
+            Cancelar_TablasRelacionadas()
+        End If
+    End Sub
+    'Cancelar
+    Private Sub Cancelar_Menu_TablasRelacionadas_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Cancelar_Menu_TablasRelacionadas.Click
+        Cancelar_TablasRelacionadas()
+    End Sub
+#End Region
+#Region "Eventos sobre Objetos "
+    'Control de Nulos
+    Public Sub Control_Nulos_TablasRelacionadas()
+        ControlNulos.Text = "" '
+        Select Case ControlNulos.Text = "" '
+            Case PlantillaIDTextBox.Text = ""
+                MsgBox("El nombre del campo: PlantillaID; Esta vacio, Favor Verificar", MsgBoxStyle.Critical)
+                PlantillaIDTextBox.BackColor = Color.Beige
+                ControlNulos.Text = "1"
+            Case ContenidoRelacionTextBox.Text = ""
+                MsgBox("El nombre del campo: ContenidoRelacion; Esta vacio, Favor Verificar", MsgBoxStyle.Critical)
+                ContenidoRelacionTextBox.BackColor = Color.Beige
+                ControlNulos.Text = "1"
+            Case Else
+                ControlNulos.Text = "" '
+        End Select
+    End Sub
+    Private Sub ContenidoRelacionTextBox_KeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles ContenidoRelacionTextBox.KeyPress
+        If Asc(e.KeyChar) = 13 Then
+            If Actualizar_Menu_TablasRelacionadas.Enabled = True Then
+                Actualizar_Menu_TablasRelacionadas.Enabled = True
+                Eliminar_Menu_TablasRelacionadas.Enabled = True
+            Else
+                If ContenidoRelacionTextBox.Text = "" Then
+                    MsgBox("Dato Obligatorio, Favor Verificar", MsgBoxStyle.Critical, "Validación de Datos")
+                    ContenidoRelacionTextBox.Text = ""
+                    ContenidoRelacionTextBox.Focus()
+                Else
+                    MsgBox("La Información Ya puede ser Guardada el Icono de Guardado queda habilitado", MsgBoxStyle.Information, "Guardar los Datos")
+                    Guardar_Menu_TablasRelacionadas.Enabled = True
+                    Timer_Guardar_TablasRelacionadas()
+                End If
+            End If
+        End If
+    End Sub
+    Public Sub Limpiar_Objetos_TablasRelacionadas()
+        ContenidoRelacionTextBox.Text = "" ''
+    End Sub
+    Public Sub Desbloquear_Objetos_TablasRelacionadas()
+        ContenidoRelacionTextBox.Enabled = True
+    End Sub
+    Public Sub Bloquear_Objetos_TablasRelacionadas()
+        ContenidoRelacionTextBox.Enabled = False
+    End Sub
+
+
+#Region "Timer de Botones"
+    'Declaraciones de Timers de Botones
+    Private WithEvents Timer_Guardar_Menu_TablasRelacionadas As Timer
+    Private WithEvents Timer_Actualizar_Menu_TablasRelacionadas As Timer
+    Private WithEvents Timer_Eliminar_Menu_TablasRelacionadas As Timer
+    'Procedimientos del Timer
+    Private Sub Timer_Guardar_TablasRelacionadas()
+        Me.Timer_Guardar_Menu_TablasRelacionadas = New Timer
+        Timer_Guardar_Menu_TablasRelacionadas.Interval = 250
+        Timer_Guardar_Menu_TablasRelacionadas.Start()
+    End Sub
+    Private Sub Timer_Actualizar_TablasRelacionadas()
+        Me.Timer_Actualizar_Menu_TablasRelacionadas = New Timer
+        Timer_Actualizar_Menu_TablasRelacionadas.Interval = 500
+        Timer_Actualizar_Menu_TablasRelacionadas.Start()
+    End Sub
+    Private Sub Timer_Eliminar_TablasRelacionadas()
+        Me.Timer_Eliminar_Menu_TablasRelacionadas = New Timer
+        Timer_Eliminar_Menu_TablasRelacionadas.Interval = 800
+        Timer_Eliminar_Menu_TablasRelacionadas.Start()
+    End Sub
+    'Eventos Tick
+    Private Sub Timer_Guardar_Menu_TablasRelacionadas_Tick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Timer_Guardar_Menu_TablasRelacionadas.Tick
+        If Guardar_Menu_TablasRelacionadas.BackColor = Color.White Then
+            Guardar_Menu_TablasRelacionadas.BackColor = Color.Green
+        Else
+            Guardar_Menu_TablasRelacionadas.BackColor = Color.White
+        End If
+    End Sub
+    Private Sub Timer_Actualizar_Menu_TablasRelacionadas_Tick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Timer_Actualizar_Menu_TablasRelacionadas.Tick
+        If Actualizar_Menu_TablasRelacionadas.BackColor = Color.White Then
+            Actualizar_Menu_TablasRelacionadas.BackColor = Color.Green
+        Else
+            Actualizar_Menu_TablasRelacionadas.BackColor = Color.White
+        End If
+    End Sub
+    Private Sub Timer_Eliminar_Menu_TablasRelacionadas_Tick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Timer_Eliminar_Menu_TablasRelacionadas.Tick
+        If Eliminar_Menu_TablasRelacionadas.BackColor = Color.White Then
+            Eliminar_Menu_TablasRelacionadas.BackColor = Color.Red
+        Else
+            Eliminar_Menu_TablasRelacionadas.BackColor = Color.White
+        End If
+    End Sub
+    'Parar Timer
+    Private Sub Parar_Timer_TablasRelacionadas()
+        Me.Timer_Guardar_Menu_TablasRelacionadas = New Timer
+        Timer_Guardar_Menu_TablasRelacionadas.Stop()
+        Guardar_Menu_TablasRelacionadas.BackColor = Color.White
+        Me.Timer_Actualizar_Menu_TablasRelacionadas = New Timer
+        Timer_Actualizar_Menu_TablasRelacionadas.Stop()
+        Actualizar_Menu_TablasRelacionadas.BackColor = Color.White
+        Me.Timer_Eliminar_Menu_TablasRelacionadas = New Timer
+        Timer_Eliminar_Menu_TablasRelacionadas.Stop()
+        Eliminar_Menu_TablasRelacionadas.BackColor = Color.White
+    End Sub
+#End Region
+#Region "Ubicación de Fila"
+    Private WithEvents Timer_Ubicacion_TablasRelacionadas As Timer
+    Dim X_TablasRelacionadas
+    Private Sub Timer_Ubicar_En_Fila_TablasRelacionadas()
+        Me.Timer_Ubicacion_TablasRelacionadas = New Timer
+        Timer_Ubicacion_TablasRelacionadas.Interval = 100
+        Timer_Ubicacion_TablasRelacionadas.Start()
+    End Sub
+    Private Sub SP_TablasRelacionadas_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView_CellMouseClick(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewCellMouseEventArgs) Handles SP_TablasRelacionadas_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView.CellMouseClick
+        X_TablasRelacionadas = SP_TablasRelacionadas_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView.CurrentRow.Index
+    End Sub
+    Private Sub Ubicar_En_Fila_TablasRelacionadas()
+        Try
+            Me.SP_TablasRelacionadas_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView.Rows(X_TablasRelacionadas).Selected = True
+            Me.SP_TablasRelacionadas_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView.FirstDisplayedScrollingRowIndex = X_TablasRelacionadas
+        Catch ex As Exception
+        End Try
+    End Sub
+    Private Sub Timer_Ubicacion_TablasRelacionadas_Tick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Timer_Ubicacion_TablasRelacionadas.Tick
+        Ubicar_En_Fila_TablasRelacionadas()
+        Timer_Ubicacion_TablasRelacionadas.Stop()
+    End Sub
+#End Region
+
+
+#End Region
 
 End Class

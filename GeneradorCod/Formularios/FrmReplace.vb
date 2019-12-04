@@ -24,6 +24,15 @@
             System.Windows.Forms.MessageBox.Show(ex.Message)
         End Try
     End Sub
+    Private Sub FrmReplace_MouseDoubleClick(sender As Object, e As MouseEventArgs) Handles MyBase.MouseDoubleClick
+        PanelConf.BringToFront()
+        PanelConf.Dock = DockStyle.Fill
+    End Sub
+    Private Sub PanelConf_MouseDoubleClick(sender As Object, e As MouseEventArgs) Handles PanelConf.MouseDoubleClick
+        PanelConf.SendToBack()
+        PanelConf.Dock = DockStyle.None
+    End Sub
+
     Private Sub TecnologiaIDTextBox_TextChanged_1(sender As Object, e As EventArgs) Handles TecnologiaIDTextBox.TextChanged
         SP_Plantillas_BUSQUEDA_SEGUN_PARAMETRO_Tecnologia_3()
     End Sub
@@ -716,10 +725,10 @@
         Bloquear_Objetos_TablasDeProyecto()
         Parar_Timer_TablasDeProyecto()
         Timer_Ubicar_En_Fila_TablasDeProyecto()
-        SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoIDDataGridView.Location = New Point(708, 117)
-        SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaIDDataGridView.Location = New Point(708, 362)
-        SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoIDDataGridView.Width = 358
-        SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaIDDataGridView.Width = 358
+        'SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoIDDataGridView.Location = New Point(708, 117)
+        'SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaIDDataGridView.Location = New Point(708, 362)
+        'SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoIDDataGridView.Width = 358
+        'SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaIDDataGridView.Width = 358
     End Sub
     'Insertar
     Private Sub SP_TablasDeProyecto_EDICION_INSERTAR()
@@ -1399,15 +1408,15 @@
 
     Private Sub Chk_Rel_CheckedChanged(sender As Object, e As EventArgs) Handles Chk_Rel.CheckedChanged
         If Chk_Rel.Checked = True Then
-            SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoIDDataGridView.Location = New Point(708, 117)
-            SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaIDDataGridView.Location = New Point(708, 362)
+            SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoIDDataGridView.Location = New Point(6, 103)
+            SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaIDDataGridView.Location = New Point(6, 348)
             SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoIDDataGridView.Width = 174
             SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaIDDataGridView.Width = 174
             Nuevo_Menu_TablasDeProyecto.Enabled = False
             Editar_Menu_TablasDeProyecto.Enabled = False
         Else
-            SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoIDDataGridView.Location = New Point(708, 117)
-            SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaIDDataGridView.Location = New Point(708, 362)
+            SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoIDDataGridView.Location = New Point(6, 103)
+            SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaIDDataGridView.Location = New Point(6, 348)
             SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoIDDataGridView.Width = 358
             SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaIDDataGridView.Width = 358
             Cancelar_TablasDeProyecto()
@@ -1439,32 +1448,100 @@
     End Sub
 
     Private Sub CrearRelacionToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CrearRelacionToolStripMenuItem.Click
+        ValidandoRelacion()
+    End Sub
+    Private Sub SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaID2DataGridView_CellMouseDoubleClick(sender As Object, e As DataGridViewCellMouseEventArgs) Handles SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaID2DataGridView.CellMouseDoubleClick
+        ValidandoRelacion()
+    End Sub
+
+    Private Sub ValidandoRelacion()
         If Chk_Rel.Checked = True Then
-            BUSCA PRIMERO QUE LA RELACION NO EXISTA EN EL REGISTRO SP_RegistroRelacionesTablas_BUSQUEDA_SEGUN_PARAMETRO_TD_CTD_TI_CTI
-            If TipoCTD.Text = "numeric" Or TipoCTD.Text = "numeric (Clave)" Then
-                If TipoCTI.Text = "numeric" Or TipoCTI.Text = "numeric (Clave)" Then
-                    SP_RegistroRelacionesTablas_EDICION_INSERTAR()
-                    MsgBox("Relacion entre las dos Tablas Creada Exitosamente")
+            SP_RegistroRelacionesTablas_Vista_BUSQUEDA_SEGUN_PARAMETRO_TD_CTD_TI_CTI()
+            If RegistroRelacionesTablasIDTextBox.Text = "" Then
+                'TODO: Pendiente definir cuando se tenga la administracion de los tipos de datos
+                If TipoCTD.Text = "numeric" Or TipoCTD.Text = "numeric (Clave)" Then
+                    If TipoCTI.Text = "numeric" Or TipoCTI.Text = "numeric (Clave)" Then
+                        SP_RegistroRelacionesTablas_EDICION_INSERTAR()
+                        MsgBox("Relacion entre las dos Tablas Creada Exitosamente", MsgBoxStyle.Information)
+                        SP_RegistroRelacionesTablas_Vista_BUSQUEDA_SEGUN_PARAMETRO_TD()
+                        TabPage3.BackColor = Color.Cornsilk
+                    End If
+                Else
+                    MsgBox("Los tipos de datos de los campos de esta relación no son correctos, verifica el tipo de dato", MsgBoxStyle.Exclamation)
                 End If
             Else
-                MsgBox("Los tipos de datos de los campos de esta relación no son correctos, verifica el tipo de dato", MsgBoxStyle.Information)
+                MsgBox("Esta Relación entre tablas ya fue creada", MsgBoxStyle.Exclamation)
             End If
         End If
     End Sub
 
-    Private Sub SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaID2DataGridView_CellMouseDoubleClick(sender As Object, e As DataGridViewCellMouseEventArgs) Handles SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaID2DataGridView.CellMouseDoubleClick
-        If Chk_Rel.Checked = True Then
-            BUSCA PRIMERO QUE LA RELACION NO EXISTA EN EL REGISTRO SP_RegistroRelacionesTablas_BUSQUEDA_SEGUN_PARAMETRO_TD_CTD_TI_CTI
-            If TipoCTD.Text = "numeric" Or TipoCTD.Text = "numeric (Clave)" Then
-                If TipoCTI.Text = "numeric" Or TipoCTI.Text = "numeric (Clave)" Then
-                    SP_RegistroRelacionesTablas_EDICION_INSERTAR()
-                    MsgBox("Relacion entre las dos Tablas Creada Exitosamente")
-                End If
-            Else
-                MsgBox("Los tipos de datos de los campos de esta relación no son correctos, verifica el tipo de dato", MsgBoxStyle.Information)
-            End If
+
+
+    Private Sub SP_RegistroRelacionesTablas_Vista_BUSQUEDA_SEGUN_PARAMETRO_TD_CTD_TI_CTI()
+        Try
+            Me.SP_RegistroRelacionesTablas_Vista_BUSQUEDA_SEGUN_PARAMETRO_TD_CTD_TI_CTITableAdapter.Fill(Me.DataSetTablasYCampos.SP_RegistroRelacionesTablas_Vista_BUSQUEDA_SEGUN_PARAMETRO_TD_CTD_TI_CTI,
+                                                                                                         New System.Nullable(Of Integer)(CType(TD_.Text, Integer)),
+                                                                                                         New System.Nullable(Of Integer)(CType(CTD_.Text, Integer)),
+                                                                                                         New System.Nullable(Of Integer)(CType(TI_.Text, Integer)),
+                                                                                                         New System.Nullable(Of Integer)(CType(CTI_.Text, Integer)))
+        Catch ex As System.Exception
+            'System.Windows.Forms.MessageBox.Show(ex.Message)
+        End Try
+
+    End Sub
+
+    Private Sub SP_RegistroRelacionesTablas_EDICION_ELIMINAR()
+        Try
+            Me.SP_RegistroRelacionesTablas_EDICION_ELIMINARTableAdapter.Fill(Me.DataSetTablasYCampos.SP_RegistroRelacionesTablas_EDICION_ELIMINAR, New System.Nullable(Of Integer)(CType(RegistroRelacionesTablasIDTextBox1.Text, Integer)))
+        Catch ex As System.Exception
+            System.Windows.Forms.MessageBox.Show(ex.Message)
+        End Try
+
+    End Sub
+
+    Private Sub EliminarRelaciónToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles EliminarRelaciónToolStripMenuItem.Click
+        If RegistroRelacionesTablasIDTextBox1.Text = "" Then
+            MsgBox("No Existe una relacion a Eliminar", MsgBoxStyle.Exclamation)
+        Else
+            SP_RegistroRelacionesTablas_EDICION_ELIMINAR()
+            MsgBox("Relación Eliminada Exitosamente!!!", MsgBoxStyle.Exclamation)
+            SP_RegistroRelacionesTablas_Vista_BUSQUEDA_SEGUN_PARAMETRO_TD()
+            TabPage3.BackColor = Color.Transparent
+        End If
+
+    End Sub
+
+    Private Sub TD__TextChanged(sender As Object, e As EventArgs) Handles TD_.TextChanged
+        SP_RegistroRelacionesTablas_Vista_BUSQUEDA_SEGUN_PARAMETRO_TD()
+        'Cambiar el color del control cuando se tengan relaciones con tablas
+        If SP_RegistroRelacionesTablas_Vista_BUSQUEDA_SEGUN_PARAMETRO_TDDataGridView.Rows.Count > 0 Then
+            TabPage3.BackColor = Color.Cornsilk
+        Else
+            TabPage3.BackColor = Color.Transparent
         End If
     End Sub
+
+    Private Sub SP_RegistroRelacionesTablas_Vista_BUSQUEDA_SEGUN_PARAMETRO_TD()
+        Try
+            Me.SP_RegistroRelacionesTablas_Vista_BUSQUEDA_SEGUN_PARAMETRO_TDTableAdapter.Fill(Me.DataSetTablasYCampos.SP_RegistroRelacionesTablas_Vista_BUSQUEDA_SEGUN_PARAMETRO_TD, New System.Nullable(Of Integer)(CType(TD_.Text, Integer)))
+        Catch ex As System.Exception
+            'System.Windows.Forms.MessageBox.Show(ex.Message)
+        End Try
+
+    End Sub
+
+    Private Sub SP_RegistroRelacionesTablas_Vista_BUSQUEDA_SEGUN_PARAMETRO_TDDataGridView_CellMouseDoubleClick(sender As Object, e As DataGridViewCellMouseEventArgs) Handles SP_RegistroRelacionesTablas_Vista_BUSQUEDA_SEGUN_PARAMETRO_TDDataGridView.CellMouseDoubleClick
+        SP_RegistroRelacionesTablas_EDICION_ELIMINAR()
+        MsgBox("Relación Eliminada Exitosamente!!!", MsgBoxStyle.Exclamation)
+        SP_RegistroRelacionesTablas_Vista_BUSQUEDA_SEGUN_PARAMETRO_TD()
+        TabPage3.BackColor = Color.Transparent
+    End Sub
+
+
+
+
+
+
 
 
 #End Region

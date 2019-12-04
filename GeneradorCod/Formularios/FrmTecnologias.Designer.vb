@@ -46,9 +46,11 @@ Partial Class FrmTecnologias
         Dim XTablaLabel As System.Windows.Forms.Label
         Dim XTablaLabel1 As System.Windows.Forms.Label
         Dim OrdenLabel As System.Windows.Forms.Label
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim ContenidoRelacionLabel As System.Windows.Forms.Label
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmTecnologias))
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim RelacionTablasIDLabel As System.Windows.Forms.Label
         Me.TecnologiasDataGridView = New System.Windows.Forms.DataGridView()
         Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.TecnologiasBindingSource = New System.Windows.Forms.BindingSource(Me.components)
@@ -180,6 +182,21 @@ Partial Class FrmTecnologias
         Me.Actualizar_Menu_CampoComponentes = New System.Windows.Forms.Button()
         Me.Guardar_Menu_CampoComponentes = New System.Windows.Forms.Button()
         Me.TabPage4 = New System.Windows.Forms.TabPage()
+        Me.ContenidoRelacionTextBox = New System.Windows.Forms.TextBox()
+        Me.SP_TablasRelacionadas_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.SP_TablasRelacionadas_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView = New System.Windows.Forms.DataGridView()
+        Me.DataGridViewTextBoxColumn14 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Panel9 = New System.Windows.Forms.Panel()
+        Me.Nuevo_Menu_TablasRelacionadas = New System.Windows.Forms.Button()
+        Me.Cancelar_Menu_TablasRelacionadas = New System.Windows.Forms.Button()
+        Me.Eliminar_Menu_TablasRelacionadas = New System.Windows.Forms.Button()
+        Me.Editar_Menu_TablasRelacionadas = New System.Windows.Forms.Button()
+        Me.Actualizar_Menu_TablasRelacionadas = New System.Windows.Forms.Button()
+        Me.Guardar_Menu_TablasRelacionadas = New System.Windows.Forms.Button()
+        Me.Button3 = New System.Windows.Forms.Button()
+        Me.Button4 = New System.Windows.Forms.Button()
+        Me.Button2 = New System.Windows.Forms.Button()
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.NombreGrupoTipoDeDatoTextBox1 = New System.Windows.Forms.TextBox()
         Me.TipoCampoIDTextBox = New System.Windows.Forms.TextBox()
         Me.CampoComponenteIDTextBox = New System.Windows.Forms.TextBox()
@@ -225,18 +242,14 @@ Partial Class FrmTecnologias
         Me.SP_RequerimientosPlantillas_EDICION_INSERTARBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.SP_RequerimientosPlantillas_EDICION_INSERTARTableAdapter = New GeneradorCod.DataSetAdministracionTableAdapters.SP_RequerimientosPlantillas_EDICION_INSERTARTableAdapter()
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
-        Me.Button1 = New System.Windows.Forms.Button()
-        Me.Button2 = New System.Windows.Forms.Button()
-        Me.Button3 = New System.Windows.Forms.Button()
-        Me.Button4 = New System.Windows.Forms.Button()
-        Me.Panel9 = New System.Windows.Forms.Panel()
-        Me.Nuevo_Menu_ = New System.Windows.Forms.Button()
-        Me.Cancelar_Menu_ = New System.Windows.Forms.Button()
-        Me.Eliminar_Menu_ = New System.Windows.Forms.Button()
-        Me.Editar_Menu_ = New System.Windows.Forms.Button()
-        Me.Actualizar_Menu_ = New System.Windows.Forms.Button()
-        Me.Guardar_Menu_ = New System.Windows.Forms.Button()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.SP_TablasRelacionadas_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDTableAdapter = New GeneradorCod.DataSetTablasYCamposTableAdapters.SP_TablasRelacionadas_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDTableAdapter()
+        Me.RelacionTablasIDTextBox = New System.Windows.Forms.TextBox()
+        Me.SP_TablasRelacionadas_EDICION_ACTUALIZARBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.SP_TablasRelacionadas_EDICION_ACTUALIZARTableAdapter = New GeneradorCod.DataSetTablasYCamposTableAdapters.SP_TablasRelacionadas_EDICION_ACTUALIZARTableAdapter()
+        Me.SP_TablasRelacionadas_EDICION_ELIMINARBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.SP_TablasRelacionadas_EDICION_ELIMINARTableAdapter = New GeneradorCod.DataSetTablasYCamposTableAdapters.SP_TablasRelacionadas_EDICION_ELIMINARTableAdapter()
+        Me.SP_TablasRelacionadas_EDICION_INSERTARBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.SP_TablasRelacionadas_EDICION_INSERTARTableAdapter = New GeneradorCod.DataSetTablasYCamposTableAdapters.SP_TablasRelacionadas_EDICION_INSERTARTableAdapter()
         NombreTecnologiaLabel = New System.Windows.Forms.Label()
         TecnologiaIDLabel = New System.Windows.Forms.Label()
         NombrePlantillaLabel = New System.Windows.Forms.Label()
@@ -260,6 +273,8 @@ Partial Class FrmTecnologias
         XTablaLabel = New System.Windows.Forms.Label()
         XTablaLabel1 = New System.Windows.Forms.Label()
         OrdenLabel = New System.Windows.Forms.Label()
+        ContenidoRelacionLabel = New System.Windows.Forms.Label()
+        RelacionTablasIDLabel = New System.Windows.Forms.Label()
         CType(Me.TecnologiasDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TecnologiasBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DataSetAdministracion, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -290,6 +305,9 @@ Partial Class FrmTecnologias
         Me.CM_TiposDatos.SuspendLayout()
         Me.Panel7.SuspendLayout()
         Me.TabPage4.SuspendLayout()
+        CType(Me.SP_TablasRelacionadas_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.SP_TablasRelacionadas_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel9.SuspendLayout()
         CType(Me.SP_CampoComponentes_EDICION_ACTUALIZARBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.SP_CampoComponentes_EDICION_ELIMINARBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.SP_CampoComponentes_EDICION_INSERTARBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -306,7 +324,9 @@ Partial Class FrmTecnologias
         CType(Me.SP_RequerimientosPlantillas_EDICION_ACTUALIZARBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.SP_RequerimientosPlantillas_EDICION_ELIMINARBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.SP_RequerimientosPlantillas_EDICION_INSERTARBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.Panel9.SuspendLayout()
+        CType(Me.SP_TablasRelacionadas_EDICION_ACTUALIZARBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.SP_TablasRelacionadas_EDICION_ELIMINARBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.SP_TablasRelacionadas_EDICION_INSERTARBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'NombreTecnologiaLabel
@@ -514,6 +534,15 @@ Partial Class FrmTecnologias
         OrdenLabel.TabIndex = 95
         OrdenLabel.Text = "Orden:"
         '
+        'ContenidoRelacionLabel
+        '
+        ContenidoRelacionLabel.AutoSize = True
+        ContenidoRelacionLabel.Location = New System.Drawing.Point(8, 163)
+        ContenidoRelacionLabel.Name = "ContenidoRelacionLabel"
+        ContenidoRelacionLabel.Size = New System.Drawing.Size(128, 18)
+        ContenidoRelacionLabel.TabIndex = 130
+        ContenidoRelacionLabel.Text = "Contenido Relacion:"
+        '
         'TecnologiasDataGridView
         '
         Me.TecnologiasDataGridView.AllowUserToAddRows = False
@@ -532,8 +561,8 @@ Partial Class FrmTecnologias
         'DataGridViewTextBoxColumn2
         '
         Me.DataGridViewTextBoxColumn2.DataPropertyName = "NombreTecnologia"
-        DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.DataGridViewTextBoxColumn2.DefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.DataGridViewTextBoxColumn2.DefaultCellStyle = DataGridViewCellStyle3
         Me.DataGridViewTextBoxColumn2.HeaderText = "Nombre Tecnologia"
         Me.DataGridViewTextBoxColumn2.Name = "DataGridViewTextBoxColumn2"
         Me.DataGridViewTextBoxColumn2.Width = 370
@@ -706,8 +735,8 @@ Partial Class FrmTecnologias
         'Orden
         '
         Me.Orden.DataPropertyName = "Orden"
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter
-        Me.Orden.DefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter
+        Me.Orden.DefaultCellStyle = DataGridViewCellStyle4
         Me.Orden.HeaderText = "#"
         Me.Orden.Name = "Orden"
         Me.Orden.Width = 30
@@ -1872,7 +1901,11 @@ Partial Class FrmTecnologias
         '
         'TabPage4
         '
-        Me.TabPage4.Controls.Add(Me.TextBox1)
+        Me.TabPage4.Controls.Add(RelacionTablasIDLabel)
+        Me.TabPage4.Controls.Add(Me.RelacionTablasIDTextBox)
+        Me.TabPage4.Controls.Add(ContenidoRelacionLabel)
+        Me.TabPage4.Controls.Add(Me.ContenidoRelacionTextBox)
+        Me.TabPage4.Controls.Add(Me.SP_TablasRelacionadas_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView)
         Me.TabPage4.Controls.Add(Me.Panel9)
         Me.TabPage4.Controls.Add(Me.Button3)
         Me.TabPage4.Controls.Add(Me.Button4)
@@ -1885,6 +1918,168 @@ Partial Class FrmTecnologias
         Me.TabPage4.TabIndex = 3
         Me.TabPage4.Text = "Campos Relacionados"
         Me.TabPage4.UseVisualStyleBackColor = True
+        '
+        'ContenidoRelacionTextBox
+        '
+        Me.ContenidoRelacionTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SP_TablasRelacionadas_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDBindingSource, "ContenidoRelacion", True))
+        Me.ContenidoRelacionTextBox.Location = New System.Drawing.Point(6, 184)
+        Me.ContenidoRelacionTextBox.Multiline = True
+        Me.ContenidoRelacionTextBox.Name = "ContenidoRelacionTextBox"
+        Me.ContenidoRelacionTextBox.Size = New System.Drawing.Size(713, 282)
+        Me.ContenidoRelacionTextBox.TabIndex = 131
+        '
+        'SP_TablasRelacionadas_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDBindingSource
+        '
+        Me.SP_TablasRelacionadas_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDBindingSource.DataMember = "SP_TablasRelacionadas_BUSQUEDA_SEGUN_PARAMETRO_PlantillaID"
+        Me.SP_TablasRelacionadas_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDBindingSource.DataSource = Me.DataSetTablasYCampos
+        '
+        'SP_TablasRelacionadas_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView
+        '
+        Me.SP_TablasRelacionadas_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView.AllowUserToAddRows = False
+        Me.SP_TablasRelacionadas_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView.AutoGenerateColumns = False
+        Me.SP_TablasRelacionadas_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.SP_TablasRelacionadas_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn14})
+        Me.SP_TablasRelacionadas_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView.DataSource = Me.SP_TablasRelacionadas_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDBindingSource
+        Me.SP_TablasRelacionadas_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView.Location = New System.Drawing.Point(6, 472)
+        Me.SP_TablasRelacionadas_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView.Name = "SP_TablasRelacionadas_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView"
+        Me.SP_TablasRelacionadas_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView.RowHeadersVisible = False
+        Me.SP_TablasRelacionadas_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView.Size = New System.Drawing.Size(713, 98)
+        Me.SP_TablasRelacionadas_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView.TabIndex = 130
+        '
+        'DataGridViewTextBoxColumn14
+        '
+        Me.DataGridViewTextBoxColumn14.DataPropertyName = "ContenidoRelacion"
+        Me.DataGridViewTextBoxColumn14.HeaderText = "Contenido Relacion"
+        Me.DataGridViewTextBoxColumn14.Name = "DataGridViewTextBoxColumn14"
+        Me.DataGridViewTextBoxColumn14.Width = 712
+        '
+        'Panel9
+        '
+        Me.Panel9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel9.Controls.Add(Me.Nuevo_Menu_TablasRelacionadas)
+        Me.Panel9.Controls.Add(Me.Cancelar_Menu_TablasRelacionadas)
+        Me.Panel9.Controls.Add(Me.Eliminar_Menu_TablasRelacionadas)
+        Me.Panel9.Controls.Add(Me.Editar_Menu_TablasRelacionadas)
+        Me.Panel9.Controls.Add(Me.Actualizar_Menu_TablasRelacionadas)
+        Me.Panel9.Controls.Add(Me.Guardar_Menu_TablasRelacionadas)
+        Me.Panel9.Location = New System.Drawing.Point(6, 6)
+        Me.Panel9.Name = "Panel9"
+        Me.Panel9.Size = New System.Drawing.Size(713, 46)
+        Me.Panel9.TabIndex = 130
+        '
+        'Nuevo_Menu_TablasRelacionadas
+        '
+        Me.Nuevo_Menu_TablasRelacionadas.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Nuevo_Menu_TablasRelacionadas.Image = CType(resources.GetObject("Nuevo_Menu_TablasRelacionadas.Image"), System.Drawing.Image)
+        Me.Nuevo_Menu_TablasRelacionadas.Location = New System.Drawing.Point(4, 3)
+        Me.Nuevo_Menu_TablasRelacionadas.Name = "Nuevo_Menu_TablasRelacionadas"
+        Me.Nuevo_Menu_TablasRelacionadas.Size = New System.Drawing.Size(40, 38)
+        Me.Nuevo_Menu_TablasRelacionadas.TabIndex = 70
+        Me.Nuevo_Menu_TablasRelacionadas.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.Nuevo_Menu_TablasRelacionadas.UseVisualStyleBackColor = True
+        '
+        'Cancelar_Menu_TablasRelacionadas
+        '
+        Me.Cancelar_Menu_TablasRelacionadas.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Cancelar_Menu_TablasRelacionadas.Image = CType(resources.GetObject("Cancelar_Menu_TablasRelacionadas.Image"), System.Drawing.Image)
+        Me.Cancelar_Menu_TablasRelacionadas.Location = New System.Drawing.Point(233, 3)
+        Me.Cancelar_Menu_TablasRelacionadas.Name = "Cancelar_Menu_TablasRelacionadas"
+        Me.Cancelar_Menu_TablasRelacionadas.Size = New System.Drawing.Size(40, 38)
+        Me.Cancelar_Menu_TablasRelacionadas.TabIndex = 75
+        Me.Cancelar_Menu_TablasRelacionadas.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.Cancelar_Menu_TablasRelacionadas.UseVisualStyleBackColor = True
+        '
+        'Eliminar_Menu_TablasRelacionadas
+        '
+        Me.Eliminar_Menu_TablasRelacionadas.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Eliminar_Menu_TablasRelacionadas.Image = CType(resources.GetObject("Eliminar_Menu_TablasRelacionadas.Image"), System.Drawing.Image)
+        Me.Eliminar_Menu_TablasRelacionadas.Location = New System.Drawing.Point(188, 3)
+        Me.Eliminar_Menu_TablasRelacionadas.Name = "Eliminar_Menu_TablasRelacionadas"
+        Me.Eliminar_Menu_TablasRelacionadas.Size = New System.Drawing.Size(40, 38)
+        Me.Eliminar_Menu_TablasRelacionadas.TabIndex = 72
+        Me.Eliminar_Menu_TablasRelacionadas.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.Eliminar_Menu_TablasRelacionadas.UseVisualStyleBackColor = True
+        '
+        'Editar_Menu_TablasRelacionadas
+        '
+        Me.Editar_Menu_TablasRelacionadas.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Editar_Menu_TablasRelacionadas.Image = CType(resources.GetObject("Editar_Menu_TablasRelacionadas.Image"), System.Drawing.Image)
+        Me.Editar_Menu_TablasRelacionadas.Location = New System.Drawing.Point(96, 3)
+        Me.Editar_Menu_TablasRelacionadas.Name = "Editar_Menu_TablasRelacionadas"
+        Me.Editar_Menu_TablasRelacionadas.Size = New System.Drawing.Size(40, 38)
+        Me.Editar_Menu_TablasRelacionadas.TabIndex = 74
+        Me.Editar_Menu_TablasRelacionadas.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.Editar_Menu_TablasRelacionadas.UseVisualStyleBackColor = True
+        '
+        'Actualizar_Menu_TablasRelacionadas
+        '
+        Me.Actualizar_Menu_TablasRelacionadas.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Actualizar_Menu_TablasRelacionadas.Image = CType(resources.GetObject("Actualizar_Menu_TablasRelacionadas.Image"), System.Drawing.Image)
+        Me.Actualizar_Menu_TablasRelacionadas.Location = New System.Drawing.Point(142, 3)
+        Me.Actualizar_Menu_TablasRelacionadas.Name = "Actualizar_Menu_TablasRelacionadas"
+        Me.Actualizar_Menu_TablasRelacionadas.Size = New System.Drawing.Size(40, 38)
+        Me.Actualizar_Menu_TablasRelacionadas.TabIndex = 73
+        Me.Actualizar_Menu_TablasRelacionadas.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.Actualizar_Menu_TablasRelacionadas.UseVisualStyleBackColor = True
+        '
+        'Guardar_Menu_TablasRelacionadas
+        '
+        Me.Guardar_Menu_TablasRelacionadas.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Guardar_Menu_TablasRelacionadas.Image = CType(resources.GetObject("Guardar_Menu_TablasRelacionadas.Image"), System.Drawing.Image)
+        Me.Guardar_Menu_TablasRelacionadas.Location = New System.Drawing.Point(50, 3)
+        Me.Guardar_Menu_TablasRelacionadas.Name = "Guardar_Menu_TablasRelacionadas"
+        Me.Guardar_Menu_TablasRelacionadas.Size = New System.Drawing.Size(40, 38)
+        Me.Guardar_Menu_TablasRelacionadas.TabIndex = 71
+        Me.Guardar_Menu_TablasRelacionadas.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.Guardar_Menu_TablasRelacionadas.UseVisualStyleBackColor = True
+        '
+        'Button3
+        '
+        Me.Button3.BackColor = System.Drawing.Color.White
+        Me.Button3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button3.Location = New System.Drawing.Point(507, 109)
+        Me.Button3.Name = "Button3"
+        Me.Button3.Size = New System.Drawing.Size(142, 43)
+        Me.Button3.TabIndex = 129
+        Me.Button3.Text = "{{{Campo_Ind}}}"
+        Me.ToolTip1.SetToolTip(Me.Button3, "Nombre de La Tabla tal como esta Generada")
+        Me.Button3.UseVisualStyleBackColor = False
+        '
+        'Button4
+        '
+        Me.Button4.BackColor = System.Drawing.Color.White
+        Me.Button4.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button4.Location = New System.Drawing.Point(75, 109)
+        Me.Button4.Name = "Button4"
+        Me.Button4.Size = New System.Drawing.Size(146, 43)
+        Me.Button4.TabIndex = 128
+        Me.Button4.Text = "{{{Campo_Dep}}}"
+        Me.ToolTip1.SetToolTip(Me.Button4, "Nombre de La Tabla tal como esta Generada")
+        Me.Button4.UseVisualStyleBackColor = False
+        '
+        'Button2
+        '
+        Me.Button2.BackColor = System.Drawing.Color.White
+        Me.Button2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button2.Location = New System.Drawing.Point(550, 62)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(137, 43)
+        Me.Button2.TabIndex = 127
+        Me.Button2.Text = "{{{Tabla_Ind}}}"
+        Me.ToolTip1.SetToolTip(Me.Button2, "Nombre de La Tabla tal como esta Generada")
+        Me.Button2.UseVisualStyleBackColor = False
+        '
+        'Button1
+        '
+        Me.Button1.BackColor = System.Drawing.Color.White
+        Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button1.Location = New System.Drawing.Point(36, 62)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(137, 43)
+        Me.Button1.TabIndex = 126
+        Me.Button1.Text = "{{{Tabla_Dep}}}"
+        Me.ToolTip1.SetToolTip(Me.Button1, "Nombre de La Tabla tal como esta Generada")
+        Me.Button1.UseVisualStyleBackColor = False
         '
         'NombreGrupoTipoDeDatoTextBox1
         '
@@ -1927,10 +2122,15 @@ Partial Class FrmTecnologias
         Me.TableAdapterManager1.SP_CamposDeTablas_EDICION_ELIMINARTableAdapter = Nothing
         Me.TableAdapterManager1.SP_CamposDeTablas_EDICION_INSERTARTableAdapter = Nothing
         Me.TableAdapterManager1.SP_ELIMINA_RegistroValorRequerimientos_SegunIDTableAdapter = Nothing
+        Me.TableAdapterManager1.SP_RegistroRelacionesTablas_EDICION_ELIMINARTableAdapter = Nothing
+        Me.TableAdapterManager1.SP_RegistroRelacionesTablas_EDICION_INSERTARTableAdapter = Nothing
         Me.TableAdapterManager1.SP_RegistroValorRequerimientos_EDICION_INSERTARTableAdapter = Nothing
         Me.TableAdapterManager1.SP_TablasDeProyecto_EDICION_ACTUALIZARTableAdapter = Nothing
         Me.TableAdapterManager1.SP_TablasDeProyecto_EDICION_ELIMINARTableAdapter = Nothing
         Me.TableAdapterManager1.SP_TablasDeProyecto_EDICION_INSERTARTableAdapter = Nothing
+        Me.TableAdapterManager1.SP_TablasRelacionadas_EDICION_ACTUALIZARTableAdapter = Nothing
+        Me.TableAdapterManager1.SP_TablasRelacionadas_EDICION_ELIMINARTableAdapter = Nothing
+        Me.TableAdapterManager1.SP_TablasRelacionadas_EDICION_INSERTARTableAdapter = Nothing
         Me.TableAdapterManager1.UpdateOrder = GeneradorCod.DataSetTablasYCamposTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
         '
         'SP_CampoComponentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDTableAdapter
@@ -2129,141 +2329,53 @@ Partial Class FrmTecnologias
         '
         Me.SP_RequerimientosPlantillas_EDICION_INSERTARTableAdapter.ClearBeforeFill = True
         '
-        'Button1
+        'SP_TablasRelacionadas_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDTableAdapter
         '
-        Me.Button1.BackColor = System.Drawing.Color.White
-        Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button1.Location = New System.Drawing.Point(36, 79)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(137, 43)
-        Me.Button1.TabIndex = 126
-        Me.Button1.Text = "{{{Tabla_Dep}}}"
-        Me.ToolTip1.SetToolTip(Me.Button1, "Nombre de La Tabla tal como esta Generada")
-        Me.Button1.UseVisualStyleBackColor = False
+        Me.SP_TablasRelacionadas_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDTableAdapter.ClearBeforeFill = True
         '
-        'Button2
+        'RelacionTablasIDTextBox
         '
-        Me.Button2.BackColor = System.Drawing.Color.White
-        Me.Button2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button2.Location = New System.Drawing.Point(550, 79)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(137, 43)
-        Me.Button2.TabIndex = 127
-        Me.Button2.Text = "{{{Tabla_Ind}}}"
-        Me.ToolTip1.SetToolTip(Me.Button2, "Nombre de La Tabla tal como esta Generada")
-        Me.Button2.UseVisualStyleBackColor = False
+        Me.RelacionTablasIDTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SP_TablasRelacionadas_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDBindingSource, "RelacionTablasID", True))
+        Me.RelacionTablasIDTextBox.Location = New System.Drawing.Point(364, 74)
+        Me.RelacionTablasIDTextBox.Name = "RelacionTablasIDTextBox"
+        Me.RelacionTablasIDTextBox.Size = New System.Drawing.Size(100, 26)
+        Me.RelacionTablasIDTextBox.TabIndex = 132
         '
-        'Button3
+        'SP_TablasRelacionadas_EDICION_ACTUALIZARBindingSource
         '
-        Me.Button3.BackColor = System.Drawing.Color.White
-        Me.Button3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button3.Location = New System.Drawing.Point(507, 126)
-        Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(142, 43)
-        Me.Button3.TabIndex = 129
-        Me.Button3.Text = "{{{Campo_Ind}}}"
-        Me.ToolTip1.SetToolTip(Me.Button3, "Nombre de La Tabla tal como esta Generada")
-        Me.Button3.UseVisualStyleBackColor = False
+        Me.SP_TablasRelacionadas_EDICION_ACTUALIZARBindingSource.DataMember = "SP_TablasRelacionadas_EDICION_ACTUALIZAR"
+        Me.SP_TablasRelacionadas_EDICION_ACTUALIZARBindingSource.DataSource = Me.DataSetTablasYCampos
         '
-        'Button4
+        'SP_TablasRelacionadas_EDICION_ACTUALIZARTableAdapter
         '
-        Me.Button4.BackColor = System.Drawing.Color.White
-        Me.Button4.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button4.Location = New System.Drawing.Point(75, 126)
-        Me.Button4.Name = "Button4"
-        Me.Button4.Size = New System.Drawing.Size(146, 43)
-        Me.Button4.TabIndex = 128
-        Me.Button4.Text = "{{{Campo_Dep}}}"
-        Me.ToolTip1.SetToolTip(Me.Button4, "Nombre de La Tabla tal como esta Generada")
-        Me.Button4.UseVisualStyleBackColor = False
+        Me.SP_TablasRelacionadas_EDICION_ACTUALIZARTableAdapter.ClearBeforeFill = True
         '
-        'Panel9
+        'SP_TablasRelacionadas_EDICION_ELIMINARBindingSource
         '
-        Me.Panel9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Panel9.Controls.Add(Me.Nuevo_Menu_)
-        Me.Panel9.Controls.Add(Me.Cancelar_Menu_)
-        Me.Panel9.Controls.Add(Me.Eliminar_Menu_)
-        Me.Panel9.Controls.Add(Me.Editar_Menu_)
-        Me.Panel9.Controls.Add(Me.Actualizar_Menu_)
-        Me.Panel9.Controls.Add(Me.Guardar_Menu_)
-        Me.Panel9.Location = New System.Drawing.Point(6, 6)
-        Me.Panel9.Name = "Panel9"
-        Me.Panel9.Size = New System.Drawing.Size(278, 46)
-        Me.Panel9.TabIndex = 130
+        Me.SP_TablasRelacionadas_EDICION_ELIMINARBindingSource.DataMember = "SP_TablasRelacionadas_EDICION_ELIMINAR"
+        Me.SP_TablasRelacionadas_EDICION_ELIMINARBindingSource.DataSource = Me.DataSetTablasYCampos
         '
-        'Nuevo_Menu_
+        'SP_TablasRelacionadas_EDICION_ELIMINARTableAdapter
         '
-        Me.Nuevo_Menu_.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.Nuevo_Menu_.Image = CType(resources.GetObject("Nuevo_Menu_.Image"), System.Drawing.Image)
-        Me.Nuevo_Menu_.Location = New System.Drawing.Point(4, 3)
-        Me.Nuevo_Menu_.Name = "Nuevo_Menu_"
-        Me.Nuevo_Menu_.Size = New System.Drawing.Size(40, 38)
-        Me.Nuevo_Menu_.TabIndex = 70
-        Me.Nuevo_Menu_.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.Nuevo_Menu_.UseVisualStyleBackColor = True
+        Me.SP_TablasRelacionadas_EDICION_ELIMINARTableAdapter.ClearBeforeFill = True
         '
-        'Cancelar_Menu_
+        'RelacionTablasIDLabel
         '
-        Me.Cancelar_Menu_.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.Cancelar_Menu_.Image = CType(resources.GetObject("Cancelar_Menu_.Image"), System.Drawing.Image)
-        Me.Cancelar_Menu_.Location = New System.Drawing.Point(233, 3)
-        Me.Cancelar_Menu_.Name = "Cancelar_Menu_"
-        Me.Cancelar_Menu_.Size = New System.Drawing.Size(40, 38)
-        Me.Cancelar_Menu_.TabIndex = 75
-        Me.Cancelar_Menu_.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.Cancelar_Menu_.UseVisualStyleBackColor = True
+        RelacionTablasIDLabel.AutoSize = True
+        RelacionTablasIDLabel.Location = New System.Drawing.Point(238, 77)
+        RelacionTablasIDLabel.Name = "RelacionTablasIDLabel"
+        RelacionTablasIDLabel.Size = New System.Drawing.Size(120, 18)
+        RelacionTablasIDLabel.TabIndex = 131
+        RelacionTablasIDLabel.Text = "Relacion Tablas ID:"
         '
-        'Eliminar_Menu_
+        'SP_TablasRelacionadas_EDICION_INSERTARBindingSource
         '
-        Me.Eliminar_Menu_.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.Eliminar_Menu_.Image = CType(resources.GetObject("Eliminar_Menu_.Image"), System.Drawing.Image)
-        Me.Eliminar_Menu_.Location = New System.Drawing.Point(188, 3)
-        Me.Eliminar_Menu_.Name = "Eliminar_Menu_"
-        Me.Eliminar_Menu_.Size = New System.Drawing.Size(40, 38)
-        Me.Eliminar_Menu_.TabIndex = 72
-        Me.Eliminar_Menu_.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.Eliminar_Menu_.UseVisualStyleBackColor = True
+        Me.SP_TablasRelacionadas_EDICION_INSERTARBindingSource.DataMember = "SP_TablasRelacionadas_EDICION_INSERTAR"
+        Me.SP_TablasRelacionadas_EDICION_INSERTARBindingSource.DataSource = Me.DataSetTablasYCampos
         '
-        'Editar_Menu_
+        'SP_TablasRelacionadas_EDICION_INSERTARTableAdapter
         '
-        Me.Editar_Menu_.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.Editar_Menu_.Image = CType(resources.GetObject("Editar_Menu_.Image"), System.Drawing.Image)
-        Me.Editar_Menu_.Location = New System.Drawing.Point(96, 3)
-        Me.Editar_Menu_.Name = "Editar_Menu_"
-        Me.Editar_Menu_.Size = New System.Drawing.Size(40, 38)
-        Me.Editar_Menu_.TabIndex = 74
-        Me.Editar_Menu_.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.Editar_Menu_.UseVisualStyleBackColor = True
-        '
-        'Actualizar_Menu_
-        '
-        Me.Actualizar_Menu_.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.Actualizar_Menu_.Image = CType(resources.GetObject("Actualizar_Menu_.Image"), System.Drawing.Image)
-        Me.Actualizar_Menu_.Location = New System.Drawing.Point(142, 3)
-        Me.Actualizar_Menu_.Name = "Actualizar_Menu_"
-        Me.Actualizar_Menu_.Size = New System.Drawing.Size(40, 38)
-        Me.Actualizar_Menu_.TabIndex = 73
-        Me.Actualizar_Menu_.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.Actualizar_Menu_.UseVisualStyleBackColor = True
-        '
-        'Guardar_Menu_
-        '
-        Me.Guardar_Menu_.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.Guardar_Menu_.Image = CType(resources.GetObject("Guardar_Menu_.Image"), System.Drawing.Image)
-        Me.Guardar_Menu_.Location = New System.Drawing.Point(50, 3)
-        Me.Guardar_Menu_.Name = "Guardar_Menu_"
-        Me.Guardar_Menu_.Size = New System.Drawing.Size(40, 38)
-        Me.Guardar_Menu_.TabIndex = 71
-        Me.Guardar_Menu_.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.Guardar_Menu_.UseVisualStyleBackColor = True
-        '
-        'TextBox1
-        '
-        Me.TextBox1.Location = New System.Drawing.Point(6, 194)
-        Me.TextBox1.Multiline = True
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(713, 376)
-        Me.TextBox1.TabIndex = 131
+        Me.SP_TablasRelacionadas_EDICION_INSERTARTableAdapter.ClearBeforeFill = True
         '
         'FrmTecnologias
         '
@@ -2335,6 +2447,9 @@ Partial Class FrmTecnologias
         Me.Panel7.ResumeLayout(False)
         Me.TabPage4.ResumeLayout(False)
         Me.TabPage4.PerformLayout()
+        CType(Me.SP_TablasRelacionadas_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.SP_TablasRelacionadas_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Panel9.ResumeLayout(False)
         CType(Me.SP_CampoComponentes_EDICION_ACTUALIZARBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.SP_CampoComponentes_EDICION_ELIMINARBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.SP_CampoComponentes_EDICION_INSERTARBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
@@ -2351,7 +2466,9 @@ Partial Class FrmTecnologias
         CType(Me.SP_RequerimientosPlantillas_EDICION_ACTUALIZARBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.SP_RequerimientosPlantillas_EDICION_ELIMINARBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.SP_RequerimientosPlantillas_EDICION_INSERTARBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.Panel9.ResumeLayout(False)
+        CType(Me.SP_TablasRelacionadas_EDICION_ACTUALIZARBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.SP_TablasRelacionadas_EDICION_ELIMINARBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.SP_TablasRelacionadas_EDICION_INSERTARBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -2540,12 +2657,23 @@ Partial Class FrmTecnologias
     Friend WithEvents Button4 As Button
     Friend WithEvents Button2 As Button
     Friend WithEvents Button1 As Button
-    Friend WithEvents TextBox1 As TextBox
     Friend WithEvents Panel9 As Panel
-    Friend WithEvents Nuevo_Menu_ As Button
-    Friend WithEvents Cancelar_Menu_ As Button
-    Friend WithEvents Eliminar_Menu_ As Button
-    Friend WithEvents Editar_Menu_ As Button
-    Friend WithEvents Actualizar_Menu_ As Button
-    Friend WithEvents Guardar_Menu_ As Button
+    Friend WithEvents Nuevo_Menu_TablasRelacionadas As Button
+    Friend WithEvents Cancelar_Menu_TablasRelacionadas As Button
+    Friend WithEvents Eliminar_Menu_TablasRelacionadas As Button
+    Friend WithEvents Editar_Menu_TablasRelacionadas As Button
+    Friend WithEvents Actualizar_Menu_TablasRelacionadas As Button
+    Friend WithEvents Guardar_Menu_TablasRelacionadas As Button
+    Friend WithEvents SP_TablasRelacionadas_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDBindingSource As BindingSource
+    Friend WithEvents SP_TablasRelacionadas_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDTableAdapter As DataSetTablasYCamposTableAdapters.SP_TablasRelacionadas_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDTableAdapter
+    Friend WithEvents ContenidoRelacionTextBox As TextBox
+    Friend WithEvents SP_TablasRelacionadas_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView As DataGridView
+    Friend WithEvents DataGridViewTextBoxColumn14 As DataGridViewTextBoxColumn
+    Friend WithEvents RelacionTablasIDTextBox As TextBox
+    Friend WithEvents SP_TablasRelacionadas_EDICION_ACTUALIZARBindingSource As BindingSource
+    Friend WithEvents SP_TablasRelacionadas_EDICION_ACTUALIZARTableAdapter As DataSetTablasYCamposTableAdapters.SP_TablasRelacionadas_EDICION_ACTUALIZARTableAdapter
+    Friend WithEvents SP_TablasRelacionadas_EDICION_ELIMINARBindingSource As BindingSource
+    Friend WithEvents SP_TablasRelacionadas_EDICION_ELIMINARTableAdapter As DataSetTablasYCamposTableAdapters.SP_TablasRelacionadas_EDICION_ELIMINARTableAdapter
+    Friend WithEvents SP_TablasRelacionadas_EDICION_INSERTARBindingSource As BindingSource
+    Friend WithEvents SP_TablasRelacionadas_EDICION_INSERTARTableAdapter As DataSetTablasYCamposTableAdapters.SP_TablasRelacionadas_EDICION_INSERTARTableAdapter
 End Class
