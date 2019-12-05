@@ -66,6 +66,7 @@
     End Sub
     Private Sub PlantillaIDTextBox1_TextChanged(sender As Object, e As EventArgs) Handles PlantillaIDTextBox1.TextChanged
         SP_Plantillas_BUSQUEDA_SEGUN_PARAMETRO_Tecnologia_2()
+        SP_CARGA_TablasRelacionadas_SEGUN_PlantillaID()
     End Sub
     Private Sub SP_Componentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaID()
         Try
@@ -305,9 +306,7 @@
         NombreTablaTextBox1.Text = NombreTablaTextBox.Text
         Return CodigoGenerado
     End Function
-    Function CamposRelacionados()
-        MsgBox("Campos Relacionados")
-    End Function
+
     Function CapturaClavePrincipal()
         Try
             'Se ubica en la primera fila
@@ -1334,12 +1333,14 @@
             ContenidoGenerado = ContenidoGenerado.Replace("{{{Campos}}}", Campos)
         End If
         If InStr(Contenido, "{{{Camp-Rel}}}") Then
-            CamposRelacionados()
+            Dim CamposRel = RecorreTablasRelacionadas()
+            ContenidoGenerado = ContenidoGenerado.Replace("{{{Campos-Rel}}}", CamposRel)
         End If
         Return ContenidoGenerado
     End Function
     Private Sub TablaIDTextBox1_TextChanged(sender As Object, e As EventArgs) Handles TablaIDTextBox1.TextChanged
         SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaID1()
+        SP_RegistroRelacionesTablas_Vista_BUSQUEDA_SEGUN_PARAMETRO_TD1()
     End Sub
 
     Private Sub SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaID1()
@@ -1537,11 +1538,65 @@
         TabPage3.BackColor = Color.Transparent
     End Sub
 
+    Private Sub SP_CARGA_TablasRelacionadas_SEGUN_PlantillaID()
+        Try
+            Me.SP_CARGA_TablasRelacionadas_SEGUN_PlantillaIDTableAdapter.Fill(Me.DataSetTablasYCampos.SP_CARGA_TablasRelacionadas_SEGUN_PlantillaID, New System.Nullable(Of Integer)(CType(PlantillaIDTextBox1.Text, Integer)))
+        Catch ex As System.Exception
+            'System.Windows.Forms.MessageBox.Show(ex.Message)
+        End Try
+
+    End Sub
 
 
 
+    'Carga las relaciones de la tabla
+    Private Sub SP_RegistroRelacionesTablas_Vista_BUSQUEDA_SEGUN_PARAMETRO_TD1()
+        Try
+            Me.SP_RegistroRelacionesTablas_Vista_BUSQUEDA_SEGUN_PARAMETRO_TD1TableAdapter.Fill(Me.DataSetTablasYCampos.SP_RegistroRelacionesTablas_Vista_BUSQUEDA_SEGUN_PARAMETRO_TD1, New System.Nullable(Of Integer)(CType(TablaIDTextBox1.Text, Integer)))
+        Catch ex As System.Exception
+            'System.Windows.Forms.MessageBox.Show(ex.Message)
+        End Try
+
+    End Sub
+
+    Function RecorreTablasRelacionadas()
+        Dim CamposRelacionados As String = ""
+        Dim contadorTablasRelacionadas = SP_RegistroRelacionesTablas_Vista_BUSQUEDA_SEGUN_PARAMETRO_TD1DataGridView.Rows.Count()
+        'Carga las tecnologias aplicadas y segun pide los requerimientos de de las plantillas de dichas tecnologias
+        While contadorTablasRelacionadas > 0
+            'Se ubica en la primera fila
+            SP_RegistroRelacionesTablas_Vista_BUSQUEDA_SEGUN_PARAMETRO_TD1DataGridView.CurrentCell = SP_RegistroRelacionesTablas_Vista_BUSQUEDA_SEGUN_PARAMETRO_TD1DataGridView.Rows(0).Cells(0)
+            CamposRelacionados = CamposRelacionados & GenerarRelacionTabla(ContenidoRelacionTextBox.Text) & vbCrLf
+            SP_RegistroRelacionesTablas_Vista_BUSQUEDA_SEGUN_PARAMETRO_TD1DataGridView.Rows.RemoveAt(0)
+            contadorTablasRelacionadas = contadorTablasRelacionadas - 1
+        End While
+        'Vuelve y carga las tecnologias aplicadas
+        SP_RegistroRelacionesTablas_Vista_BUSQUEDA_SEGUN_PARAMETRO_TD1()
+        Return CamposRelacionados
+    End Function
 
 
+    Function GenerarRelacionTabla(contenido As String)
+        Dim ContenidoGenerado As String = contenido
+        If InStr(ContenidoRelacionTextBox.Text, "{{{Tabla_Dep}}}") Then
+            ContenidoGenerado = contenido.Replace("{{{Tabla_Dep}}}", TablaDependienteTextBox1.Text)
+        End If
+        If InStr(ContenidoRelacionTextBox.Text, "{{{Campo_Dep}}}") Then
+            ContenidoGenerado = ContenidoGenerado.Replace("{{{Campo_Dep}}}", CampoDependienteTextBox1.Text)
+        End If
+        If InStr(ContenidoRelacionTextBox.Text, "{{{Tabla_Ind}}}") Then
+            ContenidoGenerado = ContenidoGenerado.Replace("{{{Tabla_Ind}}}", TablaIndependienteTextBox1.Text)
+        End If
+        If InStr(ContenidoRelacionTextBox.Text, "{{{Campo_Ind}}}") Then
+            ContenidoGenerado = ContenidoGenerado.Replace("{{{Campo_Ind}}}", CampoIndependienteTextBox1.Text)
+        End If
+        Return ContenidoGenerado
+    End Function
+
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        RecorreTablasRelacionadas()
+    End Sub
 
 
 #End Region

@@ -1692,6 +1692,22 @@
         Me.ContenidoComponenteRichTextBox.Text = Me.ContenidoComponenteRichTextBox.Text.Insert(Me.ContenidoComponenteRichTextBox.SelectionStart, "{{{A=>-a}}}")
     End Sub
 
+    Private Sub BtnTD_Click(sender As Object, e As EventArgs) Handles BtnTD.Click
+        Me.ContenidoRelacionTextBox.Text = Me.ContenidoRelacionTextBox.Text.Insert(Me.ContenidoRelacionTextBox.SelectionStart, "{{{Tabla_Dep}}}")
+    End Sub
+
+    Private Sub BtnCTD_Click(sender As Object, e As EventArgs) Handles BtnCTD.Click
+        Me.ContenidoRelacionTextBox.Text = Me.ContenidoRelacionTextBox.Text.Insert(Me.ContenidoRelacionTextBox.SelectionStart, "{{{Campo_Dep}}}")
+    End Sub
+
+    Private Sub BtnTI_Click(sender As Object, e As EventArgs) Handles BtnTI.Click
+        Me.ContenidoRelacionTextBox.Text = Me.ContenidoRelacionTextBox.Text.Insert(Me.ContenidoRelacionTextBox.SelectionStart, "{{{Tabla_Ind}}}")
+    End Sub
+
+    Private Sub BtnCTI_Click(sender As Object, e As EventArgs) Handles BtnCTI.Click
+        Me.ContenidoRelacionTextBox.Text = Me.ContenidoRelacionTextBox.Text.Insert(Me.ContenidoRelacionTextBox.SelectionStart, "{{{Campo_Ind}}}")
+    End Sub
+
     Private Sub BtnIzquierda_Click(sender As Object, e As EventArgs) Handles BtnIzquierda.Click
         Me.ContenidoComponenteRichTextBox.SelectionAlignment = HorizontalAlignment.Left
     End Sub
@@ -1929,7 +1945,7 @@
     End Sub
 
     Private Sub BtnConvertir_Click(sender As Object, e As EventArgs) Handles BtnConvertir.Click
-        ContenidoComponenteRichTextBox.Rtf = ContenidoComponenteRichTextBox.Text
+        'ContenidoComponenteRichTextBox.Rtf = ContenidoComponenteRichTextBox.Text
     End Sub
 
 
@@ -2193,6 +2209,10 @@
         Ubicar_En_Fila_TablasRelacionadas()
         Timer_Ubicacion_TablasRelacionadas.Stop()
     End Sub
+
+
+
+
 #End Region
 
 

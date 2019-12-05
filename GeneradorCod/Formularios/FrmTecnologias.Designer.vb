@@ -47,10 +47,10 @@ Partial Class FrmTecnologias
         Dim XTablaLabel1 As System.Windows.Forms.Label
         Dim OrdenLabel As System.Windows.Forms.Label
         Dim ContenidoRelacionLabel As System.Windows.Forms.Label
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmTecnologias))
-        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim RelacionTablasIDLabel As System.Windows.Forms.Label
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmTecnologias))
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.TecnologiasDataGridView = New System.Windows.Forms.DataGridView()
         Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.TecnologiasBindingSource = New System.Windows.Forms.BindingSource(Me.components)
@@ -182,8 +182,9 @@ Partial Class FrmTecnologias
         Me.Actualizar_Menu_CampoComponentes = New System.Windows.Forms.Button()
         Me.Guardar_Menu_CampoComponentes = New System.Windows.Forms.Button()
         Me.TabPage4 = New System.Windows.Forms.TabPage()
-        Me.ContenidoRelacionTextBox = New System.Windows.Forms.TextBox()
+        Me.RelacionTablasIDTextBox = New System.Windows.Forms.TextBox()
         Me.SP_TablasRelacionadas_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.ContenidoRelacionTextBox = New System.Windows.Forms.TextBox()
         Me.SP_TablasRelacionadas_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView = New System.Windows.Forms.DataGridView()
         Me.DataGridViewTextBoxColumn14 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Panel9 = New System.Windows.Forms.Panel()
@@ -193,10 +194,10 @@ Partial Class FrmTecnologias
         Me.Editar_Menu_TablasRelacionadas = New System.Windows.Forms.Button()
         Me.Actualizar_Menu_TablasRelacionadas = New System.Windows.Forms.Button()
         Me.Guardar_Menu_TablasRelacionadas = New System.Windows.Forms.Button()
-        Me.Button3 = New System.Windows.Forms.Button()
-        Me.Button4 = New System.Windows.Forms.Button()
-        Me.Button2 = New System.Windows.Forms.Button()
-        Me.Button1 = New System.Windows.Forms.Button()
+        Me.BtnCTI = New System.Windows.Forms.Button()
+        Me.BtnCTD = New System.Windows.Forms.Button()
+        Me.BtnTI = New System.Windows.Forms.Button()
+        Me.BtnTD = New System.Windows.Forms.Button()
         Me.NombreGrupoTipoDeDatoTextBox1 = New System.Windows.Forms.TextBox()
         Me.TipoCampoIDTextBox = New System.Windows.Forms.TextBox()
         Me.CampoComponenteIDTextBox = New System.Windows.Forms.TextBox()
@@ -243,7 +244,6 @@ Partial Class FrmTecnologias
         Me.SP_RequerimientosPlantillas_EDICION_INSERTARTableAdapter = New GeneradorCod.DataSetAdministracionTableAdapters.SP_RequerimientosPlantillas_EDICION_INSERTARTableAdapter()
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
         Me.SP_TablasRelacionadas_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDTableAdapter = New GeneradorCod.DataSetTablasYCamposTableAdapters.SP_TablasRelacionadas_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDTableAdapter()
-        Me.RelacionTablasIDTextBox = New System.Windows.Forms.TextBox()
         Me.SP_TablasRelacionadas_EDICION_ACTUALIZARBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.SP_TablasRelacionadas_EDICION_ACTUALIZARTableAdapter = New GeneradorCod.DataSetTablasYCamposTableAdapters.SP_TablasRelacionadas_EDICION_ACTUALIZARTableAdapter()
         Me.SP_TablasRelacionadas_EDICION_ELIMINARBindingSource = New System.Windows.Forms.BindingSource(Me.components)
@@ -543,6 +543,15 @@ Partial Class FrmTecnologias
         ContenidoRelacionLabel.TabIndex = 130
         ContenidoRelacionLabel.Text = "Contenido Relacion:"
         '
+        'RelacionTablasIDLabel
+        '
+        RelacionTablasIDLabel.AutoSize = True
+        RelacionTablasIDLabel.Location = New System.Drawing.Point(671, 458)
+        RelacionTablasIDLabel.Name = "RelacionTablasIDLabel"
+        RelacionTablasIDLabel.Size = New System.Drawing.Size(120, 18)
+        RelacionTablasIDLabel.TabIndex = 131
+        RelacionTablasIDLabel.Text = "Relacion Tablas ID:"
+        '
         'TecnologiasDataGridView
         '
         Me.TecnologiasDataGridView.AllowUserToAddRows = False
@@ -561,8 +570,8 @@ Partial Class FrmTecnologias
         'DataGridViewTextBoxColumn2
         '
         Me.DataGridViewTextBoxColumn2.DataPropertyName = "NombreTecnologia"
-        DataGridViewCellStyle3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.DataGridViewTextBoxColumn2.DefaultCellStyle = DataGridViewCellStyle3
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.DataGridViewTextBoxColumn2.DefaultCellStyle = DataGridViewCellStyle1
         Me.DataGridViewTextBoxColumn2.HeaderText = "Nombre Tecnologia"
         Me.DataGridViewTextBoxColumn2.Name = "DataGridViewTextBoxColumn2"
         Me.DataGridViewTextBoxColumn2.Width = 370
@@ -735,8 +744,8 @@ Partial Class FrmTecnologias
         'Orden
         '
         Me.Orden.DataPropertyName = "Orden"
-        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter
-        Me.Orden.DefaultCellStyle = DataGridViewCellStyle4
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter
+        Me.Orden.DefaultCellStyle = DataGridViewCellStyle2
         Me.Orden.HeaderText = "#"
         Me.Orden.Name = "Orden"
         Me.Orden.Width = 30
@@ -1238,10 +1247,10 @@ Partial Class FrmTecnologias
         Me.TabControl1.Controls.Add(Me.TabPage2)
         Me.TabControl1.Controls.Add(Me.TabPage3)
         Me.TabControl1.Controls.Add(Me.TabPage4)
-        Me.TabControl1.Location = New System.Drawing.Point(535, 0)
+        Me.TabControl1.Location = New System.Drawing.Point(535, 1)
         Me.TabControl1.Name = "TabControl1"
         Me.TabControl1.SelectedIndex = 0
-        Me.TabControl1.Size = New System.Drawing.Size(733, 607)
+        Me.TabControl1.Size = New System.Drawing.Size(736, 607)
         Me.TabControl1.TabIndex = 116
         '
         'TabPage1
@@ -1901,23 +1910,34 @@ Partial Class FrmTecnologias
         '
         'TabPage4
         '
-        Me.TabPage4.Controls.Add(RelacionTablasIDLabel)
-        Me.TabPage4.Controls.Add(Me.RelacionTablasIDTextBox)
         Me.TabPage4.Controls.Add(ContenidoRelacionLabel)
         Me.TabPage4.Controls.Add(Me.ContenidoRelacionTextBox)
         Me.TabPage4.Controls.Add(Me.SP_TablasRelacionadas_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView)
         Me.TabPage4.Controls.Add(Me.Panel9)
-        Me.TabPage4.Controls.Add(Me.Button3)
-        Me.TabPage4.Controls.Add(Me.Button4)
-        Me.TabPage4.Controls.Add(Me.Button2)
-        Me.TabPage4.Controls.Add(Me.Button1)
+        Me.TabPage4.Controls.Add(Me.BtnCTI)
+        Me.TabPage4.Controls.Add(Me.BtnCTD)
+        Me.TabPage4.Controls.Add(Me.BtnTI)
+        Me.TabPage4.Controls.Add(Me.BtnTD)
         Me.TabPage4.Location = New System.Drawing.Point(4, 27)
         Me.TabPage4.Name = "TabPage4"
         Me.TabPage4.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage4.Size = New System.Drawing.Size(725, 576)
+        Me.TabPage4.Size = New System.Drawing.Size(728, 576)
         Me.TabPage4.TabIndex = 3
         Me.TabPage4.Text = "Campos Relacionados"
         Me.TabPage4.UseVisualStyleBackColor = True
+        '
+        'RelacionTablasIDTextBox
+        '
+        Me.RelacionTablasIDTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SP_TablasRelacionadas_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDBindingSource, "RelacionTablasID", True))
+        Me.RelacionTablasIDTextBox.Location = New System.Drawing.Point(797, 455)
+        Me.RelacionTablasIDTextBox.Name = "RelacionTablasIDTextBox"
+        Me.RelacionTablasIDTextBox.Size = New System.Drawing.Size(100, 26)
+        Me.RelacionTablasIDTextBox.TabIndex = 132
+        '
+        'SP_TablasRelacionadas_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDBindingSource
+        '
+        Me.SP_TablasRelacionadas_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDBindingSource.DataMember = "SP_TablasRelacionadas_BUSQUEDA_SEGUN_PARAMETRO_PlantillaID"
+        Me.SP_TablasRelacionadas_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDBindingSource.DataSource = Me.DataSetTablasYCampos
         '
         'ContenidoRelacionTextBox
         '
@@ -1927,11 +1947,6 @@ Partial Class FrmTecnologias
         Me.ContenidoRelacionTextBox.Name = "ContenidoRelacionTextBox"
         Me.ContenidoRelacionTextBox.Size = New System.Drawing.Size(713, 282)
         Me.ContenidoRelacionTextBox.TabIndex = 131
-        '
-        'SP_TablasRelacionadas_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDBindingSource
-        '
-        Me.SP_TablasRelacionadas_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDBindingSource.DataMember = "SP_TablasRelacionadas_BUSQUEDA_SEGUN_PARAMETRO_PlantillaID"
-        Me.SP_TablasRelacionadas_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDBindingSource.DataSource = Me.DataSetTablasYCampos
         '
         'SP_TablasRelacionadas_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView
         '
@@ -2033,53 +2048,53 @@ Partial Class FrmTecnologias
         Me.Guardar_Menu_TablasRelacionadas.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.Guardar_Menu_TablasRelacionadas.UseVisualStyleBackColor = True
         '
-        'Button3
+        'BtnCTI
         '
-        Me.Button3.BackColor = System.Drawing.Color.White
-        Me.Button3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button3.Location = New System.Drawing.Point(507, 109)
-        Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(142, 43)
-        Me.Button3.TabIndex = 129
-        Me.Button3.Text = "{{{Campo_Ind}}}"
-        Me.ToolTip1.SetToolTip(Me.Button3, "Nombre de La Tabla tal como esta Generada")
-        Me.Button3.UseVisualStyleBackColor = False
+        Me.BtnCTI.BackColor = System.Drawing.Color.White
+        Me.BtnCTI.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnCTI.Location = New System.Drawing.Point(507, 109)
+        Me.BtnCTI.Name = "BtnCTI"
+        Me.BtnCTI.Size = New System.Drawing.Size(142, 43)
+        Me.BtnCTI.TabIndex = 129
+        Me.BtnCTI.Text = "{{{Campo_Ind}}}"
+        Me.ToolTip1.SetToolTip(Me.BtnCTI, "Nombre de La Tabla tal como esta Generada")
+        Me.BtnCTI.UseVisualStyleBackColor = False
         '
-        'Button4
+        'BtnCTD
         '
-        Me.Button4.BackColor = System.Drawing.Color.White
-        Me.Button4.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button4.Location = New System.Drawing.Point(75, 109)
-        Me.Button4.Name = "Button4"
-        Me.Button4.Size = New System.Drawing.Size(146, 43)
-        Me.Button4.TabIndex = 128
-        Me.Button4.Text = "{{{Campo_Dep}}}"
-        Me.ToolTip1.SetToolTip(Me.Button4, "Nombre de La Tabla tal como esta Generada")
-        Me.Button4.UseVisualStyleBackColor = False
+        Me.BtnCTD.BackColor = System.Drawing.Color.White
+        Me.BtnCTD.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnCTD.Location = New System.Drawing.Point(75, 109)
+        Me.BtnCTD.Name = "BtnCTD"
+        Me.BtnCTD.Size = New System.Drawing.Size(146, 43)
+        Me.BtnCTD.TabIndex = 128
+        Me.BtnCTD.Text = "{{{Campo_Dep}}}"
+        Me.ToolTip1.SetToolTip(Me.BtnCTD, "Nombre de La Tabla tal como esta Generada")
+        Me.BtnCTD.UseVisualStyleBackColor = False
         '
-        'Button2
+        'BtnTI
         '
-        Me.Button2.BackColor = System.Drawing.Color.White
-        Me.Button2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button2.Location = New System.Drawing.Point(550, 62)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(137, 43)
-        Me.Button2.TabIndex = 127
-        Me.Button2.Text = "{{{Tabla_Ind}}}"
-        Me.ToolTip1.SetToolTip(Me.Button2, "Nombre de La Tabla tal como esta Generada")
-        Me.Button2.UseVisualStyleBackColor = False
+        Me.BtnTI.BackColor = System.Drawing.Color.White
+        Me.BtnTI.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnTI.Location = New System.Drawing.Point(550, 62)
+        Me.BtnTI.Name = "BtnTI"
+        Me.BtnTI.Size = New System.Drawing.Size(137, 43)
+        Me.BtnTI.TabIndex = 127
+        Me.BtnTI.Text = "{{{Tabla_Ind}}}"
+        Me.ToolTip1.SetToolTip(Me.BtnTI, "Nombre de La Tabla tal como esta Generada")
+        Me.BtnTI.UseVisualStyleBackColor = False
         '
-        'Button1
+        'BtnTD
         '
-        Me.Button1.BackColor = System.Drawing.Color.White
-        Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button1.Location = New System.Drawing.Point(36, 62)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(137, 43)
-        Me.Button1.TabIndex = 126
-        Me.Button1.Text = "{{{Tabla_Dep}}}"
-        Me.ToolTip1.SetToolTip(Me.Button1, "Nombre de La Tabla tal como esta Generada")
-        Me.Button1.UseVisualStyleBackColor = False
+        Me.BtnTD.BackColor = System.Drawing.Color.White
+        Me.BtnTD.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnTD.Location = New System.Drawing.Point(36, 62)
+        Me.BtnTD.Name = "BtnTD"
+        Me.BtnTD.Size = New System.Drawing.Size(137, 43)
+        Me.BtnTD.TabIndex = 126
+        Me.BtnTD.Text = "{{{Tabla_Dep}}}"
+        Me.ToolTip1.SetToolTip(Me.BtnTD, "Nombre de La Tabla tal como esta Generada")
+        Me.BtnTD.UseVisualStyleBackColor = False
         '
         'NombreGrupoTipoDeDatoTextBox1
         '
@@ -2333,14 +2348,6 @@ Partial Class FrmTecnologias
         '
         Me.SP_TablasRelacionadas_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDTableAdapter.ClearBeforeFill = True
         '
-        'RelacionTablasIDTextBox
-        '
-        Me.RelacionTablasIDTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SP_TablasRelacionadas_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDBindingSource, "RelacionTablasID", True))
-        Me.RelacionTablasIDTextBox.Location = New System.Drawing.Point(364, 74)
-        Me.RelacionTablasIDTextBox.Name = "RelacionTablasIDTextBox"
-        Me.RelacionTablasIDTextBox.Size = New System.Drawing.Size(100, 26)
-        Me.RelacionTablasIDTextBox.TabIndex = 132
-        '
         'SP_TablasRelacionadas_EDICION_ACTUALIZARBindingSource
         '
         Me.SP_TablasRelacionadas_EDICION_ACTUALIZARBindingSource.DataMember = "SP_TablasRelacionadas_EDICION_ACTUALIZAR"
@@ -2359,15 +2366,6 @@ Partial Class FrmTecnologias
         '
         Me.SP_TablasRelacionadas_EDICION_ELIMINARTableAdapter.ClearBeforeFill = True
         '
-        'RelacionTablasIDLabel
-        '
-        RelacionTablasIDLabel.AutoSize = True
-        RelacionTablasIDLabel.Location = New System.Drawing.Point(238, 77)
-        RelacionTablasIDLabel.Name = "RelacionTablasIDLabel"
-        RelacionTablasIDLabel.Size = New System.Drawing.Size(120, 18)
-        RelacionTablasIDLabel.TabIndex = 131
-        RelacionTablasIDLabel.Text = "Relacion Tablas ID:"
-        '
         'SP_TablasRelacionadas_EDICION_INSERTARBindingSource
         '
         Me.SP_TablasRelacionadas_EDICION_INSERTARBindingSource.DataMember = "SP_TablasRelacionadas_EDICION_INSERTAR"
@@ -2383,6 +2381,8 @@ Partial Class FrmTecnologias
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1274, 609)
         Me.Controls.Add(Me.TabControl1)
+        Me.Controls.Add(RelacionTablasIDLabel)
+        Me.Controls.Add(Me.RelacionTablasIDTextBox)
         Me.Controls.Add(XTablaLabel1)
         Me.Controls.Add(Me.XTablaTextBox)
         Me.Controls.Add(CampoComponenteIDLabel)
@@ -2653,10 +2653,10 @@ Partial Class FrmTecnologias
     Friend WithEvents BtnIzquierda As Button
     Friend WithEvents BtnConvertir As Button
     Friend WithEvents BtnCamposRelacionados As Button
-    Friend WithEvents Button3 As Button
-    Friend WithEvents Button4 As Button
-    Friend WithEvents Button2 As Button
-    Friend WithEvents Button1 As Button
+    Friend WithEvents BtnCTI As Button
+    Friend WithEvents BtnCTD As Button
+    Friend WithEvents BtnTI As Button
+    Friend WithEvents BtnTD As Button
     Friend WithEvents Panel9 As Panel
     Friend WithEvents Nuevo_Menu_TablasRelacionadas As Button
     Friend WithEvents Cancelar_Menu_TablasRelacionadas As Button
