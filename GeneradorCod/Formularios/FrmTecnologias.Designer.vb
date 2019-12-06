@@ -151,10 +151,10 @@ Partial Class FrmTecnologias
         Me.DataSetTablasYCampos = New GeneradorCod.DataSetTablasYCampos()
         Me.CONVENSIONESTextBox = New System.Windows.Forms.TextBox()
         Me.TabPage3 = New System.Windows.Forms.TabPage()
+        Me.TxtPrevisualizar = New System.Windows.Forms.TextBox()
         Me.MultiReplaceTextBox = New System.Windows.Forms.TextBox()
         Me.SP_CampoComponentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.Label3 = New System.Windows.Forms.Label()
-        Me.TxtPrevisualizar = New System.Windows.Forms.TextBox()
         Me.Panel8 = New System.Windows.Forms.Panel()
         Me.SuperiorTextBox = New System.Windows.Forms.TextBox()
         Me.PrefijoTextBox = New System.Windows.Forms.TextBox()
@@ -182,9 +182,8 @@ Partial Class FrmTecnologias
         Me.Actualizar_Menu_CampoComponentes = New System.Windows.Forms.Button()
         Me.Guardar_Menu_CampoComponentes = New System.Windows.Forms.Button()
         Me.TabPage4 = New System.Windows.Forms.TabPage()
-        Me.RelacionTablasIDTextBox = New System.Windows.Forms.TextBox()
-        Me.SP_TablasRelacionadas_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.ContenidoRelacionTextBox = New System.Windows.Forms.TextBox()
+        Me.SP_TablasRelacionadas_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.SP_TablasRelacionadas_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView = New System.Windows.Forms.DataGridView()
         Me.DataGridViewTextBoxColumn14 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Panel9 = New System.Windows.Forms.Panel()
@@ -198,6 +197,7 @@ Partial Class FrmTecnologias
         Me.BtnCTD = New System.Windows.Forms.Button()
         Me.BtnTI = New System.Windows.Forms.Button()
         Me.BtnTD = New System.Windows.Forms.Button()
+        Me.RelacionTablasIDTextBox = New System.Windows.Forms.TextBox()
         Me.NombreGrupoTipoDeDatoTextBox1 = New System.Windows.Forms.TextBox()
         Me.TipoCampoIDTextBox = New System.Windows.Forms.TextBox()
         Me.CampoComponenteIDTextBox = New System.Windows.Forms.TextBox()
@@ -1286,7 +1286,7 @@ Partial Class FrmTecnologias
         Me.TabPage1.Location = New System.Drawing.Point(4, 27)
         Me.TabPage1.Name = "TabPage1"
         Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage1.Size = New System.Drawing.Size(725, 576)
+        Me.TabPage1.Size = New System.Drawing.Size(728, 576)
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Text = "Busqueda y Remplazo"
         Me.TabPage1.UseVisualStyleBackColor = True
@@ -1567,7 +1567,7 @@ Partial Class FrmTecnologias
         Me.TabPage2.Location = New System.Drawing.Point(4, 27)
         Me.TabPage2.Name = "TabPage2"
         Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage2.Size = New System.Drawing.Size(725, 576)
+        Me.TabPage2.Size = New System.Drawing.Size(728, 576)
         Me.TabPage2.TabIndex = 1
         Me.TabPage2.Text = "Requerimientos"
         Me.TabPage2.UseVisualStyleBackColor = True
@@ -1613,10 +1613,10 @@ Partial Class FrmTecnologias
         '
         'TabPage3
         '
-        Me.TabPage3.Controls.Add(MultiReplaceLabel)
         Me.TabPage3.Controls.Add(Me.MultiReplaceTextBox)
-        Me.TabPage3.Controls.Add(Me.Label3)
         Me.TabPage3.Controls.Add(Me.TxtPrevisualizar)
+        Me.TabPage3.Controls.Add(MultiReplaceLabel)
+        Me.TabPage3.Controls.Add(Me.Label3)
         Me.TabPage3.Controls.Add(Me.Panel8)
         Me.TabPage3.Controls.Add(SeparadorCamposLabel)
         Me.TabPage3.Controls.Add(Me.SeparadorCamposTextBox)
@@ -1627,10 +1627,19 @@ Partial Class FrmTecnologias
         Me.TabPage3.Location = New System.Drawing.Point(4, 27)
         Me.TabPage3.Name = "TabPage3"
         Me.TabPage3.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage3.Size = New System.Drawing.Size(725, 576)
+        Me.TabPage3.Size = New System.Drawing.Size(728, 576)
         Me.TabPage3.TabIndex = 2
         Me.TabPage3.Text = "Tipos de Datos Campos"
         Me.TabPage3.UseVisualStyleBackColor = True
+        '
+        'TxtPrevisualizar
+        '
+        Me.TxtPrevisualizar.Location = New System.Drawing.Point(333, 123)
+        Me.TxtPrevisualizar.Multiline = True
+        Me.TxtPrevisualizar.Name = "TxtPrevisualizar"
+        Me.TxtPrevisualizar.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
+        Me.TxtPrevisualizar.Size = New System.Drawing.Size(386, 100)
+        Me.TxtPrevisualizar.TabIndex = 161
         '
         'MultiReplaceTextBox
         '
@@ -1656,15 +1665,6 @@ Partial Class FrmTecnologias
         Me.Label3.Size = New System.Drawing.Size(180, 18)
         Me.Label3.TabIndex = 162
         Me.Label3.Text = "Previsualizacion del Campo"
-        '
-        'TxtPrevisualizar
-        '
-        Me.TxtPrevisualizar.Location = New System.Drawing.Point(333, 123)
-        Me.TxtPrevisualizar.Multiline = True
-        Me.TxtPrevisualizar.Name = "TxtPrevisualizar"
-        Me.TxtPrevisualizar.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
-        Me.TxtPrevisualizar.Size = New System.Drawing.Size(386, 100)
-        Me.TxtPrevisualizar.TabIndex = 161
         '
         'Panel8
         '
@@ -1926,19 +1926,6 @@ Partial Class FrmTecnologias
         Me.TabPage4.Text = "Campos Relacionados"
         Me.TabPage4.UseVisualStyleBackColor = True
         '
-        'RelacionTablasIDTextBox
-        '
-        Me.RelacionTablasIDTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SP_TablasRelacionadas_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDBindingSource, "RelacionTablasID", True))
-        Me.RelacionTablasIDTextBox.Location = New System.Drawing.Point(797, 455)
-        Me.RelacionTablasIDTextBox.Name = "RelacionTablasIDTextBox"
-        Me.RelacionTablasIDTextBox.Size = New System.Drawing.Size(100, 26)
-        Me.RelacionTablasIDTextBox.TabIndex = 132
-        '
-        'SP_TablasRelacionadas_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDBindingSource
-        '
-        Me.SP_TablasRelacionadas_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDBindingSource.DataMember = "SP_TablasRelacionadas_BUSQUEDA_SEGUN_PARAMETRO_PlantillaID"
-        Me.SP_TablasRelacionadas_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDBindingSource.DataSource = Me.DataSetTablasYCampos
-        '
         'ContenidoRelacionTextBox
         '
         Me.ContenidoRelacionTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SP_TablasRelacionadas_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDBindingSource, "ContenidoRelacion", True))
@@ -1947,6 +1934,11 @@ Partial Class FrmTecnologias
         Me.ContenidoRelacionTextBox.Name = "ContenidoRelacionTextBox"
         Me.ContenidoRelacionTextBox.Size = New System.Drawing.Size(713, 282)
         Me.ContenidoRelacionTextBox.TabIndex = 131
+        '
+        'SP_TablasRelacionadas_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDBindingSource
+        '
+        Me.SP_TablasRelacionadas_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDBindingSource.DataMember = "SP_TablasRelacionadas_BUSQUEDA_SEGUN_PARAMETRO_PlantillaID"
+        Me.SP_TablasRelacionadas_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDBindingSource.DataSource = Me.DataSetTablasYCampos
         '
         'SP_TablasRelacionadas_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView
         '
@@ -2095,6 +2087,14 @@ Partial Class FrmTecnologias
         Me.BtnTD.Text = "{{{Tabla_Dep}}}"
         Me.ToolTip1.SetToolTip(Me.BtnTD, "Nombre de La Tabla tal como esta Generada")
         Me.BtnTD.UseVisualStyleBackColor = False
+        '
+        'RelacionTablasIDTextBox
+        '
+        Me.RelacionTablasIDTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SP_TablasRelacionadas_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDBindingSource, "RelacionTablasID", True))
+        Me.RelacionTablasIDTextBox.Location = New System.Drawing.Point(797, 455)
+        Me.RelacionTablasIDTextBox.Name = "RelacionTablasIDTextBox"
+        Me.RelacionTablasIDTextBox.Size = New System.Drawing.Size(100, 26)
+        Me.RelacionTablasIDTextBox.TabIndex = 132
         '
         'NombreGrupoTipoDeDatoTextBox1
         '

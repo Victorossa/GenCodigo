@@ -251,6 +251,10 @@
             Objeto = Campo.Replace("Campo", campoConComplemento)
         Else
             Objeto = MultiReplaceTextBox.Text.Replace("Campo", campoConComplemento)
+            'INCLUIR RECORRIDO POR TABLA RELACIONADA PARA CAPTURAR TABLA INDEPENDIENTE Y DEPENDIENTE
+            If TipoTextBox1.Text = "numeric (Relacionado)" Then
+                MsgBox("Dato relacionado... recorre la tabla relacionadas" + TablaDependienteTextBox1.Text + " ")
+            End If
         End If
 
         Return Objeto

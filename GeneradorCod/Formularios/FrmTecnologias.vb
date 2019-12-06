@@ -2210,6 +2210,21 @@
         Timer_Ubicacion_TablasRelacionadas.Stop()
     End Sub
 
+    Private Sub TxtPrevisualizar_MouseDoubleClick(sender As Object, e As MouseEventArgs) Handles TxtPrevisualizar.MouseDoubleClick
+        If TxtPrevisualizar.Dock = DockStyle.None Then
+            TxtPrevisualizar.Dock = DockStyle.Fill
+        Else
+            TxtPrevisualizar.Dock = DockStyle.None
+        End If
+    End Sub
+
+    Private Sub MultiReplaceTextBox_MouseDoubleClick(sender As Object, e As MouseEventArgs) Handles MultiReplaceTextBox.MouseDoubleClick
+        If MultiReplaceTextBox.Dock = DockStyle.None Then
+            MultiReplaceTextBox.Dock = DockStyle.Fill
+        Else
+            MultiReplaceTextBox.Dock = DockStyle.None
+        End If
+    End Sub
 
 
 
