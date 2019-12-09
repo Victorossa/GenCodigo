@@ -717,6 +717,11 @@ Represents the strongly named DataTable class.
 Represents the strongly named DataTable class.
 </summary>
 </member>
+<member name="T:GeneradorCod.DataSetTablasYCampos.SP_CARGA_CONVENSIONES_USADAS_POR_PLANTILLADataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
 <member name="T:GeneradorCod.DataSetTablasYCampos.SP_CARGA_CONVENSIONES_USADASRow">
 <summary>
 Represents strongly named DataRow class.
@@ -898,6 +903,11 @@ Represents strongly named DataRow class.
 </summary>
 </member>
 <member name="T:GeneradorCod.DataSetTablasYCampos.SP_TextoEnriquecido_EDICION_INSERTARRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:GeneradorCod.DataSetTablasYCampos.SP_CARGA_CONVENSIONES_USADAS_POR_PLANTILLARow">
 <summary>
 Represents strongly named DataRow class.
 </summary>
@@ -1087,6 +1097,11 @@ Row event argument class
 Row event argument class
 </summary>
 </member>
+<member name="T:GeneradorCod.DataSetTablasYCampos.SP_CARGA_CONVENSIONES_USADAS_POR_PLANTILLARowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
 <member name="T:GeneradorCod.DataSetTablasYCamposTableAdapters.SP_CARGA_CONVENSIONES_USADASTableAdapter">
 <summary>
 Represents the connection and commands used to retrieve and save data.
@@ -1268,6 +1283,11 @@ Represents the connection and commands used to retrieve and save data.
 </summary>
 </member>
 <member name="T:GeneradorCod.DataSetTablasYCamposTableAdapters.SP_TextoEnriquecido_EDICION_INSERTARTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:GeneradorCod.DataSetTablasYCamposTableAdapters.SP_CARGA_CONVENSIONES_USADAS_POR_PLANTILLATableAdapter">
 <summary>
 Represents the connection and commands used to retrieve and save data.
 </summary>

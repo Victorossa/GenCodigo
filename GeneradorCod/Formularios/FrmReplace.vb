@@ -1338,7 +1338,7 @@
         End If
         If InStr(Contenido, "{{{Camp-Rel}}}") Then
             Dim CamposRel = RecorreTablasRelacionadas()
-            ContenidoGenerado = ContenidoGenerado.Replace("{{{Campos-Rel}}}", CamposRel)
+            ContenidoGenerado = ContenidoGenerado.Replace("{{{Camp-Rel}}}", CamposRel)
         End If
         Return ContenidoGenerado
     End Function

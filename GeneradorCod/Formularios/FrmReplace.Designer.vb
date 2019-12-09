@@ -72,7 +72,7 @@ Partial Class FrmReplace
         Dim CampoDependienteLabel1 As System.Windows.Forms.Label
         Dim TablaIndependienteLabel1 As System.Windows.Forms.Label
         Dim CampoIndependienteLabel1 As System.Windows.Forms.Label
-        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmReplace))
         Me.BtnBuscarYPintar = New System.Windows.Forms.Button()
         Me.SP_RequerimientosPlantillas_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView = New System.Windows.Forms.DataGridView()
@@ -193,8 +193,10 @@ Partial Class FrmReplace
         Me.InferiorTextBox = New System.Windows.Forms.TextBox()
         Me.PlantillaIDTextBox1 = New System.Windows.Forms.TextBox()
         Me.PanelConf = New System.Windows.Forms.Panel()
-        Me.CampoIndependienteTextBox1 = New System.Windows.Forms.TextBox()
+        Me.TextBox2 = New System.Windows.Forms.TextBox()
         Me.SP_RegistroRelacionesTablas_Vista_BUSQUEDA_SEGUN_PARAMETRO_TD1BindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.CampoIndependienteTextBox1 = New System.Windows.Forms.TextBox()
         Me.TablaIndependienteTextBox1 = New System.Windows.Forms.TextBox()
         Me.CampoDependienteTextBox1 = New System.Windows.Forms.TextBox()
         Me.TablaDependienteTextBox1 = New System.Windows.Forms.TextBox()
@@ -315,8 +317,6 @@ Partial Class FrmReplace
         Me.TablaDependienteTextBox = New System.Windows.Forms.TextBox()
         Me.SP_CARGA_TablasRelacionadas_SEGUN_PlantillaIDTableAdapter = New GeneradorCod.DataSetTablasYCamposTableAdapters.SP_CARGA_TablasRelacionadas_SEGUN_PlantillaIDTableAdapter()
         Me.SP_RegistroRelacionesTablas_Vista_BUSQUEDA_SEGUN_PARAMETRO_TD1TableAdapter = New GeneradorCod.DataSetTablasYCamposTableAdapters.SP_RegistroRelacionesTablas_Vista_BUSQUEDA_SEGUN_PARAMETRO_TD1TableAdapter()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
         ComponenteIDLabel = New System.Windows.Forms.Label()
         PlantillaIDLabel = New System.Windows.Forms.Label()
         TecnologiaIDLabel = New System.Windows.Forms.Label()
@@ -981,8 +981,8 @@ Partial Class FrmReplace
         'DataGridViewTextBoxColumn7
         '
         Me.DataGridViewTextBoxColumn7.DataPropertyName = "NombreTecnologia"
-        DataGridViewCellStyle5.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.DataGridViewTextBoxColumn7.DefaultCellStyle = DataGridViewCellStyle5
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.DataGridViewTextBoxColumn7.DefaultCellStyle = DataGridViewCellStyle1
         Me.DataGridViewTextBoxColumn7.HeaderText = "Nombre Tecnologia"
         Me.DataGridViewTextBoxColumn7.Name = "DataGridViewTextBoxColumn7"
         Me.DataGridViewTextBoxColumn7.Width = 178
@@ -1478,7 +1478,7 @@ Partial Class FrmReplace
         Me.SP_RegistroValorRequerimientos_SEGUN_ProyectoIDDataGridView.Name = "SP_RegistroValorRequerimientos_SEGUN_ProyectoIDDataGridView"
         Me.SP_RegistroValorRequerimientos_SEGUN_ProyectoIDDataGridView.RowHeadersVisible = False
         Me.SP_RegistroValorRequerimientos_SEGUN_ProyectoIDDataGridView.RowTemplate.Height = 27
-        Me.SP_RegistroValorRequerimientos_SEGUN_ProyectoIDDataGridView.Size = New System.Drawing.Size(290, 101)
+        Me.SP_RegistroValorRequerimientos_SEGUN_ProyectoIDDataGridView.Size = New System.Drawing.Size(290, 105)
         Me.SP_RegistroValorRequerimientos_SEGUN_ProyectoIDDataGridView.TabIndex = 131
         '
         'DataGridViewTextBoxColumn3
@@ -1992,10 +1992,31 @@ Partial Class FrmReplace
         Me.PanelConf.Controls.Add(RequerimientoLabel1)
         Me.PanelConf.Controls.Add(Me.NombreComponenteTextBox)
         Me.PanelConf.Controls.Add(NombreComponenteLabel)
-        Me.PanelConf.Location = New System.Drawing.Point(1109, 25)
+        Me.PanelConf.Location = New System.Drawing.Point(647, 8)
         Me.PanelConf.Name = "PanelConf"
-        Me.PanelConf.Size = New System.Drawing.Size(360, 552)
+        Me.PanelConf.Size = New System.Drawing.Size(10, 12)
         Me.PanelConf.TabIndex = 159
+        '
+        'TextBox2
+        '
+        Me.TextBox2.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SP_RegistroRelacionesTablas_Vista_BUSQUEDA_SEGUN_PARAMETRO_TD1BindingSource, "ID_TI", True))
+        Me.TextBox2.Location = New System.Drawing.Point(665, 475)
+        Me.TextBox2.Name = "TextBox2"
+        Me.TextBox2.Size = New System.Drawing.Size(40, 20)
+        Me.TextBox2.TabIndex = 193
+        '
+        'SP_RegistroRelacionesTablas_Vista_BUSQUEDA_SEGUN_PARAMETRO_TD1BindingSource
+        '
+        Me.SP_RegistroRelacionesTablas_Vista_BUSQUEDA_SEGUN_PARAMETRO_TD1BindingSource.DataMember = "SP_RegistroRelacionesTablas_Vista_BUSQUEDA_SEGUN_PARAMETRO_TD1"
+        Me.SP_RegistroRelacionesTablas_Vista_BUSQUEDA_SEGUN_PARAMETRO_TD1BindingSource.DataSource = Me.DataSetTablasYCampos
+        '
+        'TextBox1
+        '
+        Me.TextBox1.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SP_RegistroRelacionesTablas_Vista_BUSQUEDA_SEGUN_PARAMETRO_TD1BindingSource, "ID_TD", True))
+        Me.TextBox1.Location = New System.Drawing.Point(665, 416)
+        Me.TextBox1.Name = "TextBox1"
+        Me.TextBox1.Size = New System.Drawing.Size(40, 20)
+        Me.TextBox1.TabIndex = 192
         '
         'CampoIndependienteTextBox1
         '
@@ -2004,11 +2025,6 @@ Partial Class FrmReplace
         Me.CampoIndependienteTextBox1.Name = "CampoIndependienteTextBox1"
         Me.CampoIndependienteTextBox1.Size = New System.Drawing.Size(100, 20)
         Me.CampoIndependienteTextBox1.TabIndex = 191
-        '
-        'SP_RegistroRelacionesTablas_Vista_BUSQUEDA_SEGUN_PARAMETRO_TD1BindingSource
-        '
-        Me.SP_RegistroRelacionesTablas_Vista_BUSQUEDA_SEGUN_PARAMETRO_TD1BindingSource.DataMember = "SP_RegistroRelacionesTablas_Vista_BUSQUEDA_SEGUN_PARAMETRO_TD1"
-        Me.SP_RegistroRelacionesTablas_Vista_BUSQUEDA_SEGUN_PARAMETRO_TD1BindingSource.DataSource = Me.DataSetTablasYCampos
         '
         'TablaIndependienteTextBox1
         '
@@ -2613,6 +2629,9 @@ Partial Class FrmReplace
         Me.TableAdapterManager1.SP_TablasRelacionadas_EDICION_ACTUALIZARTableAdapter = Nothing
         Me.TableAdapterManager1.SP_TablasRelacionadas_EDICION_ELIMINARTableAdapter = Nothing
         Me.TableAdapterManager1.SP_TablasRelacionadas_EDICION_INSERTARTableAdapter = Nothing
+        Me.TableAdapterManager1.SP_TextoEnriquecido_EDICION_ACTUALIZARTableAdapter = Nothing
+        Me.TableAdapterManager1.SP_TextoEnriquecido_EDICION_ELIMINARTableAdapter = Nothing
+        Me.TableAdapterManager1.SP_TextoEnriquecido_EDICION_INSERTARTableAdapter = Nothing
         Me.TableAdapterManager1.UpdateOrder = GeneradorCod.DataSetTablasYCamposTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
         '
         'SP_RegistroValorRequerimientos_EDICION_INSERTARBindingSource
@@ -2893,28 +2912,12 @@ Partial Class FrmReplace
         '
         Me.SP_RegistroRelacionesTablas_Vista_BUSQUEDA_SEGUN_PARAMETRO_TD1TableAdapter.ClearBeforeFill = True
         '
-        'TextBox1
-        '
-        Me.TextBox1.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SP_RegistroRelacionesTablas_Vista_BUSQUEDA_SEGUN_PARAMETRO_TD1BindingSource, "ID_TD", True))
-        Me.TextBox1.Location = New System.Drawing.Point(665, 416)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(40, 20)
-        Me.TextBox1.TabIndex = 192
-        '
-        'TextBox2
-        '
-        Me.TextBox2.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SP_RegistroRelacionesTablas_Vista_BUSQUEDA_SEGUN_PARAMETRO_TD1BindingSource, "ID_TI", True))
-        Me.TextBox2.Location = New System.Drawing.Point(665, 475)
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(40, 20)
-        Me.TextBox2.TabIndex = 193
-        '
         'FrmReplace
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoScroll = True
-        Me.ClientSize = New System.Drawing.Size(1481, 596)
+        Me.ClientSize = New System.Drawing.Size(1090, 597)
         Me.Controls.Add(Me.PanelConf)
         Me.Controls.Add(Me.TabControl2)
         Me.Controls.Add(CodigoGeneradoLabel)

@@ -569,7 +569,14 @@
             SP_RequerimientosPlantillas_BUSQUEDA_SEGUN_PARAMETRO_PlantillaID()
             SP_CampoComponentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaID()
             SP_TablasRelacionadas_BUSQUEDA_SEGUN_PARAMETRO_PlantillaID()
-            'ContenidoComponenteRichTextBox.Rtf = ContenidoComponenteRichTextBox.Text
+            If RB_Plantilla.Checked = "True" Then
+                SP_CARGA_CONVENSIONES_USADAS_POR_PLANTILLA()
+                SP_CARGA_CONVENSIONES_USADAS_POR_PLANTILLADataGridView.Visible = True
+                SP_CARGA_CONVENSIONES_USADASDataGridView.Visible = False
+            Else
+                SP_CARGA_CONVENSIONES_USADASDataGridView.Visible = True
+                SP_CARGA_CONVENSIONES_USADAS_POR_PLANTILLADataGridView.Visible = False
+            End If
         Catch ex As Exception
 
         End Try
@@ -1253,9 +1260,13 @@
     End Sub
 
     Shared Function RemplazarTexto(TextoBuscado As String, TextoParaRemplazo As String, TextoBase As String) As String
-        TextoParaRemplazo = TextoParaRemplazo.Replace(" "c, String.Empty)
-        Dim resultado As String = TextoBase.Replace(TextoBuscado, TextoParaRemplazo)
-        Return resultado
+        Try
+            TextoParaRemplazo = TextoParaRemplazo.Replace(" "c, String.Empty)
+            Dim resultado As String = TextoBase.Replace(TextoBuscado, TextoParaRemplazo)
+            Return resultado
+        Catch ex As Exception
+
+        End Try
     End Function
 
 
@@ -1708,7 +1719,18 @@
     End Sub
 
     Private Sub SP_CARGA_CONVENSIONES_USADASDataGridView_CellMouseDoubleClick(sender As Object, e As DataGridViewCellMouseEventArgs) Handles SP_CARGA_CONVENSIONES_USADASDataGridView.CellMouseDoubleClick
-        RequerimientoTextBox.Text = CONVENSIONESTextBox.Text
+        If Editar_Menu_RequerimientosPlantillas.Enabled = False Then
+            RequerimientoTextBox.Text = CONVENSIONESTextBox.Text
+            OrdenDePeticionTextBox.Enabled = True
+            OrdenDePeticionTextBox.Focus()
+        End If
+    End Sub
+    Private Sub SP_CARGA_CONVENSIONES_USADAS_POR_PLANTILLADataGridView_CellMouseDoubleClick(sender As Object, e As DataGridViewCellMouseEventArgs) Handles SP_CARGA_CONVENSIONES_USADAS_POR_PLANTILLADataGridView.CellMouseDoubleClick
+        If Editar_Menu_RequerimientosPlantillas.Enabled = False Then
+            RequerimientoTextBox.Text = RequerimientoTextBox1.Text
+            OrdenDePeticionTextBox.Enabled = True
+            OrdenDePeticionTextBox.Focus()
+        End If
     End Sub
     Private Sub BtnMayusculaAMinuscula_Click(sender As Object, e As EventArgs) Handles BtnMayusculaAMinuscula.Click
         Me.ContenidoComponenteRichTextBox.Text = Me.ContenidoComponenteRichTextBox.Text.Insert(Me.ContenidoComponenteRichTextBox.SelectionStart, "{{{A=>-a}}}")
@@ -1963,7 +1985,7 @@
     End Sub
 
     Private Sub DGVEdicionPosicion_CellMouseClick(sender As Object, e As DataGridViewCellMouseEventArgs) Handles DGVEdicionPosicion.CellMouseClick
-        'ContenidoComponenteRichTextBox.Rtf = ContenidoComponenteRichTextBox.Text
+
     End Sub
 
 
@@ -2478,6 +2500,62 @@
     Private Sub Cancelar_Menu_TextoEnriquecido_Click(sender As Object, e As EventArgs) Handles Cancelar_Menu_TextoEnriquecido.Click
         Cancelar_TextoEnriquecido()
     End Sub
+    'Convierte el rtf en text cuando se selecciona el tap
+    Private Sub TabControl1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles TabControl1.SelectedIndexChanged
+        If TabControl1.SelectedTab Is TabPage5 Then
+            Try
+                RichTextboxRichTextBox.Rtf = RichTextboxRichTextBox.Text
+            Catch ex As Exception
+
+            End Try
+        End If
+    End Sub
+
+    Private Sub TextoEnriquecidoIDTextBox_TextChanged(sender As Object, e As EventArgs) Handles TextoEnriquecidoIDTextBox.TextChanged
+        Try
+            RichTextboxRichTextBox.Rtf = RichTextboxRichTextBox.Text
+        Catch ex As Exception
+
+        End Try
+    End Sub
+
+    Private Sub SP_CARGA_CONVENSIONES_USADAS_POR_PLANTILLA()
+        Try
+            Me.SP_CARGA_CONVENSIONES_USADAS_POR_PLANTILLATableAdapter.Fill(Me.DataSetTablasYCampos.SP_CARGA_CONVENSIONES_USADAS_POR_PLANTILLA, New System.Nullable(Of Integer)(CType(PlantillaIDTextBox.Text, Integer)))
+        Catch ex As System.Exception
+            'System.Windows.Forms.MessageBox.Show(ex.Message)
+        End Try
+    End Sub
+
+    Private Sub RB_Plantilla_CheckedChanged(sender As Object, e As EventArgs) Handles RB_Plantilla.CheckedChanged
+        SP_CARGA_CONVENSIONES_USADAS_POR_PLANTILLADataGridView.Visible = True
+        SP_CARGA_CONVENSIONES_USADASDataGridView.Visible = False
+    End Sub
+
+    Private Sub RB_Todas_CheckedChanged(sender As Object, e As EventArgs) Handles RB_Todas.CheckedChanged
+        SP_CARGA_CONVENSIONES_USADAS_POR_PLANTILLADataGridView.Visible = False
+        SP_CARGA_CONVENSIONES_USADASDataGridView.Visible = True
+    End Sub
+
+    Private Sub EnunciadoTextBox_MouseDoubleClick(sender As Object, e As MouseEventArgs) Handles EnunciadoTextBox.MouseDoubleClick
+        If EnunciadoTextBox.Dock = DockStyle.None Then
+            EnunciadoTextBox.Dock = DockStyle.Fill
+            EnunciadoTextBox.BringToFront()
+        Else
+            EnunciadoTextBox.Dock = DockStyle.None
+        End If
+    End Sub
+
+    Private Sub TecnologiasDataGridView_CellMouseDoubleClick(sender As Object, e As DataGridViewCellMouseEventArgs) Handles TecnologiasDataGridView.CellMouseDoubleClick
+        If TecnologiasDataGridView.Dock = DockStyle.None Then
+            TecnologiasDataGridView.Dock = DockStyle.Fill
+            TecnologiasDataGridView.BringToFront()
+        Else
+            TecnologiasDataGridView.Dock = DockStyle.None
+        End If
+    End Sub
+
+
 
 
 
