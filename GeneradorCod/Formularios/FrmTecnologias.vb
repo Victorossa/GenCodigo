@@ -14,6 +14,8 @@
             Me.SP_CARGA_CONVENSIONES_USADASTableAdapter.Fill(Me.DataSetTablasYCampos.SP_CARGA_CONVENSIONES_USADAS)
             SP_TablasRelacionadas_BUSQUEDA_SEGUN_PARAMETRO_PlantillaID()
             Cancelar_TablasRelacionadas()
+            SP_TextoEnriquecido_BUSQUEDA_SEGUN_PARAMETRO_ComponenteID()
+            Cancelar_TextoEnriquecido()
         Catch ex As System.Exception
             System.Windows.Forms.MessageBox.Show(ex.Message)
         End Try
@@ -1274,12 +1276,32 @@
     Private Sub BtnGuardarCodigo_Click(sender As Object, e As EventArgs) Handles BtnGuardarCodigo.Click
         'If MsgBox("Desea Actualizar este codigo?", MsgBoxStyle.YesNo) = MsgBoxResult.Yes Then
         SP_Componentes_EDICION_ACTUALIZAR_SoloCodigo()
-        MsgBox("Se actualizo la plantilla", MsgBoxStyle.Information)
-        'Else
-        '    MsgBox("Se Cancelo la Instrucción", MsgBoxStyle.Information)
-        'End If
+        TabPage1.BackColor = Color.Chartreuse
+        PanelGuardado.Visible = True
+        TimerGuardarComponente.Start()
     End Sub
-
+    Dim xtiempoGComp As Integer = 0
+    Private Sub TimerGuardarComponente_Tick(sender As Object, e As EventArgs) Handles TimerGuardarComponente.Tick
+        xtiempoGComp = xtiempoGComp + 1
+        If xtiempoGComp = 2 Then
+            TabPage1.BackColor = Color.Transparent
+            TimerGuardarComponente.Stop()
+            xtiempoGComp = 0
+            PanelGuardado.Visible = False
+        End If
+    End Sub
+    Private Sub PanelGuardado_MouseClick(sender As Object, e As MouseEventArgs) Handles PanelGuardado.MouseClick
+        TabPage1.BackColor = Color.Transparent
+        TimerGuardarComponente.Stop()
+        xtiempoGComp = 0
+        PanelGuardado.Visible = False
+    End Sub
+    Private Sub Label5_MouseClick(sender As Object, e As MouseEventArgs) Handles Label5.MouseClick
+        TabPage1.BackColor = Color.Transparent
+        TimerGuardarComponente.Stop()
+        xtiempoGComp = 0
+        PanelGuardado.Visible = False
+    End Sub
 
     Private Sub TipoTextBox_TextChanged(sender As Object, e As EventArgs) Handles TipoTextBox.TextChanged
         Cbo_TipoDato.Text = TipoTextBox.Text
@@ -1709,27 +1731,27 @@
     End Sub
 
     Private Sub BtnIzquierda_Click(sender As Object, e As EventArgs) Handles BtnIzquierda.Click
-        Me.ContenidoComponenteRichTextBox.SelectionAlignment = HorizontalAlignment.Left
+        Me.RichTextboxRichTextBox.SelectionAlignment = HorizontalAlignment.Left
     End Sub
 
     Private Sub BtnCentrar_Click(sender As Object, e As EventArgs) Handles BtnCentrar.Click
-        Me.ContenidoComponenteRichTextBox.SelectionAlignment = HorizontalAlignment.Center
+        Me.RichTextboxRichTextBox.SelectionAlignment = HorizontalAlignment.Center
     End Sub
 
     Private Sub BtnDerecha_Click(sender As Object, e As EventArgs) Handles BtnDerecha.Click
-        Me.ContenidoComponenteRichTextBox.SelectionAlignment = HorizontalAlignment.Right
+        Me.RichTextboxRichTextBox.SelectionAlignment = HorizontalAlignment.Right
     End Sub
 
     Private Sub BtnFuentes_Click(sender As Object, e As EventArgs) Handles BtnFuentes.Click
         Dim f As New FontDialog
         f.ShowDialog()
-        Me.ContenidoComponenteRichTextBox.SelectionFont = f.Font
+        Me.RichTextboxRichTextBox.SelectionFont = f.Font
     End Sub
 
     Private Sub BtnColor_Click(sender As Object, e As EventArgs) Handles BtnColor.Click
         Dim c As New ColorDialog
         c.ShowDialog()
-        Me.ContenidoComponenteRichTextBox.SelectionColor = c.Color
+        Me.RichTextboxRichTextBox.SelectionColor = c.Color
     End Sub
 
 
@@ -1944,27 +1966,9 @@
         'ContenidoComponenteRichTextBox.Rtf = ContenidoComponenteRichTextBox.Text
     End Sub
 
-    Private Sub BtnConvertir_Click(sender As Object, e As EventArgs) Handles BtnConvertir.Click
-        'ContenidoComponenteRichTextBox.Rtf = ContenidoComponenteRichTextBox.Text
-    End Sub
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 #End Region
-
-
-
 #Region "Campos Requeridos"
 #Region "Procedimientos"
     Private Sub SP_TablasRelacionadas_BUSQUEDA_SEGUN_PARAMETRO_PlantillaID()
@@ -2130,7 +2134,6 @@
         ContenidoRelacionTextBox.Enabled = False
     End Sub
 
-
 #Region "Timer de Botones"
     'Declaraciones de Timers de Botones
     Private WithEvents Timer_Guardar_Menu_TablasRelacionadas As Timer
@@ -2225,12 +2228,268 @@
             MultiReplaceTextBox.Dock = DockStyle.None
         End If
     End Sub
+#End Region
+#End Region
+#Region "Texto Enriquecido"
+    Private Sub SP_TextoEnriquecido_BUSQUEDA_SEGUN_PARAMETRO_ComponenteID()
+        Try
+            Me.SP_TextoEnriquecido_BUSQUEDA_SEGUN_PARAMETRO_ComponenteIDTableAdapter.Fill(Me.DataSetTablasYCampos.SP_TextoEnriquecido_BUSQUEDA_SEGUN_PARAMETRO_ComponenteID, New System.Nullable(Of Integer)(CType(ComponenteIDTextBox.Text, Integer)))
+            RichTextboxRichTextBox.Rtf = RichTextboxRichTextBox.Text
+        Catch ex As System.Exception
+            'System.Windows.Forms.MessageBox.Show(ex.Message)
+        End Try
+    End Sub
+
+    Private Sub ComponenteIDTextBox_TextChanged(sender As Object, e As EventArgs) Handles ComponenteIDTextBox.TextChanged
+        SP_TextoEnriquecido_BUSQUEDA_SEGUN_PARAMETRO_ComponenteID()
+    End Sub
+
+#Region "Procedimientos"
+    Sub Cancelar_TextoEnriquecido()
+        Try
+            'Botones Del Menu
+            Nuevo_Menu_TextoEnriquecido.Enabled = True
+            Guardar_Menu_TextoEnriquecido.Enabled = False
+            Editar_Menu_TextoEnriquecido.Enabled = True
+            Actualizar_Menu_TextoEnriquecido.Enabled = False
+            Eliminar_Menu_TextoEnriquecido.Enabled = False
+            'Grid
+            'SP_TextoEnriquecido_BUSQUEDA_SEGUN_PARAMETRO_ComponenteIDDataGridView.Enabled = True
+            'Cargar Datos de Tabla Actualizados
+            SP_TextoEnriquecido_BUSQUEDA_SEGUN_PARAMETRO_ComponenteID()
+            Bloquear_Objetos_TextoEnriquecido()
+            Parar_Timer_TextoEnriquecido()
+            RichTextboxRichTextBox.Rtf = RichTextboxRichTextBox.Text
+        Catch ex As Exception
+
+        End Try
+    End Sub
+    'Insertar
+    Private Sub SP_TextoEnriquecido_EDICION_INSERTAR()
+        Try
+            Me.SP_TextoEnriquecido_EDICION_INSERTARTableAdapter.Fill(Me.DataSetTablasYCampos.SP_TextoEnriquecido_EDICION_INSERTAR,
+                                                 New System.Nullable(Of Integer)(CType(PlantillaIDTextBox.Text, Integer)),
+                                                 New System.Nullable(Of Integer)(CType(ComponenteIDTextBox.Text, Integer)),
+                                                 RichTextboxRichTextBox.Rtf)
+            SP_TextoEnriquecido_BUSQUEDA_SEGUN_PARAMETRO_ComponenteID()
+            MsgBox("El Dato Fue Guardado Exitosamente", MsgBoxStyle.Information, "Guardar Dato")
+        Catch ex As System.Exception
+            System.Windows.Forms.MessageBox.Show(ex.Message)
+        End Try
+    End Sub
+    'Actualizar
+    Private Sub SP_TextoEnriquecido_EDICION_ACTUALIZAR()
+        Try
+            Me.SP_TextoEnriquecido_EDICION_ACTUALIZARTableAdapter.Fill(Me.DataSetTablasYCampos.SP_TextoEnriquecido_EDICION_ACTUALIZAR,
+                                                 New System.Nullable(Of Integer)(CType(TextoEnriquecidoIDTextBox.Text, Integer)),
+                                                 New System.Nullable(Of Integer)(CType(PlantillaIDTextBox.Text, Integer)),
+                                                 New System.Nullable(Of Integer)(CType(ComponenteIDTextBox.Text, Integer)),
+                                                 RichTextboxRichTextBox.Rtf)
+            SP_TextoEnriquecido_BUSQUEDA_SEGUN_PARAMETRO_ComponenteID()
+            MsgBox("El Dato Fue Actualizado Exitosamente", MsgBoxStyle.Information, "Actualizar Dato")
+        Catch ex As System.Exception
+            System.Windows.Forms.MessageBox.Show(ex.Message)
+        End Try
+    End Sub
+    Private Sub SP_TextoEnriquecido_EDICION_ACTUALIZAR_Rapida()
+        Try
+            Me.SP_TextoEnriquecido_EDICION_ACTUALIZARTableAdapter.Fill(Me.DataSetTablasYCampos.SP_TextoEnriquecido_EDICION_ACTUALIZAR,
+                                                 New System.Nullable(Of Integer)(CType(TextoEnriquecidoIDTextBox.Text, Integer)),
+                                                 New System.Nullable(Of Integer)(CType(PlantillaIDTextBox.Text, Integer)),
+                                                 New System.Nullable(Of Integer)(CType(ComponenteIDTextBox.Text, Integer)),
+                                                 RichTextboxRichTextBox.Rtf)
+            SP_TextoEnriquecido_BUSQUEDA_SEGUN_PARAMETRO_ComponenteID()
+        Catch ex As System.Exception
+            System.Windows.Forms.MessageBox.Show(ex.Message)
+        End Try
+    End Sub
+    'Eliminar
+    Private Sub SP_TextoEnriquecido_EDICION_ELIMINAR()
+        Try
+            Me.SP_TextoEnriquecido_EDICION_ELIMINARTableAdapter.Fill(Me.DataSetTablasYCampos.SP_TextoEnriquecido_EDICION_ELIMINAR, New System.Nullable(Of Long)(CType(TextoEnriquecidoIDTextBox.Text, Long)))
+            SP_TextoEnriquecido_BUSQUEDA_SEGUN_PARAMETRO_ComponenteID()
+            MsgBox("El Dato Fue Eliminado Exitosamente de la Base de Datos", MsgBoxStyle.Information, "Eliminación de Dato")
+        Catch ex As System.Exception
+            System.Windows.Forms.MessageBox.Show(ex.Message)
+        End Try
+    End Sub
+#End Region
+
+#Region "Menus"
+    'Nuevo 
+    Private Sub Nuevo_Menu_TextoEnriquecido_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Nuevo_Menu_TextoEnriquecido.Click
+        Nuevo_Menu_TextoEnriquecido.Enabled = False
+        Editar_Menu_TextoEnriquecido.Enabled = False
+        Limpiar_Objetos_TextoEnriquecido()
+        RichTextboxRichTextBox.Enabled = True
+        RichTextboxRichTextBox.Focus()
+    End Sub
+    'Guardar
+    Private Sub Guardar_Menu_TextoEnriquecido_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Guardar_Menu_TextoEnriquecido.Click
+        Control_Nulos_TextoEnriquecido()
+
+        If ControlNulos.Text = "" Then ' Then
+            SP_TextoEnriquecido_EDICION_INSERTAR()
+            Cancelar_TextoEnriquecido()
+            Parar_Timer_TextoEnriquecido()
+        End If
+    End Sub
+    'Editar
+    Private Sub Editar_Menu_TextoEnriquecido_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Editar_Menu_TextoEnriquecido.Click
+        Nuevo_Menu_TextoEnriquecido.Enabled = False
+        Guardar_Menu_TextoEnriquecido.Enabled = False
+        Editar_Menu_TextoEnriquecido.Enabled = False
+        Actualizar_Menu_TextoEnriquecido.Enabled = True
+        Eliminar_Menu_TextoEnriquecido.Enabled = True
+        Desbloquear_Objetos_TextoEnriquecido()
+        Timer_Actualizar_TextoEnriquecido()
+        Timer_Eliminar_TextoEnriquecido()
+    End Sub
+    'Actualizar
+    Private Sub Actualizar_Menu_TextoEnriquecido_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Actualizar_Menu_TextoEnriquecido.Click
+        Control_Nulos_TextoEnriquecido()
+
+        If ControlNulos.Text = "" Then ' Then
+            SP_TextoEnriquecido_EDICION_ACTUALIZAR()
+            Cancelar_TextoEnriquecido()
+            Parar_Timer_TextoEnriquecido()
+        End If
+    End Sub
+
+    Private Sub BtnActualizar_Click(sender As Object, e As EventArgs) Handles BtnActualizar.Click
+        SP_TextoEnriquecido_EDICION_ACTUALIZAR_Rapida()
+    End Sub
+    Private Sub Eliminar_Menu_TextoEnriquecido_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Eliminar_Menu_TextoEnriquecido.Click
+        If MsgBox("Desea Eliminar Este Dato?", MsgBoxStyle.YesNo) = MsgBoxResult.Yes Then
+            SP_TextoEnriquecido_EDICION_ELIMINAR()
+            Cancelar_TextoEnriquecido()
+            Parar_Timer_TextoEnriquecido()
+        Else
+            MsgBox("Se Cancelo la Eliminación del Dato", MsgBoxStyle.Information)
+            Cancelar_TextoEnriquecido()
+        End If
+    End Sub
+#Region "Eventos sobre Objetos "
+    'Control de Nulos
+    Public Sub Control_Nulos_TextoEnriquecido()
+        ControlNulos.Text = "" '
+        Select Case ControlNulos.Text = "" '
+            Case PlantillaIDTextBox.Text = ""
+                MsgBox("El nombre del campo: PlantillasID; Esta vacio, Favor Verificar", MsgBoxStyle.Critical)
+                PlantillaIDTextBox.BackColor = Color.Beige
+                ControlNulos.Text = "1"
+            Case ComponenteIDTextBox.Text = ""
+                MsgBox("El nombre del campo: ComponenteID; Esta vacio, Favor Verificar", MsgBoxStyle.Critical)
+                ComponenteIDTextBox.BackColor = Color.Beige
+                ControlNulos.Text = "1"
+            Case RichTextboxRichTextBox.Text = ""
+                MsgBox("El nombre del campo: RichTextbox; Esta vacio, Favor Verificar", MsgBoxStyle.Critical)
+                RichTextboxRichTextBox.BackColor = Color.Beige
+                ControlNulos.Text = "1"
+            Case Else
+                ControlNulos.Text = "" '
+        End Select
+    End Sub
+
+    Private Sub RichTextboxTextBox_KeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles RichTextboxRichTextBox.KeyPress
+        If Asc(e.KeyChar) = 13 Then
+            If Actualizar_Menu_TextoEnriquecido.Enabled = True Then
+                Actualizar_Menu_TextoEnriquecido.Enabled = True
+                Eliminar_Menu_TextoEnriquecido.Enabled = True
+            Else
+                If RichTextboxRichTextBox.Text = "" Then
+                    MsgBox("Dato Obligatorio, Favor Verificar", MsgBoxStyle.Critical, "Validación de Datos")
+                    RichTextboxRichTextBox.Text = ""
+                    RichTextboxRichTextBox.Focus()
+                Else
+                    MsgBox("La Información Ya puede ser Guardada el Icono de Guardado queda habilitado", MsgBoxStyle.Information, "Guardar los Datos")
+                    Guardar_Menu_TextoEnriquecido.Enabled = True
+                    Timer_Guardar_TextoEnriquecido()
+                End If
+            End If
+        End If
+    End Sub
+    Public Sub Limpiar_Objetos_TextoEnriquecido()
+        RichTextboxRichTextBox.Text = "" ''
+    End Sub
+    Public Sub Desbloquear_Objetos_TextoEnriquecido()
+        RichTextboxRichTextBox.Enabled = True
+    End Sub
+    Public Sub Bloquear_Objetos_TextoEnriquecido()
+        'RichTextboxRichTextBox.Enabled = False
+    End Sub
+#End Region
+#Region "Timer de Botones"
+    'Declaraciones de Timers de Botones
+    Private WithEvents Timer_Guardar_Menu_TextoEnriquecido As Timer
+    Private WithEvents Timer_Actualizar_Menu_TextoEnriquecido As Timer
+    Private WithEvents Timer_Eliminar_Menu_TextoEnriquecido As Timer
+    'Procedimientos del Timer
+    Private Sub Timer_Guardar_TextoEnriquecido()
+        Me.Timer_Guardar_Menu_TextoEnriquecido = New Timer
+        Timer_Guardar_Menu_TextoEnriquecido.Interval = 250
+        Timer_Guardar_Menu_TextoEnriquecido.Start()
+    End Sub
+    Private Sub Timer_Actualizar_TextoEnriquecido()
+        Me.Timer_Actualizar_Menu_TextoEnriquecido = New Timer
+        Timer_Actualizar_Menu_TextoEnriquecido.Interval = 500
+        Timer_Actualizar_Menu_TextoEnriquecido.Start()
+    End Sub
+    Private Sub Timer_Eliminar_TextoEnriquecido()
+        Me.Timer_Eliminar_Menu_TextoEnriquecido = New Timer
+        Timer_Eliminar_Menu_TextoEnriquecido.Interval = 800
+        Timer_Eliminar_Menu_TextoEnriquecido.Start()
+    End Sub
+    'Eventos Tick
+    Private Sub Timer_Guardar_Menu_TextoEnriquecido_Tick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Timer_Guardar_Menu_TextoEnriquecido.Tick
+        If Guardar_Menu_TextoEnriquecido.BackColor = Color.White Then
+            Guardar_Menu_TextoEnriquecido.BackColor = Color.Green
+        Else
+            Guardar_Menu_TextoEnriquecido.BackColor = Color.White
+        End If
+    End Sub
+    Private Sub Timer_Actualizar_Menu_TextoEnriquecido_Tick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Timer_Actualizar_Menu_TextoEnriquecido.Tick
+        If Actualizar_Menu_TextoEnriquecido.BackColor = Color.White Then
+            Actualizar_Menu_TextoEnriquecido.BackColor = Color.Green
+        Else
+            Actualizar_Menu_TextoEnriquecido.BackColor = Color.White
+        End If
+    End Sub
+    Private Sub Timer_Eliminar_Menu_TextoEnriquecido_Tick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Timer_Eliminar_Menu_TextoEnriquecido.Tick
+        If Eliminar_Menu_TextoEnriquecido.BackColor = Color.White Then
+            Eliminar_Menu_TextoEnriquecido.BackColor = Color.Red
+        Else
+            Eliminar_Menu_TextoEnriquecido.BackColor = Color.White
+        End If
+    End Sub
+    'Parar Timer
+    Private Sub Parar_Timer_TextoEnriquecido()
+        Me.Timer_Guardar_Menu_TextoEnriquecido = New Timer
+        Timer_Guardar_Menu_TextoEnriquecido.Stop()
+        Guardar_Menu_TextoEnriquecido.BackColor = Color.White
+        Me.Timer_Actualizar_Menu_TextoEnriquecido = New Timer
+        Timer_Actualizar_Menu_TextoEnriquecido.Stop()
+        Actualizar_Menu_TextoEnriquecido.BackColor = Color.White
+        Me.Timer_Eliminar_Menu_TextoEnriquecido = New Timer
+        Timer_Eliminar_Menu_TextoEnriquecido.Stop()
+        Eliminar_Menu_TextoEnriquecido.BackColor = Color.White
+    End Sub
+
+    Private Sub Cancelar_Menu_TextoEnriquecido_Click(sender As Object, e As EventArgs) Handles Cancelar_Menu_TextoEnriquecido.Click
+        Cancelar_TextoEnriquecido()
+    End Sub
+
+
+
+
+
+
+
 
 
 
 #End Region
-
-
+#End Region
 #End Region
 
 End Class

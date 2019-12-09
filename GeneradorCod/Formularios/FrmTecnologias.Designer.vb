@@ -26,14 +26,10 @@ Partial Class FrmTecnologias
         Dim NombreTecnologiaLabel As System.Windows.Forms.Label
         Dim TecnologiaIDLabel As System.Windows.Forms.Label
         Dim NombrePlantillaLabel As System.Windows.Forms.Label
-        Dim PlantillaIDLabel As System.Windows.Forms.Label
         Dim NombreComponenteLabel As System.Windows.Forms.Label
-        Dim ComponenteIDLabel As System.Windows.Forms.Label
         Dim RequerimientoLabel As System.Windows.Forms.Label
         Dim OrdenDePeticionLabel As System.Windows.Forms.Label
         Dim EnunciadoLabel As System.Windows.Forms.Label
-        Dim RequerimientoPlantillaIDLabel As System.Windows.Forms.Label
-        Dim NombreGrupoTipoDeDatoLabel1 As System.Windows.Forms.Label
         Dim CampoComponenteIDLabel As System.Windows.Forms.Label
         Dim TipoLabel As System.Windows.Forms.Label
         Dim PrefijoLabel As System.Windows.Forms.Label
@@ -48,6 +44,7 @@ Partial Class FrmTecnologias
         Dim OrdenLabel As System.Windows.Forms.Label
         Dim ContenidoRelacionLabel As System.Windows.Forms.Label
         Dim RelacionTablasIDLabel As System.Windows.Forms.Label
+        Dim TextoEnriquecidoIDLabel As System.Windows.Forms.Label
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmTecnologias))
         Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
@@ -120,13 +117,9 @@ Partial Class FrmTecnologias
         Me.Label2 = New System.Windows.Forms.Label()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
+        Me.PanelGuardado = New System.Windows.Forms.Panel()
+        Me.Label5 = New System.Windows.Forms.Label()
         Me.BtnCamposRelacionados = New System.Windows.Forms.Button()
-        Me.BtnConvertir = New System.Windows.Forms.Button()
-        Me.BtnColor = New System.Windows.Forms.Button()
-        Me.BtnFuentes = New System.Windows.Forms.Button()
-        Me.BtnDerecha = New System.Windows.Forms.Button()
-        Me.BtnCentrar = New System.Windows.Forms.Button()
-        Me.BtnIzquierda = New System.Windows.Forms.Button()
         Me.BtnTablaPluralMinuscula = New System.Windows.Forms.Button()
         Me.BtnMayusculaAMinuscula = New System.Windows.Forms.Button()
         Me.BtnTablaPlural = New System.Windows.Forms.Button()
@@ -138,22 +131,37 @@ Partial Class FrmTecnologias
         Me.BtnSubirRemplazado = New System.Windows.Forms.Button()
         Me.BtnLimpiarRemplazar = New System.Windows.Forms.Button()
         Me.BtnLimpiar = New System.Windows.Forms.Button()
-        Me.RBPermitirEspacios = New System.Windows.Forms.RadioButton()
         Me.BtnRemplazar = New System.Windows.Forms.Button()
         Me.BtnBajarFuente = New System.Windows.Forms.Button()
         Me.BtnSubirFuente = New System.Windows.Forms.Button()
         Me.ContenidoComponenteRichTextBox = New System.Windows.Forms.RichTextBox()
         Me.BtnBuscarYPintar = New System.Windows.Forms.Button()
+        Me.TabPage5 = New System.Windows.Forms.TabPage()
+        Me.TextoEnriquecidoIDTextBox = New System.Windows.Forms.TextBox()
+        Me.SP_TextoEnriquecido_BUSQUEDA_SEGUN_PARAMETRO_ComponenteIDBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.DataSetTablasYCampos = New GeneradorCod.DataSetTablasYCampos()
+        Me.RichTextboxRichTextBox = New System.Windows.Forms.RichTextBox()
+        Me.Panel10 = New System.Windows.Forms.Panel()
+        Me.Nuevo_Menu_TextoEnriquecido = New System.Windows.Forms.Button()
+        Me.BtnColor = New System.Windows.Forms.Button()
+        Me.BtnDerecha = New System.Windows.Forms.Button()
+        Me.BtnFuentes = New System.Windows.Forms.Button()
+        Me.BtnCentrar = New System.Windows.Forms.Button()
+        Me.Cancelar_Menu_TextoEnriquecido = New System.Windows.Forms.Button()
+        Me.Eliminar_Menu_TextoEnriquecido = New System.Windows.Forms.Button()
+        Me.Editar_Menu_TextoEnriquecido = New System.Windows.Forms.Button()
+        Me.Actualizar_Menu_TextoEnriquecido = New System.Windows.Forms.Button()
+        Me.Guardar_Menu_TextoEnriquecido = New System.Windows.Forms.Button()
+        Me.BtnIzquierda = New System.Windows.Forms.Button()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
         Me.SP_CARGA_CONVENSIONES_USADASDataGridView = New System.Windows.Forms.DataGridView()
         Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.SP_CARGA_CONVENSIONES_USADASBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.DataSetTablasYCampos = New GeneradorCod.DataSetTablasYCampos()
         Me.CONVENSIONESTextBox = New System.Windows.Forms.TextBox()
         Me.TabPage3 = New System.Windows.Forms.TabPage()
-        Me.TxtPrevisualizar = New System.Windows.Forms.TextBox()
         Me.MultiReplaceTextBox = New System.Windows.Forms.TextBox()
         Me.SP_CampoComponentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.TxtPrevisualizar = New System.Windows.Forms.TextBox()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Panel8 = New System.Windows.Forms.Panel()
         Me.SuperiorTextBox = New System.Windows.Forms.TextBox()
@@ -250,17 +258,22 @@ Partial Class FrmTecnologias
         Me.SP_TablasRelacionadas_EDICION_ELIMINARTableAdapter = New GeneradorCod.DataSetTablasYCamposTableAdapters.SP_TablasRelacionadas_EDICION_ELIMINARTableAdapter()
         Me.SP_TablasRelacionadas_EDICION_INSERTARBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.SP_TablasRelacionadas_EDICION_INSERTARTableAdapter = New GeneradorCod.DataSetTablasYCamposTableAdapters.SP_TablasRelacionadas_EDICION_INSERTARTableAdapter()
+        Me.SP_TextoEnriquecido_BUSQUEDA_SEGUN_PARAMETRO_ComponenteIDTableAdapter = New GeneradorCod.DataSetTablasYCamposTableAdapters.SP_TextoEnriquecido_BUSQUEDA_SEGUN_PARAMETRO_ComponenteIDTableAdapter()
+        Me.SP_TextoEnriquecido_EDICION_ACTUALIZARBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.SP_TextoEnriquecido_EDICION_ACTUALIZARTableAdapter = New GeneradorCod.DataSetTablasYCamposTableAdapters.SP_TextoEnriquecido_EDICION_ACTUALIZARTableAdapter()
+        Me.SP_TextoEnriquecido_EDICION_ELIMINARBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.SP_TextoEnriquecido_EDICION_ELIMINARTableAdapter = New GeneradorCod.DataSetTablasYCamposTableAdapters.SP_TextoEnriquecido_EDICION_ELIMINARTableAdapter()
+        Me.SP_TextoEnriquecido_EDICION_INSERTARBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.SP_TextoEnriquecido_EDICION_INSERTARTableAdapter = New GeneradorCod.DataSetTablasYCamposTableAdapters.SP_TextoEnriquecido_EDICION_INSERTARTableAdapter()
+        Me.TimerGuardarComponente = New System.Windows.Forms.Timer(Me.components)
+        Me.BtnActualizar = New System.Windows.Forms.Button()
         NombreTecnologiaLabel = New System.Windows.Forms.Label()
         TecnologiaIDLabel = New System.Windows.Forms.Label()
         NombrePlantillaLabel = New System.Windows.Forms.Label()
-        PlantillaIDLabel = New System.Windows.Forms.Label()
         NombreComponenteLabel = New System.Windows.Forms.Label()
-        ComponenteIDLabel = New System.Windows.Forms.Label()
         RequerimientoLabel = New System.Windows.Forms.Label()
         OrdenDePeticionLabel = New System.Windows.Forms.Label()
         EnunciadoLabel = New System.Windows.Forms.Label()
-        RequerimientoPlantillaIDLabel = New System.Windows.Forms.Label()
-        NombreGrupoTipoDeDatoLabel1 = New System.Windows.Forms.Label()
         CampoComponenteIDLabel = New System.Windows.Forms.Label()
         TipoLabel = New System.Windows.Forms.Label()
         PrefijoLabel = New System.Windows.Forms.Label()
@@ -275,6 +288,7 @@ Partial Class FrmTecnologias
         OrdenLabel = New System.Windows.Forms.Label()
         ContenidoRelacionLabel = New System.Windows.Forms.Label()
         RelacionTablasIDLabel = New System.Windows.Forms.Label()
+        TextoEnriquecidoIDLabel = New System.Windows.Forms.Label()
         CType(Me.TecnologiasDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TecnologiasBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DataSetAdministracion, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -294,10 +308,14 @@ Partial Class FrmTecnologias
         Me.Panel5.SuspendLayout()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
+        Me.PanelGuardado.SuspendLayout()
+        Me.TabPage5.SuspendLayout()
+        CType(Me.SP_TextoEnriquecido_BUSQUEDA_SEGUN_PARAMETRO_ComponenteIDBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DataSetTablasYCampos, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel10.SuspendLayout()
         Me.TabPage2.SuspendLayout()
         CType(Me.SP_CARGA_CONVENSIONES_USADASDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.SP_CARGA_CONVENSIONES_USADASBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.DataSetTablasYCampos, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabPage3.SuspendLayout()
         CType(Me.SP_CampoComponentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel8.SuspendLayout()
@@ -327,6 +345,9 @@ Partial Class FrmTecnologias
         CType(Me.SP_TablasRelacionadas_EDICION_ACTUALIZARBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.SP_TablasRelacionadas_EDICION_ELIMINARBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.SP_TablasRelacionadas_EDICION_INSERTARBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.SP_TextoEnriquecido_EDICION_ACTUALIZARBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.SP_TextoEnriquecido_EDICION_ELIMINARBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.SP_TextoEnriquecido_EDICION_INSERTARBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'NombreTecnologiaLabel
@@ -356,13 +377,6 @@ Partial Class FrmTecnologias
         NombrePlantillaLabel.TabIndex = 94
         NombrePlantillaLabel.Text = "Nombre Plantilla:"
         '
-        'PlantillaIDLabel
-        '
-        PlantillaIDLabel.Location = New System.Drawing.Point(0, 0)
-        PlantillaIDLabel.Name = "PlantillaIDLabel"
-        PlantillaIDLabel.Size = New System.Drawing.Size(100, 23)
-        PlantillaIDLabel.TabIndex = 160
-        '
         'NombreComponenteLabel
         '
         NombreComponenteLabel.AutoSize = True
@@ -371,13 +385,6 @@ Partial Class FrmTecnologias
         NombreComponenteLabel.Size = New System.Drawing.Size(87, 18)
         NombreComponenteLabel.TabIndex = 96
         NombreComponenteLabel.Text = "Componente"
-        '
-        'ComponenteIDLabel
-        '
-        ComponenteIDLabel.Location = New System.Drawing.Point(0, 0)
-        ComponenteIDLabel.Name = "ComponenteIDLabel"
-        ComponenteIDLabel.Size = New System.Drawing.Size(100, 23)
-        ComponenteIDLabel.TabIndex = 159
         '
         'RequerimientoLabel
         '
@@ -405,20 +412,6 @@ Partial Class FrmTecnologias
         EnunciadoLabel.Size = New System.Drawing.Size(75, 18)
         EnunciadoLabel.TabIndex = 108
         EnunciadoLabel.Text = "Enunciado:"
-        '
-        'RequerimientoPlantillaIDLabel
-        '
-        RequerimientoPlantillaIDLabel.Location = New System.Drawing.Point(0, 0)
-        RequerimientoPlantillaIDLabel.Name = "RequerimientoPlantillaIDLabel"
-        RequerimientoPlantillaIDLabel.Size = New System.Drawing.Size(100, 23)
-        RequerimientoPlantillaIDLabel.TabIndex = 158
-        '
-        'NombreGrupoTipoDeDatoLabel1
-        '
-        NombreGrupoTipoDeDatoLabel1.Location = New System.Drawing.Point(0, 0)
-        NombreGrupoTipoDeDatoLabel1.Name = "NombreGrupoTipoDeDatoLabel1"
-        NombreGrupoTipoDeDatoLabel1.Size = New System.Drawing.Size(100, 23)
-        NombreGrupoTipoDeDatoLabel1.TabIndex = 157
         '
         'CampoComponenteIDLabel
         '
@@ -551,6 +544,15 @@ Partial Class FrmTecnologias
         RelacionTablasIDLabel.Size = New System.Drawing.Size(120, 18)
         RelacionTablasIDLabel.TabIndex = 131
         RelacionTablasIDLabel.Text = "Relacion Tablas ID:"
+        '
+        'TextoEnriquecidoIDLabel
+        '
+        TextoEnriquecidoIDLabel.AutoSize = True
+        TextoEnriquecidoIDLabel.Location = New System.Drawing.Point(478, 546)
+        TextoEnriquecidoIDLabel.Name = "TextoEnriquecidoIDLabel"
+        TextoEnriquecidoIDLabel.Size = New System.Drawing.Size(138, 18)
+        TextoEnriquecidoIDLabel.TabIndex = 92
+        TextoEnriquecidoIDLabel.Text = "Texto Enriquecido ID:"
         '
         'TecnologiasDataGridView
         '
@@ -1244,6 +1246,7 @@ Partial Class FrmTecnologias
         'TabControl1
         '
         Me.TabControl1.Controls.Add(Me.TabPage1)
+        Me.TabControl1.Controls.Add(Me.TabPage5)
         Me.TabControl1.Controls.Add(Me.TabPage2)
         Me.TabControl1.Controls.Add(Me.TabPage3)
         Me.TabControl1.Controls.Add(Me.TabPage4)
@@ -1255,13 +1258,9 @@ Partial Class FrmTecnologias
         '
         'TabPage1
         '
+        Me.TabPage1.BackColor = System.Drawing.Color.Transparent
+        Me.TabPage1.Controls.Add(Me.PanelGuardado)
         Me.TabPage1.Controls.Add(Me.BtnCamposRelacionados)
-        Me.TabPage1.Controls.Add(Me.BtnConvertir)
-        Me.TabPage1.Controls.Add(Me.BtnColor)
-        Me.TabPage1.Controls.Add(Me.BtnFuentes)
-        Me.TabPage1.Controls.Add(Me.BtnDerecha)
-        Me.TabPage1.Controls.Add(Me.BtnCentrar)
-        Me.TabPage1.Controls.Add(Me.BtnIzquierda)
         Me.TabPage1.Controls.Add(Me.BtnTablaPluralMinuscula)
         Me.TabPage1.Controls.Add(Me.BtnMayusculaAMinuscula)
         Me.TabPage1.Controls.Add(Me.BtnTablaPlural)
@@ -1273,7 +1272,6 @@ Partial Class FrmTecnologias
         Me.TabPage1.Controls.Add(Me.BtnSubirRemplazado)
         Me.TabPage1.Controls.Add(Me.BtnLimpiarRemplazar)
         Me.TabPage1.Controls.Add(Me.BtnLimpiar)
-        Me.TabPage1.Controls.Add(Me.RBPermitirEspacios)
         Me.TabPage1.Controls.Add(Me.BtnRemplazar)
         Me.TabPage1.Controls.Add(Me.BtnBajarFuente)
         Me.TabPage1.Controls.Add(Me.BtnSubirFuente)
@@ -1289,7 +1287,26 @@ Partial Class FrmTecnologias
         Me.TabPage1.Size = New System.Drawing.Size(728, 576)
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Text = "Busqueda y Remplazo"
-        Me.TabPage1.UseVisualStyleBackColor = True
+        '
+        'PanelGuardado
+        '
+        Me.PanelGuardado.BackColor = System.Drawing.Color.Chartreuse
+        Me.PanelGuardado.Controls.Add(Me.Label5)
+        Me.PanelGuardado.Location = New System.Drawing.Point(191, 250)
+        Me.PanelGuardado.Name = "PanelGuardado"
+        Me.PanelGuardado.Size = New System.Drawing.Size(346, 100)
+        Me.PanelGuardado.TabIndex = 143
+        Me.PanelGuardado.Visible = False
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Font = New System.Drawing.Font("Candara", 36.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.Location = New System.Drawing.Point(38, 21)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(271, 59)
+        Me.Label5.TabIndex = 0
+        Me.Label5.Text = "GUARDADO"
         '
         'BtnCamposRelacionados
         '
@@ -1302,60 +1319,6 @@ Partial Class FrmTecnologias
         Me.BtnCamposRelacionados.Text = "{{{Camp-Rel}}}"
         Me.ToolTip1.SetToolTip(Me.BtnCamposRelacionados, "Campos Relacionados de la Tabla")
         Me.BtnCamposRelacionados.UseVisualStyleBackColor = False
-        '
-        'BtnConvertir
-        '
-        Me.BtnConvertir.Location = New System.Drawing.Point(249, 541)
-        Me.BtnConvertir.Name = "BtnConvertir"
-        Me.BtnConvertir.Size = New System.Drawing.Size(75, 28)
-        Me.BtnConvertir.TabIndex = 141
-        Me.BtnConvertir.Text = "Conv"
-        Me.BtnConvertir.UseVisualStyleBackColor = True
-        '
-        'BtnColor
-        '
-        Me.BtnColor.Location = New System.Drawing.Point(637, 541)
-        Me.BtnColor.Name = "BtnColor"
-        Me.BtnColor.Size = New System.Drawing.Size(75, 28)
-        Me.BtnColor.TabIndex = 140
-        Me.BtnColor.Text = "Color"
-        Me.BtnColor.UseVisualStyleBackColor = True
-        '
-        'BtnFuentes
-        '
-        Me.BtnFuentes.Location = New System.Drawing.Point(556, 541)
-        Me.BtnFuentes.Name = "BtnFuentes"
-        Me.BtnFuentes.Size = New System.Drawing.Size(75, 28)
-        Me.BtnFuentes.TabIndex = 139
-        Me.BtnFuentes.Text = "Fuente"
-        Me.BtnFuentes.UseVisualStyleBackColor = True
-        '
-        'BtnDerecha
-        '
-        Me.BtnDerecha.Location = New System.Drawing.Point(168, 541)
-        Me.BtnDerecha.Name = "BtnDerecha"
-        Me.BtnDerecha.Size = New System.Drawing.Size(75, 28)
-        Me.BtnDerecha.TabIndex = 138
-        Me.BtnDerecha.Text = "Derecha"
-        Me.BtnDerecha.UseVisualStyleBackColor = True
-        '
-        'BtnCentrar
-        '
-        Me.BtnCentrar.Location = New System.Drawing.Point(87, 541)
-        Me.BtnCentrar.Name = "BtnCentrar"
-        Me.BtnCentrar.Size = New System.Drawing.Size(75, 28)
-        Me.BtnCentrar.TabIndex = 137
-        Me.BtnCentrar.Text = "Centrar"
-        Me.BtnCentrar.UseVisualStyleBackColor = True
-        '
-        'BtnIzquierda
-        '
-        Me.BtnIzquierda.Location = New System.Drawing.Point(6, 541)
-        Me.BtnIzquierda.Name = "BtnIzquierda"
-        Me.BtnIzquierda.Size = New System.Drawing.Size(75, 28)
-        Me.BtnIzquierda.TabIndex = 136
-        Me.BtnIzquierda.Text = "Izquierda"
-        Me.BtnIzquierda.UseVisualStyleBackColor = True
         '
         'BtnTablaPluralMinuscula
         '
@@ -1482,16 +1445,6 @@ Partial Class FrmTecnologias
         Me.BtnLimpiar.TabIndex = 120
         Me.BtnLimpiar.UseVisualStyleBackColor = False
         '
-        'RBPermitirEspacios
-        '
-        Me.RBPermitirEspacios.AutoSize = True
-        Me.RBPermitirEspacios.Location = New System.Drawing.Point(254, 86)
-        Me.RBPermitirEspacios.Name = "RBPermitirEspacios"
-        Me.RBPermitirEspacios.Size = New System.Drawing.Size(14, 13)
-        Me.RBPermitirEspacios.TabIndex = 119
-        Me.RBPermitirEspacios.TabStop = True
-        Me.RBPermitirEspacios.UseVisualStyleBackColor = True
-        '
         'BtnRemplazar
         '
         Me.BtnRemplazar.BackColor = System.Drawing.Color.White
@@ -1536,7 +1489,7 @@ Partial Class FrmTecnologias
         Me.ContenidoComponenteRichTextBox.Font = New System.Drawing.Font("Candara", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ContenidoComponenteRichTextBox.Location = New System.Drawing.Point(3, 111)
         Me.ContenidoComponenteRichTextBox.Name = "ContenidoComponenteRichTextBox"
-        Me.ContenidoComponenteRichTextBox.Size = New System.Drawing.Size(716, 423)
+        Me.ContenidoComponenteRichTextBox.Size = New System.Drawing.Size(716, 458)
         Me.ContenidoComponenteRichTextBox.TabIndex = 115
         Me.ContenidoComponenteRichTextBox.Text = ""
         '
@@ -1550,6 +1503,178 @@ Partial Class FrmTecnologias
         Me.BtnBuscarYPintar.TabIndex = 99
         Me.ToolTip1.SetToolTip(Me.BtnBuscarYPintar, "Buscar en el Texto")
         Me.BtnBuscarYPintar.UseVisualStyleBackColor = False
+        '
+        'TabPage5
+        '
+        Me.TabPage5.Controls.Add(Me.RichTextboxRichTextBox)
+        Me.TabPage5.Controls.Add(TextoEnriquecidoIDLabel)
+        Me.TabPage5.Controls.Add(Me.TextoEnriquecidoIDTextBox)
+        Me.TabPage5.Controls.Add(Me.Panel10)
+        Me.TabPage5.Location = New System.Drawing.Point(4, 27)
+        Me.TabPage5.Name = "TabPage5"
+        Me.TabPage5.Padding = New System.Windows.Forms.Padding(3)
+        Me.TabPage5.Size = New System.Drawing.Size(728, 576)
+        Me.TabPage5.TabIndex = 4
+        Me.TabPage5.Text = "Texto Componente"
+        Me.TabPage5.UseVisualStyleBackColor = True
+        '
+        'TextoEnriquecidoIDTextBox
+        '
+        Me.TextoEnriquecidoIDTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SP_TextoEnriquecido_BUSQUEDA_SEGUN_PARAMETRO_ComponenteIDBindingSource, "TextoEnriquecidoID", True))
+        Me.TextoEnriquecidoIDTextBox.Location = New System.Drawing.Point(622, 543)
+        Me.TextoEnriquecidoIDTextBox.Name = "TextoEnriquecidoIDTextBox"
+        Me.TextoEnriquecidoIDTextBox.Size = New System.Drawing.Size(100, 26)
+        Me.TextoEnriquecidoIDTextBox.TabIndex = 93
+        '
+        'SP_TextoEnriquecido_BUSQUEDA_SEGUN_PARAMETRO_ComponenteIDBindingSource
+        '
+        Me.SP_TextoEnriquecido_BUSQUEDA_SEGUN_PARAMETRO_ComponenteIDBindingSource.DataMember = "SP_TextoEnriquecido_BUSQUEDA_SEGUN_PARAMETRO_ComponenteID"
+        Me.SP_TextoEnriquecido_BUSQUEDA_SEGUN_PARAMETRO_ComponenteIDBindingSource.DataSource = Me.DataSetTablasYCampos
+        '
+        'DataSetTablasYCampos
+        '
+        Me.DataSetTablasYCampos.DataSetName = "DataSetTablasYCampos"
+        Me.DataSetTablasYCampos.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'RichTextboxRichTextBox
+        '
+        Me.RichTextboxRichTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SP_TextoEnriquecido_BUSQUEDA_SEGUN_PARAMETRO_ComponenteIDBindingSource, "RichTextbox", True))
+        Me.RichTextboxRichTextBox.Location = New System.Drawing.Point(6, 56)
+        Me.RichTextboxRichTextBox.Name = "RichTextboxRichTextBox"
+        Me.RichTextboxRichTextBox.Size = New System.Drawing.Size(716, 514)
+        Me.RichTextboxRichTextBox.TabIndex = 92
+        Me.RichTextboxRichTextBox.Text = ""
+        '
+        'Panel10
+        '
+        Me.Panel10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel10.Controls.Add(Me.BtnActualizar)
+        Me.Panel10.Controls.Add(Me.Nuevo_Menu_TextoEnriquecido)
+        Me.Panel10.Controls.Add(Me.BtnColor)
+        Me.Panel10.Controls.Add(Me.BtnDerecha)
+        Me.Panel10.Controls.Add(Me.BtnFuentes)
+        Me.Panel10.Controls.Add(Me.BtnCentrar)
+        Me.Panel10.Controls.Add(Me.Cancelar_Menu_TextoEnriquecido)
+        Me.Panel10.Controls.Add(Me.Eliminar_Menu_TextoEnriquecido)
+        Me.Panel10.Controls.Add(Me.Editar_Menu_TextoEnriquecido)
+        Me.Panel10.Controls.Add(Me.Actualizar_Menu_TextoEnriquecido)
+        Me.Panel10.Controls.Add(Me.Guardar_Menu_TextoEnriquecido)
+        Me.Panel10.Controls.Add(Me.BtnIzquierda)
+        Me.Panel10.Location = New System.Drawing.Point(6, 3)
+        Me.Panel10.Name = "Panel10"
+        Me.Panel10.Size = New System.Drawing.Size(716, 46)
+        Me.Panel10.TabIndex = 91
+        '
+        'Nuevo_Menu_TextoEnriquecido
+        '
+        Me.Nuevo_Menu_TextoEnriquecido.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Nuevo_Menu_TextoEnriquecido.Image = CType(resources.GetObject("Nuevo_Menu_TextoEnriquecido.Image"), System.Drawing.Image)
+        Me.Nuevo_Menu_TextoEnriquecido.Location = New System.Drawing.Point(4, 3)
+        Me.Nuevo_Menu_TextoEnriquecido.Name = "Nuevo_Menu_TextoEnriquecido"
+        Me.Nuevo_Menu_TextoEnriquecido.Size = New System.Drawing.Size(40, 38)
+        Me.Nuevo_Menu_TextoEnriquecido.TabIndex = 70
+        Me.Nuevo_Menu_TextoEnriquecido.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.Nuevo_Menu_TextoEnriquecido.UseVisualStyleBackColor = True
+        '
+        'BtnColor
+        '
+        Me.BtnColor.Location = New System.Drawing.Point(523, 8)
+        Me.BtnColor.Name = "BtnColor"
+        Me.BtnColor.Size = New System.Drawing.Size(75, 28)
+        Me.BtnColor.TabIndex = 140
+        Me.BtnColor.Text = "Color"
+        Me.BtnColor.UseVisualStyleBackColor = True
+        '
+        'BtnDerecha
+        '
+        Me.BtnDerecha.Location = New System.Drawing.Point(373, 4)
+        Me.BtnDerecha.Name = "BtnDerecha"
+        Me.BtnDerecha.Size = New System.Drawing.Size(41, 36)
+        Me.BtnDerecha.TabIndex = 138
+        Me.BtnDerecha.Text = "-->"
+        Me.BtnDerecha.UseVisualStyleBackColor = True
+        '
+        'BtnFuentes
+        '
+        Me.BtnFuentes.Location = New System.Drawing.Point(435, 8)
+        Me.BtnFuentes.Name = "BtnFuentes"
+        Me.BtnFuentes.Size = New System.Drawing.Size(75, 28)
+        Me.BtnFuentes.TabIndex = 139
+        Me.BtnFuentes.Text = "Fuente"
+        Me.BtnFuentes.UseVisualStyleBackColor = True
+        '
+        'BtnCentrar
+        '
+        Me.BtnCentrar.Location = New System.Drawing.Point(326, 5)
+        Me.BtnCentrar.Name = "BtnCentrar"
+        Me.BtnCentrar.Size = New System.Drawing.Size(41, 36)
+        Me.BtnCentrar.TabIndex = 137
+        Me.BtnCentrar.Text = "="
+        Me.BtnCentrar.UseVisualStyleBackColor = True
+        '
+        'Cancelar_Menu_TextoEnriquecido
+        '
+        Me.Cancelar_Menu_TextoEnriquecido.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Cancelar_Menu_TextoEnriquecido.Image = CType(resources.GetObject("Cancelar_Menu_TextoEnriquecido.Image"), System.Drawing.Image)
+        Me.Cancelar_Menu_TextoEnriquecido.Location = New System.Drawing.Point(233, 3)
+        Me.Cancelar_Menu_TextoEnriquecido.Name = "Cancelar_Menu_TextoEnriquecido"
+        Me.Cancelar_Menu_TextoEnriquecido.Size = New System.Drawing.Size(40, 38)
+        Me.Cancelar_Menu_TextoEnriquecido.TabIndex = 75
+        Me.Cancelar_Menu_TextoEnriquecido.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.Cancelar_Menu_TextoEnriquecido.UseVisualStyleBackColor = True
+        '
+        'Eliminar_Menu_TextoEnriquecido
+        '
+        Me.Eliminar_Menu_TextoEnriquecido.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Eliminar_Menu_TextoEnriquecido.Image = CType(resources.GetObject("Eliminar_Menu_TextoEnriquecido.Image"), System.Drawing.Image)
+        Me.Eliminar_Menu_TextoEnriquecido.Location = New System.Drawing.Point(188, 3)
+        Me.Eliminar_Menu_TextoEnriquecido.Name = "Eliminar_Menu_TextoEnriquecido"
+        Me.Eliminar_Menu_TextoEnriquecido.Size = New System.Drawing.Size(40, 38)
+        Me.Eliminar_Menu_TextoEnriquecido.TabIndex = 72
+        Me.Eliminar_Menu_TextoEnriquecido.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.Eliminar_Menu_TextoEnriquecido.UseVisualStyleBackColor = True
+        '
+        'Editar_Menu_TextoEnriquecido
+        '
+        Me.Editar_Menu_TextoEnriquecido.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Editar_Menu_TextoEnriquecido.Image = CType(resources.GetObject("Editar_Menu_TextoEnriquecido.Image"), System.Drawing.Image)
+        Me.Editar_Menu_TextoEnriquecido.Location = New System.Drawing.Point(96, 3)
+        Me.Editar_Menu_TextoEnriquecido.Name = "Editar_Menu_TextoEnriquecido"
+        Me.Editar_Menu_TextoEnriquecido.Size = New System.Drawing.Size(40, 38)
+        Me.Editar_Menu_TextoEnriquecido.TabIndex = 74
+        Me.Editar_Menu_TextoEnriquecido.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.Editar_Menu_TextoEnriquecido.UseVisualStyleBackColor = True
+        '
+        'Actualizar_Menu_TextoEnriquecido
+        '
+        Me.Actualizar_Menu_TextoEnriquecido.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Actualizar_Menu_TextoEnriquecido.Image = CType(resources.GetObject("Actualizar_Menu_TextoEnriquecido.Image"), System.Drawing.Image)
+        Me.Actualizar_Menu_TextoEnriquecido.Location = New System.Drawing.Point(142, 3)
+        Me.Actualizar_Menu_TextoEnriquecido.Name = "Actualizar_Menu_TextoEnriquecido"
+        Me.Actualizar_Menu_TextoEnriquecido.Size = New System.Drawing.Size(40, 38)
+        Me.Actualizar_Menu_TextoEnriquecido.TabIndex = 73
+        Me.Actualizar_Menu_TextoEnriquecido.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.Actualizar_Menu_TextoEnriquecido.UseVisualStyleBackColor = True
+        '
+        'Guardar_Menu_TextoEnriquecido
+        '
+        Me.Guardar_Menu_TextoEnriquecido.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Guardar_Menu_TextoEnriquecido.Image = CType(resources.GetObject("Guardar_Menu_TextoEnriquecido.Image"), System.Drawing.Image)
+        Me.Guardar_Menu_TextoEnriquecido.Location = New System.Drawing.Point(50, 3)
+        Me.Guardar_Menu_TextoEnriquecido.Name = "Guardar_Menu_TextoEnriquecido"
+        Me.Guardar_Menu_TextoEnriquecido.Size = New System.Drawing.Size(40, 38)
+        Me.Guardar_Menu_TextoEnriquecido.TabIndex = 71
+        Me.Guardar_Menu_TextoEnriquecido.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.Guardar_Menu_TextoEnriquecido.UseVisualStyleBackColor = True
+        '
+        'BtnIzquierda
+        '
+        Me.BtnIzquierda.Location = New System.Drawing.Point(279, 5)
+        Me.BtnIzquierda.Name = "BtnIzquierda"
+        Me.BtnIzquierda.Size = New System.Drawing.Size(41, 36)
+        Me.BtnIzquierda.TabIndex = 136
+        Me.BtnIzquierda.Text = "<--"
+        Me.BtnIzquierda.UseVisualStyleBackColor = True
         '
         'TabPage2
         '
@@ -1598,11 +1723,6 @@ Partial Class FrmTecnologias
         Me.SP_CARGA_CONVENSIONES_USADASBindingSource.DataMember = "SP_CARGA_CONVENSIONES_USADAS"
         Me.SP_CARGA_CONVENSIONES_USADASBindingSource.DataSource = Me.DataSetTablasYCampos
         '
-        'DataSetTablasYCampos
-        '
-        Me.DataSetTablasYCampos.DataSetName = "DataSetTablasYCampos"
-        Me.DataSetTablasYCampos.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
         'CONVENSIONESTextBox
         '
         Me.CONVENSIONESTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SP_CARGA_CONVENSIONES_USADASBindingSource, "CONVENSIONES", True))
@@ -1632,15 +1752,6 @@ Partial Class FrmTecnologias
         Me.TabPage3.Text = "Tipos de Datos Campos"
         Me.TabPage3.UseVisualStyleBackColor = True
         '
-        'TxtPrevisualizar
-        '
-        Me.TxtPrevisualizar.Location = New System.Drawing.Point(333, 123)
-        Me.TxtPrevisualizar.Multiline = True
-        Me.TxtPrevisualizar.Name = "TxtPrevisualizar"
-        Me.TxtPrevisualizar.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
-        Me.TxtPrevisualizar.Size = New System.Drawing.Size(386, 100)
-        Me.TxtPrevisualizar.TabIndex = 161
-        '
         'MultiReplaceTextBox
         '
         Me.MultiReplaceTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SP_CampoComponentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDBindingSource, "MultiReplace", True))
@@ -1655,6 +1766,15 @@ Partial Class FrmTecnologias
         '
         Me.SP_CampoComponentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDBindingSource.DataMember = "SP_CampoComponentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaID"
         Me.SP_CampoComponentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDBindingSource.DataSource = Me.DataSetTablasYCampos
+        '
+        'TxtPrevisualizar
+        '
+        Me.TxtPrevisualizar.Location = New System.Drawing.Point(333, 123)
+        Me.TxtPrevisualizar.Multiline = True
+        Me.TxtPrevisualizar.Name = "TxtPrevisualizar"
+        Me.TxtPrevisualizar.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
+        Me.TxtPrevisualizar.Size = New System.Drawing.Size(386, 100)
+        Me.TxtPrevisualizar.TabIndex = 161
         '
         'Label3
         '
@@ -2146,6 +2266,9 @@ Partial Class FrmTecnologias
         Me.TableAdapterManager1.SP_TablasRelacionadas_EDICION_ACTUALIZARTableAdapter = Nothing
         Me.TableAdapterManager1.SP_TablasRelacionadas_EDICION_ELIMINARTableAdapter = Nothing
         Me.TableAdapterManager1.SP_TablasRelacionadas_EDICION_INSERTARTableAdapter = Nothing
+        Me.TableAdapterManager1.SP_TextoEnriquecido_EDICION_ACTUALIZARTableAdapter = Nothing
+        Me.TableAdapterManager1.SP_TextoEnriquecido_EDICION_ELIMINARTableAdapter = Nothing
+        Me.TableAdapterManager1.SP_TextoEnriquecido_EDICION_INSERTARTableAdapter = Nothing
         Me.TableAdapterManager1.UpdateOrder = GeneradorCod.DataSetTablasYCamposTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
         '
         'SP_CampoComponentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDTableAdapter
@@ -2375,6 +2498,51 @@ Partial Class FrmTecnologias
         '
         Me.SP_TablasRelacionadas_EDICION_INSERTARTableAdapter.ClearBeforeFill = True
         '
+        'SP_TextoEnriquecido_BUSQUEDA_SEGUN_PARAMETRO_ComponenteIDTableAdapter
+        '
+        Me.SP_TextoEnriquecido_BUSQUEDA_SEGUN_PARAMETRO_ComponenteIDTableAdapter.ClearBeforeFill = True
+        '
+        'SP_TextoEnriquecido_EDICION_ACTUALIZARBindingSource
+        '
+        Me.SP_TextoEnriquecido_EDICION_ACTUALIZARBindingSource.DataMember = "SP_TextoEnriquecido_EDICION_ACTUALIZAR"
+        Me.SP_TextoEnriquecido_EDICION_ACTUALIZARBindingSource.DataSource = Me.DataSetTablasYCampos
+        '
+        'SP_TextoEnriquecido_EDICION_ACTUALIZARTableAdapter
+        '
+        Me.SP_TextoEnriquecido_EDICION_ACTUALIZARTableAdapter.ClearBeforeFill = True
+        '
+        'SP_TextoEnriquecido_EDICION_ELIMINARBindingSource
+        '
+        Me.SP_TextoEnriquecido_EDICION_ELIMINARBindingSource.DataMember = "SP_TextoEnriquecido_EDICION_ELIMINAR"
+        Me.SP_TextoEnriquecido_EDICION_ELIMINARBindingSource.DataSource = Me.DataSetTablasYCampos
+        '
+        'SP_TextoEnriquecido_EDICION_ELIMINARTableAdapter
+        '
+        Me.SP_TextoEnriquecido_EDICION_ELIMINARTableAdapter.ClearBeforeFill = True
+        '
+        'SP_TextoEnriquecido_EDICION_INSERTARBindingSource
+        '
+        Me.SP_TextoEnriquecido_EDICION_INSERTARBindingSource.DataMember = "SP_TextoEnriquecido_EDICION_INSERTAR"
+        Me.SP_TextoEnriquecido_EDICION_INSERTARBindingSource.DataSource = Me.DataSetTablasYCampos
+        '
+        'SP_TextoEnriquecido_EDICION_INSERTARTableAdapter
+        '
+        Me.SP_TextoEnriquecido_EDICION_INSERTARTableAdapter.ClearBeforeFill = True
+        '
+        'TimerGuardarComponente
+        '
+        Me.TimerGuardarComponente.Interval = 1000
+        '
+        'BtnActualizar
+        '
+        Me.BtnActualizar.BackColor = System.Drawing.Color.GreenYellow
+        Me.BtnActualizar.Location = New System.Drawing.Point(663, 4)
+        Me.BtnActualizar.Name = "BtnActualizar"
+        Me.BtnActualizar.Size = New System.Drawing.Size(41, 36)
+        Me.BtnActualizar.TabIndex = 141
+        Me.BtnActualizar.Text = "-->"
+        Me.BtnActualizar.UseVisualStyleBackColor = False
+        '
         'FrmTecnologias
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 18.0!)
@@ -2388,16 +2556,12 @@ Partial Class FrmTecnologias
         Me.Controls.Add(CampoComponenteIDLabel)
         Me.Controls.Add(Me.CampoComponenteIDTextBox)
         Me.Controls.Add(Me.TipoCampoIDTextBox)
-        Me.Controls.Add(NombreGrupoTipoDeDatoLabel1)
         Me.Controls.Add(Me.NombreGrupoTipoDeDatoTextBox1)
         Me.Controls.Add(TipoLabel)
         Me.Controls.Add(Me.TipoTextBox)
-        Me.Controls.Add(RequerimientoPlantillaIDLabel)
         Me.Controls.Add(Me.RequerimientoPlantillaIDTextBox)
-        Me.Controls.Add(ComponenteIDLabel)
         Me.Controls.Add(Me.ComponenteIDTextBox)
         Me.Controls.Add(Me.Panel6)
-        Me.Controls.Add(PlantillaIDLabel)
         Me.Controls.Add(Me.PlantillaIDTextBox)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.ControlNulos)
@@ -2432,11 +2596,17 @@ Partial Class FrmTecnologias
         Me.TabControl1.ResumeLayout(False)
         Me.TabPage1.ResumeLayout(False)
         Me.TabPage1.PerformLayout()
+        Me.PanelGuardado.ResumeLayout(False)
+        Me.PanelGuardado.PerformLayout()
+        Me.TabPage5.ResumeLayout(False)
+        Me.TabPage5.PerformLayout()
+        CType(Me.SP_TextoEnriquecido_BUSQUEDA_SEGUN_PARAMETRO_ComponenteIDBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DataSetTablasYCampos, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Panel10.ResumeLayout(False)
         Me.TabPage2.ResumeLayout(False)
         Me.TabPage2.PerformLayout()
         CType(Me.SP_CARGA_CONVENSIONES_USADASDataGridView, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.SP_CARGA_CONVENSIONES_USADASBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.DataSetTablasYCampos, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabPage3.ResumeLayout(False)
         Me.TabPage3.PerformLayout()
         CType(Me.SP_CampoComponentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
@@ -2469,6 +2639,9 @@ Partial Class FrmTecnologias
         CType(Me.SP_TablasRelacionadas_EDICION_ACTUALIZARBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.SP_TablasRelacionadas_EDICION_ELIMINARBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.SP_TablasRelacionadas_EDICION_INSERTARBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.SP_TextoEnriquecido_EDICION_ACTUALIZARBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.SP_TextoEnriquecido_EDICION_ELIMINARBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.SP_TextoEnriquecido_EDICION_INSERTARBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -2570,7 +2743,6 @@ Partial Class FrmTecnologias
     Friend WithEvents BtnBuscarYPintar As Button
     Friend WithEvents BtnRemplazar As Button
     Friend WithEvents BtnBajarFuente As Button
-    Friend WithEvents RBPermitirEspacios As RadioButton
     Friend WithEvents BtnSubirRemplazado As Button
     Friend WithEvents BtnLimpiarRemplazar As Button
     Friend WithEvents BtnLimpiar As Button
@@ -2651,7 +2823,6 @@ Partial Class FrmTecnologias
     Friend WithEvents BtnDerecha As Button
     Friend WithEvents BtnCentrar As Button
     Friend WithEvents BtnIzquierda As Button
-    Friend WithEvents BtnConvertir As Button
     Friend WithEvents BtnCamposRelacionados As Button
     Friend WithEvents BtnCTI As Button
     Friend WithEvents BtnCTD As Button
@@ -2676,4 +2847,26 @@ Partial Class FrmTecnologias
     Friend WithEvents SP_TablasRelacionadas_EDICION_ELIMINARTableAdapter As DataSetTablasYCamposTableAdapters.SP_TablasRelacionadas_EDICION_ELIMINARTableAdapter
     Friend WithEvents SP_TablasRelacionadas_EDICION_INSERTARBindingSource As BindingSource
     Friend WithEvents SP_TablasRelacionadas_EDICION_INSERTARTableAdapter As DataSetTablasYCamposTableAdapters.SP_TablasRelacionadas_EDICION_INSERTARTableAdapter
+    Friend WithEvents TabPage5 As TabPage
+    Friend WithEvents Panel10 As Panel
+    Friend WithEvents Nuevo_Menu_TextoEnriquecido As Button
+    Friend WithEvents Cancelar_Menu_TextoEnriquecido As Button
+    Friend WithEvents Eliminar_Menu_TextoEnriquecido As Button
+    Friend WithEvents Editar_Menu_TextoEnriquecido As Button
+    Friend WithEvents Actualizar_Menu_TextoEnriquecido As Button
+    Friend WithEvents Guardar_Menu_TextoEnriquecido As Button
+    Friend WithEvents SP_TextoEnriquecido_BUSQUEDA_SEGUN_PARAMETRO_ComponenteIDBindingSource As BindingSource
+    Friend WithEvents SP_TextoEnriquecido_BUSQUEDA_SEGUN_PARAMETRO_ComponenteIDTableAdapter As DataSetTablasYCamposTableAdapters.SP_TextoEnriquecido_BUSQUEDA_SEGUN_PARAMETRO_ComponenteIDTableAdapter
+    Friend WithEvents TextoEnriquecidoIDTextBox As TextBox
+    Friend WithEvents RichTextboxRichTextBox As RichTextBox
+    Friend WithEvents SP_TextoEnriquecido_EDICION_ACTUALIZARBindingSource As BindingSource
+    Friend WithEvents SP_TextoEnriquecido_EDICION_ACTUALIZARTableAdapter As DataSetTablasYCamposTableAdapters.SP_TextoEnriquecido_EDICION_ACTUALIZARTableAdapter
+    Friend WithEvents SP_TextoEnriquecido_EDICION_ELIMINARBindingSource As BindingSource
+    Friend WithEvents SP_TextoEnriquecido_EDICION_ELIMINARTableAdapter As DataSetTablasYCamposTableAdapters.SP_TextoEnriquecido_EDICION_ELIMINARTableAdapter
+    Friend WithEvents SP_TextoEnriquecido_EDICION_INSERTARBindingSource As BindingSource
+    Friend WithEvents SP_TextoEnriquecido_EDICION_INSERTARTableAdapter As DataSetTablasYCamposTableAdapters.SP_TextoEnriquecido_EDICION_INSERTARTableAdapter
+    Friend WithEvents TimerGuardarComponente As Timer
+    Friend WithEvents PanelGuardado As Panel
+    Friend WithEvents Label5 As Label
+    Friend WithEvents BtnActualizar As Button
 End Class
