@@ -1717,6 +1717,9 @@
     Private Sub BtnCamposRelacionados_Click(sender As Object, e As EventArgs) Handles BtnCamposRelacionados.Click
         Me.ContenidoComponenteRichTextBox.Text = Me.ContenidoComponenteRichTextBox.Text.Insert(Me.ContenidoComponenteRichTextBox.SelectionStart, "{{{Camp-Rel}}}")
     End Sub
+    Private Sub BtnTodasLasTablas_Click(sender As Object, e As EventArgs) Handles BtnTodasLasTablas.Click
+        Me.ContenidoComponenteRichTextBox.Text = Me.ContenidoComponenteRichTextBox.Text.Insert(Me.ContenidoComponenteRichTextBox.SelectionStart, "{{{TodasTab}}}")
+    End Sub
 
     Private Sub SP_CARGA_CONVENSIONES_USADASDataGridView_CellMouseDoubleClick(sender As Object, e As DataGridViewCellMouseEventArgs) Handles SP_CARGA_CONVENSIONES_USADASDataGridView.CellMouseDoubleClick
         If Editar_Menu_RequerimientosPlantillas.Enabled = False Then
@@ -2554,6 +2557,8 @@
             TecnologiasDataGridView.Dock = DockStyle.None
         End If
     End Sub
+
+
 
 
 
