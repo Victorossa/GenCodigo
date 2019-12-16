@@ -910,10 +910,10 @@
         Timer_Ubicacion_Componentes.Stop()
     End Sub
 
-
     Private Sub SP_RequerimientosPlantillas_BUSQUEDA_SEGUN_PARAMETRO_PlantillaID()
         Try
             Me.SP_RequerimientosPlantillas_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDTableAdapter.Fill(Me.DataSetAdministracion.SP_RequerimientosPlantillas_BUSQUEDA_SEGUN_PARAMETRO_PlantillaID, New System.Nullable(Of Integer)(CType(PlantillaIDTextBox.Text, Integer)))
+            EnunciadoRichTextBox.Rtf = EnunciadoRichTextBox.Text
         Catch ex As System.Exception
             'System.Windows.Forms.MessageBox.Show(ex.Message)
         End Try
@@ -948,7 +948,7 @@
         Try
             Me.SP_RequerimientosPlantillas_EDICION_INSERTARTableAdapter.Fill(Me.DataSetAdministracion.SP_RequerimientosPlantillas_EDICION_INSERTAR,
                                                  New System.Nullable(Of Integer)(CType(PlantillaIDTextBox.Text, Integer)),
-                                                 EnunciadoTextBox.Text,
+                                                 EnunciadoRichTextBox.Rtf,
                                                  RequerimientoTextBox.Text,
                                                  New System.Nullable(Of Integer)(CType(OrdenDePeticionTextBox.Text, Integer)))
             SP_RequerimientosPlantillas_BUSQUEDA_SEGUN_PARAMETRO_PlantillaID()
@@ -963,7 +963,7 @@
             Me.SP_RequerimientosPlantillas_EDICION_ACTUALIZARTableAdapter.Fill(Me.DataSetAdministracion.SP_RequerimientosPlantillas_EDICION_ACTUALIZAR,
                                                  New System.Nullable(Of Integer)(CType(RequerimientoPlantillaIDTextBox.Text, Integer)),
                                                  New System.Nullable(Of Integer)(CType(PlantillaIDTextBox.Text, Integer)),
-                                                 EnunciadoTextBox.Text,
+                                                 EnunciadoRichTextBox.Rtf,
                                                  RequerimientoTextBox.Text,
                                                  New System.Nullable(Of Integer)(CType(OrdenDePeticionTextBox.Text, Integer)))
             SP_RequerimientosPlantillas_BUSQUEDA_SEGUN_PARAMETRO_PlantillaID()
@@ -990,8 +990,8 @@
         Editar_Menu_RequerimientosPlantillas.Enabled = False
         SP_RequerimientosPlantillas_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView.Enabled = False
         Limpiar_Objetos_RequerimientosPlantillas()
-        EnunciadoTextBox.Enabled = True
-        EnunciadoTextBox.Focus()
+        EnunciadoRichTextBox.Enabled = True
+        EnunciadoRichTextBox.Focus()
     End Sub
     'Guardar
     Private Sub Guardar_Menu_RequerimientosPlantillas_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Guardar_Menu_RequerimientosPlantillas.Click
@@ -1049,9 +1049,9 @@
                 MsgBox("El nombre del campo: PlantillaID; Esta vacio, Favor Verificar", MsgBoxStyle.Critical)
                 PlantillaIDTextBox.BackColor = Color.Beige
                 ControlNulos.Text = "1"
-            Case EnunciadoTextBox.Text = ""
+            Case EnunciadoRichTextBox.Text = ""
                 MsgBox("El nombre del campo: Enunciado; Esta vacio, Favor Verificar", MsgBoxStyle.Critical)
-                EnunciadoTextBox.BackColor = Color.Beige
+                EnunciadoRichTextBox.BackColor = Color.Beige
                 ControlNulos.Text = "1"
             Case RequerimientoTextBox.Text = ""
                 MsgBox("El nombre del campo: Requerimiento; Esta vacio, Favor Verificar", MsgBoxStyle.Critical)
@@ -1065,12 +1065,12 @@
                 ControlNulos.Text = "" '
         End Select
     End Sub
-    Private Sub EnunciadoTextBox_KeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles EnunciadoTextBox.KeyPress
+    Private Sub EnunciadoRichTextBox_KeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles EnunciadoRichTextBox.KeyPress
         If Asc(e.KeyChar) = 13 Then
-            If EnunciadoTextBox.Text = "" Then
+            If EnunciadoRichTextBox.Text = "" Then
                 MsgBox("Dato Obligatorio, Favor Verificar", MsgBoxStyle.Critical, "Validación de Datos")
-                EnunciadoTextBox.Text = ""
-                EnunciadoTextBox.Focus()
+                EnunciadoRichTextBox.Text = ""
+                EnunciadoRichTextBox.Focus()
             Else
                 RequerimientoTextBox.Enabled = True
                 RequerimientoTextBox.Focus()
@@ -1108,17 +1108,17 @@
         End If
     End Sub
     Public Sub Limpiar_Objetos_RequerimientosPlantillas()
-        EnunciadoTextBox.Text = "" ''
+        EnunciadoRichTextBox.Text = "" ''
         RequerimientoTextBox.Text = "" ''
         OrdenDePeticionTextBox.Text = "" ''
     End Sub
     Public Sub Desbloquear_Objetos_RequerimientosPlantillas()
-        EnunciadoTextBox.Enabled = True
+        EnunciadoRichTextBox.Enabled = True
         RequerimientoTextBox.Enabled = True
         OrdenDePeticionTextBox.Enabled = True
     End Sub
     Public Sub Bloquear_Objetos_RequerimientosPlantillas()
-        EnunciadoTextBox.Enabled = False
+        'EnunciadoRichTextBox.Enabled = False
         RequerimientoTextBox.Enabled = False
         OrdenDePeticionTextBox.Enabled = False
     End Sub
@@ -1318,6 +1318,29 @@
         Cbo_TipoDato.Text = TipoTextBox.Text
     End Sub
 
+    Private Sub RequerimientoPlantillaIDTextBox_TextChanged(sender As Object, e As EventArgs) Handles RequerimientoPlantillaIDTextBox.TextChanged
+        Try
+            Timer1.Start()
+            EnunciadoRichTextBox.Rtf = EnunciadoRichTextBox.Text
+        Catch ex As Exception
+
+        End Try
+    End Sub
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        Try
+            EnunciadoRichTextBox.Rtf = EnunciadoRichTextBox.Text
+        Catch ex As Exception
+
+        End Try
+    End Sub
+    Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
+        Try
+            EnunciadoRichTextBox.Rtf = EnunciadoRichTextBox.Text
+            Timer1.Stop()
+        Catch ex As Exception
+
+        End Try
+    End Sub
 #Region "Procedimientos"
 
     Private Sub SP_CampoComponentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaID()
@@ -2540,12 +2563,12 @@
         SP_CARGA_CONVENSIONES_USADASDataGridView.Visible = True
     End Sub
 
-    Private Sub EnunciadoTextBox_MouseDoubleClick(sender As Object, e As MouseEventArgs) Handles EnunciadoTextBox.MouseDoubleClick
-        If EnunciadoTextBox.Dock = DockStyle.None Then
-            EnunciadoTextBox.Dock = DockStyle.Fill
-            EnunciadoTextBox.BringToFront()
+    Private Sub EnunciadoRichTextBox_MouseDoubleClick(sender As Object, e As MouseEventArgs) Handles EnunciadoRichTextBox.MouseDoubleClick
+        If EnunciadoRichTextBox.Dock = DockStyle.None Then
+            EnunciadoRichTextBox.Dock = DockStyle.Fill
+            EnunciadoRichTextBox.BringToFront()
         Else
-            EnunciadoTextBox.Dock = DockStyle.None
+            EnunciadoRichTextBox.Dock = DockStyle.None
         End If
     End Sub
 
@@ -2557,6 +2580,10 @@
             TecnologiasDataGridView.Dock = DockStyle.None
         End If
     End Sub
+
+
+
+
 
 
 

@@ -8,18 +8,23 @@ GeneradorCod
 <members>
 <member name="T:GeneradorCod.My.Resources.Resources">
 <summary>
-  A strongly-typed resource class, for looking up localized strings, etc.
+  Clase de recurso fuertemente tipado, para buscar cadenas traducidas, etc.
 </summary>
 </member>
 <member name="P:GeneradorCod.My.Resources.Resources.ResourceManager">
 <summary>
-  Returns the cached ResourceManager instance used by this class.
+  Devuelve la instancia de ResourceManager almacenada en caché utilizada por esta clase.
 </summary>
 </member>
 <member name="P:GeneradorCod.My.Resources.Resources.Culture">
 <summary>
-  Overrides the current thread's CurrentUICulture property for all
-  resource lookups using this strongly typed resource class.
+  Reemplaza la propiedad CurrentUICulture del subproceso actual para todas las
+  búsquedas de recursos mediante esta clase de recurso fuertemente tipado.
+</summary>
+</member>
+<member name="P:GeneradorCod.My.Resources.Resources._81_at_blue_canvas_right">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
 </summary>
 </member>
 <member name="T:GeneradorCod.DataSetAdministracion">
@@ -127,12 +132,12 @@ Represents the strongly named DataTable class.
 Represents the strongly named DataTable class.
 </summary>
 </member>
-<member name="T:GeneradorCod.DataSetAdministracion.SP_RequerimientosPlantillas_EDICION_ACTUALIZARDataTable">
+<member name="T:GeneradorCod.DataSetAdministracion.SP_RequerimientosPlantillas_EDICION_ELIMINARDataTable">
 <summary>
 Represents the strongly named DataTable class.
 </summary>
 </member>
-<member name="T:GeneradorCod.DataSetAdministracion.SP_RequerimientosPlantillas_EDICION_ELIMINARDataTable">
+<member name="T:GeneradorCod.DataSetAdministracion.SP_RequerimientosPlantillas_EDICION_ACTUALIZARDataTable">
 <summary>
 Represents the strongly named DataTable class.
 </summary>
@@ -242,12 +247,12 @@ Represents strongly named DataRow class.
 Represents strongly named DataRow class.
 </summary>
 </member>
-<member name="T:GeneradorCod.DataSetAdministracion.SP_RequerimientosPlantillas_EDICION_ACTUALIZARRow">
+<member name="T:GeneradorCod.DataSetAdministracion.SP_RequerimientosPlantillas_EDICION_ELIMINARRow">
 <summary>
 Represents strongly named DataRow class.
 </summary>
 </member>
-<member name="T:GeneradorCod.DataSetAdministracion.SP_RequerimientosPlantillas_EDICION_ELIMINARRow">
+<member name="T:GeneradorCod.DataSetAdministracion.SP_RequerimientosPlantillas_EDICION_ACTUALIZARRow">
 <summary>
 Represents strongly named DataRow class.
 </summary>
@@ -357,12 +362,12 @@ Row event argument class
 Row event argument class
 </summary>
 </member>
-<member name="T:GeneradorCod.DataSetAdministracion.SP_RequerimientosPlantillas_EDICION_ACTUALIZARRowChangeEvent">
+<member name="T:GeneradorCod.DataSetAdministracion.SP_RequerimientosPlantillas_EDICION_ELIMINARRowChangeEvent">
 <summary>
 Row event argument class
 </summary>
 </member>
-<member name="T:GeneradorCod.DataSetAdministracion.SP_RequerimientosPlantillas_EDICION_ELIMINARRowChangeEvent">
+<member name="T:GeneradorCod.DataSetAdministracion.SP_RequerimientosPlantillas_EDICION_ACTUALIZARRowChangeEvent">
 <summary>
 Row event argument class
 </summary>
@@ -472,12 +477,12 @@ Represents the connection and commands used to retrieve and save data.
 Represents the connection and commands used to retrieve and save data.
 </summary>
 </member>
-<member name="T:GeneradorCod.DataSetAdministracionTableAdapters.SP_RequerimientosPlantillas_EDICION_ACTUALIZARTableAdapter">
+<member name="T:GeneradorCod.DataSetAdministracionTableAdapters.SP_RequerimientosPlantillas_EDICION_ELIMINARTableAdapter">
 <summary>
 Represents the connection and commands used to retrieve and save data.
 </summary>
 </member>
-<member name="T:GeneradorCod.DataSetAdministracionTableAdapters.SP_RequerimientosPlantillas_EDICION_ELIMINARTableAdapter">
+<member name="T:GeneradorCod.DataSetAdministracionTableAdapters.SP_RequerimientosPlantillas_EDICION_ACTUALIZARTableAdapter">
 <summary>
 Represents the connection and commands used to retrieve and save data.
 </summary>

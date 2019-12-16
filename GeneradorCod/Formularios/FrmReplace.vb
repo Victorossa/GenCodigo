@@ -80,6 +80,7 @@
     Private Sub SP_RequerimientosPlantillas_BUSQUEDA_SEGUN_PARAMETRO_PlantillaID()
         Try
             Me.SP_RequerimientosPlantillas_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDTableAdapter.Fill(Me.DataSetAdministracion.SP_RequerimientosPlantillas_BUSQUEDA_SEGUN_PARAMETRO_PlantillaID, New System.Nullable(Of Integer)(CType(PlantillaIDTextBox1.Text, Integer)))
+            EnunciadoEnRich.Rtf = EnunciadoTextBox.Text
         Catch ex As System.Exception
             'System.Windows.Forms.MessageBox.Show(ex.Message)
         End Try
@@ -119,7 +120,7 @@
                     End If
                 Else
                     'Guarda el Valor del Requerimiento
-                    SP_RegistroValorRequerimientos_EDICION_INSERTAR()
+                    SP_RegistroValorRequerimientos_EDICION_INSERTAR(ValorRequerimientoTextBox.Text)
                     'Elimina la fila del grid
                     SP_RequerimientosPlantillas_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView.Rows.RemoveAt(0)
                     'Descuenta del Contador
@@ -129,14 +130,158 @@
                 'Inserta el mismo valor que ha trabajado
                 ValorRequerimientoTextBox.Text = ValorRequerimientoTextBox2.Text
                 'Guarda el Valor del Requerimiento
-                SP_RegistroValorRequerimientos_EDICION_INSERTAR()
+                SP_RegistroValorRequerimientos_EDICION_INSERTAR(ValorRequerimientoTextBox.Text)
                 SP_RequerimientosPlantillas_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView.Rows.RemoveAt(0)
                 ''Descuenta del Contador
                 contadorRequerimientos = contadorRequerimientos - 1
             End If
         End While
     End Sub
+    Private Sub BtnPrevisualizar_Click(sender As Object, e As EventArgs) Handles BtnPrevisualizar.Click
+        Try
+            Dim cargaRequerimientos As MsgBoxResult
+            If SP_RegistroValorRequerimientos_SEGUN_ProyectoIDDataGridView.Rows.Count > 0 Then
+                cargaRequerimientos = MsgBox("Este proyecto ya tiene requerimientos, Desea Editarlos?", MsgBoxStyle.YesNoCancel, "Ediciòn de Requerimientos")
+                If cargaRequerimientos = MsgBoxResult.Yes Then
+                    Panel_Requerimiento.Visible = True
+                End If
+                If cargaRequerimientos = MsgBoxResult.No Then
+                    Panel_Requerimiento.Visible = False
+                End If
+                If cargaRequerimientos = MsgBoxResult.Cancel Then
+                    Panel_Requerimiento.Visible = False
+                End If
+            Else
+                Panel_Requerimiento.Visible = True
 
+                Dim contadorRequerimientos = SP_RequerimientosPlantillas_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView.Rows.Count()
+                ValorRequerimiento.Enabled = True
+                ValorRequerimiento.Focus()
+
+
+
+
+                'While contadorRequerimientos > 0
+                '    SP_RequerimientosPlantillas_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView.CurrentCell = SP_RequerimientosPlantillas_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView.Rows(0).Cells(0)
+                '    'Busca que el requerimiento no halla sido registrado para este proyecto
+                '    SP_RegistroValorRequerimientos_SegunProyectoRequerimiento()
+                '    If RegistroValorRequerimientoIDTextBox.Text = "" Then
+                '        MsgBox("Ingresa el valor para ")
+                '    Else
+
+                '    End If
+                '    contadorRequerimientos = contadorRequerimientos - 1
+                'End While
+            End If
+        Catch ex As Exception
+            System.Windows.Forms.MessageBox.Show(ex.Message)
+        End Try
+    End Sub
+    Private Sub BtnLimpiarValoresRequerimientos_Click(sender As Object, e As EventArgs) Handles BtnLimpiarValoresRequerimientos.Click
+        If MsgBox("Desea eliminar el registro de los valores de Requerimiento para este Proyecto?", MsgBoxStyle.YesNo) = MsgBoxResult.Yes Then
+            'Limpia la base de Datos
+            SP_ELIMINA_RegistroValorRequerimientos_SegunID()
+            MsgBox("Se eliminaron todos los valores de requerimientos para este proyecto", MsgBoxStyle.Information)
+            SP_RegistroValorRequerimientos_SEGUN_ProyectoID()
+        Else
+            MsgBox("Se cancelo la instrucciòn", MsgBoxStyle.Information)
+        End If
+    End Sub
+    Private Sub BtnEditarValorDeRequerimiento_Click(sender As Object, e As EventArgs) Handles BtnEditarValorDeRequerimiento.Click
+        SP_RequerimientosPlantillas_BUSQUEDA_SEGUN_PARAMETRO_PlantillaID()
+        ValorRequerimiento.Enabled = True
+        ValorRequerimiento.Focus()
+    End Sub
+    Private Sub BtnConfirmarValorRequerimiento_Click(sender As Object, e As EventArgs) Handles BtnConfirmarValorRequerimiento.Click
+        CargarValoresRequerimientos()
+    End Sub
+
+
+    Private Sub BtnGenerarValoresRequerimientos_Click(sender As Object, e As EventArgs) Handles BtnGenerarValoresRequerimientos.Click
+        generarValoresRequerimientos()
+    End Sub
+
+    Private Sub generarValoresRequerimientos()
+        'Cuenta las tecnologias aplicadas al proyecto
+        Dim contadorTecnologiasAplicadas = SP_CARGA_TECNOLOGIAS_APLICADAS_A_PROYECTODataGridView.Rows.Count()
+        'Registro de cantidad de tecnologias aplicadas
+        Label18.Text = contadorTecnologiasAplicadas
+        If contadorTecnologiasAplicadas > 0 Then
+            'Se ubica en la primera fila del grid
+            SP_CARGA_TECNOLOGIAS_APLICADAS_A_PROYECTODataGridView.CurrentCell = SP_CARGA_TECNOLOGIAS_APLICADAS_A_PROYECTODataGridView.Rows(0).Cells(0)
+            'Metodo para recoger los valores de requerimiento
+            CargarValoresRequerimientos()
+            'Elimina fila trabajada
+            SP_CARGA_TECNOLOGIAS_APLICADAS_A_PROYECTODataGridView.Rows.RemoveAt(0)
+            'Resta del contador
+            contadorTecnologiasAplicadas = contadorTecnologiasAplicadas - 1
+            'Muestra en Pantalla
+            Label18.Text = contadorTecnologiasAplicadas
+        Else
+            SP_CARGA_TECNOLOGIAS_APLICADAS_A_PROYECTO()
+        End If
+    End Sub
+    Private Sub CargarValoresRequerimientos()
+        Label19.Text = SP_RequerimientosPlantillas_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView.Rows.Count
+        If SP_RequerimientosPlantillas_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView.Rows.Count > 0 Then
+            'Busca que el requerimiento no halla sido registrado para este proyecto
+            SP_RegistroValorRequerimientos_SegunProyectoRequerimiento()
+            If RegistroValorRequerimientoIDTextBox.Text = "" Then
+                If ValorRequerimiento.Text = "" Then
+                    '            MsgBox("Debes ingresar un valor", MsgBoxStyle.Critical)
+                    '            ValorRequerimiento.Focus()
+                Else
+                    '            'Guarda el Valor del Requerimiento
+                    '            SP_RegistroValorRequerimientos_EDICION_INSERTAR(ValorRequerimiento.Text)
+                    '            'Elimina la fila del grid
+                    '            SP_RequerimientosPlantillas_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView.Rows.RemoveAt(0)
+                    '            Label18.Text = SP_RequerimientosPlantillas_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView.Rows.Count
+                    '            SP_RegistroValorRequerimientos_SEGUN_ProyectoID()
+                    '            If SP_RequerimientosPlantillas_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView.Rows.Count = 0 Then
+                    '                ValorRequerimiento.Enabled = False
+                    '                MsgBox("Los requerimientos para este proyecto ya fueron Completados", MsgBoxStyle.Information)
+                    '            End If
+                    '            ValorRequerimiento.Text = ""
+                    '            ValorRequerimiento.Focus()
+                End If
+            Else
+                    MsgBox("Este dato ya fue registrado para este proyecto", MsgBoxStyle.Exclamation)
+            End If
+        Else
+                ValorRequerimiento.Enabled = False
+        End If
+    End Sub
+
+    Private Sub ValorRequerimiento_KeyPress(sender As Object, e As KeyPressEventArgs) Handles ValorRequerimiento.KeyPress
+        If Asc(e.KeyChar) = 13 Then
+            If SP_RequerimientosPlantillas_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView.Rows.Count > 0 Then
+                'Busca que el requerimiento no halla sido registrado para este proyecto
+                SP_RegistroValorRequerimientos_SegunProyectoRequerimiento()
+                If RegistroValorRequerimientoIDTextBox.Text = "" Then
+                    If ValorRequerimiento.Text = "" Then
+                        MsgBox("Debes ingresar un valor", MsgBoxStyle.Critical)
+                        ValorRequerimiento.Focus()
+                    Else
+                        'Guarda el Valor del Requerimiento
+                        SP_RegistroValorRequerimientos_EDICION_INSERTAR(ValorRequerimiento.Text)
+                        'Elimina la fila del grid
+                        SP_RequerimientosPlantillas_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView.Rows.RemoveAt(0)
+                        SP_RegistroValorRequerimientos_SEGUN_ProyectoID()
+                        If SP_RequerimientosPlantillas_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView.Rows.Count = 0 Then
+                            ValorRequerimiento.Enabled = False
+                            MsgBox("Los requerimientos para este proyecto ya fueron Completados", MsgBoxStyle.Information)
+                        End If
+                        ValorRequerimiento.Text = ""
+                        ValorRequerimiento.Focus()
+                    End If
+                Else
+                    MsgBox("Este dato ya fue registrado para este proyecto", MsgBoxStyle.Exclamation)
+                End If
+            Else
+                ValorRequerimiento.Enabled = False
+            End If
+        End If
+    End Sub
     Private Sub BtnRemplazar_Click(sender As Object, e As EventArgs) Handles BtnRemplazar.Click
         'Limpia
         CodigoGeneradoRichTextBox.Text = ""
@@ -159,13 +304,9 @@
         SP_CARGA_TECNOLOGIAS_APLICADAS_A_PROYECTO()
     End Sub
 
-    Private Sub BtnPrevisualizar_Click(sender As Object, e As EventArgs) Handles BtnPrevisualizar.Click
-        Try
-            CodigoGeneradoRichTextBox.Rtf = CodigoGeneradoRichTextBox.Text
-        Catch ex As Exception
-            System.Windows.Forms.MessageBox.Show(ex.Message)
-        End Try
-    End Sub
+
+
+
 
     Public Sub RecorrerComponentesHaciendoReplace()
         Dim contadorComponentes = SP_Componentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView.Rows.Count()
@@ -662,12 +803,12 @@
 
 #Region "Registro Valores de Requerimientos de Plantillas"
     'Inserta valores de los requerimientos de las plantillas de la tecnologia asignada al proyecto
-    Private Sub SP_RegistroValorRequerimientos_EDICION_INSERTAR()
+    Private Sub SP_RegistroValorRequerimientos_EDICION_INSERTAR(Valor As String)
         Try
             Me.SP_RegistroValorRequerimientos_EDICION_INSERTARTableAdapter.Fill(Me.DataSetTablasYCampos.SP_RegistroValorRequerimientos_EDICION_INSERTAR,
                                                                                 New System.Nullable(Of Integer)(CType(ProyectoIDTextBox.Text, Integer)),
                                                                                 RequerimientoTextBox.Text,
-                                                                                ValorRequerimientoTextBox.Text)
+                                                                                Valor)
         Catch ex As System.Exception
             System.Windows.Forms.MessageBox.Show(ex.Message)
         End Try
@@ -1601,6 +1742,21 @@
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         RecorreTablasRelacionadas()
     End Sub
+
+    Private Sub EnunciadoTextBox_TextChanged(sender As Object, e As EventArgs) Handles EnunciadoTextBox.TextChanged
+        Try
+            EnunciadoEnRich.Rtf = EnunciadoTextBox.Text
+        Catch ex As Exception
+
+        End Try
+    End Sub
+
+
+
+
+
+
+
 
 
 #End Region

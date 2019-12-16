@@ -24,10 +24,12 @@ Partial Class Inicio
     Private Sub InitializeComponent()
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.AdministraciónToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.TecnologiasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.GeneracionToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator()
         Me.ToolStripSeparator2 = New System.Windows.Forms.ToolStripSeparator()
+        Me.TecnologiasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator()
+        Me.GeneracionToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripSeparator3 = New System.Windows.Forms.ToolStripSeparator()
+        Me.ToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -43,10 +45,15 @@ Partial Class Inicio
         '
         'AdministraciónToolStripMenuItem
         '
-        Me.AdministraciónToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripSeparator2, Me.TecnologiasToolStripMenuItem, Me.ToolStripSeparator1, Me.GeneracionToolStripMenuItem})
+        Me.AdministraciónToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripSeparator2, Me.TecnologiasToolStripMenuItem, Me.ToolStripSeparator1, Me.ToolStripMenuItem1, Me.ToolStripSeparator3, Me.GeneracionToolStripMenuItem})
         Me.AdministraciónToolStripMenuItem.Name = "AdministraciónToolStripMenuItem"
         Me.AdministraciónToolStripMenuItem.Size = New System.Drawing.Size(112, 22)
         Me.AdministraciónToolStripMenuItem.Text = "Administración"
+        '
+        'ToolStripSeparator2
+        '
+        Me.ToolStripSeparator2.Name = "ToolStripSeparator2"
+        Me.ToolStripSeparator2.Size = New System.Drawing.Size(177, 6)
         '
         'TecnologiasToolStripMenuItem
         '
@@ -54,21 +61,26 @@ Partial Class Inicio
         Me.TecnologiasToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.TecnologiasToolStripMenuItem.Text = "Tecnologias"
         '
+        'ToolStripSeparator1
+        '
+        Me.ToolStripSeparator1.Name = "ToolStripSeparator1"
+        Me.ToolStripSeparator1.Size = New System.Drawing.Size(177, 6)
+        '
         'GeneracionToolStripMenuItem
         '
         Me.GeneracionToolStripMenuItem.Name = "GeneracionToolStripMenuItem"
         Me.GeneracionToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.GeneracionToolStripMenuItem.Text = "Generacion"
         '
-        'ToolStripSeparator1
+        'ToolStripSeparator3
         '
-        Me.ToolStripSeparator1.Name = "ToolStripSeparator1"
-        Me.ToolStripSeparator1.Size = New System.Drawing.Size(177, 6)
+        Me.ToolStripSeparator3.Name = "ToolStripSeparator3"
+        Me.ToolStripSeparator3.Size = New System.Drawing.Size(177, 6)
         '
-        'ToolStripSeparator2
+        'ToolStripMenuItem1
         '
-        Me.ToolStripSeparator2.Name = "ToolStripSeparator2"
-        Me.ToolStripSeparator2.Size = New System.Drawing.Size(177, 6)
+        Me.ToolStripMenuItem1.Name = "ToolStripMenuItem1"
+        Me.ToolStripMenuItem1.Size = New System.Drawing.Size(180, 22)
         '
         'Inicio
         '
@@ -95,4 +107,6 @@ Partial Class Inicio
     Friend WithEvents GeneracionToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ToolStripSeparator2 As ToolStripSeparator
     Friend WithEvents ToolStripSeparator1 As ToolStripSeparator
+    Friend WithEvents ToolStripSeparator3 As ToolStripSeparator
+    Friend WithEvents ToolStripMenuItem1 As ToolStripMenuItem
 End Class
