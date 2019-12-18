@@ -1605,8 +1605,8 @@
             SP_RegistroRelacionesTablas_Vista_BUSQUEDA_SEGUN_PARAMETRO_TD_CTD_TI_CTI()
             If RegistroRelacionesTablasIDTextBox.Text = "" Then
                 'TODO: Pendiente definir cuando se tenga la administracion de los tipos de datos
-                If TipoCTD.Text = "numeric" Or TipoCTD.Text = "numeric (Clave)" Then
-                    If TipoCTI.Text = "numeric" Or TipoCTI.Text = "numeric (Clave)" Then
+                If TipoCTD.Text = "numeric" Or TipoCTD.Text = "numeric (Clave)" Or TipoCTD.Text = "numeric (Relacionado)" Then
+                    If TipoCTI.Text = "numeric" Or TipoCTI.Text = "numeric (Clave)" Or TipoCTI.Text = "numeric (Relacionado)" Then
                         SP_RegistroRelacionesTablas_EDICION_INSERTAR()
                         MsgBox("Relacion entre las dos Tablas Creada Exitosamente", MsgBoxStyle.Information)
                         SP_RegistroRelacionesTablas_Vista_BUSQUEDA_SEGUN_PARAMETRO_TD()

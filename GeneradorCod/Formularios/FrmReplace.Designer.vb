@@ -73,7 +73,7 @@ Partial Class FrmReplace
         Dim TablaIndependienteLabel1 As System.Windows.Forms.Label
         Dim CampoIndependienteLabel1 As System.Windows.Forms.Label
         Dim Label17 As System.Windows.Forms.Label
-        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmReplace))
         Me.BtnBuscarYPintar = New System.Windows.Forms.Button()
         Me.SP_RequerimientosPlantillas_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView = New System.Windows.Forms.DataGridView()
@@ -300,6 +300,10 @@ Partial Class FrmReplace
         Me.CampoDependienteTextBox = New System.Windows.Forms.TextBox()
         Me.TablaDependienteTextBox = New System.Windows.Forms.TextBox()
         Me.Panel_Requerimiento = New System.Windows.Forms.Panel()
+        Me.Label19 = New System.Windows.Forms.Label()
+        Me.BtnGenerarValoresRequerimientos = New System.Windows.Forms.Button()
+        Me.Label18 = New System.Windows.Forms.Label()
+        Me.BtnLimpiarValoresRequerimientos = New System.Windows.Forms.Button()
         Me.ValorRequerimiento = New System.Windows.Forms.TextBox()
         Me.TextBox4 = New System.Windows.Forms.TextBox()
         Me.TextBox3 = New System.Windows.Forms.TextBox()
@@ -328,10 +332,6 @@ Partial Class FrmReplace
         Me.ELIMINA_SEGUN_PROYECTOBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.ELIMINA_SEGUN_PROYECTOTableAdapter = New GeneradorCod.DataSetAdministracionTableAdapters.ELIMINA_SEGUN_PROYECTOTableAdapter()
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
-        Me.BtnLimpiarValoresRequerimientos = New System.Windows.Forms.Button()
-        Me.Label18 = New System.Windows.Forms.Label()
-        Me.BtnGenerarValoresRequerimientos = New System.Windows.Forms.Button()
-        Me.Label19 = New System.Windows.Forms.Label()
         ComponenteIDLabel = New System.Windows.Forms.Label()
         PlantillaIDLabel = New System.Windows.Forms.Label()
         TecnologiaIDLabel = New System.Windows.Forms.Label()
@@ -1007,8 +1007,8 @@ Partial Class FrmReplace
         'DataGridViewTextBoxColumn7
         '
         Me.DataGridViewTextBoxColumn7.DataPropertyName = "NombreTecnologia"
-        DataGridViewCellStyle5.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.DataGridViewTextBoxColumn7.DefaultCellStyle = DataGridViewCellStyle5
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.DataGridViewTextBoxColumn7.DefaultCellStyle = DataGridViewCellStyle1
         Me.DataGridViewTextBoxColumn7.HeaderText = "Nombre Tecnologia"
         Me.DataGridViewTextBoxColumn7.Name = "DataGridViewTextBoxColumn7"
         Me.DataGridViewTextBoxColumn7.Width = 178
@@ -1751,7 +1751,7 @@ Partial Class FrmReplace
         'Cbo_TipoDato
         '
         Me.Cbo_TipoDato.FormattingEnabled = True
-        Me.Cbo_TipoDato.Items.AddRange(New Object() {"boolean", "Date", "float", "numeric", "numeric (Clave)", "numeric (Relacionado)", "string"})
+        Me.Cbo_TipoDato.Items.AddRange(New Object() {"boolean", "Date", "float", "numeric", "numeric (Clave)", "numeric (Relacionado)", "string", "ultima_actualizacion"})
         Me.Cbo_TipoDato.Location = New System.Drawing.Point(79, 321)
         Me.Cbo_TipoDato.Name = "Cbo_TipoDato"
         Me.Cbo_TipoDato.Size = New System.Drawing.Size(285, 21)
@@ -2858,6 +2858,44 @@ Partial Class FrmReplace
         Me.Panel_Requerimiento.TabIndex = 189
         Me.Panel_Requerimiento.Visible = False
         '
+        'Label19
+        '
+        Me.Label19.AutoSize = True
+        Me.Label19.Location = New System.Drawing.Point(197, 416)
+        Me.Label19.Name = "Label19"
+        Me.Label19.Size = New System.Drawing.Size(45, 13)
+        Me.Label19.TabIndex = 137
+        Me.Label19.Text = "Label19"
+        '
+        'BtnGenerarValoresRequerimientos
+        '
+        Me.BtnGenerarValoresRequerimientos.Image = CType(resources.GetObject("BtnGenerarValoresRequerimientos.Image"), System.Drawing.Image)
+        Me.BtnGenerarValoresRequerimientos.Location = New System.Drawing.Point(7, 507)
+        Me.BtnGenerarValoresRequerimientos.Name = "BtnGenerarValoresRequerimientos"
+        Me.BtnGenerarValoresRequerimientos.Size = New System.Drawing.Size(40, 38)
+        Me.BtnGenerarValoresRequerimientos.TabIndex = 136
+        Me.ToolTip1.SetToolTip(Me.BtnGenerarValoresRequerimientos, "Editar Valor de Requerimiento")
+        Me.BtnGenerarValoresRequerimientos.UseVisualStyleBackColor = True
+        '
+        'Label18
+        '
+        Me.Label18.AutoSize = True
+        Me.Label18.Location = New System.Drawing.Point(195, 394)
+        Me.Label18.Name = "Label18"
+        Me.Label18.Size = New System.Drawing.Size(45, 13)
+        Me.Label18.TabIndex = 135
+        Me.Label18.Text = "Label18"
+        '
+        'BtnLimpiarValoresRequerimientos
+        '
+        Me.BtnLimpiarValoresRequerimientos.Image = CType(resources.GetObject("BtnLimpiarValoresRequerimientos.Image"), System.Drawing.Image)
+        Me.BtnLimpiarValoresRequerimientos.Location = New System.Drawing.Point(61, 381)
+        Me.BtnLimpiarValoresRequerimientos.Name = "BtnLimpiarValoresRequerimientos"
+        Me.BtnLimpiarValoresRequerimientos.Size = New System.Drawing.Size(40, 38)
+        Me.BtnLimpiarValoresRequerimientos.TabIndex = 134
+        Me.ToolTip1.SetToolTip(Me.BtnLimpiarValoresRequerimientos, "Editar Valor de Requerimiento")
+        Me.BtnLimpiarValoresRequerimientos.UseVisualStyleBackColor = True
+        '
         'ValorRequerimiento
         '
         Me.ValorRequerimiento.Enabled = False
@@ -3035,44 +3073,6 @@ Partial Class FrmReplace
         'ELIMINA_SEGUN_PROYECTOTableAdapter
         '
         Me.ELIMINA_SEGUN_PROYECTOTableAdapter.ClearBeforeFill = True
-        '
-        'BtnLimpiarValoresRequerimientos
-        '
-        Me.BtnLimpiarValoresRequerimientos.Image = CType(resources.GetObject("BtnLimpiarValoresRequerimientos.Image"), System.Drawing.Image)
-        Me.BtnLimpiarValoresRequerimientos.Location = New System.Drawing.Point(61, 381)
-        Me.BtnLimpiarValoresRequerimientos.Name = "BtnLimpiarValoresRequerimientos"
-        Me.BtnLimpiarValoresRequerimientos.Size = New System.Drawing.Size(40, 38)
-        Me.BtnLimpiarValoresRequerimientos.TabIndex = 134
-        Me.ToolTip1.SetToolTip(Me.BtnLimpiarValoresRequerimientos, "Editar Valor de Requerimiento")
-        Me.BtnLimpiarValoresRequerimientos.UseVisualStyleBackColor = True
-        '
-        'Label18
-        '
-        Me.Label18.AutoSize = True
-        Me.Label18.Location = New System.Drawing.Point(195, 394)
-        Me.Label18.Name = "Label18"
-        Me.Label18.Size = New System.Drawing.Size(45, 13)
-        Me.Label18.TabIndex = 135
-        Me.Label18.Text = "Label18"
-        '
-        'BtnGenerarValoresRequerimientos
-        '
-        Me.BtnGenerarValoresRequerimientos.Image = CType(resources.GetObject("BtnGenerarValoresRequerimientos.Image"), System.Drawing.Image)
-        Me.BtnGenerarValoresRequerimientos.Location = New System.Drawing.Point(7, 507)
-        Me.BtnGenerarValoresRequerimientos.Name = "BtnGenerarValoresRequerimientos"
-        Me.BtnGenerarValoresRequerimientos.Size = New System.Drawing.Size(40, 38)
-        Me.BtnGenerarValoresRequerimientos.TabIndex = 136
-        Me.ToolTip1.SetToolTip(Me.BtnGenerarValoresRequerimientos, "Editar Valor de Requerimiento")
-        Me.BtnGenerarValoresRequerimientos.UseVisualStyleBackColor = True
-        '
-        'Label19
-        '
-        Me.Label19.AutoSize = True
-        Me.Label19.Location = New System.Drawing.Point(197, 416)
-        Me.Label19.Name = "Label19"
-        Me.Label19.Size = New System.Drawing.Size(45, 13)
-        Me.Label19.TabIndex = 137
-        Me.Label19.Text = "Label19"
         '
         'FrmReplace
         '

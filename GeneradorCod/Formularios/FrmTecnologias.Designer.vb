@@ -46,11 +46,11 @@ Partial Class FrmTecnologias
         Dim RelacionTablasIDLabel As System.Windows.Forms.Label
         Dim TextoEnriquecidoIDLabel As System.Windows.Forms.Label
         Dim RequerimientoLabel1 As System.Windows.Forms.Label
-        Dim DataGridViewCellStyle9 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmTecnologias))
-        Dim DataGridViewCellStyle10 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle11 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle12 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.TecnologiasDataGridView = New System.Windows.Forms.DataGridView()
         Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.TecnologiasBindingSource = New System.Windows.Forms.BindingSource(Me.components)
@@ -600,8 +600,8 @@ Partial Class FrmTecnologias
         'DataGridViewTextBoxColumn2
         '
         Me.DataGridViewTextBoxColumn2.DataPropertyName = "NombreTecnologia"
-        DataGridViewCellStyle9.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.DataGridViewTextBoxColumn2.DefaultCellStyle = DataGridViewCellStyle9
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.DataGridViewTextBoxColumn2.DefaultCellStyle = DataGridViewCellStyle1
         Me.DataGridViewTextBoxColumn2.HeaderText = "Nombre Tecnologia"
         Me.DataGridViewTextBoxColumn2.Name = "DataGridViewTextBoxColumn2"
         Me.DataGridViewTextBoxColumn2.ReadOnly = True
@@ -787,8 +787,8 @@ Partial Class FrmTecnologias
         'Orden
         '
         Me.Orden.DataPropertyName = "Orden"
-        DataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter
-        Me.Orden.DefaultCellStyle = DataGridViewCellStyle10
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter
+        Me.Orden.DefaultCellStyle = DataGridViewCellStyle2
         Me.Orden.HeaderText = "#"
         Me.Orden.Name = "Orden"
         Me.Orden.Width = 30
@@ -1767,14 +1767,14 @@ Partial Class FrmTecnologias
         '
         Me.SP_CARGA_CONVENSIONES_USADAS_POR_PLANTILLADataGridView.AllowUserToAddRows = False
         Me.SP_CARGA_CONVENSIONES_USADAS_POR_PLANTILLADataGridView.AutoGenerateColumns = False
-        DataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter
-        DataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle11.Font = New System.Drawing.Font("Candara", 11.25!, System.Drawing.FontStyle.Italic)
-        DataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.SP_CARGA_CONVENSIONES_USADAS_POR_PLANTILLADataGridView.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle11
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter
+        DataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle3.Font = New System.Drawing.Font("Candara", 11.25!, System.Drawing.FontStyle.Italic)
+        DataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.SP_CARGA_CONVENSIONES_USADAS_POR_PLANTILLADataGridView.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle3
         Me.SP_CARGA_CONVENSIONES_USADAS_POR_PLANTILLADataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.SP_CARGA_CONVENSIONES_USADAS_POR_PLANTILLADataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn13})
         Me.SP_CARGA_CONVENSIONES_USADAS_POR_PLANTILLADataGridView.DataSource = Me.SP_CARGA_CONVENSIONES_USADAS_POR_PLANTILLABindingSource
@@ -1801,14 +1801,14 @@ Partial Class FrmTecnologias
         '
         Me.SP_CARGA_CONVENSIONES_USADASDataGridView.AllowUserToAddRows = False
         Me.SP_CARGA_CONVENSIONES_USADASDataGridView.AutoGenerateColumns = False
-        DataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter
-        DataGridViewCellStyle12.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle12.Font = New System.Drawing.Font("Candara", 11.25!, System.Drawing.FontStyle.Italic)
-        DataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.SP_CARGA_CONVENSIONES_USADASDataGridView.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle12
+        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter
+        DataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle4.Font = New System.Drawing.Font("Candara", 11.25!, System.Drawing.FontStyle.Italic)
+        DataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.SP_CARGA_CONVENSIONES_USADASDataGridView.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle4
         Me.SP_CARGA_CONVENSIONES_USADASDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.SP_CARGA_CONVENSIONES_USADASDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn1})
         Me.SP_CARGA_CONVENSIONES_USADASDataGridView.DataSource = Me.SP_CARGA_CONVENSIONES_USADASBindingSource
@@ -2068,7 +2068,7 @@ Partial Class FrmTecnologias
         'Cbo_TipoDato
         '
         Me.Cbo_TipoDato.FormattingEnabled = True
-        Me.Cbo_TipoDato.Items.AddRange(New Object() {"boolean", "Date", "float", "numeric", "numeric (Clave)", "numeric (Relacionado)", "string"})
+        Me.Cbo_TipoDato.Items.AddRange(New Object() {"boolean", "Date", "float", "numeric", "numeric (Clave)", "numeric (Relacionado)", "string", "ultima_actualizacion"})
         Me.Cbo_TipoDato.Location = New System.Drawing.Point(116, 64)
         Me.Cbo_TipoDato.Name = "Cbo_TipoDato"
         Me.Cbo_TipoDato.Size = New System.Drawing.Size(211, 26)
