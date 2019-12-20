@@ -4,9 +4,9 @@
     Dim Requisitos() As String
     Private Sub FrmReplace_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'TODO: esta línea de código carga datos en la tabla 'DataSetAdministracion.Proyectos' Puede moverla o quitarla según sea necesario.
-        Me.ProyectosTableAdapter.Fill(Me.DataSetAdministracion.Proyectos)
+        'Me.ProyectosTableAdapter.Fill(Me.DataSetAdministracion.Proyectos)
         'TODO: esta línea de código carga datos en la tabla 'DataSetAdministracion.Proyectos' Puede moverla o quitarla según sea necesario.
-        Me.ProyectosTableAdapter.Fill(Me.DataSetAdministracion.Proyectos)
+        'Me.ProyectosTableAdapter.Fill(Me.DataSetAdministracion.Proyectos)
         Try
             Me.ProyectosTableAdapter.Fill(Me.DataSetAdministracion.Proyectos)
             Cancelar_Proyectos()
@@ -1476,6 +1476,9 @@
         If Not InStr(Contenido, "{{{Campos}}}") Then
             Dim Campos = GenerarCampos()
             ContenidoGenerado = ContenidoGenerado.Replace("{{{Campos}}}", Campos)
+            If InStr(Contenido, "{{{Tabla}}}") Then
+                ContenidoGenerado = CargarTabla(Contenido, Tabla)
+            End If
         End If
         If InStr(Contenido, "{{{Camp-Rel}}}") Then
             Dim CamposRel = RecorreTablasRelacionadas()
