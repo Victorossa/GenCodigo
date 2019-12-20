@@ -1476,8 +1476,8 @@
         If Not InStr(Contenido, "{{{Campos}}}") Then
             Dim Campos = GenerarCampos()
             ContenidoGenerado = ContenidoGenerado.Replace("{{{Campos}}}", Campos)
-            If InStr(Contenido, "{{{Tabla}}}") Then
-                ContenidoGenerado = CargarTabla(Contenido, Tabla)
+            If InStr(ContenidoGenerado, "{{{Tabla}}}") Then
+                ContenidoGenerado = ContenidoGenerado.Replace("{{{Tabla}}}", Tabla)
             End If
         End If
         If InStr(Contenido, "{{{Camp-Rel}}}") Then

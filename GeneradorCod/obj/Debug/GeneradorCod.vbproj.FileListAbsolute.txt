@@ -65,7 +65,6 @@ C:\Users\programador1\source\repos\Nueva carpeta\GenCodigo\GeneradorCod\bin\Debu
 C:\Users\programador1\source\repos\Nueva carpeta\GenCodigo\GeneradorCod\bin\Debug\EntityFramework.SqlServer.dll
 C:\Users\programador1\source\repos\Nueva carpeta\GenCodigo\GeneradorCod\bin\Debug\EntityFramework.xml
 C:\Users\programador1\source\repos\Nueva carpeta\GenCodigo\GeneradorCod\bin\Debug\EntityFramework.SqlServer.xml
-C:\Users\programador1\source\repos\Nueva carpeta\GenCodigo\GeneradorCod\obj\Debug\GeneradorCod.vbprojAssemblyReference.cache
 C:\Users\programador1\source\repos\Nueva carpeta\GenCodigo\GeneradorCod\obj\Debug\GeneradorCod.FrmInicio.resources
 C:\Users\programador1\source\repos\Nueva carpeta\GenCodigo\GeneradorCod\obj\Debug\GeneradorCod.FrmReplace.resources
 C:\Users\programador1\source\repos\Nueva carpeta\GenCodigo\GeneradorCod\obj\Debug\GeneradorCod.FrmTecnologias.resources
