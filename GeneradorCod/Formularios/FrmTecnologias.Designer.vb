@@ -506,9 +506,9 @@ Partial Class FrmTecnologias
         MultiReplaceLabel.Font = New System.Drawing.Font("Candara", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         MultiReplaceLabel.Location = New System.Drawing.Point(333, 234)
         MultiReplaceLabel.Name = "MultiReplaceLabel"
-        MultiReplaceLabel.Size = New System.Drawing.Size(100, 18)
+        MultiReplaceLabel.Size = New System.Drawing.Size(271, 18)
         MultiReplaceLabel.TabIndex = 162
-        MultiReplaceLabel.Text = "Multi Replace:"
+        MultiReplaceLabel.Text = "Multi Replace(Palabra Replace ""Campo""):"
         '
         'CONVENSIONESLabel
         '

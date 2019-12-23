@@ -10778,7 +10778,7 @@ Namespace DataSetAdministracionTableAdapters
             Me._adapter.InsertCommand.CommandText = "INSERT INTO [Proyectos] ([NombreProyecto], [CodigoGenerado], [Descripcion]) VALUE"& _ 
                 "S (@NombreProyecto, @CodigoGenerado, @Descripcion);"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT ProyectoID, NombrePr"& _ 
                 "oyecto, CodigoGenerado, Descripcion FROM Proyectos WHERE (ProyectoID = SCOPE_IDE"& _ 
-                "NTITY())"
+                "NTITY()) ORDER BY NombreProyecto"
             Me._adapter.InsertCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@NombreProyecto", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "NombreProyecto", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@CodigoGenerado", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "CodigoGenerado", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
@@ -10789,7 +10789,7 @@ Namespace DataSetAdministracionTableAdapters
                 "digoGenerado, [Descripcion] = @Descripcion WHERE (([ProyectoID] = @Original_Proy"& _ 
                 "ectoID) AND ([NombreProyecto] = @Original_NombreProyecto));"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT ProyectoID, "& _ 
                 "NombreProyecto, CodigoGenerado, Descripcion FROM Proyectos WHERE (ProyectoID = @"& _ 
-                "ProyectoID)"
+                "ProyectoID) ORDER BY NombreProyecto"
             Me._adapter.UpdateCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@NombreProyecto", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "NombreProyecto", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@CodigoGenerado", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "CodigoGenerado", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
@@ -10812,7 +10812,7 @@ Namespace DataSetAdministracionTableAdapters
             Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(0) {}
             Me._commandCollection(0) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(0).Connection = Me.Connection
-            Me._commandCollection(0).CommandText = "SELECT        Proyectos.*"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            Proyectos"
+            Me._commandCollection(0).CommandText = "SELECT        Proyectos.*"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            Proyectos"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"ORDER BY NombreProyecto"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
         End Sub
         
