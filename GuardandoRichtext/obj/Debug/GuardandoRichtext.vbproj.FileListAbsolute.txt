@@ -2,7 +2,6 @@ C:\www\GenCodigo\GenCodigoConBD\GenCodigo\GuardandoRichtext\bin\Debug\GuardandoR
 C:\www\GenCodigo\GenCodigoConBD\GenCodigo\GuardandoRichtext\bin\Debug\GuardandoRichtext.exe
 C:\www\GenCodigo\GenCodigoConBD\GenCodigo\GuardandoRichtext\bin\Debug\GuardandoRichtext.pdb
 C:\www\GenCodigo\GenCodigoConBD\GenCodigo\GuardandoRichtext\bin\Debug\GuardandoRichtext.xml
-C:\www\GenCodigo\GenCodigoConBD\GenCodigo\GuardandoRichtext\obj\Debug\GuardandoRichtext.vbprojAssemblyReference.cache
 C:\www\GenCodigo\GenCodigoConBD\GenCodigo\GuardandoRichtext\obj\Debug\GuardandoRichtext.Form1.resources
 C:\www\GenCodigo\GenCodigoConBD\GenCodigo\GuardandoRichtext\obj\Debug\GuardandoRichtext.Resources.resources
 C:\www\GenCodigo\GenCodigoConBD\GenCodigo\GuardandoRichtext\obj\Debug\GuardandoRichtext.vbproj.GenerateResource.cache

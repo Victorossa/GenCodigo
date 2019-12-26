@@ -2431,6 +2431,7 @@ Partial Class FrmTecnologias
         Me.TableAdapterManager.SP_Proyectos_EDICION_ACTUALIZARTableAdapter = Nothing
         Me.TableAdapterManager.SP_Proyectos_EDICION_ELIMINARTableAdapter = Nothing
         Me.TableAdapterManager.SP_Proyectos_EDICION_INSERTARTableAdapter = Nothing
+        Me.TableAdapterManager.SP_ProyectosYTecnologias_EDICION_ELIMINARTableAdapter = Nothing
         Me.TableAdapterManager.SP_ProyectosYTecnologias_EDICION_INSERTARTableAdapter = Nothing
         Me.TableAdapterManager.SP_RequerimientosPlantillas_EDICION_ACTUALIZARTableAdapter = Nothing
         Me.TableAdapterManager.SP_RequerimientosPlantillas_EDICION_ELIMINARTableAdapter = Nothing
@@ -2725,6 +2726,7 @@ Partial Class FrmTecnologias
         Me.Controls.Add(TecnologiaIDLabel)
         Me.Controls.Add(Me.TecnologiaIDTextBox)
         Me.Font = New System.Drawing.Font("Candara", 11.25!, System.Drawing.FontStyle.Italic)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "FrmTecnologias"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen

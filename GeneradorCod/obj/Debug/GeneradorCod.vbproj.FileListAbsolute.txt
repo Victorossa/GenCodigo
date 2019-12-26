@@ -36,27 +36,6 @@ C:\www\GenCodigo\GenCodigo\GeneradorCod\obj\Debug\GeneradorCod.exe
 C:\www\GenCodigo\GenCodigo\GeneradorCod\obj\Debug\GeneradorCod.xml
 C:\www\GenCodigo\GenCodigo\GeneradorCod\obj\Debug\GeneradorCod.pdb
 C:\www\GenCodigo\GenCodigo\GeneradorCod\obj\Debug\GeneradorCod.vbprojAssemblyReference.cache
-C:\www\GenCodigo\GenCodigoConBD\GenCodigo\GeneradorCod\bin\Debug\GeneradorCod.exe.config
-C:\www\GenCodigo\GenCodigoConBD\GenCodigo\GeneradorCod\bin\Debug\GeneradorCod.exe
-C:\www\GenCodigo\GenCodigoConBD\GenCodigo\GeneradorCod\bin\Debug\GeneradorCod.pdb
-C:\www\GenCodigo\GenCodigoConBD\GenCodigo\GeneradorCod\bin\Debug\GeneradorCod.xml
-C:\www\GenCodigo\GenCodigoConBD\GenCodigo\GeneradorCod\bin\Debug\EntityFramework.dll
-C:\www\GenCodigo\GenCodigoConBD\GenCodigo\GeneradorCod\bin\Debug\EntityFramework.SqlServer.dll
-C:\www\GenCodigo\GenCodigoConBD\GenCodigo\GeneradorCod\bin\Debug\EntityFramework.xml
-C:\www\GenCodigo\GenCodigoConBD\GenCodigo\GeneradorCod\bin\Debug\EntityFramework.SqlServer.xml
-C:\www\GenCodigo\GenCodigoConBD\GenCodigo\GeneradorCod\obj\Debug\GeneradorCod.FrmReplace.resources
-C:\www\GenCodigo\GenCodigoConBD\GenCodigo\GeneradorCod\obj\Debug\GeneradorCod.FrmTecnologias.resources
-C:\www\GenCodigo\GenCodigoConBD\GenCodigo\GeneradorCod\obj\Debug\GeneradorCod.FrmUtilidades.resources
-C:\www\GenCodigo\GenCodigoConBD\GenCodigo\GeneradorCod\obj\Debug\GeneradorCod.Inicio.resources
-C:\www\GenCodigo\GenCodigoConBD\GenCodigo\GeneradorCod\obj\Debug\GeneradorCod.Resources.resources
-C:\www\GenCodigo\GenCodigoConBD\GenCodigo\GeneradorCod\obj\Debug\GeneradorCod.vbproj.GenerateResource.cache
-C:\www\GenCodigo\GenCodigoConBD\GenCodigo\GeneradorCod\obj\Debug\GeneradorCod.vbproj.CoreCompileInputs.cache
-C:\www\GenCodigo\GenCodigoConBD\GenCodigo\GeneradorCod\obj\Debug\GeneradorCod.vbproj.CopyComplete
-C:\www\GenCodigo\GenCodigoConBD\GenCodigo\GeneradorCod\obj\Debug\GeneradorCod.exe
-C:\www\GenCodigo\GenCodigoConBD\GenCodigo\GeneradorCod\obj\Debug\GeneradorCod.xml
-C:\www\GenCodigo\GenCodigoConBD\GenCodigo\GeneradorCod\obj\Debug\GeneradorCod.pdb
-C:\www\GenCodigo\GenCodigoConBD\GenCodigo\GeneradorCod\obj\Debug\GeneradorCod.vbprojAssemblyReference.cache
-C:\www\GenCodigo\GenCodigoConBD\GenCodigo\GeneradorCod\obj\Debug\GeneradorCod.FrmInicio.resources
 C:\Users\programador1\source\repos\Nueva carpeta\GenCodigo\GeneradorCod\bin\Debug\GeneradorCod.exe.config
 C:\Users\programador1\source\repos\Nueva carpeta\GenCodigo\GeneradorCod\bin\Debug\GeneradorCod.exe
 C:\Users\programador1\source\repos\Nueva carpeta\GenCodigo\GeneradorCod\bin\Debug\GeneradorCod.pdb
@@ -76,3 +55,24 @@ C:\Users\programador1\source\repos\Nueva carpeta\GenCodigo\GeneradorCod\obj\Debu
 C:\Users\programador1\source\repos\Nueva carpeta\GenCodigo\GeneradorCod\obj\Debug\GeneradorCod.exe
 C:\Users\programador1\source\repos\Nueva carpeta\GenCodigo\GeneradorCod\obj\Debug\GeneradorCod.xml
 C:\Users\programador1\source\repos\Nueva carpeta\GenCodigo\GeneradorCod\obj\Debug\GeneradorCod.pdb
+C:\www\GenCodigo\GenCodigoConBD\GenCodigo\GeneradorCod\bin\Debug\GeneradorCod.exe.config
+C:\www\GenCodigo\GenCodigoConBD\GenCodigo\GeneradorCod\bin\Debug\GeneradorCod.exe
+C:\www\GenCodigo\GenCodigoConBD\GenCodigo\GeneradorCod\bin\Debug\GeneradorCod.pdb
+C:\www\GenCodigo\GenCodigoConBD\GenCodigo\GeneradorCod\bin\Debug\GeneradorCod.xml
+C:\www\GenCodigo\GenCodigoConBD\GenCodigo\GeneradorCod\bin\Debug\EntityFramework.dll
+C:\www\GenCodigo\GenCodigoConBD\GenCodigo\GeneradorCod\bin\Debug\EntityFramework.SqlServer.dll
+C:\www\GenCodigo\GenCodigoConBD\GenCodigo\GeneradorCod\bin\Debug\EntityFramework.xml
+C:\www\GenCodigo\GenCodigoConBD\GenCodigo\GeneradorCod\bin\Debug\EntityFramework.SqlServer.xml
+C:\www\GenCodigo\GenCodigoConBD\GenCodigo\GeneradorCod\obj\Debug\GeneradorCod.vbprojAssemblyReference.cache
+C:\www\GenCodigo\GenCodigoConBD\GenCodigo\GeneradorCod\obj\Debug\GeneradorCod.FrmInicio.resources
+C:\www\GenCodigo\GenCodigoConBD\GenCodigo\GeneradorCod\obj\Debug\GeneradorCod.FrmReplace.resources
+C:\www\GenCodigo\GenCodigoConBD\GenCodigo\GeneradorCod\obj\Debug\GeneradorCod.FrmTecnologias.resources
+C:\www\GenCodigo\GenCodigoConBD\GenCodigo\GeneradorCod\obj\Debug\GeneradorCod.FrmUtilidades.resources
+C:\www\GenCodigo\GenCodigoConBD\GenCodigo\GeneradorCod\obj\Debug\GeneradorCod.Inicio.resources
+C:\www\GenCodigo\GenCodigoConBD\GenCodigo\GeneradorCod\obj\Debug\GeneradorCod.Resources.resources
+C:\www\GenCodigo\GenCodigoConBD\GenCodigo\GeneradorCod\obj\Debug\GeneradorCod.vbproj.GenerateResource.cache
+C:\www\GenCodigo\GenCodigoConBD\GenCodigo\GeneradorCod\obj\Debug\GeneradorCod.vbproj.CoreCompileInputs.cache
+C:\www\GenCodigo\GenCodigoConBD\GenCodigo\GeneradorCod\obj\Debug\GeneradorCod.vbproj.CopyComplete
+C:\www\GenCodigo\GenCodigoConBD\GenCodigo\GeneradorCod\obj\Debug\GeneradorCod.exe
+C:\www\GenCodigo\GenCodigoConBD\GenCodigo\GeneradorCod\obj\Debug\GeneradorCod.xml
+C:\www\GenCodigo\GenCodigoConBD\GenCodigo\GeneradorCod\obj\Debug\GeneradorCod.pdb

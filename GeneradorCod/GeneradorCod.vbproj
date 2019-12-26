@@ -65,6 +65,9 @@
   <PropertyGroup>
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>cache_32x32-32.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.3.0\lib\net45\EntityFramework.dll</HintPath>
@@ -246,6 +249,7 @@
     <Folder Include="BaseDeDatos\" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="cache_32x32-32.ico" />
     <Content Include="Recursos\FondoPLE0.jpg" />
     <Content Include="Recursos\FondoPLE1.jpg" />
     <Content Include="Recursos\FondoPLE2.jpg" />
