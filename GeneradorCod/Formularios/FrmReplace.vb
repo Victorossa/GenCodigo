@@ -146,6 +146,7 @@
             SP_ELIMINA_RegistroValorRequerimientos_SegunID()
             MsgBox("Se eliminaron todos los valores de requerimientos para este proyecto", MsgBoxStyle.Information)
             SP_RegistroValorRequerimientos_SEGUN_ProyectoID()
+            SP_CARGA_TECNOLOGIAS_APLICADAS_A_PROYECTO()
         Else
             MsgBox("Se cancelo la instrucciòn", MsgBoxStyle.Information)
         End If
@@ -154,11 +155,48 @@
         Timer_CargueValorRequerimientos.Stop()
         BtnConfirmarValorRequerimiento.Enabled = False
         ValorRequerimiento.Enabled = False
+        SP_RegistroValorRequerimientos_SEGUN_ProyectoID()
+        BtnEditarValorDeRequerimiento.Enabled = False
+        BtnConservarYSeguir.Enabled = False
+        SP_CARGA_TECNOLOGIAS_APLICADAS_A_PROYECTO()
     End Sub
     Private Sub BtnEditarValorDeRequerimiento_Click(sender As Object, e As EventArgs) Handles BtnEditarValorDeRequerimiento.Click
-        SP_RequerimientosPlantillas_BUSQUEDA_SEGUN_PARAMETRO_PlantillaID()
-        ValorRequerimiento.Enabled = True
-        ValorRequerimiento.Focus()
+        If ValorRequerimiento.Enabled = False Then
+            ValorRequerimiento.Enabled = True
+            ValorRequerimiento.Focus()
+        Else
+            SP_RegistroValorRequerimientos_EDICION_ACTUALIZAR()
+            ValorRequerimiento.Enabled = False
+            SP_RegistroValorRequerimientos_SEGUN_ProyectoIDDataGridView.Rows.RemoveAt(0)
+            Timer_EdicionValorRequerimiento.Start()
+        End If
+    End Sub
+    Private Sub SP_RegistroValorRequerimientos_EDICION_ACTUALIZAR()
+        Try
+            Me.SP_RegistroValorRequerimientos_EDICION_ACTUALIZARTableAdapter.Fill(Me.DataSetTablasYCampos.SP_RegistroValorRequerimientos_EDICION_ACTUALIZAR,
+                                                                                  New System.Nullable(Of Long)(CType(RegistroValorRequerimientoIDTextBox1.Text, Long)),
+                                                                                  New System.Nullable(Of Integer)(CType(ProyectoIDTextBox1.Text, Integer)),
+                                                                                  RequerimientoTextBox2.Text,
+                                                                                  ValorRequerimiento.Text)
+        Catch ex As System.Exception
+            System.Windows.Forms.MessageBox.Show(ex.Message)
+        End Try
+    End Sub
+    Private Sub BtnConservarYSeguir_Click(sender As Object, e As EventArgs) Handles BtnConservarYSeguir.Click
+        If SP_RegistroValorRequerimientos_SEGUN_ProyectoIDDataGridView.Rows.Count > 0 Then
+            SP_RegistroValorRequerimientos_SEGUN_ProyectoIDDataGridView.Rows.RemoveAt(0)
+            ValorRequerimiento.Text = ValorRequerimientoTextBox3.Text
+            ValorRequerimiento.Enabled = False
+            Timer_EdicionValorRequerimiento.Start()
+        Else
+            Timer_EdicionValorRequerimiento.Stop()
+            SP_RegistroValorRequerimientos_SEGUN_ProyectoID()
+            BtnEditarValorDeRequerimiento.Enabled = False
+            BtnConservarYSeguir.Enabled = False
+        End If
+    End Sub
+    Private Sub Timer_EdicionValorRequerimiento_Tick(sender As Object, e As EventArgs) Handles Timer_EdicionValorRequerimiento.Tick
+        Timer_EdicionValorRequerimiento.Stop()
     End Sub
     Private Sub BtnConfirmarValorRequerimiento_Click(sender As Object, e As EventArgs) Handles BtnConfirmarValorRequerimiento.Click
         RegistrarRequerimiento()
@@ -188,10 +226,31 @@
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
         Try
-            Panel_Requerimiento.Visible = True
-            Label18.Text = 0
-            BtnConfirmarValorRequerimiento.Enabled = True
-            Timer_CargueValorRequerimientos.Start()
+            Dim cargaRequerimientos As MsgBoxResult
+            If SP_RegistroValorRequerimientos_SEGUN_ProyectoIDDataGridView.Rows.Count > 0 Then
+                cargaRequerimientos = MsgBox("Este proyecto ya tiene requerimientos, Desea Editarlos?", MsgBoxStyle.YesNoCancel, "Ediciòn de Requerimientos")
+                If cargaRequerimientos = MsgBoxResult.Yes Then
+                    BtnEditarValorDeRequerimiento.Enabled = True
+                    BtnConservarYSeguir.Enabled = True
+                    ValorRequerimiento.Enabled = False
+                    ValorRequerimiento.Text = ValorRequerimientoTextBox3.Text
+                    Timer_EdicionValorRequerimiento.Start()
+                End If
+                If cargaRequerimientos = MsgBoxResult.No Then
+                    Timer_CargueValorRequerimientos.Stop()
+                    BtnConfirmarValorRequerimiento.Enabled = False
+                    ValorRequerimiento.Enabled = False
+                End If
+                If cargaRequerimientos = MsgBoxResult.Cancel Then
+                    Timer_CargueValorRequerimientos.Stop()
+                    BtnConfirmarValorRequerimiento.Enabled = False
+                    ValorRequerimiento.Enabled = False
+                End If
+            Else
+                Label18.Text = 0
+                BtnConfirmarValorRequerimiento.Enabled = True
+                Timer_CargueValorRequerimientos.Start()
+            End If
         Catch ex As Exception
             System.Windows.Forms.MessageBox.Show(ex.Message)
         End Try
@@ -285,35 +344,19 @@
 
     Private Sub ValorRequerimiento_KeyPress(sender As Object, e As KeyPressEventArgs) Handles ValorRequerimiento.KeyPress
         If Asc(e.KeyChar) = 13 Then
-
-            RegistrarRequerimiento()
-
-            'If SP_RequerimientosPlantillas_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView.Rows.Count > 0 Then
-            '    'Busca que el requerimiento no halla sido registrado para este proyecto
-            '    SP_RegistroValorRequerimientos_SegunProyectoRequerimiento()
-            '    If RegistroValorRequerimientoIDTextBox.Text = "" Then
-            '        If ValorRequerimiento.Text = "" Then
-            '            MsgBox("Debes ingresar un valor", MsgBoxStyle.Critical)
-            '            ValorRequerimiento.Focus()
-            '        Else
-            '            'Guarda el Valor del Requerimiento
-            '            SP_RegistroValorRequerimientos_EDICION_INSERTAR(ValorRequerimiento.Text)
-            '            'Elimina la fila del grid
-            '            SP_RequerimientosPlantillas_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView.Rows.RemoveAt(0)
-            '            SP_RegistroValorRequerimientos_SEGUN_ProyectoID()
-            '            If SP_RequerimientosPlantillas_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView.Rows.Count = 0 Then
-            '                ValorRequerimiento.Enabled = False
-            '                MsgBox("Los requerimientos para este proyecto ya fueron Completados", MsgBoxStyle.Information)
-            '            End If
-            '            ValorRequerimiento.Text = ""
-            '            ValorRequerimiento.Focus()
-            '        End If
-            '    Else
-            '        MsgBox("Este dato ya fue registrado para este proyecto", MsgBoxStyle.Exclamation)
-            '    End If
-            'Else
-            '    ValorRequerimiento.Enabled = False
-            'End If
+            If BtnEditarValorDeRequerimiento.Enabled = True Then
+                If ValorRequerimiento.Enabled = False Then
+                    ValorRequerimiento.Enabled = True
+                    ValorRequerimiento.Focus()
+                Else
+                    SP_RegistroValorRequerimientos_EDICION_ACTUALIZAR()
+                    ValorRequerimiento.Enabled = False
+                    SP_RegistroValorRequerimientos_SEGUN_ProyectoIDDataGridView.Rows.RemoveAt(0)
+                    Timer_EdicionValorRequerimiento.Start()
+                End If
+            Else
+                RegistrarRequerimiento()
+            End If
         End If
     End Sub
     Private Sub BtnRemplazar_Click(sender As Object, e As EventArgs) Handles BtnRemplazar.Click
@@ -513,7 +556,8 @@
         Bloquear_Objetos_Proyectos()
         Parar_Timer_Proyectos()
         Timer_Ubicar_En_Fila_Proyectos()
-
+        TabControl1.Location = New Point(8, 403)
+        TabControl1.Height = 187
     End Sub
     'Insertar
     Private Sub SP_Proyectos_EDICION_INSERTAR()
@@ -1609,15 +1653,15 @@
         If Chk_Rel.Checked = True Then
             SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoIDDataGridView.Location = New Point(6, 103)
             SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaIDDataGridView.Location = New Point(6, 348)
-            SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoIDDataGridView.Width = 174
-            SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaIDDataGridView.Width = 174
+            SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoIDDataGridView.Width = 221
+            SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaIDDataGridView.Width = 221
             Nuevo_Menu_TablasDeProyecto.Enabled = False
             Editar_Menu_TablasDeProyecto.Enabled = False
         Else
             SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoIDDataGridView.Location = New Point(6, 103)
             SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaIDDataGridView.Location = New Point(6, 348)
-            SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoIDDataGridView.Width = 358
-            SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaIDDataGridView.Width = 358
+            SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoIDDataGridView.Width = 451
+            SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaIDDataGridView.Width = 451
             Cancelar_TablasDeProyecto()
         End If
     End Sub
@@ -1804,24 +1848,27 @@
         End Try
     End Sub
 
+    Private Sub CM_EliminandoTecnologias_Opening(sender As Object, e As System.ComponentModel.CancelEventArgs) Handles CM_EliminandoTecnologias.Opening
 
+    End Sub
 
+    Private Sub MaximizarPaneles_Click(sender As Object, e As EventArgs) Handles MaximizarPaneles.Click
+        TabControl1.Location = New Point(8, 52)
+        TabControl1.Height = 535
+    End Sub
 
+    Private Sub MinimizarPToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles MinimizarPToolStripMenuItem.Click
+        TabControl1.Location = New Point(8, 403)
+        TabControl1.Height = 187
+    End Sub
 
+    Private Sub ValorRequerimientoTextBox3_TextChanged(sender As Object, e As EventArgs) Handles ValorRequerimientoTextBox3.TextChanged
+        Try
+            ValorRequerimiento.Text = ValorRequerimientoTextBox3.Text
+        Catch ex As Exception
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+        End Try
+    End Sub
 
 
 #End Region
