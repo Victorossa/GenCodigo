@@ -137,7 +137,7 @@
             End If
         End While
     End Sub
-    Private Sub BtnPrevisualizar_Click(sender As Object, e As EventArgs) 
+    Private Sub BtnPrevisualizar_Click(sender As Object, e As EventArgs)
 
     End Sub
     Private Sub BtnLimpiarValoresRequerimientos_Click(sender As Object, e As EventArgs) Handles BtnLimpiarValoresRequerimientos.Click
@@ -540,6 +540,26 @@
         End Try
 
     End Function
+
+    Function ucaseCamelCase(textoBase As String, NombreTabla As String)
+        Dim cadena As String = NombreTabla
+        Dim primera As String = cadena.Substring(0, 1)
+        Dim resto As String = cadena.Substring(1)
+        Dim myChar As String = ""
+        Dim fChar As String = ""
+        Dim i As Integer = Len(cadena)
+        Dim valor As Integer = Asc((cadena.Substring(0, 1)))
+        If valor >= 65 And valor <= 90 Then
+            primera = LCase(primera)
+            primera = primera + resto
+        End If
+        Dim CodigoGenerado = textoBase.Replace("{{{Tbl-Camel}}}", primera)
+        Return CodigoGenerado
+    End Function
+
+    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
+
+    End Sub
 
 #Region "Procedimientos"
     Sub Cancelar_Proyectos()
@@ -973,7 +993,8 @@
         Try
             Me.SP_TablasDeProyecto_EDICION_INSERTARTableAdapter.Fill(Me.DataSetTablasYCampos.SP_TablasDeProyecto_EDICION_INSERTAR,
                                                  New System.Nullable(Of Integer)(CType(ProyectoIDTextBox.Text, Integer)),
-                                                 NombreTablaTextBox.Text)
+                                                 NombreTablaTextBox.Text,
+                                                 New System.Nullable(Of Boolean)(CType(TipoTextBox.Text, Boolean)))
             SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID()
             MsgBox("El Dato Fue Guardado Exitosamente", MsgBoxStyle.Information, "Guardar Dato")
         Catch ex As System.Exception
@@ -986,7 +1007,8 @@
             Me.SP_TablasDeProyecto_EDICION_ACTUALIZARTableAdapter.Fill(Me.DataSetTablasYCampos.SP_TablasDeProyecto_EDICION_ACTUALIZAR,
                                                  New System.Nullable(Of Integer)(CType(TablaIDTextBox.Text, Integer)),
                                                  New System.Nullable(Of Integer)(CType(ProyectoIDTextBox.Text, Integer)),
-                                                 NombreTablaTextBox.Text)
+                                                 NombreTablaTextBox.Text,
+                                                 New System.Nullable(Of Boolean)(CType(TipoTextBox.Text, Boolean)))
             SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID()
             MsgBox("El Dato Fue Actualizado Exitosamente", MsgBoxStyle.Information, "Actualizar Dato")
         Catch ex As System.Exception
@@ -1074,6 +1096,10 @@
                 MsgBox("El nombre del campo: NombreTabla; Esta vacio, Favor Verificar", MsgBoxStyle.Critical)
                 NombreTablaTextBox.BackColor = Color.Beige
                 ControlNulos.Text = "1"
+            Case TipoTextBox.Text = ""
+                MsgBox("El nombre del campo: Tipo; Esta vacio, Favor Verificar", MsgBoxStyle.Critical)
+                TipoCheckBox.BackColor = Color.Beige
+                ControlNulos.Text = "1"
             Case Else
                 ControlNulos.Text = "" '
         End Select
@@ -1098,12 +1124,15 @@
     End Sub
     Public Sub Limpiar_Objetos_TablasDeProyecto()
         NombreTablaTextBox.Text = "" ''
+        TipoTextBox.Text = ""
     End Sub
     Public Sub Desbloquear_Objetos_TablasDeProyecto()
         NombreTablaTextBox.Enabled = True
+        TipoCheckBox.Enabled = True
     End Sub
     Public Sub Bloquear_Objetos_TablasDeProyecto()
         NombreTablaTextBox.Enabled = False
+        TipoCheckBox.Enabled = False
     End Sub
 #End Region
 #Region "Timer de Botones"
@@ -1322,6 +1351,18 @@
     Private Sub Cancelar_Menu_CamposDeTablas_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Cancelar_Menu_CamposDeTablas.Click
         Cancelar_CamposDeTablas()
     End Sub
+    Private Sub TipoCheckBox_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles TipoCheckBox.CheckedChanged
+        If TipoCheckBox.Checked = True Then
+            TipoCheckBox.Text = "Independiente"
+            TipoCheckBox.BackColor = Color.Green
+            TipoTextBox.Text = "True"
+        Else
+            TipoCheckBox.Text = "Dependiente"
+            TipoCheckBox.BackColor = Color.Red
+            TipoTextBox.Text = "False"
+        End If
+    End Sub
+
 #End Region
 #Region "Eventos sobre Objetos "
     'Control de Nulos
@@ -1562,6 +1603,9 @@
         End If
         If InStr(Contenido, "{{{A=>-a}}}") Then
             ContenidoGenerado = ConvertirMayusculasMinSeparadasPorGuion(ContenidoGenerado, Tabla)
+        End If
+        If InStr(Contenido, "{{{Tbl-Camel}}}") Then
+            ContenidoGenerado = ucaseCamelCase(ContenidoGenerado, Tabla)
         End If
         If InStr(Contenido, "{{{Clave}}}") Then
             Dim Clave = GenerarClave()
@@ -1869,6 +1913,8 @@
 
         End Try
     End Sub
+
+
 
 
 #End Region

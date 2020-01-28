@@ -1326,7 +1326,7 @@ Partial Class FrmTecnologias
         Me.BtnTodasLasTablas.Name = "BtnTodasLasTablas"
         Me.BtnTodasLasTablas.Size = New System.Drawing.Size(89, 25)
         Me.BtnTodasLasTablas.TabIndex = 144
-        Me.BtnTodasLasTablas.Text = "{{{TodasTab}}}"
+        Me.BtnTodasLasTablas.Text = "{{{Tbl-Camel}}}"
         Me.ToolTip1.SetToolTip(Me.BtnTodasLasTablas, "Toma todas las tablas del proyecto y las remplaza en un texto especifico")
         Me.BtnTodasLasTablas.UseVisualStyleBackColor = False
         '
@@ -2584,6 +2584,7 @@ Partial Class FrmTecnologias
         Me.TableAdapterManager1.SP_ELIMINA_RegistroValorRequerimientos_SegunIDTableAdapter = Nothing
         Me.TableAdapterManager1.SP_RegistroRelacionesTablas_EDICION_ELIMINARTableAdapter = Nothing
         Me.TableAdapterManager1.SP_RegistroRelacionesTablas_EDICION_INSERTARTableAdapter = Nothing
+        Me.TableAdapterManager1.SP_RegistroValorRequerimientos_EDICION_ACTUALIZARTableAdapter = Nothing
         Me.TableAdapterManager1.SP_RegistroValorRequerimientos_EDICION_INSERTARTableAdapter = Nothing
         Me.TableAdapterManager1.SP_TablasDeProyecto_EDICION_ACTUALIZARTableAdapter = Nothing
         Me.TableAdapterManager1.SP_TablasDeProyecto_EDICION_ELIMINARTableAdapter = Nothing

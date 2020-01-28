@@ -9,3 +9,4 @@ C:\www\GenCodigo\GenCodigoConBD\GenCodigo\GuardandoRichtext\obj\Debug\GuardandoR
 C:\www\GenCodigo\GenCodigoConBD\GenCodigo\GuardandoRichtext\obj\Debug\GuardandoRichtext.exe
 C:\www\GenCodigo\GenCodigoConBD\GenCodigo\GuardandoRichtext\obj\Debug\GuardandoRichtext.xml
 C:\www\GenCodigo\GenCodigoConBD\GenCodigo\GuardandoRichtext\obj\Debug\GuardandoRichtext.pdb
+C:\www\GenCodigo\GenCodigoConBD\GenCodigo\GuardandoRichtext\obj\Debug\GuardandoRichtext.vbprojAssemblyReference.cache

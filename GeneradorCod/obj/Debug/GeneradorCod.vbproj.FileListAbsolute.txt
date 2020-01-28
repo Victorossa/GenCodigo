@@ -44,7 +44,6 @@ C:\www\GenCodigo\GenCodigoConBD\GenCodigo\GeneradorCod\bin\Debug\EntityFramework
 C:\www\GenCodigo\GenCodigoConBD\GenCodigo\GeneradorCod\bin\Debug\EntityFramework.SqlServer.dll
 C:\www\GenCodigo\GenCodigoConBD\GenCodigo\GeneradorCod\bin\Debug\EntityFramework.xml
 C:\www\GenCodigo\GenCodigoConBD\GenCodigo\GeneradorCod\bin\Debug\EntityFramework.SqlServer.xml
-C:\www\GenCodigo\GenCodigoConBD\GenCodigo\GeneradorCod\obj\Debug\GeneradorCod.vbprojAssemblyReference.cache
 C:\www\GenCodigo\GenCodigoConBD\GenCodigo\GeneradorCod\obj\Debug\GeneradorCod.FrmInicio.resources
 C:\www\GenCodigo\GenCodigoConBD\GenCodigo\GeneradorCod\obj\Debug\GeneradorCod.FrmReplace.resources
 C:\www\GenCodigo\GenCodigoConBD\GenCodigo\GeneradorCod\obj\Debug\GeneradorCod.FrmTecnologias.resources
@@ -77,3 +76,4 @@ C:\Users\programador1\source\repos\Nueva carpeta\GenCodigo\GeneradorCod\obj\Debu
 C:\Users\programador1\source\repos\Nueva carpeta\GenCodigo\GeneradorCod\obj\Debug\GeneradorCod.exe
 C:\Users\programador1\source\repos\Nueva carpeta\GenCodigo\GeneradorCod\obj\Debug\GeneradorCod.xml
 C:\Users\programador1\source\repos\Nueva carpeta\GenCodigo\GeneradorCod\obj\Debug\GeneradorCod.pdb
+C:\www\GenCodigo\GenCodigoConBD\GenCodigo\GeneradorCod\obj\Debug\GeneradorCod.vbprojAssemblyReference.cache
