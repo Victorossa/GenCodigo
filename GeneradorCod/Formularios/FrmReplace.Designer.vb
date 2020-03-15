@@ -81,7 +81,7 @@ Partial Class FrmReplace
         Dim RequerimientoLabel3 As System.Windows.Forms.Label
         Dim TipoLabel2 As System.Windows.Forms.Label
         Dim TipoLabel3 As System.Windows.Forms.Label
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmReplace))
         Me.SP_RequerimientosPlantillas_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView = New System.Windows.Forms.DataGridView()
         Me.DataGridViewTextBoxColumn5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -182,6 +182,7 @@ Partial Class FrmReplace
         Me.CampoIDTextBox = New System.Windows.Forms.TextBox()
         Me.NombreCampoTextBox = New System.Windows.Forms.TextBox()
         Me.Cbo_TipoDato = New System.Windows.Forms.ComboBox()
+        Me.TiposBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.Label2 = New System.Windows.Forms.Label()
         Me.TipoTextBox = New System.Windows.Forms.TextBox()
         Me.PrefijoTextBox = New System.Windows.Forms.TextBox()
@@ -191,6 +192,9 @@ Partial Class FrmReplace
         Me.InferiorTextBox = New System.Windows.Forms.TextBox()
         Me.PlantillaIDTextBox1 = New System.Windows.Forms.TextBox()
         Me.PanelConf = New System.Windows.Forms.Panel()
+        Me.TiposDataGridView = New System.Windows.Forms.DataGridView()
+        Me.DataGridViewTextBoxColumn34 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn35 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.TipoTextBox2 = New System.Windows.Forms.TextBox()
         Me.ProyectosYTecnologiasIDTextBox = New System.Windows.Forms.TextBox()
         Me.TextBox2 = New System.Windows.Forms.TextBox()
@@ -280,6 +284,7 @@ Partial Class FrmReplace
         Me.DataGridViewTextBoxColumn24 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.TabControl2 = New System.Windows.Forms.TabControl()
         Me.TabPage3 = New System.Windows.Forms.TabPage()
+        Me.Button3 = New System.Windows.Forms.Button()
         Me.TipoCheckBox = New System.Windows.Forms.CheckBox()
         Me.TabPage4 = New System.Windows.Forms.TabPage()
         Me.Label14 = New System.Windows.Forms.Label()
@@ -362,7 +367,7 @@ Partial Class FrmReplace
         Me.ELIMINA_SEGUN_PROYECTOTableAdapter = New GeneradorCod.DataSetAdministracionTableAdapters.ELIMINA_SEGUN_PROYECTOTableAdapter()
         Me.SP_ProyectosYTecnologias_EDICION_ELIMINARBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.SP_ProyectosYTecnologias_EDICION_ELIMINARTableAdapter = New GeneradorCod.DataSetAdministracionTableAdapters.SP_ProyectosYTecnologias_EDICION_ELIMINARTableAdapter()
-        Me.Button3 = New System.Windows.Forms.Button()
+        Me.TiposTableAdapter = New GeneradorCod.DataSetAdministracionTableAdapters.TiposTableAdapter()
         ComponenteIDLabel = New System.Windows.Forms.Label()
         PlantillaIDLabel = New System.Windows.Forms.Label()
         TecnologiaIDLabel = New System.Windows.Forms.Label()
@@ -453,8 +458,10 @@ Partial Class FrmReplace
         Me.Panel4.SuspendLayout()
         CType(Me.SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaIDDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaIDBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.TiposBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.SP_CampoComponentes_Segun_Plantilla_TipoBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelConf.SuspendLayout()
+        CType(Me.TiposDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.SP_RegistroRelacionesTablas_Vista_BUSQUEDA_SEGUN_PARAMETRO_TD1BindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.SP_RegistroRelacionesTablas_Vista_BUSQUEDA_SEGUN_PARAMETRO_TD1DataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.SP_CARGA_TablasRelacionadas_SEGUN_PlantillaIDBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -1113,8 +1120,8 @@ Partial Class FrmReplace
         'DataGridViewTextBoxColumn7
         '
         Me.DataGridViewTextBoxColumn7.DataPropertyName = "NombreTecnologia"
-        DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.DataGridViewTextBoxColumn7.DefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.DataGridViewTextBoxColumn7.DefaultCellStyle = DataGridViewCellStyle2
         Me.DataGridViewTextBoxColumn7.HeaderText = "Nombre Tecnologia"
         Me.DataGridViewTextBoxColumn7.Name = "DataGridViewTextBoxColumn7"
         Me.DataGridViewTextBoxColumn7.Width = 178
@@ -1890,13 +1897,19 @@ Partial Class FrmReplace
         '
         'Cbo_TipoDato
         '
+        Me.Cbo_TipoDato.DataSource = Me.TiposBindingSource
+        Me.Cbo_TipoDato.DisplayMember = "Tipo"
         Me.Cbo_TipoDato.FormattingEnabled = True
-        Me.Cbo_TipoDato.Items.AddRange(New Object() {"boolean", "Date", "float", "numeric", "numeric (Clave)", "numeric (Relacionado)", "string", "ultima_actualizacion"})
         Me.Cbo_TipoDato.Location = New System.Drawing.Point(79, 321)
         Me.Cbo_TipoDato.Name = "Cbo_TipoDato"
         Me.Cbo_TipoDato.Size = New System.Drawing.Size(376, 21)
-        Me.Cbo_TipoDato.Sorted = True
         Me.Cbo_TipoDato.TabIndex = 150
+        Me.Cbo_TipoDato.ValueMember = "Tipo"
+        '
+        'TiposBindingSource
+        '
+        Me.TiposBindingSource.DataMember = "Tipos"
+        Me.TiposBindingSource.DataSource = Me.DataSetAdministracion
         '
         'Label2
         '
@@ -1964,6 +1977,7 @@ Partial Class FrmReplace
         '
         Me.PanelConf.AutoScroll = True
         Me.PanelConf.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.PanelConf.Controls.Add(Me.TiposDataGridView)
         Me.PanelConf.Controls.Add(TipoLabel3)
         Me.PanelConf.Controls.Add(Me.TipoTextBox2)
         Me.PanelConf.Controls.Add(ProyectosYTecnologiasIDLabel)
@@ -2074,8 +2088,34 @@ Partial Class FrmReplace
         Me.PanelConf.Controls.Add(NombreComponenteLabel)
         Me.PanelConf.Location = New System.Drawing.Point(617, 9)
         Me.PanelConf.Name = "PanelConf"
-        Me.PanelConf.Size = New System.Drawing.Size(51, 13)
+        Me.PanelConf.Size = New System.Drawing.Size(119, 13)
         Me.PanelConf.TabIndex = 159
+        '
+        'TiposDataGridView
+        '
+        Me.TiposDataGridView.AllowUserToAddRows = False
+        Me.TiposDataGridView.AutoGenerateColumns = False
+        Me.TiposDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.TiposDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn34, Me.DataGridViewTextBoxColumn35})
+        Me.TiposDataGridView.DataSource = Me.TiposBindingSource
+        Me.TiposDataGridView.Location = New System.Drawing.Point(858, 224)
+        Me.TiposDataGridView.Name = "TiposDataGridView"
+        Me.TiposDataGridView.RowHeadersVisible = False
+        Me.TiposDataGridView.Size = New System.Drawing.Size(175, 112)
+        Me.TiposDataGridView.TabIndex = 195
+        '
+        'DataGridViewTextBoxColumn34
+        '
+        Me.DataGridViewTextBoxColumn34.DataPropertyName = "tipoID"
+        Me.DataGridViewTextBoxColumn34.HeaderText = "tipoID"
+        Me.DataGridViewTextBoxColumn34.Name = "DataGridViewTextBoxColumn34"
+        Me.DataGridViewTextBoxColumn34.ReadOnly = True
+        '
+        'DataGridViewTextBoxColumn35
+        '
+        Me.DataGridViewTextBoxColumn35.DataPropertyName = "Tipo"
+        Me.DataGridViewTextBoxColumn35.HeaderText = "Tipo"
+        Me.DataGridViewTextBoxColumn35.Name = "DataGridViewTextBoxColumn35"
         '
         'TipoTextBox2
         '
@@ -2812,6 +2852,15 @@ Partial Class FrmReplace
         Me.TabPage3.TabIndex = 0
         Me.TabPage3.Text = "Tablas y Campos"
         '
+        'Button3
+        '
+        Me.Button3.Location = New System.Drawing.Point(120, 53)
+        Me.Button3.Name = "Button3"
+        Me.Button3.Size = New System.Drawing.Size(46, 18)
+        Me.Button3.TabIndex = 190
+        Me.Button3.Text = "Button3"
+        Me.Button3.UseVisualStyleBackColor = True
+        '
         'TipoCheckBox
         '
         Me.TipoCheckBox.DataBindings.Add(New System.Windows.Forms.Binding("CheckState", Me.SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoIDBindingSource, "Tipo", True))
@@ -3280,7 +3329,11 @@ Partial Class FrmReplace
         Me.TableAdapterManager.SP_Tecnologias_EDICION_ACTUALIZARTableAdapter = Nothing
         Me.TableAdapterManager.SP_Tecnologias_EDICION_ELIMINARTableAdapter = Nothing
         Me.TableAdapterManager.SP_Tecnologias_EDICION_INSERTARTableAdapter = Nothing
+        Me.TableAdapterManager.SP_Tipos_EDICION_ACTUALIZARTableAdapter = Nothing
+        Me.TableAdapterManager.SP_Tipos_EDICION_ELIMINARTableAdapter = Nothing
+        Me.TableAdapterManager.SP_Tipos_EDICION_INSERTARTableAdapter = Nothing
         Me.TableAdapterManager.TecnologiasTableAdapter = Nothing
+        Me.TableAdapterManager.TiposTableAdapter = Nothing
         Me.TableAdapterManager.UpdateOrder = GeneradorCod.DataSetAdministracionTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
         '
         'TecnologiasTableAdapter
@@ -3361,14 +3414,9 @@ Partial Class FrmReplace
         '
         Me.SP_ProyectosYTecnologias_EDICION_ELIMINARTableAdapter.ClearBeforeFill = True
         '
-        'Button3
+        'TiposTableAdapter
         '
-        Me.Button3.Location = New System.Drawing.Point(120, 53)
-        Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(46, 18)
-        Me.Button3.TabIndex = 190
-        Me.Button3.Text = "Button3"
-        Me.Button3.UseVisualStyleBackColor = True
+        Me.TiposTableAdapter.ClearBeforeFill = True
         '
         'FrmReplace
         '
@@ -3421,9 +3469,11 @@ Partial Class FrmReplace
         Me.Panel4.ResumeLayout(False)
         CType(Me.SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaIDDataGridView, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaIDBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.TiposBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.SP_CampoComponentes_Segun_Plantilla_TipoBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.PanelConf.ResumeLayout(False)
         Me.PanelConf.PerformLayout()
+        CType(Me.TiposDataGridView, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.SP_RegistroRelacionesTablas_Vista_BUSQUEDA_SEGUN_PARAMETRO_TD1BindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.SP_RegistroRelacionesTablas_Vista_BUSQUEDA_SEGUN_PARAMETRO_TD1DataGridView, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.SP_CARGA_TablasRelacionadas_SEGUN_PlantillaIDBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
@@ -3749,4 +3799,9 @@ Partial Class FrmReplace
     Friend WithEvents TipoCheckBox As CheckBox
     Friend WithEvents TipoTextBox2 As TextBox
     Friend WithEvents Button3 As Button
+    Friend WithEvents TiposBindingSource As BindingSource
+    Friend WithEvents TiposTableAdapter As DataSetAdministracionTableAdapters.TiposTableAdapter
+    Friend WithEvents TiposDataGridView As DataGridView
+    Friend WithEvents DataGridViewTextBoxColumn34 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn35 As DataGridViewTextBoxColumn
 End Class

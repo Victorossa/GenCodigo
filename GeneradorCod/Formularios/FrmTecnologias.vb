@@ -1,5 +1,9 @@
 ﻿Public Class FrmTecnologias
     Private Sub FrmTecnologias_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        'TODO: esta línea de código carga datos en la tabla 'DataSetAdministracion.Tipos' Puede moverla o quitarla según sea necesario.
+        Me.TiposTableAdapter.Fill(Me.DataSetAdministracion.Tipos)
+        'TODO: esta línea de código carga datos en la tabla 'DataSetAdministracion.Tipos' Puede moverla o quitarla según sea necesario.
+
         Try
             Me.TecnologiasTableAdapter.Fill(Me.DataSetAdministracion.Tecnologias)
             Cancelar_Tecnologias()
@@ -21,6 +25,22 @@
         End Try
     End Sub
 
+
+    Private Sub TecnologiasDataGridView_CellFormatting(sender As Object, e As DataGridViewCellFormattingEventArgs) Handles TecnologiasDataGridView.CellFormatting
+        Try
+            If TecnologiasDataGridView.Columns(e.ColumnIndex).Name = "Validada" Then
+                Dim _filaDGV As DataGridViewRow = TecnologiasDataGridView.Rows(e.RowIndex)
+                If CStr(_filaDGV.Cells(1).Value) = "True" Then
+                    _filaDGV.DefaultCellStyle.BackColor = Color.Green
+                    _filaDGV.DefaultCellStyle.ForeColor = Color.White
+                End If
+            End If
+        Catch ex As Exception
+
+        End Try
+    End Sub
+
+
 #Region "Procedimientos"
     Sub Cancelar_Tecnologias()
         'Botones Del Menu
@@ -41,7 +61,8 @@
     Private Sub SP_Tecnologias_EDICION_INSERTAR()
         Try
             Me.SP_Tecnologias_EDICION_INSERTARTableAdapter.Fill(Me.DataSetAdministracion.SP_Tecnologias_EDICION_INSERTAR,
-                                                 NombreTecnologiaTextBox.Text)
+                                                 NombreTecnologiaTextBox.Text,
+                                                 New System.Nullable(Of Boolean)(CType(ValidadaTextBox.Text, Boolean)))
 
             Me.TecnologiasTableAdapter.Fill(Me.DataSetAdministracion.Tecnologias)
             MsgBox("El Dato Fue Guardado Exitosamente", MsgBoxStyle.Information, "Guardar Dato")
@@ -55,7 +76,8 @@
         Try
             Me.SP_Tecnologias_EDICION_ACTUALIZARTableAdapter.Fill(Me.DataSetAdministracion.SP_Tecnologias_EDICION_ACTUALIZAR,
                                                  New System.Nullable(Of Integer)(CType(TecnologiaIDTextBox.Text, Integer)),
-                                                 NombreTecnologiaTextBox.Text)
+                                                 NombreTecnologiaTextBox.Text,
+                                                 New System.Nullable(Of Boolean)(CType(ValidadaTextBox.Text, Boolean)))
 
             Me.TecnologiasTableAdapter.Fill(Me.DataSetAdministracion.Tecnologias)
             MsgBox("El Dato Fue Actualizado Exitosamente", MsgBoxStyle.Information, "Actualizar Dato")
@@ -135,6 +157,18 @@
 
 #End Region
 #Region "Eventos sobre Objetos "
+    Private Sub ValidadaCheckBox_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ValidadaCheckBox.CheckedChanged
+        If ValidadaCheckBox.Checked = True Then
+            ValidadaCheckBox.Text = "Validado"
+            ValidadaTextBox.Text = "True"
+            ValidadaCheckBox.BackColor = Color.Green
+        Else
+            ValidadaCheckBox.Text = "Sin Validar"
+            ValidadaTextBox.Text = "False"
+            ValidadaCheckBox.BackColor = Color.Red
+        End If
+    End Sub
+
     'Control de Nulos
     Public Sub Control_Nulos_Tecnologias()
         ControlNulos.Text = "" '
@@ -2580,6 +2614,8 @@
             TecnologiasDataGridView.Dock = DockStyle.None
         End If
     End Sub
+
+
 
 
 

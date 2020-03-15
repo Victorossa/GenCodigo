@@ -122,6 +122,12 @@
       <DependentUpon>DataSetTablasYCampos.xsd</DependentUpon>
     </Compile>
     <Compile Include="Data\ProcesamientoTexto.vb" />
+    <Compile Include="Formularios\FrmConfiguracion.Designer.vb">
+      <DependentUpon>FrmConfiguracion.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\FrmConfiguracion.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Formularios\FrmInicio.Designer.vb">
       <DependentUpon>FrmInicio.vb</DependentUpon>
     </Compile>
@@ -170,6 +176,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Formularios\FrmConfiguracion.resx">
+      <DependentUpon>FrmConfiguracion.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\FrmInicio.resx">
       <DependentUpon>FrmInicio.vb</DependentUpon>
     </EmbeddedResource>

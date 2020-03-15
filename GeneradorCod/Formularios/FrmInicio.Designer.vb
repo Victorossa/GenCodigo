@@ -30,6 +30,7 @@ Partial Class FrmInicio
         Me.AdministraciònToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.CreaciònDePlantillasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.GeneraciònDeProyectosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ConfiguraciónToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
@@ -61,7 +62,7 @@ Partial Class FrmInicio
         '
         'AdministraciònToolStripMenuItem
         '
-        Me.AdministraciònToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CreaciònDePlantillasToolStripMenuItem, Me.GeneraciònDeProyectosToolStripMenuItem})
+        Me.AdministraciònToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CreaciònDePlantillasToolStripMenuItem, Me.GeneraciònDeProyectosToolStripMenuItem, Me.ConfiguraciónToolStripMenuItem})
         Me.AdministraciònToolStripMenuItem.Name = "AdministraciònToolStripMenuItem"
         Me.AdministraciònToolStripMenuItem.Size = New System.Drawing.Size(127, 25)
         Me.AdministraciònToolStripMenuItem.Text = "Administraciòn"
@@ -77,6 +78,12 @@ Partial Class FrmInicio
         Me.GeneraciònDeProyectosToolStripMenuItem.Name = "GeneraciònDeProyectosToolStripMenuItem"
         Me.GeneraciònDeProyectosToolStripMenuItem.Size = New System.Drawing.Size(252, 26)
         Me.GeneraciònDeProyectosToolStripMenuItem.Text = "Generaciòn de Proyectos"
+        '
+        'ConfiguraciónToolStripMenuItem
+        '
+        Me.ConfiguraciónToolStripMenuItem.Name = "ConfiguraciónToolStripMenuItem"
+        Me.ConfiguraciónToolStripMenuItem.Size = New System.Drawing.Size(252, 26)
+        Me.ConfiguraciónToolStripMenuItem.Text = "Configuración"
         '
         'FrmInicio
         '
@@ -107,4 +114,5 @@ Partial Class FrmInicio
     Friend WithEvents AdministraciònToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents CreaciònDePlantillasToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents GeneraciònDeProyectosToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ConfiguraciónToolStripMenuItem As ToolStripMenuItem
 End Class

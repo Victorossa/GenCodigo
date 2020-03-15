@@ -8,6 +8,7 @@
         'TODO: esta línea de código carga datos en la tabla 'DataSetAdministracion.Proyectos' Puede moverla o quitarla según sea necesario.
         'Me.ProyectosTableAdapter.Fill(Me.DataSetAdministracion.Proyectos)
         Try
+            Me.TiposTableAdapter.Fill(Me.DataSetAdministracion.Tipos)
             Me.ProyectosTableAdapter.Fill(Me.DataSetAdministracion.Proyectos)
             Cancelar_Proyectos()
             Me.TecnologiasTableAdapter.Fill(Me.DataSetAdministracion.Tecnologias)
@@ -557,9 +558,7 @@
         Return CodigoGenerado
     End Function
 
-    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
 
-    End Sub
 
 #Region "Procedimientos"
     Sub Cancelar_Proyectos()
@@ -1008,7 +1007,7 @@
                                                  New System.Nullable(Of Integer)(CType(TablaIDTextBox.Text, Integer)),
                                                  New System.Nullable(Of Integer)(CType(ProyectoIDTextBox.Text, Integer)),
                                                  NombreTablaTextBox.Text,
-                                                 New System.Nullable(Of Boolean)(CType(TipoTextBox.Text, Boolean)))
+                                                 New System.Nullable(Of Boolean)(CType(TipoTextBox2.Text, Boolean)))
             SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID()
             MsgBox("El Dato Fue Actualizado Exitosamente", MsgBoxStyle.Information, "Actualizar Dato")
         Catch ex As System.Exception
@@ -1096,7 +1095,7 @@
                 MsgBox("El nombre del campo: NombreTabla; Esta vacio, Favor Verificar", MsgBoxStyle.Critical)
                 NombreTablaTextBox.BackColor = Color.Beige
                 ControlNulos.Text = "1"
-            Case TipoTextBox.Text = ""
+            Case TipoCheckBox.Text = ""
                 MsgBox("El nombre del campo: Tipo; Esta vacio, Favor Verificar", MsgBoxStyle.Critical)
                 TipoCheckBox.BackColor = Color.Beige
                 ControlNulos.Text = "1"
@@ -1106,14 +1105,27 @@
     End Sub
     Private Sub NombreTablaTextBox_KeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles NombreTablaTextBox.KeyPress
         If Asc(e.KeyChar) = 13 Then
+            If NombreTablaTextBox.Text = "" Then
+                MsgBox("Dato Obligatorio, Favor Verificar", MsgBoxStyle.Critical, "Validación de Datos")
+                NombreTablaTextBox.Text = ""
+                NombreTablaTextBox.Focus()
+            Else
+                TipoCheckBox.Enabled = True
+                TipoCheckBox.Focus()
+            End If
+        End If
+    End Sub
+
+    Private Sub TipoCheckBox_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TipoCheckBox.KeyPress
+        If Asc(e.KeyChar) = 13 Then
             If Actualizar_Menu_TablasDeProyecto.Enabled = True Then
                 Actualizar_Menu_TablasDeProyecto.Enabled = True
                 Eliminar_Menu_TablasDeProyecto.Enabled = True
             Else
-                If NombreTablaTextBox.Text = "" Then
+                If TipoTextBox.Text = "" Then
                     MsgBox("Dato Obligatorio, Favor Verificar", MsgBoxStyle.Critical, "Validación de Datos")
-                    NombreTablaTextBox.Text = ""
-                    NombreTablaTextBox.Focus()
+                    TipoCheckBox.Text = ""
+                    TipoCheckBox.Focus()
                 Else
                     MsgBox("La Información Ya puede ser Guardada el Icono de Guardado queda habilitado", MsgBoxStyle.Information, "Guardar los Datos")
                     Guardar_Menu_TablasDeProyecto.Enabled = True
@@ -1122,6 +1134,7 @@
             End If
         End If
     End Sub
+
     Public Sub Limpiar_Objetos_TablasDeProyecto()
         NombreTablaTextBox.Text = "" ''
         TipoTextBox.Text = ""
@@ -1913,6 +1926,8 @@
 
         End Try
     End Sub
+
+
 
 
 

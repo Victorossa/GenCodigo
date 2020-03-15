@@ -46,4 +46,10 @@
         FrmReplace.BringToFront()
         PictureBox1.SendToBack()
     End Sub
+
+    Private Sub ConfiguraciónToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ConfiguraciónToolStripMenuItem.Click
+        FrmConfiguracion.Show()
+        FrmConfiguracion.MdiParent = Me
+        FrmConfiguracion.BringToFront()
+    End Sub
 End Class

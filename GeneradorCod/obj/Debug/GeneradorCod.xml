@@ -37,17 +37,7 @@ Represents a strongly typed in-memory cache of data.
 Represents the strongly named DataTable class.
 </summary>
 </member>
-<member name="T:GeneradorCod.DataSetAdministracion.SP_Tecnologias_EDICION_ACTUALIZARDataTable">
-<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member>
 <member name="T:GeneradorCod.DataSetAdministracion.SP_Tecnologias_EDICION_ELIMINARDataTable">
-<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member>
-<member name="T:GeneradorCod.DataSetAdministracion.SP_Tecnologias_EDICION_INSERTARDataTable">
 <summary>
 Represents the strongly named DataTable class.
 </summary>
@@ -157,22 +147,42 @@ Represents the strongly named DataTable class.
 Represents the strongly named DataTable class.
 </summary>
 </member>
+<member name="T:GeneradorCod.DataSetAdministracion.SP_Tecnologias_EDICION_ACTUALIZARDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:GeneradorCod.DataSetAdministracion.SP_Tecnologias_EDICION_INSERTARDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:GeneradorCod.DataSetAdministracion.SP_Tipos_EDICION_ACTUALIZARDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:GeneradorCod.DataSetAdministracion.SP_Tipos_EDICION_ELIMINARDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:GeneradorCod.DataSetAdministracion.SP_Tipos_EDICION_INSERTARDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:GeneradorCod.DataSetAdministracion.TiposDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
 <member name="T:GeneradorCod.DataSetAdministracion.TecnologiasRow">
 <summary>
 Represents strongly named DataRow class.
 </summary>
 </member>
-<member name="T:GeneradorCod.DataSetAdministracion.SP_Tecnologias_EDICION_ACTUALIZARRow">
-<summary>
-Represents strongly named DataRow class.
-</summary>
-</member>
 <member name="T:GeneradorCod.DataSetAdministracion.SP_Tecnologias_EDICION_ELIMINARRow">
-<summary>
-Represents strongly named DataRow class.
-</summary>
-</member>
-<member name="T:GeneradorCod.DataSetAdministracion.SP_Tecnologias_EDICION_INSERTARRow">
 <summary>
 Represents strongly named DataRow class.
 </summary>
@@ -282,22 +292,42 @@ Represents strongly named DataRow class.
 Represents strongly named DataRow class.
 </summary>
 </member>
+<member name="T:GeneradorCod.DataSetAdministracion.SP_Tecnologias_EDICION_ACTUALIZARRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:GeneradorCod.DataSetAdministracion.SP_Tecnologias_EDICION_INSERTARRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:GeneradorCod.DataSetAdministracion.SP_Tipos_EDICION_ACTUALIZARRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:GeneradorCod.DataSetAdministracion.SP_Tipos_EDICION_ELIMINARRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:GeneradorCod.DataSetAdministracion.SP_Tipos_EDICION_INSERTARRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:GeneradorCod.DataSetAdministracion.TiposRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
 <member name="T:GeneradorCod.DataSetAdministracion.TecnologiasRowChangeEvent">
 <summary>
 Row event argument class
 </summary>
 </member>
-<member name="T:GeneradorCod.DataSetAdministracion.SP_Tecnologias_EDICION_ACTUALIZARRowChangeEvent">
-<summary>
-Row event argument class
-</summary>
-</member>
 <member name="T:GeneradorCod.DataSetAdministracion.SP_Tecnologias_EDICION_ELIMINARRowChangeEvent">
-<summary>
-Row event argument class
-</summary>
-</member>
-<member name="T:GeneradorCod.DataSetAdministracion.SP_Tecnologias_EDICION_INSERTARRowChangeEvent">
 <summary>
 Row event argument class
 </summary>
@@ -407,22 +437,42 @@ Row event argument class
 Row event argument class
 </summary>
 </member>
+<member name="T:GeneradorCod.DataSetAdministracion.SP_Tecnologias_EDICION_ACTUALIZARRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:GeneradorCod.DataSetAdministracion.SP_Tecnologias_EDICION_INSERTARRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:GeneradorCod.DataSetAdministracion.SP_Tipos_EDICION_ACTUALIZARRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:GeneradorCod.DataSetAdministracion.SP_Tipos_EDICION_ELIMINARRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:GeneradorCod.DataSetAdministracion.SP_Tipos_EDICION_INSERTARRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:GeneradorCod.DataSetAdministracion.TiposRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
 <member name="T:GeneradorCod.DataSetAdministracionTableAdapters.TecnologiasTableAdapter">
 <summary>
 Represents the connection and commands used to retrieve and save data.
 </summary>
 </member>
-<member name="T:GeneradorCod.DataSetAdministracionTableAdapters.SP_Tecnologias_EDICION_ACTUALIZARTableAdapter">
-<summary>
-Represents the connection and commands used to retrieve and save data.
-</summary>
-</member>
 <member name="T:GeneradorCod.DataSetAdministracionTableAdapters.SP_Tecnologias_EDICION_ELIMINARTableAdapter">
-<summary>
-Represents the connection and commands used to retrieve and save data.
-</summary>
-</member>
-<member name="T:GeneradorCod.DataSetAdministracionTableAdapters.SP_Tecnologias_EDICION_INSERTARTableAdapter">
 <summary>
 Represents the connection and commands used to retrieve and save data.
 </summary>
@@ -528,6 +578,36 @@ Represents the connection and commands used to retrieve and save data.
 </summary>
 </member>
 <member name="T:GeneradorCod.DataSetAdministracionTableAdapters.SP_RequerimientosPlantillas_CargaEnunciadoTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:GeneradorCod.DataSetAdministracionTableAdapters.SP_Tecnologias_EDICION_ACTUALIZARTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:GeneradorCod.DataSetAdministracionTableAdapters.SP_Tecnologias_EDICION_INSERTARTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:GeneradorCod.DataSetAdministracionTableAdapters.SP_Tipos_EDICION_ACTUALIZARTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:GeneradorCod.DataSetAdministracionTableAdapters.SP_Tipos_EDICION_ELIMINARTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:GeneradorCod.DataSetAdministracionTableAdapters.SP_Tipos_EDICION_INSERTARTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:GeneradorCod.DataSetAdministracionTableAdapters.TiposTableAdapter">
 <summary>
 Represents the connection and commands used to retrieve and save data.
 </summary>
