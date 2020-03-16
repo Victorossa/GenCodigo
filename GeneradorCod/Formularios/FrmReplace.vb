@@ -1271,7 +1271,7 @@
         Try
             Me.SP_CamposDeTablas_EDICION_INSERTARTableAdapter.Fill(Me.DataSetTablasYCampos.SP_CamposDeTablas_EDICION_INSERTAR,
                                                  New System.Nullable(Of Integer)(CType(TablaIDTextBox.Text, Integer)),
-                                                 Cbo_TipoDato.Text,
+                                                 CboTiposDatos.Text,
                                                  NombreCampoTextBox.Text)
             SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaID()
             MsgBox("El Dato Fue Guardado Exitosamente", MsgBoxStyle.Information, "Guardar Dato")
@@ -1285,7 +1285,7 @@
             Me.SP_CamposDeTablas_EDICION_ACTUALIZARTableAdapter.Fill(Me.DataSetTablasYCampos.SP_CamposDeTablas_EDICION_ACTUALIZAR,
                                                  New System.Nullable(Of Integer)(CType(CampoIDTextBox.Text, Integer)),
                                                  New System.Nullable(Of Integer)(CType(TablaIDTextBox.Text, Integer)),
-                                                 Cbo_TipoDato.Text,
+                                                 CboTiposDatos.Text,
                                                  NombreCampoTextBox.Text)
             SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaID()
             MsgBox("El Dato Fue Actualizado Exitosamente", MsgBoxStyle.Information, "Actualizar Dato")
@@ -1386,9 +1386,9 @@
                 MsgBox("El nombre del campo: TablaID; Esta vacio, Favor Verificar", MsgBoxStyle.Critical)
                 TablaIDTextBox.BackColor = Color.Beige
                 ControlNulos.Text = "1"
-            Case Cbo_TipoDato.Text = ""
+            Case CboTiposDatos.Text = ""
                 MsgBox("El nombre del campo: TablaID; Esta vacio, Favor Verificar", MsgBoxStyle.Critical)
-                Cbo_TipoDato.BackColor = Color.Beige
+                CboTiposDatos.BackColor = Color.Beige
                 ControlNulos.Text = "1"
             Case NombreCampoTextBox.Text = ""
                 MsgBox("El nombre del campo: NombreCampo; Esta vacio, Favor Verificar", MsgBoxStyle.Critical)
@@ -1405,22 +1405,22 @@
                 NombreCampoTextBox.Text = ""
                 NombreCampoTextBox.Focus()
             Else
-                Cbo_TipoDato.Enabled = True
-                Cbo_TipoDato.Focus()
+                CboTiposDatos.Enabled = True
+                CboTiposDatos.Focus()
             End If
         End If
     End Sub
-    Private Sub Cbo_TipoDato_KeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles Cbo_TipoDato.KeyPress
+    Private Sub Cbo_TipoDato_KeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles CboTiposDatos.KeyPress
 
         If Asc(e.KeyChar) = 13 Then
             If Actualizar_Menu_CamposDeTablas.Enabled = True Then
                 Actualizar_Menu_CamposDeTablas.Enabled = True
                 Eliminar_Menu_CamposDeTablas.Enabled = True
             Else
-                If Cbo_TipoDato.Text = "" Then
+                If CboTiposDatos.Text = "" Then
                     MsgBox("Dato Obligatorio, Favor Verificar", MsgBoxStyle.Critical, "Validación de Datos")
-                    Cbo_TipoDato.Text = ""
-                    Cbo_TipoDato.Focus()
+                    CboTiposDatos.Text = ""
+                    CboTiposDatos.Focus()
                 Else
                     MsgBox("La Información Ya puede ser Guardada el Icono de Guardado queda habilitado", MsgBoxStyle.Information, "Guardar los Datos")
                     Guardar_Menu_CamposDeTablas.Enabled = True
@@ -1431,15 +1431,15 @@
     End Sub
     Public Sub Limpiar_Objetos_CamposDeTablas()
         NombreCampoTextBox.Text = "" ''
-        Cbo_TipoDato.Text = ""
+        CboTiposDatos.Text = ""
     End Sub
     Public Sub Desbloquear_Objetos_CamposDeTablas()
         NombreCampoTextBox.Enabled = True
-        Cbo_TipoDato.Enabled = True
+        CboTiposDatos.Enabled = True
     End Sub
     Public Sub Bloquear_Objetos_CamposDeTablas()
         NombreCampoTextBox.Enabled = False
-        Cbo_TipoDato.Enabled = False
+        CboTiposDatos.Enabled = False
     End Sub
 #End Region
 #Region "Timer de Botones"
@@ -1526,7 +1526,7 @@
     End Sub
 
     Private Sub TipoTextBox_TextChanged(sender As Object, e As EventArgs) Handles TipoTextBox.TextChanged
-        Cbo_TipoDato.Text = TipoTextBox.Text
+        CboTiposDatos.Text = TipoTextBox.Text
     End Sub
 
     Private Sub SP_CampoComponentes_Segun_Plantilla_TipoTable()

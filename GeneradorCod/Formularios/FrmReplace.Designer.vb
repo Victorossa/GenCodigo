@@ -181,7 +181,7 @@ Partial Class FrmReplace
         Me.SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaIDBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.CampoIDTextBox = New System.Windows.Forms.TextBox()
         Me.NombreCampoTextBox = New System.Windows.Forms.TextBox()
-        Me.Cbo_TipoDato = New System.Windows.Forms.ComboBox()
+        Me.CboTiposDatos = New System.Windows.Forms.ComboBox()
         Me.TiposBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.Label2 = New System.Windows.Forms.Label()
         Me.TipoTextBox = New System.Windows.Forms.TextBox()
@@ -1897,14 +1897,14 @@ Partial Class FrmReplace
         '
         'Cbo_TipoDato
         '
-        Me.Cbo_TipoDato.DataSource = Me.TiposBindingSource
-        Me.Cbo_TipoDato.DisplayMember = "Tipo"
-        Me.Cbo_TipoDato.FormattingEnabled = True
-        Me.Cbo_TipoDato.Location = New System.Drawing.Point(79, 321)
-        Me.Cbo_TipoDato.Name = "Cbo_TipoDato"
-        Me.Cbo_TipoDato.Size = New System.Drawing.Size(376, 21)
-        Me.Cbo_TipoDato.TabIndex = 150
-        Me.Cbo_TipoDato.ValueMember = "Tipo"
+        Me.CboTiposDatos.DataSource = Me.TiposBindingSource
+        Me.CboTiposDatos.DisplayMember = "Tipo"
+        Me.CboTiposDatos.FormattingEnabled = True
+        Me.CboTiposDatos.Location = New System.Drawing.Point(79, 321)
+        Me.CboTiposDatos.Name = "Cbo_TipoDato"
+        Me.CboTiposDatos.Size = New System.Drawing.Size(376, 21)
+        Me.CboTiposDatos.TabIndex = 150
+        Me.CboTiposDatos.ValueMember = "Tipo"
         '
         'TiposBindingSource
         '
@@ -2838,7 +2838,7 @@ Partial Class FrmReplace
         Me.TabPage3.Controls.Add(Me.NombreCampoTextBox)
         Me.TabPage3.Controls.Add(NombreCampoLabel)
         Me.TabPage3.Controls.Add(Me.CTD_)
-        Me.TabPage3.Controls.Add(Me.Cbo_TipoDato)
+        Me.TabPage3.Controls.Add(Me.CboTiposDatos)
         Me.TabPage3.Controls.Add(Me.TD_)
         Me.TabPage3.Controls.Add(Me.Label2)
         Me.TabPage3.Controls.Add(Me.CTI_)
@@ -3625,7 +3625,7 @@ Partial Class FrmReplace
     Friend WithEvents SP_CamposDeTablas_EDICION_ELIMINARTableAdapter As DataSetTablasYCamposTableAdapters.SP_CamposDeTablas_EDICION_ELIMINARTableAdapter
     Friend WithEvents SP_CamposDeTablas_EDICION_INSERTARBindingSource As BindingSource
     Friend WithEvents SP_CamposDeTablas_EDICION_INSERTARTableAdapter As DataSetTablasYCamposTableAdapters.SP_CamposDeTablas_EDICION_INSERTARTableAdapter
-    Friend WithEvents Cbo_TipoDato As ComboBox
+    Friend WithEvents CboTiposDatos As ComboBox
     Friend WithEvents Label2 As Label
     Friend WithEvents TipoTextBox As TextBox
     Friend WithEvents SP_CampoComponentes_Segun_Plantilla_TipoBindingSource As BindingSource

@@ -1,10 +1,7 @@
 ﻿Public Class FrmTecnologias
     Private Sub FrmTecnologias_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        'TODO: esta línea de código carga datos en la tabla 'DataSetAdministracion.Tipos' Puede moverla o quitarla según sea necesario.
-        Me.TiposTableAdapter.Fill(Me.DataSetAdministracion.Tipos)
-        'TODO: esta línea de código carga datos en la tabla 'DataSetAdministracion.Tipos' Puede moverla o quitarla según sea necesario.
-
         Try
+            Me.TiposTableAdapter.Fill(Me.DataSetAdministracion.Tipos)
             Me.TecnologiasTableAdapter.Fill(Me.DataSetAdministracion.Tecnologias)
             Cancelar_Tecnologias()
             SP_Plantillas_BUSQUEDA_SEGUN_PARAMETRO_Tecnologia()
@@ -1349,7 +1346,7 @@
     End Sub
 
     Private Sub TipoTextBox_TextChanged(sender As Object, e As EventArgs) Handles TipoTextBox.TextChanged
-        Cbo_TipoDato.Text = TipoTextBox.Text
+        CboTiposDatos.Text = TipoTextBox.Text
     End Sub
 
     Private Sub RequerimientoPlantillaIDTextBox_TextChanged(sender As Object, e As EventArgs) Handles RequerimientoPlantillaIDTextBox.TextChanged
@@ -1405,7 +1402,7 @@
         Try
             Me.SP_CampoComponentes_EDICION_INSERTARTableAdapter.Fill(Me.DataSetTablasYCampos.SP_CampoComponentes_EDICION_INSERTAR,
                                                  New System.Nullable(Of Integer)(CType(PlantillaIDTextBox.Text, Integer)),
-                                                 Cbo_TipoDato.Text,
+                                                 CboTiposDatos.Text,
                                                  PrefijoTextBox.Text,
                                                  SuperiorTextBox.Text,
                                                  SufijoTextBox.Text,
@@ -1420,7 +1417,7 @@
     End Sub
     Private Sub SP_CampoComponentes_EDICION_INSERTAR_Copia()
         Try
-            Dim tipo As String = Cbo_TipoDato.Text
+            Dim tipo As String = CboTiposDatos.Text
             Dim Prefijo As String = PrefijoTextBox.Text
             Dim Superior As String = SuperiorTextBox.Text
             Dim Sufijo As String = SufijoTextBox.Text
@@ -1451,7 +1448,7 @@
             Me.SP_CampoComponentes_EDICION_ACTUALIZARTableAdapter.Fill(Me.DataSetTablasYCampos.SP_CampoComponentes_EDICION_ACTUALIZAR,
                                                  New System.Nullable(Of Integer)(CType(CampoComponenteIDTextBox.Text, Integer)),
                                                  New System.Nullable(Of Integer)(CType(PlantillaIDTextBox.Text, Integer)),
-                                                 Cbo_TipoDato.Text,
+                                                 CboTiposDatos.Text,
                                                  PrefijoTextBox.Text,
                                                  SuperiorTextBox.Text,
                                                  SufijoTextBox.Text,
@@ -1482,8 +1479,8 @@
         Editar_Menu_CampoComponentes.Enabled = False
         SP_CampoComponentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView.Enabled = False
         Limpiar_Objetos_CampoComponentes()
-        Cbo_TipoDato.Enabled = True
-        Cbo_TipoDato.Focus()
+        CboTiposDatos.Enabled = True
+        CboTiposDatos.Focus()
     End Sub
     'Guardar
     Private Sub Guardar_Menu_CampoComponentes_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Guardar_Menu_CampoComponentes.Click
@@ -1572,20 +1569,20 @@
                 MsgBox("El nombre del campo: PlantillaID; Esta vacio, Favor Verificar", MsgBoxStyle.Critical)
                 PlantillaIDTextBox.BackColor = Color.Beige
                 ControlNulos.Text = "1"
-            Case Cbo_TipoDato.Text = ""
+            Case CboTiposDatos.Text = ""
                 MsgBox("El nombre del campo: Tipo; Esta vacio, Favor Verificar", MsgBoxStyle.Critical)
-                Cbo_TipoDato.BackColor = Color.Beige
+                CboTiposDatos.BackColor = Color.Beige
                 ControlNulos.Text = "1"
             Case Else
                 ControlNulos.Text = "" '
         End Select
     End Sub
-    Private Sub Cbo_TipoDato_KeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles Cbo_TipoDato.KeyPress
+    Private Sub ComboBox1_KeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles CboTiposDatos.KeyPress
         If Asc(e.KeyChar) = 13 Then
-            If Cbo_TipoDato.Text = "" Then
+            If CboTiposDatos.Text = "" Then
                 MsgBox("Dato Obligatorio, Favor Verificar", MsgBoxStyle.Critical, "Validación de Datos")
-                Cbo_TipoDato.Text = ""
-                Cbo_TipoDato.Focus()
+                CboTiposDatos.Text = ""
+                CboTiposDatos.Focus()
             Else
                 SeparadorCamposTextBox.Enabled = True
                 SeparadorCamposTextBox.Focus()
@@ -1641,7 +1638,7 @@
         End If
     End Sub
     Public Sub Limpiar_Objetos_CampoComponentes()
-        Cbo_TipoDato.Text = "" ''
+        CboTiposDatos.Text = "" ''
         SeparadorCamposTextBox.Text = "" ''
         PrefijoTextBox.Text = "" ''
         SuperiorTextBox.Text = "" ''
@@ -1650,7 +1647,7 @@
         MultiReplaceTextBox.Text = ""
     End Sub
     Public Sub Desbloquear_Objetos_CampoComponentes()
-        Cbo_TipoDato.Enabled = True
+        CboTiposDatos.Enabled = True
         SeparadorCamposTextBox.Enabled = True
         PrefijoTextBox.Enabled = True
         SuperiorTextBox.Enabled = True
@@ -1659,7 +1656,7 @@
         MultiReplaceTextBox.Enabled = True
     End Sub
     Public Sub Bloquear_Objetos_CampoComponentes()
-        Cbo_TipoDato.Enabled = False
+        CboTiposDatos.Enabled = False
         SeparadorCamposTextBox.Enabled = False
         PrefijoTextBox.Enabled = False
         SuperiorTextBox.Enabled = False
