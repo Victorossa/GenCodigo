@@ -15,7 +15,7 @@ Option Explicit On
 Namespace My
     
     <Global.System.Runtime.CompilerServices.CompilerGeneratedAttribute(),  _
-     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "15.9.0.0"),  _
+     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "16.6.0.0"),  _
      Global.System.ComponentModel.EditorBrowsableAttribute(Global.System.ComponentModel.EditorBrowsableState.Advanced)>  _
     Partial Friend NotInheritable Class MySettings
         Inherits Global.System.Configuration.ApplicationSettingsBase
@@ -68,8 +68,8 @@ Namespace My
         <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.Configuration.SpecialSettingAttribute(Global.System.Configuration.SpecialSetting.ConnectionString),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-63U4E7U;Initial Catalog=GeneradorCodigoBD;Integrated Security"& _ 
-            "=True")>  _
+         Global.System.Configuration.DefaultSettingValueAttribute("Data Source=RENTATIC-0495;Initial Catalog=GeneradorCodigoBD;Integrated Security=T"& _ 
+            "rue")>  _
         Public ReadOnly Property GeneradorCodigoBDConnectionString() As String
             Get
                 Return CType(Me("GeneradorCodigoBDConnectionString"),String)
@@ -79,7 +79,7 @@ Namespace My
         <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.Configuration.SpecialSettingAttribute(Global.System.Configuration.SpecialSetting.ConnectionString),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-63U4E7U;Initial Catalog=PLE_DB;Integrated Security=True")>  _
+         Global.System.Configuration.DefaultSettingValueAttribute("Data Source=RENTATIC-0495;Initial Catalog=PLE_DB;Integrated Security=True")>  _
         Public ReadOnly Property PLE_DBConnectionString() As String
             Get
                 Return CType(Me("PLE_DBConnectionString"),String)

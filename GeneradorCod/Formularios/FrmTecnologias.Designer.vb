@@ -123,39 +123,10 @@ Partial Class FrmTecnologias
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
-        Me.TabPage3 = New System.Windows.Forms.TabPage()
-        Me.MultiReplaceTextBox = New System.Windows.Forms.TextBox()
-        Me.SP_CampoComponentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.DataSetTablasYCampos = New GeneradorCod.DataSetTablasYCampos()
-        Me.TxtPrevisualizar = New System.Windows.Forms.TextBox()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.Panel8 = New System.Windows.Forms.Panel()
-        Me.SuperiorTextBox = New System.Windows.Forms.TextBox()
-        Me.PrefijoTextBox = New System.Windows.Forms.TextBox()
-        Me.InferiorTextBox = New System.Windows.Forms.TextBox()
-        Me.SufijoTextBox = New System.Windows.Forms.TextBox()
-        Me.SeparadorCamposTextBox = New System.Windows.Forms.TextBox()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.SP_CampoComponentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView = New System.Windows.Forms.DataGridView()
-        Me.DataGridViewTextBoxColumn7 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn8 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn9 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn10 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn11 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.MultiReplace = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn12 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.CM_TiposDatos = New System.Windows.Forms.ContextMenuStrip(Me.components)
-        Me.CopiarRegistroToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.Cbo_TipoDato = New System.Windows.Forms.ComboBox()
-        Me.Panel7 = New System.Windows.Forms.Panel()
-        Me.BtnPrevisualizar = New System.Windows.Forms.Button()
-        Me.Nuevo_Menu_CampoComponentes = New System.Windows.Forms.Button()
-        Me.Cancelar_Menu_CampoComponentes = New System.Windows.Forms.Button()
-        Me.Eliminar_Menu_CampoComponentes = New System.Windows.Forms.Button()
-        Me.Editar_Menu_CampoComponentes = New System.Windows.Forms.Button()
-        Me.Actualizar_Menu_CampoComponentes = New System.Windows.Forms.Button()
-        Me.Guardar_Menu_CampoComponentes = New System.Windows.Forms.Button()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
+        Me.ContenidoComponenteRichTextBox = New System.Windows.Forms.RichTextBox()
+        Me.ChkControlCambios = New System.Windows.Forms.CheckBox()
+        Me.ContenidoComponenteCopia = New System.Windows.Forms.RichTextBox()
         Me.BtnTodasLasTablas = New System.Windows.Forms.Button()
         Me.PanelGuardado = New System.Windows.Forms.Panel()
         Me.Label5 = New System.Windows.Forms.Label()
@@ -174,11 +145,11 @@ Partial Class FrmTecnologias
         Me.BtnRemplazar = New System.Windows.Forms.Button()
         Me.BtnBajarFuente = New System.Windows.Forms.Button()
         Me.BtnSubirFuente = New System.Windows.Forms.Button()
-        Me.ContenidoComponenteRichTextBox = New System.Windows.Forms.RichTextBox()
         Me.BtnBuscarYPintar = New System.Windows.Forms.Button()
         Me.TabPage5 = New System.Windows.Forms.TabPage()
         Me.RichTextboxRichTextBox = New System.Windows.Forms.RichTextBox()
         Me.SP_TextoEnriquecido_BUSQUEDA_SEGUN_PARAMETRO_ComponenteIDBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.DataSetTablasYCampos = New GeneradorCod.DataSetTablasYCampos()
         Me.TextoEnriquecidoIDTextBox = New System.Windows.Forms.TextBox()
         Me.Panel10 = New System.Windows.Forms.Panel()
         Me.BtnActualizar = New System.Windows.Forms.Button()
@@ -193,6 +164,31 @@ Partial Class FrmTecnologias
         Me.Actualizar_Menu_TextoEnriquecido = New System.Windows.Forms.Button()
         Me.Guardar_Menu_TextoEnriquecido = New System.Windows.Forms.Button()
         Me.BtnIzquierda = New System.Windows.Forms.Button()
+        Me.TabPage3 = New System.Windows.Forms.TabPage()
+        Me.MultiReplaceTextBox = New System.Windows.Forms.TextBox()
+        Me.SP_CampoComponentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.TxtPrevisualizar = New System.Windows.Forms.TextBox()
+        Me.CboTiposDatos = New System.Windows.Forms.ComboBox()
+        Me.TiposBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.Panel8 = New System.Windows.Forms.Panel()
+        Me.SuperiorTextBox = New System.Windows.Forms.TextBox()
+        Me.PrefijoTextBox = New System.Windows.Forms.TextBox()
+        Me.InferiorTextBox = New System.Windows.Forms.TextBox()
+        Me.SufijoTextBox = New System.Windows.Forms.TextBox()
+        Me.SeparadorCamposTextBox = New System.Windows.Forms.TextBox()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.SP_CampoComponentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView = New System.Windows.Forms.DataGridView()
+        Me.CM_TiposDatos = New System.Windows.Forms.ContextMenuStrip(Me.components)
+        Me.CopiarRegistroToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.Panel7 = New System.Windows.Forms.Panel()
+        Me.BtnPrevisualizar = New System.Windows.Forms.Button()
+        Me.Nuevo_Menu_CampoComponentes = New System.Windows.Forms.Button()
+        Me.Cancelar_Menu_CampoComponentes = New System.Windows.Forms.Button()
+        Me.Eliminar_Menu_CampoComponentes = New System.Windows.Forms.Button()
+        Me.Editar_Menu_CampoComponentes = New System.Windows.Forms.Button()
+        Me.Actualizar_Menu_CampoComponentes = New System.Windows.Forms.Button()
+        Me.Guardar_Menu_CampoComponentes = New System.Windows.Forms.Button()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
         Me.EnunciadoRichTextBox = New System.Windows.Forms.RichTextBox()
         Me.SP_CARGA_CONVENSIONES_USADAS_POR_PLANTILLADataGridView = New System.Windows.Forms.DataGridView()
@@ -209,7 +205,6 @@ Partial Class FrmTecnologias
         Me.ContenidoRelacionTextBox = New System.Windows.Forms.TextBox()
         Me.SP_TablasRelacionadas_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.SP_TablasRelacionadas_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView = New System.Windows.Forms.DataGridView()
-        Me.DataGridViewTextBoxColumn14 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Panel9 = New System.Windows.Forms.Panel()
         Me.Nuevo_Menu_TablasRelacionadas = New System.Windows.Forms.Button()
         Me.Cancelar_Menu_TablasRelacionadas = New System.Windows.Forms.Button()
@@ -223,6 +218,7 @@ Partial Class FrmTecnologias
         Me.BtnTD = New System.Windows.Forms.Button()
         Me.TabPage6 = New System.Windows.Forms.TabPage()
         Me.Label6 = New System.Windows.Forms.Label()
+        Me.Cbo_TipoDato = New System.Windows.Forms.ComboBox()
         Me.RelacionTablasIDTextBox = New System.Windows.Forms.TextBox()
         Me.NombreGrupoTipoDeDatoTextBox1 = New System.Windows.Forms.TextBox()
         Me.TipoCampoIDTextBox = New System.Windows.Forms.TextBox()
@@ -287,12 +283,22 @@ Partial Class FrmTecnologias
         Me.SP_RequerimientosPlantillas_EDICION_INSERTARBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.SP_RequerimientosPlantillas_EDICION_INSERTARTableAdapter = New GeneradorCod.DataSetAdministracionTableAdapters.SP_RequerimientosPlantillas_EDICION_INSERTARTableAdapter()
         Me.ValidadaTextBox = New System.Windows.Forms.TextBox()
-        Me.TiposBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.TiposTableAdapter = New GeneradorCod.DataSetAdministracionTableAdapters.TiposTableAdapter()
         Me.TiposDataGridView = New System.Windows.Forms.DataGridView()
         Me.DataGridViewTextBoxColumn3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn15 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.CboTiposDatos = New System.Windows.Forms.ComboBox()
+        Me.RichTextBox1 = New System.Windows.Forms.RichTextBox()
+        Me.BtnZoom = New System.Windows.Forms.Button()
+        Me.CM_AccionesEdicion = New System.Windows.Forms.ContextMenuStrip(Me.components)
+        Me.MinimizarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.DataGridViewTextBoxColumn7 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn8 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn9 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn10 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn11 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.MultiReplace = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn12 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn14 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         NombreTecnologiaLabel = New System.Windows.Forms.Label()
         TecnologiaIDLabel = New System.Windows.Forms.Label()
         NombrePlantillaLabel = New System.Windows.Forms.Label()
@@ -336,18 +342,19 @@ Partial Class FrmTecnologias
         CType(Me.SP_RequerimientosPlantillas_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDBindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel5.SuspendLayout()
         Me.TabControl1.SuspendLayout()
-        Me.TabPage3.SuspendLayout()
-        CType(Me.SP_CampoComponentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.DataSetTablasYCampos, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.Panel8.SuspendLayout()
-        CType(Me.SP_CampoComponentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.CM_TiposDatos.SuspendLayout()
-        Me.Panel7.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.PanelGuardado.SuspendLayout()
         Me.TabPage5.SuspendLayout()
         CType(Me.SP_TextoEnriquecido_BUSQUEDA_SEGUN_PARAMETRO_ComponenteIDBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DataSetTablasYCampos, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel10.SuspendLayout()
+        Me.TabPage3.SuspendLayout()
+        CType(Me.SP_CampoComponentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.TiposBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel8.SuspendLayout()
+        CType(Me.SP_CampoComponentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.CM_TiposDatos.SuspendLayout()
+        Me.Panel7.SuspendLayout()
         Me.TabPage2.SuspendLayout()
         CType(Me.SP_CARGA_CONVENSIONES_USADAS_POR_PLANTILLADataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.SP_CARGA_CONVENSIONES_USADAS_POR_PLANTILLABindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -380,8 +387,8 @@ Partial Class FrmTecnologias
         CType(Me.SP_RequerimientosPlantillas_EDICION_ACTUALIZARBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.SP_RequerimientosPlantillas_EDICION_ELIMINARBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.SP_RequerimientosPlantillas_EDICION_INSERTARBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.TiposBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TiposDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.CM_AccionesEdicion.SuspendLayout()
         Me.SuspendLayout()
         '
         'NombreTecnologiaLabel
@@ -432,7 +439,7 @@ Partial Class FrmTecnologias
         'OrdenDePeticionLabel
         '
         OrdenDePeticionLabel.AutoSize = True
-        OrdenDePeticionLabel.Location = New System.Drawing.Point(675, 130)
+        OrdenDePeticionLabel.Location = New System.Drawing.Point(706, 130)
         OrdenDePeticionLabel.Name = "OrdenDePeticionLabel"
         OrdenDePeticionLabel.Size = New System.Drawing.Size(46, 18)
         OrdenDePeticionLabel.TabIndex = 107
@@ -528,7 +535,7 @@ Partial Class FrmTecnologias
         'CONVENSIONESLabel
         '
         CONVENSIONESLabel.AutoSize = True
-        CONVENSIONESLabel.Location = New System.Drawing.Point(482, 533)
+        CONVENSIONESLabel.Location = New System.Drawing.Point(511, 533)
         CONVENSIONESLabel.Name = "CONVENSIONESLabel"
         CONVENSIONESLabel.Size = New System.Drawing.Size(106, 18)
         CONVENSIONESLabel.TabIndex = 110
@@ -591,7 +598,7 @@ Partial Class FrmTecnologias
         'RequerimientoLabel1
         '
         RequerimientoLabel1.AutoSize = True
-        RequerimientoLabel1.Location = New System.Drawing.Point(486, 501)
+        RequerimientoLabel1.Location = New System.Drawing.Point(515, 501)
         RequerimientoLabel1.Name = "RequerimientoLabel1"
         RequerimientoLabel1.Size = New System.Drawing.Size(102, 18)
         RequerimientoLabel1.TabIndex = 113
@@ -815,9 +822,9 @@ Partial Class FrmTecnologias
         'DGVEdicionPosicion
         '
         Me.DGVEdicionPosicion.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DGVEdicionPosicion.Location = New System.Drawing.Point(6, 116)
+        Me.DGVEdicionPosicion.Location = New System.Drawing.Point(6, 120)
         Me.DGVEdicionPosicion.Name = "DGVEdicionPosicion"
-        Me.DGVEdicionPosicion.Size = New System.Drawing.Size(369, 203)
+        Me.DGVEdicionPosicion.Size = New System.Drawing.Size(369, 200)
         Me.DGVEdicionPosicion.TabIndex = 119
         Me.DGVEdicionPosicion.Visible = False
         '
@@ -828,11 +835,11 @@ Partial Class FrmTecnologias
         Me.SP_Plantillas_BUSQUEDA_SEGUN_PARAMETRO_TecnologiaDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.SP_Plantillas_BUSQUEDA_SEGUN_PARAMETRO_TecnologiaDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Orden, Me.DataGridViewTextBoxColumn4, Me.Column1})
         Me.SP_Plantillas_BUSQUEDA_SEGUN_PARAMETRO_TecnologiaDataGridView.DataSource = Me.SP_Plantillas_BUSQUEDA_SEGUN_PARAMETRO_TecnologiaBindingSource
-        Me.SP_Plantillas_BUSQUEDA_SEGUN_PARAMETRO_TecnologiaDataGridView.Location = New System.Drawing.Point(6, 94)
+        Me.SP_Plantillas_BUSQUEDA_SEGUN_PARAMETRO_TecnologiaDataGridView.Location = New System.Drawing.Point(6, 97)
         Me.SP_Plantillas_BUSQUEDA_SEGUN_PARAMETRO_TecnologiaDataGridView.Name = "SP_Plantillas_BUSQUEDA_SEGUN_PARAMETRO_TecnologiaDataGridView"
         Me.SP_Plantillas_BUSQUEDA_SEGUN_PARAMETRO_TecnologiaDataGridView.RowHeadersVisible = False
         Me.SP_Plantillas_BUSQUEDA_SEGUN_PARAMETRO_TecnologiaDataGridView.RowTemplate.Height = 27
-        Me.SP_Plantillas_BUSQUEDA_SEGUN_PARAMETRO_TecnologiaDataGridView.Size = New System.Drawing.Size(369, 225)
+        Me.SP_Plantillas_BUSQUEDA_SEGUN_PARAMETRO_TecnologiaDataGridView.Size = New System.Drawing.Size(369, 222)
         Me.SP_Plantillas_BUSQUEDA_SEGUN_PARAMETRO_TecnologiaDataGridView.TabIndex = 94
         '
         'Orden
@@ -1172,7 +1179,7 @@ Partial Class FrmTecnologias
         Me.SP_RequerimientosPlantillas_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView.Name = "SP_RequerimientosPlantillas_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView"
         Me.SP_RequerimientosPlantillas_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView.RowHeadersVisible = False
         Me.SP_RequerimientosPlantillas_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView.RowTemplate.Height = 27
-        Me.SP_RequerimientosPlantillas_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView.Size = New System.Drawing.Size(459, 391)
+        Me.SP_RequerimientosPlantillas_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView.Size = New System.Drawing.Size(490, 391)
         Me.SP_RequerimientosPlantillas_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView.TabIndex = 107
         '
         'DataGridViewTextBoxColumn6
@@ -1192,14 +1199,14 @@ Partial Class FrmTecnologias
         Me.RequerimientoTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SP_RequerimientosPlantillas_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDBindingSource1, "Requerimiento", True))
         Me.RequerimientoTextBox.Location = New System.Drawing.Point(6, 150)
         Me.RequerimientoTextBox.Name = "RequerimientoTextBox"
-        Me.RequerimientoTextBox.Size = New System.Drawing.Size(669, 26)
+        Me.RequerimientoTextBox.Size = New System.Drawing.Size(700, 26)
         Me.RequerimientoTextBox.TabIndex = 107
         '
         'OrdenDePeticionTextBox
         '
         Me.OrdenDePeticionTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SP_RequerimientosPlantillas_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDBindingSource1, "OrdenDePeticion", True))
         Me.OrdenDePeticionTextBox.Font = New System.Drawing.Font("Candara", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.OrdenDePeticionTextBox.Location = New System.Drawing.Point(681, 150)
+        Me.OrdenDePeticionTextBox.Location = New System.Drawing.Point(712, 150)
         Me.OrdenDePeticionTextBox.Name = "OrdenDePeticionTextBox"
         Me.OrdenDePeticionTextBox.Size = New System.Drawing.Size(40, 27)
         Me.OrdenDePeticionTextBox.TabIndex = 108
@@ -1217,7 +1224,7 @@ Partial Class FrmTecnologias
         Me.Panel5.Controls.Add(Me.Guardar_Menu_RequerimientosPlantillas)
         Me.Panel5.Location = New System.Drawing.Point(6, 6)
         Me.Panel5.Name = "Panel5"
-        Me.Panel5.Size = New System.Drawing.Size(717, 41)
+        Me.Panel5.Size = New System.Drawing.Size(748, 41)
         Me.Panel5.TabIndex = 110
         '
         'Button1
@@ -1330,316 +1337,19 @@ Partial Class FrmTecnologias
         Me.TabControl1.Controls.Add(Me.TabPage2)
         Me.TabControl1.Controls.Add(Me.TabPage4)
         Me.TabControl1.Controls.Add(Me.TabPage6)
-        Me.TabControl1.Location = New System.Drawing.Point(541, 1)
+        Me.TabControl1.Location = New System.Drawing.Point(549, 1)
         Me.TabControl1.Name = "TabControl1"
         Me.TabControl1.SelectedIndex = 0
-        Me.TabControl1.Size = New System.Drawing.Size(734, 607)
+        Me.TabControl1.Size = New System.Drawing.Size(766, 607)
         Me.TabControl1.TabIndex = 116
-        '
-        'TabPage3
-        '
-        Me.TabPage3.Controls.Add(Me.MultiReplaceTextBox)
-        Me.TabPage3.Controls.Add(Me.TxtPrevisualizar)
-        Me.TabPage3.Controls.Add(Me.CboTiposDatos)
-        Me.TabPage3.Controls.Add(MultiReplaceLabel)
-        Me.TabPage3.Controls.Add(Me.Label3)
-        Me.TabPage3.Controls.Add(Me.Panel8)
-        Me.TabPage3.Controls.Add(SeparadorCamposLabel)
-        Me.TabPage3.Controls.Add(Me.SeparadorCamposTextBox)
-        Me.TabPage3.Controls.Add(Me.Label4)
-        Me.TabPage3.Controls.Add(Me.SP_CampoComponentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView)
-        Me.TabPage3.Controls.Add(Me.Panel7)
-        Me.TabPage3.Location = New System.Drawing.Point(4, 27)
-        Me.TabPage3.Name = "TabPage3"
-        Me.TabPage3.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage3.Size = New System.Drawing.Size(726, 576)
-        Me.TabPage3.TabIndex = 2
-        Me.TabPage3.Text = "Tratamiento Campos"
-        Me.TabPage3.UseVisualStyleBackColor = True
-        '
-        'MultiReplaceTextBox
-        '
-        Me.MultiReplaceTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SP_CampoComponentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDBindingSource, "MultiReplace", True))
-        Me.MultiReplaceTextBox.Location = New System.Drawing.Point(333, 255)
-        Me.MultiReplaceTextBox.Multiline = True
-        Me.MultiReplaceTextBox.Name = "MultiReplaceTextBox"
-        Me.MultiReplaceTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
-        Me.MultiReplaceTextBox.Size = New System.Drawing.Size(386, 101)
-        Me.MultiReplaceTextBox.TabIndex = 163
-        '
-        'SP_CampoComponentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDBindingSource
-        '
-        Me.SP_CampoComponentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDBindingSource.DataMember = "SP_CampoComponentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaID"
-        Me.SP_CampoComponentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDBindingSource.DataSource = Me.DataSetTablasYCampos
-        '
-        'DataSetTablasYCampos
-        '
-        Me.DataSetTablasYCampos.DataSetName = "DataSetTablasYCampos"
-        Me.DataSetTablasYCampos.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
-        'TxtPrevisualizar
-        '
-        Me.TxtPrevisualizar.Location = New System.Drawing.Point(333, 123)
-        Me.TxtPrevisualizar.Multiline = True
-        Me.TxtPrevisualizar.Name = "TxtPrevisualizar"
-        Me.TxtPrevisualizar.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
-        Me.TxtPrevisualizar.Size = New System.Drawing.Size(386, 100)
-        Me.TxtPrevisualizar.TabIndex = 161
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("Candara", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(333, 102)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(180, 18)
-        Me.Label3.TabIndex = 162
-        Me.Label3.Text = "Previsualizacion del Campo"
-        '
-        'Panel8
-        '
-        Me.Panel8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Panel8.Controls.Add(Me.SuperiorTextBox)
-        Me.Panel8.Controls.Add(Me.PrefijoTextBox)
-        Me.Panel8.Controls.Add(PrefijoLabel)
-        Me.Panel8.Controls.Add(InferiorLabel)
-        Me.Panel8.Controls.Add(SuperiorLabel)
-        Me.Panel8.Controls.Add(Me.InferiorTextBox)
-        Me.Panel8.Controls.Add(Me.SufijoTextBox)
-        Me.Panel8.Controls.Add(SufijoLabel)
-        Me.Panel8.Location = New System.Drawing.Point(6, 102)
-        Me.Panel8.Name = "Panel8"
-        Me.Panel8.Size = New System.Drawing.Size(321, 254)
-        Me.Panel8.TabIndex = 160
-        '
-        'SuperiorTextBox
-        '
-        Me.SuperiorTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SP_CampoComponentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDBindingSource, "Superior", True))
-        Me.SuperiorTextBox.Location = New System.Drawing.Point(109, 6)
-        Me.SuperiorTextBox.Multiline = True
-        Me.SuperiorTextBox.Name = "SuperiorTextBox"
-        Me.SuperiorTextBox.Size = New System.Drawing.Size(100, 80)
-        Me.SuperiorTextBox.TabIndex = 156
-        '
-        'PrefijoTextBox
-        '
-        Me.PrefijoTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SP_CampoComponentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDBindingSource, "Prefijo", True))
-        Me.PrefijoTextBox.Location = New System.Drawing.Point(9, 86)
-        Me.PrefijoTextBox.Multiline = True
-        Me.PrefijoTextBox.Name = "PrefijoTextBox"
-        Me.PrefijoTextBox.Size = New System.Drawing.Size(100, 80)
-        Me.PrefijoTextBox.TabIndex = 155
-        '
-        'InferiorTextBox
-        '
-        Me.InferiorTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SP_CampoComponentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDBindingSource, "Inferior", True))
-        Me.InferiorTextBox.Location = New System.Drawing.Point(109, 166)
-        Me.InferiorTextBox.Multiline = True
-        Me.InferiorTextBox.Name = "InferiorTextBox"
-        Me.InferiorTextBox.Size = New System.Drawing.Size(100, 80)
-        Me.InferiorTextBox.TabIndex = 158
-        '
-        'SufijoTextBox
-        '
-        Me.SufijoTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SP_CampoComponentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDBindingSource, "Sufijo", True))
-        Me.SufijoTextBox.Location = New System.Drawing.Point(209, 86)
-        Me.SufijoTextBox.Multiline = True
-        Me.SufijoTextBox.Name = "SufijoTextBox"
-        Me.SufijoTextBox.Size = New System.Drawing.Size(100, 80)
-        Me.SufijoTextBox.TabIndex = 157
-        '
-        'SeparadorCamposTextBox
-        '
-        Me.SeparadorCamposTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SP_CampoComponentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDBindingSource, "SeparadorCampos", True))
-        Me.SeparadorCamposTextBox.Location = New System.Drawing.Point(496, 60)
-        Me.SeparadorCamposTextBox.Name = "SeparadorCamposTextBox"
-        Me.SeparadorCamposTextBox.Size = New System.Drawing.Size(223, 26)
-        Me.SeparadorCamposTextBox.TabIndex = 159
-        Me.SeparadorCamposTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.Font = New System.Drawing.Font("Candara", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(20, 68)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(88, 18)
-        Me.Label4.TabIndex = 153
-        Me.Label4.Text = "Tipo de Dato"
-        '
-        'SP_CampoComponentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView
-        '
-        Me.SP_CampoComponentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView.AllowUserToAddRows = False
-        Me.SP_CampoComponentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView.AutoGenerateColumns = False
-        Me.SP_CampoComponentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.SP_CampoComponentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn7, Me.DataGridViewTextBoxColumn8, Me.DataGridViewTextBoxColumn9, Me.DataGridViewTextBoxColumn10, Me.DataGridViewTextBoxColumn11, Me.MultiReplace, Me.DataGridViewTextBoxColumn12})
-        Me.SP_CampoComponentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView.ContextMenuStrip = Me.CM_TiposDatos
-        Me.SP_CampoComponentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView.DataSource = Me.SP_CampoComponentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDBindingSource
-        Me.SP_CampoComponentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView.Location = New System.Drawing.Point(8, 364)
-        Me.SP_CampoComponentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView.Name = "SP_CampoComponentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView"
-        Me.SP_CampoComponentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView.RowHeadersVisible = False
-        Me.SP_CampoComponentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView.RowTemplate.Height = 27
-        Me.SP_CampoComponentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView.Size = New System.Drawing.Size(711, 206)
-        Me.SP_CampoComponentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView.TabIndex = 91
-        '
-        'DataGridViewTextBoxColumn7
-        '
-        Me.DataGridViewTextBoxColumn7.DataPropertyName = "Tipo"
-        Me.DataGridViewTextBoxColumn7.HeaderText = "Tipo"
-        Me.DataGridViewTextBoxColumn7.Name = "DataGridViewTextBoxColumn7"
-        '
-        'DataGridViewTextBoxColumn8
-        '
-        Me.DataGridViewTextBoxColumn8.DataPropertyName = "Prefijo"
-        Me.DataGridViewTextBoxColumn8.HeaderText = "Prefijo"
-        Me.DataGridViewTextBoxColumn8.Name = "DataGridViewTextBoxColumn8"
-        '
-        'DataGridViewTextBoxColumn9
-        '
-        Me.DataGridViewTextBoxColumn9.DataPropertyName = "Superior"
-        Me.DataGridViewTextBoxColumn9.HeaderText = "Superior"
-        Me.DataGridViewTextBoxColumn9.Name = "DataGridViewTextBoxColumn9"
-        '
-        'DataGridViewTextBoxColumn10
-        '
-        Me.DataGridViewTextBoxColumn10.DataPropertyName = "Sufijo"
-        Me.DataGridViewTextBoxColumn10.HeaderText = "Sufijo"
-        Me.DataGridViewTextBoxColumn10.Name = "DataGridViewTextBoxColumn10"
-        '
-        'DataGridViewTextBoxColumn11
-        '
-        Me.DataGridViewTextBoxColumn11.DataPropertyName = "Inferior"
-        Me.DataGridViewTextBoxColumn11.HeaderText = "Inferior"
-        Me.DataGridViewTextBoxColumn11.Name = "DataGridViewTextBoxColumn11"
-        '
-        'MultiReplace
-        '
-        Me.MultiReplace.DataPropertyName = "MultiReplace"
-        Me.MultiReplace.HeaderText = "MultiReplace"
-        Me.MultiReplace.Name = "MultiReplace"
-        '
-        'DataGridViewTextBoxColumn12
-        '
-        Me.DataGridViewTextBoxColumn12.DataPropertyName = "SeparadorCampos"
-        Me.DataGridViewTextBoxColumn12.HeaderText = "Separador Campos"
-        Me.DataGridViewTextBoxColumn12.Name = "DataGridViewTextBoxColumn12"
-        '
-        'CM_TiposDatos
-        '
-        Me.CM_TiposDatos.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CopiarRegistroToolStripMenuItem})
-        Me.CM_TiposDatos.Name = "CM_TiposDatos"
-        Me.CM_TiposDatos.Size = New System.Drawing.Size(156, 26)
-        '
-        'CopiarRegistroToolStripMenuItem
-        '
-        Me.CopiarRegistroToolStripMenuItem.Name = "CopiarRegistroToolStripMenuItem"
-        Me.CopiarRegistroToolStripMenuItem.Size = New System.Drawing.Size(155, 22)
-        Me.CopiarRegistroToolStripMenuItem.Text = "Copiar Registro"
-        '
-        'Cbo_TipoDato
-        '
-        Me.Cbo_TipoDato.FormattingEnabled = True
-        Me.Cbo_TipoDato.Location = New System.Drawing.Point(1002, 188)
-        Me.Cbo_TipoDato.Name = "Cbo_TipoDato"
-        Me.Cbo_TipoDato.Size = New System.Drawing.Size(159, 26)
-        Me.Cbo_TipoDato.Sorted = True
-        Me.Cbo_TipoDato.TabIndex = 152
-        '
-        'Panel7
-        '
-        Me.Panel7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Panel7.Controls.Add(Me.BtnPrevisualizar)
-        Me.Panel7.Controls.Add(Me.Nuevo_Menu_CampoComponentes)
-        Me.Panel7.Controls.Add(Me.Cancelar_Menu_CampoComponentes)
-        Me.Panel7.Controls.Add(Me.Eliminar_Menu_CampoComponentes)
-        Me.Panel7.Controls.Add(Me.Editar_Menu_CampoComponentes)
-        Me.Panel7.Controls.Add(Me.Actualizar_Menu_CampoComponentes)
-        Me.Panel7.Controls.Add(Me.Guardar_Menu_CampoComponentes)
-        Me.Panel7.Location = New System.Drawing.Point(6, 6)
-        Me.Panel7.Name = "Panel7"
-        Me.Panel7.Size = New System.Drawing.Size(713, 46)
-        Me.Panel7.TabIndex = 91
-        '
-        'BtnPrevisualizar
-        '
-        Me.BtnPrevisualizar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.BtnPrevisualizar.Image = CType(resources.GetObject("BtnPrevisualizar.Image"), System.Drawing.Image)
-        Me.BtnPrevisualizar.Location = New System.Drawing.Point(280, 3)
-        Me.BtnPrevisualizar.Name = "BtnPrevisualizar"
-        Me.BtnPrevisualizar.Size = New System.Drawing.Size(40, 38)
-        Me.BtnPrevisualizar.TabIndex = 77
-        Me.BtnPrevisualizar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.BtnPrevisualizar.UseVisualStyleBackColor = True
-        '
-        'Nuevo_Menu_CampoComponentes
-        '
-        Me.Nuevo_Menu_CampoComponentes.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.Nuevo_Menu_CampoComponentes.Image = CType(resources.GetObject("Nuevo_Menu_CampoComponentes.Image"), System.Drawing.Image)
-        Me.Nuevo_Menu_CampoComponentes.Location = New System.Drawing.Point(4, 3)
-        Me.Nuevo_Menu_CampoComponentes.Name = "Nuevo_Menu_CampoComponentes"
-        Me.Nuevo_Menu_CampoComponentes.Size = New System.Drawing.Size(40, 38)
-        Me.Nuevo_Menu_CampoComponentes.TabIndex = 70
-        Me.Nuevo_Menu_CampoComponentes.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.Nuevo_Menu_CampoComponentes.UseVisualStyleBackColor = True
-        '
-        'Cancelar_Menu_CampoComponentes
-        '
-        Me.Cancelar_Menu_CampoComponentes.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.Cancelar_Menu_CampoComponentes.Image = CType(resources.GetObject("Cancelar_Menu_CampoComponentes.Image"), System.Drawing.Image)
-        Me.Cancelar_Menu_CampoComponentes.Location = New System.Drawing.Point(233, 3)
-        Me.Cancelar_Menu_CampoComponentes.Name = "Cancelar_Menu_CampoComponentes"
-        Me.Cancelar_Menu_CampoComponentes.Size = New System.Drawing.Size(40, 38)
-        Me.Cancelar_Menu_CampoComponentes.TabIndex = 75
-        Me.Cancelar_Menu_CampoComponentes.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.Cancelar_Menu_CampoComponentes.UseVisualStyleBackColor = True
-        '
-        'Eliminar_Menu_CampoComponentes
-        '
-        Me.Eliminar_Menu_CampoComponentes.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.Eliminar_Menu_CampoComponentes.Image = CType(resources.GetObject("Eliminar_Menu_CampoComponentes.Image"), System.Drawing.Image)
-        Me.Eliminar_Menu_CampoComponentes.Location = New System.Drawing.Point(188, 3)
-        Me.Eliminar_Menu_CampoComponentes.Name = "Eliminar_Menu_CampoComponentes"
-        Me.Eliminar_Menu_CampoComponentes.Size = New System.Drawing.Size(40, 38)
-        Me.Eliminar_Menu_CampoComponentes.TabIndex = 72
-        Me.Eliminar_Menu_CampoComponentes.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.Eliminar_Menu_CampoComponentes.UseVisualStyleBackColor = True
-        '
-        'Editar_Menu_CampoComponentes
-        '
-        Me.Editar_Menu_CampoComponentes.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.Editar_Menu_CampoComponentes.Image = CType(resources.GetObject("Editar_Menu_CampoComponentes.Image"), System.Drawing.Image)
-        Me.Editar_Menu_CampoComponentes.Location = New System.Drawing.Point(96, 3)
-        Me.Editar_Menu_CampoComponentes.Name = "Editar_Menu_CampoComponentes"
-        Me.Editar_Menu_CampoComponentes.Size = New System.Drawing.Size(40, 38)
-        Me.Editar_Menu_CampoComponentes.TabIndex = 74
-        Me.Editar_Menu_CampoComponentes.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.Editar_Menu_CampoComponentes.UseVisualStyleBackColor = True
-        '
-        'Actualizar_Menu_CampoComponentes
-        '
-        Me.Actualizar_Menu_CampoComponentes.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.Actualizar_Menu_CampoComponentes.Image = CType(resources.GetObject("Actualizar_Menu_CampoComponentes.Image"), System.Drawing.Image)
-        Me.Actualizar_Menu_CampoComponentes.Location = New System.Drawing.Point(142, 3)
-        Me.Actualizar_Menu_CampoComponentes.Name = "Actualizar_Menu_CampoComponentes"
-        Me.Actualizar_Menu_CampoComponentes.Size = New System.Drawing.Size(40, 38)
-        Me.Actualizar_Menu_CampoComponentes.TabIndex = 73
-        Me.Actualizar_Menu_CampoComponentes.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.Actualizar_Menu_CampoComponentes.UseVisualStyleBackColor = True
-        '
-        'Guardar_Menu_CampoComponentes
-        '
-        Me.Guardar_Menu_CampoComponentes.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.Guardar_Menu_CampoComponentes.Image = CType(resources.GetObject("Guardar_Menu_CampoComponentes.Image"), System.Drawing.Image)
-        Me.Guardar_Menu_CampoComponentes.Location = New System.Drawing.Point(50, 3)
-        Me.Guardar_Menu_CampoComponentes.Name = "Guardar_Menu_CampoComponentes"
-        Me.Guardar_Menu_CampoComponentes.Size = New System.Drawing.Size(40, 38)
-        Me.Guardar_Menu_CampoComponentes.TabIndex = 71
-        Me.Guardar_Menu_CampoComponentes.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.Guardar_Menu_CampoComponentes.UseVisualStyleBackColor = True
         '
         'TabPage1
         '
         Me.TabPage1.BackColor = System.Drawing.Color.Transparent
+        Me.TabPage1.Controls.Add(Me.BtnZoom)
+        Me.TabPage1.Controls.Add(Me.ContenidoComponenteRichTextBox)
+        Me.TabPage1.Controls.Add(Me.ChkControlCambios)
+        Me.TabPage1.Controls.Add(Me.ContenidoComponenteCopia)
         Me.TabPage1.Controls.Add(Me.BtnTodasLasTablas)
         Me.TabPage1.Controls.Add(Me.PanelGuardado)
         Me.TabPage1.Controls.Add(Me.BtnCamposRelacionados)
@@ -1657,7 +1367,6 @@ Partial Class FrmTecnologias
         Me.TabPage1.Controls.Add(Me.BtnRemplazar)
         Me.TabPage1.Controls.Add(Me.BtnBajarFuente)
         Me.TabPage1.Controls.Add(Me.BtnSubirFuente)
-        Me.TabPage1.Controls.Add(Me.ContenidoComponenteRichTextBox)
         Me.TabPage1.Controls.Add(Me.BtnBuscarYPintar)
         Me.TabPage1.Controls.Add(Me.Label1)
         Me.TabPage1.Controls.Add(Me.TxtBuscado)
@@ -1666,15 +1375,47 @@ Partial Class FrmTecnologias
         Me.TabPage1.Location = New System.Drawing.Point(4, 27)
         Me.TabPage1.Name = "TabPage1"
         Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage1.Size = New System.Drawing.Size(726, 576)
+        Me.TabPage1.Size = New System.Drawing.Size(758, 576)
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Text = "Text Cod"
+        '
+        'ContenidoComponenteRichTextBox
+        '
+        Me.ContenidoComponenteRichTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SP_Componentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDBindingSource, "Codigo", True))
+        Me.ContenidoComponenteRichTextBox.Font = New System.Drawing.Font("Candara", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ContenidoComponenteRichTextBox.Location = New System.Drawing.Point(3, 111)
+        Me.ContenidoComponenteRichTextBox.Name = "ContenidoComponenteRichTextBox"
+        Me.ContenidoComponenteRichTextBox.Size = New System.Drawing.Size(749, 458)
+        Me.ContenidoComponenteRichTextBox.TabIndex = 115
+        Me.ContenidoComponenteRichTextBox.Text = ""
+        '
+        'ChkControlCambios
+        '
+        Me.ChkControlCambios.AutoSize = True
+        Me.ChkControlCambios.Checked = True
+        Me.ChkControlCambios.CheckState = System.Windows.Forms.CheckState.Checked
+        Me.ChkControlCambios.Location = New System.Drawing.Point(573, 85)
+        Me.ChkControlCambios.Name = "ChkControlCambios"
+        Me.ChkControlCambios.Size = New System.Drawing.Size(144, 22)
+        Me.ChkControlCambios.TabIndex = 146
+        Me.ChkControlCambios.Text = "Control de Cambios"
+        Me.ChkControlCambios.UseVisualStyleBackColor = True
+        '
+        'ContenidoComponenteCopia
+        '
+        Me.ContenidoComponenteCopia.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SP_Componentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDBindingSource, "Codigo", True))
+        Me.ContenidoComponenteCopia.Font = New System.Drawing.Font("Candara", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ContenidoComponenteCopia.Location = New System.Drawing.Point(646, 137)
+        Me.ContenidoComponenteCopia.Name = "ContenidoComponenteCopia"
+        Me.ContenidoComponenteCopia.Size = New System.Drawing.Size(49, 43)
+        Me.ContenidoComponenteCopia.TabIndex = 145
+        Me.ContenidoComponenteCopia.Text = ""
         '
         'BtnTodasLasTablas
         '
         Me.BtnTodasLasTablas.BackColor = System.Drawing.Color.White
         Me.BtnTodasLasTablas.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnTodasLasTablas.Location = New System.Drawing.Point(561, 55)
+        Me.BtnTodasLasTablas.Location = New System.Drawing.Point(573, 55)
         Me.BtnTodasLasTablas.Name = "BtnTodasLasTablas"
         Me.BtnTodasLasTablas.Size = New System.Drawing.Size(89, 25)
         Me.BtnTodasLasTablas.TabIndex = 144
@@ -1708,7 +1449,7 @@ Partial Class FrmTecnologias
         Me.BtnCamposRelacionados.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnCamposRelacionados.Location = New System.Drawing.Point(463, 82)
         Me.BtnCamposRelacionados.Name = "BtnCamposRelacionados"
-        Me.BtnCamposRelacionados.Size = New System.Drawing.Size(89, 25)
+        Me.BtnCamposRelacionados.Size = New System.Drawing.Size(104, 25)
         Me.BtnCamposRelacionados.TabIndex = 142
         Me.BtnCamposRelacionados.Text = "{{{Camp-Rel}}}"
         Me.ToolTip1.SetToolTip(Me.BtnCamposRelacionados, "Campos Relacionados de la Tabla")
@@ -1720,7 +1461,7 @@ Partial Class FrmTecnologias
         Me.BtnTablaPluralMinuscula.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnTablaPluralMinuscula.Location = New System.Drawing.Point(463, 55)
         Me.BtnTablaPluralMinuscula.Name = "BtnTablaPluralMinuscula"
-        Me.BtnTablaPluralMinuscula.Size = New System.Drawing.Size(89, 25)
+        Me.BtnTablaPluralMinuscula.Size = New System.Drawing.Size(104, 25)
         Me.BtnTablaPluralMinuscula.TabIndex = 130
         Me.BtnTablaPluralMinuscula.Text = "{{{TPlurMin}}}"
         Me.ToolTip1.SetToolTip(Me.BtnTablaPluralMinuscula, "Tabla en Plural y en Minuscula")
@@ -1769,7 +1510,7 @@ Partial Class FrmTecnologias
         Me.BtnImprimeClavePrincipal.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnImprimeClavePrincipal.Location = New System.Drawing.Point(573, 7)
         Me.BtnImprimeClavePrincipal.Name = "BtnImprimeClavePrincipal"
-        Me.BtnImprimeClavePrincipal.Size = New System.Drawing.Size(77, 43)
+        Me.BtnImprimeClavePrincipal.Size = New System.Drawing.Size(89, 43)
         Me.BtnImprimeClavePrincipal.TabIndex = 126
         Me.BtnImprimeClavePrincipal.Text = "{{{Clave}}}"
         Me.ToolTip1.SetToolTip(Me.BtnImprimeClavePrincipal, "Clave Principal de la Tabla")
@@ -1804,7 +1545,7 @@ Partial Class FrmTecnologias
         '
         Me.BtnGuardarCodigo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.BtnGuardarCodigo.Image = CType(resources.GetObject("BtnGuardarCodigo.Image"), System.Drawing.Image)
-        Me.BtnGuardarCodigo.Location = New System.Drawing.Point(669, 6)
+        Me.BtnGuardarCodigo.Location = New System.Drawing.Point(702, 6)
         Me.BtnGuardarCodigo.Name = "BtnGuardarCodigo"
         Me.BtnGuardarCodigo.Size = New System.Drawing.Size(49, 44)
         Me.BtnGuardarCodigo.TabIndex = 123
@@ -1877,16 +1618,6 @@ Partial Class FrmTecnologias
         Me.ToolTip1.SetToolTip(Me.BtnSubirFuente, "Aumentar Tamaño de Letra")
         Me.BtnSubirFuente.UseVisualStyleBackColor = False
         '
-        'ContenidoComponenteRichTextBox
-        '
-        Me.ContenidoComponenteRichTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SP_Componentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDBindingSource, "Codigo", True))
-        Me.ContenidoComponenteRichTextBox.Font = New System.Drawing.Font("Candara", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ContenidoComponenteRichTextBox.Location = New System.Drawing.Point(3, 111)
-        Me.ContenidoComponenteRichTextBox.Name = "ContenidoComponenteRichTextBox"
-        Me.ContenidoComponenteRichTextBox.Size = New System.Drawing.Size(716, 458)
-        Me.ContenidoComponenteRichTextBox.TabIndex = 115
-        Me.ContenidoComponenteRichTextBox.Text = ""
-        '
         'BtnBuscarYPintar
         '
         Me.BtnBuscarYPintar.BackColor = System.Drawing.Color.White
@@ -1907,7 +1638,7 @@ Partial Class FrmTecnologias
         Me.TabPage5.Location = New System.Drawing.Point(4, 27)
         Me.TabPage5.Name = "TabPage5"
         Me.TabPage5.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage5.Size = New System.Drawing.Size(726, 576)
+        Me.TabPage5.Size = New System.Drawing.Size(758, 576)
         Me.TabPage5.TabIndex = 4
         Me.TabPage5.Text = "Descripciones"
         Me.TabPage5.UseVisualStyleBackColor = True
@@ -1917,7 +1648,7 @@ Partial Class FrmTecnologias
         Me.RichTextboxRichTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SP_TextoEnriquecido_BUSQUEDA_SEGUN_PARAMETRO_ComponenteIDBindingSource, "RichTextbox", True))
         Me.RichTextboxRichTextBox.Location = New System.Drawing.Point(6, 56)
         Me.RichTextboxRichTextBox.Name = "RichTextboxRichTextBox"
-        Me.RichTextboxRichTextBox.Size = New System.Drawing.Size(716, 513)
+        Me.RichTextboxRichTextBox.Size = New System.Drawing.Size(746, 513)
         Me.RichTextboxRichTextBox.TabIndex = 92
         Me.RichTextboxRichTextBox.Text = ""
         '
@@ -1925,6 +1656,11 @@ Partial Class FrmTecnologias
         '
         Me.SP_TextoEnriquecido_BUSQUEDA_SEGUN_PARAMETRO_ComponenteIDBindingSource.DataMember = "SP_TextoEnriquecido_BUSQUEDA_SEGUN_PARAMETRO_ComponenteID"
         Me.SP_TextoEnriquecido_BUSQUEDA_SEGUN_PARAMETRO_ComponenteIDBindingSource.DataSource = Me.DataSetTablasYCampos
+        '
+        'DataSetTablasYCampos
+        '
+        Me.DataSetTablasYCampos.DataSetName = "DataSetTablasYCampos"
+        Me.DataSetTablasYCampos.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
         'TextoEnriquecidoIDTextBox
         '
@@ -1951,13 +1687,13 @@ Partial Class FrmTecnologias
         Me.Panel10.Controls.Add(Me.BtnIzquierda)
         Me.Panel10.Location = New System.Drawing.Point(6, 3)
         Me.Panel10.Name = "Panel10"
-        Me.Panel10.Size = New System.Drawing.Size(716, 46)
+        Me.Panel10.Size = New System.Drawing.Size(746, 46)
         Me.Panel10.TabIndex = 91
         '
         'BtnActualizar
         '
         Me.BtnActualizar.BackColor = System.Drawing.Color.GreenYellow
-        Me.BtnActualizar.Location = New System.Drawing.Point(663, 4)
+        Me.BtnActualizar.Location = New System.Drawing.Point(697, 4)
         Me.BtnActualizar.Name = "BtnActualizar"
         Me.BtnActualizar.Size = New System.Drawing.Size(41, 36)
         Me.BtnActualizar.TabIndex = 141
@@ -2075,8 +1811,270 @@ Partial Class FrmTecnologias
         Me.BtnIzquierda.Text = "<--"
         Me.BtnIzquierda.UseVisualStyleBackColor = True
         '
+        'TabPage3
+        '
+        Me.TabPage3.Controls.Add(Me.MultiReplaceTextBox)
+        Me.TabPage3.Controls.Add(Me.TxtPrevisualizar)
+        Me.TabPage3.Controls.Add(Me.CboTiposDatos)
+        Me.TabPage3.Controls.Add(MultiReplaceLabel)
+        Me.TabPage3.Controls.Add(Me.Label3)
+        Me.TabPage3.Controls.Add(Me.Panel8)
+        Me.TabPage3.Controls.Add(SeparadorCamposLabel)
+        Me.TabPage3.Controls.Add(Me.SeparadorCamposTextBox)
+        Me.TabPage3.Controls.Add(Me.Label4)
+        Me.TabPage3.Controls.Add(Me.SP_CampoComponentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView)
+        Me.TabPage3.Controls.Add(Me.Panel7)
+        Me.TabPage3.Location = New System.Drawing.Point(4, 27)
+        Me.TabPage3.Name = "TabPage3"
+        Me.TabPage3.Padding = New System.Windows.Forms.Padding(3)
+        Me.TabPage3.Size = New System.Drawing.Size(758, 576)
+        Me.TabPage3.TabIndex = 2
+        Me.TabPage3.Text = "Tratamiento Campos"
+        Me.TabPage3.UseVisualStyleBackColor = True
+        '
+        'MultiReplaceTextBox
+        '
+        Me.MultiReplaceTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SP_CampoComponentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDBindingSource, "MultiReplace", True))
+        Me.MultiReplaceTextBox.Location = New System.Drawing.Point(333, 255)
+        Me.MultiReplaceTextBox.Multiline = True
+        Me.MultiReplaceTextBox.Name = "MultiReplaceTextBox"
+        Me.MultiReplaceTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
+        Me.MultiReplaceTextBox.Size = New System.Drawing.Size(419, 101)
+        Me.MultiReplaceTextBox.TabIndex = 163
+        '
+        'SP_CampoComponentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDBindingSource
+        '
+        Me.SP_CampoComponentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDBindingSource.DataMember = "SP_CampoComponentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaID"
+        Me.SP_CampoComponentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDBindingSource.DataSource = Me.DataSetTablasYCampos
+        '
+        'TxtPrevisualizar
+        '
+        Me.TxtPrevisualizar.Location = New System.Drawing.Point(333, 123)
+        Me.TxtPrevisualizar.Multiline = True
+        Me.TxtPrevisualizar.Name = "TxtPrevisualizar"
+        Me.TxtPrevisualizar.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
+        Me.TxtPrevisualizar.Size = New System.Drawing.Size(419, 100)
+        Me.TxtPrevisualizar.TabIndex = 161
+        '
+        'CboTiposDatos
+        '
+        Me.CboTiposDatos.DataSource = Me.TiposBindingSource
+        Me.CboTiposDatos.DisplayMember = "Tipo"
+        Me.CboTiposDatos.FormattingEnabled = True
+        Me.CboTiposDatos.Location = New System.Drawing.Point(114, 64)
+        Me.CboTiposDatos.Name = "CboTiposDatos"
+        Me.CboTiposDatos.Size = New System.Drawing.Size(213, 26)
+        Me.CboTiposDatos.TabIndex = 158
+        Me.CboTiposDatos.ValueMember = "Tipo"
+        '
+        'TiposBindingSource
+        '
+        Me.TiposBindingSource.DataMember = "Tipos"
+        Me.TiposBindingSource.DataSource = Me.DataSetAdministracion
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Font = New System.Drawing.Font("Candara", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.Location = New System.Drawing.Point(333, 102)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(180, 18)
+        Me.Label3.TabIndex = 162
+        Me.Label3.Text = "Previsualizacion del Campo"
+        '
+        'Panel8
+        '
+        Me.Panel8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel8.Controls.Add(Me.SuperiorTextBox)
+        Me.Panel8.Controls.Add(Me.PrefijoTextBox)
+        Me.Panel8.Controls.Add(PrefijoLabel)
+        Me.Panel8.Controls.Add(InferiorLabel)
+        Me.Panel8.Controls.Add(SuperiorLabel)
+        Me.Panel8.Controls.Add(Me.InferiorTextBox)
+        Me.Panel8.Controls.Add(Me.SufijoTextBox)
+        Me.Panel8.Controls.Add(SufijoLabel)
+        Me.Panel8.Location = New System.Drawing.Point(6, 102)
+        Me.Panel8.Name = "Panel8"
+        Me.Panel8.Size = New System.Drawing.Size(321, 254)
+        Me.Panel8.TabIndex = 160
+        '
+        'SuperiorTextBox
+        '
+        Me.SuperiorTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SP_CampoComponentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDBindingSource, "Superior", True))
+        Me.SuperiorTextBox.Location = New System.Drawing.Point(109, 6)
+        Me.SuperiorTextBox.Multiline = True
+        Me.SuperiorTextBox.Name = "SuperiorTextBox"
+        Me.SuperiorTextBox.Size = New System.Drawing.Size(100, 80)
+        Me.SuperiorTextBox.TabIndex = 156
+        '
+        'PrefijoTextBox
+        '
+        Me.PrefijoTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SP_CampoComponentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDBindingSource, "Prefijo", True))
+        Me.PrefijoTextBox.Location = New System.Drawing.Point(9, 86)
+        Me.PrefijoTextBox.Multiline = True
+        Me.PrefijoTextBox.Name = "PrefijoTextBox"
+        Me.PrefijoTextBox.Size = New System.Drawing.Size(100, 80)
+        Me.PrefijoTextBox.TabIndex = 155
+        '
+        'InferiorTextBox
+        '
+        Me.InferiorTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SP_CampoComponentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDBindingSource, "Inferior", True))
+        Me.InferiorTextBox.Location = New System.Drawing.Point(109, 166)
+        Me.InferiorTextBox.Multiline = True
+        Me.InferiorTextBox.Name = "InferiorTextBox"
+        Me.InferiorTextBox.Size = New System.Drawing.Size(100, 80)
+        Me.InferiorTextBox.TabIndex = 158
+        '
+        'SufijoTextBox
+        '
+        Me.SufijoTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SP_CampoComponentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDBindingSource, "Sufijo", True))
+        Me.SufijoTextBox.Location = New System.Drawing.Point(209, 86)
+        Me.SufijoTextBox.Multiline = True
+        Me.SufijoTextBox.Name = "SufijoTextBox"
+        Me.SufijoTextBox.Size = New System.Drawing.Size(100, 80)
+        Me.SufijoTextBox.TabIndex = 157
+        '
+        'SeparadorCamposTextBox
+        '
+        Me.SeparadorCamposTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SP_CampoComponentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDBindingSource, "SeparadorCampos", True))
+        Me.SeparadorCamposTextBox.Location = New System.Drawing.Point(496, 60)
+        Me.SeparadorCamposTextBox.Name = "SeparadorCamposTextBox"
+        Me.SeparadorCamposTextBox.Size = New System.Drawing.Size(256, 26)
+        Me.SeparadorCamposTextBox.TabIndex = 159
+        Me.SeparadorCamposTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Font = New System.Drawing.Font("Candara", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.Location = New System.Drawing.Point(20, 68)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(88, 18)
+        Me.Label4.TabIndex = 153
+        Me.Label4.Text = "Tipo de Dato"
+        '
+        'SP_CampoComponentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView
+        '
+        Me.SP_CampoComponentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView.AllowUserToAddRows = False
+        Me.SP_CampoComponentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView.AutoGenerateColumns = False
+        Me.SP_CampoComponentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.SP_CampoComponentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn7, Me.DataGridViewTextBoxColumn8, Me.DataGridViewTextBoxColumn9, Me.DataGridViewTextBoxColumn10, Me.DataGridViewTextBoxColumn11, Me.MultiReplace, Me.DataGridViewTextBoxColumn12})
+        Me.SP_CampoComponentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView.ContextMenuStrip = Me.CM_TiposDatos
+        Me.SP_CampoComponentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView.DataSource = Me.SP_CampoComponentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDBindingSource
+        Me.SP_CampoComponentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView.Location = New System.Drawing.Point(8, 364)
+        Me.SP_CampoComponentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView.Name = "SP_CampoComponentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView"
+        Me.SP_CampoComponentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView.RowHeadersVisible = False
+        Me.SP_CampoComponentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView.RowTemplate.Height = 27
+        Me.SP_CampoComponentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView.Size = New System.Drawing.Size(744, 206)
+        Me.SP_CampoComponentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView.TabIndex = 91
+        '
+        'CM_TiposDatos
+        '
+        Me.CM_TiposDatos.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CopiarRegistroToolStripMenuItem})
+        Me.CM_TiposDatos.Name = "CM_TiposDatos"
+        Me.CM_TiposDatos.Size = New System.Drawing.Size(156, 26)
+        '
+        'CopiarRegistroToolStripMenuItem
+        '
+        Me.CopiarRegistroToolStripMenuItem.Name = "CopiarRegistroToolStripMenuItem"
+        Me.CopiarRegistroToolStripMenuItem.Size = New System.Drawing.Size(155, 22)
+        Me.CopiarRegistroToolStripMenuItem.Text = "Copiar Registro"
+        '
+        'Panel7
+        '
+        Me.Panel7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel7.Controls.Add(Me.BtnPrevisualizar)
+        Me.Panel7.Controls.Add(Me.Nuevo_Menu_CampoComponentes)
+        Me.Panel7.Controls.Add(Me.Cancelar_Menu_CampoComponentes)
+        Me.Panel7.Controls.Add(Me.Eliminar_Menu_CampoComponentes)
+        Me.Panel7.Controls.Add(Me.Editar_Menu_CampoComponentes)
+        Me.Panel7.Controls.Add(Me.Actualizar_Menu_CampoComponentes)
+        Me.Panel7.Controls.Add(Me.Guardar_Menu_CampoComponentes)
+        Me.Panel7.Location = New System.Drawing.Point(6, 6)
+        Me.Panel7.Name = "Panel7"
+        Me.Panel7.Size = New System.Drawing.Size(746, 46)
+        Me.Panel7.TabIndex = 91
+        '
+        'BtnPrevisualizar
+        '
+        Me.BtnPrevisualizar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.BtnPrevisualizar.Image = CType(resources.GetObject("BtnPrevisualizar.Image"), System.Drawing.Image)
+        Me.BtnPrevisualizar.Location = New System.Drawing.Point(280, 3)
+        Me.BtnPrevisualizar.Name = "BtnPrevisualizar"
+        Me.BtnPrevisualizar.Size = New System.Drawing.Size(40, 38)
+        Me.BtnPrevisualizar.TabIndex = 77
+        Me.BtnPrevisualizar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.BtnPrevisualizar.UseVisualStyleBackColor = True
+        '
+        'Nuevo_Menu_CampoComponentes
+        '
+        Me.Nuevo_Menu_CampoComponentes.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Nuevo_Menu_CampoComponentes.Image = CType(resources.GetObject("Nuevo_Menu_CampoComponentes.Image"), System.Drawing.Image)
+        Me.Nuevo_Menu_CampoComponentes.Location = New System.Drawing.Point(4, 3)
+        Me.Nuevo_Menu_CampoComponentes.Name = "Nuevo_Menu_CampoComponentes"
+        Me.Nuevo_Menu_CampoComponentes.Size = New System.Drawing.Size(40, 38)
+        Me.Nuevo_Menu_CampoComponentes.TabIndex = 70
+        Me.Nuevo_Menu_CampoComponentes.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.Nuevo_Menu_CampoComponentes.UseVisualStyleBackColor = True
+        '
+        'Cancelar_Menu_CampoComponentes
+        '
+        Me.Cancelar_Menu_CampoComponentes.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Cancelar_Menu_CampoComponentes.Image = CType(resources.GetObject("Cancelar_Menu_CampoComponentes.Image"), System.Drawing.Image)
+        Me.Cancelar_Menu_CampoComponentes.Location = New System.Drawing.Point(233, 3)
+        Me.Cancelar_Menu_CampoComponentes.Name = "Cancelar_Menu_CampoComponentes"
+        Me.Cancelar_Menu_CampoComponentes.Size = New System.Drawing.Size(40, 38)
+        Me.Cancelar_Menu_CampoComponentes.TabIndex = 75
+        Me.Cancelar_Menu_CampoComponentes.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.Cancelar_Menu_CampoComponentes.UseVisualStyleBackColor = True
+        '
+        'Eliminar_Menu_CampoComponentes
+        '
+        Me.Eliminar_Menu_CampoComponentes.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Eliminar_Menu_CampoComponentes.Image = CType(resources.GetObject("Eliminar_Menu_CampoComponentes.Image"), System.Drawing.Image)
+        Me.Eliminar_Menu_CampoComponentes.Location = New System.Drawing.Point(188, 3)
+        Me.Eliminar_Menu_CampoComponentes.Name = "Eliminar_Menu_CampoComponentes"
+        Me.Eliminar_Menu_CampoComponentes.Size = New System.Drawing.Size(40, 38)
+        Me.Eliminar_Menu_CampoComponentes.TabIndex = 72
+        Me.Eliminar_Menu_CampoComponentes.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.Eliminar_Menu_CampoComponentes.UseVisualStyleBackColor = True
+        '
+        'Editar_Menu_CampoComponentes
+        '
+        Me.Editar_Menu_CampoComponentes.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Editar_Menu_CampoComponentes.Image = CType(resources.GetObject("Editar_Menu_CampoComponentes.Image"), System.Drawing.Image)
+        Me.Editar_Menu_CampoComponentes.Location = New System.Drawing.Point(96, 3)
+        Me.Editar_Menu_CampoComponentes.Name = "Editar_Menu_CampoComponentes"
+        Me.Editar_Menu_CampoComponentes.Size = New System.Drawing.Size(40, 38)
+        Me.Editar_Menu_CampoComponentes.TabIndex = 74
+        Me.Editar_Menu_CampoComponentes.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.Editar_Menu_CampoComponentes.UseVisualStyleBackColor = True
+        '
+        'Actualizar_Menu_CampoComponentes
+        '
+        Me.Actualizar_Menu_CampoComponentes.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Actualizar_Menu_CampoComponentes.Image = CType(resources.GetObject("Actualizar_Menu_CampoComponentes.Image"), System.Drawing.Image)
+        Me.Actualizar_Menu_CampoComponentes.Location = New System.Drawing.Point(142, 3)
+        Me.Actualizar_Menu_CampoComponentes.Name = "Actualizar_Menu_CampoComponentes"
+        Me.Actualizar_Menu_CampoComponentes.Size = New System.Drawing.Size(40, 38)
+        Me.Actualizar_Menu_CampoComponentes.TabIndex = 73
+        Me.Actualizar_Menu_CampoComponentes.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.Actualizar_Menu_CampoComponentes.UseVisualStyleBackColor = True
+        '
+        'Guardar_Menu_CampoComponentes
+        '
+        Me.Guardar_Menu_CampoComponentes.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Guardar_Menu_CampoComponentes.Image = CType(resources.GetObject("Guardar_Menu_CampoComponentes.Image"), System.Drawing.Image)
+        Me.Guardar_Menu_CampoComponentes.Location = New System.Drawing.Point(50, 3)
+        Me.Guardar_Menu_CampoComponentes.Name = "Guardar_Menu_CampoComponentes"
+        Me.Guardar_Menu_CampoComponentes.Size = New System.Drawing.Size(40, 38)
+        Me.Guardar_Menu_CampoComponentes.TabIndex = 71
+        Me.Guardar_Menu_CampoComponentes.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.Guardar_Menu_CampoComponentes.UseVisualStyleBackColor = True
+        '
         'TabPage2
         '
+        Me.TabPage2.Controls.Add(Me.SP_RequerimientosPlantillas_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView)
         Me.TabPage2.Controls.Add(Me.EnunciadoRichTextBox)
         Me.TabPage2.Controls.Add(Me.SP_CARGA_CONVENSIONES_USADAS_POR_PLANTILLADataGridView)
         Me.TabPage2.Controls.Add(Me.SP_CARGA_CONVENSIONES_USADASDataGridView)
@@ -2086,7 +2084,6 @@ Partial Class FrmTecnologias
         Me.TabPage2.Controls.Add(Me.RB_Plantilla)
         Me.TabPage2.Controls.Add(CONVENSIONESLabel)
         Me.TabPage2.Controls.Add(Me.CONVENSIONESTextBox)
-        Me.TabPage2.Controls.Add(Me.SP_RequerimientosPlantillas_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView)
         Me.TabPage2.Controls.Add(Me.RequerimientoTextBox)
         Me.TabPage2.Controls.Add(RequerimientoLabel)
         Me.TabPage2.Controls.Add(Me.Panel5)
@@ -2096,7 +2093,7 @@ Partial Class FrmTecnologias
         Me.TabPage2.Location = New System.Drawing.Point(4, 27)
         Me.TabPage2.Name = "TabPage2"
         Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage2.Size = New System.Drawing.Size(726, 576)
+        Me.TabPage2.Size = New System.Drawing.Size(758, 576)
         Me.TabPage2.TabIndex = 1
         Me.TabPage2.Text = "Requerimientos"
         Me.TabPage2.UseVisualStyleBackColor = True
@@ -2106,7 +2103,7 @@ Partial Class FrmTecnologias
         Me.EnunciadoRichTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SP_RequerimientosPlantillas_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDBindingSource1, "Enunciado", True))
         Me.EnunciadoRichTextBox.Location = New System.Drawing.Point(7, 72)
         Me.EnunciadoRichTextBox.Name = "EnunciadoRichTextBox"
-        Me.EnunciadoRichTextBox.Size = New System.Drawing.Size(714, 54)
+        Me.EnunciadoRichTextBox.Size = New System.Drawing.Size(745, 54)
         Me.EnunciadoRichTextBox.TabIndex = 115
         Me.EnunciadoRichTextBox.Text = ""
         '
@@ -2125,10 +2122,10 @@ Partial Class FrmTecnologias
         Me.SP_CARGA_CONVENSIONES_USADAS_POR_PLANTILLADataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.SP_CARGA_CONVENSIONES_USADAS_POR_PLANTILLADataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn13})
         Me.SP_CARGA_CONVENSIONES_USADAS_POR_PLANTILLADataGridView.DataSource = Me.SP_CARGA_CONVENSIONES_USADAS_POR_PLANTILLABindingSource
-        Me.SP_CARGA_CONVENSIONES_USADAS_POR_PLANTILLADataGridView.Location = New System.Drawing.Point(471, 217)
+        Me.SP_CARGA_CONVENSIONES_USADAS_POR_PLANTILLADataGridView.Location = New System.Drawing.Point(502, 217)
         Me.SP_CARGA_CONVENSIONES_USADAS_POR_PLANTILLADataGridView.Name = "SP_CARGA_CONVENSIONES_USADAS_POR_PLANTILLADataGridView"
         Me.SP_CARGA_CONVENSIONES_USADAS_POR_PLANTILLADataGridView.RowHeadersVisible = False
-        Me.SP_CARGA_CONVENSIONES_USADAS_POR_PLANTILLADataGridView.Size = New System.Drawing.Size(250, 352)
+        Me.SP_CARGA_CONVENSIONES_USADAS_POR_PLANTILLADataGridView.Size = New System.Drawing.Size(250, 353)
         Me.SP_CARGA_CONVENSIONES_USADAS_POR_PLANTILLADataGridView.TabIndex = 113
         '
         'DataGridViewTextBoxColumn13
@@ -2159,7 +2156,7 @@ Partial Class FrmTecnologias
         Me.SP_CARGA_CONVENSIONES_USADASDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.SP_CARGA_CONVENSIONES_USADASDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn1})
         Me.SP_CARGA_CONVENSIONES_USADASDataGridView.DataSource = Me.SP_CARGA_CONVENSIONES_USADASBindingSource
-        Me.SP_CARGA_CONVENSIONES_USADASDataGridView.Location = New System.Drawing.Point(471, 217)
+        Me.SP_CARGA_CONVENSIONES_USADASDataGridView.Location = New System.Drawing.Point(502, 217)
         Me.SP_CARGA_CONVENSIONES_USADASDataGridView.Name = "SP_CARGA_CONVENSIONES_USADASDataGridView"
         Me.SP_CARGA_CONVENSIONES_USADASDataGridView.RowHeadersVisible = False
         Me.SP_CARGA_CONVENSIONES_USADASDataGridView.RowTemplate.Height = 27
@@ -2182,7 +2179,7 @@ Partial Class FrmTecnologias
         'RequerimientoTextBox1
         '
         Me.RequerimientoTextBox1.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SP_CARGA_CONVENSIONES_USADAS_POR_PLANTILLABindingSource, "Requerimiento", True))
-        Me.RequerimientoTextBox1.Location = New System.Drawing.Point(594, 498)
+        Me.RequerimientoTextBox1.Location = New System.Drawing.Point(623, 498)
         Me.RequerimientoTextBox1.Name = "RequerimientoTextBox1"
         Me.RequerimientoTextBox1.Size = New System.Drawing.Size(100, 26)
         Me.RequerimientoTextBox1.TabIndex = 114
@@ -2190,7 +2187,7 @@ Partial Class FrmTecnologias
         'RB_Todas
         '
         Me.RB_Todas.AutoSize = True
-        Me.RB_Todas.Location = New System.Drawing.Point(624, 189)
+        Me.RB_Todas.Location = New System.Drawing.Point(658, 189)
         Me.RB_Todas.Name = "RB_Todas"
         Me.RB_Todas.Size = New System.Drawing.Size(86, 22)
         Me.RB_Todas.TabIndex = 113
@@ -2201,7 +2198,7 @@ Partial Class FrmTecnologias
         '
         Me.RB_Plantilla.AutoSize = True
         Me.RB_Plantilla.Checked = True
-        Me.RB_Plantilla.Location = New System.Drawing.Point(479, 189)
+        Me.RB_Plantilla.Location = New System.Drawing.Point(513, 189)
         Me.RB_Plantilla.Name = "RB_Plantilla"
         Me.RB_Plantilla.Size = New System.Drawing.Size(121, 22)
         Me.RB_Plantilla.TabIndex = 112
@@ -2212,7 +2209,7 @@ Partial Class FrmTecnologias
         'CONVENSIONESTextBox
         '
         Me.CONVENSIONESTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SP_CARGA_CONVENSIONES_USADASBindingSource, "CONVENSIONES", True))
-        Me.CONVENSIONESTextBox.Location = New System.Drawing.Point(594, 530)
+        Me.CONVENSIONESTextBox.Location = New System.Drawing.Point(623, 530)
         Me.CONVENSIONESTextBox.Name = "CONVENSIONESTextBox"
         Me.CONVENSIONESTextBox.Size = New System.Drawing.Size(100, 26)
         Me.CONVENSIONESTextBox.TabIndex = 111
@@ -2230,7 +2227,7 @@ Partial Class FrmTecnologias
         Me.TabPage4.Location = New System.Drawing.Point(4, 27)
         Me.TabPage4.Name = "TabPage4"
         Me.TabPage4.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage4.Size = New System.Drawing.Size(726, 576)
+        Me.TabPage4.Size = New System.Drawing.Size(758, 576)
         Me.TabPage4.TabIndex = 3
         Me.TabPage4.Text = "Campos Relacionados"
         Me.TabPage4.UseVisualStyleBackColor = True
@@ -2241,7 +2238,7 @@ Partial Class FrmTecnologias
         Me.ContenidoRelacionTextBox.Location = New System.Drawing.Point(6, 184)
         Me.ContenidoRelacionTextBox.Multiline = True
         Me.ContenidoRelacionTextBox.Name = "ContenidoRelacionTextBox"
-        Me.ContenidoRelacionTextBox.Size = New System.Drawing.Size(713, 282)
+        Me.ContenidoRelacionTextBox.Size = New System.Drawing.Size(746, 282)
         Me.ContenidoRelacionTextBox.TabIndex = 131
         '
         'SP_TablasRelacionadas_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDBindingSource
@@ -2259,15 +2256,8 @@ Partial Class FrmTecnologias
         Me.SP_TablasRelacionadas_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView.Location = New System.Drawing.Point(6, 472)
         Me.SP_TablasRelacionadas_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView.Name = "SP_TablasRelacionadas_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView"
         Me.SP_TablasRelacionadas_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView.RowHeadersVisible = False
-        Me.SP_TablasRelacionadas_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView.Size = New System.Drawing.Size(713, 98)
+        Me.SP_TablasRelacionadas_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView.Size = New System.Drawing.Size(746, 98)
         Me.SP_TablasRelacionadas_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView.TabIndex = 130
-        '
-        'DataGridViewTextBoxColumn14
-        '
-        Me.DataGridViewTextBoxColumn14.DataPropertyName = "ContenidoRelacion"
-        Me.DataGridViewTextBoxColumn14.HeaderText = "Contenido Relacion"
-        Me.DataGridViewTextBoxColumn14.Name = "DataGridViewTextBoxColumn14"
-        Me.DataGridViewTextBoxColumn14.Width = 712
         '
         'Panel9
         '
@@ -2280,7 +2270,7 @@ Partial Class FrmTecnologias
         Me.Panel9.Controls.Add(Me.Guardar_Menu_TablasRelacionadas)
         Me.Panel9.Location = New System.Drawing.Point(6, 6)
         Me.Panel9.Name = "Panel9"
-        Me.Panel9.Size = New System.Drawing.Size(713, 46)
+        Me.Panel9.Size = New System.Drawing.Size(746, 46)
         Me.Panel9.TabIndex = 130
         '
         'Nuevo_Menu_TablasRelacionadas
@@ -2353,7 +2343,7 @@ Partial Class FrmTecnologias
         '
         Me.BtnCTI.BackColor = System.Drawing.Color.White
         Me.BtnCTI.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnCTI.Location = New System.Drawing.Point(507, 109)
+        Me.BtnCTI.Location = New System.Drawing.Point(525, 109)
         Me.BtnCTI.Name = "BtnCTI"
         Me.BtnCTI.Size = New System.Drawing.Size(142, 43)
         Me.BtnCTI.TabIndex = 129
@@ -2365,7 +2355,7 @@ Partial Class FrmTecnologias
         '
         Me.BtnCTD.BackColor = System.Drawing.Color.White
         Me.BtnCTD.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnCTD.Location = New System.Drawing.Point(75, 109)
+        Me.BtnCTD.Location = New System.Drawing.Point(93, 109)
         Me.BtnCTD.Name = "BtnCTD"
         Me.BtnCTD.Size = New System.Drawing.Size(146, 43)
         Me.BtnCTD.TabIndex = 128
@@ -2377,7 +2367,7 @@ Partial Class FrmTecnologias
         '
         Me.BtnTI.BackColor = System.Drawing.Color.White
         Me.BtnTI.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnTI.Location = New System.Drawing.Point(550, 62)
+        Me.BtnTI.Location = New System.Drawing.Point(568, 62)
         Me.BtnTI.Name = "BtnTI"
         Me.BtnTI.Size = New System.Drawing.Size(137, 43)
         Me.BtnTI.TabIndex = 127
@@ -2389,7 +2379,7 @@ Partial Class FrmTecnologias
         '
         Me.BtnTD.BackColor = System.Drawing.Color.White
         Me.BtnTD.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnTD.Location = New System.Drawing.Point(36, 62)
+        Me.BtnTD.Location = New System.Drawing.Point(54, 62)
         Me.BtnTD.Name = "BtnTD"
         Me.BtnTD.Size = New System.Drawing.Size(137, 43)
         Me.BtnTD.TabIndex = 126
@@ -2403,7 +2393,7 @@ Partial Class FrmTecnologias
         Me.TabPage6.Location = New System.Drawing.Point(4, 27)
         Me.TabPage6.Name = "TabPage6"
         Me.TabPage6.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage6.Size = New System.Drawing.Size(726, 576)
+        Me.TabPage6.Size = New System.Drawing.Size(758, 576)
         Me.TabPage6.TabIndex = 5
         Me.TabPage6.Text = "Tratamiento Tablas"
         Me.TabPage6.UseVisualStyleBackColor = True
@@ -2416,6 +2406,15 @@ Partial Class FrmTecnologias
         Me.Label6.Size = New System.Drawing.Size(450, 18)
         Me.Label6.TabIndex = 0
         Me.Label6.Text = "Recorrera las tablas y aplicara el nombre de cada una en el siguiente texto"
+        '
+        'Cbo_TipoDato
+        '
+        Me.Cbo_TipoDato.FormattingEnabled = True
+        Me.Cbo_TipoDato.Location = New System.Drawing.Point(1002, 188)
+        Me.Cbo_TipoDato.Name = "Cbo_TipoDato"
+        Me.Cbo_TipoDato.Size = New System.Drawing.Size(159, 26)
+        Me.Cbo_TipoDato.Sorted = True
+        Me.Cbo_TipoDato.TabIndex = 152
         '
         'RelacionTablasIDTextBox
         '
@@ -2764,11 +2763,6 @@ Partial Class FrmTecnologias
         Me.ValidadaTextBox.Size = New System.Drawing.Size(100, 26)
         Me.ValidadaTextBox.TabIndex = 157
         '
-        'TiposBindingSource
-        '
-        Me.TiposBindingSource.DataMember = "Tipos"
-        Me.TiposBindingSource.DataSource = Me.DataSetAdministracion
-        '
         'TiposTableAdapter
         '
         Me.TiposTableAdapter.ClearBeforeFill = True
@@ -2799,22 +2793,96 @@ Partial Class FrmTecnologias
         Me.DataGridViewTextBoxColumn15.HeaderText = "Tipo"
         Me.DataGridViewTextBoxColumn15.Name = "DataGridViewTextBoxColumn15"
         '
-        'CboTiposDatos
+        'RichTextBox1
         '
-        Me.CboTiposDatos.DataSource = Me.TiposBindingSource
-        Me.CboTiposDatos.DisplayMember = "Tipo"
-        Me.CboTiposDatos.FormattingEnabled = True
-        Me.CboTiposDatos.Location = New System.Drawing.Point(114, 64)
-        Me.CboTiposDatos.Name = "CboTiposDatos"
-        Me.CboTiposDatos.Size = New System.Drawing.Size(213, 26)
-        Me.CboTiposDatos.TabIndex = 158
-        Me.CboTiposDatos.ValueMember = "Tipo"
+        Me.RichTextBox1.ContextMenuStrip = Me.CM_AccionesEdicion
+        Me.RichTextBox1.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SP_Componentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDBindingSource, "Codigo", True))
+        Me.RichTextBox1.Font = New System.Drawing.Font("Candara", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.RichTextBox1.Location = New System.Drawing.Point(1106, 61)
+        Me.RichTextBox1.Name = "RichTextBox1"
+        Me.RichTextBox1.Size = New System.Drawing.Size(113, 83)
+        Me.RichTextBox1.TabIndex = 158
+        Me.RichTextBox1.Text = ""
+        '
+        'BtnZoom
+        '
+        Me.BtnZoom.BackColor = System.Drawing.Color.YellowGreen
+        Me.BtnZoom.Font = New System.Drawing.Font("Candara", 9.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnZoom.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.BtnZoom.Location = New System.Drawing.Point(702, 55)
+        Me.BtnZoom.Name = "BtnZoom"
+        Me.BtnZoom.Size = New System.Drawing.Size(48, 25)
+        Me.BtnZoom.TabIndex = 147
+        Me.BtnZoom.Text = "Zoom"
+        Me.BtnZoom.UseVisualStyleBackColor = False
+        '
+        'CM_AccionesEdicion
+        '
+        Me.CM_AccionesEdicion.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.MinimizarToolStripMenuItem})
+        Me.CM_AccionesEdicion.Name = "CM_AccionesEdicion"
+        Me.CM_AccionesEdicion.Size = New System.Drawing.Size(128, 26)
+        '
+        'MinimizarToolStripMenuItem
+        '
+        Me.MinimizarToolStripMenuItem.Name = "MinimizarToolStripMenuItem"
+        Me.MinimizarToolStripMenuItem.Size = New System.Drawing.Size(127, 22)
+        Me.MinimizarToolStripMenuItem.Text = "Minimizar"
+        '
+        'DataGridViewTextBoxColumn7
+        '
+        Me.DataGridViewTextBoxColumn7.DataPropertyName = "Tipo"
+        Me.DataGridViewTextBoxColumn7.HeaderText = "Tipo"
+        Me.DataGridViewTextBoxColumn7.Name = "DataGridViewTextBoxColumn7"
+        Me.DataGridViewTextBoxColumn7.Width = 140
+        '
+        'DataGridViewTextBoxColumn8
+        '
+        Me.DataGridViewTextBoxColumn8.DataPropertyName = "Prefijo"
+        Me.DataGridViewTextBoxColumn8.HeaderText = "Prefijo"
+        Me.DataGridViewTextBoxColumn8.Name = "DataGridViewTextBoxColumn8"
+        '
+        'DataGridViewTextBoxColumn9
+        '
+        Me.DataGridViewTextBoxColumn9.DataPropertyName = "Superior"
+        Me.DataGridViewTextBoxColumn9.HeaderText = "Superior"
+        Me.DataGridViewTextBoxColumn9.Name = "DataGridViewTextBoxColumn9"
+        '
+        'DataGridViewTextBoxColumn10
+        '
+        Me.DataGridViewTextBoxColumn10.DataPropertyName = "Sufijo"
+        Me.DataGridViewTextBoxColumn10.HeaderText = "Sufijo"
+        Me.DataGridViewTextBoxColumn10.Name = "DataGridViewTextBoxColumn10"
+        '
+        'DataGridViewTextBoxColumn11
+        '
+        Me.DataGridViewTextBoxColumn11.DataPropertyName = "Inferior"
+        Me.DataGridViewTextBoxColumn11.HeaderText = "Inferior"
+        Me.DataGridViewTextBoxColumn11.Name = "DataGridViewTextBoxColumn11"
+        '
+        'MultiReplace
+        '
+        Me.MultiReplace.DataPropertyName = "MultiReplace"
+        Me.MultiReplace.HeaderText = "MultiReplace"
+        Me.MultiReplace.Name = "MultiReplace"
+        '
+        'DataGridViewTextBoxColumn12
+        '
+        Me.DataGridViewTextBoxColumn12.DataPropertyName = "SeparadorCampos"
+        Me.DataGridViewTextBoxColumn12.HeaderText = "Separador Campos"
+        Me.DataGridViewTextBoxColumn12.Name = "DataGridViewTextBoxColumn12"
+        '
+        'DataGridViewTextBoxColumn14
+        '
+        Me.DataGridViewTextBoxColumn14.DataPropertyName = "ContenidoRelacion"
+        Me.DataGridViewTextBoxColumn14.HeaderText = "Contenido Relacion"
+        Me.DataGridViewTextBoxColumn14.Name = "DataGridViewTextBoxColumn14"
+        Me.DataGridViewTextBoxColumn14.Width = 740
         '
         'FrmTecnologias
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 18.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1277, 611)
+        Me.ClientSize = New System.Drawing.Size(1319, 611)
         Me.Controls.Add(Me.TabControl1)
         Me.Controls.Add(Me.TiposDataGridView)
         Me.Controls.Add(ValidadaLabel)
@@ -2838,6 +2906,7 @@ Partial Class FrmTecnologias
         Me.Controls.Add(TecnologiaIDLabel)
         Me.Controls.Add(Me.TecnologiaIDTextBox)
         Me.Controls.Add(Me.Cbo_TipoDato)
+        Me.Controls.Add(Me.RichTextBox1)
         Me.Font = New System.Drawing.Font("Candara", 11.25!, System.Drawing.FontStyle.Italic)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Margin = New System.Windows.Forms.Padding(4)
@@ -2866,15 +2935,6 @@ Partial Class FrmTecnologias
         CType(Me.SP_RequerimientosPlantillas_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDBindingSource1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel5.ResumeLayout(False)
         Me.TabControl1.ResumeLayout(False)
-        Me.TabPage3.ResumeLayout(False)
-        Me.TabPage3.PerformLayout()
-        CType(Me.SP_CampoComponentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.DataSetTablasYCampos, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.Panel8.ResumeLayout(False)
-        Me.Panel8.PerformLayout()
-        CType(Me.SP_CampoComponentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.CM_TiposDatos.ResumeLayout(False)
-        Me.Panel7.ResumeLayout(False)
         Me.TabPage1.ResumeLayout(False)
         Me.TabPage1.PerformLayout()
         Me.PanelGuardado.ResumeLayout(False)
@@ -2882,7 +2942,17 @@ Partial Class FrmTecnologias
         Me.TabPage5.ResumeLayout(False)
         Me.TabPage5.PerformLayout()
         CType(Me.SP_TextoEnriquecido_BUSQUEDA_SEGUN_PARAMETRO_ComponenteIDBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DataSetTablasYCampos, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel10.ResumeLayout(False)
+        Me.TabPage3.ResumeLayout(False)
+        Me.TabPage3.PerformLayout()
+        CType(Me.SP_CampoComponentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.TiposBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Panel8.ResumeLayout(False)
+        Me.Panel8.PerformLayout()
+        CType(Me.SP_CampoComponentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.CM_TiposDatos.ResumeLayout(False)
+        Me.Panel7.ResumeLayout(False)
         Me.TabPage2.ResumeLayout(False)
         Me.TabPage2.PerformLayout()
         CType(Me.SP_CARGA_CONVENSIONES_USADAS_POR_PLANTILLADataGridView, System.ComponentModel.ISupportInitialize).EndInit()
@@ -2918,8 +2988,8 @@ Partial Class FrmTecnologias
         CType(Me.SP_RequerimientosPlantillas_EDICION_ACTUALIZARBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.SP_RequerimientosPlantillas_EDICION_ELIMINARBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.SP_RequerimientosPlantillas_EDICION_INSERTARBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.TiposBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.TiposDataGridView, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.CM_AccionesEdicion.ResumeLayout(False)
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -3063,13 +3133,6 @@ Partial Class FrmTecnologias
     Friend WithEvents Label3 As Label
     Friend WithEvents MultiReplaceTextBox As TextBox
     Friend WithEvents BtnImprimeClavePrincipal As Button
-    Friend WithEvents DataGridViewTextBoxColumn7 As DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn8 As DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn9 As DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn10 As DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn11 As DataGridViewTextBoxColumn
-    Friend WithEvents MultiReplace As DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn12 As DataGridViewTextBoxColumn
     Friend WithEvents BtnTablaMinuscula As Button
     Friend WithEvents DataGridViewTextBoxColumn6 As DataGridViewTextBoxColumn
     Friend WithEvents SP_CARGA_CONVENSIONES_USADASBindingSource As BindingSource
@@ -3115,7 +3178,6 @@ Partial Class FrmTecnologias
     Friend WithEvents SP_TablasRelacionadas_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDTableAdapter As DataSetTablasYCamposTableAdapters.SP_TablasRelacionadas_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDTableAdapter
     Friend WithEvents ContenidoRelacionTextBox As TextBox
     Friend WithEvents SP_TablasRelacionadas_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView As DataGridView
-    Friend WithEvents DataGridViewTextBoxColumn14 As DataGridViewTextBoxColumn
     Friend WithEvents RelacionTablasIDTextBox As TextBox
     Friend WithEvents SP_TablasRelacionadas_EDICION_ACTUALIZARBindingSource As BindingSource
     Friend WithEvents SP_TablasRelacionadas_EDICION_ACTUALIZARTableAdapter As DataSetTablasYCamposTableAdapters.SP_TablasRelacionadas_EDICION_ACTUALIZARTableAdapter
@@ -3168,4 +3230,18 @@ Partial Class FrmTecnologias
     Friend WithEvents DataGridViewTextBoxColumn3 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn15 As DataGridViewTextBoxColumn
     Friend WithEvents CboTiposDatos As ComboBox
+    Friend WithEvents ContenidoComponenteCopia As RichTextBox
+    Friend WithEvents ChkControlCambios As CheckBox
+    Friend WithEvents RichTextBox1 As RichTextBox
+    Friend WithEvents BtnZoom As Button
+    Friend WithEvents CM_AccionesEdicion As ContextMenuStrip
+    Friend WithEvents MinimizarToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents DataGridViewTextBoxColumn7 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn8 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn9 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn10 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn11 As DataGridViewTextBoxColumn
+    Friend WithEvents MultiReplace As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn12 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn14 As DataGridViewTextBoxColumn
 End Class

@@ -53,6 +53,8 @@
         Bloquear_Objetos_Tecnologias()
         Parar_Timer_Tecnologias()
         Timer_Ubicar_En_Fila_Tecnologias()
+        RichTextBox1.SendToBack()
+        RichTextBox1.Dock = DockStyle.None
     End Sub
     'Insertar
     Private Sub SP_Tecnologias_EDICION_INSERTAR()
@@ -332,6 +334,8 @@
         Bloquear_Objetos_Plantillas()
         Parar_Timer_Plantillas()
         Timer_Ubicar_En_Fila_Plantillas()
+        RichTextBox1.SendToBack()
+        RichTextBox1.Dock = DockStyle.None
     End Sub
     'Insertar
     Private Sub SP_Plantillas_EDICION_INSERTAR()
@@ -929,6 +933,27 @@
 
         End Try
     End Sub
+    Private Sub SP_Componentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView_CellMouseMove(sender As Object, e As DataGridViewCellMouseEventArgs) Handles SP_Componentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView.CellMouseMove
+        ControlDeCambios()
+    End Sub
+
+    Private Sub ControlDeCambios()
+        If ChkControlCambios.Checked = True Then
+            If ContenidoComponenteRichTextBox.Text <> ContenidoComponenteCopia.Text Then
+                MsgBox("Vas a seleccionar otra opcion sin guardar cambios")
+            End If
+        End If
+    End Sub
+    Private Sub TecnologiasDataGridView_CellMouseMove(sender As Object, e As DataGridViewCellMouseEventArgs) Handles TecnologiasDataGridView.CellMouseMove
+        ControlDeCambios()
+    End Sub
+
+    Private Sub DGVEdicionPosicion_CellMouseMove(sender As Object, e As DataGridViewCellMouseEventArgs) Handles DGVEdicionPosicion.CellMouseMove
+        ControlDeCambios()
+    End Sub
+    Private Sub SP_Plantillas_BUSQUEDA_SEGUN_PARAMETRO_TecnologiaDataGridView_CellMouseMove(sender As Object, e As DataGridViewCellMouseEventArgs) Handles SP_Plantillas_BUSQUEDA_SEGUN_PARAMETRO_TecnologiaDataGridView.CellMouseMove
+        ControlDeCambios()
+    End Sub
     Private Sub Ubicar_En_Fila_Componentes()
         Try
             Me.SP_Componentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView.Rows(X_Componentes).Selected = True
@@ -1240,7 +1265,7 @@
         If TxtBuscado.Text <> "" Then
             Try
                 Dim index As Integer = 0
-                While index < ContenidoComponenteRichTextBox.Text.LastIndexOf(TxtBuscado.Text)
+                While index <ContenidoComponenteRichTextBox.Text.LastIndexOf(TxtBuscado.Text)
                     ContenidoComponenteRichTextBox.Find(TxtBuscado.Text, index, ContenidoComponenteRichTextBox.TextLength, RichTextBoxFinds.None)
                     ContenidoComponenteRichTextBox.SelectionBackColor = Color.Yellow
                     index = ContenidoComponenteRichTextBox.Text.IndexOf(TxtBuscado.Text, index) + 1
@@ -1316,6 +1341,7 @@
     End Sub
 
     Private Sub BtnGuardarCodigo_Click(sender As Object, e As EventArgs) Handles BtnGuardarCodigo.Click
+        ContenidoComponenteCopia.Text = ContenidoComponenteRichTextBox.Text
         'If MsgBox("Desea Actualizar este codigo?", MsgBoxStyle.YesNo) = MsgBoxResult.Yes Then
         SP_Componentes_EDICION_ACTUALIZAR_SoloCodigo()
         TabPage1.BackColor = Color.Chartreuse
@@ -2611,6 +2637,26 @@
             TecnologiasDataGridView.Dock = DockStyle.None
         End If
     End Sub
+
+    Private Sub BtnZoom_Click(sender As Object, e As EventArgs) Handles BtnZoom.Click
+        RichTextBox1.BringToFront()
+        RichTextBox1.Dock = DockStyle.Fill
+    End Sub
+
+    Private Sub MinimizarToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles MinimizarToolStripMenuItem.Click
+        RichTextBox1.SendToBack()
+        RichTextBox1.Dock = DockStyle.None
+    End Sub
+
+
+
+
+
+
+
+
+
+
 
 
 

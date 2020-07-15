@@ -31,6 +31,8 @@ Partial Class FrmInicio
         Me.CreaciònDePlantillasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.GeneraciònDeProyectosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ConfiguraciónToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator()
+        Me.ToolStripSeparator2 = New System.Windows.Forms.ToolStripSeparator()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
@@ -62,7 +64,7 @@ Partial Class FrmInicio
         '
         'AdministraciònToolStripMenuItem
         '
-        Me.AdministraciònToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CreaciònDePlantillasToolStripMenuItem, Me.GeneraciònDeProyectosToolStripMenuItem, Me.ConfiguraciónToolStripMenuItem})
+        Me.AdministraciònToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CreaciònDePlantillasToolStripMenuItem, Me.ToolStripSeparator1, Me.GeneraciònDeProyectosToolStripMenuItem, Me.ToolStripSeparator2, Me.ConfiguraciónToolStripMenuItem})
         Me.AdministraciònToolStripMenuItem.Name = "AdministraciònToolStripMenuItem"
         Me.AdministraciònToolStripMenuItem.Size = New System.Drawing.Size(127, 25)
         Me.AdministraciònToolStripMenuItem.Text = "Administraciòn"
@@ -84,6 +86,16 @@ Partial Class FrmInicio
         Me.ConfiguraciónToolStripMenuItem.Name = "ConfiguraciónToolStripMenuItem"
         Me.ConfiguraciónToolStripMenuItem.Size = New System.Drawing.Size(252, 26)
         Me.ConfiguraciónToolStripMenuItem.Text = "Configuración"
+        '
+        'ToolStripSeparator1
+        '
+        Me.ToolStripSeparator1.Name = "ToolStripSeparator1"
+        Me.ToolStripSeparator1.Size = New System.Drawing.Size(249, 6)
+        '
+        'ToolStripSeparator2
+        '
+        Me.ToolStripSeparator2.Name = "ToolStripSeparator2"
+        Me.ToolStripSeparator2.Size = New System.Drawing.Size(249, 6)
         '
         'FrmInicio
         '
@@ -115,4 +127,6 @@ Partial Class FrmInicio
     Friend WithEvents CreaciònDePlantillasToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents GeneraciònDeProyectosToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ConfiguraciónToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ToolStripSeparator1 As ToolStripSeparator
+    Friend WithEvents ToolStripSeparator2 As ToolStripSeparator
 End Class

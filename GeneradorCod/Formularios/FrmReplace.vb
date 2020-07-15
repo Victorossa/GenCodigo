@@ -392,9 +392,9 @@
             'Se ubica en la primera fila
             SP_Componentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView.CurrentCell = SP_Componentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView.Rows(0).Cells(0)
             If XTablaCheckBox.Checked = False Then
-                CodigoGeneradoRichTextBox.Text = CodigoGeneradoRichTextBox.Text & vbCrLf & "                              " & NombreTecnologiaTextBox1.Text & vbCrLf & vbCrLf & NombreComponenteTextBox.Text & vbCrLf & CodigoTextBox.Text & vbCrLf & "++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++" & vbCrLf & vbCrLf
+                CodigoGeneradoRichTextBox.Text = CodigoGeneradoRichTextBox.Text & "                              " & NombreTecnologiaTextBox1.Text & vbCrLf & vbCrLf & NombreComponenteTextBox.Text & vbCrLf & CodigoTextBox.Text & vbCrLf & "____________________________________________________________________________________________________________________________________________" & vbCrLf & vbCrLf
             Else
-                CodigoGeneradoRichTextBox.Text = CodigoGeneradoRichTextBox.Text & vbCrLf & "                              " & NombreTecnologiaTextBox1.Text & vbCrLf & vbCrLf & NombreComponenteTextBox.Text & TablasDeAplicacion(CodigoTextBox.Text) & vbCrLf & vbCrLf & "++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++" & vbCrLf & vbCrLf
+                CodigoGeneradoRichTextBox.Text = CodigoGeneradoRichTextBox.Text & "                              " & NombreTecnologiaTextBox1.Text & vbCrLf & vbCrLf & NombreComponenteTextBox.Text & TablasDeAplicacion(CodigoTextBox.Text) & vbCrLf & vbCrLf & "____________________________________________________________________________________________________________________________________________" & vbCrLf & vbCrLf
             End If
             SP_Componentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView.Rows.RemoveAt(0)
             contadorComponentes = contadorComponentes - 1
@@ -861,8 +861,13 @@
         'Inserta la relacion entre el proyecto y la tecnologia aplicada al mismo
         SP_ProyectosYTecnologias_EDICION_INSERTAR()
         'Carga las tecnologias aplicadas al proyecto
+
+        'MsgBox("Se Crea Relación Del Proyecto" & NombreProyectoTextBox.Text & " con la tecnologia " & NombreTecnologiaTextBox.Text, MsgBoxStyle.Information)
+        Timer_CargaTecnologias.Start()
+    End Sub
+    Private Sub Timer_CargaTecnologias_Tick(sender As Object, e As EventArgs) Handles Timer_CargaTecnologias.Tick
         SP_CARGA_TECNOLOGIAS_APLICADAS_A_PROYECTO()
-        MsgBox("Se Crea Relación Del Proyecto" & NombreProyectoTextBox.Text & " con la tecnologia " & NombreTecnologiaTextBox.Text, MsgBoxStyle.Information)
+        Timer_CargaTecnologias.Stop()
     End Sub
     'Metodo que inserta la relacion
     Private Sub SP_ProyectosYTecnologias_EDICION_INSERTAR()
@@ -1544,13 +1549,13 @@
     End Sub
 
     Private Sub CodigoGeneradoRichTextBox_MouseDoubleClick(sender As Object, e As MouseEventArgs) Handles CodigoGeneradoRichTextBox.MouseDoubleClick
-        CodigoGeneradoRichTextBox.SendToBack()
-        CodigoGeneradoRichTextBox.Dock = DockStyle.None
+        CodigoGeneradoRichTextBox.BringToFront()
+        CodigoGeneradoRichTextBox.Dock = DockStyle.Fill
     End Sub
 
     Private Sub MaximizarCodigoGeneradoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles MaximizarCodigoGeneradoToolStripMenuItem.Click
-        CodigoGeneradoRichTextBox.BringToFront()
-        CodigoGeneradoRichTextBox.Dock = DockStyle.Fill
+        CodigoGeneradoRichTextBox.SendToBack()
+        CodigoGeneradoRichTextBox.Dock = DockStyle.None
     End Sub
 
 #End Region
@@ -1926,6 +1931,32 @@
 
         End Try
     End Sub
+
+    Private Sub MaximizarPanelesToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles MaximizarPanelesToolStripMenuItem.Click
+        TabControl1.Location = New Point(8, 52)
+        TabControl1.Height = 535
+    End Sub
+
+    Private Sub MinimizarPToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles MinimizarPToolStripMenuItem1.Click
+        TabControl1.Location = New Point(8, 403)
+        TabControl1.Height = 187
+    End Sub
+
+    Private Sub Btn_Maximizar_Click(sender As Object, e As EventArgs) Handles Btn_Maximizar.Click
+        If Btn_Maximizar.Text = "+" Then
+            Btn_Maximizar.Text = "-"
+            TabControl1.Location = New Point(8, 52)
+            TabControl1.Height = 535
+        Else
+            Btn_Maximizar.Text = "+"
+            TabControl1.Location = New Point(8, 403)
+            TabControl1.Height = 187
+            SP_CARGA_TECNOLOGIAS_APLICADAS_A_PROYECTO()
+        End If
+    End Sub
+
+
+
 
 
 
