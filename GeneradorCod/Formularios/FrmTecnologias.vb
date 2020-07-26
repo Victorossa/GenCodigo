@@ -895,6 +895,10 @@
         'Pone en true el campo actual
         SP_Componentes_EDICION_ACTUALIZAR_ParaXBase()
         MsgBox("Se reasigno el componente base de esta plantilla", MsgBoxStyle.Information)
+        MsgBox("Tener en Cuenta: 
+Si eliges este componente como base para los otros debera ser el ultimo de la serie de componentes. 
+Los otros componentes deberan ser palabras completas y sin saltos de linea
+", MsgBoxStyle.Information)
         Cancelar_Componentes()
     End Sub
     Private Sub BtnReseteoBase_Click(sender As Object, e As EventArgs) Handles BtnReseteoBase.Click

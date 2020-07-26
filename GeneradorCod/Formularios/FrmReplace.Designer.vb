@@ -89,9 +89,11 @@ Partial Class FrmReplace
         Dim ContenidoLabel As System.Windows.Forms.Label
         Dim ReferenciaLabel As System.Windows.Forms.Label
         Dim ContenidoLabel1 As System.Windows.Forms.Label
+        Dim BaseLabel As System.Windows.Forms.Label
         Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmReplace))
         Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim ComponenteIDLabel2 As System.Windows.Forms.Label
         Me.SP_RequerimientosPlantillas_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView = New System.Windows.Forms.DataGridView()
         Me.DataGridViewTextBoxColumn5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.SP_RequerimientosPlantillas_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDBindingSource = New System.Windows.Forms.BindingSource(Me.components)
@@ -210,7 +212,9 @@ Partial Class FrmReplace
         Me.PlantillaIDTextBox1 = New System.Windows.Forms.TextBox()
         Me.PanelConf = New System.Windows.Forms.Panel()
         Me.Panel4 = New System.Windows.Forms.Panel()
-        Me.ContenidoTextBox1 = New System.Windows.Forms.TextBox()
+        Me.BaseTextBox = New System.Windows.Forms.TextBox()
+        Me.SP_ComponentesContenidoProvisional_Base_BUSQUEDA_SEGUN_PARAMETRO_IdBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.ContenidoDeRemplazo = New System.Windows.Forms.TextBox()
         Me.SP_ComponentesContenidoProvisional_SEGUN_TABLA_REPLACEBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.ReferenciaTextBox = New System.Windows.Forms.TextBox()
         Me.SP_ComponentesContenidoProvisional_SEGUN_TABLA_REPLACEDataGridView = New System.Windows.Forms.DataGridView()
@@ -220,7 +224,7 @@ Partial Class FrmReplace
         Me.DataGridViewCheckBoxColumn3 = New System.Windows.Forms.DataGridViewCheckBoxColumn()
         Me.DataGridViewTextBoxColumn47 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn48 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ContenidoTextBox = New System.Windows.Forms.TextBox()
+        Me.ContenidoTextBoxBase = New System.Windows.Forms.TextBox()
         Me.SP_ComponentesContenidoProvisional_SEGUN_TABLA_BASEBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.SP_ComponentesContenidoProvisional_SEGUN_TABLA_BASEDataGridView = New System.Windows.Forms.DataGridView()
         Me.DataGridViewTextBoxColumn39 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -431,6 +435,14 @@ Partial Class FrmReplace
         Me.SP_ComponentesContenidoProvisional_SEGUN_TABLA_REPLACETableAdapter = New GeneradorCod.DataSetTablasYCamposTableAdapters.SP_ComponentesContenidoProvisional_SEGUN_TABLA_REPLACETableAdapter()
         Me.SP_ComponentesContenidoProvisional_Base_EDICION_INSERTARBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.SP_ComponentesContenidoProvisional_Base_EDICION_INSERTARTableAdapter = New GeneradorCod.DataSetTablasYCamposTableAdapters.SP_ComponentesContenidoProvisional_Base_EDICION_INSERTARTableAdapter()
+        Me.SP_ComponentesContenidoProvisional_Base_BUSQUEDA_SEGUN_PARAMETRO_IdTableAdapter = New GeneradorCod.DataSetTablasYCamposTableAdapters.SP_ComponentesContenidoProvisional_Base_BUSQUEDA_SEGUN_PARAMETRO_IdTableAdapter()
+        Me.SP_ComponentesContenidoProvisional_Base_EDICION_ACTUALIZARBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.SP_ComponentesContenidoProvisional_Base_EDICION_ACTUALIZARTableAdapter = New GeneradorCod.DataSetTablasYCamposTableAdapters.SP_ComponentesContenidoProvisional_Base_EDICION_ACTUALIZARTableAdapter()
+        Me.SP_ComponentesContenidoProvisional_Base_TrucateBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.SP_ComponentesContenidoProvisional_Base_TrucateTableAdapter = New GeneradorCod.DataSetTablasYCamposTableAdapters.SP_ComponentesContenidoProvisional_Base_TrucateTableAdapter()
+        Me.SP_ComponentesContenidoProvisional_TruncateBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.SP_ComponentesContenidoProvisional_TruncateTableAdapter = New GeneradorCod.DataSetTablasYCamposTableAdapters.SP_ComponentesContenidoProvisional_TruncateTableAdapter()
+        Me.ComponenteEvaluaSiTieneBase = New System.Windows.Forms.TextBox()
         ComponenteIDLabel = New System.Windows.Forms.Label()
         PlantillaIDLabel = New System.Windows.Forms.Label()
         TecnologiaIDLabel = New System.Windows.Forms.Label()
@@ -497,6 +509,8 @@ Partial Class FrmReplace
         ContenidoLabel = New System.Windows.Forms.Label()
         ReferenciaLabel = New System.Windows.Forms.Label()
         ContenidoLabel1 = New System.Windows.Forms.Label()
+        BaseLabel = New System.Windows.Forms.Label()
+        ComponenteIDLabel2 = New System.Windows.Forms.Label()
         CType(Me.SP_RequerimientosPlantillas_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.SP_RequerimientosPlantillas_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DataSetAdministracion, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -534,6 +548,7 @@ Partial Class FrmReplace
         CType(Me.SP_CampoComponentes_Segun_Plantilla_TipoBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelConf.SuspendLayout()
         Me.Panel4.SuspendLayout()
+        CType(Me.SP_ComponentesContenidoProvisional_Base_BUSQUEDA_SEGUN_PARAMETRO_IdBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.SP_ComponentesContenidoProvisional_SEGUN_TABLA_REPLACEBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.SP_ComponentesContenidoProvisional_SEGUN_TABLA_REPLACEDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.SP_ComponentesContenidoProvisional_SEGUN_TABLA_BASEBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -582,6 +597,9 @@ Partial Class FrmReplace
         Me.Panel5.SuspendLayout()
         CType(Me.SP_ComponentesContenidoProvisional_EDICION_INSERTARBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.SP_ComponentesContenidoProvisional_Base_EDICION_INSERTARBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.SP_ComponentesContenidoProvisional_Base_EDICION_ACTUALIZARBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.SP_ComponentesContenidoProvisional_Base_TrucateBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.SP_ComponentesContenidoProvisional_TruncateBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'ComponenteIDLabel
@@ -1146,7 +1164,7 @@ Partial Class FrmReplace
         'TablaIDLabel4
         '
         TablaIDLabel4.AutoSize = True
-        TablaIDLabel4.Location = New System.Drawing.Point(19, 123)
+        TablaIDLabel4.Location = New System.Drawing.Point(107, 123)
         TablaIDLabel4.Name = "TablaIDLabel4"
         TablaIDLabel4.Size = New System.Drawing.Size(51, 13)
         TablaIDLabel4.TabIndex = 1
@@ -1155,7 +1173,7 @@ Partial Class FrmReplace
         'ContenidoLabel
         '
         ContenidoLabel.AutoSize = True
-        ContenidoLabel.Location = New System.Drawing.Point(182, 102)
+        ContenidoLabel.Location = New System.Drawing.Point(270, 102)
         ContenidoLabel.Name = "ContenidoLabel"
         ContenidoLabel.Size = New System.Drawing.Size(58, 13)
         ContenidoLabel.TabIndex = 4
@@ -1164,7 +1182,7 @@ Partial Class FrmReplace
         'ReferenciaLabel
         '
         ReferenciaLabel.AutoSize = True
-        ReferenciaLabel.Location = New System.Drawing.Point(388, 103)
+        ReferenciaLabel.Location = New System.Drawing.Point(476, 103)
         ReferenciaLabel.Name = "ReferenciaLabel"
         ReferenciaLabel.Size = New System.Drawing.Size(62, 13)
         ReferenciaLabel.TabIndex = 7
@@ -1173,11 +1191,20 @@ Partial Class FrmReplace
         'ContenidoLabel1
         '
         ContenidoLabel1.AutoSize = True
-        ContenidoLabel1.Location = New System.Drawing.Point(392, 128)
+        ContenidoLabel1.Location = New System.Drawing.Point(480, 128)
         ContenidoLabel1.Name = "ContenidoLabel1"
         ContenidoLabel1.Size = New System.Drawing.Size(58, 13)
         ContenidoLabel1.TabIndex = 9
         ContenidoLabel1.Text = "Contenido:"
+        '
+        'BaseLabel
+        '
+        BaseLabel.AutoSize = True
+        BaseLabel.Location = New System.Drawing.Point(101, 149)
+        BaseLabel.Name = "BaseLabel"
+        BaseLabel.Size = New System.Drawing.Size(34, 13)
+        BaseLabel.TabIndex = 11
+        BaseLabel.Text = "Base:"
         '
         'SP_RequerimientosPlantillas_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView
         '
@@ -2308,38 +2335,56 @@ Partial Class FrmReplace
         Me.PanelConf.Controls.Add(RequerimientoLabel1)
         Me.PanelConf.Controls.Add(Me.NombreComponenteTextBox)
         Me.PanelConf.Controls.Add(NombreComponenteLabel)
-        Me.PanelConf.Location = New System.Drawing.Point(63, 8)
+        Me.PanelConf.Location = New System.Drawing.Point(577, 8)
         Me.PanelConf.Name = "PanelConf"
-        Me.PanelConf.Size = New System.Drawing.Size(1129, 569)
+        Me.PanelConf.Size = New System.Drawing.Size(87, 11)
         Me.PanelConf.TabIndex = 159
         '
         'Panel4
         '
         Me.Panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel4.Controls.Add(ComponenteIDLabel2)
+        Me.Panel4.Controls.Add(Me.ComponenteEvaluaSiTieneBase)
+        Me.Panel4.Controls.Add(BaseLabel)
+        Me.Panel4.Controls.Add(Me.BaseTextBox)
         Me.Panel4.Controls.Add(ContenidoLabel1)
-        Me.Panel4.Controls.Add(Me.ContenidoTextBox1)
+        Me.Panel4.Controls.Add(Me.ContenidoDeRemplazo)
         Me.Panel4.Controls.Add(ReferenciaLabel)
         Me.Panel4.Controls.Add(Me.ReferenciaTextBox)
         Me.Panel4.Controls.Add(Me.SP_ComponentesContenidoProvisional_SEGUN_TABLA_REPLACEDataGridView)
         Me.Panel4.Controls.Add(ContenidoLabel)
-        Me.Panel4.Controls.Add(Me.ContenidoTextBox)
+        Me.Panel4.Controls.Add(Me.ContenidoTextBoxBase)
         Me.Panel4.Controls.Add(Me.SP_ComponentesContenidoProvisional_SEGUN_TABLA_BASEDataGridView)
         Me.Panel4.Controls.Add(TablaIDLabel4)
         Me.Panel4.Controls.Add(Me.TablaID_Provisional)
         Me.Panel4.Controls.Add(Me.SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoTablasContProvi)
         Me.Panel4.Location = New System.Drawing.Point(420, 572)
         Me.Panel4.Name = "Panel4"
-        Me.Panel4.Size = New System.Drawing.Size(559, 228)
+        Me.Panel4.Size = New System.Drawing.Size(637, 228)
         Me.Panel4.TabIndex = 202
         '
-        'ContenidoTextBox1
+        'BaseTextBox
         '
-        Me.ContenidoTextBox1.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SP_ComponentesContenidoProvisional_SEGUN_TABLA_REPLACEBindingSource, "Contenido", True))
-        Me.ContenidoTextBox1.Location = New System.Drawing.Point(388, 144)
-        Me.ContenidoTextBox1.Multiline = True
-        Me.ContenidoTextBox1.Name = "ContenidoTextBox1"
-        Me.ContenidoTextBox1.Size = New System.Drawing.Size(154, 75)
-        Me.ContenidoTextBox1.TabIndex = 10
+        Me.BaseTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SP_ComponentesContenidoProvisional_Base_BUSQUEDA_SEGUN_PARAMETRO_IdBindingSource, "Base", True))
+        Me.BaseTextBox.Location = New System.Drawing.Point(165, 146)
+        Me.BaseTextBox.Multiline = True
+        Me.BaseTextBox.Name = "BaseTextBox"
+        Me.BaseTextBox.Size = New System.Drawing.Size(305, 73)
+        Me.BaseTextBox.TabIndex = 12
+        '
+        'SP_ComponentesContenidoProvisional_Base_BUSQUEDA_SEGUN_PARAMETRO_IdBindingSource
+        '
+        Me.SP_ComponentesContenidoProvisional_Base_BUSQUEDA_SEGUN_PARAMETRO_IdBindingSource.DataMember = "SP_ComponentesContenidoProvisional_Base_BUSQUEDA_SEGUN_PARAMETRO_Id"
+        Me.SP_ComponentesContenidoProvisional_Base_BUSQUEDA_SEGUN_PARAMETRO_IdBindingSource.DataSource = Me.DataSetTablasYCampos
+        '
+        'ContenidoDeRemplazo
+        '
+        Me.ContenidoDeRemplazo.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SP_ComponentesContenidoProvisional_SEGUN_TABLA_REPLACEBindingSource, "Contenido", True))
+        Me.ContenidoDeRemplazo.Location = New System.Drawing.Point(476, 144)
+        Me.ContenidoDeRemplazo.Multiline = True
+        Me.ContenidoDeRemplazo.Name = "ContenidoDeRemplazo"
+        Me.ContenidoDeRemplazo.Size = New System.Drawing.Size(154, 75)
+        Me.ContenidoDeRemplazo.TabIndex = 10
         '
         'SP_ComponentesContenidoProvisional_SEGUN_TABLA_REPLACEBindingSource
         '
@@ -2349,7 +2394,7 @@ Partial Class FrmReplace
         'ReferenciaTextBox
         '
         Me.ReferenciaTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SP_ComponentesContenidoProvisional_SEGUN_TABLA_REPLACEBindingSource, "Referencia", True))
-        Me.ReferenciaTextBox.Location = New System.Drawing.Point(456, 100)
+        Me.ReferenciaTextBox.Location = New System.Drawing.Point(544, 100)
         Me.ReferenciaTextBox.Name = "ReferenciaTextBox"
         Me.ReferenciaTextBox.Size = New System.Drawing.Size(86, 20)
         Me.ReferenciaTextBox.TabIndex = 8
@@ -2362,7 +2407,7 @@ Partial Class FrmReplace
         Me.SP_ComponentesContenidoProvisional_SEGUN_TABLA_REPLACEDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.SP_ComponentesContenidoProvisional_SEGUN_TABLA_REPLACEDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn44, Me.DataGridViewTextBoxColumn45, Me.DataGridViewTextBoxColumn46, Me.DataGridViewCheckBoxColumn3, Me.DataGridViewTextBoxColumn47, Me.DataGridViewTextBoxColumn48})
         Me.SP_ComponentesContenidoProvisional_SEGUN_TABLA_REPLACEDataGridView.DataSource = Me.SP_ComponentesContenidoProvisional_SEGUN_TABLA_REPLACEBindingSource
-        Me.SP_ComponentesContenidoProvisional_SEGUN_TABLA_REPLACEDataGridView.Location = New System.Drawing.Point(388, 3)
+        Me.SP_ComponentesContenidoProvisional_SEGUN_TABLA_REPLACEDataGridView.Location = New System.Drawing.Point(476, 3)
         Me.SP_ComponentesContenidoProvisional_SEGUN_TABLA_REPLACEDataGridView.Name = "SP_ComponentesContenidoProvisional_SEGUN_TABLA_REPLACEDataGridView"
         Me.SP_ComponentesContenidoProvisional_SEGUN_TABLA_REPLACEDataGridView.Size = New System.Drawing.Size(154, 85)
         Me.SP_ComponentesContenidoProvisional_SEGUN_TABLA_REPLACEDataGridView.TabIndex = 6
@@ -2404,14 +2449,14 @@ Partial Class FrmReplace
         Me.DataGridViewTextBoxColumn48.HeaderText = "Contenido"
         Me.DataGridViewTextBoxColumn48.Name = "DataGridViewTextBoxColumn48"
         '
-        'ContenidoTextBox
+        'ContenidoTextBoxBase
         '
-        Me.ContenidoTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SP_ComponentesContenidoProvisional_SEGUN_TABLA_BASEBindingSource, "Contenido", True))
-        Me.ContenidoTextBox.Location = New System.Drawing.Point(182, 120)
-        Me.ContenidoTextBox.Multiline = True
-        Me.ContenidoTextBox.Name = "ContenidoTextBox"
-        Me.ContenidoTextBox.Size = New System.Drawing.Size(200, 99)
-        Me.ContenidoTextBox.TabIndex = 5
+        Me.ContenidoTextBoxBase.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SP_ComponentesContenidoProvisional_SEGUN_TABLA_BASEBindingSource, "Contenido", True))
+        Me.ContenidoTextBoxBase.Location = New System.Drawing.Point(270, 120)
+        Me.ContenidoTextBoxBase.Multiline = True
+        Me.ContenidoTextBoxBase.Name = "ContenidoTextBoxBase"
+        Me.ContenidoTextBoxBase.Size = New System.Drawing.Size(200, 20)
+        Me.ContenidoTextBoxBase.TabIndex = 5
         '
         'SP_ComponentesContenidoProvisional_SEGUN_TABLA_BASEBindingSource
         '
@@ -2425,7 +2470,7 @@ Partial Class FrmReplace
         Me.SP_ComponentesContenidoProvisional_SEGUN_TABLA_BASEDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.SP_ComponentesContenidoProvisional_SEGUN_TABLA_BASEDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn39, Me.DataGridViewTextBoxColumn40, Me.DataGridViewTextBoxColumn41, Me.DataGridViewCheckBoxColumn2, Me.DataGridViewTextBoxColumn42, Me.DataGridViewTextBoxColumn43})
         Me.SP_ComponentesContenidoProvisional_SEGUN_TABLA_BASEDataGridView.DataSource = Me.SP_ComponentesContenidoProvisional_SEGUN_TABLA_BASEBindingSource
-        Me.SP_ComponentesContenidoProvisional_SEGUN_TABLA_BASEDataGridView.Location = New System.Drawing.Point(182, 3)
+        Me.SP_ComponentesContenidoProvisional_SEGUN_TABLA_BASEDataGridView.Location = New System.Drawing.Point(270, 3)
         Me.SP_ComponentesContenidoProvisional_SEGUN_TABLA_BASEDataGridView.Name = "SP_ComponentesContenidoProvisional_SEGUN_TABLA_BASEDataGridView"
         Me.SP_ComponentesContenidoProvisional_SEGUN_TABLA_BASEDataGridView.Size = New System.Drawing.Size(200, 85)
         Me.SP_ComponentesContenidoProvisional_SEGUN_TABLA_BASEDataGridView.TabIndex = 3
@@ -2470,7 +2515,7 @@ Partial Class FrmReplace
         'TablaID_Provisional
         '
         Me.TablaID_Provisional.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID3BindingSource, "TablaID", True))
-        Me.TablaID_Provisional.Location = New System.Drawing.Point(76, 120)
+        Me.TablaID_Provisional.Location = New System.Drawing.Point(164, 120)
         Me.TablaID_Provisional.Name = "TablaID_Provisional"
         Me.TablaID_Provisional.Size = New System.Drawing.Size(100, 20)
         Me.TablaID_Provisional.TabIndex = 2
@@ -2487,7 +2532,7 @@ Partial Class FrmReplace
         Me.SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoTablasContProvi.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoTablasContProvi.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn36, Me.DataGridViewTextBoxColumn37, Me.DataGridViewTextBoxColumn38, Me.DataGridViewCheckBoxColumn1})
         Me.SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoTablasContProvi.DataSource = Me.SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID3BindingSource
-        Me.SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoTablasContProvi.Location = New System.Drawing.Point(3, 3)
+        Me.SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoTablasContProvi.Location = New System.Drawing.Point(91, 3)
         Me.SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoTablasContProvi.Name = "SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoTablasContProvi"
         Me.SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoTablasContProvi.Size = New System.Drawing.Size(173, 111)
         Me.SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoTablasContProvi.TabIndex = 0
@@ -3968,6 +4013,54 @@ Partial Class FrmReplace
         '
         Me.SP_ComponentesContenidoProvisional_Base_EDICION_INSERTARTableAdapter.ClearBeforeFill = True
         '
+        'SP_ComponentesContenidoProvisional_Base_BUSQUEDA_SEGUN_PARAMETRO_IdTableAdapter
+        '
+        Me.SP_ComponentesContenidoProvisional_Base_BUSQUEDA_SEGUN_PARAMETRO_IdTableAdapter.ClearBeforeFill = True
+        '
+        'SP_ComponentesContenidoProvisional_Base_EDICION_ACTUALIZARBindingSource
+        '
+        Me.SP_ComponentesContenidoProvisional_Base_EDICION_ACTUALIZARBindingSource.DataMember = "SP_ComponentesContenidoProvisional_Base_EDICION_ACTUALIZAR"
+        Me.SP_ComponentesContenidoProvisional_Base_EDICION_ACTUALIZARBindingSource.DataSource = Me.DataSetTablasYCampos
+        '
+        'SP_ComponentesContenidoProvisional_Base_EDICION_ACTUALIZARTableAdapter
+        '
+        Me.SP_ComponentesContenidoProvisional_Base_EDICION_ACTUALIZARTableAdapter.ClearBeforeFill = True
+        '
+        'SP_ComponentesContenidoProvisional_Base_TrucateBindingSource
+        '
+        Me.SP_ComponentesContenidoProvisional_Base_TrucateBindingSource.DataMember = "SP_ComponentesContenidoProvisional_Base_Trucate"
+        Me.SP_ComponentesContenidoProvisional_Base_TrucateBindingSource.DataSource = Me.DataSetTablasYCampos
+        '
+        'SP_ComponentesContenidoProvisional_Base_TrucateTableAdapter
+        '
+        Me.SP_ComponentesContenidoProvisional_Base_TrucateTableAdapter.ClearBeforeFill = True
+        '
+        'SP_ComponentesContenidoProvisional_TruncateBindingSource
+        '
+        Me.SP_ComponentesContenidoProvisional_TruncateBindingSource.DataMember = "SP_ComponentesContenidoProvisional_Truncate"
+        Me.SP_ComponentesContenidoProvisional_TruncateBindingSource.DataSource = Me.DataSetTablasYCampos
+        '
+        'SP_ComponentesContenidoProvisional_TruncateTableAdapter
+        '
+        Me.SP_ComponentesContenidoProvisional_TruncateTableAdapter.ClearBeforeFill = True
+        '
+        'ComponenteIDLabel2
+        '
+        ComponenteIDLabel2.AutoSize = True
+        ComponenteIDLabel2.Location = New System.Drawing.Point(3, 3)
+        ComponenteIDLabel2.Name = "ComponenteIDLabel2"
+        ComponenteIDLabel2.Size = New System.Drawing.Size(84, 13)
+        ComponenteIDLabel2.TabIndex = 13
+        ComponenteIDLabel2.Text = "Componente ID:"
+        '
+        'ComponenteEvaluaSiTieneBase
+        '
+        Me.ComponenteEvaluaSiTieneBase.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SP_Componentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaID_XBaseBindingSource, "ComponenteID", True))
+        Me.ComponenteEvaluaSiTieneBase.Location = New System.Drawing.Point(6, 23)
+        Me.ComponenteEvaluaSiTieneBase.Name = "ComponenteEvaluaSiTieneBase"
+        Me.ComponenteEvaluaSiTieneBase.Size = New System.Drawing.Size(79, 20)
+        Me.ComponenteEvaluaSiTieneBase.TabIndex = 14
+        '
         'FrmReplace
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -4026,6 +4119,7 @@ Partial Class FrmReplace
         Me.PanelConf.PerformLayout()
         Me.Panel4.ResumeLayout(False)
         Me.Panel4.PerformLayout()
+        CType(Me.SP_ComponentesContenidoProvisional_Base_BUSQUEDA_SEGUN_PARAMETRO_IdBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.SP_ComponentesContenidoProvisional_SEGUN_TABLA_REPLACEBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.SP_ComponentesContenidoProvisional_SEGUN_TABLA_REPLACEDataGridView, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.SP_ComponentesContenidoProvisional_SEGUN_TABLA_BASEBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
@@ -4077,6 +4171,9 @@ Partial Class FrmReplace
         Me.Panel5.ResumeLayout(False)
         CType(Me.SP_ComponentesContenidoProvisional_EDICION_INSERTARBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.SP_ComponentesContenidoProvisional_Base_EDICION_INSERTARBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.SP_ComponentesContenidoProvisional_Base_EDICION_ACTUALIZARBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.SP_ComponentesContenidoProvisional_Base_TrucateBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.SP_ComponentesContenidoProvisional_TruncateBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -4407,10 +4504,10 @@ Partial Class FrmReplace
     Friend WithEvents DataGridViewCheckBoxColumn2 As DataGridViewCheckBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn42 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn43 As DataGridViewTextBoxColumn
-    Friend WithEvents ContenidoTextBox As TextBox
+    Friend WithEvents ContenidoTextBoxBase As TextBox
     Friend WithEvents SP_ComponentesContenidoProvisional_SEGUN_TABLA_REPLACEBindingSource As BindingSource
     Friend WithEvents SP_ComponentesContenidoProvisional_SEGUN_TABLA_REPLACETableAdapter As DataSetTablasYCamposTableAdapters.SP_ComponentesContenidoProvisional_SEGUN_TABLA_REPLACETableAdapter
-    Friend WithEvents ContenidoTextBox1 As TextBox
+    Friend WithEvents ContenidoDeRemplazo As TextBox
     Friend WithEvents ReferenciaTextBox As TextBox
     Friend WithEvents SP_ComponentesContenidoProvisional_SEGUN_TABLA_REPLACEDataGridView As DataGridView
     Friend WithEvents DataGridViewTextBoxColumn44 As DataGridViewTextBoxColumn
@@ -4421,4 +4518,14 @@ Partial Class FrmReplace
     Friend WithEvents DataGridViewTextBoxColumn48 As DataGridViewTextBoxColumn
     Friend WithEvents SP_ComponentesContenidoProvisional_Base_EDICION_INSERTARBindingSource As BindingSource
     Friend WithEvents SP_ComponentesContenidoProvisional_Base_EDICION_INSERTARTableAdapter As DataSetTablasYCamposTableAdapters.SP_ComponentesContenidoProvisional_Base_EDICION_INSERTARTableAdapter
+    Friend WithEvents SP_ComponentesContenidoProvisional_Base_BUSQUEDA_SEGUN_PARAMETRO_IdBindingSource As BindingSource
+    Friend WithEvents SP_ComponentesContenidoProvisional_Base_BUSQUEDA_SEGUN_PARAMETRO_IdTableAdapter As DataSetTablasYCamposTableAdapters.SP_ComponentesContenidoProvisional_Base_BUSQUEDA_SEGUN_PARAMETRO_IdTableAdapter
+    Friend WithEvents BaseTextBox As TextBox
+    Friend WithEvents SP_ComponentesContenidoProvisional_Base_EDICION_ACTUALIZARBindingSource As BindingSource
+    Friend WithEvents SP_ComponentesContenidoProvisional_Base_EDICION_ACTUALIZARTableAdapter As DataSetTablasYCamposTableAdapters.SP_ComponentesContenidoProvisional_Base_EDICION_ACTUALIZARTableAdapter
+    Friend WithEvents SP_ComponentesContenidoProvisional_Base_TrucateBindingSource As BindingSource
+    Friend WithEvents SP_ComponentesContenidoProvisional_Base_TrucateTableAdapter As DataSetTablasYCamposTableAdapters.SP_ComponentesContenidoProvisional_Base_TrucateTableAdapter
+    Friend WithEvents SP_ComponentesContenidoProvisional_TruncateBindingSource As BindingSource
+    Friend WithEvents SP_ComponentesContenidoProvisional_TruncateTableAdapter As DataSetTablasYCamposTableAdapters.SP_ComponentesContenidoProvisional_TruncateTableAdapter
+    Friend WithEvents ComponenteEvaluaSiTieneBase As TextBox
 End Class

@@ -109,7 +109,7 @@ Partial Public Class DataSetTablasYCampos
     
     Private tableSP_ComponentesContenidoProvisional_EDICION_INSERTAR As SP_ComponentesContenidoProvisional_EDICION_INSERTARDataTable
     
-    Private tableTruncate_ComponentesContenidoProvisional As Truncate_ComponentesContenidoProvisionalDataTable
+    Private tableSP_ComponentesContenidoProvisional_Truncate As SP_ComponentesContenidoProvisional_TruncateDataTable
     
     Private tableSP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID3 As SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID3DataTable
     
@@ -123,7 +123,7 @@ Partial Public Class DataSetTablasYCampos
     
     Private tableSP_ComponentesContenidoProvisional_Base_EDICION_ACTUALIZAR As SP_ComponentesContenidoProvisional_Base_EDICION_ACTUALIZARDataTable
     
-    Private tableSP_ComponentesContenidoProvisional_Trucate As SP_ComponentesContenidoProvisional_TrucateDataTable
+    Private tableSP_ComponentesContenidoProvisional_Base_Trucate As SP_ComponentesContenidoProvisional_Base_TrucateDataTable
     
     Private _schemaSerializationMode As Global.System.Data.SchemaSerializationMode = Global.System.Data.SchemaSerializationMode.IncludeSchema
     
@@ -280,8 +280,8 @@ Partial Public Class DataSetTablasYCampos
             If (Not (ds.Tables("SP_ComponentesContenidoProvisional_EDICION_INSERTAR")) Is Nothing) Then
                 MyBase.Tables.Add(New SP_ComponentesContenidoProvisional_EDICION_INSERTARDataTable(ds.Tables("SP_ComponentesContenidoProvisional_EDICION_INSERTAR")))
             End If
-            If (Not (ds.Tables("Truncate_ComponentesContenidoProvisional")) Is Nothing) Then
-                MyBase.Tables.Add(New Truncate_ComponentesContenidoProvisionalDataTable(ds.Tables("Truncate_ComponentesContenidoProvisional")))
+            If (Not (ds.Tables("SP_ComponentesContenidoProvisional_Truncate")) Is Nothing) Then
+                MyBase.Tables.Add(New SP_ComponentesContenidoProvisional_TruncateDataTable(ds.Tables("SP_ComponentesContenidoProvisional_Truncate")))
             End If
             If (Not (ds.Tables("SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID3")) Is Nothing) Then
                 MyBase.Tables.Add(New SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID3DataTable(ds.Tables("SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID3")))
@@ -301,8 +301,8 @@ Partial Public Class DataSetTablasYCampos
             If (Not (ds.Tables("SP_ComponentesContenidoProvisional_Base_EDICION_ACTUALIZAR")) Is Nothing) Then
                 MyBase.Tables.Add(New SP_ComponentesContenidoProvisional_Base_EDICION_ACTUALIZARDataTable(ds.Tables("SP_ComponentesContenidoProvisional_Base_EDICION_ACTUALIZAR")))
             End If
-            If (Not (ds.Tables("SP_ComponentesContenidoProvisional_Trucate")) Is Nothing) Then
-                MyBase.Tables.Add(New SP_ComponentesContenidoProvisional_TrucateDataTable(ds.Tables("SP_ComponentesContenidoProvisional_Trucate")))
+            If (Not (ds.Tables("SP_ComponentesContenidoProvisional_Base_Trucate")) Is Nothing) Then
+                MyBase.Tables.Add(New SP_ComponentesContenidoProvisional_Base_TrucateDataTable(ds.Tables("SP_ComponentesContenidoProvisional_Base_Trucate")))
             End If
             Me.DataSetName = ds.DataSetName
             Me.Prefix = ds.Prefix
@@ -745,9 +745,9 @@ Partial Public Class DataSetTablasYCampos
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
      Global.System.ComponentModel.Browsable(false),  _
      Global.System.ComponentModel.DesignerSerializationVisibility(Global.System.ComponentModel.DesignerSerializationVisibility.Content)>  _
-    Public ReadOnly Property Truncate_ComponentesContenidoProvisional() As Truncate_ComponentesContenidoProvisionalDataTable
+    Public ReadOnly Property SP_ComponentesContenidoProvisional_Truncate() As SP_ComponentesContenidoProvisional_TruncateDataTable
         Get
-            Return Me.tableTruncate_ComponentesContenidoProvisional
+            Return Me.tableSP_ComponentesContenidoProvisional_Truncate
         End Get
     End Property
     
@@ -815,9 +815,9 @@ Partial Public Class DataSetTablasYCampos
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
      Global.System.ComponentModel.Browsable(false),  _
      Global.System.ComponentModel.DesignerSerializationVisibility(Global.System.ComponentModel.DesignerSerializationVisibility.Content)>  _
-    Public ReadOnly Property SP_ComponentesContenidoProvisional_Trucate() As SP_ComponentesContenidoProvisional_TrucateDataTable
+    Public ReadOnly Property SP_ComponentesContenidoProvisional_Base_Trucate() As SP_ComponentesContenidoProvisional_Base_TrucateDataTable
         Get
-            Return Me.tableSP_ComponentesContenidoProvisional_Trucate
+            Return Me.tableSP_ComponentesContenidoProvisional_Base_Trucate
         End Get
     End Property
     
@@ -1014,8 +1014,8 @@ Partial Public Class DataSetTablasYCampos
             If (Not (ds.Tables("SP_ComponentesContenidoProvisional_EDICION_INSERTAR")) Is Nothing) Then
                 MyBase.Tables.Add(New SP_ComponentesContenidoProvisional_EDICION_INSERTARDataTable(ds.Tables("SP_ComponentesContenidoProvisional_EDICION_INSERTAR")))
             End If
-            If (Not (ds.Tables("Truncate_ComponentesContenidoProvisional")) Is Nothing) Then
-                MyBase.Tables.Add(New Truncate_ComponentesContenidoProvisionalDataTable(ds.Tables("Truncate_ComponentesContenidoProvisional")))
+            If (Not (ds.Tables("SP_ComponentesContenidoProvisional_Truncate")) Is Nothing) Then
+                MyBase.Tables.Add(New SP_ComponentesContenidoProvisional_TruncateDataTable(ds.Tables("SP_ComponentesContenidoProvisional_Truncate")))
             End If
             If (Not (ds.Tables("SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID3")) Is Nothing) Then
                 MyBase.Tables.Add(New SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID3DataTable(ds.Tables("SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID3")))
@@ -1035,8 +1035,8 @@ Partial Public Class DataSetTablasYCampos
             If (Not (ds.Tables("SP_ComponentesContenidoProvisional_Base_EDICION_ACTUALIZAR")) Is Nothing) Then
                 MyBase.Tables.Add(New SP_ComponentesContenidoProvisional_Base_EDICION_ACTUALIZARDataTable(ds.Tables("SP_ComponentesContenidoProvisional_Base_EDICION_ACTUALIZAR")))
             End If
-            If (Not (ds.Tables("SP_ComponentesContenidoProvisional_Trucate")) Is Nothing) Then
-                MyBase.Tables.Add(New SP_ComponentesContenidoProvisional_TrucateDataTable(ds.Tables("SP_ComponentesContenidoProvisional_Trucate")))
+            If (Not (ds.Tables("SP_ComponentesContenidoProvisional_Base_Trucate")) Is Nothing) Then
+                MyBase.Tables.Add(New SP_ComponentesContenidoProvisional_Base_TrucateDataTable(ds.Tables("SP_ComponentesContenidoProvisional_Base_Trucate")))
             End If
             Me.DataSetName = ds.DataSetName
             Me.Prefix = ds.Prefix
@@ -1322,10 +1322,10 @@ Partial Public Class DataSetTablasYCampos
                 Me.tableSP_ComponentesContenidoProvisional_EDICION_INSERTAR.InitVars
             End If
         End If
-        Me.tableTruncate_ComponentesContenidoProvisional = CType(MyBase.Tables("Truncate_ComponentesContenidoProvisional"),Truncate_ComponentesContenidoProvisionalDataTable)
+        Me.tableSP_ComponentesContenidoProvisional_Truncate = CType(MyBase.Tables("SP_ComponentesContenidoProvisional_Truncate"),SP_ComponentesContenidoProvisional_TruncateDataTable)
         If (initTable = true) Then
-            If (Not (Me.tableTruncate_ComponentesContenidoProvisional) Is Nothing) Then
-                Me.tableTruncate_ComponentesContenidoProvisional.InitVars
+            If (Not (Me.tableSP_ComponentesContenidoProvisional_Truncate) Is Nothing) Then
+                Me.tableSP_ComponentesContenidoProvisional_Truncate.InitVars
             End If
         End If
         Me.tableSP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID3 = CType(MyBase.Tables("SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID3"),SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID3DataTable)
@@ -1364,10 +1364,10 @@ Partial Public Class DataSetTablasYCampos
                 Me.tableSP_ComponentesContenidoProvisional_Base_EDICION_ACTUALIZAR.InitVars
             End If
         End If
-        Me.tableSP_ComponentesContenidoProvisional_Trucate = CType(MyBase.Tables("SP_ComponentesContenidoProvisional_Trucate"),SP_ComponentesContenidoProvisional_TrucateDataTable)
+        Me.tableSP_ComponentesContenidoProvisional_Base_Trucate = CType(MyBase.Tables("SP_ComponentesContenidoProvisional_Base_Trucate"),SP_ComponentesContenidoProvisional_Base_TrucateDataTable)
         If (initTable = true) Then
-            If (Not (Me.tableSP_ComponentesContenidoProvisional_Trucate) Is Nothing) Then
-                Me.tableSP_ComponentesContenidoProvisional_Trucate.InitVars
+            If (Not (Me.tableSP_ComponentesContenidoProvisional_Base_Trucate) Is Nothing) Then
+                Me.tableSP_ComponentesContenidoProvisional_Base_Trucate.InitVars
             End If
         End If
     End Sub
@@ -1464,8 +1464,8 @@ Partial Public Class DataSetTablasYCampos
         MyBase.Tables.Add(Me.tableSP_CampoComponentes_Segun_Plantilla_Tipo_ComponenteID)
         Me.tableSP_ComponentesContenidoProvisional_EDICION_INSERTAR = New SP_ComponentesContenidoProvisional_EDICION_INSERTARDataTable()
         MyBase.Tables.Add(Me.tableSP_ComponentesContenidoProvisional_EDICION_INSERTAR)
-        Me.tableTruncate_ComponentesContenidoProvisional = New Truncate_ComponentesContenidoProvisionalDataTable()
-        MyBase.Tables.Add(Me.tableTruncate_ComponentesContenidoProvisional)
+        Me.tableSP_ComponentesContenidoProvisional_Truncate = New SP_ComponentesContenidoProvisional_TruncateDataTable()
+        MyBase.Tables.Add(Me.tableSP_ComponentesContenidoProvisional_Truncate)
         Me.tableSP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID3 = New SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID3DataTable()
         MyBase.Tables.Add(Me.tableSP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID3)
         Me.tableSP_ComponentesContenidoProvisional_SEGUN_TABLA_BASE = New SP_ComponentesContenidoProvisional_SEGUN_TABLA_BASEDataTable()
@@ -1478,8 +1478,8 @@ Partial Public Class DataSetTablasYCampos
         MyBase.Tables.Add(Me.tableSP_ComponentesContenidoProvisional_Base_EDICION_INSERTAR)
         Me.tableSP_ComponentesContenidoProvisional_Base_EDICION_ACTUALIZAR = New SP_ComponentesContenidoProvisional_Base_EDICION_ACTUALIZARDataTable()
         MyBase.Tables.Add(Me.tableSP_ComponentesContenidoProvisional_Base_EDICION_ACTUALIZAR)
-        Me.tableSP_ComponentesContenidoProvisional_Trucate = New SP_ComponentesContenidoProvisional_TrucateDataTable()
-        MyBase.Tables.Add(Me.tableSP_ComponentesContenidoProvisional_Trucate)
+        Me.tableSP_ComponentesContenidoProvisional_Base_Trucate = New SP_ComponentesContenidoProvisional_Base_TrucateDataTable()
+        MyBase.Tables.Add(Me.tableSP_ComponentesContenidoProvisional_Base_Trucate)
     End Sub
     
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -1736,7 +1736,7 @@ Partial Public Class DataSetTablasYCampos
     
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-    Private Function ShouldSerializeTruncate_ComponentesContenidoProvisional() As Boolean
+    Private Function ShouldSerializeSP_ComponentesContenidoProvisional_Truncate() As Boolean
         Return false
     End Function
     
@@ -1778,7 +1778,7 @@ Partial Public Class DataSetTablasYCampos
     
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-    Private Function ShouldSerializeSP_ComponentesContenidoProvisional_Trucate() As Boolean
+    Private Function ShouldSerializeSP_ComponentesContenidoProvisional_Base_Trucate() As Boolean
         Return false
     End Function
     
@@ -1967,7 +1967,7 @@ Partial Public Class DataSetTablasYCampos
     Public Delegate Sub SP_ComponentesContenidoProvisional_EDICION_INSERTARRowChangeEventHandler(ByVal sender As Object, ByVal e As SP_ComponentesContenidoProvisional_EDICION_INSERTARRowChangeEvent)
     
     <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-    Public Delegate Sub Truncate_ComponentesContenidoProvisionalRowChangeEventHandler(ByVal sender As Object, ByVal e As Truncate_ComponentesContenidoProvisionalRowChangeEvent)
+    Public Delegate Sub SP_ComponentesContenidoProvisional_TruncateRowChangeEventHandler(ByVal sender As Object, ByVal e As SP_ComponentesContenidoProvisional_TruncateRowChangeEvent)
     
     <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
     Public Delegate Sub SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID3RowChangeEventHandler(ByVal sender As Object, ByVal e As SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID3RowChangeEvent)
@@ -1988,7 +1988,7 @@ Partial Public Class DataSetTablasYCampos
     Public Delegate Sub SP_ComponentesContenidoProvisional_Base_EDICION_ACTUALIZARRowChangeEventHandler(ByVal sender As Object, ByVal e As SP_ComponentesContenidoProvisional_Base_EDICION_ACTUALIZARRowChangeEvent)
     
     <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-    Public Delegate Sub SP_ComponentesContenidoProvisional_TrucateRowChangeEventHandler(ByVal sender As Object, ByVal e As SP_ComponentesContenidoProvisional_TrucateRowChangeEvent)
+    Public Delegate Sub SP_ComponentesContenidoProvisional_Base_TrucateRowChangeEventHandler(ByVal sender As Object, ByVal e As SP_ComponentesContenidoProvisional_Base_TrucateRowChangeEvent)
     
     '''<summary>
     '''Represents the strongly named DataTable class.
@@ -13826,14 +13826,14 @@ Partial Public Class DataSetTablasYCampos
     '''</summary>
     <Global.System.Serializable(),  _
      Global.System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")>  _
-    Partial Public Class Truncate_ComponentesContenidoProvisionalDataTable
-        Inherits Global.System.Data.TypedTableBase(Of Truncate_ComponentesContenidoProvisionalRow)
+    Partial Public Class SP_ComponentesContenidoProvisional_TruncateDataTable
+        Inherits Global.System.Data.TypedTableBase(Of SP_ComponentesContenidoProvisional_TruncateRow)
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Sub New()
             MyBase.New
-            Me.TableName = "Truncate_ComponentesContenidoProvisional"
+            Me.TableName = "SP_ComponentesContenidoProvisional_Truncate"
             Me.BeginInit
             Me.InitClass
             Me.EndInit
@@ -13875,44 +13875,44 @@ Partial Public Class DataSetTablasYCampos
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Default ReadOnly Property Item(ByVal index As Integer) As Truncate_ComponentesContenidoProvisionalRow
+        Public Default ReadOnly Property Item(ByVal index As Integer) As SP_ComponentesContenidoProvisional_TruncateRow
             Get
-                Return CType(Me.Rows(index),Truncate_ComponentesContenidoProvisionalRow)
+                Return CType(Me.Rows(index),SP_ComponentesContenidoProvisional_TruncateRow)
             End Get
         End Property
         
         <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Event Truncate_ComponentesContenidoProvisionalRowChanging As Truncate_ComponentesContenidoProvisionalRowChangeEventHandler
+        Public Event SP_ComponentesContenidoProvisional_TruncateRowChanging As SP_ComponentesContenidoProvisional_TruncateRowChangeEventHandler
         
         <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Event Truncate_ComponentesContenidoProvisionalRowChanged As Truncate_ComponentesContenidoProvisionalRowChangeEventHandler
+        Public Event SP_ComponentesContenidoProvisional_TruncateRowChanged As SP_ComponentesContenidoProvisional_TruncateRowChangeEventHandler
         
         <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Event Truncate_ComponentesContenidoProvisionalRowDeleting As Truncate_ComponentesContenidoProvisionalRowChangeEventHandler
+        Public Event SP_ComponentesContenidoProvisional_TruncateRowDeleting As SP_ComponentesContenidoProvisional_TruncateRowChangeEventHandler
         
         <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Event Truncate_ComponentesContenidoProvisionalRowDeleted As Truncate_ComponentesContenidoProvisionalRowChangeEventHandler
+        Public Event SP_ComponentesContenidoProvisional_TruncateRowDeleted As SP_ComponentesContenidoProvisional_TruncateRowChangeEventHandler
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Overloads Sub AddTruncate_ComponentesContenidoProvisionalRow(ByVal row As Truncate_ComponentesContenidoProvisionalRow)
+        Public Overloads Sub AddSP_ComponentesContenidoProvisional_TruncateRow(ByVal row As SP_ComponentesContenidoProvisional_TruncateRow)
             Me.Rows.Add(row)
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Overloads Function AddTruncate_ComponentesContenidoProvisionalRow() As Truncate_ComponentesContenidoProvisionalRow
-            Dim rowTruncate_ComponentesContenidoProvisionalRow As Truncate_ComponentesContenidoProvisionalRow = CType(Me.NewRow,Truncate_ComponentesContenidoProvisionalRow)
+        Public Overloads Function AddSP_ComponentesContenidoProvisional_TruncateRow() As SP_ComponentesContenidoProvisional_TruncateRow
+            Dim rowSP_ComponentesContenidoProvisional_TruncateRow As SP_ComponentesContenidoProvisional_TruncateRow = CType(Me.NewRow,SP_ComponentesContenidoProvisional_TruncateRow)
             Dim columnValuesArray(-1) As Object
-            rowTruncate_ComponentesContenidoProvisionalRow.ItemArray = columnValuesArray
-            Me.Rows.Add(rowTruncate_ComponentesContenidoProvisionalRow)
-            Return rowTruncate_ComponentesContenidoProvisionalRow
+            rowSP_ComponentesContenidoProvisional_TruncateRow.ItemArray = columnValuesArray
+            Me.Rows.Add(rowSP_ComponentesContenidoProvisional_TruncateRow)
+            Return rowSP_ComponentesContenidoProvisional_TruncateRow
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Overrides Function Clone() As Global.System.Data.DataTable
-            Dim cln As Truncate_ComponentesContenidoProvisionalDataTable = CType(MyBase.Clone,Truncate_ComponentesContenidoProvisionalDataTable)
+            Dim cln As SP_ComponentesContenidoProvisional_TruncateDataTable = CType(MyBase.Clone,SP_ComponentesContenidoProvisional_TruncateDataTable)
             cln.InitVars
             Return cln
         End Function
@@ -13920,7 +13920,7 @@ Partial Public Class DataSetTablasYCampos
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Protected Overrides Function CreateInstance() As Global.System.Data.DataTable
-            Return New Truncate_ComponentesContenidoProvisionalDataTable()
+            Return New SP_ComponentesContenidoProvisional_TruncateDataTable()
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -13935,28 +13935,28 @@ Partial Public Class DataSetTablasYCampos
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Function NewTruncate_ComponentesContenidoProvisionalRow() As Truncate_ComponentesContenidoProvisionalRow
-            Return CType(Me.NewRow,Truncate_ComponentesContenidoProvisionalRow)
+        Public Function NewSP_ComponentesContenidoProvisional_TruncateRow() As SP_ComponentesContenidoProvisional_TruncateRow
+            Return CType(Me.NewRow,SP_ComponentesContenidoProvisional_TruncateRow)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Protected Overrides Function NewRowFromBuilder(ByVal builder As Global.System.Data.DataRowBuilder) As Global.System.Data.DataRow
-            Return New Truncate_ComponentesContenidoProvisionalRow(builder)
+            Return New SP_ComponentesContenidoProvisional_TruncateRow(builder)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Protected Overrides Function GetRowType() As Global.System.Type
-            Return GetType(Truncate_ComponentesContenidoProvisionalRow)
+            Return GetType(SP_ComponentesContenidoProvisional_TruncateRow)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Protected Overrides Sub OnRowChanged(ByVal e As Global.System.Data.DataRowChangeEventArgs)
             MyBase.OnRowChanged(e)
-            If (Not (Me.Truncate_ComponentesContenidoProvisionalRowChangedEvent) Is Nothing) Then
-                RaiseEvent Truncate_ComponentesContenidoProvisionalRowChanged(Me, New Truncate_ComponentesContenidoProvisionalRowChangeEvent(CType(e.Row,Truncate_ComponentesContenidoProvisionalRow), e.Action))
+            If (Not (Me.SP_ComponentesContenidoProvisional_TruncateRowChangedEvent) Is Nothing) Then
+                RaiseEvent SP_ComponentesContenidoProvisional_TruncateRowChanged(Me, New SP_ComponentesContenidoProvisional_TruncateRowChangeEvent(CType(e.Row,SP_ComponentesContenidoProvisional_TruncateRow), e.Action))
             End If
         End Sub
         
@@ -13964,8 +13964,8 @@ Partial Public Class DataSetTablasYCampos
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Protected Overrides Sub OnRowChanging(ByVal e As Global.System.Data.DataRowChangeEventArgs)
             MyBase.OnRowChanging(e)
-            If (Not (Me.Truncate_ComponentesContenidoProvisionalRowChangingEvent) Is Nothing) Then
-                RaiseEvent Truncate_ComponentesContenidoProvisionalRowChanging(Me, New Truncate_ComponentesContenidoProvisionalRowChangeEvent(CType(e.Row,Truncate_ComponentesContenidoProvisionalRow), e.Action))
+            If (Not (Me.SP_ComponentesContenidoProvisional_TruncateRowChangingEvent) Is Nothing) Then
+                RaiseEvent SP_ComponentesContenidoProvisional_TruncateRowChanging(Me, New SP_ComponentesContenidoProvisional_TruncateRowChangeEvent(CType(e.Row,SP_ComponentesContenidoProvisional_TruncateRow), e.Action))
             End If
         End Sub
         
@@ -13973,8 +13973,8 @@ Partial Public Class DataSetTablasYCampos
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Protected Overrides Sub OnRowDeleted(ByVal e As Global.System.Data.DataRowChangeEventArgs)
             MyBase.OnRowDeleted(e)
-            If (Not (Me.Truncate_ComponentesContenidoProvisionalRowDeletedEvent) Is Nothing) Then
-                RaiseEvent Truncate_ComponentesContenidoProvisionalRowDeleted(Me, New Truncate_ComponentesContenidoProvisionalRowChangeEvent(CType(e.Row,Truncate_ComponentesContenidoProvisionalRow), e.Action))
+            If (Not (Me.SP_ComponentesContenidoProvisional_TruncateRowDeletedEvent) Is Nothing) Then
+                RaiseEvent SP_ComponentesContenidoProvisional_TruncateRowDeleted(Me, New SP_ComponentesContenidoProvisional_TruncateRowChangeEvent(CType(e.Row,SP_ComponentesContenidoProvisional_TruncateRow), e.Action))
             End If
         End Sub
         
@@ -13982,14 +13982,14 @@ Partial Public Class DataSetTablasYCampos
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Protected Overrides Sub OnRowDeleting(ByVal e As Global.System.Data.DataRowChangeEventArgs)
             MyBase.OnRowDeleting(e)
-            If (Not (Me.Truncate_ComponentesContenidoProvisionalRowDeletingEvent) Is Nothing) Then
-                RaiseEvent Truncate_ComponentesContenidoProvisionalRowDeleting(Me, New Truncate_ComponentesContenidoProvisionalRowChangeEvent(CType(e.Row,Truncate_ComponentesContenidoProvisionalRow), e.Action))
+            If (Not (Me.SP_ComponentesContenidoProvisional_TruncateRowDeletingEvent) Is Nothing) Then
+                RaiseEvent SP_ComponentesContenidoProvisional_TruncateRowDeleting(Me, New SP_ComponentesContenidoProvisional_TruncateRowChangeEvent(CType(e.Row,SP_ComponentesContenidoProvisional_TruncateRow), e.Action))
             End If
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Sub RemoveTruncate_ComponentesContenidoProvisionalRow(ByVal row As Truncate_ComponentesContenidoProvisionalRow)
+        Public Sub RemoveSP_ComponentesContenidoProvisional_TruncateRow(ByVal row As SP_ComponentesContenidoProvisional_TruncateRow)
             Me.Rows.Remove(row)
         End Sub
         
@@ -14016,7 +14016,7 @@ Partial Public Class DataSetTablasYCampos
             type.Attributes.Add(attribute1)
             Dim attribute2 As Global.System.Xml.Schema.XmlSchemaAttribute = New Global.System.Xml.Schema.XmlSchemaAttribute()
             attribute2.Name = "tableTypeName"
-            attribute2.FixedValue = "Truncate_ComponentesContenidoProvisionalDataTable"
+            attribute2.FixedValue = "SP_ComponentesContenidoProvisional_TruncateDataTable"
             type.Attributes.Add(attribute2)
             type.Particle = sequence
             Dim dsSchema As Global.System.Xml.Schema.XmlSchema = ds.GetSchemaSerializable
@@ -15768,14 +15768,14 @@ Partial Public Class DataSetTablasYCampos
     '''</summary>
     <Global.System.Serializable(),  _
      Global.System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")>  _
-    Partial Public Class SP_ComponentesContenidoProvisional_TrucateDataTable
-        Inherits Global.System.Data.TypedTableBase(Of SP_ComponentesContenidoProvisional_TrucateRow)
+    Partial Public Class SP_ComponentesContenidoProvisional_Base_TrucateDataTable
+        Inherits Global.System.Data.TypedTableBase(Of SP_ComponentesContenidoProvisional_Base_TrucateRow)
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Sub New()
             MyBase.New
-            Me.TableName = "SP_ComponentesContenidoProvisional_Trucate"
+            Me.TableName = "SP_ComponentesContenidoProvisional_Base_Trucate"
             Me.BeginInit
             Me.InitClass
             Me.EndInit
@@ -15817,44 +15817,44 @@ Partial Public Class DataSetTablasYCampos
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Default ReadOnly Property Item(ByVal index As Integer) As SP_ComponentesContenidoProvisional_TrucateRow
+        Public Default ReadOnly Property Item(ByVal index As Integer) As SP_ComponentesContenidoProvisional_Base_TrucateRow
             Get
-                Return CType(Me.Rows(index),SP_ComponentesContenidoProvisional_TrucateRow)
+                Return CType(Me.Rows(index),SP_ComponentesContenidoProvisional_Base_TrucateRow)
             End Get
         End Property
         
         <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Event SP_ComponentesContenidoProvisional_TrucateRowChanging As SP_ComponentesContenidoProvisional_TrucateRowChangeEventHandler
+        Public Event SP_ComponentesContenidoProvisional_Base_TrucateRowChanging As SP_ComponentesContenidoProvisional_Base_TrucateRowChangeEventHandler
         
         <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Event SP_ComponentesContenidoProvisional_TrucateRowChanged As SP_ComponentesContenidoProvisional_TrucateRowChangeEventHandler
+        Public Event SP_ComponentesContenidoProvisional_Base_TrucateRowChanged As SP_ComponentesContenidoProvisional_Base_TrucateRowChangeEventHandler
         
         <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Event SP_ComponentesContenidoProvisional_TrucateRowDeleting As SP_ComponentesContenidoProvisional_TrucateRowChangeEventHandler
+        Public Event SP_ComponentesContenidoProvisional_Base_TrucateRowDeleting As SP_ComponentesContenidoProvisional_Base_TrucateRowChangeEventHandler
         
         <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Event SP_ComponentesContenidoProvisional_TrucateRowDeleted As SP_ComponentesContenidoProvisional_TrucateRowChangeEventHandler
+        Public Event SP_ComponentesContenidoProvisional_Base_TrucateRowDeleted As SP_ComponentesContenidoProvisional_Base_TrucateRowChangeEventHandler
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Overloads Sub AddSP_ComponentesContenidoProvisional_TrucateRow(ByVal row As SP_ComponentesContenidoProvisional_TrucateRow)
+        Public Overloads Sub AddSP_ComponentesContenidoProvisional_Base_TrucateRow(ByVal row As SP_ComponentesContenidoProvisional_Base_TrucateRow)
             Me.Rows.Add(row)
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Overloads Function AddSP_ComponentesContenidoProvisional_TrucateRow() As SP_ComponentesContenidoProvisional_TrucateRow
-            Dim rowSP_ComponentesContenidoProvisional_TrucateRow As SP_ComponentesContenidoProvisional_TrucateRow = CType(Me.NewRow,SP_ComponentesContenidoProvisional_TrucateRow)
+        Public Overloads Function AddSP_ComponentesContenidoProvisional_Base_TrucateRow() As SP_ComponentesContenidoProvisional_Base_TrucateRow
+            Dim rowSP_ComponentesContenidoProvisional_Base_TrucateRow As SP_ComponentesContenidoProvisional_Base_TrucateRow = CType(Me.NewRow,SP_ComponentesContenidoProvisional_Base_TrucateRow)
             Dim columnValuesArray(-1) As Object
-            rowSP_ComponentesContenidoProvisional_TrucateRow.ItemArray = columnValuesArray
-            Me.Rows.Add(rowSP_ComponentesContenidoProvisional_TrucateRow)
-            Return rowSP_ComponentesContenidoProvisional_TrucateRow
+            rowSP_ComponentesContenidoProvisional_Base_TrucateRow.ItemArray = columnValuesArray
+            Me.Rows.Add(rowSP_ComponentesContenidoProvisional_Base_TrucateRow)
+            Return rowSP_ComponentesContenidoProvisional_Base_TrucateRow
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Overrides Function Clone() As Global.System.Data.DataTable
-            Dim cln As SP_ComponentesContenidoProvisional_TrucateDataTable = CType(MyBase.Clone,SP_ComponentesContenidoProvisional_TrucateDataTable)
+            Dim cln As SP_ComponentesContenidoProvisional_Base_TrucateDataTable = CType(MyBase.Clone,SP_ComponentesContenidoProvisional_Base_TrucateDataTable)
             cln.InitVars
             Return cln
         End Function
@@ -15862,7 +15862,7 @@ Partial Public Class DataSetTablasYCampos
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Protected Overrides Function CreateInstance() As Global.System.Data.DataTable
-            Return New SP_ComponentesContenidoProvisional_TrucateDataTable()
+            Return New SP_ComponentesContenidoProvisional_Base_TrucateDataTable()
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -15877,28 +15877,28 @@ Partial Public Class DataSetTablasYCampos
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Function NewSP_ComponentesContenidoProvisional_TrucateRow() As SP_ComponentesContenidoProvisional_TrucateRow
-            Return CType(Me.NewRow,SP_ComponentesContenidoProvisional_TrucateRow)
+        Public Function NewSP_ComponentesContenidoProvisional_Base_TrucateRow() As SP_ComponentesContenidoProvisional_Base_TrucateRow
+            Return CType(Me.NewRow,SP_ComponentesContenidoProvisional_Base_TrucateRow)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Protected Overrides Function NewRowFromBuilder(ByVal builder As Global.System.Data.DataRowBuilder) As Global.System.Data.DataRow
-            Return New SP_ComponentesContenidoProvisional_TrucateRow(builder)
+            Return New SP_ComponentesContenidoProvisional_Base_TrucateRow(builder)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Protected Overrides Function GetRowType() As Global.System.Type
-            Return GetType(SP_ComponentesContenidoProvisional_TrucateRow)
+            Return GetType(SP_ComponentesContenidoProvisional_Base_TrucateRow)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Protected Overrides Sub OnRowChanged(ByVal e As Global.System.Data.DataRowChangeEventArgs)
             MyBase.OnRowChanged(e)
-            If (Not (Me.SP_ComponentesContenidoProvisional_TrucateRowChangedEvent) Is Nothing) Then
-                RaiseEvent SP_ComponentesContenidoProvisional_TrucateRowChanged(Me, New SP_ComponentesContenidoProvisional_TrucateRowChangeEvent(CType(e.Row,SP_ComponentesContenidoProvisional_TrucateRow), e.Action))
+            If (Not (Me.SP_ComponentesContenidoProvisional_Base_TrucateRowChangedEvent) Is Nothing) Then
+                RaiseEvent SP_ComponentesContenidoProvisional_Base_TrucateRowChanged(Me, New SP_ComponentesContenidoProvisional_Base_TrucateRowChangeEvent(CType(e.Row,SP_ComponentesContenidoProvisional_Base_TrucateRow), e.Action))
             End If
         End Sub
         
@@ -15906,8 +15906,8 @@ Partial Public Class DataSetTablasYCampos
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Protected Overrides Sub OnRowChanging(ByVal e As Global.System.Data.DataRowChangeEventArgs)
             MyBase.OnRowChanging(e)
-            If (Not (Me.SP_ComponentesContenidoProvisional_TrucateRowChangingEvent) Is Nothing) Then
-                RaiseEvent SP_ComponentesContenidoProvisional_TrucateRowChanging(Me, New SP_ComponentesContenidoProvisional_TrucateRowChangeEvent(CType(e.Row,SP_ComponentesContenidoProvisional_TrucateRow), e.Action))
+            If (Not (Me.SP_ComponentesContenidoProvisional_Base_TrucateRowChangingEvent) Is Nothing) Then
+                RaiseEvent SP_ComponentesContenidoProvisional_Base_TrucateRowChanging(Me, New SP_ComponentesContenidoProvisional_Base_TrucateRowChangeEvent(CType(e.Row,SP_ComponentesContenidoProvisional_Base_TrucateRow), e.Action))
             End If
         End Sub
         
@@ -15915,8 +15915,8 @@ Partial Public Class DataSetTablasYCampos
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Protected Overrides Sub OnRowDeleted(ByVal e As Global.System.Data.DataRowChangeEventArgs)
             MyBase.OnRowDeleted(e)
-            If (Not (Me.SP_ComponentesContenidoProvisional_TrucateRowDeletedEvent) Is Nothing) Then
-                RaiseEvent SP_ComponentesContenidoProvisional_TrucateRowDeleted(Me, New SP_ComponentesContenidoProvisional_TrucateRowChangeEvent(CType(e.Row,SP_ComponentesContenidoProvisional_TrucateRow), e.Action))
+            If (Not (Me.SP_ComponentesContenidoProvisional_Base_TrucateRowDeletedEvent) Is Nothing) Then
+                RaiseEvent SP_ComponentesContenidoProvisional_Base_TrucateRowDeleted(Me, New SP_ComponentesContenidoProvisional_Base_TrucateRowChangeEvent(CType(e.Row,SP_ComponentesContenidoProvisional_Base_TrucateRow), e.Action))
             End If
         End Sub
         
@@ -15924,14 +15924,14 @@ Partial Public Class DataSetTablasYCampos
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Protected Overrides Sub OnRowDeleting(ByVal e As Global.System.Data.DataRowChangeEventArgs)
             MyBase.OnRowDeleting(e)
-            If (Not (Me.SP_ComponentesContenidoProvisional_TrucateRowDeletingEvent) Is Nothing) Then
-                RaiseEvent SP_ComponentesContenidoProvisional_TrucateRowDeleting(Me, New SP_ComponentesContenidoProvisional_TrucateRowChangeEvent(CType(e.Row,SP_ComponentesContenidoProvisional_TrucateRow), e.Action))
+            If (Not (Me.SP_ComponentesContenidoProvisional_Base_TrucateRowDeletingEvent) Is Nothing) Then
+                RaiseEvent SP_ComponentesContenidoProvisional_Base_TrucateRowDeleting(Me, New SP_ComponentesContenidoProvisional_Base_TrucateRowChangeEvent(CType(e.Row,SP_ComponentesContenidoProvisional_Base_TrucateRow), e.Action))
             End If
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Sub RemoveSP_ComponentesContenidoProvisional_TrucateRow(ByVal row As SP_ComponentesContenidoProvisional_TrucateRow)
+        Public Sub RemoveSP_ComponentesContenidoProvisional_Base_TrucateRow(ByVal row As SP_ComponentesContenidoProvisional_Base_TrucateRow)
             Me.Rows.Remove(row)
         End Sub
         
@@ -15958,7 +15958,7 @@ Partial Public Class DataSetTablasYCampos
             type.Attributes.Add(attribute1)
             Dim attribute2 As Global.System.Xml.Schema.XmlSchemaAttribute = New Global.System.Xml.Schema.XmlSchemaAttribute()
             attribute2.Name = "tableTypeName"
-            attribute2.FixedValue = "SP_ComponentesContenidoProvisional_TrucateDataTable"
+            attribute2.FixedValue = "SP_ComponentesContenidoProvisional_Base_TrucateDataTable"
             type.Attributes.Add(attribute2)
             type.Particle = sequence
             Dim dsSchema As Global.System.Xml.Schema.XmlSchema = ds.GetSchemaSerializable
@@ -18453,16 +18453,16 @@ Partial Public Class DataSetTablasYCampos
     '''<summary>
     '''Represents strongly named DataRow class.
     '''</summary>
-    Partial Public Class Truncate_ComponentesContenidoProvisionalRow
+    Partial Public Class SP_ComponentesContenidoProvisional_TruncateRow
         Inherits Global.System.Data.DataRow
         
-        Private tableTruncate_ComponentesContenidoProvisional As Truncate_ComponentesContenidoProvisionalDataTable
+        Private tableSP_ComponentesContenidoProvisional_Truncate As SP_ComponentesContenidoProvisional_TruncateDataTable
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Friend Sub New(ByVal rb As Global.System.Data.DataRowBuilder)
             MyBase.New(rb)
-            Me.tableTruncate_ComponentesContenidoProvisional = CType(Me.Table,Truncate_ComponentesContenidoProvisionalDataTable)
+            Me.tableSP_ComponentesContenidoProvisional_Truncate = CType(Me.Table,SP_ComponentesContenidoProvisional_TruncateDataTable)
         End Sub
     End Class
     
@@ -18939,16 +18939,16 @@ Partial Public Class DataSetTablasYCampos
     '''<summary>
     '''Represents strongly named DataRow class.
     '''</summary>
-    Partial Public Class SP_ComponentesContenidoProvisional_TrucateRow
+    Partial Public Class SP_ComponentesContenidoProvisional_Base_TrucateRow
         Inherits Global.System.Data.DataRow
         
-        Private tableSP_ComponentesContenidoProvisional_Trucate As SP_ComponentesContenidoProvisional_TrucateDataTable
+        Private tableSP_ComponentesContenidoProvisional_Base_Trucate As SP_ComponentesContenidoProvisional_Base_TrucateDataTable
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Friend Sub New(ByVal rb As Global.System.Data.DataRowBuilder)
             MyBase.New(rb)
-            Me.tableSP_ComponentesContenidoProvisional_Trucate = CType(Me.Table,SP_ComponentesContenidoProvisional_TrucateDataTable)
+            Me.tableSP_ComponentesContenidoProvisional_Base_Trucate = CType(Me.Table,SP_ComponentesContenidoProvisional_Base_TrucateDataTable)
         End Sub
     End Class
     
@@ -20468,16 +20468,16 @@ Partial Public Class DataSetTablasYCampos
     '''Row event argument class
     '''</summary>
     <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-    Public Class Truncate_ComponentesContenidoProvisionalRowChangeEvent
+    Public Class SP_ComponentesContenidoProvisional_TruncateRowChangeEvent
         Inherits Global.System.EventArgs
         
-        Private eventRow As Truncate_ComponentesContenidoProvisionalRow
+        Private eventRow As SP_ComponentesContenidoProvisional_TruncateRow
         
         Private eventAction As Global.System.Data.DataRowAction
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Sub New(ByVal row As Truncate_ComponentesContenidoProvisionalRow, ByVal action As Global.System.Data.DataRowAction)
+        Public Sub New(ByVal row As SP_ComponentesContenidoProvisional_TruncateRow, ByVal action As Global.System.Data.DataRowAction)
             MyBase.New
             Me.eventRow = row
             Me.eventAction = action
@@ -20485,7 +20485,7 @@ Partial Public Class DataSetTablasYCampos
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public ReadOnly Property Row() As Truncate_ComponentesContenidoProvisionalRow
+        Public ReadOnly Property Row() As SP_ComponentesContenidoProvisional_TruncateRow
             Get
                 Return Me.eventRow
             End Get
@@ -20720,16 +20720,16 @@ Partial Public Class DataSetTablasYCampos
     '''Row event argument class
     '''</summary>
     <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-    Public Class SP_ComponentesContenidoProvisional_TrucateRowChangeEvent
+    Public Class SP_ComponentesContenidoProvisional_Base_TrucateRowChangeEvent
         Inherits Global.System.EventArgs
         
-        Private eventRow As SP_ComponentesContenidoProvisional_TrucateRow
+        Private eventRow As SP_ComponentesContenidoProvisional_Base_TrucateRow
         
         Private eventAction As Global.System.Data.DataRowAction
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Sub New(ByVal row As SP_ComponentesContenidoProvisional_TrucateRow, ByVal action As Global.System.Data.DataRowAction)
+        Public Sub New(ByVal row As SP_ComponentesContenidoProvisional_Base_TrucateRow, ByVal action As Global.System.Data.DataRowAction)
             MyBase.New
             Me.eventRow = row
             Me.eventAction = action
@@ -20737,7 +20737,7 @@ Partial Public Class DataSetTablasYCampos
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public ReadOnly Property Row() As SP_ComponentesContenidoProvisional_TrucateRow
+        Public ReadOnly Property Row() As SP_ComponentesContenidoProvisional_Base_TrucateRow
             Get
                 Return Me.eventRow
             End Get
@@ -30635,7 +30635,7 @@ Namespace DataSetTablasYCamposTableAdapters
      Global.System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner"& _ 
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"),  _
      Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
-    Partial Public Class Truncate_ComponentesContenidoProvisionalTableAdapter
+    Partial Public Class SP_ComponentesContenidoProvisional_TruncateTableAdapter
         Inherits Global.System.ComponentModel.Component
         
         Private WithEvents _adapter As Global.System.Data.SqlClient.SqlDataAdapter
@@ -30774,7 +30774,7 @@ Namespace DataSetTablasYCamposTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, true)>  _
-        Public Overloads Overridable Function Fill(ByVal dataTable As DataSetTablasYCampos.Truncate_ComponentesContenidoProvisionalDataTable) As Integer
+        Public Overloads Overridable Function Fill(ByVal dataTable As DataSetTablasYCampos.SP_ComponentesContenidoProvisional_TruncateDataTable) As Integer
             Me.Adapter.SelectCommand = Me.CommandCollection(0)
             If (Me.ClearBeforeFill = true) Then
                 dataTable.Clear
@@ -30787,9 +30787,9 @@ Namespace DataSetTablasYCamposTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], true)>  _
-        Public Overloads Overridable Function GetData() As DataSetTablasYCampos.Truncate_ComponentesContenidoProvisionalDataTable
+        Public Overloads Overridable Function GetData() As DataSetTablasYCampos.SP_ComponentesContenidoProvisional_TruncateDataTable
             Me.Adapter.SelectCommand = Me.CommandCollection(0)
-            Dim dataTable As DataSetTablasYCampos.Truncate_ComponentesContenidoProvisionalDataTable = New DataSetTablasYCampos.Truncate_ComponentesContenidoProvisionalDataTable()
+            Dim dataTable As DataSetTablasYCampos.SP_ComponentesContenidoProvisional_TruncateDataTable = New DataSetTablasYCampos.SP_ComponentesContenidoProvisional_TruncateDataTable()
             Me.Adapter.Fill(dataTable)
             Return dataTable
         End Function
@@ -32024,7 +32024,7 @@ Namespace DataSetTablasYCamposTableAdapters
      Global.System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner"& _ 
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"),  _
      Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
-    Partial Public Class SP_ComponentesContenidoProvisional_TrucateTableAdapter
+    Partial Public Class SP_ComponentesContenidoProvisional_Base_TrucateTableAdapter
         Inherits Global.System.ComponentModel.Component
         
         Private WithEvents _adapter As Global.System.Data.SqlClient.SqlDataAdapter
@@ -32163,7 +32163,7 @@ Namespace DataSetTablasYCamposTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, true)>  _
-        Public Overloads Overridable Function Fill(ByVal dataTable As DataSetTablasYCampos.SP_ComponentesContenidoProvisional_TrucateDataTable) As Integer
+        Public Overloads Overridable Function Fill(ByVal dataTable As DataSetTablasYCampos.SP_ComponentesContenidoProvisional_Base_TrucateDataTable) As Integer
             Me.Adapter.SelectCommand = Me.CommandCollection(0)
             If (Me.ClearBeforeFill = true) Then
                 dataTable.Clear
@@ -32176,9 +32176,9 @@ Namespace DataSetTablasYCamposTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], true)>  _
-        Public Overloads Overridable Function GetData() As DataSetTablasYCampos.SP_ComponentesContenidoProvisional_TrucateDataTable
+        Public Overloads Overridable Function GetData() As DataSetTablasYCampos.SP_ComponentesContenidoProvisional_Base_TrucateDataTable
             Me.Adapter.SelectCommand = Me.CommandCollection(0)
-            Dim dataTable As DataSetTablasYCampos.SP_ComponentesContenidoProvisional_TrucateDataTable = New DataSetTablasYCampos.SP_ComponentesContenidoProvisional_TrucateDataTable()
+            Dim dataTable As DataSetTablasYCampos.SP_ComponentesContenidoProvisional_Base_TrucateDataTable = New DataSetTablasYCampos.SP_ComponentesContenidoProvisional_Base_TrucateDataTable()
             Me.Adapter.Fill(dataTable)
             Return dataTable
         End Function

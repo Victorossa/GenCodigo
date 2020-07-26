@@ -907,7 +907,7 @@ Represents the strongly named DataTable class.
 Represents the strongly named DataTable class.
 </summary>
 </member>
-<member name="T:GeneradorCod.DataSetTablasYCampos.Truncate_ComponentesContenidoProvisionalDataTable">
+<member name="T:GeneradorCod.DataSetTablasYCampos.SP_ComponentesContenidoProvisional_TruncateDataTable">
 <summary>
 Represents the strongly named DataTable class.
 </summary>
@@ -923,6 +923,26 @@ Represents the strongly named DataTable class.
 </summary>
 </member>
 <member name="T:GeneradorCod.DataSetTablasYCampos.SP_ComponentesContenidoProvisional_SEGUN_TABLA_REPLACEDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:GeneradorCod.DataSetTablasYCampos.SP_ComponentesContenidoProvisional_Base_BUSQUEDA_SEGUN_PARAMETRO_IdDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:GeneradorCod.DataSetTablasYCampos.SP_ComponentesContenidoProvisional_Base_EDICION_INSERTARDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:GeneradorCod.DataSetTablasYCampos.SP_ComponentesContenidoProvisional_Base_EDICION_ACTUALIZARDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:GeneradorCod.DataSetTablasYCampos.SP_ComponentesContenidoProvisional_Base_TrucateDataTable">
 <summary>
 Represents the strongly named DataTable class.
 </summary>
@@ -1137,7 +1157,7 @@ Represents strongly named DataRow class.
 Represents strongly named DataRow class.
 </summary>
 </member>
-<member name="T:GeneradorCod.DataSetTablasYCampos.Truncate_ComponentesContenidoProvisionalRow">
+<member name="T:GeneradorCod.DataSetTablasYCampos.SP_ComponentesContenidoProvisional_TruncateRow">
 <summary>
 Represents strongly named DataRow class.
 </summary>
@@ -1153,6 +1173,26 @@ Represents strongly named DataRow class.
 </summary>
 </member>
 <member name="T:GeneradorCod.DataSetTablasYCampos.SP_ComponentesContenidoProvisional_SEGUN_TABLA_REPLACERow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:GeneradorCod.DataSetTablasYCampos.SP_ComponentesContenidoProvisional_Base_BUSQUEDA_SEGUN_PARAMETRO_IdRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:GeneradorCod.DataSetTablasYCampos.SP_ComponentesContenidoProvisional_Base_EDICION_INSERTARRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:GeneradorCod.DataSetTablasYCampos.SP_ComponentesContenidoProvisional_Base_EDICION_ACTUALIZARRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:GeneradorCod.DataSetTablasYCampos.SP_ComponentesContenidoProvisional_Base_TrucateRow">
 <summary>
 Represents strongly named DataRow class.
 </summary>
@@ -1367,7 +1407,7 @@ Row event argument class
 Row event argument class
 </summary>
 </member>
-<member name="T:GeneradorCod.DataSetTablasYCampos.Truncate_ComponentesContenidoProvisionalRowChangeEvent">
+<member name="T:GeneradorCod.DataSetTablasYCampos.SP_ComponentesContenidoProvisional_TruncateRowChangeEvent">
 <summary>
 Row event argument class
 </summary>
@@ -1383,6 +1423,26 @@ Row event argument class
 </summary>
 </member>
 <member name="T:GeneradorCod.DataSetTablasYCampos.SP_ComponentesContenidoProvisional_SEGUN_TABLA_REPLACERowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:GeneradorCod.DataSetTablasYCampos.SP_ComponentesContenidoProvisional_Base_BUSQUEDA_SEGUN_PARAMETRO_IdRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:GeneradorCod.DataSetTablasYCampos.SP_ComponentesContenidoProvisional_Base_EDICION_INSERTARRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:GeneradorCod.DataSetTablasYCampos.SP_ComponentesContenidoProvisional_Base_EDICION_ACTUALIZARRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:GeneradorCod.DataSetTablasYCampos.SP_ComponentesContenidoProvisional_Base_TrucateRowChangeEvent">
 <summary>
 Row event argument class
 </summary>
@@ -1597,7 +1657,7 @@ Represents the connection and commands used to retrieve and save data.
 Represents the connection and commands used to retrieve and save data.
 </summary>
 </member>
-<member name="T:GeneradorCod.DataSetTablasYCamposTableAdapters.Truncate_ComponentesContenidoProvisionalTableAdapter">
+<member name="T:GeneradorCod.DataSetTablasYCamposTableAdapters.SP_ComponentesContenidoProvisional_TruncateTableAdapter">
 <summary>
 Represents the connection and commands used to retrieve and save data.
 </summary>
@@ -1613,6 +1673,26 @@ Represents the connection and commands used to retrieve and save data.
 </summary>
 </member>
 <member name="T:GeneradorCod.DataSetTablasYCamposTableAdapters.SP_ComponentesContenidoProvisional_SEGUN_TABLA_REPLACETableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:GeneradorCod.DataSetTablasYCamposTableAdapters.SP_ComponentesContenidoProvisional_Base_BUSQUEDA_SEGUN_PARAMETRO_IdTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:GeneradorCod.DataSetTablasYCamposTableAdapters.SP_ComponentesContenidoProvisional_Base_EDICION_INSERTARTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:GeneradorCod.DataSetTablasYCamposTableAdapters.SP_ComponentesContenidoProvisional_Base_EDICION_ACTUALIZARTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:GeneradorCod.DataSetTablasYCamposTableAdapters.SP_ComponentesContenidoProvisional_Base_TrucateTableAdapter">
 <summary>
 Represents the connection and commands used to retrieve and save data.
 </summary>

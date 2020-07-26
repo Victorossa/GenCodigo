@@ -3,6 +3,7 @@
     Dim ValorRequisito As String
     Dim Requisitos() As String
     Private Sub FrmReplace_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
         'TODO: esta línea de código carga datos en la tabla 'DataSetAdministracion.Proyectos' Puede moverla o quitarla según sea necesario.
         'Me.ProyectosTableAdapter.Fill(Me.DataSetAdministracion.Proyectos)
         'TODO: esta línea de código carga datos en la tabla 'DataSetAdministracion.Proyectos' Puede moverla o quitarla según sea necesario.
@@ -390,6 +391,16 @@
 
 
     Public Sub RecorrerComponentesHaciendoReplace()
+        Dim cteBase As Boolean
+        Dim contenidoConBase As String = ""
+        'Evalua si la plantilla tiene un componente que sea base
+        SP_Componentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaID_XBase()
+        If ComponenteEvaluaSiTieneBase.Text = "" Then
+            cteBase = False
+        Else
+            cteBase = True
+            contenidoConBase = procesandoConBase(cteBase)
+        End If
         Dim contadorComponentes = SP_Componentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView.Rows.Count()
         While contadorComponentes > 0
             'Se ubica en la primera fila
@@ -399,15 +410,42 @@
                 CodigoGeneradoRichTextBox.Text = CodigoGeneradoRichTextBox.Text & "                              " & NombreTecnologiaTextBox1.Text & vbCrLf & vbCrLf & NombreComponenteTextBox.Text & vbCrLf & CodigoTextBox.Text & vbCrLf & "____________________________________________________________________________________________________________________________________________" & vbCrLf & vbCrLf
             Else
                 'Valida si uno de los componentes es base para otros
-                If ChkXBase.Checked = True Then
-                    CodigoGeneradoRichTextBox.Text = ProcesarProvisionales()
+                If cteBase = False Then
+                    CodigoGeneradoRichTextBox.Text = CodigoGeneradoRichTextBox.Text & "                             " & NombreTecnologiaTextBox1.Text & vbCrLf & vbCrLf & NombreComponenteTextBox.Text & TablasDeAplicacion(CodigoTextBox.Text, cteBase) & vbCrLf & vbCrLf & "____________________________________________________________________________________________________________________________________________" & vbCrLf & vbCrLf
                 End If
-                CodigoGeneradoRichTextBox.Text = CodigoGeneradoRichTextBox.Text & "                              " & NombreTecnologiaTextBox1.Text & vbCrLf & vbCrLf & NombreComponenteTextBox.Text & TablasDeAplicacion(CodigoTextBox.Text) & vbCrLf & vbCrLf & "____________________________________________________________________________________________________________________________________________" & vbCrLf & vbCrLf
             End If
             SP_Componentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView.Rows.RemoveAt(0)
             contadorComponentes = contadorComponentes - 1
         End While
+        If cteBase = True Then
+            CodigoGeneradoRichTextBox.Text = CodigoGeneradoRichTextBox.Text & vbCrLf & vbCrLf & contenidoConBase
+        End If
         RemplazarEnResultado(CodigoGeneradoRichTextBox.Text, NombreTablaTextBox1.Text)
+    End Sub
+
+    Function procesandoConBase(cteBase As Boolean)
+        Dim contenidoConBase As String = ""
+        Dim contadorComponentes = SP_Componentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView.Rows.Count()
+        While contadorComponentes > 0
+            'Se ubica en la primera fila
+            SP_Componentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView.CurrentCell = SP_Componentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView.Rows(0).Cells(0)
+            'Valida si uno de los componentes es base para otros
+            If cteBase = True Then
+                contenidoConBase = contenidoConBase & vbCrLf & TablasDeAplicacion(CodigoTextBox.Text, cteBase) & vbCrLf & vbCrLf
+            End If
+            SP_Componentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView.Rows.RemoveAt(0)
+            contadorComponentes = contadorComponentes - 1
+        End While
+        contenidoConBase = ProcesarProvisionales()
+        Return contenidoConBase
+    End Function
+
+    Private Sub SP_Componentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaID_XBase()
+        Try
+            Me.SP_Componentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaID_XBaseTableAdapter.Fill(Me.DataSetAdministracion.SP_Componentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaID_XBase, New System.Nullable(Of Integer)(CType(PlantillaIDTextBox1.Text, Integer)))
+        Catch ex As System.Exception
+            System.Windows.Forms.MessageBox.Show(ex.Message)
+        End Try
     End Sub
 
     Public Sub RemplazarEnResultado(textoBase As String, NombreTabla As String)
@@ -425,21 +463,20 @@
             'Se ubica en la primera fila
             SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoTablasContProvi.CurrentCell = SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoTablasContProvi.Rows(0).Cells(0)
             'Agrega a la respuesta
-            respuestaFormularios = respuestaFormularios & vbCrLf & CargaComponentesProvisional(TablaID_Provisional.Text)
+            respuestaFormularios = respuestaFormularios & BaseTextBox.Text & vbCrLf
             SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoTablasContProvi.Rows.RemoveAt(0)
             contadorTablas = contadorTablas - 1
         End While
+        'Trunca el contenido provisional
+        Me.SP_ComponentesContenidoProvisional_TruncateTableAdapter.Fill(Me.DataSetTablasYCampos.SP_ComponentesContenidoProvisional_Truncate)
         Return respuestaFormularios
     End Function
-    'Debera devolver el formulario por tabla
-    Function CargaComponentesProvisional(TablaID As Integer)
-        SP_ComponentesContenidoProvisional_SEGUN_TABLA_BASE()
-    End Function
+
     Private Sub CargaTablasParaComponentesContenidoProvisional()
         Try
             Me.SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID3TableAdapter.Fill(Me.DataSetTablasYCampos.SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID3, New System.Nullable(Of Integer)(CType(ProyectoIDTextBox.Text, Integer)))
         Catch ex As System.Exception
-            'System.Windows.Forms.MessageBox.Show(ex.Message)
+            System.Windows.Forms.MessageBox.Show(ex.Message)
         End Try
     End Sub
     'Carga la base
@@ -461,32 +498,49 @@
     End Sub
 
     Private Sub TablaID_Provisional_TextChanged(sender As Object, e As EventArgs) Handles TablaID_Provisional.TextChanged
+        'Trunca la tabla de informacion de base
+        Me.SP_ComponentesContenidoProvisional_Base_TrucateTableAdapter.Fill(Me.DataSetTablasYCampos.SP_ComponentesContenidoProvisional_Base_Trucate)
         'Carga el componente base de la plantilla
         SP_ComponentesContenidoProvisional_SEGUN_TABLA_BASE()
         'Carga los componentes a replace
         SP_ComponentesContenidoProvisional_SEGUN_TABLA_REPLACE()
         'Inserta el contenido de base para ir haciendo replace y entregar contenido final por tabla
+        FSP_ComponentesContenidoProvisional_Base_EDICION_INSERTAR()
         Dim cantidadComp = SP_ComponentesContenidoProvisional_SEGUN_TABLA_REPLACEDataGridView.Rows.Count
         While cantidadComp > 0
-            contForm = CodigoGeneradoRichTextBox.Text.Replace(RequerimientoTextBox1.Text, ValorRequerimientoTextBox1.Text)
+            'Carga lo definido como base
+            Me.SP_ComponentesContenidoProvisional_Base_BUSQUEDA_SEGUN_PARAMETRO_IdTableAdapter.Fill(Me.DataSetTablasYCampos.SP_ComponentesContenidoProvisional_Base_BUSQUEDA_SEGUN_PARAMETRO_Id)
+            'Lo que encuentre en el texto que sea igual a la referencia lo remplaza por el contenido
+            BaseTextBox.Text = Replace(BaseTextBox.Text, ReferenciaTextBox.Text, ContenidoDeRemplazo.Text)
+            'Actualiza al nuevo valor 
+            SP_ComponentesContenidoProvisional_Base_EDICION_ACTUALIZAR()
             SP_ComponentesContenidoProvisional_SEGUN_TABLA_REPLACEDataGridView.Rows.RemoveAt(0)
             cantidadComp = cantidadComp - 1
         End While
-
-
     End Sub
+
+    'Función para quitar los saltos de línea de un texto
+    Private Function quitarSaltosLinea(ByVal texto As String, caracterReemplazar As String) As String
+        quitarSaltosLinea = Replace(Replace(texto, Chr(10), caracterReemplazar), Chr(13), caracterReemplazar)
+        Return quitarSaltosLinea
+    End Function
 
     Private Sub FSP_ComponentesContenidoProvisional_Base_EDICION_INSERTAR()
         Try
-            Me.SP_ComponentesContenidoProvisional_Base_EDICION_INSERTARTableAdapter.Fill(Me.DataSetTablasYCampos.SP_ComponentesContenidoProvisional_Base_EDICION_INSERTAR, BaseToolStripTextBox.Text)
+            Me.SP_ComponentesContenidoProvisional_Base_EDICION_INSERTARTableAdapter.Fill(Me.DataSetTablasYCampos.SP_ComponentesContenidoProvisional_Base_EDICION_INSERTAR, ContenidoTextBoxBase.Text)
         Catch ex As System.Exception
             System.Windows.Forms.MessageBox.Show(ex.Message)
         End Try
 
     End Sub
+    Private Sub SP_ComponentesContenidoProvisional_Base_EDICION_ACTUALIZAR()
+        Try
+            Me.SP_ComponentesContenidoProvisional_Base_EDICION_ACTUALIZARTableAdapter.Fill(Me.DataSetTablasYCampos.SP_ComponentesContenidoProvisional_Base_EDICION_ACTUALIZAR, BaseTextBox.Text)
+        Catch ex As System.Exception
+            System.Windows.Forms.MessageBox.Show(ex.Message)
+        End Try
 
-
-
+    End Sub
     Private Sub CargaRequerimientos()
         Dim contadorRequerimientos = SP_RegistroValorRequerimientos_SEGUN_ProyectoIDDataGridView.Rows.Count
         While contadorRequerimientos > 0
@@ -1731,7 +1785,7 @@
             System.Windows.Forms.MessageBox.Show(ex.Message)
         End Try
     End Sub
-    Function TablasDeAplicacion(Contenido As String)
+    Function TablasDeAplicacion(Contenido As String, cteBase As Boolean)
         'carga las tablas que tenga el proyecto
         SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1_RepetirTablas()
         'Cuenta las tablas que hay
@@ -1741,7 +1795,7 @@
         While contadorTablasSistema > 0
             'Se ubica en la primera fila
             SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1DataGridView.CurrentCell = SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1DataGridView.Rows(0).Cells(0)
-            textoDeTablas = textoDeTablas & RemplazosDeTodasTablas(Contenido, NombreTablaTextBox2.Text) & vbCrLf
+            textoDeTablas = textoDeTablas & RemplazosDeTodasTablas(Contenido, NombreTablaTextBox2.Text, cteBase) & vbCrLf
             SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1DataGridView.Rows.RemoveAt(0)
             contadorTablasSistema = contadorTablasSistema - 1
         End While
@@ -1771,7 +1825,7 @@
         End Try
 
     End Sub
-    Function RemplazosDeTodasTablas(Contenido As String, Tabla As String)
+    Function RemplazosDeTodasTablas(Contenido As String, Tabla As String, cteBase As Boolean)
         Dim ContenidoGenerado As String = Contenido
         Dim ObjContenido As String = ""
         If InStr(Contenido, "{{{Tabla}}}") Then
@@ -1807,7 +1861,9 @@
             Dim CamposRel = RecorreTablasRelacionadas()
             ContenidoGenerado = ContenidoGenerado.Replace("{{{Camp-Rel}}}", CamposRel)
         End If
-        SP_ComponentesContenidoProvisional_EDICION_INSERTAR(TablaIDTextBox1.Text, PlantillaIDTextBox1.Text, TipoXBase.Text, NombreComponenteTextBox.Text, ContenidoGenerado)
+        If cteBase = True Then
+            SP_ComponentesContenidoProvisional_EDICION_INSERTAR(TablaIDTextBox1.Text, PlantillaIDTextBox1.Text, TipoXBase.Text, NombreComponenteTextBox.Text, ContenidoGenerado)
+        End If
         Return ContenidoGenerado
     End Function
     Private Sub TablaIDTextBox1_TextChanged(sender As Object, e As EventArgs) Handles TablaIDTextBox1.TextChanged
@@ -2154,63 +2210,6 @@
             CodigoGeneradoRichTextBox.Dock = DockStyle.None
         End If
     End Sub
-
-    Private Sub FillToolStripButton_Click(sender As Object, e As EventArgs)
-        Try
-            Me.SP_Componentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaID_XBaseTableAdapter.Fill(Me.DataSetAdministracion.SP_Componentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaID_XBase, New System.Nullable(Of Integer)(CType(PlantillaIDTextBox1.Text, Integer)))
-        Catch ex As System.Exception
-            System.Windows.Forms.MessageBox.Show(ex.Message)
-        End Try
-
-    End Sub
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
