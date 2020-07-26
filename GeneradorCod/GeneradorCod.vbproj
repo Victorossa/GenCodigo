@@ -104,6 +104,7 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Clases\Tecnologias.vb" />
     <Compile Include="Data\AccesoDatos.vb" />
     <Compile Include="Data\DataSetAdministracion.Designer.vb">
       <AutoGen>True</AutoGen>

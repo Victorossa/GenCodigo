@@ -21,3 +21,26 @@ C:\www\GenCodigo\GenCodigoConBD\GenCodigo\PLE\obj\Debug\PLE.vbproj.CopyComplete
 C:\www\GenCodigo\GenCodigoConBD\GenCodigo\PLE\obj\Debug\PLE.exe
 C:\www\GenCodigo\GenCodigoConBD\GenCodigo\PLE\obj\Debug\PLE.xml
 C:\www\GenCodigo\GenCodigoConBD\GenCodigo\PLE\obj\Debug\PLE.pdb
+C:\www\Copia GenCodigo\GenCodigo\PLE\bin\Debug\BaseDeDatos\PLE_DB.mdf
+C:\www\Copia GenCodigo\GenCodigo\PLE\bin\Debug\BaseDeDatos\PLE_DB_log.ldf
+C:\www\Copia GenCodigo\GenCodigo\PLE\bin\Debug\PLE_DB.mdf
+C:\www\Copia GenCodigo\GenCodigo\PLE\bin\Debug\PLE_DB_log.ldf
+C:\www\Copia GenCodigo\GenCodigo\PLE\bin\Debug\PLE.exe.config
+C:\www\Copia GenCodigo\GenCodigo\PLE\bin\Debug\PLE.exe
+C:\www\Copia GenCodigo\GenCodigo\PLE\bin\Debug\PLE.pdb
+C:\www\Copia GenCodigo\GenCodigo\PLE\bin\Debug\PLE.xml
+C:\www\Copia GenCodigo\GenCodigo\PLE\bin\Debug\EntityFramework.dll
+C:\www\Copia GenCodigo\GenCodigo\PLE\bin\Debug\EntityFramework.SqlServer.dll
+C:\www\Copia GenCodigo\GenCodigo\PLE\bin\Debug\EntityFramework.xml
+C:\www\Copia GenCodigo\GenCodigo\PLE\bin\Debug\EntityFramework.SqlServer.xml
+C:\www\Copia GenCodigo\GenCodigo\PLE\obj\Debug\PLE.vbprojAssemblyReference.cache
+C:\www\Copia GenCodigo\GenCodigo\PLE\obj\Debug\PLE.FrmGeneracionDeProyectos.resources
+C:\www\Copia GenCodigo\GenCodigo\PLE\obj\Debug\PLE.FrmInicio.resources
+C:\www\Copia GenCodigo\GenCodigo\PLE\obj\Debug\PLE.FrmPlantillas.resources
+C:\www\Copia GenCodigo\GenCodigo\PLE\obj\Debug\PLE.Resources.resources
+C:\www\Copia GenCodigo\GenCodigo\PLE\obj\Debug\PLE.vbproj.GenerateResource.cache
+C:\www\Copia GenCodigo\GenCodigo\PLE\obj\Debug\PLE.vbproj.CoreCompileInputs.cache
+C:\www\Copia GenCodigo\GenCodigo\PLE\obj\Debug\PLE.vbproj.CopyComplete
+C:\www\Copia GenCodigo\GenCodigo\PLE\obj\Debug\PLE.exe
+C:\www\Copia GenCodigo\GenCodigo\PLE\obj\Debug\PLE.xml
+C:\www\Copia GenCodigo\GenCodigo\PLE\obj\Debug\PLE.pdb

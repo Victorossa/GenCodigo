@@ -316,7 +316,14 @@
 #End Region
 
 
-
+    Private Sub BtnVerCodigo_Click(sender As Object, e As EventArgs) Handles BtnVerCodigo.Click
+        PanelConfiguracion.BringToFront()
+        TabPanelControl.SendToBack()
+    End Sub
+    Private Sub PanelConfiguracion_MouseDoubleClick(sender As Object, e As MouseEventArgs) Handles PanelConfiguracion.MouseDoubleClick
+        PanelConfiguracion.SendToBack()
+        TabPanelControl.BringToFront()
+    End Sub
 
 
 #Region "Procedimientos"
@@ -601,9 +608,10 @@
     Private Sub PlantillaIDTextBox_TextChanged(sender As Object, e As EventArgs) Handles PlantillaIDTextBox.TextChanged
         Try
             SP_Componentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaID()
-            SP_RequerimientosPlantillas_BUSQUEDA_SEGUN_PARAMETRO_PlantillaID()
-            SP_CampoComponentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaID()
-            SP_TablasRelacionadas_BUSQUEDA_SEGUN_PARAMETRO_PlantillaID()
+            'SP_RequerimientosPlantillas_BUSQUEDA_SEGUN_PARAMETRO_PlantillaID()
+            'SP_CampoComponentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaID()
+            'SP_TablasRelacionadas_BUSQUEDA_SEGUN_PARAMETRO_PlantillaID()
+            SP_CampoComponentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaID_ComponenteID()
             If RB_Plantilla.Checked = "True" Then
                 SP_CARGA_CONVENSIONES_USADAS_POR_PLANTILLA()
                 SP_CARGA_CONVENSIONES_USADAS_POR_PLANTILLADataGridView.Visible = True
@@ -651,11 +659,15 @@
     'Insertar
     Private Sub SP_Componentes_EDICION_INSERTAR()
         Try
+
+            XBaseTextBox.Text = "False"
+
             Me.SP_Componentes_EDICION_INSERTARTableAdapter.Fill(Me.DataSetAdministracion.SP_Componentes_EDICION_INSERTAR,
                                                  New System.Nullable(Of Integer)(CType(PlantillaIDTextBox.Text, Integer)),
                                                  NombreComponenteTextBox.Text,
                                                  ContenidoComponenteRichTextBox.Text,
-                                                 XTablaTextBox.Text)
+                                                 XTablaTextBox.Text,
+                                                 XBaseTextBox.Text)
             SP_Componentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaID()
             MsgBox("El Dato Fue Guardado Exitosamente", MsgBoxStyle.Information, "Guardar Dato")
         Catch ex As System.Exception
@@ -670,12 +682,22 @@
                                                  New System.Nullable(Of Integer)(CType(PlantillaIDTextBox.Text, Integer)),
                                                  NombreComponenteTextBox.Text,
                                                  ContenidoComponenteRichTextBox.Text,
-                                                 XTablaTextBox.Text)
+                                                 XTablaTextBox.Text,
+                                                 XBaseTextBox.Text)
             SP_Componentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaID()
             MsgBox("El Dato Fue Actualizado Exitosamente", MsgBoxStyle.Information, "Actualizar Dato")
         Catch ex As System.Exception
             System.Windows.Forms.MessageBox.Show(ex.Message)
         End Try
+    End Sub
+
+    Private Sub SP_Componentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaID_XBase()
+        Try
+            Me.SP_Componentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaID_XBaseTableAdapter.Fill(Me.DataSetAdministracion.SP_Componentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaID_XBase, New System.Nullable(Of Integer)(CType(PlantillaIDTextBox.Text, Integer)))
+        Catch ex As System.Exception
+            System.Windows.Forms.MessageBox.Show(ex.Message)
+        End Try
+
     End Sub
     'Eliminar
     Private Sub SP_Componentes_EDICION_ELIMINAR()
@@ -810,6 +832,18 @@
                 XTablaCheckBox.Text = ""
                 XTablaCheckBox.Focus()
             Else
+                XBaseCheckBox.Enabled = True
+                XBaseCheckBox.Focus()
+            End If
+        End If
+    End Sub
+    Private Sub XBaseCheckBox_KeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles XBaseCheckBox.KeyPress
+        If Asc(e.KeyChar) = 13 Then
+            If XBaseCheckBox.Text = "" Then
+                MsgBox("Dato Obligatorio, Favor Verificar", MsgBoxStyle.Critical, "Validación de Datos")
+                XBaseCheckBox.Text = ""
+                XBaseCheckBox.Focus()
+            Else
                 ContenidoComponenteRichTextBox.Enabled = True
                 ContenidoComponenteRichTextBox.Focus()
             End If
@@ -846,6 +880,36 @@
             XTablaTextBox.Text = "False"
         End If
     End Sub
+    Private Sub XBaseCheckBox_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles XBaseCheckBox.CheckedChanged
+        If XBaseCheckBox.Checked = True Then
+            XBaseCheckBox.Text = "SI"
+            XBaseTextBox.Text = "True"
+        Else
+            XBaseCheckBox.Text = "NO"
+            XBaseTextBox.Text = "False"
+        End If
+    End Sub
+    Private Sub BtnAsignarBase_Click(sender As Object, e As EventArgs) Handles BtnAsignarBase.Click
+        'Pone todos en false de la plantilla
+        SP_Componentes_EDICION_ACTUALIZAR_XBase_PorPlantilla()
+        'Pone en true el campo actual
+        SP_Componentes_EDICION_ACTUALIZAR_ParaXBase()
+        MsgBox("Se reasigno el componente base de esta plantilla", MsgBoxStyle.Information)
+        Cancelar_Componentes()
+    End Sub
+    Private Sub BtnReseteoBase_Click(sender As Object, e As EventArgs) Handles BtnReseteoBase.Click
+        'Pone todos en false de la plantilla
+        SP_Componentes_EDICION_ACTUALIZAR_XBase_PorPlantilla()
+        MsgBox("Se resetean los componentes", MsgBoxStyle.Information)
+        Cancelar_Componentes()
+    End Sub
+    Private Sub SP_Componentes_EDICION_ACTUALIZAR_XBase_PorPlantilla()
+        Try
+            Me.SP_Componentes_EDICION_ACTUALIZAR_XBase_PorPlantillaTableAdapter.Fill(Me.DataSetAdministracion.SP_Componentes_EDICION_ACTUALIZAR_XBase_PorPlantilla, New System.Nullable(Of Integer)(CType(PlantillaIDTextBox.Text, Integer)))
+        Catch ex As System.Exception
+            'System.Windows.Forms.MessageBox.Show(ex.Message)
+        End Try
+    End Sub
 
     Public Sub Limpiar_Objetos_Componentes()
         NombreComponenteTextBox.Text = "" ''
@@ -855,10 +919,12 @@
     Public Sub Desbloquear_Objetos_Componentes()
         NombreComponenteTextBox.Enabled = True
         XTablaCheckBox.Enabled = True
+        PanelComponenteBase.Enabled = True
     End Sub
     Public Sub Bloquear_Objetos_Componentes()
         NombreComponenteTextBox.Enabled = False
         XTablaCheckBox.Enabled = False
+        PanelComponenteBase.Enabled = False
     End Sub
 #End Region
 #Region "Timer de Botones"
@@ -1296,7 +1362,7 @@
 
         End Try
     End Sub
-
+    'FLECHA VERDE
     Private Sub SP_Componentes_EDICION_ACTUALIZAR_SoloCodigo()
         Try
 
@@ -1305,11 +1371,28 @@
                                                  New System.Nullable(Of Integer)(CType(PlantillaIDTextBox.Text, Integer)),
                                                  NombreComponenteTextBox.Text,
                                                  ContenidoComponenteRichTextBox.Text,
-                                                 XTablaTextBox.Text)
+                                                 XTablaTextBox.Text,
+                                                 XBaseTextBox.Text)
         Catch ex As System.Exception
             System.Windows.Forms.MessageBox.Show(ex.Message)
         End Try
     End Sub
+
+    Private Sub SP_Componentes_EDICION_ACTUALIZAR_ParaXBase()
+        Try
+            XBaseTextBox.Text = True
+            Me.SP_Componentes_EDICION_ACTUALIZARTableAdapter.Fill(Me.DataSetAdministracion.SP_Componentes_EDICION_ACTUALIZAR,
+                                                 New System.Nullable(Of Integer)(CType(ComponenteIDTextBox.Text, Integer)),
+                                                 New System.Nullable(Of Integer)(CType(PlantillaIDTextBox.Text, Integer)),
+                                                 NombreComponenteTextBox.Text,
+                                                 ContenidoComponenteRichTextBox.Text,
+                                                 XTablaTextBox.Text,
+                                                 XBaseTextBox.Text)
+        Catch ex As System.Exception
+            System.Windows.Forms.MessageBox.Show(ex.Message)
+        End Try
+    End Sub
+
 
     Private Sub BtnRemplazar_Click(sender As Object, e As EventArgs) Handles BtnRemplazar.Click
         ContenidoComponenteRichTextBox.Text = RemplazarTexto(TxtBuscado.Text, TxtRemplazarPor.Text, ContenidoComponenteRichTextBox.Text)
@@ -1434,8 +1517,10 @@
                                                  SufijoTextBox.Text,
                                                  InferiorTextBox.Text,
                                                  SeparadorCamposTextBox.Text,
-                                                 MultiReplaceTextBox.Text)
-            SP_CampoComponentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaID()
+                                                 MultiReplaceTextBox.Text,
+                                                 ComponenteIDTextBox.Text)
+            SP_CampoComponentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaID_ComponenteID()
+            'SP_CampoComponentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaID()
             MsgBox("El Dato Fue Guardado Exitosamente", MsgBoxStyle.Information, "Guardar Dato")
         Catch ex As System.Exception
             System.Windows.Forms.MessageBox.Show(ex.Message)
@@ -1459,8 +1544,10 @@
                                                  Sufijo,
                                                  Inferior,
                                                  Separador,
-                                                 Multi)
-            SP_CampoComponentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaID()
+                                                 Multi,
+                                                 ComponenteIDTextBox.Text)
+            SP_CampoComponentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaID_ComponenteID()
+            'SP_CampoComponentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaID()
         Catch ex As System.Exception
             System.Windows.Forms.MessageBox.Show(ex.Message)
         End Try
@@ -1480,8 +1567,10 @@
                                                  SufijoTextBox.Text,
                                                  InferiorTextBox.Text,
                                                  SeparadorCamposTextBox.Text,
-                                                 MultiReplaceTextBox.Text)
-            SP_CampoComponentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaID()
+                                                 MultiReplaceTextBox.Text,
+                                                 ComponenteIDTextBox.Text)
+            'SP_CampoComponentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaID()
+            SP_CampoComponentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaID_ComponenteID()
             MsgBox("El Dato Fue Actualizado Exitosamente", MsgBoxStyle.Information, "Actualizar Dato")
         Catch ex As System.Exception
             System.Windows.Forms.MessageBox.Show(ex.Message)
@@ -1501,12 +1590,16 @@
 #Region "Menus"
     'Nuevo 
     Private Sub Nuevo_Menu_CampoComponentes_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Nuevo_Menu_CampoComponentes.Click
-        Nuevo_Menu_CampoComponentes.Enabled = False
-        Editar_Menu_CampoComponentes.Enabled = False
-        SP_CampoComponentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView.Enabled = False
-        Limpiar_Objetos_CampoComponentes()
-        CboTiposDatos.Enabled = True
-        CboTiposDatos.Focus()
+        If SP_Componentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView.Rows.Count > 0 Then
+            Nuevo_Menu_CampoComponentes.Enabled = False
+            Editar_Menu_CampoComponentes.Enabled = False
+            SP_CampoComponentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView.Enabled = False
+            Limpiar_Objetos_CampoComponentes()
+            CboTiposDatos.Enabled = True
+            CboTiposDatos.Focus()
+        Else
+            MsgBox("Deben de exisstir componentes para realizar esta acción", MsgBoxStyle.Exclamation)
+        End If
     End Sub
     'Guardar
     Private Sub Guardar_Menu_CampoComponentes_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Guardar_Menu_CampoComponentes.Click
@@ -2346,7 +2439,8 @@
     End Sub
 
     Private Sub ComponenteIDTextBox_TextChanged(sender As Object, e As EventArgs) Handles ComponenteIDTextBox.TextChanged
-        SP_TextoEnriquecido_BUSQUEDA_SEGUN_PARAMETRO_ComponenteID()
+        'SP_TextoEnriquecido_BUSQUEDA_SEGUN_PARAMETRO_ComponenteID()
+        SP_CampoComponentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaID_ComponenteID()
     End Sub
 
 #Region "Procedimientos"
@@ -2584,8 +2678,8 @@
         Cancelar_TextoEnriquecido()
     End Sub
     'Convierte el rtf en text cuando se selecciona el tap
-    Private Sub TabControl1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles TabControl1.SelectedIndexChanged
-        If TabControl1.SelectedTab Is TabPage5 Then
+    Private Sub TabControl1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles TabPanelControl.SelectedIndexChanged
+        If TabPanelControl.SelectedTab Is TabPage5 Then
             Try
                 RichTextboxRichTextBox.Rtf = RichTextboxRichTextBox.Text
             Catch ex As Exception
@@ -2648,22 +2742,21 @@
         RichTextBox1.Dock = DockStyle.None
     End Sub
 
+    Private Sub SP_CampoComponentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaID_ComponenteID()
 
+        If ComponenteIDTextBox.Text = "" Then
+            ComponenteIDTextBox.Text = "0"
+        End If
 
+        Try
+            Me.SP_CampoComponentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaID_ComponenteIDTableAdapter.Fill(Me.DataSetTablasYCampos.SP_CampoComponentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaID_ComponenteID,
+                                                                                                      New System.Nullable(Of Integer)(CType(PlantillaIDTextBox.Text, Integer)),
+                                                                                                      New System.Nullable(Of Integer)(CType(ComponenteIDTextBox.Text, Integer)))
+        Catch ex As System.Exception
+            'System.Windows.Forms.MessageBox.Show(ex.Message)
+        End Try
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+    End Sub
 
 
 

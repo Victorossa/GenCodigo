@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class FrmInicio
     Inherits System.Windows.Forms.Form
 
     'Form reemplaza a Dispose para limpiar la lista de componentes.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class FrmInicio
     'NOTA: el Diseñador de Windows Forms necesita el siguiente procedimiento
     'Se puede modificar usando el Diseñador de Windows Forms.  
     'No lo modifique con el editor de código.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmInicio))
@@ -29,10 +29,10 @@ Partial Class FrmInicio
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.AdministraciònToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.CreaciònDePlantillasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.GeneraciònDeProyectosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ConfiguraciónToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator()
+        Me.GeneraciònDeProyectosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripSeparator2 = New System.Windows.Forms.ToolStripSeparator()
+        Me.ConfiguraciónToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
@@ -75,27 +75,27 @@ Partial Class FrmInicio
         Me.CreaciònDePlantillasToolStripMenuItem.Size = New System.Drawing.Size(252, 26)
         Me.CreaciònDePlantillasToolStripMenuItem.Text = "Creaciòn de Plantillas"
         '
+        'ToolStripSeparator1
+        '
+        Me.ToolStripSeparator1.Name = "ToolStripSeparator1"
+        Me.ToolStripSeparator1.Size = New System.Drawing.Size(249, 6)
+        '
         'GeneraciònDeProyectosToolStripMenuItem
         '
         Me.GeneraciònDeProyectosToolStripMenuItem.Name = "GeneraciònDeProyectosToolStripMenuItem"
         Me.GeneraciònDeProyectosToolStripMenuItem.Size = New System.Drawing.Size(252, 26)
         Me.GeneraciònDeProyectosToolStripMenuItem.Text = "Generaciòn de Proyectos"
         '
+        'ToolStripSeparator2
+        '
+        Me.ToolStripSeparator2.Name = "ToolStripSeparator2"
+        Me.ToolStripSeparator2.Size = New System.Drawing.Size(249, 6)
+        '
         'ConfiguraciónToolStripMenuItem
         '
         Me.ConfiguraciónToolStripMenuItem.Name = "ConfiguraciónToolStripMenuItem"
         Me.ConfiguraciónToolStripMenuItem.Size = New System.Drawing.Size(252, 26)
         Me.ConfiguraciónToolStripMenuItem.Text = "Configuración"
-        '
-        'ToolStripSeparator1
-        '
-        Me.ToolStripSeparator1.Name = "ToolStripSeparator1"
-        Me.ToolStripSeparator1.Size = New System.Drawing.Size(249, 6)
-        '
-        'ToolStripSeparator2
-        '
-        Me.ToolStripSeparator2.Name = "ToolStripSeparator2"
-        Me.ToolStripSeparator2.Size = New System.Drawing.Size(249, 6)
         '
         'FrmInicio
         '

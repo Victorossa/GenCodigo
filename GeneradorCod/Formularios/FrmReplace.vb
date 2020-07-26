@@ -360,7 +360,11 @@
             End If
         End If
     End Sub
-    Private Sub BtnRemplazar_Click(sender As Object, e As EventArgs) Handles BtnRemplazar.Click
+    Private Sub BtnRemplazar2_Click(sender As Object, e As EventArgs) Handles BtnRemplazar2.Click
+        GenerarCodigo()
+    End Sub
+
+    Public Sub GenerarCodigo()
         'Limpia
         CodigoGeneradoRichTextBox.Text = ""
         'Cuenta las tecnologias aplicadas al proyecto
@@ -378,11 +382,10 @@
             InferiorTextBox.Text = ""
             MultiReplaceTextBox.Text = ""
             SP_CampoComponentes_Segun_Plantilla_TipoTable()
+            SP_CampoComponentes_Segun_Plantilla_Tipo_ComponenteID()
         End While
         SP_CARGA_TECNOLOGIAS_APLICADAS_A_PROYECTO()
     End Sub
-
-
 
 
 
@@ -391,9 +394,14 @@
         While contadorComponentes > 0
             'Se ubica en la primera fila
             SP_Componentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView.CurrentCell = SP_Componentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView.Rows(0).Cells(0)
+            'Valida si se aplicara a todos las tablas
             If XTablaCheckBox.Checked = False Then
                 CodigoGeneradoRichTextBox.Text = CodigoGeneradoRichTextBox.Text & "                              " & NombreTecnologiaTextBox1.Text & vbCrLf & vbCrLf & NombreComponenteTextBox.Text & vbCrLf & CodigoTextBox.Text & vbCrLf & "____________________________________________________________________________________________________________________________________________" & vbCrLf & vbCrLf
             Else
+                'Valida si uno de los componentes es base para otros
+                If ChkXBase.Checked = True Then
+                    CodigoGeneradoRichTextBox.Text = ProcesarProvisionales()
+                End If
                 CodigoGeneradoRichTextBox.Text = CodigoGeneradoRichTextBox.Text & "                              " & NombreTecnologiaTextBox1.Text & vbCrLf & vbCrLf & NombreComponenteTextBox.Text & TablasDeAplicacion(CodigoTextBox.Text) & vbCrLf & vbCrLf & "____________________________________________________________________________________________________________________________________________" & vbCrLf & vbCrLf
             End If
             SP_Componentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView.Rows.RemoveAt(0)
@@ -408,6 +416,76 @@
         'Guarda la informacion
         SP_Proyectos_EDICION_ACTUALIZAR_CodigoRemplazado()
     End Sub
+    'debera devolver los formularios
+    Function ProcesarProvisionales()
+        Dim respuestaFormularios As String = ""
+        CargaTablasParaComponentesContenidoProvisional()
+        Dim contadorTablas = SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoTablasContProvi.Rows.Count()
+        While contadorTablas > 0
+            'Se ubica en la primera fila
+            SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoTablasContProvi.CurrentCell = SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoTablasContProvi.Rows(0).Cells(0)
+            'Agrega a la respuesta
+            respuestaFormularios = respuestaFormularios & vbCrLf & CargaComponentesProvisional(TablaID_Provisional.Text)
+            SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoTablasContProvi.Rows.RemoveAt(0)
+            contadorTablas = contadorTablas - 1
+        End While
+        Return respuestaFormularios
+    End Function
+    'Debera devolver el formulario por tabla
+    Function CargaComponentesProvisional(TablaID As Integer)
+        SP_ComponentesContenidoProvisional_SEGUN_TABLA_BASE()
+    End Function
+    Private Sub CargaTablasParaComponentesContenidoProvisional()
+        Try
+            Me.SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID3TableAdapter.Fill(Me.DataSetTablasYCampos.SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID3, New System.Nullable(Of Integer)(CType(ProyectoIDTextBox.Text, Integer)))
+        Catch ex As System.Exception
+            'System.Windows.Forms.MessageBox.Show(ex.Message)
+        End Try
+    End Sub
+    'Carga la base
+    Private Sub SP_ComponentesContenidoProvisional_SEGUN_TABLA_BASE()
+        Try
+            Me.SP_ComponentesContenidoProvisional_SEGUN_TABLA_BASETableAdapter.Fill(Me.DataSetTablasYCampos.SP_ComponentesContenidoProvisional_SEGUN_TABLA_BASE, New System.Nullable(Of Integer)(CType(TablaID_Provisional.Text, Integer)))
+        Catch ex As System.Exception
+            'System.Windows.Forms.MessageBox.Show(ex.Message)
+        End Try
+    End Sub
+
+    Private Sub SP_ComponentesContenidoProvisional_SEGUN_TABLA_REPLACE()
+        Try
+            Me.SP_ComponentesContenidoProvisional_SEGUN_TABLA_REPLACETableAdapter.Fill(Me.DataSetTablasYCampos.SP_ComponentesContenidoProvisional_SEGUN_TABLA_REPLACE, New System.Nullable(Of Integer)(CType(TablaID_Provisional.Text, Integer)))
+        Catch ex As System.Exception
+            'System.Windows.Forms.MessageBox.Show(ex.Message)
+        End Try
+
+    End Sub
+
+    Private Sub TablaID_Provisional_TextChanged(sender As Object, e As EventArgs) Handles TablaID_Provisional.TextChanged
+        'Carga el componente base de la plantilla
+        SP_ComponentesContenidoProvisional_SEGUN_TABLA_BASE()
+        'Carga los componentes a replace
+        SP_ComponentesContenidoProvisional_SEGUN_TABLA_REPLACE()
+        'Inserta el contenido de base para ir haciendo replace y entregar contenido final por tabla
+        Dim cantidadComp = SP_ComponentesContenidoProvisional_SEGUN_TABLA_REPLACEDataGridView.Rows.Count
+        While cantidadComp > 0
+            contForm = CodigoGeneradoRichTextBox.Text.Replace(RequerimientoTextBox1.Text, ValorRequerimientoTextBox1.Text)
+            SP_ComponentesContenidoProvisional_SEGUN_TABLA_REPLACEDataGridView.Rows.RemoveAt(0)
+            cantidadComp = cantidadComp - 1
+        End While
+
+
+    End Sub
+
+    Private Sub FSP_ComponentesContenidoProvisional_Base_EDICION_INSERTAR()
+        Try
+            Me.SP_ComponentesContenidoProvisional_Base_EDICION_INSERTARTableAdapter.Fill(Me.DataSetTablasYCampos.SP_ComponentesContenidoProvisional_Base_EDICION_INSERTAR, BaseToolStripTextBox.Text)
+        Catch ex As System.Exception
+            System.Windows.Forms.MessageBox.Show(ex.Message)
+        End Try
+
+    End Sub
+
+
 
     Private Sub CargaRequerimientos()
         Dim contadorRequerimientos = SP_RegistroValorRequerimientos_SEGUN_ProyectoIDDataGridView.Rows.Count
@@ -472,7 +550,7 @@
             Objeto = MultiReplaceTextBox.Text.Replace("Campo", campoConComplemento)
             'INCLUIR RECORRIDO POR TABLA RELACIONADA PARA CAPTURAR TABLA INDEPENDIENTE Y DEPENDIENTE
             If TipoTextBox1.Text = "numeric (Relacionado)" Then
-                MsgBox("ID Tabla en la que estamos" + TextBox1.Text + " " + " ID Tabla independiente con la que esta relacionada " + TextBox2.Text)
+                'MsgBox("ID Tabla en la que estamos" + TextBox1.Text + " " + " ID Tabla independiente con la que esta relacionada " + TextBox2.Text)
             End If
         End If
 
@@ -560,6 +638,8 @@
 
 
 
+
+
 #Region "Procedimientos"
     Sub Cancelar_Proyectos()
         'Botones Del Menu
@@ -615,7 +695,11 @@
             System.Windows.Forms.MessageBox.Show(ex.Message)
         End Try
     End Sub
+
+
+
 #End Region
+
 #Region "Menus"
     'Nuevo 
     Private Sub Nuevo_Menu_Proyectos_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Nuevo_Menu_Proyectos.Click
@@ -672,7 +756,11 @@
     Private Sub Cancelar_Menu_Proyectos_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Cancelar_Menu_Proyectos.Click
         Cancelar_Proyectos()
     End Sub
+
+
+
 #End Region
+
 #Region "Eventos sobre Objetos "
     'Control de Nulos
     Public Sub Control_Nulos_Proyectos()
@@ -756,6 +844,10 @@
         DescripcionTextBox.Enabled = False
     End Sub
 
+
+
+
+
 #End Region
 
 #Region "Timer de Botones"
@@ -813,7 +905,11 @@
         Timer_Eliminar_Menu_Proyectos.Stop()
         Eliminar_Menu_Proyectos.BackColor = Color.White
     End Sub
+
+
+
 #End Region
+
 #Region "Ubicación de Fila"
     Private WithEvents Timer_Ubicacion_Proyectos As Timer
     Dim X_Proyectos
@@ -856,6 +952,8 @@
         SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1_RepetirTablas()
     End Sub
 
+
+
 #Region "Proyectos y Tecnologias"
     Private Sub SP_Plantillas_BUSQUEDA_SEGUN_PARAMETRO_TecnologiaDataGridView_CellMouseDoubleClick(sender As Object, e As DataGridViewCellMouseEventArgs) Handles SP_Plantillas_BUSQUEDA_SEGUN_PARAMETRO_TecnologiaDataGridView.CellMouseDoubleClick
         'Inserta la relacion entre el proyecto y la tecnologia aplicada al mismo
@@ -878,6 +976,8 @@
         End Try
 
     End Sub
+
+
 #End Region
 
 
@@ -919,6 +1019,8 @@
     End Sub
 
 
+
+
 #Region "Registro Valores de Requerimientos de Plantillas"
     'Inserta valores de los requerimientos de las plantillas de la tecnologia asignada al proyecto
     Private Sub SP_RegistroValorRequerimientos_EDICION_INSERTAR(Valor As String)
@@ -951,6 +1053,14 @@
         End Try
 
     End Sub
+
+
+
+
+
+
+
+
 
 
 
@@ -1029,7 +1139,11 @@
             System.Windows.Forms.MessageBox.Show(ex.Message)
         End Try
     End Sub
+
+
+
 #End Region
+
 #Region "Menus"
     'Nuevo 
     Private Sub Nuevo_Menu_TablasDeProyecto_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Nuevo_Menu_TablasDeProyecto.Click
@@ -1086,7 +1200,11 @@
     Private Sub Cancelar_Menu_TablasDeProyecto_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Cancelar_Menu_TablasDeProyecto.Click
         Cancelar_TablasDeProyecto()
     End Sub
+
+
+
 #End Region
+
 #Region "Eventos sobre Objetos "
     'Control de Nulos
     Public Sub Control_Nulos_TablasDeProyecto()
@@ -1152,7 +1270,11 @@
         NombreTablaTextBox.Enabled = False
         TipoCheckBox.Enabled = False
     End Sub
+
+
+
 #End Region
+
 #Region "Timer de Botones"
     'Declaraciones de Timers de Botones
     Private WithEvents Timer_Guardar_Menu_TablasDeProyecto As Timer
@@ -1208,7 +1330,11 @@
         Timer_Eliminar_Menu_TablasDeProyecto.Stop()
         Eliminar_Menu_TablasDeProyecto.BackColor = Color.White
     End Sub
+
+
+
 #End Region
+
 #Region "Ubicación de Fila"
     Private WithEvents Timer_Ubicacion_TablasDeProyecto As Timer
     Dim X_TablasDeProyecto
@@ -1231,6 +1357,12 @@
         Ubicar_En_Fila_TablasDeProyecto()
         Timer_Ubicacion_TablasDeProyecto.Stop()
     End Sub
+
+
+
+
+
+
 
 
 
@@ -1308,7 +1440,11 @@
             System.Windows.Forms.MessageBox.Show(ex.Message)
         End Try
     End Sub
+
+
+
 #End Region
+
 #Region "Menus"
     'Nuevo 
     Private Sub Nuevo_Menu_CamposDeTablas_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Nuevo_Menu_CamposDeTablas.Click
@@ -1381,7 +1517,11 @@
         End If
     End Sub
 
+
+
+
 #End Region
+
 #Region "Eventos sobre Objetos "
     'Control de Nulos
     Public Sub Control_Nulos_CamposDeTablas()
@@ -1446,7 +1586,11 @@
         NombreCampoTextBox.Enabled = False
         CboTiposDatos.Enabled = False
     End Sub
+
+
+
 #End Region
+
 #Region "Timer de Botones"
     'Declaraciones de Timers de Botones
     Private WithEvents Timer_Guardar_Menu_CamposDeTablas As Timer
@@ -1502,7 +1646,11 @@
         Timer_Eliminar_Menu_CamposDeTablas.Stop()
         Eliminar_Menu_CamposDeTablas.BackColor = Color.White
     End Sub
+
+
+
 #End Region
+
 #Region "Ubicación de Fila"
     Private WithEvents Timer_Ubicacion_CamposDeTablas As Timer
     Dim X_CamposDeTablas
@@ -1543,9 +1691,11 @@
     End Sub
     Private Sub NombreCampoTextBox1_TextChanged(sender As Object, e As EventArgs) Handles NombreCampoTextBox1.TextChanged
         SP_CampoComponentes_Segun_Plantilla_TipoTable()
+        SP_CampoComponentes_Segun_Plantilla_Tipo_ComponenteID()
     End Sub
     Private Sub NombreCampoTextBox_TextChanged(sender As Object, e As EventArgs) Handles NombreCampoTextBox.TextChanged
         SP_CampoComponentes_Segun_Plantilla_TipoTable()
+        SP_CampoComponentes_Segun_Plantilla_Tipo_ComponenteID()
     End Sub
 
     Private Sub CodigoGeneradoRichTextBox_MouseDoubleClick(sender As Object, e As MouseEventArgs) Handles CodigoGeneradoRichTextBox.MouseDoubleClick
@@ -1557,6 +1707,8 @@
         CodigoGeneradoRichTextBox.SendToBack()
         CodigoGeneradoRichTextBox.Dock = DockStyle.None
     End Sub
+
+
 
 #End Region
 
@@ -1596,6 +1748,21 @@
         SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1_RepetirTablas()
         Return textoDeTablas
     End Function
+
+    Public Sub SP_ComponentesContenidoProvisional_EDICION_INSERTAR(TablaID As Integer, PlantillaID As Integer, TipoXBase As String, Referencia As String, Contenido As String)
+        Try
+            Me.SP_ComponentesContenidoProvisional_EDICION_INSERTARTableAdapter.Fill(Me.DataSetTablasYCampos.SP_ComponentesContenidoProvisional_EDICION_INSERTAR,
+                                                                                    New System.Nullable(Of Integer)(CType(TablaID, Integer)),
+                                                                                    New System.Nullable(Of Integer)(CType(PlantillaID, Integer)),
+                                                                                    New System.Nullable(Of Boolean)(CType(TipoXBase, Boolean)),
+                                                                                    Referencia,
+                                                                                    Contenido)
+        Catch ex As System.Exception
+            'System.Windows.Forms.MessageBox.Show(ex.Message)
+        End Try
+    End Sub
+
+
     Private Sub SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1_RepetirTablas()
         Try
             Me.SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1TableAdapter.Fill(Me.DataSetTablasYCampos.SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1, New System.Nullable(Of Integer)(CType(ProyectoIDTextBox.Text, Integer)))
@@ -1640,9 +1807,11 @@
             Dim CamposRel = RecorreTablasRelacionadas()
             ContenidoGenerado = ContenidoGenerado.Replace("{{{Camp-Rel}}}", CamposRel)
         End If
+        SP_ComponentesContenidoProvisional_EDICION_INSERTAR(TablaIDTextBox1.Text, PlantillaIDTextBox1.Text, TipoXBase.Text, NombreComponenteTextBox.Text, ContenidoGenerado)
         Return ContenidoGenerado
     End Function
     Private Sub TablaIDTextBox1_TextChanged(sender As Object, e As EventArgs) Handles TablaIDTextBox1.TextChanged
+        SP_CampoComponentes_Segun_Plantilla_Tipo_ComponenteID()
         SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaID1()
         SP_RegistroRelacionesTablas_Vista_BUSQUEDA_SEGUN_PARAMETRO_TD1()
     End Sub
@@ -1727,6 +1896,8 @@
             Cancelar_TablasDeProyecto()
         End If
     End Sub
+
+
 
 #Region "Relaciones Entre Tablas"
     'Busca si hay relaciones
@@ -1954,6 +2125,89 @@
             SP_CARGA_TECNOLOGIAS_APLICADAS_A_PROYECTO()
         End If
     End Sub
+
+    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles BtnExplorar.Click
+        PanelConf.BringToFront()
+        PanelConf.Dock = DockStyle.Fill
+    End Sub
+
+    Private Sub SP_CampoComponentes_Segun_Plantilla_Tipo_ComponenteID()
+        Try
+            Me.SP_CampoComponentes_Segun_Plantilla_Tipo_ComponenteIDTableAdapter.Fill(Me.DataSetTablasYCampos.SP_CampoComponentes_Segun_Plantilla_Tipo_ComponenteID,
+                                                                                      New System.Nullable(Of Integer)(CType(PlantillaIDTextBox1.Text, Integer)),
+                                                                                      TipoTextBox1.Text,
+                                                                                      New System.Nullable(Of Integer)(CType(ComponenteIDTextBox.Text, Integer)))
+        Catch ex As System.Exception
+            'System.Windows.Forms.MessageBox.Show(ex.Message)
+        End Try
+
+    End Sub
+
+    Private Sub BtnAmpliar_Click(sender As Object, e As EventArgs) Handles BtnAmpliar.Click
+        If BtnAmpliar.BackColor = Color.White Then
+            BtnAmpliar.BackColor = Color.GreenYellow
+            CodigoGeneradoRichTextBox.BringToFront()
+            CodigoGeneradoRichTextBox.Dock = DockStyle.Fill
+        Else
+            BtnAmpliar.BackColor = Color.White
+            CodigoGeneradoRichTextBox.SendToBack()
+            CodigoGeneradoRichTextBox.Dock = DockStyle.None
+        End If
+    End Sub
+
+    Private Sub FillToolStripButton_Click(sender As Object, e As EventArgs)
+        Try
+            Me.SP_Componentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaID_XBaseTableAdapter.Fill(Me.DataSetAdministracion.SP_Componentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaID_XBase, New System.Nullable(Of Integer)(CType(PlantillaIDTextBox1.Text, Integer)))
+        Catch ex As System.Exception
+            System.Windows.Forms.MessageBox.Show(ex.Message)
+        End Try
+
+    End Sub
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
