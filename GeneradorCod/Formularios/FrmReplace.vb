@@ -76,7 +76,6 @@
         Catch ex As System.Exception
             'System.Windows.Forms.MessageBox.Show(ex.Message)
         End Try
-
     End Sub
 
     Private Sub SP_RequerimientosPlantillas_BUSQUEDA_SEGUN_PARAMETRO_PlantillaID()
@@ -275,7 +274,12 @@
                         ValorRequerimiento.Focus()
                         Label18.Text = Label18.Text + 1
                     Else
-                        SP_CARGA_TECNOLOGIAS_APLICADAS_A_PROYECTODataGridView.Rows.RemoveAt(0)
+                        SP_RequerimientosPlantillas_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView.Rows.RemoveAt(0)
+                        Timer_CargueValorRequerimientos.Start()
+                        If Lbl_Requerimiento.Text = "" Then
+                            SP_CARGA_TECNOLOGIAS_APLICADAS_A_PROYECTODataGridView.Rows.RemoveAt(0)
+                            Lbl_Requerimiento.Text = ""
+                        End If
                     End If
                 End If
             Else
@@ -573,8 +577,25 @@
             SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaID1DataGridView.Rows.RemoveAt(0)
             contadorCampos = contadorCampos - 1
         End While
-        Return Campos
         SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaID1()
+        Return Campos
+    End Function
+    Function GenerarCampos_Sin_ID()
+        If SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaID1DataGridView.Rows.Count > 0 Then
+            SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaID1DataGridView.CurrentCell = SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaID1DataGridView.Rows(0).Cells(0)
+            SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaID1DataGridView.Rows.RemoveAt(0)
+        End If
+        Dim contadorCampos = SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaID1DataGridView.Rows.Count
+        Dim Campos As String = ""
+        While contadorCampos > 0
+            'Se ubica en la primera fila
+            SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaID1DataGridView.CurrentCell = SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaID1DataGridView.Rows(0).Cells(0)
+            Campos = Campos + TratamientoCampos(NombreCampoTextBox1.Text, contadorCampos) & vbCrLf
+            SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaID1DataGridView.Rows.RemoveAt(0)
+            contadorCampos = contadorCampos - 1
+        End While
+        SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaID1()
+        Return Campos
     End Function
     Function TratamientoCampos(campoConComplemento As String, contadorCampos As Integer) As String
         Dim Campo As String = "Campo"
@@ -1857,6 +1878,13 @@
                 ContenidoGenerado = ContenidoGenerado.Replace("{{{Tabla}}}", Tabla)
             End If
         End If
+        If Not InStr(Contenido, "{{{TCampos-ID}}}") Then
+            Dim Campos = GenerarCampos_Sin_ID()
+            ContenidoGenerado = ContenidoGenerado.Replace("{{{TCampos-ID}}}", Campos)
+            If InStr(ContenidoGenerado, "{{{Tabla}}}") Then
+                ContenidoGenerado = ContenidoGenerado.Replace("{{{Tabla}}}", Tabla)
+            End If
+        End If
         If InStr(Contenido, "{{{Camp-Rel}}}") Then
             Dim CamposRel = RecorreTablasRelacionadas()
             ContenidoGenerado = ContenidoGenerado.Replace("{{{Camp-Rel}}}", CamposRel)
@@ -2211,10 +2239,19 @@
         End If
     End Sub
 
-
-
-
-
+    Private Sub BtnRequerimientos_Click(sender As Object, e As EventArgs) Handles BtnRequerimientos.Click
+        If BtnRequerimientos.BackColor = Color.White Then
+            BtnRequerimientos.BackColor = Color.GreenYellow
+            SP_RegistroValorRequerimientos_SEGUN_ProyectoIDDataGridView.BringToFront()
+            SP_RegistroValorRequerimientos_SEGUN_ProyectoIDDataGridView.Height = 600
+            SP_RegistroValorRequerimientos_SEGUN_ProyectoIDDataGridView.Location = New Point(440, 0)
+        Else
+            BtnRequerimientos.BackColor = Color.White
+            SP_RegistroValorRequerimientos_SEGUN_ProyectoIDDataGridView.SendToBack()
+            SP_RegistroValorRequerimientos_SEGUN_ProyectoIDDataGridView.Height = 109
+            SP_RegistroValorRequerimientos_SEGUN_ProyectoIDDataGridView.Location = New Point(454, 498)
+        End If
+    End Sub
 
 #End Region
 End Class

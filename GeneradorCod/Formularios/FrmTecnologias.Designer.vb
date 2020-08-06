@@ -52,6 +52,8 @@ Partial Class FrmTecnologias
         Dim XBaseLabel1 As System.Windows.Forms.Label
         Dim NombreComponenteLabel1 As System.Windows.Forms.Label
         Dim ComponenteIDLabel As System.Windows.Forms.Label
+        Dim XTablaLabel2 As System.Windows.Forms.Label
+        Dim MetricaPlantillaIdLabel As System.Windows.Forms.Label
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmTecnologias))
         Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
@@ -133,6 +135,7 @@ Partial Class FrmTecnologias
         Me.Label2 = New System.Windows.Forms.Label()
         Me.TabPanelControl = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
+        Me.BtnImprimeCamposSinID = New System.Windows.Forms.Button()
         Me.BtnZoom = New System.Windows.Forms.Button()
         Me.ContenidoComponenteRichTextBox = New System.Windows.Forms.RichTextBox()
         Me.ChkControlCambios = New System.Windows.Forms.CheckBox()
@@ -235,7 +238,21 @@ Partial Class FrmTecnologias
         Me.BtnTI = New System.Windows.Forms.Button()
         Me.BtnTD = New System.Windows.Forms.Button()
         Me.TabPage6 = New System.Windows.Forms.TabPage()
+        Me.Panel11 = New System.Windows.Forms.Panel()
+        Me.MetricaPlantillaIdTextBox = New System.Windows.Forms.TextBox()
+        Me.SP_PlantillasMetricas_BUSQUEDA_SEGUN_PlantillaIDBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.Label16 = New System.Windows.Forms.Label()
+        Me.XTablaMetrica = New System.Windows.Forms.TextBox()
         Me.Label6 = New System.Windows.Forms.Label()
+        Me.XTablaCheckBox1 = New System.Windows.Forms.CheckBox()
+        Me.Label14 = New System.Windows.Forms.Label()
+        Me.TiempoTextBox = New System.Windows.Forms.TextBox()
+        Me.BtnGuardarTiempo = New System.Windows.Forms.Button()
+        Me.BtnEditarTiempo = New System.Windows.Forms.Button()
+        Me.Button4 = New System.Windows.Forms.Button()
+        Me.Button5 = New System.Windows.Forms.Button()
+        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.Label15 = New System.Windows.Forms.Label()
         Me.SP_CampoComponentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.Cbo_TipoDato = New System.Windows.Forms.ComboBox()
         Me.RelacionTablasIDTextBox = New System.Windows.Forms.TextBox()
@@ -325,6 +342,11 @@ Partial Class FrmTecnologias
         Me.SP_Componentes_EDICION_ACTUALIZAR_XBase_PorPlantillaBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.SP_Componentes_EDICION_ACTUALIZAR_XBase_PorPlantillaTableAdapter = New GeneradorCod.DataSetAdministracionTableAdapters.SP_Componentes_EDICION_ACTUALIZAR_XBase_PorPlantillaTableAdapter()
         Me.PanelConfiguracion = New System.Windows.Forms.Panel()
+        Me.SP_PlantillasMetricas_BUSQUEDA_SEGUN_PlantillaIDTableAdapter = New GeneradorCod.DataSetAdministracionTableAdapters.SP_PlantillasMetricas_BUSQUEDA_SEGUN_PlantillaIDTableAdapter()
+        Me.SP_PlantillasMetricas_EDICION_INSERTARBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.SP_PlantillasMetricas_EDICION_INSERTARTableAdapter = New GeneradorCod.DataSetAdministracionTableAdapters.SP_PlantillasMetricas_EDICION_INSERTARTableAdapter()
+        Me.SP_PlantillasMetricas_EDICION_EDITAR_SEGUN_PLANTILLABindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.SP_PlantillasMetricas_EDICION_EDITAR_SEGUN_PLANTILLATableAdapter = New GeneradorCod.DataSetAdministracionTableAdapters.SP_PlantillasMetricas_EDICION_EDITAR_SEGUN_PLANTILLATableAdapter()
         NombreTecnologiaLabel = New System.Windows.Forms.Label()
         TecnologiaIDLabel = New System.Windows.Forms.Label()
         NombrePlantillaLabel = New System.Windows.Forms.Label()
@@ -354,6 +376,8 @@ Partial Class FrmTecnologias
         XBaseLabel1 = New System.Windows.Forms.Label()
         NombreComponenteLabel1 = New System.Windows.Forms.Label()
         ComponenteIDLabel = New System.Windows.Forms.Label()
+        XTablaLabel2 = New System.Windows.Forms.Label()
+        MetricaPlantillaIdLabel = New System.Windows.Forms.Label()
         CType(Me.TecnologiasDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TecnologiasBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DataSetAdministracion, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -396,6 +420,8 @@ Partial Class FrmTecnologias
         CType(Me.SP_TablasRelacionadas_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel9.SuspendLayout()
         Me.TabPage6.SuspendLayout()
+        Me.Panel11.SuspendLayout()
+        CType(Me.SP_PlantillasMetricas_BUSQUEDA_SEGUN_PlantillaIDBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.SP_CampoComponentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.SP_CampoComponentes_EDICION_ACTUALIZARBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.SP_CampoComponentes_EDICION_ELIMINARBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -424,6 +450,8 @@ Partial Class FrmTecnologias
         CType(Me.SP_Componentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaID_XBaseBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.SP_Componentes_EDICION_ACTUALIZAR_XBase_PorPlantillaBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelConfiguracion.SuspendLayout()
+        CType(Me.SP_PlantillasMetricas_EDICION_INSERTARBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.SP_PlantillasMetricas_EDICION_EDITAR_SEGUN_PLANTILLABindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'NombreTecnologiaLabel
@@ -693,6 +721,24 @@ Partial Class FrmTecnologias
         ComponenteIDLabel.Size = New System.Drawing.Size(156, 18)
         ComponenteIDLabel.TabIndex = 168
         ComponenteIDLabel.Text = "Componente ID de Base:"
+        '
+        'XTablaLabel2
+        '
+        XTablaLabel2.AutoSize = True
+        XTablaLabel2.Location = New System.Drawing.Point(547, 514)
+        XTablaLabel2.Name = "XTablaLabel2"
+        XTablaLabel2.Size = New System.Drawing.Size(53, 18)
+        XTablaLabel2.TabIndex = 10
+        XTablaLabel2.Text = "XTabla:"
+        '
+        'MetricaPlantillaIdLabel
+        '
+        MetricaPlantillaIdLabel.AutoSize = True
+        MetricaPlantillaIdLabel.Location = New System.Drawing.Point(476, 481)
+        MetricaPlantillaIdLabel.Name = "MetricaPlantillaIdLabel"
+        MetricaPlantillaIdLabel.Size = New System.Drawing.Size(124, 18)
+        MetricaPlantillaIdLabel.TabIndex = 12
+        MetricaPlantillaIdLabel.Text = "Metrica Plantilla Id:"
         '
         'TecnologiasDataGridView
         '
@@ -1311,7 +1357,7 @@ Partial Class FrmTecnologias
         Me.DataGridViewTextBoxColumn6.DataPropertyName = "Requerimiento"
         Me.DataGridViewTextBoxColumn6.HeaderText = "Requerimiento"
         Me.DataGridViewTextBoxColumn6.Name = "DataGridViewTextBoxColumn6"
-        Me.DataGridViewTextBoxColumn6.Width = 455
+        Me.DataGridViewTextBoxColumn6.Width = 486
         '
         'SP_RequerimientosPlantillas_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDBindingSource1
         '
@@ -1464,12 +1510,13 @@ Partial Class FrmTecnologias
         Me.TabPanelControl.Location = New System.Drawing.Point(549, 1)
         Me.TabPanelControl.Name = "TabPanelControl"
         Me.TabPanelControl.SelectedIndex = 0
-        Me.TabPanelControl.Size = New System.Drawing.Size(768, 607)
+        Me.TabPanelControl.Size = New System.Drawing.Size(766, 607)
         Me.TabPanelControl.TabIndex = 116
         '
         'TabPage1
         '
         Me.TabPage1.BackColor = System.Drawing.Color.Transparent
+        Me.TabPage1.Controls.Add(Me.BtnImprimeCamposSinID)
         Me.TabPage1.Controls.Add(Me.BtnZoom)
         Me.TabPage1.Controls.Add(Me.ContenidoComponenteRichTextBox)
         Me.TabPage1.Controls.Add(Me.ChkControlCambios)
@@ -1503,6 +1550,19 @@ Partial Class FrmTecnologias
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Text = "Text Cod"
         '
+        'BtnImprimeCamposSinID
+        '
+        Me.BtnImprimeCamposSinID.BackColor = System.Drawing.Color.White
+        Me.BtnImprimeCamposSinID.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnImprimeCamposSinID.Location = New System.Drawing.Point(268, 82)
+        Me.BtnImprimeCamposSinID.Name = "BtnImprimeCamposSinID"
+        Me.BtnImprimeCamposSinID.Size = New System.Drawing.Size(92, 25)
+        Me.BtnImprimeCamposSinID.TabIndex = 148
+        Me.BtnImprimeCamposSinID.Text = "{{{TCampos-ID}}}"
+        Me.ToolTip1.SetToolTip(Me.BtnImprimeCamposSinID, "Campos de la Tabla SIN SU ID con su  prefijos - sufijos - superior - inferior o m" &
+        "ultireplace son por plantilla")
+        Me.BtnImprimeCamposSinID.UseVisualStyleBackColor = False
+        '
         'BtnZoom
         '
         Me.BtnZoom.BackColor = System.Drawing.Color.YellowGreen
@@ -1530,11 +1590,11 @@ Partial Class FrmTecnologias
         Me.ChkControlCambios.AutoSize = True
         Me.ChkControlCambios.Checked = True
         Me.ChkControlCambios.CheckState = System.Windows.Forms.CheckState.Checked
-        Me.ChkControlCambios.Location = New System.Drawing.Point(573, 85)
+        Me.ChkControlCambios.Location = New System.Drawing.Point(683, 85)
         Me.ChkControlCambios.Name = "ChkControlCambios"
-        Me.ChkControlCambios.Size = New System.Drawing.Size(144, 22)
+        Me.ChkControlCambios.Size = New System.Drawing.Size(72, 22)
         Me.ChkControlCambios.TabIndex = 146
-        Me.ChkControlCambios.Text = "Control de Cambios"
+        Me.ChkControlCambios.Text = "Control"
         Me.ChkControlCambios.UseVisualStyleBackColor = True
         '
         'ContenidoComponenteCopia
@@ -1583,9 +1643,9 @@ Partial Class FrmTecnologias
         '
         Me.BtnCamposRelacionados.BackColor = System.Drawing.Color.White
         Me.BtnCamposRelacionados.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnCamposRelacionados.Location = New System.Drawing.Point(463, 82)
+        Me.BtnCamposRelacionados.Location = New System.Drawing.Point(366, 82)
         Me.BtnCamposRelacionados.Name = "BtnCamposRelacionados"
-        Me.BtnCamposRelacionados.Size = New System.Drawing.Size(104, 25)
+        Me.BtnCamposRelacionados.Size = New System.Drawing.Size(89, 25)
         Me.BtnCamposRelacionados.TabIndex = 142
         Me.BtnCamposRelacionados.Text = "{{{Camp-Rel}}}"
         Me.ToolTip1.SetToolTip(Me.BtnCamposRelacionados, "Campos Relacionados de la Tabla")
@@ -1607,7 +1667,7 @@ Partial Class FrmTecnologias
         '
         Me.BtnMayusculaAMinuscula.BackColor = System.Drawing.Color.White
         Me.BtnMayusculaAMinuscula.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnMayusculaAMinuscula.Location = New System.Drawing.Point(366, 82)
+        Me.BtnMayusculaAMinuscula.Location = New System.Drawing.Point(573, 82)
         Me.BtnMayusculaAMinuscula.Name = "BtnMayusculaAMinuscula"
         Me.BtnMayusculaAMinuscula.Size = New System.Drawing.Size(89, 25)
         Me.BtnMayusculaAMinuscula.TabIndex = 129
@@ -1632,9 +1692,9 @@ Partial Class FrmTecnologias
         '
         Me.BtnTablaMinuscula.BackColor = System.Drawing.Color.White
         Me.BtnTablaMinuscula.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnTablaMinuscula.Location = New System.Drawing.Point(268, 82)
+        Me.BtnTablaMinuscula.Location = New System.Drawing.Point(464, 82)
         Me.BtnTablaMinuscula.Name = "BtnTablaMinuscula"
-        Me.BtnTablaMinuscula.Size = New System.Drawing.Size(89, 25)
+        Me.BtnTablaMinuscula.Size = New System.Drawing.Size(103, 25)
         Me.BtnTablaMinuscula.TabIndex = 127
         Me.BtnTablaMinuscula.Text = "{{{Tmin}}}"
         Me.ToolTip1.SetToolTip(Me.BtnTablaMinuscula, "Nombre de la Tabla en Minuscula")
@@ -1670,7 +1730,7 @@ Partial Class FrmTecnologias
         Me.BtnImprimeCampos.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnImprimeCampos.Location = New System.Drawing.Point(268, 55)
         Me.BtnImprimeCampos.Name = "BtnImprimeCampos"
-        Me.BtnImprimeCampos.Size = New System.Drawing.Size(89, 25)
+        Me.BtnImprimeCampos.Size = New System.Drawing.Size(92, 25)
         Me.BtnImprimeCampos.TabIndex = 124
         Me.BtnImprimeCampos.Text = "{{{Campos}}}"
         Me.ToolTip1.SetToolTip(Me.BtnImprimeCampos, "Campos de la Tabla, prefijos - sufijos - superior - inferior o multireplace son p" &
@@ -2406,7 +2466,7 @@ Partial Class FrmTecnologias
         Me.TabPage4.Location = New System.Drawing.Point(4, 27)
         Me.TabPage4.Name = "TabPage4"
         Me.TabPage4.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage4.Size = New System.Drawing.Size(760, 576)
+        Me.TabPage4.Size = New System.Drawing.Size(759, 576)
         Me.TabPage4.TabIndex = 3
         Me.TabPage4.Text = "Campos Relacionados"
         Me.TabPage4.UseVisualStyleBackColor = True
@@ -2575,23 +2635,160 @@ Partial Class FrmTecnologias
         '
         'TabPage6
         '
-        Me.TabPage6.Controls.Add(Me.Label6)
+        Me.TabPage6.AutoScroll = True
+        Me.TabPage6.Controls.Add(Me.Panel11)
+        Me.TabPage6.Controls.Add(Me.Button4)
+        Me.TabPage6.Controls.Add(Me.Button5)
+        Me.TabPage6.Controls.Add(Me.TextBox1)
+        Me.TabPage6.Controls.Add(Me.Label15)
         Me.TabPage6.Location = New System.Drawing.Point(4, 27)
         Me.TabPage6.Name = "TabPage6"
         Me.TabPage6.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage6.Size = New System.Drawing.Size(760, 576)
+        Me.TabPage6.Size = New System.Drawing.Size(758, 576)
         Me.TabPage6.TabIndex = 5
-        Me.TabPage6.Text = "Tratamiento Tablas"
+        Me.TabPage6.Text = "Métricas y Ventajas Tecnológicas"
         Me.TabPage6.UseVisualStyleBackColor = True
+        '
+        'Panel11
+        '
+        Me.Panel11.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel11.Controls.Add(Me.Label16)
+        Me.Panel11.Controls.Add(Me.Label6)
+        Me.Panel11.Controls.Add(Me.XTablaCheckBox1)
+        Me.Panel11.Controls.Add(Me.Label14)
+        Me.Panel11.Controls.Add(Me.TiempoTextBox)
+        Me.Panel11.Controls.Add(Me.BtnGuardarTiempo)
+        Me.Panel11.Controls.Add(Me.BtnEditarTiempo)
+        Me.Panel11.Location = New System.Drawing.Point(10, 6)
+        Me.Panel11.Name = "Panel11"
+        Me.Panel11.Size = New System.Drawing.Size(736, 147)
+        Me.Panel11.TabIndex = 11
+        '
+        'MetricaPlantillaIdTextBox
+        '
+        Me.MetricaPlantillaIdTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SP_PlantillasMetricas_BUSQUEDA_SEGUN_PlantillaIDBindingSource, "MetricaPlantillaId", True))
+        Me.MetricaPlantillaIdTextBox.Location = New System.Drawing.Point(606, 478)
+        Me.MetricaPlantillaIdTextBox.Name = "MetricaPlantillaIdTextBox"
+        Me.MetricaPlantillaIdTextBox.Size = New System.Drawing.Size(100, 26)
+        Me.MetricaPlantillaIdTextBox.TabIndex = 13
+        '
+        'SP_PlantillasMetricas_BUSQUEDA_SEGUN_PlantillaIDBindingSource
+        '
+        Me.SP_PlantillasMetricas_BUSQUEDA_SEGUN_PlantillaIDBindingSource.DataMember = "SP_PlantillasMetricas_BUSQUEDA_SEGUN_PlantillaID"
+        Me.SP_PlantillasMetricas_BUSQUEDA_SEGUN_PlantillaIDBindingSource.DataSource = Me.DataSetAdministracion
+        '
+        'Label16
+        '
+        Me.Label16.AutoSize = True
+        Me.Label16.Font = New System.Drawing.Font("Candara", 14.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label16.Location = New System.Drawing.Point(3, 103)
+        Me.Label16.Name = "Label16"
+        Me.Label16.Size = New System.Drawing.Size(159, 23)
+        Me.Label16.TabIndex = 12
+        Me.Label16.Text = "Por Tabla o Entidad"
+        '
+        'XTablaMetrica
+        '
+        Me.XTablaMetrica.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SP_PlantillasMetricas_BUSQUEDA_SEGUN_PlantillaIDBindingSource, "XTabla", True))
+        Me.XTablaMetrica.Location = New System.Drawing.Point(606, 511)
+        Me.XTablaMetrica.Name = "XTablaMetrica"
+        Me.XTablaMetrica.Size = New System.Drawing.Size(100, 26)
+        Me.XTablaMetrica.TabIndex = 11
         '
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(6, 8)
+        Me.Label6.Font = New System.Drawing.Font("Candara", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.Location = New System.Drawing.Point(3, 13)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(450, 18)
+        Me.Label6.Size = New System.Drawing.Size(286, 23)
         Me.Label6.TabIndex = 0
-        Me.Label6.Text = "Recorrera las tablas y aplicara el nombre de cada una en el siguiente texto"
+        Me.Label6.Text = "Tiempo De Creación de la Plantilla"
+        '
+        'XTablaCheckBox1
+        '
+        Me.XTablaCheckBox1.DataBindings.Add(New System.Windows.Forms.Binding("CheckState", Me.SP_PlantillasMetricas_BUSQUEDA_SEGUN_PlantillaIDBindingSource, "XTabla", True))
+        Me.XTablaCheckBox1.Font = New System.Drawing.Font("Candara", 14.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.XTablaCheckBox1.Location = New System.Drawing.Point(185, 102)
+        Me.XTablaCheckBox1.Name = "XTablaCheckBox1"
+        Me.XTablaCheckBox1.Size = New System.Drawing.Size(104, 24)
+        Me.XTablaCheckBox1.TabIndex = 10
+        Me.XTablaCheckBox1.UseVisualStyleBackColor = True
+        '
+        'Label14
+        '
+        Me.Label14.AutoSize = True
+        Me.Label14.Font = New System.Drawing.Font("Candara", 14.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label14.Location = New System.Drawing.Point(3, 62)
+        Me.Label14.Name = "Label14"
+        Me.Label14.Size = New System.Drawing.Size(158, 23)
+        Me.Label14.TabIndex = 2
+        Me.Label14.Text = "Tiempo en Minutos"
+        '
+        'TiempoTextBox
+        '
+        Me.TiempoTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SP_PlantillasMetricas_BUSQUEDA_SEGUN_PlantillaIDBindingSource, "Tiempo", True))
+        Me.TiempoTextBox.Font = New System.Drawing.Font("Candara", 14.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TiempoTextBox.Location = New System.Drawing.Point(185, 58)
+        Me.TiempoTextBox.Name = "TiempoTextBox"
+        Me.TiempoTextBox.Size = New System.Drawing.Size(119, 31)
+        Me.TiempoTextBox.TabIndex = 9
+        Me.TiempoTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'BtnGuardarTiempo
+        '
+        Me.BtnGuardarTiempo.Location = New System.Drawing.Point(449, 7)
+        Me.BtnGuardarTiempo.Name = "BtnGuardarTiempo"
+        Me.BtnGuardarTiempo.Size = New System.Drawing.Size(128, 34)
+        Me.BtnGuardarTiempo.TabIndex = 3
+        Me.BtnGuardarTiempo.Text = "Guardar Registro"
+        Me.BtnGuardarTiempo.UseVisualStyleBackColor = True
+        '
+        'BtnEditarTiempo
+        '
+        Me.BtnEditarTiempo.Location = New System.Drawing.Point(583, 7)
+        Me.BtnEditarTiempo.Name = "BtnEditarTiempo"
+        Me.BtnEditarTiempo.Size = New System.Drawing.Size(127, 34)
+        Me.BtnEditarTiempo.TabIndex = 4
+        Me.BtnEditarTiempo.Text = "Editar Registro"
+        Me.BtnEditarTiempo.UseVisualStyleBackColor = True
+        '
+        'Button4
+        '
+        Me.Button4.Location = New System.Drawing.Point(144, 524)
+        Me.Button4.Name = "Button4"
+        Me.Button4.Size = New System.Drawing.Size(127, 34)
+        Me.Button4.TabIndex = 8
+        Me.Button4.Text = "Editar Registro"
+        Me.Button4.UseVisualStyleBackColor = True
+        '
+        'Button5
+        '
+        Me.Button5.Location = New System.Drawing.Point(10, 524)
+        Me.Button5.Name = "Button5"
+        Me.Button5.Size = New System.Drawing.Size(127, 34)
+        Me.Button5.TabIndex = 7
+        Me.Button5.Text = "Guardar Registro"
+        Me.Button5.UseVisualStyleBackColor = True
+        '
+        'TextBox1
+        '
+        Me.TextBox1.Font = New System.Drawing.Font("Candara", 14.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox1.Location = New System.Drawing.Point(10, 193)
+        Me.TextBox1.Multiline = True
+        Me.TextBox1.Name = "TextBox1"
+        Me.TextBox1.Size = New System.Drawing.Size(736, 325)
+        Me.TextBox1.TabIndex = 6
+        '
+        'Label15
+        '
+        Me.Label15.AutoSize = True
+        Me.Label15.Font = New System.Drawing.Font("Candara", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label15.Location = New System.Drawing.Point(6, 167)
+        Me.Label15.Name = "Label15"
+        Me.Label15.Size = New System.Drawing.Size(239, 23)
+        Me.Label15.TabIndex = 5
+        Me.Label15.Text = "Ventajas de implementación"
         '
         'SP_CampoComponentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDBindingSource
         '
@@ -2667,6 +2864,8 @@ Partial Class FrmTecnologias
         Me.TableAdapterManager1.SP_CamposDeTablas_EDICION_ACTUALIZARTableAdapter = Nothing
         Me.TableAdapterManager1.SP_CamposDeTablas_EDICION_ELIMINARTableAdapter = Nothing
         Me.TableAdapterManager1.SP_CamposDeTablas_EDICION_INSERTARTableAdapter = Nothing
+        Me.TableAdapterManager1.SP_ComponentesContenidoProvisional_Base_EDICION_ACTUALIZARTableAdapter = Nothing
+        Me.TableAdapterManager1.SP_ComponentesContenidoProvisional_Base_EDICION_INSERTARTableAdapter = Nothing
         Me.TableAdapterManager1.SP_ComponentesContenidoProvisional_EDICION_INSERTARTableAdapter = Nothing
         Me.TableAdapterManager1.SP_ELIMINA_RegistroValorRequerimientos_SegunIDTableAdapter = Nothing
         Me.TableAdapterManager1.SP_RegistroRelacionesTablas_EDICION_ELIMINARTableAdapter = Nothing
@@ -2805,6 +3004,8 @@ Partial Class FrmTecnologias
         Me.TableAdapterManager.SP_Plantillas_EDICION_ACTUALIZARTableAdapter = Nothing
         Me.TableAdapterManager.SP_Plantillas_EDICION_ELIMINARTableAdapter = Nothing
         Me.TableAdapterManager.SP_Plantillas_EDICION_INSERTARTableAdapter = Nothing
+        Me.TableAdapterManager.SP_PlantillasMetricas_EDICION_EDITAR_SEGUN_PLANTILLATableAdapter = Nothing
+        Me.TableAdapterManager.SP_PlantillasMetricas_EDICION_INSERTARTableAdapter = Nothing
         Me.TableAdapterManager.SP_Proyectos_EDICION_ACTUALIZARTableAdapter = Nothing
         Me.TableAdapterManager.SP_Proyectos_EDICION_ELIMINARTableAdapter = Nothing
         Me.TableAdapterManager.SP_Proyectos_EDICION_INSERTARTableAdapter = Nothing
@@ -3121,12 +3322,16 @@ Partial Class FrmTecnologias
         'PanelConfiguracion
         '
         Me.PanelConfiguracion.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.PanelConfiguracion.Controls.Add(MetricaPlantillaIdLabel)
         Me.PanelConfiguracion.Controls.Add(Me.RichTextBox1)
+        Me.PanelConfiguracion.Controls.Add(Me.MetricaPlantillaIdTextBox)
         Me.PanelConfiguracion.Controls.Add(Me.TipoTextBox)
         Me.PanelConfiguracion.Controls.Add(TipoLabel)
         Me.PanelConfiguracion.Controls.Add(Me.XTablaTextBox)
+        Me.PanelConfiguracion.Controls.Add(XTablaLabel2)
         Me.PanelConfiguracion.Controls.Add(XTablaLabel1)
         Me.PanelConfiguracion.Controls.Add(Me.RelacionTablasIDTextBox)
+        Me.PanelConfiguracion.Controls.Add(Me.XTablaMetrica)
         Me.PanelConfiguracion.Controls.Add(RelacionTablasIDLabel)
         Me.PanelConfiguracion.Controls.Add(Me.Label13)
         Me.PanelConfiguracion.Controls.Add(Me.XBaseTextBox)
@@ -3156,8 +3361,30 @@ Partial Class FrmTecnologias
         Me.PanelConfiguracion.Controls.Add(Me.NombreGrupoTipoDeDatoTextBox1)
         Me.PanelConfiguracion.Location = New System.Drawing.Point(582, 5)
         Me.PanelConfiguracion.Name = "PanelConfiguracion"
-        Me.PanelConfiguracion.Size = New System.Drawing.Size(721, 599)
+        Me.PanelConfiguracion.Size = New System.Drawing.Size(719, 599)
         Me.PanelConfiguracion.TabIndex = 170
+        '
+        'SP_PlantillasMetricas_BUSQUEDA_SEGUN_PlantillaIDTableAdapter
+        '
+        Me.SP_PlantillasMetricas_BUSQUEDA_SEGUN_PlantillaIDTableAdapter.ClearBeforeFill = True
+        '
+        'SP_PlantillasMetricas_EDICION_INSERTARBindingSource
+        '
+        Me.SP_PlantillasMetricas_EDICION_INSERTARBindingSource.DataMember = "SP_PlantillasMetricas_EDICION_INSERTAR"
+        Me.SP_PlantillasMetricas_EDICION_INSERTARBindingSource.DataSource = Me.DataSetAdministracion
+        '
+        'SP_PlantillasMetricas_EDICION_INSERTARTableAdapter
+        '
+        Me.SP_PlantillasMetricas_EDICION_INSERTARTableAdapter.ClearBeforeFill = True
+        '
+        'SP_PlantillasMetricas_EDICION_EDITAR_SEGUN_PLANTILLABindingSource
+        '
+        Me.SP_PlantillasMetricas_EDICION_EDITAR_SEGUN_PLANTILLABindingSource.DataMember = "SP_PlantillasMetricas_EDICION_EDITAR_SEGUN_PLANTILLA"
+        Me.SP_PlantillasMetricas_EDICION_EDITAR_SEGUN_PLANTILLABindingSource.DataSource = Me.DataSetAdministracion
+        '
+        'SP_PlantillasMetricas_EDICION_EDITAR_SEGUN_PLANTILLATableAdapter
+        '
+        Me.SP_PlantillasMetricas_EDICION_EDITAR_SEGUN_PLANTILLATableAdapter.ClearBeforeFill = True
         '
         'FrmTecnologias
         '
@@ -3230,6 +3457,9 @@ Partial Class FrmTecnologias
         Me.Panel9.ResumeLayout(False)
         Me.TabPage6.ResumeLayout(False)
         Me.TabPage6.PerformLayout()
+        Me.Panel11.ResumeLayout(False)
+        Me.Panel11.PerformLayout()
+        CType(Me.SP_PlantillasMetricas_BUSQUEDA_SEGUN_PlantillaIDBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.SP_CampoComponentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.SP_CampoComponentes_EDICION_ACTUALIZARBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.SP_CampoComponentes_EDICION_ELIMINARBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
@@ -3259,6 +3489,8 @@ Partial Class FrmTecnologias
         CType(Me.SP_Componentes_EDICION_ACTUALIZAR_XBase_PorPlantillaBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.PanelConfiguracion.ResumeLayout(False)
         Me.PanelConfiguracion.PerformLayout()
+        CType(Me.SP_PlantillasMetricas_EDICION_INSERTARBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.SP_PlantillasMetricas_EDICION_EDITAR_SEGUN_PLANTILLABindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -3402,7 +3634,6 @@ Partial Class FrmTecnologias
     Friend WithEvents MultiReplaceTextBox As TextBox
     Friend WithEvents BtnImprimeClavePrincipal As Button
     Friend WithEvents BtnTablaMinuscula As Button
-    Friend WithEvents DataGridViewTextBoxColumn6 As DataGridViewTextBoxColumn
     Friend WithEvents SP_CARGA_CONVENSIONES_USADASBindingSource As BindingSource
     Friend WithEvents SP_CARGA_CONVENSIONES_USADASTableAdapter As DataSetTablasYCamposTableAdapters.SP_CARGA_CONVENSIONES_USADASTableAdapter
     Friend WithEvents SP_CARGA_CONVENSIONES_USADASDataGridView As DataGridView
@@ -3534,4 +3765,25 @@ Partial Class FrmTecnologias
     Friend WithEvents BtnReseteoBase As Button
     Friend WithEvents BtnVerCodigo As Button
     Friend WithEvents PanelConfiguracion As Panel
+    Friend WithEvents DataGridViewTextBoxColumn6 As DataGridViewTextBoxColumn
+    Friend WithEvents BtnImprimeCamposSinID As Button
+    Friend WithEvents Button4 As Button
+    Friend WithEvents Button5 As Button
+    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents Label15 As Label
+    Friend WithEvents BtnEditarTiempo As Button
+    Friend WithEvents BtnGuardarTiempo As Button
+    Friend WithEvents Label14 As Label
+    Friend WithEvents SP_PlantillasMetricas_BUSQUEDA_SEGUN_PlantillaIDBindingSource As BindingSource
+    Friend WithEvents SP_PlantillasMetricas_BUSQUEDA_SEGUN_PlantillaIDTableAdapter As DataSetAdministracionTableAdapters.SP_PlantillasMetricas_BUSQUEDA_SEGUN_PlantillaIDTableAdapter
+    Friend WithEvents XTablaCheckBox1 As CheckBox
+    Friend WithEvents TiempoTextBox As TextBox
+    Friend WithEvents Panel11 As Panel
+    Friend WithEvents SP_PlantillasMetricas_EDICION_INSERTARBindingSource As BindingSource
+    Friend WithEvents SP_PlantillasMetricas_EDICION_INSERTARTableAdapter As DataSetAdministracionTableAdapters.SP_PlantillasMetricas_EDICION_INSERTARTableAdapter
+    Friend WithEvents XTablaMetrica As TextBox
+    Friend WithEvents Label16 As Label
+    Friend WithEvents MetricaPlantillaIdTextBox As TextBox
+    Friend WithEvents SP_PlantillasMetricas_EDICION_EDITAR_SEGUN_PLANTILLABindingSource As BindingSource
+    Friend WithEvents SP_PlantillasMetricas_EDICION_EDITAR_SEGUN_PLANTILLATableAdapter As DataSetAdministracionTableAdapters.SP_PlantillasMetricas_EDICION_EDITAR_SEGUN_PLANTILLATableAdapter
 End Class

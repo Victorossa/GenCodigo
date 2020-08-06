@@ -607,22 +607,32 @@
 
     Private Sub PlantillaIDTextBox_TextChanged(sender As Object, e As EventArgs) Handles PlantillaIDTextBox.TextChanged
         Try
-            SP_Componentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaID()
-            'SP_RequerimientosPlantillas_BUSQUEDA_SEGUN_PARAMETRO_PlantillaID()
-            'SP_CampoComponentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaID()
-            'SP_TablasRelacionadas_BUSQUEDA_SEGUN_PARAMETRO_PlantillaID()
-            SP_CampoComponentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaID_ComponenteID()
-            If RB_Plantilla.Checked = "True" Then
-                SP_CARGA_CONVENSIONES_USADAS_POR_PLANTILLA()
-                SP_CARGA_CONVENSIONES_USADAS_POR_PLANTILLADataGridView.Visible = True
-                SP_CARGA_CONVENSIONES_USADASDataGridView.Visible = False
+            If PlantillaIDTextBox.Text = "" Then
+                PlantillaIDTextBox.Text = "0"
+                CarguePorPlantilla()
             Else
-                SP_CARGA_CONVENSIONES_USADASDataGridView.Visible = True
-                SP_CARGA_CONVENSIONES_USADAS_POR_PLANTILLADataGridView.Visible = False
+                CarguePorPlantilla()
             End If
         Catch ex As Exception
 
         End Try
+    End Sub
+
+    Private Sub CarguePorPlantilla()
+        SP_Componentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaID()
+        SP_RequerimientosPlantillas_BUSQUEDA_SEGUN_PARAMETRO_PlantillaID()
+        'SP_CampoComponentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaID()
+        SP_TablasRelacionadas_BUSQUEDA_SEGUN_PARAMETRO_PlantillaID()
+        SP_CampoComponentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaID_ComponenteID()
+        SP_PlantillasMetricas_BUSQUEDA_SEGUN_PlantillaID()
+        If RB_Plantilla.Checked = "True" Then
+            SP_CARGA_CONVENSIONES_USADAS_POR_PLANTILLA()
+            SP_CARGA_CONVENSIONES_USADAS_POR_PLANTILLADataGridView.Visible = True
+            SP_CARGA_CONVENSIONES_USADASDataGridView.Visible = False
+        Else
+            SP_CARGA_CONVENSIONES_USADASDataGridView.Visible = True
+            SP_CARGA_CONVENSIONES_USADAS_POR_PLANTILLADataGridView.Visible = False
+        End If
     End Sub
 
     Private Sub SP_Componentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaID()
@@ -1873,6 +1883,10 @@ Los otros componentes deberan ser palabras completas y sin saltos de linea
         Me.ContenidoComponenteRichTextBox.Text = Me.ContenidoComponenteRichTextBox.Text.Insert(Me.ContenidoComponenteRichTextBox.SelectionStart, "{{{Campos}}}")
     End Sub
 
+    Private Sub BtnImprimeCamposSinID_Click(sender As Object, e As EventArgs) Handles BtnImprimeCamposSinID.Click
+        Me.ContenidoComponenteRichTextBox.Text = Me.ContenidoComponenteRichTextBox.Text.Insert(Me.ContenidoComponenteRichTextBox.SelectionStart, "{{{TCampos-ID}}}")
+    End Sub
+
     Private Sub BtnImprimeTabla_Click(sender As Object, e As EventArgs) Handles BtnImprimeTabla.Click
         Me.ContenidoComponenteRichTextBox.Text = Me.ContenidoComponenteRichTextBox.Text.Insert(Me.ContenidoComponenteRichTextBox.SelectionStart, "{{{Tabla}}}")
     End Sub
@@ -2762,18 +2776,95 @@ Los otros componentes deberan ser palabras completas y sin saltos de linea
 
     End Sub
 
+    Private Sub SP_PlantillasMetricas_BUSQUEDA_SEGUN_PlantillaID()
+        Try
+            Me.SP_PlantillasMetricas_BUSQUEDA_SEGUN_PlantillaIDTableAdapter.Fill(Me.DataSetAdministracion.SP_PlantillasMetricas_BUSQUEDA_SEGUN_PlantillaID, New System.Nullable(Of Integer)(CType(PlantillaIDTextBox.Text, Integer)))
+        Catch ex As System.Exception
+            'System.Windows.Forms.MessageBox.Show(ex.Message)
+        End Try
 
+    End Sub
 
+    Private Sub SP_PlantillasMetricas_EDICION_INSERTAR()
+        Try
+            Me.SP_PlantillasMetricas_EDICION_INSERTARTableAdapter.Fill(Me.DataSetAdministracion.SP_PlantillasMetricas_EDICION_INSERTAR,
+                                                                       New System.Nullable(Of Integer)(CType(PlantillaIDTextBox.Text, Integer)),
+                                                                       New System.Nullable(Of Boolean)(CType(XTablaMetrica.Text, Boolean)),
+                                                                       New System.Nullable(Of Integer)(CType(TiempoTextBox.Text, Integer)))
+        Catch ex As System.Exception
+            System.Windows.Forms.MessageBox.Show(ex.Message)
+        End Try
+    End Sub
 
+    Private Sub BtnGuardarTiempo_Click(sender As Object, e As EventArgs) Handles BtnGuardarTiempo.Click
+        If TiempoTextBox.Text <> "" Then
+            If MetricaPlantillaIdTextBox.Text = "" Then
+                If XTablaMetrica.Text = "" Then
+                    XTablaMetrica.Text = "False"
+                    If XTablaCheckBox.Checked = True Then
+                        XTablaMetrica.Text = "True"
+                        SP_PlantillasMetricas_EDICION_INSERTAR()
+                        SP_PlantillasMetricas_BUSQUEDA_SEGUN_PlantillaID()
+                        MsgBox("Tiempo de plantilla guardado con exito", MsgBoxStyle.Information)
+                    Else
+                        SP_PlantillasMetricas_EDICION_INSERTAR()
+                        SP_PlantillasMetricas_BUSQUEDA_SEGUN_PlantillaID()
+                        MsgBox("Tiempo de plantilla guardado con exito", MsgBoxStyle.Information)
+                    End If
+                End If
+            Else
+                MsgBox("Ya existe un registro de tiempo para esta plantilla, debe de realizar es una edicion", MsgBoxStyle.Critical)
+            End If
+        Else
+            MsgBox("debe de haber un valor para el tiempo", MsgBoxStyle.Critical)
+            TiempoTextBox.Focus()
+        End If
+    End Sub
 
+    Private Sub XTablaCheckBox1_CheckedChanged(sender As Object, e As EventArgs) Handles XTablaCheckBox1.CheckedChanged
+        If XTablaCheckBox1.Checked = True Then
+            XTablaCheckBox1.Text = "SI"
+            XTablaMetrica.Text = "True"
+        Else
+            XTablaCheckBox1.Text = "NO"
+            XTablaMetrica.Text = "False"
+        End If
+    End Sub
+    Private Sub SP_PlantillasMetricas_EDICION_EDITAR_SEGUN_PLANTILLA()
+        Try
+            Me.SP_PlantillasMetricas_EDICION_EDITAR_SEGUN_PLANTILLATableAdapter.Fill(Me.DataSetAdministracion.SP_PlantillasMetricas_EDICION_EDITAR_SEGUN_PLANTILLA,
+                                                                                     New System.Nullable(Of Integer)(CType(PlantillaIDTextBox.Text, Integer)),
+                                                                                     New System.Nullable(Of Boolean)(CType(XTablaMetrica.Text, Boolean)),
+                                                                                     New System.Nullable(Of Integer)(CType(TiempoTextBox.Text, Integer)))
+        Catch ex As System.Exception
+            System.Windows.Forms.MessageBox.Show(ex.Message)
+        End Try
 
+    End Sub
 
-
-
-
-
-
-
+    Private Sub BtnEditarTiempo_Click(sender As Object, e As EventArgs) Handles BtnEditarTiempo.Click
+        If TiempoTextBox.Text <> "" Then
+            If MetricaPlantillaIdTextBox.Text <> "" Then
+                If XTablaCheckBox.Checked = True Then
+                    XTablaMetrica.Text = "True"
+                    SP_PlantillasMetricas_EDICION_EDITAR_SEGUN_PLANTILLA()
+                    SP_PlantillasMetricas_BUSQUEDA_SEGUN_PlantillaID()
+                    MsgBox("Tiempo de plantilla Editado con Exito!!!", MsgBoxStyle.Information)
+                Else
+                    SP_PlantillasMetricas_EDICION_EDITAR_SEGUN_PLANTILLA()
+                    SP_PlantillasMetricas_BUSQUEDA_SEGUN_PlantillaID()
+                    MsgBox("Tiempo de plantilla Editado con Exito!!!", MsgBoxStyle.Information)
+                End If
+            Else
+                MsgBox("No puedes editar un tiempo que no existe, favor verificar", MsgBoxStyle.Critical)
+                TiempoTextBox.Text = ""
+                TiempoTextBox.Focus()
+            End If
+        Else
+            MsgBox("debe de haber un valor para el tiempo", MsgBoxStyle.Critical)
+            TiempoTextBox.Focus()
+        End If
+    End Sub
 
 
 #End Region

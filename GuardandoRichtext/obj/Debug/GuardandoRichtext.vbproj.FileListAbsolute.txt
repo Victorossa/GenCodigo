@@ -14,7 +14,6 @@ C:\www\Copia GenCodigo\GenCodigo\GuardandoRichtext\bin\Debug\GuardandoRichtext.e
 C:\www\Copia GenCodigo\GenCodigo\GuardandoRichtext\bin\Debug\GuardandoRichtext.exe
 C:\www\Copia GenCodigo\GenCodigo\GuardandoRichtext\bin\Debug\GuardandoRichtext.pdb
 C:\www\Copia GenCodigo\GenCodigo\GuardandoRichtext\bin\Debug\GuardandoRichtext.xml
-C:\www\Copia GenCodigo\GenCodigo\GuardandoRichtext\obj\Debug\GuardandoRichtext.vbprojAssemblyReference.cache
 C:\www\Copia GenCodigo\GenCodigo\GuardandoRichtext\obj\Debug\GuardandoRichtext.Form1.resources
 C:\www\Copia GenCodigo\GenCodigo\GuardandoRichtext\obj\Debug\GuardandoRichtext.Resources.resources
 C:\www\Copia GenCodigo\GenCodigo\GuardandoRichtext\obj\Debug\GuardandoRichtext.vbproj.GenerateResource.cache
@@ -22,3 +21,4 @@ C:\www\Copia GenCodigo\GenCodigo\GuardandoRichtext\obj\Debug\GuardandoRichtext.v
 C:\www\Copia GenCodigo\GenCodigo\GuardandoRichtext\obj\Debug\GuardandoRichtext.exe
 C:\www\Copia GenCodigo\GenCodigo\GuardandoRichtext\obj\Debug\GuardandoRichtext.xml
 C:\www\Copia GenCodigo\GenCodigo\GuardandoRichtext\obj\Debug\GuardandoRichtext.pdb
+C:\www\Copia GenCodigo\GenCodigo\GuardandoRichtext\obj\Debug\GuardandoRichtext.vbprojAssemblyReference.cache
