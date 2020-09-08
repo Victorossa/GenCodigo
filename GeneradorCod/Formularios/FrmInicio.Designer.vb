@@ -34,13 +34,16 @@ Partial Class FrmInicio
         Me.ToolStripSeparator2 = New System.Windows.Forms.ToolStripSeparator()
         Me.ConfiguraciónToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ReportesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripSeparator3 = New System.Windows.Forms.ToolStripSeparator()
+        Me.ToolStripSeparator4 = New System.Windows.Forms.ToolStripSeparator()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
         'PictureBox1
         '
-        Me.PictureBox1.BackColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.PictureBox1.BackColor = System.Drawing.Color.Transparent
         Me.PictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.PictureBox1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.PictureBox1.Location = New System.Drawing.Point(0, 0)
@@ -65,7 +68,7 @@ Partial Class FrmInicio
         '
         'AdministraciònToolStripMenuItem
         '
-        Me.AdministraciònToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CreaciònDePlantillasToolStripMenuItem, Me.ToolStripSeparator1, Me.GeneraciònDeProyectosToolStripMenuItem, Me.ToolStripSeparator2, Me.ConfiguraciónToolStripMenuItem, Me.ReportesToolStripMenuItem})
+        Me.AdministraciònToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CreaciònDePlantillasToolStripMenuItem, Me.ToolStripSeparator1, Me.GeneraciònDeProyectosToolStripMenuItem, Me.ToolStripSeparator2, Me.ConfiguraciónToolStripMenuItem, Me.ToolStripSeparator3, Me.ReportesToolStripMenuItem, Me.ToolStripSeparator4, Me.ToolStripMenuItem1})
         Me.AdministraciònToolStripMenuItem.Name = "AdministraciònToolStripMenuItem"
         Me.AdministraciònToolStripMenuItem.Size = New System.Drawing.Size(127, 25)
         Me.AdministraciònToolStripMenuItem.Text = "Administraciòn"
@@ -104,6 +107,22 @@ Partial Class FrmInicio
         Me.ReportesToolStripMenuItem.Size = New System.Drawing.Size(252, 26)
         Me.ReportesToolStripMenuItem.Text = "Reportes"
         '
+        'ToolStripMenuItem1
+        '
+        Me.ToolStripMenuItem1.Name = "ToolStripMenuItem1"
+        Me.ToolStripMenuItem1.Size = New System.Drawing.Size(252, 26)
+        Me.ToolStripMenuItem1.Text = "Pruebas"
+        '
+        'ToolStripSeparator3
+        '
+        Me.ToolStripSeparator3.Name = "ToolStripSeparator3"
+        Me.ToolStripSeparator3.Size = New System.Drawing.Size(249, 6)
+        '
+        'ToolStripSeparator4
+        '
+        Me.ToolStripSeparator4.Name = "ToolStripSeparator4"
+        Me.ToolStripSeparator4.Size = New System.Drawing.Size(249, 6)
+        '
         'FrmInicio
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -137,4 +156,7 @@ Partial Class FrmInicio
     Friend WithEvents ToolStripSeparator1 As ToolStripSeparator
     Friend WithEvents ToolStripSeparator2 As ToolStripSeparator
     Friend WithEvents ReportesToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ToolStripMenuItem1 As ToolStripMenuItem
+    Friend WithEvents ToolStripSeparator3 As ToolStripSeparator
+    Friend WithEvents ToolStripSeparator4 As ToolStripSeparator
 End Class

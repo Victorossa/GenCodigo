@@ -101,115 +101,10 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AccesoADatos\ArchivoReplace.vb">
-      <DependentUpon>DBModels.tt</DependentUpon>
-    </Compile>
-    <Compile Include="AccesoADatos\CampoComponentes.vb">
-      <DependentUpon>DBModels.tt</DependentUpon>
-    </Compile>
-    <Compile Include="AccesoADatos\CamposDeTablas.vb">
-      <DependentUpon>DBModels.tt</DependentUpon>
-    </Compile>
-    <Compile Include="AccesoADatos\Componentes.vb">
-      <DependentUpon>DBModels.tt</DependentUpon>
-    </Compile>
-    <Compile Include="AccesoADatos\DataSetPlantillas.Designer.vb">
+    <Compile Include="DataSets\DatasetAdmon.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>DataSetPlantillas.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="AccesoADatos\DBModels.Context.vb">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DBModels.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="AccesoADatos\DBModels.Designer.vb">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DBModels.edmx</DependentUpon>
-    </Compile>
-    <Compile Include="AccesoADatos\DBModels.vb">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DBModels.tt</DependentUpon>
-    </Compile>
-    <Compile Include="AccesoADatos\Plantillas.vb">
-      <DependentUpon>DBModels.tt</DependentUpon>
-    </Compile>
-    <Compile Include="AccesoADatos\Producto.vb">
-      <DependentUpon>DBModels.tt</DependentUpon>
-    </Compile>
-    <Compile Include="AccesoADatos\Proyectos.vb">
-      <DependentUpon>DBModels.tt</DependentUpon>
-    </Compile>
-    <Compile Include="AccesoADatos\ProyectosYTecnologias.vb">
-      <DependentUpon>DBModels.tt</DependentUpon>
-    </Compile>
-    <Compile Include="AccesoADatos\RegistroValorRequerimientos.vb">
-      <DependentUpon>DBModels.tt</DependentUpon>
-    </Compile>
-    <Compile Include="AccesoADatos\RequerimientosPlantillas.vb">
-      <DependentUpon>DBModels.tt</DependentUpon>
-    </Compile>
-    <Compile Include="AccesoADatos\SP_CampoComponentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaID_Result.vb">
-      <DependentUpon>DBModels.tt</DependentUpon>
-    </Compile>
-    <Compile Include="AccesoADatos\SP_CampoComponentes_Segun_Plantilla_Tipo_Result.vb">
-      <DependentUpon>DBModels.tt</DependentUpon>
-    </Compile>
-    <Compile Include="AccesoADatos\SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaID_Result.vb">
-      <DependentUpon>DBModels.tt</DependentUpon>
-    </Compile>
-    <Compile Include="AccesoADatos\SP_CARGA_TECNOLOGIAS_APLICADAS_A_PROYECTO_Result.vb">
-      <DependentUpon>DBModels.tt</DependentUpon>
-    </Compile>
-    <Compile Include="AccesoADatos\SP_Componentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaID_Result.vb">
-      <DependentUpon>DBModels.tt</DependentUpon>
-    </Compile>
-    <Compile Include="AccesoADatos\SP_Plantillas_BUSQUEDA_SEGUN_PARAMETRO_Tecnologia_Result.vb">
-      <DependentUpon>DBModels.tt</DependentUpon>
-    </Compile>
-    <Compile Include="AccesoADatos\SP_RegistroValorRequerimientos_SegunProyectoRequerimiento_Result.vb">
-      <DependentUpon>DBModels.tt</DependentUpon>
-    </Compile>
-    <Compile Include="AccesoADatos\SP_RegistroValorRequerimientos_SEGUN_ProyectoID_Result.vb">
-      <DependentUpon>DBModels.tt</DependentUpon>
-    </Compile>
-    <Compile Include="AccesoADatos\SP_RequerimientosPlantillas_BUSQUEDA_SEGUN_PARAMETRO_PlantillaID_Result.vb">
-      <DependentUpon>DBModels.tt</DependentUpon>
-    </Compile>
-    <Compile Include="AccesoADatos\SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID_Result.vb">
-      <DependentUpon>DBModels.tt</DependentUpon>
-    </Compile>
-    <Compile Include="AccesoADatos\SP_TiposDeCampos_BUSQUEDA_SEGUN_PARAMETRO_GrupoTiposID_Result.vb">
-      <DependentUpon>DBModels.tt</DependentUpon>
-    </Compile>
-    <Compile Include="AccesoADatos\TablasDeProyecto.vb">
-      <DependentUpon>DBModels.tt</DependentUpon>
-    </Compile>
-    <Compile Include="AccesoADatos\TablasRelacionadas.vb">
-      <DependentUpon>DBModels.tt</DependentUpon>
-    </Compile>
-    <Compile Include="AccesoADatos\Tecnologias.vb">
-      <DependentUpon>DBModels.tt</DependentUpon>
-    </Compile>
-    <Compile Include="AccesoADatos\TiposDeCampos.vb">
-      <DependentUpon>DBModels.tt</DependentUpon>
-    </Compile>
-    <Compile Include="AccesoADatos\View_ProyectosYTecnologias.vb">
-      <DependentUpon>DBModels.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Formularios\FrmGeneracionDeProyectos.Designer.vb">
-      <DependentUpon>FrmGeneracionDeProyectos.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Formularios\FrmGeneracionDeProyectos.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Formularios\FrmGeneracionProyectos.Designer.vb">
-      <DependentUpon>FrmGeneracionProyectos.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Formularios\FrmGeneracionProyectos.vb">
-      <SubType>Form</SubType>
+      <DependentUpon>DatasetAdmon.xsd</DependentUpon>
     </Compile>
     <Compile Include="Formularios\FrmInicio.Designer.vb">
       <DependentUpon>FrmInicio.vb</DependentUpon>
@@ -217,10 +112,10 @@
     <Compile Include="Formularios\FrmInicio.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\FrmPlantillas.Designer.vb">
-      <DependentUpon>FrmPlantillas.vb</DependentUpon>
+    <Compile Include="Formularios\FrmTecnologias.Designer.vb">
+      <DependentUpon>FrmTecnologias.vb</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\FrmPlantillas.vb">
+    <Compile Include="Formularios\FrmTecnologias.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
@@ -240,14 +135,11 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Formularios\FrmGeneracionDeProyectos.resx">
-      <DependentUpon>FrmGeneracionDeProyectos.vb</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\FrmInicio.resx">
       <DependentUpon>FrmInicio.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\FrmPlantillas.resx">
-      <DependentUpon>FrmPlantillas.vb</DependentUpon>
+    <EmbeddedResource Include="Formularios\FrmTecnologias.resx">
+      <DependentUpon>FrmTecnologias.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
@@ -257,23 +149,16 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <EntityDeploy Include="AccesoADatos\DBModels.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>DBModels.Designer.vb</LastGenOutput>
-    </EntityDeploy>
-    <None Include="AccesoADatos\DataSetPlantillas.xsc">
-      <DependentUpon>DataSetPlantillas.xsd</DependentUpon>
+    <None Include="DataSets\DatasetAdmon.xsc">
+      <DependentUpon>DatasetAdmon.xsd</DependentUpon>
     </None>
-    <None Include="AccesoADatos\DataSetPlantillas.xsd">
+    <None Include="DataSets\DatasetAdmon.xsd">
       <SubType>Designer</SubType>
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>DataSetPlantillas.Designer.vb</LastGenOutput>
+      <LastGenOutput>DatasetAdmon.Designer.vb</LastGenOutput>
     </None>
-    <None Include="AccesoADatos\DataSetPlantillas.xss">
-      <DependentUpon>DataSetPlantillas.xsd</DependentUpon>
-    </None>
-    <None Include="AccesoADatos\DBModels.edmx.diagram">
-      <DependentUpon>DBModels.edmx</DependentUpon>
+    <None Include="DataSets\DatasetAdmon.xss">
+      <DependentUpon>DatasetAdmon.xsd</DependentUpon>
     </None>
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
@@ -288,23 +173,6 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="AccesoADatos\DBModels.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>DBModels.Context.vb</LastGenOutput>
-      <DependentUpon>DBModels.edmx</DependentUpon>
-    </Content>
-    <Content Include="AccesoADatos\DBModels.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>DBModels.edmx</DependentUpon>
-      <LastGenOutput>DBModels.vb</LastGenOutput>
-    </Content>
-    <Content Include="BaseDeDatos\PLE_DB.mdf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="BaseDeDatos\PLE_DB_log.ldf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      <DependentUpon>PLE_DB.mdf</DependentUpon>
-    </Content>
     <Content Include="icono componente.ico" />
     <Content Include="PLE_DB.mdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
@@ -313,11 +181,6 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>PLE_DB.mdf</DependentUpon>
     </Content>
-    <Content Include="Recursos\FondoPLE0.jpg" />
-    <Content Include="Recursos\FondoPLE1.jpg" />
-    <Content Include="Recursos\FondoPLE2.jpg" />
-    <Content Include="Recursos\FondoPLE3.jpg" />
-    <Content Include="Recursos\FondoPLE4.jpg" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

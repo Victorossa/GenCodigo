@@ -91,9 +91,68 @@ Partial Class FrmReplace
         Dim ContenidoLabel1 As System.Windows.Forms.Label
         Dim BaseLabel As System.Windows.Forms.Label
         Dim ComponenteIDLabel2 As System.Windows.Forms.Label
+        Dim ReferenciaLabel1 As System.Windows.Forms.Label
+        Dim TecnologiaIDLabel2 As System.Windows.Forms.Label
+        Dim ValorRequerimientoLabel3 As System.Windows.Forms.Label
+        Dim RequerimientoLabel5 As System.Windows.Forms.Label
+        Dim NombreRequerimientoFuncionalLabel As System.Windows.Forms.Label
+        Dim PlantillasCreacionDeArchivosIdLabel As System.Windows.Forms.Label
+        Dim RutaLabel As System.Windows.Forms.Label
+        Dim NombreArchivoLabel As System.Windows.Forms.Label
+        Dim ExtensionArchivoLabel As System.Windows.Forms.Label
+        Dim ContenidoArchivoLabel As System.Windows.Forms.Label
+        Dim PlantillaIDLabel2 As System.Windows.Forms.Label
+        Dim ComponenteIDLabel3 As System.Windows.Forms.Label
+        Dim PorTablaLabel As System.Windows.Forms.Label
+        Dim ContenidoLabel2 As System.Windows.Forms.Label
+        Dim RutaLabel1 As System.Windows.Forms.Label
+        Dim NombreArchivoLabel1 As System.Windows.Forms.Label
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmReplace))
         Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle9 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle10 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle11 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmReplace))
+        Dim DataGridViewCellStyle12 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle14 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle13 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle15 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle16 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle17 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle18 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle19 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle20 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle21 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle22 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle23 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle24 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle25 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle26 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle27 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle28 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle29 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle30 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle31 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle32 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle33 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle34 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle35 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle36 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle37 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle38 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle39 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle40 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle41 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle42 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle43 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle44 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim NombreTablaLabel3 As System.Windows.Forms.Label
         Me.SP_RequerimientosPlantillas_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView = New System.Windows.Forms.DataGridView()
         Me.DataGridViewTextBoxColumn5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.SP_RequerimientosPlantillas_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDBindingSource = New System.Windows.Forms.BindingSource(Me.components)
@@ -364,10 +423,56 @@ Partial Class FrmReplace
         Me.BtnConfirmarValorRequerimiento = New System.Windows.Forms.Button()
         Me.Label16 = New System.Windows.Forms.Label()
         Me.Lbl_Requerimiento = New System.Windows.Forms.Label()
+        Me.TabPage6 = New System.Windows.Forms.TabPage()
+        Me.Panel6 = New System.Windows.Forms.Panel()
+        Me.ImagenPictureBox = New System.Windows.Forms.PictureBox()
+        Me.SP_PlantillasImagenes_BUSCA_SEGUN_PlantillaIDBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.DataSetReportes = New GeneradorCod.DataSetReportes()
+        Me.CodigoParaReporte = New System.Windows.Forms.TextBox()
+        Me.ReferenciaTextBox1 = New System.Windows.Forms.TextBox()
+        Me.ContadorImagenes = New System.Windows.Forms.TextBox()
+        Me.PlantillaIDCargaImagenes = New System.Windows.Forms.TextBox()
+        Me.SP_PlantillasImagenes_BUSCA_SEGUN_PlantillaIDDataGridView = New System.Windows.Forms.DataGridView()
+        Me.DataGridViewTextBoxColumn51 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.TabPage7 = New System.Windows.Forms.TabPage()
+        Me.NombreArchivoCrear = New System.Windows.Forms.TextBox()
+        Me.SP_ProyectoCarpetasArchivos_BUSQUEDA_SEGUN_PARAMETRO_ProyectoIDBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.RutaCrear = New System.Windows.Forms.TextBox()
+        Me.ContenidoCrear = New System.Windows.Forms.TextBox()
+        Me.SP_ProyectoCarpetasArchivos_BUSQUEDA_SEGUN_PARAMETRO_ProyectoIDDataGridView = New System.Windows.Forms.DataGridView()
+        Me.DataGridViewTextBoxColumn53 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn52 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Panel8 = New System.Windows.Forms.Panel()
+        Me.BtnReiniciarCreacion = New System.Windows.Forms.Button()
+        Me.PorTablaCheckBox = New System.Windows.Forms.CheckBox()
+        Me.SP_PlantillasCreacionDeArchivos_BUSQUEDA_SEGUN_PARAMETRO_ComponenteIDBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.PlantillaIDTextBox2 = New System.Windows.Forms.TextBox()
+        Me.NombreRequerimientoFuncionalTextBox = New System.Windows.Forms.TextBox()
+        Me.SP_TecnologiasConCreacion_BUSQUEDA_SEGUN_IdBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.ComponenteIDTextBox2 = New System.Windows.Forms.TextBox()
+        Me.BtnCargaRuta = New System.Windows.Forms.Button()
+        Me.PlantillasCreacionDeArchivosIdTextBox = New System.Windows.Forms.TextBox()
+        Me.RutaUbicacion = New System.Windows.Forms.TextBox()
+        Me.Label15 = New System.Windows.Forms.Label()
+        Me.RutaTextBox = New System.Windows.Forms.TextBox()
+        Me.ContenidoArchivoTextBox = New System.Windows.Forms.TextBox()
+        Me.NombreArchivoTextBox = New System.Windows.Forms.TextBox()
+        Me.ExtensionArchivoTextBox = New System.Windows.Forms.TextBox()
+        Me.Panel7 = New System.Windows.Forms.Panel()
+        Me.ChkGenerarCarpetasYArchivos = New System.Windows.Forms.CheckBox()
+        Me.AdmiteCreacionCheckBox = New System.Windows.Forms.CheckBox()
+        Me.ChkDocumentoTecnico = New System.Windows.Forms.CheckBox()
+        Me.BtnCreacion = New System.Windows.Forms.Button()
+        Me.RequerimientoTextBox3 = New System.Windows.Forms.TextBox()
+        Me.ValorRequerimientoTextBox4 = New System.Windows.Forms.TextBox()
+        Me.TecnologiaIDTextBox1 = New System.Windows.Forms.TextBox()
+        Me.SP_PlantillasCreacionDeArchivos_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.BtnExplorar = New System.Windows.Forms.Button()
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
         Me.BtnRemplazar2 = New System.Windows.Forms.Button()
         Me.BtnRequerimientos = New System.Windows.Forms.Button()
+        Me.IconButton1 = New FontAwesome.Sharp.IconButton()
+        Me.BtnCodigoRuta = New System.Windows.Forms.Button()
         Me.Timer_CargueValorRequerimientos = New System.Windows.Forms.Timer(Me.components)
         Me.Timer_EdicionValorRequerimiento = New System.Windows.Forms.Timer(Me.components)
         Me.SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoIDTableAdapter = New GeneradorCod.DataSetTablasYCamposTableAdapters.SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoIDTableAdapter()
@@ -444,7 +549,21 @@ Partial Class FrmReplace
         Me.SP_ComponentesContenidoProvisional_Base_TrucateTableAdapter = New GeneradorCod.DataSetTablasYCamposTableAdapters.SP_ComponentesContenidoProvisional_Base_TrucateTableAdapter()
         Me.SP_ComponentesContenidoProvisional_TruncateBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.SP_ComponentesContenidoProvisional_TruncateTableAdapter = New GeneradorCod.DataSetTablasYCamposTableAdapters.SP_ComponentesContenidoProvisional_TruncateTableAdapter()
-        Me.IconButton1 = New FontAwesome.Sharp.IconButton()
+        Me.SP_PlantillasImagenes_BUSCA_SEGUN_PlantillaIDTableAdapter = New GeneradorCod.DataSetReportesTableAdapters.SP_PlantillasImagenes_BUSCA_SEGUN_PlantillaIDTableAdapter()
+        Me.TableAdapterManager2 = New GeneradorCod.DataSetReportesTableAdapters.TableAdapterManager()
+        Me.SP_ProyectoDocumentoTecnico_EDICION_INSERTARBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.SP_ProyectoDocumentoTecnico_EDICION_INSERTARTableAdapter = New GeneradorCod.DataSetReportesTableAdapters.SP_ProyectoDocumentoTecnico_EDICION_INSERTARTableAdapter()
+        Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
+        Me.FolderBrowserDialog1 = New System.Windows.Forms.FolderBrowserDialog()
+        Me.SP_TecnologiasConCreacion_BUSQUEDA_SEGUN_IdTableAdapter = New GeneradorCod.DataSetAdministracionTableAdapters.SP_TecnologiasConCreacion_BUSQUEDA_SEGUN_IdTableAdapter()
+        Me.SP_PlantillasCreacionDeArchivos_BUSQUEDA_SEGUN_PARAMETRO_ComponenteIDTableAdapter = New GeneradorCod.DataSetAdministracionTableAdapters.SP_PlantillasCreacionDeArchivos_BUSQUEDA_SEGUN_PARAMETRO_ComponenteIDTableAdapter()
+        Me.SP_PlantillasCreacionDeArchivos_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDTableAdapter = New GeneradorCod.DataSetAdministracionTableAdapters.SP_PlantillasCreacionDeArchivos_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDTableAdapter()
+        Me.SP_ProyectoCarpetasArchivos_EDICION_INSERTARBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.SP_ProyectoCarpetasArchivos_EDICION_INSERTARTableAdapter = New GeneradorCod.DataSetAdministracionTableAdapters.SP_ProyectoCarpetasArchivos_EDICION_INSERTARTableAdapter()
+        Me.SP_ProyectoCarpetasArchivos_EDICION_ELIMINAR_SEGUN_ProyectoIDBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.SP_ProyectoCarpetasArchivos_EDICION_ELIMINAR_SEGUN_ProyectoIDTableAdapter = New GeneradorCod.DataSetAdministracionTableAdapters.SP_ProyectoCarpetasArchivos_EDICION_ELIMINAR_SEGUN_ProyectoIDTableAdapter()
+        Me.SP_ProyectoCarpetasArchivos_BUSQUEDA_SEGUN_PARAMETRO_ProyectoIDTableAdapter = New GeneradorCod.DataSetAdministracionTableAdapters.SP_ProyectoCarpetasArchivos_BUSQUEDA_SEGUN_PARAMETRO_ProyectoIDTableAdapter()
+        Me.NombreTablaTextBox3 = New System.Windows.Forms.TextBox()
         ComponenteIDLabel = New System.Windows.Forms.Label()
         PlantillaIDLabel = New System.Windows.Forms.Label()
         TecnologiaIDLabel = New System.Windows.Forms.Label()
@@ -513,6 +632,23 @@ Partial Class FrmReplace
         ContenidoLabel1 = New System.Windows.Forms.Label()
         BaseLabel = New System.Windows.Forms.Label()
         ComponenteIDLabel2 = New System.Windows.Forms.Label()
+        ReferenciaLabel1 = New System.Windows.Forms.Label()
+        TecnologiaIDLabel2 = New System.Windows.Forms.Label()
+        ValorRequerimientoLabel3 = New System.Windows.Forms.Label()
+        RequerimientoLabel5 = New System.Windows.Forms.Label()
+        NombreRequerimientoFuncionalLabel = New System.Windows.Forms.Label()
+        PlantillasCreacionDeArchivosIdLabel = New System.Windows.Forms.Label()
+        RutaLabel = New System.Windows.Forms.Label()
+        NombreArchivoLabel = New System.Windows.Forms.Label()
+        ExtensionArchivoLabel = New System.Windows.Forms.Label()
+        ContenidoArchivoLabel = New System.Windows.Forms.Label()
+        PlantillaIDLabel2 = New System.Windows.Forms.Label()
+        ComponenteIDLabel3 = New System.Windows.Forms.Label()
+        PorTablaLabel = New System.Windows.Forms.Label()
+        ContenidoLabel2 = New System.Windows.Forms.Label()
+        RutaLabel1 = New System.Windows.Forms.Label()
+        NombreArchivoLabel1 = New System.Windows.Forms.Label()
+        NombreTablaLabel3 = New System.Windows.Forms.Label()
         CType(Me.SP_RequerimientosPlantillas_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.SP_RequerimientosPlantillas_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DataSetAdministracion, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -579,6 +715,20 @@ Partial Class FrmReplace
         Me.TabPage4.SuspendLayout()
         Me.TabPage5.SuspendLayout()
         Me.Panel_Requerimiento.SuspendLayout()
+        Me.TabPage6.SuspendLayout()
+        Me.Panel6.SuspendLayout()
+        CType(Me.ImagenPictureBox, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.SP_PlantillasImagenes_BUSCA_SEGUN_PlantillaIDBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DataSetReportes, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.SP_PlantillasImagenes_BUSCA_SEGUN_PlantillaIDDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.TabPage7.SuspendLayout()
+        CType(Me.SP_ProyectoCarpetasArchivos_BUSQUEDA_SEGUN_PARAMETRO_ProyectoIDBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.SP_ProyectoCarpetasArchivos_BUSQUEDA_SEGUN_PARAMETRO_ProyectoIDDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel8.SuspendLayout()
+        CType(Me.SP_PlantillasCreacionDeArchivos_BUSQUEDA_SEGUN_PARAMETRO_ComponenteIDBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.SP_TecnologiasConCreacion_BUSQUEDA_SEGUN_IdBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel7.SuspendLayout()
+        CType(Me.SP_PlantillasCreacionDeArchivos_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.SP_RegistroValorRequerimientos_EDICION_INSERTARBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.SP_ELIMINA_RegistroValorRequerimientos_SegunIDBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.SP_TablasDeProyecto_EDICION_ACTUALIZARBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -602,6 +752,9 @@ Partial Class FrmReplace
         CType(Me.SP_ComponentesContenidoProvisional_Base_EDICION_ACTUALIZARBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.SP_ComponentesContenidoProvisional_Base_TrucateBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.SP_ComponentesContenidoProvisional_TruncateBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.SP_ProyectoDocumentoTecnico_EDICION_INSERTARBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.SP_ProyectoCarpetasArchivos_EDICION_INSERTARBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.SP_ProyectoCarpetasArchivos_EDICION_ELIMINAR_SEGUN_ProyectoIDBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'ComponenteIDLabel
@@ -1217,13 +1370,173 @@ Partial Class FrmReplace
         ComponenteIDLabel2.TabIndex = 13
         ComponenteIDLabel2.Text = "Componente ID:"
         '
+        'ReferenciaLabel1
+        '
+        ReferenciaLabel1.AutoSize = True
+        ReferenciaLabel1.Location = New System.Drawing.Point(180, 276)
+        ReferenciaLabel1.Name = "ReferenciaLabel1"
+        ReferenciaLabel1.Size = New System.Drawing.Size(62, 13)
+        ReferenciaLabel1.TabIndex = 4
+        ReferenciaLabel1.Text = "Referencia:"
+        '
+        'TecnologiaIDLabel2
+        '
+        TecnologiaIDLabel2.AutoSize = True
+        TecnologiaIDLabel2.Location = New System.Drawing.Point(127, 473)
+        TecnologiaIDLabel2.Name = "TecnologiaIDLabel2"
+        TecnologiaIDLabel2.Size = New System.Drawing.Size(77, 13)
+        TecnologiaIDLabel2.TabIndex = 193
+        TecnologiaIDLabel2.Text = "Tecnologia ID:"
+        '
+        'ValorRequerimientoLabel3
+        '
+        ValorRequerimientoLabel3.AutoSize = True
+        ValorRequerimientoLabel3.Location = New System.Drawing.Point(99, 521)
+        ValorRequerimientoLabel3.Name = "ValorRequerimientoLabel3"
+        ValorRequerimientoLabel3.Size = New System.Drawing.Size(105, 13)
+        ValorRequerimientoLabel3.TabIndex = 195
+        ValorRequerimientoLabel3.Text = "Valor Requerimiento:"
+        '
+        'RequerimientoLabel5
+        '
+        RequerimientoLabel5.AutoSize = True
+        RequerimientoLabel5.Location = New System.Drawing.Point(126, 499)
+        RequerimientoLabel5.Name = "RequerimientoLabel5"
+        RequerimientoLabel5.Size = New System.Drawing.Size(78, 13)
+        RequerimientoLabel5.TabIndex = 196
+        RequerimientoLabel5.Text = "Requerimiento:"
+        '
+        'NombreRequerimientoFuncionalLabel
+        '
+        NombreRequerimientoFuncionalLabel.AutoSize = True
+        NombreRequerimientoFuncionalLabel.Location = New System.Drawing.Point(10, 54)
+        NombreRequerimientoFuncionalLabel.Name = "NombreRequerimientoFuncionalLabel"
+        NombreRequerimientoFuncionalLabel.Size = New System.Drawing.Size(167, 13)
+        NombreRequerimientoFuncionalLabel.TabIndex = 197
+        NombreRequerimientoFuncionalLabel.Text = "Nombre Requerimiento Funcional:"
+        '
+        'PlantillasCreacionDeArchivosIdLabel
+        '
+        PlantillasCreacionDeArchivosIdLabel.AutoSize = True
+        PlantillasCreacionDeArchivosIdLabel.Location = New System.Drawing.Point(164, 144)
+        PlantillasCreacionDeArchivosIdLabel.Name = "PlantillasCreacionDeArchivosIdLabel"
+        PlantillasCreacionDeArchivosIdLabel.Size = New System.Drawing.Size(169, 13)
+        PlantillasCreacionDeArchivosIdLabel.TabIndex = 204
+        PlantillasCreacionDeArchivosIdLabel.Text = "Plantillas Creacion De Archivos Id:"
+        '
+        'RutaLabel
+        '
+        RutaLabel.AutoSize = True
+        RutaLabel.Location = New System.Drawing.Point(163, 166)
+        RutaLabel.Name = "RutaLabel"
+        RutaLabel.Size = New System.Drawing.Size(33, 13)
+        RutaLabel.TabIndex = 206
+        RutaLabel.Text = "Ruta:"
+        '
+        'NombreArchivoLabel
+        '
+        NombreArchivoLabel.AutoSize = True
+        NombreArchivoLabel.Location = New System.Drawing.Point(163, 192)
+        NombreArchivoLabel.Name = "NombreArchivoLabel"
+        NombreArchivoLabel.Size = New System.Drawing.Size(86, 13)
+        NombreArchivoLabel.TabIndex = 208
+        NombreArchivoLabel.Text = "Nombre Archivo:"
+        '
+        'ExtensionArchivoLabel
+        '
+        ExtensionArchivoLabel.AutoSize = True
+        ExtensionArchivoLabel.Location = New System.Drawing.Point(163, 218)
+        ExtensionArchivoLabel.Name = "ExtensionArchivoLabel"
+        ExtensionArchivoLabel.Size = New System.Drawing.Size(95, 13)
+        ExtensionArchivoLabel.TabIndex = 210
+        ExtensionArchivoLabel.Text = "Extension Archivo:"
+        '
+        'ContenidoArchivoLabel
+        '
+        ContenidoArchivoLabel.AutoSize = True
+        ContenidoArchivoLabel.Location = New System.Drawing.Point(163, 244)
+        ContenidoArchivoLabel.Name = "ContenidoArchivoLabel"
+        ContenidoArchivoLabel.Size = New System.Drawing.Size(97, 13)
+        ContenidoArchivoLabel.TabIndex = 212
+        ContenidoArchivoLabel.Text = "Contenido Archivo:"
+        '
+        'PlantillaIDLabel2
+        '
+        PlantillaIDLabel2.AutoSize = True
+        PlantillaIDLabel2.Location = New System.Drawing.Point(8, 144)
+        PlantillaIDLabel2.Name = "PlantillaIDLabel2"
+        PlantillaIDLabel2.Size = New System.Drawing.Size(60, 13)
+        PlantillaIDLabel2.TabIndex = 214
+        PlantillaIDLabel2.Text = "Plantilla ID:"
+        '
+        'ComponenteIDLabel3
+        '
+        ComponenteIDLabel3.AutoSize = True
+        ComponenteIDLabel3.Location = New System.Drawing.Point(8, 167)
+        ComponenteIDLabel3.Name = "ComponenteIDLabel3"
+        ComponenteIDLabel3.Size = New System.Drawing.Size(84, 13)
+        ComponenteIDLabel3.TabIndex = 216
+        ComponenteIDLabel3.Text = "Componente ID:"
+        '
+        'PorTablaLabel
+        '
+        PorTablaLabel.AutoSize = True
+        PorTablaLabel.Location = New System.Drawing.Point(164, 272)
+        PorTablaLabel.Name = "PorTablaLabel"
+        PorTablaLabel.Size = New System.Drawing.Size(56, 13)
+        PorTablaLabel.TabIndex = 218
+        PorTablaLabel.Text = "Por Tabla:"
+        '
+        'ContenidoLabel2
+        '
+        ContenidoLabel2.AutoSize = True
+        ContenidoLabel2.Location = New System.Drawing.Point(6, 366)
+        ContenidoLabel2.Name = "ContenidoLabel2"
+        ContenidoLabel2.Size = New System.Drawing.Size(58, 13)
+        ContenidoLabel2.TabIndex = 200
+        ContenidoLabel2.Text = "Contenido:"
+        '
+        'RutaLabel1
+        '
+        RutaLabel1.AutoSize = True
+        RutaLabel1.Location = New System.Drawing.Point(9, 393)
+        RutaLabel1.Name = "RutaLabel1"
+        RutaLabel1.Size = New System.Drawing.Size(33, 13)
+        RutaLabel1.TabIndex = 201
+        RutaLabel1.Text = "Ruta:"
+        '
+        'NombreArchivoLabel1
+        '
+        NombreArchivoLabel1.AutoSize = True
+        NombreArchivoLabel1.Location = New System.Drawing.Point(154, 393)
+        NombreArchivoLabel1.Name = "NombreArchivoLabel1"
+        NombreArchivoLabel1.Size = New System.Drawing.Size(86, 13)
+        NombreArchivoLabel1.TabIndex = 202
+        NombreArchivoLabel1.Text = "Nombre Archivo:"
+        '
         'SP_RequerimientosPlantillas_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView
         '
         Me.SP_RequerimientosPlantillas_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView.AllowUserToAddRows = False
         Me.SP_RequerimientosPlantillas_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView.AutoGenerateColumns = False
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.SP_RequerimientosPlantillas_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
         Me.SP_RequerimientosPlantillas_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.SP_RequerimientosPlantillas_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn5})
         Me.SP_RequerimientosPlantillas_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView.DataSource = Me.SP_RequerimientosPlantillas_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDBindingSource
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.SP_RequerimientosPlantillas_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView.DefaultCellStyle = DataGridViewCellStyle2
         Me.SP_RequerimientosPlantillas_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView.Location = New System.Drawing.Point(362, 102)
         Me.SP_RequerimientosPlantillas_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView.Name = "SP_RequerimientosPlantillas_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView"
         Me.SP_RequerimientosPlantillas_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView.RowHeadersVisible = False
@@ -1251,10 +1564,26 @@ Partial Class FrmReplace
         '
         Me.SP_Plantillas_BUSQUEDA_SEGUN_PARAMETRO_TecnologiaDataGridView.AllowUserToAddRows = False
         Me.SP_Plantillas_BUSQUEDA_SEGUN_PARAMETRO_TecnologiaDataGridView.AutoGenerateColumns = False
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.SP_Plantillas_BUSQUEDA_SEGUN_PARAMETRO_TecnologiaDataGridView.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle3
         Me.SP_Plantillas_BUSQUEDA_SEGUN_PARAMETRO_TecnologiaDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.SP_Plantillas_BUSQUEDA_SEGUN_PARAMETRO_TecnologiaDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn6})
         Me.SP_Plantillas_BUSQUEDA_SEGUN_PARAMETRO_TecnologiaDataGridView.ContextMenuStrip = Me.CM_Plantilla
         Me.SP_Plantillas_BUSQUEDA_SEGUN_PARAMETRO_TecnologiaDataGridView.DataSource = Me.SP_Plantillas_BUSQUEDA_SEGUN_PARAMETRO_TecnologiaBindingSource
+        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle4.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.SP_Plantillas_BUSQUEDA_SEGUN_PARAMETRO_TecnologiaDataGridView.DefaultCellStyle = DataGridViewCellStyle4
         Me.SP_Plantillas_BUSQUEDA_SEGUN_PARAMETRO_TecnologiaDataGridView.Dock = System.Windows.Forms.DockStyle.Right
         Me.SP_Plantillas_BUSQUEDA_SEGUN_PARAMETRO_TecnologiaDataGridView.Location = New System.Drawing.Point(234, 3)
         Me.SP_Plantillas_BUSQUEDA_SEGUN_PARAMETRO_TecnologiaDataGridView.Name = "SP_Plantillas_BUSQUEDA_SEGUN_PARAMETRO_TecnologiaDataGridView"
@@ -1303,10 +1632,26 @@ Partial Class FrmReplace
         '
         Me.TecnologiasDataGridView.AllowUserToAddRows = False
         Me.TecnologiasDataGridView.AutoGenerateColumns = False
+        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle5.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.TecnologiasDataGridView.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle5
         Me.TecnologiasDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.TecnologiasDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn7})
         Me.TecnologiasDataGridView.ContextMenuStrip = Me.CM2
         Me.TecnologiasDataGridView.DataSource = Me.TecnologiasBindingSource
+        DataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle7.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.TecnologiasDataGridView.DefaultCellStyle = DataGridViewCellStyle7
         Me.TecnologiasDataGridView.Dock = System.Windows.Forms.DockStyle.Left
         Me.TecnologiasDataGridView.Location = New System.Drawing.Point(3, 3)
         Me.TecnologiasDataGridView.Margin = New System.Windows.Forms.Padding(4)
@@ -1319,8 +1664,8 @@ Partial Class FrmReplace
         'DataGridViewTextBoxColumn7
         '
         Me.DataGridViewTextBoxColumn7.DataPropertyName = "NombreTecnologia"
-        DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.DataGridViewTextBoxColumn7.DefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle6.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.DataGridViewTextBoxColumn7.DefaultCellStyle = DataGridViewCellStyle6
         Me.DataGridViewTextBoxColumn7.HeaderText = "Nombre Tecnologia"
         Me.DataGridViewTextBoxColumn7.Name = "DataGridViewTextBoxColumn7"
         Me.DataGridViewTextBoxColumn7.Width = 220
@@ -1357,9 +1702,25 @@ Partial Class FrmReplace
         '
         Me.SP_Componentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView.AllowUserToAddRows = False
         Me.SP_Componentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView.AutoGenerateColumns = False
+        DataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle8.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.SP_Componentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle8
         Me.SP_Componentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.SP_Componentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn8})
         Me.SP_Componentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView.DataSource = Me.SP_Componentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDBindingSource
+        DataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle9.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.SP_Componentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView.DefaultCellStyle = DataGridViewCellStyle9
         Me.SP_Componentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView.Location = New System.Drawing.Point(1054, 386)
         Me.SP_Componentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView.Name = "SP_Componentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView"
         Me.SP_Componentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView.RowHeadersVisible = False
@@ -1457,10 +1818,26 @@ Partial Class FrmReplace
         '
         Me.SP_CARGA_TECNOLOGIAS_APLICADAS_A_PROYECTODataGridView.AllowUserToAddRows = False
         Me.SP_CARGA_TECNOLOGIAS_APLICADAS_A_PROYECTODataGridView.AutoGenerateColumns = False
+        DataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle10.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.SP_CARGA_TECNOLOGIAS_APLICADAS_A_PROYECTODataGridView.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle10
         Me.SP_CARGA_TECNOLOGIAS_APLICADAS_A_PROYECTODataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.SP_CARGA_TECNOLOGIAS_APLICADAS_A_PROYECTODataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn12, Me.DataGridViewTextBoxColumn13})
         Me.SP_CARGA_TECNOLOGIAS_APLICADAS_A_PROYECTODataGridView.ContextMenuStrip = Me.CM_EliminandoTecnologias
         Me.SP_CARGA_TECNOLOGIAS_APLICADAS_A_PROYECTODataGridView.DataSource = Me.SP_CARGA_TECNOLOGIAS_APLICADAS_A_PROYECTOBindingSource
+        DataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle11.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.SP_CARGA_TECNOLOGIAS_APLICADAS_A_PROYECTODataGridView.DefaultCellStyle = DataGridViewCellStyle11
         Me.SP_CARGA_TECNOLOGIAS_APLICADAS_A_PROYECTODataGridView.Dock = System.Windows.Forms.DockStyle.Fill
         Me.SP_CARGA_TECNOLOGIAS_APLICADAS_A_PROYECTODataGridView.Location = New System.Drawing.Point(3, 3)
         Me.SP_CARGA_TECNOLOGIAS_APLICADAS_A_PROYECTODataGridView.Name = "SP_CARGA_TECNOLOGIAS_APLICADAS_A_PROYECTODataGridView"
@@ -1667,9 +2044,25 @@ Partial Class FrmReplace
         '
         Me.ProyectosDataGridView.AllowUserToAddRows = False
         Me.ProyectosDataGridView.AutoGenerateColumns = False
+        DataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle12.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle12.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.ProyectosDataGridView.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle12
         Me.ProyectosDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.ProyectosDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column1, Me.DataGridViewTextBoxColumn10})
         Me.ProyectosDataGridView.DataSource = Me.ProyectosBindingSource
+        DataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle14.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle14.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle14.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.ProyectosDataGridView.DefaultCellStyle = DataGridViewCellStyle14
         Me.ProyectosDataGridView.Location = New System.Drawing.Point(8, 208)
         Me.ProyectosDataGridView.Name = "ProyectosDataGridView"
         Me.ProyectosDataGridView.RowHeadersVisible = False
@@ -1680,10 +2073,10 @@ Partial Class FrmReplace
         'Column1
         '
         Me.Column1.DataPropertyName = "ProyectoID"
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black
-        Me.Column1.DefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle13.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle13.ForeColor = System.Drawing.Color.Black
+        Me.Column1.DefaultCellStyle = DataGridViewCellStyle13
         Me.Column1.HeaderText = "Cod"
         Me.Column1.Name = "Column1"
         Me.Column1.ReadOnly = True
@@ -1736,10 +2129,26 @@ Partial Class FrmReplace
         '
         Me.SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoIDDataGridView.AllowUserToAddRows = False
         Me.SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoIDDataGridView.AutoGenerateColumns = False
+        DataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle15.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle15.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle15.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle15.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle15.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoIDDataGridView.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle15
         Me.SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoIDDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoIDDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn14})
         Me.SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoIDDataGridView.ContextMenuStrip = Me.CM_RelacionesTablas
         Me.SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoIDDataGridView.DataSource = Me.SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoIDBindingSource
+        DataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle16.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle16.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle16.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle16.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle16.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle16.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoIDDataGridView.DefaultCellStyle = DataGridViewCellStyle16
         Me.SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoIDDataGridView.Location = New System.Drawing.Point(6, 103)
         Me.SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoIDDataGridView.Name = "SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoIDDataGridView"
         Me.SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoIDDataGridView.RowHeadersVisible = False
@@ -1814,9 +2223,25 @@ Partial Class FrmReplace
         '
         Me.SP_RegistroValorRequerimientos_SEGUN_ProyectoIDDataGridView.AllowUserToAddRows = False
         Me.SP_RegistroValorRequerimientos_SEGUN_ProyectoIDDataGridView.AutoGenerateColumns = False
+        DataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle17.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle17.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle17.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle17.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle17.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.SP_RegistroValorRequerimientos_SEGUN_ProyectoIDDataGridView.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle17
         Me.SP_RegistroValorRequerimientos_SEGUN_ProyectoIDDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.SP_RegistroValorRequerimientos_SEGUN_ProyectoIDDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn3, Me.DataGridViewTextBoxColumn4})
         Me.SP_RegistroValorRequerimientos_SEGUN_ProyectoIDDataGridView.DataSource = Me.SP_RegistroValorRequerimientos_SEGUN_ProyectoIDBindingSource
+        DataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle18.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle18.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle18.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle18.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle18.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.SP_RegistroValorRequerimientos_SEGUN_ProyectoIDDataGridView.DefaultCellStyle = DataGridViewCellStyle18
         Me.SP_RegistroValorRequerimientos_SEGUN_ProyectoIDDataGridView.Location = New System.Drawing.Point(454, 498)
         Me.SP_RegistroValorRequerimientos_SEGUN_ProyectoIDDataGridView.Name = "SP_RegistroValorRequerimientos_SEGUN_ProyectoIDDataGridView"
         Me.SP_RegistroValorRequerimientos_SEGUN_ProyectoIDDataGridView.RowHeadersVisible = False
@@ -1846,7 +2271,7 @@ Partial Class FrmReplace
         'BtnAmpliar
         '
         Me.BtnAmpliar.BackColor = System.Drawing.Color.White
-        Me.BtnAmpliar.Location = New System.Drawing.Point(3, 270)
+        Me.BtnAmpliar.Location = New System.Drawing.Point(3, 275)
         Me.BtnAmpliar.Name = "BtnAmpliar"
         Me.BtnAmpliar.Size = New System.Drawing.Size(33, 44)
         Me.BtnAmpliar.TabIndex = 132
@@ -2077,7 +2502,7 @@ Partial Class FrmReplace
         '
         Me.BtnLimpiar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.BtnLimpiar.Image = CType(resources.GetObject("BtnLimpiar.Image"), System.Drawing.Image)
-        Me.BtnLimpiar.Location = New System.Drawing.Point(4, 57)
+        Me.BtnLimpiar.Location = New System.Drawing.Point(4, 58)
         Me.BtnLimpiar.Name = "BtnLimpiar"
         Me.BtnLimpiar.Size = New System.Drawing.Size(33, 43)
         Me.BtnLimpiar.TabIndex = 172
@@ -2089,7 +2514,7 @@ Partial Class FrmReplace
         '
         Me.BtnCopiar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.BtnCopiar.Image = CType(resources.GetObject("BtnCopiar.Image"), System.Drawing.Image)
-        Me.BtnCopiar.Location = New System.Drawing.Point(3, 106)
+        Me.BtnCopiar.Location = New System.Drawing.Point(3, 108)
         Me.BtnCopiar.Name = "BtnCopiar"
         Me.BtnCopiar.Size = New System.Drawing.Size(34, 43)
         Me.BtnCopiar.TabIndex = 171
@@ -2101,9 +2526,25 @@ Partial Class FrmReplace
         '
         Me.SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaIDDataGridView.AllowUserToAddRows = False
         Me.SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaIDDataGridView.AutoGenerateColumns = False
+        DataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle19.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle19.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle19.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle19.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle19.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle19.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaIDDataGridView.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle19
         Me.SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaIDDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaIDDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn9})
         Me.SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaIDDataGridView.DataSource = Me.SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaIDBindingSource
+        DataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle20.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle20.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle20.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle20.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle20.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle20.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaIDDataGridView.DefaultCellStyle = DataGridViewCellStyle20
         Me.SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaIDDataGridView.Location = New System.Drawing.Point(6, 348)
         Me.SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaIDDataGridView.Name = "SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaIDDataGridView"
         Me.SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaIDDataGridView.RowHeadersVisible = False
@@ -2346,14 +2787,16 @@ Partial Class FrmReplace
         Me.PanelConf.Controls.Add(RequerimientoLabel1)
         Me.PanelConf.Controls.Add(Me.NombreComponenteTextBox)
         Me.PanelConf.Controls.Add(NombreComponenteLabel)
-        Me.PanelConf.Location = New System.Drawing.Point(577, 8)
+        Me.PanelConf.Location = New System.Drawing.Point(579, 8)
         Me.PanelConf.Name = "PanelConf"
-        Me.PanelConf.Size = New System.Drawing.Size(87, 11)
+        Me.PanelConf.Size = New System.Drawing.Size(72, 14)
         Me.PanelConf.TabIndex = 159
         '
         'Panel4
         '
         Me.Panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel4.Controls.Add(NombreTablaLabel3)
+        Me.Panel4.Controls.Add(Me.NombreTablaTextBox3)
         Me.Panel4.Controls.Add(ComponenteIDLabel2)
         Me.Panel4.Controls.Add(Me.ComponenteEvaluaSiTieneBase)
         Me.Panel4.Controls.Add(BaseLabel)
@@ -2428,9 +2871,25 @@ Partial Class FrmReplace
         Me.SP_ComponentesContenidoProvisional_SEGUN_TABLA_REPLACEDataGridView.AllowUserToAddRows = False
         Me.SP_ComponentesContenidoProvisional_SEGUN_TABLA_REPLACEDataGridView.AllowUserToDeleteRows = False
         Me.SP_ComponentesContenidoProvisional_SEGUN_TABLA_REPLACEDataGridView.AutoGenerateColumns = False
+        DataGridViewCellStyle21.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle21.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle21.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle21.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle21.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle21.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle21.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.SP_ComponentesContenidoProvisional_SEGUN_TABLA_REPLACEDataGridView.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle21
         Me.SP_ComponentesContenidoProvisional_SEGUN_TABLA_REPLACEDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.SP_ComponentesContenidoProvisional_SEGUN_TABLA_REPLACEDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn44, Me.DataGridViewTextBoxColumn45, Me.DataGridViewTextBoxColumn46, Me.DataGridViewCheckBoxColumn3, Me.DataGridViewTextBoxColumn47, Me.DataGridViewTextBoxColumn48})
         Me.SP_ComponentesContenidoProvisional_SEGUN_TABLA_REPLACEDataGridView.DataSource = Me.SP_ComponentesContenidoProvisional_SEGUN_TABLA_REPLACEBindingSource
+        DataGridViewCellStyle22.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle22.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle22.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle22.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle22.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle22.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle22.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.SP_ComponentesContenidoProvisional_SEGUN_TABLA_REPLACEDataGridView.DefaultCellStyle = DataGridViewCellStyle22
         Me.SP_ComponentesContenidoProvisional_SEGUN_TABLA_REPLACEDataGridView.Location = New System.Drawing.Point(476, 3)
         Me.SP_ComponentesContenidoProvisional_SEGUN_TABLA_REPLACEDataGridView.Name = "SP_ComponentesContenidoProvisional_SEGUN_TABLA_REPLACEDataGridView"
         Me.SP_ComponentesContenidoProvisional_SEGUN_TABLA_REPLACEDataGridView.Size = New System.Drawing.Size(154, 85)
@@ -2491,9 +2950,25 @@ Partial Class FrmReplace
         '
         Me.SP_ComponentesContenidoProvisional_SEGUN_TABLA_BASEDataGridView.AllowUserToAddRows = False
         Me.SP_ComponentesContenidoProvisional_SEGUN_TABLA_BASEDataGridView.AutoGenerateColumns = False
+        DataGridViewCellStyle23.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle23.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle23.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle23.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle23.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle23.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle23.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.SP_ComponentesContenidoProvisional_SEGUN_TABLA_BASEDataGridView.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle23
         Me.SP_ComponentesContenidoProvisional_SEGUN_TABLA_BASEDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.SP_ComponentesContenidoProvisional_SEGUN_TABLA_BASEDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn39, Me.DataGridViewTextBoxColumn40, Me.DataGridViewTextBoxColumn41, Me.DataGridViewCheckBoxColumn2, Me.DataGridViewTextBoxColumn42, Me.DataGridViewTextBoxColumn43})
         Me.SP_ComponentesContenidoProvisional_SEGUN_TABLA_BASEDataGridView.DataSource = Me.SP_ComponentesContenidoProvisional_SEGUN_TABLA_BASEBindingSource
+        DataGridViewCellStyle24.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle24.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle24.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle24.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle24.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle24.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle24.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.SP_ComponentesContenidoProvisional_SEGUN_TABLA_BASEDataGridView.DefaultCellStyle = DataGridViewCellStyle24
         Me.SP_ComponentesContenidoProvisional_SEGUN_TABLA_BASEDataGridView.Location = New System.Drawing.Point(270, 3)
         Me.SP_ComponentesContenidoProvisional_SEGUN_TABLA_BASEDataGridView.Name = "SP_ComponentesContenidoProvisional_SEGUN_TABLA_BASEDataGridView"
         Me.SP_ComponentesContenidoProvisional_SEGUN_TABLA_BASEDataGridView.Size = New System.Drawing.Size(200, 85)
@@ -2553,9 +3028,25 @@ Partial Class FrmReplace
         '
         Me.SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoTablasContProvi.AllowUserToAddRows = False
         Me.SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoTablasContProvi.AutoGenerateColumns = False
+        DataGridViewCellStyle25.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle25.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle25.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle25.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle25.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle25.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle25.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoTablasContProvi.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle25
         Me.SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoTablasContProvi.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoTablasContProvi.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn36, Me.DataGridViewTextBoxColumn37, Me.DataGridViewTextBoxColumn38, Me.DataGridViewCheckBoxColumn1})
         Me.SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoTablasContProvi.DataSource = Me.SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID3BindingSource
+        DataGridViewCellStyle26.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle26.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle26.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle26.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle26.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle26.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle26.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoTablasContProvi.DefaultCellStyle = DataGridViewCellStyle26
         Me.SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoTablasContProvi.Location = New System.Drawing.Point(91, 3)
         Me.SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoTablasContProvi.Name = "SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoTablasContProvi"
         Me.SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoTablasContProvi.Size = New System.Drawing.Size(173, 111)
@@ -2645,9 +3136,25 @@ Partial Class FrmReplace
         '
         Me.TiposDataGridView.AllowUserToAddRows = False
         Me.TiposDataGridView.AutoGenerateColumns = False
+        DataGridViewCellStyle27.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle27.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle27.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle27.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle27.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle27.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle27.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.TiposDataGridView.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle27
         Me.TiposDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.TiposDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn34, Me.DataGridViewTextBoxColumn35})
         Me.TiposDataGridView.DataSource = Me.TiposBindingSource
+        DataGridViewCellStyle28.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle28.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle28.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle28.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle28.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle28.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle28.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.TiposDataGridView.DefaultCellStyle = DataGridViewCellStyle28
         Me.TiposDataGridView.Location = New System.Drawing.Point(858, 224)
         Me.TiposDataGridView.Name = "TiposDataGridView"
         Me.TiposDataGridView.RowHeadersVisible = False
@@ -2765,9 +3272,25 @@ Partial Class FrmReplace
         '
         Me.SP_RegistroRelacionesTablas_Vista_BUSQUEDA_SEGUN_PARAMETRO_TD1DataGridView.AllowUserToAddRows = False
         Me.SP_RegistroRelacionesTablas_Vista_BUSQUEDA_SEGUN_PARAMETRO_TD1DataGridView.AutoGenerateColumns = False
+        DataGridViewCellStyle29.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle29.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle29.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle29.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle29.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle29.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle29.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.SP_RegistroRelacionesTablas_Vista_BUSQUEDA_SEGUN_PARAMETRO_TD1DataGridView.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle29
         Me.SP_RegistroRelacionesTablas_Vista_BUSQUEDA_SEGUN_PARAMETRO_TD1DataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.SP_RegistroRelacionesTablas_Vista_BUSQUEDA_SEGUN_PARAMETRO_TD1DataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn25, Me.DataGridViewTextBoxColumn26, Me.DataGridViewTextBoxColumn27, Me.DataGridViewTextBoxColumn28, Me.DataGridViewTextBoxColumn29, Me.DataGridViewTextBoxColumn30, Me.DataGridViewTextBoxColumn31, Me.DataGridViewTextBoxColumn32, Me.DataGridViewTextBoxColumn33})
         Me.SP_RegistroRelacionesTablas_Vista_BUSQUEDA_SEGUN_PARAMETRO_TD1DataGridView.DataSource = Me.SP_RegistroRelacionesTablas_Vista_BUSQUEDA_SEGUN_PARAMETRO_TD1BindingSource
+        DataGridViewCellStyle30.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle30.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle30.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle30.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle30.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle30.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle30.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.SP_RegistroRelacionesTablas_Vista_BUSQUEDA_SEGUN_PARAMETRO_TD1DataGridView.DefaultCellStyle = DataGridViewCellStyle30
         Me.SP_RegistroRelacionesTablas_Vista_BUSQUEDA_SEGUN_PARAMETRO_TD1DataGridView.Location = New System.Drawing.Point(711, 360)
         Me.SP_RegistroRelacionesTablas_Vista_BUSQUEDA_SEGUN_PARAMETRO_TD1DataGridView.Name = "SP_RegistroRelacionesTablas_Vista_BUSQUEDA_SEGUN_PARAMETRO_TD1DataGridView"
         Me.SP_RegistroRelacionesTablas_Vista_BUSQUEDA_SEGUN_PARAMETRO_TD1DataGridView.RowHeadersVisible = False
@@ -2911,9 +3434,25 @@ Partial Class FrmReplace
         '
         Me.SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaID1DataGridView.AllowUserToAddRows = False
         Me.SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaID1DataGridView.AutoGenerateColumns = False
+        DataGridViewCellStyle31.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle31.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle31.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle31.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle31.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle31.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle31.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaID1DataGridView.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle31
         Me.SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaID1DataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaID1DataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn15, Me.DataGridViewTextBoxColumn16, Me.DataGridViewTextBoxColumn17, Me.DataGridViewTextBoxColumn18})
         Me.SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaID1DataGridView.DataSource = Me.SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaID1BindingSource
+        DataGridViewCellStyle32.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle32.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle32.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle32.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle32.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle32.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle32.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaID1DataGridView.DefaultCellStyle = DataGridViewCellStyle32
         Me.SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaID1DataGridView.Location = New System.Drawing.Point(608, 208)
         Me.SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaID1DataGridView.Name = "SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaID1DataGridView"
         Me.SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaID1DataGridView.RowHeadersVisible = False
@@ -2965,9 +3504,25 @@ Partial Class FrmReplace
         '
         Me.SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1DataGridView.AllowUserToAddRows = False
         Me.SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1DataGridView.AutoGenerateColumns = False
+        DataGridViewCellStyle33.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle33.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle33.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle33.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle33.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle33.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle33.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1DataGridView.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle33
         Me.SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1DataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1DataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn1, Me.DataGridViewTextBoxColumn2, Me.DataGridViewTextBoxColumn11})
         Me.SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1DataGridView.DataSource = Me.SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1BindingSource
+        DataGridViewCellStyle34.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle34.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle34.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle34.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle34.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle34.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle34.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1DataGridView.DefaultCellStyle = DataGridViewCellStyle34
         Me.SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1DataGridView.Location = New System.Drawing.Point(1054, 271)
         Me.SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1DataGridView.Name = "SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1DataGridView"
         Me.SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1DataGridView.RowHeadersVisible = False
@@ -3185,9 +3740,25 @@ Partial Class FrmReplace
         '
         Me.SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaID2DataGridView.AllowUserToAddRows = False
         Me.SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaID2DataGridView.AutoGenerateColumns = False
+        DataGridViewCellStyle35.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle35.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle35.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle35.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle35.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle35.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle35.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaID2DataGridView.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle35
         Me.SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaID2DataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaID2DataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn22})
         Me.SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaID2DataGridView.DataSource = Me.SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaID2BindingSource
+        DataGridViewCellStyle36.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle36.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle36.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle36.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle36.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle36.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle36.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaID2DataGridView.DefaultCellStyle = DataGridViewCellStyle36
         Me.SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaID2DataGridView.Location = New System.Drawing.Point(234, 348)
         Me.SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaID2DataGridView.Name = "SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaID2DataGridView"
         Me.SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaID2DataGridView.RowHeadersVisible = False
@@ -3220,9 +3791,25 @@ Partial Class FrmReplace
         '
         Me.SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID2DataGridView.AllowUserToAddRows = False
         Me.SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID2DataGridView.AutoGenerateColumns = False
+        DataGridViewCellStyle37.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle37.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle37.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle37.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle37.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle37.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle37.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID2DataGridView.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle37
         Me.SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID2DataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID2DataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn21})
         Me.SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID2DataGridView.DataSource = Me.SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID2BindingSource
+        DataGridViewCellStyle38.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle38.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle38.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle38.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle38.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle38.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle38.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID2DataGridView.DefaultCellStyle = DataGridViewCellStyle38
         Me.SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID2DataGridView.Location = New System.Drawing.Point(230, 103)
         Me.SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID2DataGridView.Name = "SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID2DataGridView"
         Me.SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID2DataGridView.RowHeadersVisible = False
@@ -3316,9 +3903,25 @@ Partial Class FrmReplace
         '
         Me.SP_RegistroRelacionesTablas_Vista_BUSQUEDA_SEGUN_PARAMETRO_TDDataGridView.AllowUserToAddRows = False
         Me.SP_RegistroRelacionesTablas_Vista_BUSQUEDA_SEGUN_PARAMETRO_TDDataGridView.AutoGenerateColumns = False
+        DataGridViewCellStyle39.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle39.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle39.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle39.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle39.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle39.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle39.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.SP_RegistroRelacionesTablas_Vista_BUSQUEDA_SEGUN_PARAMETRO_TDDataGridView.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle39
         Me.SP_RegistroRelacionesTablas_Vista_BUSQUEDA_SEGUN_PARAMETRO_TDDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.SP_RegistroRelacionesTablas_Vista_BUSQUEDA_SEGUN_PARAMETRO_TDDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn19, Me.DataGridViewTextBoxColumn20, Me.DataGridViewTextBoxColumn23, Me.DataGridViewTextBoxColumn24})
         Me.SP_RegistroRelacionesTablas_Vista_BUSQUEDA_SEGUN_PARAMETRO_TDDataGridView.DataSource = Me.SP_RegistroRelacionesTablas_Vista_BUSQUEDA_SEGUN_PARAMETRO_TDBindingSource
+        DataGridViewCellStyle40.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle40.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle40.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle40.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle40.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle40.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle40.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.SP_RegistroRelacionesTablas_Vista_BUSQUEDA_SEGUN_PARAMETRO_TDDataGridView.DefaultCellStyle = DataGridViewCellStyle40
         Me.SP_RegistroRelacionesTablas_Vista_BUSQUEDA_SEGUN_PARAMETRO_TDDataGridView.Location = New System.Drawing.Point(5, 6)
         Me.SP_RegistroRelacionesTablas_Vista_BUSQUEDA_SEGUN_PARAMETRO_TDDataGridView.Name = "SP_RegistroRelacionesTablas_Vista_BUSQUEDA_SEGUN_PARAMETRO_TDDataGridView"
         Me.SP_RegistroRelacionesTablas_Vista_BUSQUEDA_SEGUN_PARAMETRO_TDDataGridView.RowHeadersVisible = False
@@ -3358,6 +3961,8 @@ Partial Class FrmReplace
         Me.TabControl2.Controls.Add(Me.TabPage3)
         Me.TabControl2.Controls.Add(Me.TabPage4)
         Me.TabControl2.Controls.Add(Me.TabPage5)
+        Me.TabControl2.Controls.Add(Me.TabPage6)
+        Me.TabControl2.Controls.Add(Me.TabPage7)
         Me.TabControl2.Location = New System.Drawing.Point(806, 4)
         Me.TabControl2.Name = "TabControl2"
         Me.TabControl2.SelectedIndex = 0
@@ -3477,7 +4082,7 @@ Partial Class FrmReplace
         Me.TabPage5.Padding = New System.Windows.Forms.Padding(3)
         Me.TabPage5.Size = New System.Drawing.Size(459, 577)
         Me.TabPage5.TabIndex = 2
-        Me.TabPage5.Text = "Valores Requerimientos"
+        Me.TabPage5.Text = "Requerimientos"
         Me.TabPage5.UseVisualStyleBackColor = True
         '
         'Panel_Requerimiento
@@ -3657,6 +4262,458 @@ Partial Class FrmReplace
         Me.Lbl_Requerimiento.TabIndex = 126
         Me.Lbl_Requerimiento.Text = "..."
         '
+        'TabPage6
+        '
+        Me.TabPage6.Controls.Add(Me.Panel6)
+        Me.TabPage6.Controls.Add(Me.CodigoParaReporte)
+        Me.TabPage6.Controls.Add(ReferenciaLabel1)
+        Me.TabPage6.Controls.Add(Me.ReferenciaTextBox1)
+        Me.TabPage6.Controls.Add(Me.ContadorImagenes)
+        Me.TabPage6.Controls.Add(Me.PlantillaIDCargaImagenes)
+        Me.TabPage6.Controls.Add(Me.SP_PlantillasImagenes_BUSCA_SEGUN_PlantillaIDDataGridView)
+        Me.TabPage6.Location = New System.Drawing.Point(4, 22)
+        Me.TabPage6.Name = "TabPage6"
+        Me.TabPage6.Padding = New System.Windows.Forms.Padding(3)
+        Me.TabPage6.Size = New System.Drawing.Size(459, 577)
+        Me.TabPage6.TabIndex = 3
+        Me.TabPage6.Text = "Imagenes Plantillas"
+        Me.TabPage6.UseVisualStyleBackColor = True
+        '
+        'Panel6
+        '
+        Me.Panel6.AutoScroll = True
+        Me.Panel6.Controls.Add(Me.ImagenPictureBox)
+        Me.Panel6.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Panel6.Location = New System.Drawing.Point(3, 3)
+        Me.Panel6.Name = "Panel6"
+        Me.Panel6.Size = New System.Drawing.Size(453, 386)
+        Me.Panel6.TabIndex = 193
+        '
+        'ImagenPictureBox
+        '
+        Me.ImagenPictureBox.DataBindings.Add(New System.Windows.Forms.Binding("Image", Me.SP_PlantillasImagenes_BUSCA_SEGUN_PlantillaIDBindingSource, "Imagen", True))
+        Me.ImagenPictureBox.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.ImagenPictureBox.Location = New System.Drawing.Point(0, 0)
+        Me.ImagenPictureBox.Name = "ImagenPictureBox"
+        Me.ImagenPictureBox.Size = New System.Drawing.Size(453, 386)
+        Me.ImagenPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.ImagenPictureBox.TabIndex = 2
+        Me.ImagenPictureBox.TabStop = False
+        '
+        'SP_PlantillasImagenes_BUSCA_SEGUN_PlantillaIDBindingSource
+        '
+        Me.SP_PlantillasImagenes_BUSCA_SEGUN_PlantillaIDBindingSource.DataMember = "SP_PlantillasImagenes_BUSCA_SEGUN_PlantillaID"
+        Me.SP_PlantillasImagenes_BUSCA_SEGUN_PlantillaIDBindingSource.DataSource = Me.DataSetReportes
+        '
+        'DataSetReportes
+        '
+        Me.DataSetReportes.DataSetName = "DataSetReportes"
+        Me.DataSetReportes.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'CodigoParaReporte
+        '
+        Me.CodigoParaReporte.Location = New System.Drawing.Point(244, 325)
+        Me.CodigoParaReporte.Name = "CodigoParaReporte"
+        Me.CodigoParaReporte.Size = New System.Drawing.Size(100, 20)
+        Me.CodigoParaReporte.TabIndex = 192
+        '
+        'ReferenciaTextBox1
+        '
+        Me.ReferenciaTextBox1.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SP_PlantillasImagenes_BUSCA_SEGUN_PlantillaIDBindingSource, "Referencia", True))
+        Me.ReferenciaTextBox1.Location = New System.Drawing.Point(244, 273)
+        Me.ReferenciaTextBox1.Name = "ReferenciaTextBox1"
+        Me.ReferenciaTextBox1.Size = New System.Drawing.Size(209, 20)
+        Me.ReferenciaTextBox1.TabIndex = 5
+        '
+        'ContadorImagenes
+        '
+        Me.ContadorImagenes.Location = New System.Drawing.Point(244, 299)
+        Me.ContadorImagenes.Name = "ContadorImagenes"
+        Me.ContadorImagenes.Size = New System.Drawing.Size(100, 20)
+        Me.ContadorImagenes.TabIndex = 4
+        '
+        'PlantillaIDCargaImagenes
+        '
+        Me.PlantillaIDCargaImagenes.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SP_CARGA_TECNOLOGIAS_APLICADAS_A_PROYECTOBindingSource, "PlantillaID", True))
+        Me.PlantillaIDCargaImagenes.Location = New System.Drawing.Point(74, 270)
+        Me.PlantillaIDCargaImagenes.Name = "PlantillaIDCargaImagenes"
+        Me.PlantillaIDCargaImagenes.Size = New System.Drawing.Size(100, 20)
+        Me.PlantillaIDCargaImagenes.TabIndex = 3
+        '
+        'SP_PlantillasImagenes_BUSCA_SEGUN_PlantillaIDDataGridView
+        '
+        Me.SP_PlantillasImagenes_BUSCA_SEGUN_PlantillaIDDataGridView.AllowUserToAddRows = False
+        Me.SP_PlantillasImagenes_BUSCA_SEGUN_PlantillaIDDataGridView.AutoGenerateColumns = False
+        DataGridViewCellStyle41.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle41.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle41.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle41.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle41.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle41.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle41.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.SP_PlantillasImagenes_BUSCA_SEGUN_PlantillaIDDataGridView.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle41
+        Me.SP_PlantillasImagenes_BUSCA_SEGUN_PlantillaIDDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.SP_PlantillasImagenes_BUSCA_SEGUN_PlantillaIDDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn51})
+        Me.SP_PlantillasImagenes_BUSCA_SEGUN_PlantillaIDDataGridView.DataSource = Me.SP_PlantillasImagenes_BUSCA_SEGUN_PlantillaIDBindingSource
+        DataGridViewCellStyle42.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle42.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle42.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle42.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle42.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle42.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle42.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.SP_PlantillasImagenes_BUSCA_SEGUN_PlantillaIDDataGridView.DefaultCellStyle = DataGridViewCellStyle42
+        Me.SP_PlantillasImagenes_BUSCA_SEGUN_PlantillaIDDataGridView.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.SP_PlantillasImagenes_BUSCA_SEGUN_PlantillaIDDataGridView.Location = New System.Drawing.Point(3, 418)
+        Me.SP_PlantillasImagenes_BUSCA_SEGUN_PlantillaIDDataGridView.Name = "SP_PlantillasImagenes_BUSCA_SEGUN_PlantillaIDDataGridView"
+        Me.SP_PlantillasImagenes_BUSCA_SEGUN_PlantillaIDDataGridView.RowHeadersVisible = False
+        Me.SP_PlantillasImagenes_BUSCA_SEGUN_PlantillaIDDataGridView.RowTemplate.Height = 42
+        Me.SP_PlantillasImagenes_BUSCA_SEGUN_PlantillaIDDataGridView.Size = New System.Drawing.Size(453, 156)
+        Me.SP_PlantillasImagenes_BUSCA_SEGUN_PlantillaIDDataGridView.TabIndex = 0
+        '
+        'DataGridViewTextBoxColumn51
+        '
+        Me.DataGridViewTextBoxColumn51.DataPropertyName = "Referencia"
+        Me.DataGridViewTextBoxColumn51.HeaderText = "Referencia"
+        Me.DataGridViewTextBoxColumn51.Name = "DataGridViewTextBoxColumn51"
+        Me.DataGridViewTextBoxColumn51.Width = 449
+        '
+        'TabPage7
+        '
+        Me.TabPage7.AutoScroll = True
+        Me.TabPage7.Controls.Add(NombreArchivoLabel1)
+        Me.TabPage7.Controls.Add(Me.NombreArchivoCrear)
+        Me.TabPage7.Controls.Add(RutaLabel1)
+        Me.TabPage7.Controls.Add(Me.RutaCrear)
+        Me.TabPage7.Controls.Add(Me.ContenidoCrear)
+        Me.TabPage7.Controls.Add(ContenidoLabel2)
+        Me.TabPage7.Controls.Add(Me.SP_ProyectoCarpetasArchivos_BUSQUEDA_SEGUN_PARAMETRO_ProyectoIDDataGridView)
+        Me.TabPage7.Controls.Add(Me.Panel8)
+        Me.TabPage7.Controls.Add(Me.Panel7)
+        Me.TabPage7.Controls.Add(RequerimientoLabel5)
+        Me.TabPage7.Controls.Add(Me.RequerimientoTextBox3)
+        Me.TabPage7.Controls.Add(ValorRequerimientoLabel3)
+        Me.TabPage7.Controls.Add(Me.ValorRequerimientoTextBox4)
+        Me.TabPage7.Controls.Add(TecnologiaIDLabel2)
+        Me.TabPage7.Controls.Add(Me.TecnologiaIDTextBox1)
+        Me.TabPage7.Location = New System.Drawing.Point(4, 22)
+        Me.TabPage7.Name = "TabPage7"
+        Me.TabPage7.Padding = New System.Windows.Forms.Padding(3)
+        Me.TabPage7.Size = New System.Drawing.Size(459, 577)
+        Me.TabPage7.TabIndex = 4
+        Me.TabPage7.Text = "Generacion"
+        Me.TabPage7.UseVisualStyleBackColor = True
+        '
+        'NombreArchivoCrear
+        '
+        Me.NombreArchivoCrear.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SP_ProyectoCarpetasArchivos_BUSQUEDA_SEGUN_PARAMETRO_ProyectoIDBindingSource, "NombreArchivo", True))
+        Me.NombreArchivoCrear.Location = New System.Drawing.Point(246, 390)
+        Me.NombreArchivoCrear.Name = "NombreArchivoCrear"
+        Me.NombreArchivoCrear.Size = New System.Drawing.Size(100, 20)
+        Me.NombreArchivoCrear.TabIndex = 203
+        '
+        'SP_ProyectoCarpetasArchivos_BUSQUEDA_SEGUN_PARAMETRO_ProyectoIDBindingSource
+        '
+        Me.SP_ProyectoCarpetasArchivos_BUSQUEDA_SEGUN_PARAMETRO_ProyectoIDBindingSource.DataMember = "SP_ProyectoCarpetasArchivos_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID"
+        Me.SP_ProyectoCarpetasArchivos_BUSQUEDA_SEGUN_PARAMETRO_ProyectoIDBindingSource.DataSource = Me.DataSetAdministracion
+        '
+        'RutaCrear
+        '
+        Me.RutaCrear.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SP_ProyectoCarpetasArchivos_BUSQUEDA_SEGUN_PARAMETRO_ProyectoIDBindingSource, "Ruta", True))
+        Me.RutaCrear.Location = New System.Drawing.Point(48, 390)
+        Me.RutaCrear.Name = "RutaCrear"
+        Me.RutaCrear.Size = New System.Drawing.Size(100, 20)
+        Me.RutaCrear.TabIndex = 202
+        '
+        'ContenidoCrear
+        '
+        Me.ContenidoCrear.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SP_ProyectoCarpetasArchivos_BUSQUEDA_SEGUN_PARAMETRO_ProyectoIDBindingSource, "Contenido", True))
+        Me.ContenidoCrear.Location = New System.Drawing.Point(3, 416)
+        Me.ContenidoCrear.Multiline = True
+        Me.ContenidoCrear.Name = "ContenidoCrear"
+        Me.ContenidoCrear.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
+        Me.ContenidoCrear.Size = New System.Drawing.Size(450, 149)
+        Me.ContenidoCrear.TabIndex = 201
+        '
+        'SP_ProyectoCarpetasArchivos_BUSQUEDA_SEGUN_PARAMETRO_ProyectoIDDataGridView
+        '
+        Me.SP_ProyectoCarpetasArchivos_BUSQUEDA_SEGUN_PARAMETRO_ProyectoIDDataGridView.AllowUserToAddRows = False
+        Me.SP_ProyectoCarpetasArchivos_BUSQUEDA_SEGUN_PARAMETRO_ProyectoIDDataGridView.AutoGenerateColumns = False
+        DataGridViewCellStyle43.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle43.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle43.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle43.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle43.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle43.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle43.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.SP_ProyectoCarpetasArchivos_BUSQUEDA_SEGUN_PARAMETRO_ProyectoIDDataGridView.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle43
+        Me.SP_ProyectoCarpetasArchivos_BUSQUEDA_SEGUN_PARAMETRO_ProyectoIDDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.SP_ProyectoCarpetasArchivos_BUSQUEDA_SEGUN_PARAMETRO_ProyectoIDDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn53, Me.DataGridViewTextBoxColumn52})
+        Me.SP_ProyectoCarpetasArchivos_BUSQUEDA_SEGUN_PARAMETRO_ProyectoIDDataGridView.DataSource = Me.SP_ProyectoCarpetasArchivos_BUSQUEDA_SEGUN_PARAMETRO_ProyectoIDBindingSource
+        DataGridViewCellStyle44.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle44.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle44.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle44.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle44.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle44.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle44.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.SP_ProyectoCarpetasArchivos_BUSQUEDA_SEGUN_PARAMETRO_ProyectoIDDataGridView.DefaultCellStyle = DataGridViewCellStyle44
+        Me.SP_ProyectoCarpetasArchivos_BUSQUEDA_SEGUN_PARAMETRO_ProyectoIDDataGridView.Dock = System.Windows.Forms.DockStyle.Top
+        Me.SP_ProyectoCarpetasArchivos_BUSQUEDA_SEGUN_PARAMETRO_ProyectoIDDataGridView.Location = New System.Drawing.Point(3, 204)
+        Me.SP_ProyectoCarpetasArchivos_BUSQUEDA_SEGUN_PARAMETRO_ProyectoIDDataGridView.Name = "SP_ProyectoCarpetasArchivos_BUSQUEDA_SEGUN_PARAMETRO_ProyectoIDDataGridView"
+        Me.SP_ProyectoCarpetasArchivos_BUSQUEDA_SEGUN_PARAMETRO_ProyectoIDDataGridView.RowHeadersVisible = False
+        Me.SP_ProyectoCarpetasArchivos_BUSQUEDA_SEGUN_PARAMETRO_ProyectoIDDataGridView.Size = New System.Drawing.Size(453, 157)
+        Me.SP_ProyectoCarpetasArchivos_BUSQUEDA_SEGUN_PARAMETRO_ProyectoIDDataGridView.TabIndex = 200
+        '
+        'DataGridViewTextBoxColumn53
+        '
+        Me.DataGridViewTextBoxColumn53.DataPropertyName = "NombreArchivo"
+        Me.DataGridViewTextBoxColumn53.HeaderText = "Archivo"
+        Me.DataGridViewTextBoxColumn53.Name = "DataGridViewTextBoxColumn53"
+        '
+        'DataGridViewTextBoxColumn52
+        '
+        Me.DataGridViewTextBoxColumn52.DataPropertyName = "Ruta"
+        Me.DataGridViewTextBoxColumn52.HeaderText = "Ruta Interna"
+        Me.DataGridViewTextBoxColumn52.Name = "DataGridViewTextBoxColumn52"
+        Me.DataGridViewTextBoxColumn52.Width = 349
+        '
+        'Panel8
+        '
+        Me.Panel8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel8.Controls.Add(Me.BtnReiniciarCreacion)
+        Me.Panel8.Controls.Add(PorTablaLabel)
+        Me.Panel8.Controls.Add(PlantillaIDLabel2)
+        Me.Panel8.Controls.Add(Me.PorTablaCheckBox)
+        Me.Panel8.Controls.Add(PlantillasCreacionDeArchivosIdLabel)
+        Me.Panel8.Controls.Add(NombreRequerimientoFuncionalLabel)
+        Me.Panel8.Controls.Add(Me.PlantillaIDTextBox2)
+        Me.Panel8.Controls.Add(Me.NombreRequerimientoFuncionalTextBox)
+        Me.Panel8.Controls.Add(ComponenteIDLabel3)
+        Me.Panel8.Controls.Add(Me.ComponenteIDTextBox2)
+        Me.Panel8.Controls.Add(Me.BtnCargaRuta)
+        Me.Panel8.Controls.Add(Me.PlantillasCreacionDeArchivosIdTextBox)
+        Me.Panel8.Controls.Add(Me.RutaUbicacion)
+        Me.Panel8.Controls.Add(RutaLabel)
+        Me.Panel8.Controls.Add(Me.Label15)
+        Me.Panel8.Controls.Add(Me.RutaTextBox)
+        Me.Panel8.Controls.Add(NombreArchivoLabel)
+        Me.Panel8.Controls.Add(Me.ContenidoArchivoTextBox)
+        Me.Panel8.Controls.Add(Me.NombreArchivoTextBox)
+        Me.Panel8.Controls.Add(ContenidoArchivoLabel)
+        Me.Panel8.Controls.Add(ExtensionArchivoLabel)
+        Me.Panel8.Controls.Add(Me.ExtensionArchivoTextBox)
+        Me.Panel8.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Panel8.Location = New System.Drawing.Point(3, 87)
+        Me.Panel8.Name = "Panel8"
+        Me.Panel8.Size = New System.Drawing.Size(453, 117)
+        Me.Panel8.TabIndex = 200
+        '
+        'BtnReiniciarCreacion
+        '
+        Me.BtnReiniciarCreacion.Location = New System.Drawing.Point(160, 80)
+        Me.BtnReiniciarCreacion.Name = "BtnReiniciarCreacion"
+        Me.BtnReiniciarCreacion.Size = New System.Drawing.Size(136, 25)
+        Me.BtnReiniciarCreacion.TabIndex = 220
+        Me.BtnReiniciarCreacion.Text = "Reiniciar Creación"
+        Me.BtnReiniciarCreacion.UseVisualStyleBackColor = True
+        '
+        'PorTablaCheckBox
+        '
+        Me.PorTablaCheckBox.DataBindings.Add(New System.Windows.Forms.Binding("CheckState", Me.SP_PlantillasCreacionDeArchivos_BUSQUEDA_SEGUN_PARAMETRO_ComponenteIDBindingSource, "PorTabla", True))
+        Me.PorTablaCheckBox.Location = New System.Drawing.Point(339, 267)
+        Me.PorTablaCheckBox.Name = "PorTablaCheckBox"
+        Me.PorTablaCheckBox.Size = New System.Drawing.Size(104, 24)
+        Me.PorTablaCheckBox.TabIndex = 219
+        Me.PorTablaCheckBox.Text = "CheckBox1"
+        Me.PorTablaCheckBox.UseVisualStyleBackColor = True
+        '
+        'SP_PlantillasCreacionDeArchivos_BUSQUEDA_SEGUN_PARAMETRO_ComponenteIDBindingSource
+        '
+        Me.SP_PlantillasCreacionDeArchivos_BUSQUEDA_SEGUN_PARAMETRO_ComponenteIDBindingSource.DataMember = "SP_PlantillasCreacionDeArchivos_BUSQUEDA_SEGUN_PARAMETRO_ComponenteID"
+        Me.SP_PlantillasCreacionDeArchivos_BUSQUEDA_SEGUN_PARAMETRO_ComponenteIDBindingSource.DataSource = Me.DataSetAdministracion
+        '
+        'PlantillaIDTextBox2
+        '
+        Me.PlantillaIDTextBox2.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SP_PlantillasCreacionDeArchivos_BUSQUEDA_SEGUN_PARAMETRO_ComponenteIDBindingSource, "PlantillaID", True))
+        Me.PlantillaIDTextBox2.Location = New System.Drawing.Point(108, 140)
+        Me.PlantillaIDTextBox2.Name = "PlantillaIDTextBox2"
+        Me.PlantillaIDTextBox2.Size = New System.Drawing.Size(52, 20)
+        Me.PlantillaIDTextBox2.TabIndex = 215
+        '
+        'NombreRequerimientoFuncionalTextBox
+        '
+        Me.NombreRequerimientoFuncionalTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SP_TecnologiasConCreacion_BUSQUEDA_SEGUN_IdBindingSource, "NombreRequerimientoFuncional", True))
+        Me.NombreRequerimientoFuncionalTextBox.Location = New System.Drawing.Point(184, 51)
+        Me.NombreRequerimientoFuncionalTextBox.Name = "NombreRequerimientoFuncionalTextBox"
+        Me.NombreRequerimientoFuncionalTextBox.Size = New System.Drawing.Size(259, 20)
+        Me.NombreRequerimientoFuncionalTextBox.TabIndex = 198
+        '
+        'SP_TecnologiasConCreacion_BUSQUEDA_SEGUN_IdBindingSource
+        '
+        Me.SP_TecnologiasConCreacion_BUSQUEDA_SEGUN_IdBindingSource.DataMember = "SP_TecnologiasConCreacion_BUSQUEDA_SEGUN_Id"
+        Me.SP_TecnologiasConCreacion_BUSQUEDA_SEGUN_IdBindingSource.DataSource = Me.DataSetAdministracion
+        '
+        'ComponenteIDTextBox2
+        '
+        Me.ComponenteIDTextBox2.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SP_PlantillasCreacionDeArchivos_BUSQUEDA_SEGUN_PARAMETRO_ComponenteIDBindingSource, "ComponenteID", True))
+        Me.ComponenteIDTextBox2.Location = New System.Drawing.Point(108, 163)
+        Me.ComponenteIDTextBox2.Name = "ComponenteIDTextBox2"
+        Me.ComponenteIDTextBox2.Size = New System.Drawing.Size(52, 20)
+        Me.ComponenteIDTextBox2.TabIndex = 217
+        '
+        'BtnCargaRuta
+        '
+        Me.BtnCargaRuta.Location = New System.Drawing.Point(10, 80)
+        Me.BtnCargaRuta.Name = "BtnCargaRuta"
+        Me.BtnCargaRuta.Size = New System.Drawing.Size(136, 25)
+        Me.BtnCargaRuta.TabIndex = 1
+        Me.BtnCargaRuta.Text = "Cargar Ruta de Archivo"
+        Me.BtnCargaRuta.UseVisualStyleBackColor = True
+        '
+        'PlantillasCreacionDeArchivosIdTextBox
+        '
+        Me.PlantillasCreacionDeArchivosIdTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SP_PlantillasCreacionDeArchivos_BUSQUEDA_SEGUN_PARAMETRO_ComponenteIDBindingSource, "PlantillasCreacionDeArchivosId", True))
+        Me.PlantillasCreacionDeArchivosIdTextBox.Location = New System.Drawing.Point(339, 140)
+        Me.PlantillasCreacionDeArchivosIdTextBox.Name = "PlantillasCreacionDeArchivosIdTextBox"
+        Me.PlantillasCreacionDeArchivosIdTextBox.Size = New System.Drawing.Size(104, 20)
+        Me.PlantillasCreacionDeArchivosIdTextBox.TabIndex = 205
+        '
+        'RutaUbicacion
+        '
+        Me.RutaUbicacion.Location = New System.Drawing.Point(10, 25)
+        Me.RutaUbicacion.Name = "RutaUbicacion"
+        Me.RutaUbicacion.Size = New System.Drawing.Size(432, 20)
+        Me.RutaUbicacion.TabIndex = 2
+        '
+        'Label15
+        '
+        Me.Label15.AutoSize = True
+        Me.Label15.Location = New System.Drawing.Point(10, 9)
+        Me.Label15.Name = "Label15"
+        Me.Label15.Size = New System.Drawing.Size(96, 13)
+        Me.Label15.TabIndex = 3
+        Me.Label15.Text = "Ruta de Ubicacion"
+        '
+        'RutaTextBox
+        '
+        Me.RutaTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SP_PlantillasCreacionDeArchivos_BUSQUEDA_SEGUN_PARAMETRO_ComponenteIDBindingSource, "Ruta", True))
+        Me.RutaTextBox.Location = New System.Drawing.Point(338, 163)
+        Me.RutaTextBox.Name = "RutaTextBox"
+        Me.RutaTextBox.Size = New System.Drawing.Size(104, 20)
+        Me.RutaTextBox.TabIndex = 207
+        '
+        'ContenidoArchivoTextBox
+        '
+        Me.ContenidoArchivoTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SP_PlantillasCreacionDeArchivos_BUSQUEDA_SEGUN_PARAMETRO_ComponenteIDBindingSource, "ContenidoArchivo", True))
+        Me.ContenidoArchivoTextBox.Location = New System.Drawing.Point(338, 241)
+        Me.ContenidoArchivoTextBox.Name = "ContenidoArchivoTextBox"
+        Me.ContenidoArchivoTextBox.Size = New System.Drawing.Size(104, 20)
+        Me.ContenidoArchivoTextBox.TabIndex = 213
+        '
+        'NombreArchivoTextBox
+        '
+        Me.NombreArchivoTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SP_PlantillasCreacionDeArchivos_BUSQUEDA_SEGUN_PARAMETRO_ComponenteIDBindingSource, "NombreArchivo", True))
+        Me.NombreArchivoTextBox.Location = New System.Drawing.Point(338, 189)
+        Me.NombreArchivoTextBox.Name = "NombreArchivoTextBox"
+        Me.NombreArchivoTextBox.Size = New System.Drawing.Size(104, 20)
+        Me.NombreArchivoTextBox.TabIndex = 209
+        '
+        'ExtensionArchivoTextBox
+        '
+        Me.ExtensionArchivoTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SP_PlantillasCreacionDeArchivos_BUSQUEDA_SEGUN_PARAMETRO_ComponenteIDBindingSource, "ExtensionArchivo", True))
+        Me.ExtensionArchivoTextBox.Location = New System.Drawing.Point(338, 215)
+        Me.ExtensionArchivoTextBox.Name = "ExtensionArchivoTextBox"
+        Me.ExtensionArchivoTextBox.Size = New System.Drawing.Size(104, 20)
+        Me.ExtensionArchivoTextBox.TabIndex = 211
+        '
+        'Panel7
+        '
+        Me.Panel7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel7.Controls.Add(Me.ChkGenerarCarpetasYArchivos)
+        Me.Panel7.Controls.Add(Me.AdmiteCreacionCheckBox)
+        Me.Panel7.Controls.Add(Me.ChkDocumentoTecnico)
+        Me.Panel7.Controls.Add(Me.BtnCreacion)
+        Me.Panel7.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Panel7.Location = New System.Drawing.Point(3, 3)
+        Me.Panel7.Name = "Panel7"
+        Me.Panel7.Size = New System.Drawing.Size(453, 84)
+        Me.Panel7.TabIndex = 199
+        '
+        'ChkGenerarCarpetasYArchivos
+        '
+        Me.ChkGenerarCarpetasYArchivos.AutoSize = True
+        Me.ChkGenerarCarpetasYArchivos.Location = New System.Drawing.Point(11, 11)
+        Me.ChkGenerarCarpetasYArchivos.Name = "ChkGenerarCarpetasYArchivos"
+        Me.ChkGenerarCarpetasYArchivos.Size = New System.Drawing.Size(221, 17)
+        Me.ChkGenerarCarpetasYArchivos.TabIndex = 0
+        Me.ChkGenerarCarpetasYArchivos.Text = "Generar Carpetas y Archivos de Proyecto"
+        Me.ChkGenerarCarpetasYArchivos.UseVisualStyleBackColor = True
+        '
+        'AdmiteCreacionCheckBox
+        '
+        Me.AdmiteCreacionCheckBox.AutoSize = True
+        Me.AdmiteCreacionCheckBox.DataBindings.Add(New System.Windows.Forms.Binding("CheckState", Me.SP_TecnologiasConCreacion_BUSQUEDA_SEGUN_IdBindingSource, "AdmiteCreacion", True))
+        Me.AdmiteCreacionCheckBox.Enabled = False
+        Me.AdmiteCreacionCheckBox.Location = New System.Drawing.Point(11, 54)
+        Me.AdmiteCreacionCheckBox.Name = "AdmiteCreacionCheckBox"
+        Me.AdmiteCreacionCheckBox.Size = New System.Drawing.Size(103, 17)
+        Me.AdmiteCreacionCheckBox.TabIndex = 220
+        Me.AdmiteCreacionCheckBox.Text = "Admite Creación"
+        Me.AdmiteCreacionCheckBox.UseVisualStyleBackColor = True
+        '
+        'ChkDocumentoTecnico
+        '
+        Me.ChkDocumentoTecnico.AutoSize = True
+        Me.ChkDocumentoTecnico.Location = New System.Drawing.Point(11, 33)
+        Me.ChkDocumentoTecnico.Name = "ChkDocumentoTecnico"
+        Me.ChkDocumentoTecnico.Size = New System.Drawing.Size(168, 17)
+        Me.ChkDocumentoTecnico.TabIndex = 191
+        Me.ChkDocumentoTecnico.Text = "Crear Un Documento Tecnico"
+        Me.ChkDocumentoTecnico.UseVisualStyleBackColor = True
+        '
+        'BtnCreacion
+        '
+        Me.BtnCreacion.BackColor = System.Drawing.Color.White
+        Me.BtnCreacion.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnCreacion.Image = CType(resources.GetObject("BtnCreacion.Image"), System.Drawing.Image)
+        Me.BtnCreacion.Location = New System.Drawing.Point(403, 19)
+        Me.BtnCreacion.Name = "BtnCreacion"
+        Me.BtnCreacion.Size = New System.Drawing.Size(33, 44)
+        Me.BtnCreacion.TabIndex = 193
+        Me.BtnCreacion.Text = " V"
+        Me.ToolTip1.SetToolTip(Me.BtnCreacion, "Generar Carpetas y Archivos de Proyecto")
+        Me.BtnCreacion.UseVisualStyleBackColor = False
+        '
+        'RequerimientoTextBox3
+        '
+        Me.RequerimientoTextBox3.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SP_RegistroValorRequerimientos_SEGUN_ProyectoIDBindingSource, "Requerimiento", True))
+        Me.RequerimientoTextBox3.Location = New System.Drawing.Point(210, 496)
+        Me.RequerimientoTextBox3.Name = "RequerimientoTextBox3"
+        Me.RequerimientoTextBox3.Size = New System.Drawing.Size(100, 20)
+        Me.RequerimientoTextBox3.TabIndex = 197
+        '
+        'ValorRequerimientoTextBox4
+        '
+        Me.ValorRequerimientoTextBox4.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SP_RegistroValorRequerimientos_SEGUN_ProyectoIDBindingSource, "ValorRequerimiento", True))
+        Me.ValorRequerimientoTextBox4.Location = New System.Drawing.Point(210, 518)
+        Me.ValorRequerimientoTextBox4.Name = "ValorRequerimientoTextBox4"
+        Me.ValorRequerimientoTextBox4.Size = New System.Drawing.Size(100, 20)
+        Me.ValorRequerimientoTextBox4.TabIndex = 196
+        '
+        'TecnologiaIDTextBox1
+        '
+        Me.TecnologiaIDTextBox1.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SP_CARGA_TECNOLOGIAS_APLICADAS_A_PROYECTOBindingSource, "TecnologiaID", True))
+        Me.TecnologiaIDTextBox1.Location = New System.Drawing.Point(210, 470)
+        Me.TecnologiaIDTextBox1.Name = "TecnologiaIDTextBox1"
+        Me.TecnologiaIDTextBox1.Size = New System.Drawing.Size(100, 20)
+        Me.TecnologiaIDTextBox1.TabIndex = 194
+        '
+        'SP_PlantillasCreacionDeArchivos_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDBindingSource
+        '
+        Me.SP_PlantillasCreacionDeArchivos_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDBindingSource.DataMember = "SP_PlantillasCreacionDeArchivos_BUSQUEDA_SEGUN_PARAMETRO_PlantillaID"
+        Me.SP_PlantillasCreacionDeArchivos_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDBindingSource.DataSource = Me.DataSetAdministracion
+        '
         'BtnExplorar
         '
         Me.BtnExplorar.BackColor = System.Drawing.SystemColors.ActiveCaptionText
@@ -3680,13 +4737,38 @@ Partial Class FrmReplace
         'BtnRequerimientos
         '
         Me.BtnRequerimientos.BackColor = System.Drawing.Color.White
-        Me.BtnRequerimientos.Location = New System.Drawing.Point(3, 155)
+        Me.BtnRequerimientos.Location = New System.Drawing.Point(3, 159)
         Me.BtnRequerimientos.Name = "BtnRequerimientos"
         Me.BtnRequerimientos.Size = New System.Drawing.Size(34, 43)
         Me.BtnRequerimientos.TabIndex = 191
         Me.BtnRequerimientos.Text = "R"
         Me.ToolTip1.SetToolTip(Me.BtnRequerimientos, "Ver Requerimientos")
         Me.BtnRequerimientos.UseVisualStyleBackColor = False
+        '
+        'IconButton1
+        '
+        Me.IconButton1.Flip = FontAwesome.Sharp.FlipOrientation.Normal
+        Me.IconButton1.IconChar = FontAwesome.Sharp.IconChar.Outdent
+        Me.IconButton1.IconColor = System.Drawing.Color.OrangeRed
+        Me.IconButton1.IconSize = 26
+        Me.IconButton1.Location = New System.Drawing.Point(3, 517)
+        Me.IconButton1.Name = "IconButton1"
+        Me.IconButton1.Rotation = 0R
+        Me.IconButton1.Size = New System.Drawing.Size(32, 37)
+        Me.IconButton1.TabIndex = 192
+        Me.ToolTip1.SetToolTip(Me.IconButton1, "Ver Reporte")
+        Me.IconButton1.UseVisualStyleBackColor = True
+        '
+        'BtnCodigoRuta
+        '
+        Me.BtnCodigoRuta.BackColor = System.Drawing.Color.White
+        Me.BtnCodigoRuta.Location = New System.Drawing.Point(3, 459)
+        Me.BtnCodigoRuta.Name = "BtnCodigoRuta"
+        Me.BtnCodigoRuta.Size = New System.Drawing.Size(34, 43)
+        Me.BtnCodigoRuta.TabIndex = 193
+        Me.BtnCodigoRuta.Text = "C"
+        Me.ToolTip1.SetToolTip(Me.BtnCodigoRuta, "Ver Requerimientos")
+        Me.BtnCodigoRuta.UseVisualStyleBackColor = False
         '
         'Timer_CargueValorRequerimientos
         '
@@ -3705,6 +4787,7 @@ Partial Class FrmReplace
         Me.TableAdapterManager1.Connection = Nothing
         Me.TableAdapterManager1.SP_CampoComponentes_EDICION_ACTUALIZARTableAdapter = Nothing
         Me.TableAdapterManager1.SP_CampoComponentes_EDICION_ELIMINARTableAdapter = Nothing
+        Me.TableAdapterManager1.SP_CampoComponentes_EDICION_INSERTAR_PARA_DUPLICADOTableAdapter = Nothing
         Me.TableAdapterManager1.SP_CampoComponentes_EDICION_INSERTARTableAdapter = Nothing
         Me.TableAdapterManager1.SP_CamposDeTablas_EDICION_ACTUALIZARTableAdapter = Nothing
         Me.TableAdapterManager1.SP_CamposDeTablas_EDICION_ELIMINARTableAdapter = Nothing
@@ -3888,19 +4971,31 @@ Partial Class FrmReplace
         Me.TableAdapterManager.SP_Plantillas_EDICION_ACTUALIZARTableAdapter = Nothing
         Me.TableAdapterManager.SP_Plantillas_EDICION_ELIMINARTableAdapter = Nothing
         Me.TableAdapterManager.SP_Plantillas_EDICION_INSERTARTableAdapter = Nothing
+        Me.TableAdapterManager.SP_PlantillasCreacionDeArchivos_EDICION_ACTUALIZARTableAdapter = Nothing
+        Me.TableAdapterManager.SP_PlantillasCreacionDeArchivos_EDICION_ELIMINARTableAdapter = Nothing
+        Me.TableAdapterManager.SP_PlantillasCreacionDeArchivos_EDICION_INSERTARTableAdapter = Nothing
         Me.TableAdapterManager.SP_PlantillasMetricas_EDICION_EDITAR_SEGUN_PLANTILLATableAdapter = Nothing
         Me.TableAdapterManager.SP_PlantillasMetricas_EDICION_INSERTARTableAdapter = Nothing
+        Me.TableAdapterManager.SP_PlantillasVentajasTecnologicas_EDICION_EDITARTableAdapter = Nothing
+        Me.TableAdapterManager.SP_PlantillasVentajasTecnologicas_EDICION_INSERTARTableAdapter = Nothing
+        Me.TableAdapterManager.SP_ProyectoCarpetasArchivos_EDICION_ACTUALIZARTableAdapter = Nothing
+        Me.TableAdapterManager.SP_ProyectoCarpetasArchivos_EDICION_ELIMINAR_SEGUN_ProyectoIDTableAdapter = Nothing
+        Me.TableAdapterManager.SP_ProyectoCarpetasArchivos_EDICION_ELIMINARTableAdapter = Nothing
+        Me.TableAdapterManager.SP_ProyectoCarpetasArchivos_EDICION_INSERTARTableAdapter = Nothing
         Me.TableAdapterManager.SP_Proyectos_EDICION_ACTUALIZARTableAdapter = Nothing
         Me.TableAdapterManager.SP_Proyectos_EDICION_ELIMINARTableAdapter = Nothing
         Me.TableAdapterManager.SP_Proyectos_EDICION_INSERTARTableAdapter = Nothing
         Me.TableAdapterManager.SP_ProyectosYTecnologias_EDICION_ELIMINARTableAdapter = Nothing
         Me.TableAdapterManager.SP_ProyectosYTecnologias_EDICION_INSERTARTableAdapter = Nothing
+        Me.TableAdapterManager.SP_Prueba_EDICION_ACTUALIZARTableAdapter = Nothing
         Me.TableAdapterManager.SP_RequerimientosPlantillas_EDICION_ACTUALIZARTableAdapter = Nothing
         Me.TableAdapterManager.SP_RequerimientosPlantillas_EDICION_ELIMINARTableAdapter = Nothing
         Me.TableAdapterManager.SP_RequerimientosPlantillas_EDICION_INSERTARTableAdapter = Nothing
         Me.TableAdapterManager.SP_Tecnologias_EDICION_ACTUALIZARTableAdapter = Nothing
         Me.TableAdapterManager.SP_Tecnologias_EDICION_ELIMINARTableAdapter = Nothing
         Me.TableAdapterManager.SP_Tecnologias_EDICION_INSERTARTableAdapter = Nothing
+        Me.TableAdapterManager.SP_TecnologiasConCreacion_EDICION_ACTUALIZARTableAdapter = Nothing
+        Me.TableAdapterManager.SP_TecnologiasConCreacion_EDICION_INSERTARTableAdapter = Nothing
         Me.TableAdapterManager.SP_Tipos_EDICION_ACTUALIZARTableAdapter = Nothing
         Me.TableAdapterManager.SP_Tipos_EDICION_ELIMINARTableAdapter = Nothing
         Me.TableAdapterManager.SP_Tipos_EDICION_INSERTARTableAdapter = Nothing
@@ -4000,6 +5095,7 @@ Partial Class FrmReplace
         '
         'Panel5
         '
+        Me.Panel5.Controls.Add(Me.BtnCodigoRuta)
         Me.Panel5.Controls.Add(Me.IconButton1)
         Me.Panel5.Controls.Add(Me.BtnRequerimientos)
         Me.Panel5.Controls.Add(Me.BtnExplorar)
@@ -4008,7 +5104,7 @@ Partial Class FrmReplace
         Me.Panel5.Controls.Add(Me.BtnLimpiar)
         Me.Panel5.Controls.Add(Me.BtnRemplazar2)
         Me.Panel5.Dock = System.Windows.Forms.DockStyle.Right
-        Me.Panel5.Location = New System.Drawing.Point(1275, 0)
+        Me.Panel5.Location = New System.Drawing.Point(1274, 0)
         Me.Panel5.Name = "Panel5"
         Me.Panel5.Size = New System.Drawing.Size(40, 611)
         Me.Panel5.TabIndex = 190
@@ -4078,26 +5174,92 @@ Partial Class FrmReplace
         '
         Me.SP_ComponentesContenidoProvisional_TruncateTableAdapter.ClearBeforeFill = True
         '
-        'IconButton1
+        'SP_PlantillasImagenes_BUSCA_SEGUN_PlantillaIDTableAdapter
         '
-        Me.IconButton1.Flip = FontAwesome.Sharp.FlipOrientation.Normal
-        Me.IconButton1.IconChar = FontAwesome.Sharp.IconChar.Outdent
-        Me.IconButton1.IconColor = System.Drawing.Color.OrangeRed
-        Me.IconButton1.IconSize = 26
-        Me.IconButton1.Location = New System.Drawing.Point(4, 213)
-        Me.IconButton1.Name = "IconButton1"
-        Me.IconButton1.Rotation = 0R
-        Me.IconButton1.Size = New System.Drawing.Size(32, 37)
-        Me.IconButton1.TabIndex = 192
-        Me.ToolTip1.SetToolTip(Me.IconButton1, "Ver Reporte")
-        Me.IconButton1.UseVisualStyleBackColor = True
+        Me.SP_PlantillasImagenes_BUSCA_SEGUN_PlantillaIDTableAdapter.ClearBeforeFill = True
+        '
+        'TableAdapterManager2
+        '
+        Me.TableAdapterManager2.BackupDataSetBeforeUpdate = False
+        Me.TableAdapterManager2.Connection = Nothing
+        Me.TableAdapterManager2.PlantillasImagenesTableAdapter = Nothing
+        Me.TableAdapterManager2.SP_PlantillasImagenes_EDICION_ACTUALIZARTableAdapter = Nothing
+        Me.TableAdapterManager2.SP_PlantillasImagenes_EDICION_ELIMINARTableAdapter = Nothing
+        Me.TableAdapterManager2.SP_PlantillasImagenes_EDICION_INSERTARTableAdapter = Nothing
+        Me.TableAdapterManager2.SP_ProyectoDocumentoTecnico_EDICION_ELIMINAR_SEGUN_ProyectoIDTableAdapter = Nothing
+        Me.TableAdapterManager2.SP_ProyectoDocumentoTecnico_EDICION_INSERTARTableAdapter = Nothing
+        Me.TableAdapterManager2.UpdateOrder = GeneradorCod.DataSetReportesTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
+        '
+        'SP_ProyectoDocumentoTecnico_EDICION_INSERTARBindingSource
+        '
+        Me.SP_ProyectoDocumentoTecnico_EDICION_INSERTARBindingSource.DataMember = "SP_ProyectoDocumentoTecnico_EDICION_INSERTAR"
+        Me.SP_ProyectoDocumentoTecnico_EDICION_INSERTARBindingSource.DataSource = Me.DataSetReportes
+        '
+        'SP_ProyectoDocumentoTecnico_EDICION_INSERTARTableAdapter
+        '
+        Me.SP_ProyectoDocumentoTecnico_EDICION_INSERTARTableAdapter.ClearBeforeFill = True
+        '
+        'OpenFileDialog1
+        '
+        Me.OpenFileDialog1.FileName = "OpenFileDialog1"
+        '
+        'SP_TecnologiasConCreacion_BUSQUEDA_SEGUN_IdTableAdapter
+        '
+        Me.SP_TecnologiasConCreacion_BUSQUEDA_SEGUN_IdTableAdapter.ClearBeforeFill = True
+        '
+        'SP_PlantillasCreacionDeArchivos_BUSQUEDA_SEGUN_PARAMETRO_ComponenteIDTableAdapter
+        '
+        Me.SP_PlantillasCreacionDeArchivos_BUSQUEDA_SEGUN_PARAMETRO_ComponenteIDTableAdapter.ClearBeforeFill = True
+        '
+        'SP_PlantillasCreacionDeArchivos_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDTableAdapter
+        '
+        Me.SP_PlantillasCreacionDeArchivos_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDTableAdapter.ClearBeforeFill = True
+        '
+        'SP_ProyectoCarpetasArchivos_EDICION_INSERTARBindingSource
+        '
+        Me.SP_ProyectoCarpetasArchivos_EDICION_INSERTARBindingSource.DataMember = "SP_ProyectoCarpetasArchivos_EDICION_INSERTAR"
+        Me.SP_ProyectoCarpetasArchivos_EDICION_INSERTARBindingSource.DataSource = Me.DataSetAdministracion
+        '
+        'SP_ProyectoCarpetasArchivos_EDICION_INSERTARTableAdapter
+        '
+        Me.SP_ProyectoCarpetasArchivos_EDICION_INSERTARTableAdapter.ClearBeforeFill = True
+        '
+        'SP_ProyectoCarpetasArchivos_EDICION_ELIMINAR_SEGUN_ProyectoIDBindingSource
+        '
+        Me.SP_ProyectoCarpetasArchivos_EDICION_ELIMINAR_SEGUN_ProyectoIDBindingSource.DataMember = "SP_ProyectoCarpetasArchivos_EDICION_ELIMINAR_SEGUN_ProyectoID"
+        Me.SP_ProyectoCarpetasArchivos_EDICION_ELIMINAR_SEGUN_ProyectoIDBindingSource.DataSource = Me.DataSetAdministracion
+        '
+        'SP_ProyectoCarpetasArchivos_EDICION_ELIMINAR_SEGUN_ProyectoIDTableAdapter
+        '
+        Me.SP_ProyectoCarpetasArchivos_EDICION_ELIMINAR_SEGUN_ProyectoIDTableAdapter.ClearBeforeFill = True
+        '
+        'SP_ProyectoCarpetasArchivos_BUSQUEDA_SEGUN_PARAMETRO_ProyectoIDTableAdapter
+        '
+        Me.SP_ProyectoCarpetasArchivos_BUSQUEDA_SEGUN_PARAMETRO_ProyectoIDTableAdapter.ClearBeforeFill = True
+        '
+        'NombreTablaLabel3
+        '
+        NombreTablaLabel3.AutoSize = True
+        NombreTablaLabel3.Location = New System.Drawing.Point(3, 168)
+        NombreTablaLabel3.Name = "NombreTablaLabel3"
+        NombreTablaLabel3.Size = New System.Drawing.Size(77, 13)
+        NombreTablaLabel3.TabIndex = 15
+        NombreTablaLabel3.Text = "Nombre Tabla:"
+        '
+        'NombreTablaTextBox3
+        '
+        Me.NombreTablaTextBox3.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID3BindingSource, "NombreTabla", True))
+        Me.NombreTablaTextBox3.Location = New System.Drawing.Point(6, 184)
+        Me.NombreTablaTextBox3.Name = "NombreTablaTextBox3"
+        Me.NombreTablaTextBox3.Size = New System.Drawing.Size(100, 20)
+        Me.NombreTablaTextBox3.TabIndex = 16
         '
         'FrmReplace
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoScroll = True
-        Me.ClientSize = New System.Drawing.Size(1315, 611)
+        Me.ClientSize = New System.Drawing.Size(1314, 611)
         Me.Controls.Add(Me.SP_RegistroValorRequerimientos_SEGUN_ProyectoIDDataGridView)
         Me.Controls.Add(Me.Panel5)
         Me.Controls.Add(Me.PanelConf)
@@ -4182,6 +5344,24 @@ Partial Class FrmReplace
         Me.TabPage5.ResumeLayout(False)
         Me.Panel_Requerimiento.ResumeLayout(False)
         Me.Panel_Requerimiento.PerformLayout()
+        Me.TabPage6.ResumeLayout(False)
+        Me.TabPage6.PerformLayout()
+        Me.Panel6.ResumeLayout(False)
+        CType(Me.ImagenPictureBox, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.SP_PlantillasImagenes_BUSCA_SEGUN_PlantillaIDBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DataSetReportes, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.SP_PlantillasImagenes_BUSCA_SEGUN_PlantillaIDDataGridView, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.TabPage7.ResumeLayout(False)
+        Me.TabPage7.PerformLayout()
+        CType(Me.SP_ProyectoCarpetasArchivos_BUSQUEDA_SEGUN_PARAMETRO_ProyectoIDBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.SP_ProyectoCarpetasArchivos_BUSQUEDA_SEGUN_PARAMETRO_ProyectoIDDataGridView, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Panel8.ResumeLayout(False)
+        Me.Panel8.PerformLayout()
+        CType(Me.SP_PlantillasCreacionDeArchivos_BUSQUEDA_SEGUN_PARAMETRO_ComponenteIDBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.SP_TecnologiasConCreacion_BUSQUEDA_SEGUN_IdBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Panel7.ResumeLayout(False)
+        Me.Panel7.PerformLayout()
+        CType(Me.SP_PlantillasCreacionDeArchivos_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.SP_RegistroValorRequerimientos_EDICION_INSERTARBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.SP_ELIMINA_RegistroValorRequerimientos_SegunIDBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.SP_TablasDeProyecto_EDICION_ACTUALIZARBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
@@ -4205,6 +5385,9 @@ Partial Class FrmReplace
         CType(Me.SP_ComponentesContenidoProvisional_Base_EDICION_ACTUALIZARBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.SP_ComponentesContenidoProvisional_Base_TrucateBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.SP_ComponentesContenidoProvisional_TruncateBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.SP_ProyectoDocumentoTecnico_EDICION_INSERTARBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.SP_ProyectoCarpetasArchivos_EDICION_INSERTARBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.SP_ProyectoCarpetasArchivos_EDICION_ELIMINAR_SEGUN_ProyectoIDBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -4561,4 +5744,64 @@ Partial Class FrmReplace
     Friend WithEvents ComponenteEvaluaSiTieneBase As TextBox
     Friend WithEvents BtnRequerimientos As Button
     Friend WithEvents IconButton1 As FontAwesome.Sharp.IconButton
+    Friend WithEvents TabPage6 As TabPage
+    Friend WithEvents DataSetReportes As DataSetReportes
+    Friend WithEvents SP_PlantillasImagenes_BUSCA_SEGUN_PlantillaIDBindingSource As BindingSource
+    Friend WithEvents SP_PlantillasImagenes_BUSCA_SEGUN_PlantillaIDTableAdapter As DataSetReportesTableAdapters.SP_PlantillasImagenes_BUSCA_SEGUN_PlantillaIDTableAdapter
+    Friend WithEvents TableAdapterManager2 As DataSetReportesTableAdapters.TableAdapterManager
+    Friend WithEvents ImagenPictureBox As PictureBox
+    Friend WithEvents SP_PlantillasImagenes_BUSCA_SEGUN_PlantillaIDDataGridView As DataGridView
+    Friend WithEvents DataGridViewTextBoxColumn51 As DataGridViewTextBoxColumn
+    Friend WithEvents PlantillaIDCargaImagenes As TextBox
+    Friend WithEvents ContadorImagenes As TextBox
+    Friend WithEvents ReferenciaTextBox1 As TextBox
+    Friend WithEvents SP_ProyectoDocumentoTecnico_EDICION_INSERTARBindingSource As BindingSource
+    Friend WithEvents SP_ProyectoDocumentoTecnico_EDICION_INSERTARTableAdapter As DataSetReportesTableAdapters.SP_ProyectoDocumentoTecnico_EDICION_INSERTARTableAdapter
+    Friend WithEvents ChkDocumentoTecnico As CheckBox
+    Friend WithEvents CodigoParaReporte As TextBox
+    Friend WithEvents Panel6 As Panel
+    Friend WithEvents BtnCreacion As Button
+    Friend WithEvents TabPage7 As TabPage
+    Friend WithEvents Label15 As Label
+    Friend WithEvents RutaUbicacion As TextBox
+    Friend WithEvents BtnCargaRuta As Button
+    Friend WithEvents ChkGenerarCarpetasYArchivos As CheckBox
+    Friend WithEvents OpenFileDialog1 As OpenFileDialog
+    Friend WithEvents FolderBrowserDialog1 As FolderBrowserDialog
+    Friend WithEvents TecnologiaIDTextBox1 As TextBox
+    Friend WithEvents SP_TecnologiasConCreacion_BUSQUEDA_SEGUN_IdBindingSource As BindingSource
+    Friend WithEvents SP_TecnologiasConCreacion_BUSQUEDA_SEGUN_IdTableAdapter As DataSetAdministracionTableAdapters.SP_TecnologiasConCreacion_BUSQUEDA_SEGUN_IdTableAdapter
+    Friend WithEvents ValorRequerimientoTextBox4 As TextBox
+    Friend WithEvents RequerimientoTextBox3 As TextBox
+    Friend WithEvents NombreRequerimientoFuncionalTextBox As TextBox
+    Friend WithEvents Panel8 As Panel
+    Friend WithEvents Panel7 As Panel
+    Friend WithEvents SP_PlantillasCreacionDeArchivos_BUSQUEDA_SEGUN_PARAMETRO_ComponenteIDBindingSource As BindingSource
+    Friend WithEvents SP_PlantillasCreacionDeArchivos_BUSQUEDA_SEGUN_PARAMETRO_ComponenteIDTableAdapter As DataSetAdministracionTableAdapters.SP_PlantillasCreacionDeArchivos_BUSQUEDA_SEGUN_PARAMETRO_ComponenteIDTableAdapter
+    Friend WithEvents SP_PlantillasCreacionDeArchivos_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDBindingSource As BindingSource
+    Friend WithEvents SP_PlantillasCreacionDeArchivos_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDTableAdapter As DataSetAdministracionTableAdapters.SP_PlantillasCreacionDeArchivos_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDTableAdapter
+    Friend WithEvents PlantillasCreacionDeArchivosIdTextBox As TextBox
+    Friend WithEvents RutaTextBox As TextBox
+    Friend WithEvents NombreArchivoTextBox As TextBox
+    Friend WithEvents ExtensionArchivoTextBox As TextBox
+    Friend WithEvents ContenidoArchivoTextBox As TextBox
+    Friend WithEvents PlantillaIDTextBox2 As TextBox
+    Friend WithEvents ComponenteIDTextBox2 As TextBox
+    Friend WithEvents PorTablaCheckBox As CheckBox
+    Friend WithEvents AdmiteCreacionCheckBox As CheckBox
+    Friend WithEvents SP_ProyectoCarpetasArchivos_EDICION_INSERTARBindingSource As BindingSource
+    Friend WithEvents SP_ProyectoCarpetasArchivos_EDICION_INSERTARTableAdapter As DataSetAdministracionTableAdapters.SP_ProyectoCarpetasArchivos_EDICION_INSERTARTableAdapter
+    Friend WithEvents BtnReiniciarCreacion As Button
+    Friend WithEvents SP_ProyectoCarpetasArchivos_EDICION_ELIMINAR_SEGUN_ProyectoIDBindingSource As BindingSource
+    Friend WithEvents SP_ProyectoCarpetasArchivos_EDICION_ELIMINAR_SEGUN_ProyectoIDTableAdapter As DataSetAdministracionTableAdapters.SP_ProyectoCarpetasArchivos_EDICION_ELIMINAR_SEGUN_ProyectoIDTableAdapter
+    Friend WithEvents SP_ProyectoCarpetasArchivos_BUSQUEDA_SEGUN_PARAMETRO_ProyectoIDBindingSource As BindingSource
+    Friend WithEvents SP_ProyectoCarpetasArchivos_BUSQUEDA_SEGUN_PARAMETRO_ProyectoIDTableAdapter As DataSetAdministracionTableAdapters.SP_ProyectoCarpetasArchivos_BUSQUEDA_SEGUN_PARAMETRO_ProyectoIDTableAdapter
+    Friend WithEvents ContenidoCrear As TextBox
+    Friend WithEvents SP_ProyectoCarpetasArchivos_BUSQUEDA_SEGUN_PARAMETRO_ProyectoIDDataGridView As DataGridView
+    Friend WithEvents DataGridViewTextBoxColumn53 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn52 As DataGridViewTextBoxColumn
+    Friend WithEvents NombreArchivoCrear As TextBox
+    Friend WithEvents RutaCrear As TextBox
+    Friend WithEvents BtnCodigoRuta As Button
+    Friend WithEvents NombreTablaTextBox3 As TextBox
 End Class

@@ -149,6 +149,12 @@
       <DependentUpon>DataSetTablasYCampos.xsd</DependentUpon>
     </Compile>
     <Compile Include="Data\ProcesamientoTexto.vb" />
+    <Compile Include="Formularios\FormularioPruebas.Designer.vb">
+      <DependentUpon>FormularioPruebas.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\FormularioPruebas.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Formularios\FrmConfiguracion.Designer.vb">
       <DependentUpon>FrmConfiguracion.vb</DependentUpon>
     </Compile>
@@ -191,6 +197,7 @@
     <Compile Include="Formularios\Reportes.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Modulos\ModuloReplace.vb" />
     <Compile Include="Modulos\TratamientoText.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
@@ -214,6 +221,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Formularios\FormularioPruebas.resx">
+      <DependentUpon>FormularioPruebas.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\FrmConfiguracion.resx">
       <DependentUpon>FrmConfiguracion.vb</DependentUpon>
     </EmbeddedResource>
@@ -242,6 +252,8 @@
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\Report1.rdlc" />
+    <EmbeddedResource Include="Reportes\ReportePrueba.rdlc" />
     <EmbeddedResource Include="Reportes\ReportEstimacion.rdlc" />
   </ItemGroup>
   <ItemGroup>

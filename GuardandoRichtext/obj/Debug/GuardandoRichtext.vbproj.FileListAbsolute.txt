@@ -21,4 +21,3 @@ C:\www\Copia GenCodigo\GenCodigo\GuardandoRichtext\obj\Debug\GuardandoRichtext.v
 C:\www\Copia GenCodigo\GenCodigo\GuardandoRichtext\obj\Debug\GuardandoRichtext.exe
 C:\www\Copia GenCodigo\GenCodigo\GuardandoRichtext\obj\Debug\GuardandoRichtext.xml
 C:\www\Copia GenCodigo\GenCodigo\GuardandoRichtext\obj\Debug\GuardandoRichtext.pdb
-C:\www\Copia GenCodigo\GenCodigo\GuardandoRichtext\obj\Debug\GuardandoRichtext.vbprojAssemblyReference.cache

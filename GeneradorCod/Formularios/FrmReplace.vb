@@ -1,7 +1,16 @@
-﻿Public Class FrmReplace
-
+﻿Imports System.IO
+Imports System.Text
+Imports System.Drawing
+Public Class FrmReplace
     Dim ValorRequisito As String
     Dim Requisitos() As String
+    Dim creaDocTec As Boolean
+    Dim creaCarpArch As Boolean
+    Dim NombreArchivoACrear As String
+    Dim RutaProcesada As String
+    Dim contadorContadorArchivo As Integer = 0
+    Dim ComponenteBase As Integer
+
     Private Sub FrmReplace_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
         'TODO: esta línea de código carga datos en la tabla 'DataSetAdministracion.Proyectos' Puede moverla o quitarla según sea necesario.
@@ -69,6 +78,7 @@
     Private Sub PlantillaIDTextBox1_TextChanged(sender As Object, e As EventArgs) Handles PlantillaIDTextBox1.TextChanged
         SP_Plantillas_BUSQUEDA_SEGUN_PARAMETRO_Tecnologia_2()
         SP_CARGA_TablasRelacionadas_SEGUN_PlantillaID()
+        SP_PlantillasCreacionDeArchivos_BUSQUEDA_SEGUN_PARAMETRO_PlantillaID()
     End Sub
     Private Sub SP_Componentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaID()
         Try
@@ -81,7 +91,7 @@
     Private Sub SP_RequerimientosPlantillas_BUSQUEDA_SEGUN_PARAMETRO_PlantillaID()
         Try
             Me.SP_RequerimientosPlantillas_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDTableAdapter.Fill(Me.DataSetAdministracion.SP_RequerimientosPlantillas_BUSQUEDA_SEGUN_PARAMETRO_PlantillaID, New System.Nullable(Of Integer)(CType(PlantillaIDTextBox1.Text, Integer)))
-            EnunciadoEnRich.Rtf = EnunciadoTextBox.Text
+            EnunciadoEnRich.Text = EnunciadoTextBox.Text
         Catch ex As System.Exception
             'System.Windows.Forms.MessageBox.Show(ex.Message)
         End Try
@@ -137,9 +147,6 @@
                 contadorRequerimientos = contadorRequerimientos - 1
             End If
         End While
-    End Sub
-    Private Sub BtnPrevisualizar_Click(sender As Object, e As EventArgs)
-
     End Sub
     Private Sub BtnLimpiarValoresRequerimientos_Click(sender As Object, e As EventArgs) Handles BtnLimpiarValoresRequerimientos.Click
         If MsgBox("Desea eliminar el registro de los valores de Requerimiento para este Proyecto?", MsgBoxStyle.YesNo) = MsgBoxResult.Yes Then
@@ -366,19 +373,31 @@
         End If
     End Sub
     Private Sub BtnRemplazar2_Click(sender As Object, e As EventArgs) Handles BtnRemplazar2.Click
-        GenerarCodigo()
+        If ChkGenerarCarpetasYArchivos.Checked = True Then
+            creaCarpArch = True
+        Else
+            creaCarpArch = False
+        End If
+
+        If ChkDocumentoTecnico.Checked = True Then
+            creaDocTec = True
+        Else
+            creaDocTec = False
+        End If
+        GenerarCodigo(creaDocTec, creaCarpArch)
     End Sub
 
-    Public Sub GenerarCodigo()
-        'Limpia
+    Public Sub GenerarCodigo(ByVal CreaDocTec As Boolean, ByVal CreaCarpArch As Boolean)
+        'Limpia todo el codigo generado que se tenga guardado en el momento
         CodigoGeneradoRichTextBox.Text = ""
-        'Cuenta las tecnologias aplicadas al proyecto
+        'Cuenta las tecnologias aplicadas al proyecto o las plantillas que se aplicaran
         Dim contadorTecnologiasAplicadas = SP_CARGA_TECNOLOGIAS_APLICADAS_A_PROYECTODataGridView.Rows.Count()
-        'Recorre el grid con las tecnologias aplicadas
+        'RECORRE LAS PLANTILLAS DE TECNOLOGIAS APLICADAS
         While contadorTecnologiasAplicadas > 0
             'Se ubica en la primera fila
             SP_CARGA_TECNOLOGIAS_APLICADAS_A_PROYECTODataGridView.CurrentCell = SP_CARGA_TECNOLOGIAS_APLICADAS_A_PROYECTODataGridView.Rows(0).Cells(0)
-            RecorrerComponentesHaciendoReplace()
+            'RECORRE LOS "COMPONENTES" de la PLANTILLA Y DEFINE SI CREA ARCHIVOS O DOCUMENTO TECNICO
+            RecorrerComponentesHaciendoReplace(CreaDocTec, CreaCarpArch)
             SP_CARGA_TECNOLOGIAS_APLICADAS_A_PROYECTODataGridView.Rows.RemoveAt(0)
             contadorTecnologiasAplicadas = contadorTecnologiasAplicadas - 1
             PrefijoTextBox.Text = ""
@@ -391,31 +410,66 @@
         End While
         SP_CARGA_TECNOLOGIAS_APLICADAS_A_PROYECTO()
     End Sub
+    Public Sub GenerarArchivos(ByVal archivo As String, ByVal ruta As String, ByVal contenido As String)
+        SP_ProyectoCarpetasArchivos_EDICION_INSERTAR(ruta, archivo, contenido)
+    End Sub
 
-
-
-    Public Sub RecorrerComponentesHaciendoReplace()
+    Public Sub RecorrerComponentesHaciendoReplace(ByVal CreaDocTec As Boolean, ByVal CreaCarpArch As Boolean)
+        '--- VALIDA SI LA PLANTILLA TIENE UN COMPONENTE BASE ---
+        'VARIABLES
+        'VARIABLE CREADA PARA EVALUAR SI LOS COMPONENTES DE LA PLANTILLA TIENEN UN COMPONENTE QUE TENGA BASE
         Dim cteBase As Boolean
+
+        'CONTENIDO QUE TENDRA EL CODIGO SI 
         Dim contenidoConBase As String = ""
-        'Evalua si la plantilla tiene un componente que sea base
+
+        'METODO QUE NOS TRAERA 
         SP_Componentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaID_XBase()
+
         If ComponenteEvaluaSiTieneBase.Text = "" Then
             cteBase = False
         Else
             cteBase = True
-            contenidoConBase = procesandoConBase(cteBase)
+            ComponenteBase = ComponenteEvaluaSiTieneBase.Text
+            contenidoConBase = procesandoConBase(cteBase, CreaCarpArch)
         End If
+
+
+        'CUENTA LOS COMPONENTES DE LA PLANTILLA A TRABAJAR
         Dim contadorComponentes = SP_Componentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView.Rows.Count()
+
         While contadorComponentes > 0
             'Se ubica en la primera fila
             SP_Componentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView.CurrentCell = SP_Componentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView.Rows(0).Cells(0)
-            'Valida si se aplicara a todos las tablas
+
+            'CODIGO NO APLICABLE A TABLAS
             If XTablaCheckBox.Checked = False Then
-                CodigoGeneradoRichTextBox.Text = CodigoGeneradoRichTextBox.Text & "                              " & NombreTecnologiaTextBox1.Text & vbCrLf & vbCrLf & NombreComponenteTextBox.Text & vbCrLf & CodigoTextBox.Text & vbCrLf & "____________________________________________________________________________________________________________________________________________" & vbCrLf & vbCrLf
+                'CODIGO GENERADO CON ENCABEZADO Y SEPARACION
+                'CodigoGeneradoRichTextBox.Text = CodigoGeneradoRichTextBox.Text & "                              " & NombreTecnologiaTextBox1.Text & vbCrLf & vbCrLf & NombreComponenteTextBox.Text & vbCrLf & CodigoTextBox.Text & vbCrLf & "-- ____________________________________________________________________________________________________________________________________________" & vbCrLf & vbCrLf
+                'CODIGO GENERADO SIN ENCABEZADO
+                CodigoGeneradoRichTextBox.Text = CodigoGeneradoRichTextBox.Text & vbCrLf & NombreComponenteTextBox.Text & vbCrLf & CodigoTextBox.Text & vbCrLf & "--" & vbCrLf & vbCrLf
+
+
+                CodigoParaReporte.Text = CodigoTextBox.Text
+                'VERIFICA SI SE CREARAN ARCHIVOS DE ESTA PLANTILLA
+                If CreaCarpArch = True Then
+                    'VERIFICA SI LA PLANTILLA QUE TIENE LOS COMPONENTES ADMITE LA CREACION DE ARCHIVOS
+                    If AdmiteCreacionCheckBox.Checked = True Then
+                        'BUSCA EN LA BASE DE DATOS SI EXISTE PARA EL COMPONENTE TRABAJADO REGISTRO DE RUTA Y ARCHIVO
+                        SP_PlantillasCreacionDeArchivos_BUSQUEDA_SEGUN_PARAMETRO_ComponenteID()
+                        If RutaTextBox.Text <> "" Then
+                            NombreArchivoACrear = NombreArchivoTextBox.Text & ExtensionArchivoTextBox.Text
+                            RutaProcesada = RemplazaRequerimientos(RutaTextBox.Text)
+                            CodigoTextBox.Text = RemplazaRequerimientos(CodigoTextBox.Text)
+                            GenerarArchivos(NombreArchivoACrear, RutaProcesada, CodigoTextBox.Text)
+                        End If
+                    End If
+                End If
             Else
-                'Valida si uno de los componentes es base para otros
+                'CODIGO APLICABLE A TODAS LAS TABLAS
+
                 If cteBase = False Then
-                    CodigoGeneradoRichTextBox.Text = CodigoGeneradoRichTextBox.Text & "                             " & NombreTecnologiaTextBox1.Text & vbCrLf & vbCrLf & NombreComponenteTextBox.Text & TablasDeAplicacion(CodigoTextBox.Text, cteBase) & vbCrLf & vbCrLf & "____________________________________________________________________________________________________________________________________________" & vbCrLf & vbCrLf
+                    CodigoGeneradoRichTextBox.Text = CodigoGeneradoRichTextBox.Text & "                             " & NombreTecnologiaTextBox1.Text & vbCrLf & vbCrLf & NombreComponenteTextBox.Text & TablasDeAplicacion(CodigoTextBox.Text, cteBase, CreaCarpArch) & vbCrLf & vbCrLf & "-- ____________________________________________________________________________________________________________________________________________" & vbCrLf & vbCrLf
                 End If
             End If
             SP_Componentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView.Rows.RemoveAt(0)
@@ -425,9 +479,41 @@
             CodigoGeneradoRichTextBox.Text = CodigoGeneradoRichTextBox.Text & vbCrLf & vbCrLf & contenidoConBase
         End If
         RemplazarEnResultado(CodigoGeneradoRichTextBox.Text, NombreTablaTextBox1.Text)
+        If CreaDocTec = True Then
+            If SP_PlantillasImagenes_BUSCA_SEGUN_PlantillaIDDataGridView.Rows.Count > 0 Then
+                Dim myImg As Image
+                myImg = ImagenPictureBox.Image
+                ContadorImagenes.Text = ContadorImagenes.Text + 1
+                SP_ProyectoDocumentoTecnico_EDICION_INSERTAR(CodigoParaReporte.Text, (ImagenToBytes(myImg)))
+                ImagenPictureBox.Image = Nothing
+            Else
+                Dim lotsaBytes(0) As Byte
+                SP_ProyectoDocumentoTecnico_EDICION_INSERTAR(CodigoParaReporte.Text, Nothing)
+                ImagenPictureBox.Image = Nothing
+            End If
+        End If
     End Sub
+    Public Function ImagenToBytes(ByVal Imagen As Image) As Byte()
+        'si hay imagen
+        Dim arreglo As Byte() = Nothing
+        Try
+            If Not Imagen Is Nothing Then
+                'variable de datos binarios en stream(flujo)
+                Dim Bin As New MemoryStream
+                'convertir a bytes
+                Imagen.Save(Bin, Imaging.ImageFormat.Jpeg)
+                'retorna binario
+                arreglo = Bin.GetBuffer
+            Else
+                Return Nothing
+            End If
+        Catch ex As Exception
+            MsgBox("No convirtio a bytes por: " + ex.ToString)
+        End Try
+        Return arreglo
+    End Function
 
-    Function procesandoConBase(cteBase As Boolean)
+    Function procesandoConBase(cteBase As Boolean, ByVal CreaCarpArch As Boolean)
         Dim contenidoConBase As String = ""
         Dim contadorComponentes = SP_Componentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView.Rows.Count()
         While contadorComponentes > 0
@@ -435,7 +521,7 @@
             SP_Componentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView.CurrentCell = SP_Componentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView.Rows(0).Cells(0)
             'Valida si uno de los componentes es base para otros
             If cteBase = True Then
-                contenidoConBase = contenidoConBase & vbCrLf & TablasDeAplicacion(CodigoTextBox.Text, cteBase) & vbCrLf & vbCrLf
+                contenidoConBase = contenidoConBase & vbCrLf & TablasDeAplicacion(CodigoTextBox.Text, cteBase, CreaCarpArch) & vbCrLf & vbCrLf
             End If
             SP_Componentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView.Rows.RemoveAt(0)
             contadorComponentes = contadorComponentes - 1
@@ -521,6 +607,18 @@
             SP_ComponentesContenidoProvisional_SEGUN_TABLA_REPLACEDataGridView.Rows.RemoveAt(0)
             cantidadComp = cantidadComp - 1
         End While
+        If cantidadComp = 0 Then
+
+            If ChkGenerarCarpetasYArchivos.Checked = True Then
+                SP_PlantillasCreacionDeArchivos_BUSQUEDA_SEGUN_PARAMETRO_ComponenteID_Metodo(ComponenteBase)
+                If RutaTextBox.Text <> "" And NombreTablaTextBox3.Text <> "" Then
+                    NombreArchivoACrear = RemplazosDeTabla(NombreArchivoTextBox.Text, NombreTablaTextBox3.Text) & ExtensionArchivoTextBox.Text
+                    RutaProcesada = RemplazaRequerimientos(RutaTextBox.Text)
+                    BaseTextBox.Text = RemplazaRequerimientos(BaseTextBox.Text)
+                    GenerarArchivos(NombreArchivoACrear, RutaProcesada, BaseTextBox.Text)
+                End If
+            End If
+        End If
     End Sub
 
     'Función para quitar los saltos de línea de un texto
@@ -597,6 +695,24 @@
         SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaID1()
         Return Campos
     End Function
+    Function GenerarCampos_Sin_Relacionados()
+        Dim contadorCampos = SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaID1DataGridView.Rows.Count
+        Dim Campos As String = ""
+        While contadorCampos > 0
+            'Se ubica en la primera fila
+            SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaID1DataGridView.CurrentCell = SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaID1DataGridView.Rows(0).Cells(0)
+            If TipoTextBox1.Text = "numeric (Relacionado)" Or TipoTextBox1.Text = "int(Relacionado)" Then
+                SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaID1DataGridView.Rows.RemoveAt(0)
+                contadorCampos = contadorCampos - 1
+            Else
+                Campos = Campos + TratamientoCampos(NombreCampoTextBox1.Text, contadorCampos) & vbCrLf
+                SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaID1DataGridView.Rows.RemoveAt(0)
+                contadorCampos = contadorCampos - 1
+            End If
+        End While
+        SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaID1()
+        Return Campos
+    End Function
     Function TratamientoCampos(campoConComplemento As String, contadorCampos As Integer) As String
         Dim Campo As String = "Campo"
         Dim Objeto As String = ""
@@ -623,6 +739,11 @@
             Objeto = Campo.Replace("Campo", campoConComplemento)
         Else
             Objeto = MultiReplaceTextBox.Text.Replace("Campo", campoConComplemento)
+            If SeparadorCamposTextBox.Text <> "" And SP_CamposDeTablas_BUSQUEDA_SEGUN_PARAMETRO_TablaID1DataGridView.Rows.Count <> 1 Then
+                Objeto = Objeto & SeparadorCamposTextBox.Text
+            Else
+                Objeto = Objeto
+            End If
             'INCLUIR RECORRIDO POR TABLA RELACIONADA PARA CAPTURAR TABLA INDEPENDIENTE Y DEPENDIENTE
             If TipoTextBox1.Text = "numeric (Relacionado)" Then
                 'MsgBox("ID Tabla en la que estamos" + TextBox1.Text + " " + " ID Tabla independiente con la que esta relacionada " + TextBox2.Text)
@@ -1025,6 +1146,11 @@
         SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID()
         SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID2()
         SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1_RepetirTablas()
+        'Carga las rutas del proyecto
+        SP_ProyectoCarpetasArchivos_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID()
+        ContadorImagenes.Text = 0
+        RutaUbicacion.Text = ""
+        ChkGenerarCarpetasYArchivos.Checked = False
     End Sub
 
 
@@ -1183,7 +1309,7 @@
             Me.SP_TablasDeProyecto_EDICION_INSERTARTableAdapter.Fill(Me.DataSetTablasYCampos.SP_TablasDeProyecto_EDICION_INSERTAR,
                                                  New System.Nullable(Of Integer)(CType(ProyectoIDTextBox.Text, Integer)),
                                                  NombreTablaTextBox.Text,
-                                                 New System.Nullable(Of Boolean)(CType(TipoTextBox.Text, Boolean)))
+                                                 New System.Nullable(Of Boolean)(CType(TipoTextBox2.Text, Boolean)))
             SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID()
             MsgBox("El Dato Fue Guardado Exitosamente", MsgBoxStyle.Information, "Guardar Dato")
         Catch ex As System.Exception
@@ -1320,7 +1446,7 @@
                 Actualizar_Menu_TablasDeProyecto.Enabled = True
                 Eliminar_Menu_TablasDeProyecto.Enabled = True
             Else
-                If TipoTextBox.Text = "" Then
+                If TipoTextBox2.Text = "" Then
                     MsgBox("Dato Obligatorio, Favor Verificar", MsgBoxStyle.Critical, "Validación de Datos")
                     TipoCheckBox.Text = ""
                     TipoCheckBox.Focus()
@@ -1584,11 +1710,11 @@
         If TipoCheckBox.Checked = True Then
             TipoCheckBox.Text = "Independiente"
             TipoCheckBox.BackColor = Color.Green
-            TipoTextBox.Text = "True"
+            TipoTextBox2.Text = "True"
         Else
             TipoCheckBox.Text = "Dependiente"
             TipoCheckBox.BackColor = Color.Red
-            TipoTextBox.Text = "False"
+            TipoTextBox2.Text = "False"
         End If
     End Sub
 
@@ -1776,18 +1902,14 @@
     Private Sub CodigoGeneradoRichTextBox_MouseDoubleClick(sender As Object, e As MouseEventArgs) Handles CodigoGeneradoRichTextBox.MouseDoubleClick
         CodigoGeneradoRichTextBox.BringToFront()
         CodigoGeneradoRichTextBox.Dock = DockStyle.Fill
+        BtnAmpliar.BackColor = Color.GreenYellow
     End Sub
 
     Private Sub MaximizarCodigoGeneradoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles MaximizarCodigoGeneradoToolStripMenuItem.Click
         CodigoGeneradoRichTextBox.SendToBack()
         CodigoGeneradoRichTextBox.Dock = DockStyle.None
     End Sub
-
-
-
 #End Region
-
-
     Private Sub BtnCopiar_Click(sender As Object, e As EventArgs) Handles BtnCopiar.Click
         If CodigoGeneradoRichTextBox.Text <> "" Then
             Clipboard.SetText(CodigoGeneradoRichTextBox.Text)
@@ -1797,8 +1919,6 @@
         CodigoGeneradoRichTextBox.Text = ""
         SP_Proyectos_EDICION_ACTUALIZAR_CodigoRemplazado()
     End Sub
-
-
     Private Sub SP_RegistroValorRequerimientos_SegunProyectoRequerimiento()
         Try
             Me.SP_RegistroValorRequerimientos_SegunProyectoRequerimientoTableAdapter.Fill(Me.DataSetTablasYCampos.SP_RegistroValorRequerimientos_SegunProyectoRequerimiento, New System.Nullable(Of Integer)(CType(ProyectoIDTextBox.Text, Integer)), RequerimientoTextBox.Text)
@@ -1806,7 +1926,7 @@
             System.Windows.Forms.MessageBox.Show(ex.Message)
         End Try
     End Sub
-    Function TablasDeAplicacion(Contenido As String, cteBase As Boolean)
+    Function TablasDeAplicacion(ByVal Contenido As String, ByVal cteBase As Boolean, ByVal CreaCarpArch As Boolean)
         'carga las tablas que tenga el proyecto
         SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1_RepetirTablas()
         'Cuenta las tablas que hay
@@ -1816,14 +1936,14 @@
         While contadorTablasSistema > 0
             'Se ubica en la primera fila
             SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1DataGridView.CurrentCell = SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1DataGridView.Rows(0).Cells(0)
-            textoDeTablas = textoDeTablas & RemplazosDeTodasTablas(Contenido, NombreTablaTextBox2.Text, cteBase) & vbCrLf
+            textoDeTablas = textoDeTablas & RemplazosDeTodasTablas(Contenido, NombreTablaTextBox2.Text, cteBase, CreaCarpArch, contadorTablasSistema) & vbCrLf
             SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1DataGridView.Rows.RemoveAt(0)
             contadorTablasSistema = contadorTablasSistema - 1
         End While
         SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1_RepetirTablas()
+        CodigoParaReporte.Text = textoDeTablas
         Return textoDeTablas
     End Function
-
     Public Sub SP_ComponentesContenidoProvisional_EDICION_INSERTAR(TablaID As Integer, PlantillaID As Integer, TipoXBase As String, Referencia As String, Contenido As String)
         Try
             Me.SP_ComponentesContenidoProvisional_EDICION_INSERTARTableAdapter.Fill(Me.DataSetTablasYCampos.SP_ComponentesContenidoProvisional_EDICION_INSERTAR,
@@ -1836,8 +1956,6 @@
             'System.Windows.Forms.MessageBox.Show(ex.Message)
         End Try
     End Sub
-
-
     Private Sub SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1_RepetirTablas()
         Try
             Me.SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1TableAdapter.Fill(Me.DataSetTablasYCampos.SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1, New System.Nullable(Of Integer)(CType(ProyectoIDTextBox.Text, Integer)))
@@ -1846,31 +1964,44 @@
         End Try
 
     End Sub
-    Function RemplazosDeTodasTablas(Contenido As String, Tabla As String, cteBase As Boolean)
+    Function RemplazosDeTodasTablas(ByVal Contenido As String, ByVal Tabla As String, ByVal cteBase As Boolean, ByVal creaCarpArch As Boolean, ByVal cantTablas As Integer)
         Dim ContenidoGenerado As String = Contenido
         Dim ObjContenido As String = ""
+        '
         If InStr(Contenido, "{{{Tabla}}}") Then
             ContenidoGenerado = CargarTabla(Contenido, Tabla)
         End If
+
+
         If InStr(Contenido, "{{{Tmin}}}") Then
             ContenidoGenerado = CargarTablaMinuscula(ContenidoGenerado, Tabla)
         End If
+
+
         If InStr(Contenido, "{{{TPlur}}}") Then
             ContenidoGenerado = CargarTablaEnPlural(ContenidoGenerado, Tabla)
         End If
         If InStr(Contenido, "{{{TPlurMin}}}") Then
             ContenidoGenerado = CargarTablaEnPluralMinus(ContenidoGenerado, Tabla)
         End If
+
+
         If InStr(Contenido, "{{{A=>-a}}}") Then
             ContenidoGenerado = ConvertirMayusculasMinSeparadasPorGuion(ContenidoGenerado, Tabla)
         End If
+
+
         If InStr(Contenido, "{{{Tbl-Camel}}}") Then
             ContenidoGenerado = ucaseCamelCase(ContenidoGenerado, Tabla)
         End If
+
+
         If InStr(Contenido, "{{{Clave}}}") Then
             Dim Clave = GenerarClave()
             ContenidoGenerado = ContenidoGenerado.Replace("{{{Clave}}}", Clave)
         End If
+
+
         If Not InStr(Contenido, "{{{Campos}}}") Then
             Dim Campos = GenerarCampos()
             ContenidoGenerado = ContenidoGenerado.Replace("{{{Campos}}}", Campos)
@@ -1878,6 +2009,8 @@
                 ContenidoGenerado = ContenidoGenerado.Replace("{{{Tabla}}}", Tabla)
             End If
         End If
+
+
         If Not InStr(Contenido, "{{{TCampos-ID}}}") Then
             Dim Campos = GenerarCampos_Sin_ID()
             ContenidoGenerado = ContenidoGenerado.Replace("{{{TCampos-ID}}}", Campos)
@@ -1885,14 +2018,62 @@
                 ContenidoGenerado = ContenidoGenerado.Replace("{{{Tabla}}}", Tabla)
             End If
         End If
+
+
+        If Not InStr(Contenido, "{{{TCampos-R}}}") Then
+            Dim Campos = GenerarCampos_Sin_Relacionados()
+            ContenidoGenerado = ContenidoGenerado.Replace("{{{TCampos-R}}}", Campos)
+            If InStr(ContenidoGenerado, "{{{Tabla}}}") Then
+                ContenidoGenerado = ContenidoGenerado.Replace("{{{Tabla}}}", Tabla)
+            End If
+        End If
+
+
+
         If InStr(Contenido, "{{{Camp-Rel}}}") Then
             Dim CamposRel = RecorreTablasRelacionadas()
             ContenidoGenerado = ContenidoGenerado.Replace("{{{Camp-Rel}}}", CamposRel)
         End If
+
+
         If cteBase = True Then
             SP_ComponentesContenidoProvisional_EDICION_INSERTAR(TablaIDTextBox1.Text, PlantillaIDTextBox1.Text, TipoXBase.Text, NombreComponenteTextBox.Text, ContenidoGenerado)
         End If
+
+        'CREARA ARCHIVOS Y CARPETAS 
+        If creaCarpArch = True And cteBase <> True Then
+            SP_PlantillasCreacionDeArchivos_BUSQUEDA_SEGUN_PARAMETRO_ComponenteID()
+            If RutaTextBox.Text <> "" Then
+                NombreArchivoACrear = RemplazosDeTabla(NombreArchivoTextBox.Text, Tabla) & ExtensionArchivoTextBox.Text
+                RutaProcesada = RemplazaRequerimientos(RutaTextBox.Text)
+                ContenidoGenerado = RemplazaRequerimientos(ContenidoGenerado)
+                GenerarArchivos(NombreArchivoACrear, RutaProcesada, ContenidoGenerado)
+            End If
+        End If
         Return ContenidoGenerado
+    End Function
+
+    Function RemplazaRequerimientos(ByVal Texto As String)
+        Dim contenido As String = ""
+        Dim contadorRequerimientos = SP_RegistroValorRequerimientos_SEGUN_ProyectoIDDataGridView.Rows.Count
+        While contadorRequerimientos > 0
+            'Se ubica en la primera fila
+            SP_RegistroValorRequerimientos_SEGUN_ProyectoIDDataGridView.CurrentCell = SP_RegistroValorRequerimientos_SEGUN_ProyectoIDDataGridView.Rows(0).Cells(0)
+            contenido = Texto.Replace(RequerimientoTextBox1.Text, ValorRequerimientoTextBox1.Text)
+            SP_RegistroValorRequerimientos_SEGUN_ProyectoIDDataGridView.Rows.RemoveAt(0)
+            contadorRequerimientos = contadorRequerimientos - 1
+        End While
+        SP_RegistroValorRequerimientos_SEGUN_ProyectoID()
+        Return contenido
+    End Function
+
+    Function RemplazosDeTabla(ByVal Contenido As String, ByVal Tabla As String)
+        Dim ContenidoGenerado As String = Contenido
+        Dim ObjContenido As String = ""
+        If InStr(Contenido, "{{{Tabla}}}") Then
+            Contenido = Contenido.Replace("{{{Tabla}}}", Tabla)
+        End If
+        Return Contenido
     End Function
     Private Sub TablaIDTextBox1_TextChanged(sender As Object, e As EventArgs) Handles TablaIDTextBox1.TextChanged
         SP_CampoComponentes_Segun_Plantilla_Tipo_ComponenteID()
@@ -2159,7 +2340,7 @@
 
     Private Sub EnunciadoTextBox_TextChanged(sender As Object, e As EventArgs) Handles EnunciadoTextBox.TextChanged
         Try
-            EnunciadoEnRich.Rtf = EnunciadoTextBox.Text
+            EnunciadoEnRich.Text = EnunciadoTextBox.Text
         Catch ex As Exception
 
         End Try
@@ -2203,10 +2384,12 @@
             TabControl1.Location = New Point(8, 52)
             TabControl1.Height = 535
         Else
-            Btn_Maximizar.Text = "+"
-            TabControl1.Location = New Point(8, 403)
-            TabControl1.Height = 187
-            SP_CARGA_TECNOLOGIAS_APLICADAS_A_PROYECTO()
+            If Btn_Maximizar.Text = "-" Then
+                Btn_Maximizar.Text = "+"
+                TabControl1.Location = New Point(8, 403)
+                TabControl1.Height = 187
+                SP_CARGA_TECNOLOGIAS_APLICADAS_A_PROYECTO()
+            End If
         End If
     End Sub
 
@@ -2233,9 +2416,11 @@
             CodigoGeneradoRichTextBox.BringToFront()
             CodigoGeneradoRichTextBox.Dock = DockStyle.Fill
         Else
-            BtnAmpliar.BackColor = Color.White
-            CodigoGeneradoRichTextBox.SendToBack()
-            CodigoGeneradoRichTextBox.Dock = DockStyle.None
+            If BtnAmpliar.BackColor = Color.GreenYellow Then
+                BtnAmpliar.BackColor = Color.White
+                CodigoGeneradoRichTextBox.SendToBack()
+                CodigoGeneradoRichTextBox.Dock = DockStyle.None
+            End If
         End If
     End Sub
 
@@ -2252,6 +2437,234 @@
             SP_RegistroValorRequerimientos_SEGUN_ProyectoIDDataGridView.Location = New Point(454, 498)
         End If
     End Sub
+
+    Private Sub SP_PlantillasImagenes_BUSCA_SEGUN_PlantillaID()
+        Try
+            Me.SP_PlantillasImagenes_BUSCA_SEGUN_PlantillaIDTableAdapter.Fill(Me.DataSetReportes.SP_PlantillasImagenes_BUSCA_SEGUN_PlantillaID,
+                                                                              New System.Nullable(Of Integer)(CType(PlantillaIDCargaImagenes.Text, Integer)))
+
+        Catch ex As System.Exception
+            'System.Windows.Forms.MessageBox.Show(ex.Message)
+        End Try
+
+    End Sub
+    Private Sub PlantillaIDCargaImagenes_TextChanged(sender As Object, e As EventArgs) Handles PlantillaIDCargaImagenes.TextChanged
+        SP_PlantillasImagenes_BUSCA_SEGUN_PlantillaID()
+    End Sub
+
+
+
+
+
+    Private Sub SP_ProyectoDocumentoTecnico_EDICION_INSERTAR(ByVal Codigo As String, ByVal Imagen As Byte())
+        Try
+
+            Me.SP_ProyectoDocumentoTecnico_EDICION_INSERTARTableAdapter.Fill(Me.DataSetReportes.SP_ProyectoDocumentoTecnico_EDICION_INSERTAR,
+                                                                             New System.Nullable(Of Integer)(CType(ProyectoIDTextBox.Text, Integer)),
+                                                                             Codigo,
+                                                                             Imagen)
+        Catch ex As System.Exception
+            System.Windows.Forms.MessageBox.Show(ex.Message)
+        End Try
+
+    End Sub
+#Region "Valida si se aplica o no la creacion de carpetas y archivos segun tecnologia"
+    Private Sub TecnologiaIDTextBox1_TextChanged(sender As Object, e As EventArgs) Handles TecnologiaIDTextBox1.TextChanged
+        SP_TecnologiasConCreacion_BUSQUEDA_SEGUN_Id()
+    End Sub
+    Private Sub SP_TecnologiasConCreacion_BUSQUEDA_SEGUN_Id()
+        Try
+            Me.SP_TecnologiasConCreacion_BUSQUEDA_SEGUN_IdTableAdapter.Fill(Me.DataSetAdministracion.SP_TecnologiasConCreacion_BUSQUEDA_SEGUN_Id, New System.Nullable(Of Integer)(CType(TecnologiaIDTextBox1.Text, Integer)))
+        Catch ex As System.Exception
+            'System.Windows.Forms.MessageBox.Show(ex.Message)
+        End Try
+    End Sub
+
+#End Region
+
+    Private Sub BtnCreacion_Click(sender As Object, e As EventArgs) Handles BtnCreacion.Click
+        If ChkGenerarCarpetasYArchivos.Checked = True Then
+            If RutaUbicacion.Text <> "" Then
+                If SP_ProyectoCarpetasArchivos_BUSQUEDA_SEGUN_PARAMETRO_ProyectoIDDataGridView.Rows.Count > 0 Then
+                    If SP_RegistroValorRequerimientos_SEGUN_ProyectoIDDataGridView.Rows.Count > 0 Then
+                        If NombreRequerimientoFuncionalTextBox.Text <> "" Then
+                            validarNombreAplicacion(NombreRequerimientoFuncionalTextBox.Text)
+                        Else
+                            MsgBox("Deberia existir un nombre o requisito funcional para la creacion de carpetas y archivos, favor verificar", MsgBoxStyle.Exclamation)
+                        End If
+                    Else
+                        MsgBox("Para realizar esta acción deberas tener una lista de requerimientos, favor verificar", MsgBoxStyle.Exclamation)
+                    End If
+                Else
+                    MsgBox("No existen rutas definidas para este proyecto, debera generarlas primero", MsgBoxStyle.Exclamation)
+                End If
+            Else
+                MsgBox("El proyecto " & NombreProyectoTextBox.Text & " Deberas asignarle una ruta de ubicación", MsgBoxStyle.Critical)
+            End If
+        Else
+            MsgBox("No has chekeado que deseas generar la creación de carpetas y archivos", MsgBoxStyle.Exclamation)
+        End If
+
+    End Sub
+
+    Private Sub validarNombreAplicacion(ByVal nombreRequerimientoFuncional As String)
+        Dim contador As Integer = SP_RegistroValorRequerimientos_SEGUN_ProyectoIDDataGridView.Rows.Count
+        Dim req As Boolean = False
+        While contador > 0
+            SP_RegistroValorRequerimientos_SEGUN_ProyectoIDDataGridView.CurrentCell = SP_RegistroValorRequerimientos_SEGUN_ProyectoIDDataGridView.Rows(0).Cells(0)
+            If RequerimientoTextBox3.Text = nombreRequerimientoFuncional Then ' Aqui verificamos que exista un nombre para la aplicacion
+                RutaUbicacion.Text = RutaUbicacion.Text + "\" + ValorRequerimientoTextBox4.Text
+                If Directory.Exists(RutaUbicacion.Text) = Nothing Then
+                    If MsgBox("Se crearan en " & RutaUbicacion.Text & " todos los archivos para este proyecto, desea continuar?", MsgBoxStyle.YesNo) = MsgBoxResult.Yes Then
+                        GenerarProyecto()
+                    Else
+                        MsgBox("Se cancelo la instrucción", MsgBoxStyle.Information)
+                    End If
+                Else
+                    MsgBox("El proyecto " & NombreProyectoTextBox.Text & " Ya existe en la ubicación que definio, favor verificar", MsgBoxStyle.Critical)
+                End If
+                SP_RegistroValorRequerimientos_SEGUN_ProyectoID()
+                req = True
+                Exit While
+            End If
+            SP_RegistroValorRequerimientos_SEGUN_ProyectoIDDataGridView.Rows.RemoveAt(0)
+            contador = contador - 1
+        End While
+        SP_RegistroValorRequerimientos_SEGUN_ProyectoID()
+        If req = False Then
+            MsgBox("El proyecto " & NombreProyectoTextBox.Text & " Debe de cumplir con el requerimiento => **" & nombreRequerimientoFuncional & "** para la creacion de archivos, y este no se encuentra en la lista de requerimientos, favor verificar ", MsgBoxStyle.Critical)
+        End If
+    End Sub
+    Public Sub GenerarProyecto()
+        Dim cantRutas As Integer = 0
+        Dim rutaConcatenada As String
+        cantRutas = SP_ProyectoCarpetasArchivos_BUSQUEDA_SEGUN_PARAMETRO_ProyectoIDDataGridView.Rows.Count
+        While cantRutas > 0
+            SP_ProyectoCarpetasArchivos_BUSQUEDA_SEGUN_PARAMETRO_ProyectoIDDataGridView.CurrentCell = SP_ProyectoCarpetasArchivos_BUSQUEDA_SEGUN_PARAMETRO_ProyectoIDDataGridView.Rows(0).Cells(0)
+            rutaConcatenada = RutaUbicacion.Text & "\" & RutaCrear.Text
+            tratamientoRuta(RutaCrear.Text, RutaUbicacion.Text)
+            GenerarArchivo(rutaConcatenada, NombreArchivoCrear.Text, ContenidoCrear.Text)
+            SP_ProyectoCarpetasArchivos_BUSQUEDA_SEGUN_PARAMETRO_ProyectoIDDataGridView.Rows.RemoveAt(0)
+            cantRutas = cantRutas - 1
+        End While
+        SP_ProyectoCarpetasArchivos_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID()
+    End Sub
+    Private Sub tratamientoRuta(ByVal ruta As String, ByVal rutaBase As String)
+        Dim Directorio() As String
+        Dim rutaVerificar As String = rutaBase
+        Directorio = ruta.Split("\")
+        For i = 0 To Directorio.Length - 1
+            rutaVerificar = rutaVerificar & "\" & Directorio(i)
+            If (My.Computer.FileSystem.DirectoryExists(rutaVerificar) = False) Then
+                My.Computer.FileSystem.CreateDirectory(rutaVerificar)
+            End If
+        Next
+    End Sub
+    Private Sub GenerarArchivo(ByVal Ruta As String, ByVal Archivo As String, ByVal Contenido As String)
+        My.Computer.FileSystem.WriteAllText(Ruta + "\" + Archivo, Contenido, True)
+    End Sub
+
+    Private Sub BtnCargaRuta_Click(sender As Object, e As EventArgs) Handles BtnCargaRuta.Click
+        If FolderBrowserDialog1.ShowDialog = DialogResult.OK Then
+            RutaUbicacion.Text = FolderBrowserDialog1.SelectedPath
+        End If
+    End Sub
+
+    Private Sub SP_PlantillasCreacionDeArchivos_BUSQUEDA_SEGUN_PARAMETRO_ComponenteID()
+        Try
+            If ComponenteIDTextBox.Text = "" Then
+                ComponenteIDTextBox.Text = "0"
+            End If
+            Me.SP_PlantillasCreacionDeArchivos_BUSQUEDA_SEGUN_PARAMETRO_ComponenteIDTableAdapter.Fill(Me.DataSetAdministracion.SP_PlantillasCreacionDeArchivos_BUSQUEDA_SEGUN_PARAMETRO_ComponenteID,
+                                                                                                      New System.Nullable(Of Integer)(CType(ComponenteIDTextBox.Text, Integer)))
+        Catch ex As System.Exception
+            'System.Windows.Forms.MessageBox.Show(ex.Message)
+        End Try
+    End Sub
+
+    Private Sub SP_PlantillasCreacionDeArchivos_BUSQUEDA_SEGUN_PARAMETRO_ComponenteID_Metodo(ByVal ComponenteId As Integer)
+        Try
+            Me.SP_PlantillasCreacionDeArchivos_BUSQUEDA_SEGUN_PARAMETRO_ComponenteIDTableAdapter.Fill(Me.DataSetAdministracion.SP_PlantillasCreacionDeArchivos_BUSQUEDA_SEGUN_PARAMETRO_ComponenteID,
+                                                                                                      New System.Nullable(Of Integer)(CType(ComponenteId, Integer)))
+        Catch ex As System.Exception
+            'System.Windows.Forms.MessageBox.Show(ex.Message)
+        End Try
+    End Sub
+
+    Private Sub SP_PlantillasCreacionDeArchivos_BUSQUEDA_SEGUN_PARAMETRO_PlantillaID()
+        Try
+            If PlantillaIDTextBox1.Text = "" Then
+                PlantillaIDTextBox1.Text = "0"
+            End If
+            Me.SP_PlantillasCreacionDeArchivos_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDTableAdapter.Fill(Me.DataSetAdministracion.SP_PlantillasCreacionDeArchivos_BUSQUEDA_SEGUN_PARAMETRO_PlantillaID,
+                                                                                                     New System.Nullable(Of Integer)(CType(PlantillaIDTextBox1.Text, Integer)))
+        Catch ex As System.Exception
+            'System.Windows.Forms.MessageBox.Show(ex.Message)
+        End Try
+    End Sub
+
+    Private Sub SP_ProyectoCarpetasArchivos_EDICION_INSERTAR(ByVal Ruta As String, ByVal NombreArchivo As String, ByVal Contenido As String)
+        Try
+            Me.SP_ProyectoCarpetasArchivos_EDICION_INSERTARTableAdapter.Fill(Me.DataSetAdministracion.SP_ProyectoCarpetasArchivos_EDICION_INSERTAR,
+                                                                             New System.Nullable(Of Integer)(CType(ProyectoIDTextBox.Text, Integer)),
+                                                                             Ruta, NombreArchivo,
+                                                                             Contenido)
+            SP_ProyectoCarpetasArchivos_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID()
+        Catch ex As System.Exception
+            'System.Windows.Forms.MessageBox.Show(ex.Message)
+        End Try
+
+    End Sub
+
+    Private Sub BtnReiniciarCreacion_Click(sender As Object, e As EventArgs) Handles BtnReiniciarCreacion.Click
+        SP_ProyectoCarpetasArchivos_EDICION_ELIMINAR_SEGUN_ProyectoID()
+    End Sub
+
+    Private Sub SP_ProyectoCarpetasArchivos_EDICION_ELIMINAR_SEGUN_ProyectoID()
+        Try
+            Me.SP_ProyectoCarpetasArchivos_EDICION_ELIMINAR_SEGUN_ProyectoIDTableAdapter.Fill(Me.DataSetAdministracion.SP_ProyectoCarpetasArchivos_EDICION_ELIMINAR_SEGUN_ProyectoID, New System.Nullable(Of Integer)(CType(ProyectoIDTextBox.Text, Integer)))
+            SP_ProyectoCarpetasArchivos_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID()
+        Catch ex As System.Exception
+            'System.Windows.Forms.MessageBox.Show(ex.Message)
+        End Try
+    End Sub
+
+    Private Sub SP_ProyectoCarpetasArchivos_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID()
+        Try
+            Me.SP_ProyectoCarpetasArchivos_BUSQUEDA_SEGUN_PARAMETRO_ProyectoIDTableAdapter.Fill(Me.DataSetAdministracion.SP_ProyectoCarpetasArchivos_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID, New System.Nullable(Of Integer)(CType(ProyectoIDTextBox.Text, Integer)))
+        Catch ex As System.Exception
+            'System.Windows.Forms.MessageBox.Show(ex.Message)
+        End Try
+
+    End Sub
+
+    Private Sub ContenidoCrear_MouseDoubleClick(sender As Object, e As MouseEventArgs) Handles ContenidoCrear.MouseDoubleClick
+        ContenidoCrear.BringToFront()
+        ContenidoCrear.Dock = DockStyle.Fill
+        BtnCodigoRuta.BackColor = Color.GreenYellow
+    End Sub
+
+    Private Sub BtnCodigoRuta_Click(sender As Object, e As EventArgs) Handles BtnCodigoRuta.Click
+        If BtnCodigoRuta.BackColor = Color.White Then
+            BtnCodigoRuta.BackColor = Color.GreenYellow
+            ContenidoCrear.BringToFront()
+            ContenidoCrear.Dock = DockStyle.Fill
+        Else
+            BtnCodigoRuta.BackColor = Color.White
+            ContenidoCrear.BringToFront()
+            ContenidoCrear.Dock = DockStyle.None
+        End If
+    End Sub
+
+
+
+
+
+
+
+
+
+
 
 #End Region
 End Class

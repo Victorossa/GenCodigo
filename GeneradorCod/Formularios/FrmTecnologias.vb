@@ -1,5 +1,12 @@
-﻿Public Class FrmTecnologias
+﻿
+Imports System.IO
+Imports System.Drawing
+Public Class FrmTecnologias
     Private Sub FrmTecnologias_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        'TODO: esta línea de código carga datos en la tabla 'DataSetReportes.PlantillasImagenes' Puede moverla o quitarla según sea necesario.
+        Me.PlantillasImagenesTableAdapter.Fill(Me.DataSetReportes.PlantillasImagenes)
+        'TODO: esta línea de código carga datos en la tabla 'DataSetReportes.PlantillasImagenes' Puede moverla o quitarla según sea necesario.
+        Me.PlantillasImagenesTableAdapter.Fill(Me.DataSetReportes.PlantillasImagenes)
         Try
             Me.TiposTableAdapter.Fill(Me.DataSetAdministracion.Tipos)
             Me.TecnologiasTableAdapter.Fill(Me.DataSetAdministracion.Tecnologias)
@@ -17,6 +24,7 @@
             Cancelar_TablasRelacionadas()
             SP_TextoEnriquecido_BUSQUEDA_SEGUN_PARAMETRO_ComponenteID()
             Cancelar_TextoEnriquecido()
+            Cancelar_PlantillasCreacionDeArchivos()
         Catch ex As System.Exception
             System.Windows.Forms.MessageBox.Show(ex.Message)
         End Try
@@ -310,6 +318,7 @@
 
     Private Sub TecnologiaIDTextBox_TextChanged(sender As Object, e As EventArgs) Handles TecnologiaIDTextBox.TextChanged
         SP_Plantillas_BUSQUEDA_SEGUN_PARAMETRO_Tecnologia()
+        SP_TecnologiasConCreacion_BUSQUEDA_SEGUN_Id()
     End Sub
 
 
@@ -613,6 +622,11 @@
             Else
                 CarguePorPlantilla()
             End If
+            If SP_Componentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView.Rows.Count > 0 Then
+                BtnGuardarCodigo.Enabled = True
+            Else
+                BtnGuardarCodigo.Enabled = False
+            End If
         Catch ex As Exception
 
         End Try
@@ -625,6 +639,9 @@
         SP_TablasRelacionadas_BUSQUEDA_SEGUN_PARAMETRO_PlantillaID()
         SP_CampoComponentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaID_ComponenteID()
         SP_PlantillasMetricas_BUSQUEDA_SEGUN_PlantillaID()
+        SP_PlantillasVentajasTecnologicas_SEGUN_PlantillaID()
+        SP_PlantillasImagenes_BUSCA_SEGUN_PlantillaID()
+        SP_PlantillasCreacionDeArchivos_BUSQUEDA_SEGUN_PARAMETRO_PlantillaID()
         If RB_Plantilla.Checked = "True" Then
             SP_CARGA_CONVENSIONES_USADAS_POR_PLANTILLA()
             SP_CARGA_CONVENSIONES_USADAS_POR_PLANTILLADataGridView.Visible = True
@@ -642,7 +659,6 @@
         Catch ex As System.Exception
             'System.Windows.Forms.MessageBox.Show(ex.Message)
         End Try
-
     End Sub
 
 
@@ -655,6 +671,7 @@
         Nuevo_Menu_Componentes.Enabled = True
         Guardar_Menu_Componentes.Enabled = False
         Editar_Menu_Componentes.Enabled = True
+        BtnGuardarCodigo.Enabled = Enabled = True
         Actualizar_Menu_Componentes.Enabled = False
         Eliminar_Menu_Componentes.Enabled = False
         'Grid
@@ -725,6 +742,7 @@
     Private Sub Nuevo_Menu_Componentes_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Nuevo_Menu_Componentes.Click
         Nuevo_Menu_Componentes.Enabled = False
         Editar_Menu_Componentes.Enabled = False
+        BtnGuardarCodigo.Enabled = False
         SP_Componentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView.Enabled = False
         Limpiar_Objetos_Componentes()
         NombreComponenteTextBox.Enabled = True
@@ -756,8 +774,10 @@
     'Actualizar
     Private Sub Actualizar_Menu_Componentes_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Actualizar_Menu_Componentes.Click
         Control_Nulos_Componentes()
-
-        If ControlNulos.Text = "" Then ' Then
+        If ControlNulos.Text = "" Then
+            If RutaTextBox.Text <> "" Then
+                SP_PlantillasCreacionDeArchivos_EDICION_ACTUALIZAR_Limp()
+            End If
             SP_Componentes_EDICION_ACTUALIZAR()
             Cancelar_Componentes()
             Parar_Timer_Componentes()
@@ -885,9 +905,11 @@
         If XTablaCheckBox.Checked = True Then
             XTablaCheckBox.Text = "SI"
             XTablaTextBox.Text = "True"
+            PorTablaTextBox.Text = "True"
         Else
             XTablaCheckBox.Text = "NO"
             XTablaTextBox.Text = "False"
+            PorTablaTextBox.Text = "False"
         End If
     End Sub
     Private Sub XBaseCheckBox_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles XBaseCheckBox.CheckedChanged
@@ -1084,7 +1106,7 @@ Los otros componentes deberan ser palabras completas y sin saltos de linea
         Try
             Me.SP_RequerimientosPlantillas_EDICION_INSERTARTableAdapter.Fill(Me.DataSetAdministracion.SP_RequerimientosPlantillas_EDICION_INSERTAR,
                                                  New System.Nullable(Of Integer)(CType(PlantillaIDTextBox.Text, Integer)),
-                                                 EnunciadoRichTextBox.Rtf,
+                                                 EnunciadoRichTextBox.Text,
                                                  RequerimientoTextBox.Text,
                                                  New System.Nullable(Of Integer)(CType(OrdenDePeticionTextBox.Text, Integer)))
             SP_RequerimientosPlantillas_BUSQUEDA_SEGUN_PARAMETRO_PlantillaID()
@@ -1099,7 +1121,7 @@ Los otros componentes deberan ser palabras completas y sin saltos de linea
             Me.SP_RequerimientosPlantillas_EDICION_ACTUALIZARTableAdapter.Fill(Me.DataSetAdministracion.SP_RequerimientosPlantillas_EDICION_ACTUALIZAR,
                                                  New System.Nullable(Of Integer)(CType(RequerimientoPlantillaIDTextBox.Text, Integer)),
                                                  New System.Nullable(Of Integer)(CType(PlantillaIDTextBox.Text, Integer)),
-                                                 EnunciadoRichTextBox.Rtf,
+                                                 EnunciadoRichTextBox.Text,
                                                  RequerimientoTextBox.Text,
                                                  New System.Nullable(Of Integer)(CType(OrdenDePeticionTextBox.Text, Integer)))
             SP_RequerimientosPlantillas_BUSQUEDA_SEGUN_PARAMETRO_PlantillaID()
@@ -1345,7 +1367,7 @@ Los otros componentes deberan ser palabras completas y sin saltos de linea
         If TxtBuscado.Text <> "" Then
             Try
                 Dim index As Integer = 0
-                While index <ContenidoComponenteRichTextBox.Text.LastIndexOf(TxtBuscado.Text)
+                While index < ContenidoComponenteRichTextBox.Text.LastIndexOf(TxtBuscado.Text)
                     ContenidoComponenteRichTextBox.Find(TxtBuscado.Text, index, ContenidoComponenteRichTextBox.TextLength, RichTextBoxFinds.None)
                     ContenidoComponenteRichTextBox.SelectionBackColor = Color.Yellow
                     index = ContenidoComponenteRichTextBox.Text.IndexOf(TxtBuscado.Text, index) + 1
@@ -1441,6 +1463,7 @@ Los otros componentes deberan ser palabras completas y sin saltos de linea
         ContenidoComponenteCopia.Text = ContenidoComponenteRichTextBox.Text
         'If MsgBox("Desea Actualizar este codigo?", MsgBoxStyle.YesNo) = MsgBoxResult.Yes Then
         SP_Componentes_EDICION_ACTUALIZAR_SoloCodigo()
+        SP_PlantillasCreacionDeArchivos_BUSQUEDA_SEGUN_PARAMETRO_ComponenteID()
         TabPage1.BackColor = Color.Chartreuse
         PanelGuardado.Visible = True
         TimerGuardarComponente.Start()
@@ -1475,26 +1498,13 @@ Los otros componentes deberan ser palabras completas y sin saltos de linea
     Private Sub RequerimientoPlantillaIDTextBox_TextChanged(sender As Object, e As EventArgs) Handles RequerimientoPlantillaIDTextBox.TextChanged
         Try
             Timer1.Start()
-            EnunciadoRichTextBox.Rtf = EnunciadoRichTextBox.Text
+            EnunciadoRichTextBox.Text = EnunciadoRichTextBox.Text
         Catch ex As Exception
 
         End Try
     End Sub
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        Try
-            EnunciadoRichTextBox.Rtf = EnunciadoRichTextBox.Text
-        Catch ex As Exception
 
-        End Try
-    End Sub
-    Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
-        Try
-            EnunciadoRichTextBox.Rtf = EnunciadoRichTextBox.Text
-            Timer1.Stop()
-        Catch ex As Exception
 
-        End Try
-    End Sub
 #Region "Procedimientos"
 
     Private Sub SP_CampoComponentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaID()
@@ -1515,7 +1525,8 @@ Los otros componentes deberan ser palabras completas y sin saltos de linea
         'Grid
         SP_CampoComponentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView.Enabled = True
         'Cargar Datos de Tabla Actualizados
-        SP_CampoComponentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaID()
+        'SP_CampoComponentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaID()
+        SP_CampoComponentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaID_ComponenteID()
         Bloquear_Objetos_CampoComponentes()
         Parar_Timer_CampoComponentes()
         Timer_Ubicar_En_Fila_CampoComponentes()
@@ -1550,7 +1561,7 @@ Los otros componentes deberan ser palabras completas y sin saltos de linea
             Dim Separador As String = SeparadorCamposTextBox.Text
             Dim Multi As String = MultiReplaceTextBox.Text
 
-            Me.SP_CampoComponentes_EDICION_INSERTARTableAdapter.Fill(Me.DataSetTablasYCampos.SP_CampoComponentes_EDICION_INSERTAR,
+            Me.SP_CampoComponentes_EDICION_INSERTAR_PARA_DUPLICADOTableAdapter.Fill(Me.DataSetTablasYCampos.SP_CampoComponentes_EDICION_INSERTAR_PARA_DUPLICADO,
                                                  New System.Nullable(Of Integer)(CType(PlantillaIDTextBox.Text, Integer)),
                                                  tipo,
                                                  Prefijo,
@@ -1566,6 +1577,8 @@ Los otros componentes deberan ser palabras completas y sin saltos de linea
             System.Windows.Forms.MessageBox.Show(ex.Message)
         End Try
     End Sub
+
+
     Private Sub CopiarRegistroToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CopiarRegistroToolStripMenuItem.Click
         SP_CampoComponentes_EDICION_INSERTAR_Copia()
     End Sub
@@ -1885,6 +1898,9 @@ Los otros componentes deberan ser palabras completas y sin saltos de linea
 
     Private Sub BtnImprimeCamposSinID_Click(sender As Object, e As EventArgs) Handles BtnImprimeCamposSinID.Click
         Me.ContenidoComponenteRichTextBox.Text = Me.ContenidoComponenteRichTextBox.Text.Insert(Me.ContenidoComponenteRichTextBox.SelectionStart, "{{{TCampos-ID}}}")
+    End Sub
+    Private Sub BtnImprimeCamposSinRelacion_Click(sender As Object, e As EventArgs) Handles BtnImprimeCamposSinRelacion.Click
+        Me.ContenidoComponenteRichTextBox.Text = Me.ContenidoComponenteRichTextBox.Text.Insert(Me.ContenidoComponenteRichTextBox.SelectionStart, "{{{TCampos-R}}}")
     End Sub
 
     Private Sub BtnImprimeTabla_Click(sender As Object, e As EventArgs) Handles BtnImprimeTabla.Click
@@ -2446,7 +2462,7 @@ Los otros componentes deberan ser palabras completas y sin saltos de linea
     End Sub
 #End Region
 #End Region
-#Region "Texto Enriquecido"
+
     Private Sub SP_TextoEnriquecido_BUSQUEDA_SEGUN_PARAMETRO_ComponenteID()
         Try
             Me.SP_TextoEnriquecido_BUSQUEDA_SEGUN_PARAMETRO_ComponenteIDTableAdapter.Fill(Me.DataSetTablasYCampos.SP_TextoEnriquecido_BUSQUEDA_SEGUN_PARAMETRO_ComponenteID, New System.Nullable(Of Integer)(CType(ComponenteIDTextBox.Text, Integer)))
@@ -2459,6 +2475,7 @@ Los otros componentes deberan ser palabras completas y sin saltos de linea
     Private Sub ComponenteIDTextBox_TextChanged(sender As Object, e As EventArgs) Handles ComponenteIDTextBox.TextChanged
         'SP_TextoEnriquecido_BUSQUEDA_SEGUN_PARAMETRO_ComponenteID()
         SP_CampoComponentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaID_ComponenteID()
+        SP_PlantillasCreacionDeArchivos_BUSQUEDA_SEGUN_PARAMETRO_ComponenteID()
     End Sub
 
 #Region "Procedimientos"
@@ -2532,7 +2549,7 @@ Los otros componentes deberan ser palabras completas y sin saltos de linea
     End Sub
 #End Region
 
-#Region "Menus"
+
     'Nuevo 
     Private Sub Nuevo_Menu_TextoEnriquecido_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Nuevo_Menu_TextoEnriquecido.Click
         Nuevo_Menu_TextoEnriquecido.Enabled = False
@@ -2750,11 +2767,6 @@ Los otros componentes deberan ser palabras completas y sin saltos de linea
         End If
     End Sub
 
-    Private Sub BtnZoom_Click(sender As Object, e As EventArgs) Handles BtnZoom.Click
-        RichTextBox1.BringToFront()
-        RichTextBox1.Dock = DockStyle.Fill
-    End Sub
-
     Private Sub MinimizarToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles MinimizarToolStripMenuItem.Click
         RichTextBox1.SendToBack()
         RichTextBox1.Dock = DockStyle.None
@@ -2839,7 +2851,6 @@ Los otros componentes deberan ser palabras completas y sin saltos de linea
         Catch ex As System.Exception
             System.Windows.Forms.MessageBox.Show(ex.Message)
         End Try
-
     End Sub
 
     Private Sub BtnEditarTiempo_Click(sender As Object, e As EventArgs) Handles BtnEditarTiempo.Click
@@ -2866,9 +2877,749 @@ Los otros componentes deberan ser palabras completas y sin saltos de linea
         End If
     End Sub
 
+    Private Sub SP_PlantillasVentajasTecnologicas_SEGUN_PlantillaID()
+        Try
+            Me.SP_PlantillasVentajasTecnologicas_SEGUN_PlantillaIDTableAdapter.Fill(Me.DataSetAdministracion.SP_PlantillasVentajasTecnologicas_SEGUN_PlantillaID, New System.Nullable(Of Integer)(CType(PlantillaIDTextBox.Text, Integer)))
+        Catch ex As System.Exception
+            'System.Windows.Forms.MessageBox.Show(ex.Message)
+        End Try
+
+    End Sub
+
+    Private Sub SP_PlantillasVentajasTecnologicas_EDICION_EDITAR()
+        Try
+            Me.SP_PlantillasVentajasTecnologicas_EDICION_EDITARTableAdapter.Fill(Me.DataSetAdministracion.SP_PlantillasVentajasTecnologicas_EDICION_EDITAR, New System.Nullable(Of Integer)(CType(PlantillaIDTextBox.Text, Integer)), VentajaTextBox.Text)
+            SP_PlantillasVentajasTecnologicas_SEGUN_PlantillaID()
+        Catch ex As System.Exception
+            'System.Windows.Forms.MessageBox.Show(ex.Message)
+        End Try
+    End Sub
+
+    Private Sub SP_PlantillasVentajasTecnologicas_EDICION_INSERTAR()
+        Try
+            Me.SP_PlantillasVentajasTecnologicas_EDICION_INSERTARTableAdapter.Fill(Me.DataSetAdministracion.SP_PlantillasVentajasTecnologicas_EDICION_INSERTAR, New System.Nullable(Of Integer)(CType(PlantillaIDTextBox.Text, Integer)), VentajaTextBox.Text)
+            SP_PlantillasVentajasTecnologicas_SEGUN_PlantillaID()
+        Catch ex As System.Exception
+            'System.Windows.Forms.MessageBox.Show(ex.Message)
+        End Try
+
+    End Sub
+
+    Private Sub BtnGuardaRegistroVentaja_Click(sender As Object, e As EventArgs) Handles BtnGuardaRegistroVentaja.Click
+        If VentajaTextBox.Text <> "" Then
+            If VentajaTecnologicaPlantillaIdTextBox.Text = "" Then
+                SP_PlantillasVentajasTecnologicas_EDICION_INSERTAR()
+                MsgBox("Ventaja tecnologica de Plantilla Guardada con Exito!!!", MsgBoxStyle.Information)
+            Else
+                MsgBox("Ya existe un registro de Ventaja para esta plantilla, si desea cambiarla debe de realizar una edicion", MsgBoxStyle.Critical)
+            End If
+        Else
+            MsgBox("debe de haber una descripcion de la ventaja", MsgBoxStyle.Critical)
+            TiempoTextBox.Focus()
+        End If
+    End Sub
+
+    Private Sub BtnEditaRegistroVentaja_Click(sender As Object, e As EventArgs) Handles BtnEditaRegistroVentaja.Click
+        If VentajaTextBox.Text <> "" Then
+            If VentajaTecnologicaPlantillaIdTextBox.Text <> "" Then
+                SP_PlantillasVentajasTecnologicas_EDICION_EDITAR()
+                MsgBox("Ventaja tecnologica de Plantilla Actualizada Correctamente!!!", MsgBoxStyle.Information)
+            Else
+                MsgBox("No puede editar esta ventaja de la plantilla, debe guardarla primero", MsgBoxStyle.Critical)
+            End If
+        Else
+            MsgBox("debe de haber una descripcion de la ventaja", MsgBoxStyle.Critical)
+            TiempoTextBox.Focus()
+        End If
+    End Sub
+
+    Private Sub SP_PlantillasImagenes_BUSCA_SEGUN_PlantillaID()
+        Try
+            Me.SP_PlantillasImagenes_BUSCA_SEGUN_PlantillaIDTableAdapter.Fill(Me.DataSetReportes.SP_PlantillasImagenes_BUSCA_SEGUN_PlantillaID, New System.Nullable(Of Integer)(CType(PlantillaIDTextBox.Text, Integer)))
+        Catch ex As System.Exception
+            System.Windows.Forms.MessageBox.Show(ex.Message)
+        End Try
+
+    End Sub
+
+
+
+    Private Sub ImagenIdTextBox_TextChanged(sender As Object, e As EventArgs) Handles ImagenIdTextBox.TextChanged
+        ImagenPictureBox.SizeMode = PictureBoxSizeMode.StretchImage
+    End Sub
+
+    'Private Sub BtnCargar_Click(sender As Object, e As EventArgs) Handles BtnCargar.Click
+    '    OpenFileDialog1.InitialDirectory = "C:\Users\victor.ossa\Desktop\ImagenesPLE"
+    '    If OpenFileDialog1.ShowDialog() = Windows.Forms.DialogResult.OK Then
+    '        ImagenPictureBox.Image = Image.FromFile(OpenFileDialog1.FileName)
+    '    End If
+    'End Sub
+
+    Private Sub CargarImagen_Click(sender As Object, e As EventArgs)
+        OpenFileDialog1.InitialDirectory = "C:\Users\victor.ossa\Desktop\ImagenesPLE"
+        If OpenFileDialog1.ShowDialog() = Windows.Forms.DialogResult.OK Then
+            ImagenPictureBox.Image = Image.FromFile(OpenFileDialog1.FileName)
+        End If
+    End Sub
+
+    Private Sub SP_PlantillasImagenes_EDICION_INSERTAR(ByVal plantilla As Integer, ByVal referencia As String, ByVal Imagen As Byte())
+        Try
+            ' Dim Imagen(-1) As Byte
+            Me.SP_PlantillasImagenes_EDICION_INSERTARTableAdapter.Fill(Me.DataSetReportes.SP_PlantillasImagenes_EDICION_INSERTAR,
+                                                                       New System.Nullable(Of Integer)(CType(plantilla, Integer)),
+                                                                       ReferenciaTextBox.Text, Imagen)
+            SP_PlantillasImagenes_BUSCA_SEGUN_PlantillaID()
+        Catch ex As System.Exception
+            System.Windows.Forms.MessageBox.Show(ex.Message)
+        End Try
+    End Sub
+    Dim IMAGEN As String
+    Private Sub btnSeleccionarImagen_Click_1(sender As Object, e As EventArgs) Handles btnSeleccionarImagen.Click
+        ImagenPictureBox.Image = Nothing
+        Try
+            Me.OpenFileDialog1.ShowDialog()
+            If Me.OpenFileDialog1.FileName <> "" Then
+                IMAGEN = OpenFileDialog1.FileName
+                Dim largo As Integer = IMAGEN.Length
+                Dim imagen2 As String
+                imagen2 = CStr(Microsoft.VisualBasic.Mid(RTrim(IMAGEN), largo - 2, largo))
+                If imagen2 <> "gif" And
+                    imagen2 <> "bmp" And
+                    imagen2 <> "jpg" And
+                    imagen2 <> "jpeg" And
+                    imagen2 <> "GIF" And
+                    imagen2 <> "BMP" And
+                    imagen2 <> "JPG" And
+                    imagen2 <> "JPEG" And
+                    imagen2 <> "PNG" And
+                    imagen2 <> "png" Then
+                    imagen2 = CStr(Microsoft.VisualBasic.Mid(RTrim(IMAGEN), largo - 3, largo))
+                    If imagen2 <> "jpeg" And imagen2 <> "JPEG" And imagen2 <> "log1" Then
+                        MsgBox("Formato no valido") : Exit Sub
+                        If imagen2 <> "log1" Then Exit Sub
+                    End If
+                End If
+            End If
+        Catch ex As Exception
+
+        End Try
+        ImagenPictureBox.Load(IMAGEN)
+    End Sub
+    Private Sub BtnGuardarImagen_Click(sender As Object, e As EventArgs) Handles BtnGuardarImagen.Click
+        If ImagenPictureBox.Image Is Nothing Then
+            MsgBox("No existe una imagen para guardar", MsgBoxStyle.Critical)
+        Else
+            ReferenciaTextBox.Text = NombrePlantillaTextBox.Text & "-" & PlantillaIDTextBox.Text
+            Dim myImg As Image
+            myImg = ImagenPictureBox.Image
+            SP_PlantillasImagenes_EDICION_INSERTAR(PlantillaIDTextBox.Text, ReferenciaTextBox.Text, (ImagenToBytes(myImg)))
+            MsgBox("Imagen y Datos Guardados con Exito!!!", MsgBoxStyle.Information)
+            CancelarImagen()
+        End If
+    End Sub
+
+
+
+    Public Function ImagenToBytes(ByVal Imagen As Image) As Byte()
+        'si hay imagen
+        Dim arreglo As Byte() = Nothing
+        Try
+            If Not Imagen Is Nothing Then
+                'variable de datos binarios en stream(flujo)
+                Dim Bin As New MemoryStream
+                'convertir a bytes
+                Imagen.Save(Bin, Imaging.ImageFormat.Jpeg)
+                'retorna binario
+                arreglo = Bin.GetBuffer
+            Else
+                Return Nothing
+            End If
+        Catch ex As Exception
+            MsgBox("No convirtio a bytes por: " + ex.ToString)
+        End Try
+        Return arreglo
+    End Function
+
+    Private Sub BtnActualizarImagen_Click(sender As Object, e As EventArgs) Handles BtnActualizarImagen.Click
+        If ImagenPictureBox.Image Is Nothing Then
+            MsgBox("No existe una imagen para Actualizar", MsgBoxStyle.Critical)
+        Else
+            Dim myImg As Image
+            myImg = ImagenPictureBox.Image
+            SP_PlantillasImagenes_EDICION_ACTUALIZAR(PlantillaIDTextBox.Text, ReferenciaTextBox.Text, (ImagenToBytes(myImg)))
+            MsgBox("Imagen y Datos acutalizados con Exito!!!", MsgBoxStyle.Information)
+        End If
+    End Sub
+
+    Private Sub SP_PlantillasImagenes_EDICION_ACTUALIZAR(ByVal plantilla As Integer, ByVal referencia As String, ByVal Imagen As Byte())
+        Try
+            Me.SP_PlantillasImagenes_EDICION_ACTUALIZARTableAdapter.Fill(Me.DataSetReportes.SP_PlantillasImagenes_EDICION_ACTUALIZAR,
+                                                                         New System.Nullable(Of Integer)(CType(ImagenIdTextBox.Text, Integer)),
+                                                                         New System.Nullable(Of Integer)(CType(PlantillaIDTextBox.Text, Integer)),
+                                                                         ReferenciaTextBox.Text, Imagen)
+            SP_PlantillasImagenes_BUSCA_SEGUN_PlantillaID()
+        Catch ex As System.Exception
+            'System.Windows.Forms.MessageBox.Show(ex.Message)
+        End Try
+
+    End Sub
+
+    Private Sub BtnEliminarImagen_Click(sender As Object, e As EventArgs) Handles BtnEliminarImagen.Click
+        If ImagenPictureBox.Image Is Nothing Then
+            MsgBox("No existe una imagen para Eliminar", MsgBoxStyle.Critical)
+        Else
+            SP_PlantillasImagenes_EDICION_ELIMINAR()
+            MsgBox("Imagen y Datos eliminados con Exito!!!", MsgBoxStyle.Information)
+            CancelarImagen()
+        End If
+    End Sub
+
+    Private Sub SP_PlantillasImagenes_EDICION_ELIMINAR()
+        Try
+            Me.SP_PlantillasImagenes_EDICION_ELIMINARTableAdapter.Fill(Me.DataSetReportes.SP_PlantillasImagenes_EDICION_ELIMINAR,
+                                                                       New System.Nullable(Of Integer)(CType(ImagenIdTextBox.Text, Integer)))
+            SP_PlantillasImagenes_BUSCA_SEGUN_PlantillaID()
+        Catch ex As System.Exception
+            'System.Windows.Forms.MessageBox.Show(ex.Message)
+        End Try
+    End Sub
+
+    Private Sub BtnNuevo_Click(sender As Object, e As EventArgs) Handles BtnNuevo.Click
+        If BtnNuevo.BackColor = Color.GreenYellow Then
+            ImagenPictureBox.Image = Nothing
+            BtnEditarImagen.Enabled = False
+            btnSeleccionarImagen.Enabled = True
+            BtnGuardarImagen.Enabled = True
+            BtnActualizarImagen.Enabled = False
+            BtnEliminarImagen.Enabled = False
+            BtnNuevo.BackColor = Color.Red
+        Else
+            btnSeleccionarImagen.Enabled = False
+            BtnGuardarImagen.Enabled = False
+            BtnActualizarImagen.Enabled = True
+            BtnEliminarImagen.Enabled = True
+            BtnNuevo.BackColor = Color.GreenYellow
+        End If
+    End Sub
+
+    Private Sub BtnEditarImagen_Click(sender As Object, e As EventArgs) Handles BtnEditarImagen.Click
+        If BtnEditarImagen.BackColor = Color.Ivory Then
+            btnSeleccionarImagen.Enabled = True
+            BtnGuardarImagen.Enabled = False
+            BtnActualizarImagen.Enabled = True
+            BtnEliminarImagen.Enabled = True
+            BtnEditarImagen.BackColor = Color.Red
+        Else
+            btnSeleccionarImagen.Enabled = False
+            BtnGuardarImagen.Enabled = False
+            BtnActualizarImagen.Enabled = False
+            BtnEliminarImagen.Enabled = False
+            BtnEditarImagen.BackColor = Color.Ivory
+        End If
+    End Sub
+
+    Private Sub BtnCancelarImagen_Click(sender As Object, e As EventArgs) Handles BtnCancelarImagen.Click
+        CancelarImagen()
+    End Sub
+
+    Private Sub CancelarImagen()
+        BtnNuevo.Enabled = True
+        BtnEditarImagen.Enabled = True
+        btnSeleccionarImagen.Enabled = False
+        BtnGuardarImagen.Enabled = False
+        BtnActualizarImagen.Enabled = False
+        BtnEliminarImagen.Enabled = False
+        BtnNuevo.BackColor = Color.GreenYellow
+        BtnEditarImagen.BackColor = Color.Ivory
+        SP_PlantillasImagenes_BUSCA_SEGUN_PlantillaID()
+    End Sub
+
+    Private Sub SP_TecnologiasConCreacion_BUSQUEDA_SEGUN_Id()
+        Try
+            If TecnologiaIDTextBox.Text = "" Then
+                TecnologiaIDTextBox.Text = "0"
+            End If
+            Me.SP_TecnologiasConCreacion_BUSQUEDA_SEGUN_IdTableAdapter.Fill(Me.DataSetAdministracion.SP_TecnologiasConCreacion_BUSQUEDA_SEGUN_Id, New System.Nullable(Of Integer)(CType(TecnologiaIDTextBox.Text, Integer)))
+        Catch ex As System.Exception
+            'System.Windows.Forms.MessageBox.Show(ex.Message)
+        End Try
+
+    End Sub
 
 #End Region
+
+
+#Region "Procedimientos"
+
+    'Insertar
+    Private Sub SP_TecnologiasConCreacion_EDICION_INSERTAR()
+        Try
+            Me.SP_TecnologiasConCreacion_EDICION_INSERTARTableAdapter.Fill(Me.DataSetAdministracion.SP_TecnologiasConCreacion_EDICION_INSERTAR,
+                                                 New System.Nullable(Of Integer)(CType(TecnologiaIDTextBox.Text, Integer)),
+                                                 New System.Nullable(Of Boolean)(CType(AdmiteCreacionTextBox.Text, Boolean)),
+                                                 NombreRequerimientoFuncionalTextBox.Text)
+            SP_TecnologiasConCreacion_BUSQUEDA_SEGUN_Id()
+            MsgBox("El Dato Fue Guardado Exitosamente", MsgBoxStyle.Information, "Guardar Dato")
+        Catch ex As System.Exception
+            System.Windows.Forms.MessageBox.Show(ex.Message)
+        End Try
+    End Sub
+    'Actualizar
+    Private Sub SP_TecnologiasConCreacion_EDICION_ACTUALIZAR()
+        Try
+            Me.SP_TecnologiasConCreacion_EDICION_ACTUALIZARTableAdapter.Fill(Me.DataSetAdministracion.SP_TecnologiasConCreacion_EDICION_ACTUALIZAR,
+                                                 New System.Nullable(Of Integer)(CType(IdTextBox.Text, Integer)),
+                                                 New System.Nullable(Of Integer)(CType(TecnologiaIDTextBox.Text, Integer)),
+                                                 New System.Nullable(Of Boolean)(CType(AdmiteCreacionTextBox.Text, Boolean)),
+                                                 NombreRequerimientoFuncionalTextBox.Text)
+            SP_TecnologiasConCreacion_BUSQUEDA_SEGUN_Id()
+            MsgBox("El Dato Fue Actualizado Exitosamente", MsgBoxStyle.Information, "Actualizar Dato")
+        Catch ex As System.Exception
+            System.Windows.Forms.MessageBox.Show(ex.Message)
+        End Try
+    End Sub
+    'Guardar
+    Private Sub Guardar_Menu_TecnologiasConCreacion_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Guardar_Menu_TecnologiasConCreacion.Click
+        Control_Nulos_TecnologiasConCreacion()
+        If ControlNulos.Text = "" Then ' Then
+            If IdTextBox.Text = "" Then
+                SP_TecnologiasConCreacion_EDICION_INSERTAR()
+            Else
+                MsgBox("La tecnologia ya esta definida", MsgBoxStyle.Exclamation)
+            End If
+        End If
+    End Sub
+
+    'Actualizar
+    Private Sub Actualizar_Menu_TecnologiasConCreacion_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Actualizar_Menu_TecnologiasConCreacion.Click
+        Control_Nulos_TecnologiasConCreacion()
+        If ControlNulos.Text = "" Then ' Then
+            SP_TecnologiasConCreacion_EDICION_ACTUALIZAR()
+        End If
+    End Sub
+
 #End Region
+
+#Region "Eventos sobre Objetos "
+    Private Sub AdmiteCreacionCheckBox_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles AdmiteCreacionCheckBox.CheckedChanged
+        If AdmiteCreacionCheckBox.Checked = True Then
+            AdmiteCreacionCheckBox.Text = "Si Crea Archivos y Carpetas"
+            AdmiteCreacionTextBox.Text = "True"
+        Else
+            AdmiteCreacionCheckBox.Text = "No Crea"
+            AdmiteCreacionTextBox.Text = "False"
+        End If
+    End Sub
+    'Control de Nulos
+    Public Sub Control_Nulos_TecnologiasConCreacion()
+        ControlNulos.Text = "" '
+        Select Case ControlNulos.Text = "" '
+            Case AdmiteCreacionTextBox.Text = ""
+                MsgBox("El nombre del campo: AdmiteCreacion; Esta vacio, Favor Verificar", MsgBoxStyle.Critical)
+                AdmiteCreacionTextBox.BackColor = Color.White
+                ControlNulos.Text = "1"
+            Case NombreRequerimientoFuncionalTextBox.Text = ""
+                MsgBox("El nombre del campo: Nombre Requerimiento Funcional, es necesario para aquellas tecnologias que quieran crear carpetas y archivos con contenidos especificos, esta es necesaria para saber el nombre de la carpeta donde se crearan todos estos repositorios de información; Esta vacio, Favor Verificar", MsgBoxStyle.Critical)
+                NombreRequerimientoFuncionalTextBox.BackColor = Color.White
+                ControlNulos.Text = "1"
+            Case Else
+                ControlNulos.Text = "" '
+        End Select
+    End Sub
+
+    Private Sub BtnGenerarParaLosTipos_Click(sender As Object, e As EventArgs) Handles BtnGenerarParaLosTipos.Click
+        If MsgBox("Esta acción Creara los campos para todos los tipos actuales, deseas crearlos?", MsgBoxStyle.YesNo) = MsgBoxResult.Yes Then
+            CreaTiposParaTodosLosTipos()
+        Else
+            MsgBox("Se cancelo la instruccion", MsgBoxStyle.Information)
+        End If
+    End Sub
+
+    Private Sub CreaTiposParaTodosLosTipos()
+        Dim contadorTipos As Integer = TiposGenerarParaTodos.Rows.Count
+        While contadorTipos > 0
+            TiposGenerarParaTodos.CurrentCell = TiposGenerarParaTodos.Rows(0).Cells(0)
+            SP_CampoComponentes_EDICION_INSERTAR_ParaTodosLosTipos()
+            TiposGenerarParaTodos.Rows.RemoveAt(0)
+            contadorTipos = contadorTipos - 1
+        End While
+        Me.TiposTableAdapter.Fill(Me.DataSetAdministracion.Tipos)
+        SP_CampoComponentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaID_ComponenteID()
+    End Sub
+
+    Private Sub SP_CampoComponentes_EDICION_INSERTAR_ParaTodosLosTipos()
+        Try
+            Me.SP_CampoComponentes_EDICION_INSERTARTableAdapter.Fill(Me.DataSetTablasYCampos.SP_CampoComponentes_EDICION_INSERTAR,
+                                                 New System.Nullable(Of Integer)(CType(PlantillaIDTextBox.Text, Integer)),
+                                                 NombreTipoDato.Text,
+                                                 PrefijoTextBox.Text,
+                                                 SuperiorTextBox.Text,
+                                                 SufijoTextBox.Text,
+                                                 InferiorTextBox.Text,
+                                                 SeparadorCamposTextBox.Text,
+                                                 MultiReplaceTextBox.Text,
+                                                 ComponenteIDTextBox.Text)
+        Catch ex As System.Exception
+            System.Windows.Forms.MessageBox.Show(ex.Message)
+        End Try
+    End Sub
+
+    Private Sub BtnEliminarTodosMenos1_Click(sender As Object, e As EventArgs) Handles BtnEliminarTodosMenos1.Click
+        If MsgBox("Esta acción eliminar todos los registros y solo dejara uno, desea continuar?", MsgBoxStyle.YesNo) = MsgBoxResult.Yes Then
+            EliminarTodos()
+        Else
+            MsgBox("Se cancelo la instruccion", MsgBoxStyle.Information)
+        End If
+    End Sub
+
+    Private Sub EliminarTodos()
+        Dim contador As Integer = SP_CampoComponentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView.Rows.Count
+        While contador > 1
+            SP_CampoComponentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView.CurrentCell = SP_CampoComponentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView.Rows(0).Cells(0)
+            SP_CampoComponentes_EDICION_ELIMINAR_Todos()
+            SP_CampoComponentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView.Rows.RemoveAt(0)
+            contador = contador - 1
+        End While
+        SP_CampoComponentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaID_ComponenteID()
+        SP_CampoComponentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaID()
+    End Sub
+
+    Private Sub SP_CampoComponentes_EDICION_ELIMINAR_Todos()
+        Try
+            Me.SP_CampoComponentes_EDICION_ELIMINARTableAdapter.Fill(Me.DataSetTablasYCampos.SP_CampoComponentes_EDICION_ELIMINAR, New System.Nullable(Of Long)(CType(CampoComponenteIDTextBox.Text, Long)))
+        Catch ex As System.Exception
+            System.Windows.Forms.MessageBox.Show(ex.Message)
+        End Try
+    End Sub
+
+    Private Sub SP_PlantillasCreacionDeArchivos_BUSQUEDA_SEGUN_PARAMETRO_PlantillaID()
+        Try
+            Me.SP_PlantillasCreacionDeArchivos_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDTableAdapter.Fill(Me.DataSetAdministracion.SP_PlantillasCreacionDeArchivos_BUSQUEDA_SEGUN_PARAMETRO_PlantillaID,
+                                                                                                     New System.Nullable(Of Integer)(CType(PlantillaIDTextBox.Text, Integer)))
+        Catch ex As System.Exception
+            'System.Windows.Forms.MessageBox.Show(ex.Message)
+        End Try
+    End Sub
+
+    Private Sub SP_PlantillasCreacionDeArchivos_BUSQUEDA_SEGUN_PARAMETRO_ComponenteID()
+        Try
+            If ComponenteIDTextBox.Text = "" Then
+                ComponenteIDTextBox.Text = "0"
+            End If
+            Me.SP_PlantillasCreacionDeArchivos_BUSQUEDA_SEGUN_PARAMETRO_ComponenteIDTableAdapter.Fill(Me.DataSetAdministracion.SP_PlantillasCreacionDeArchivos_BUSQUEDA_SEGUN_PARAMETRO_ComponenteID,
+                                                                                                      New System.Nullable(Of Integer)(CType(ComponenteIDTextBox.Text, Integer)))
+        Catch ex As System.Exception
+            'System.Windows.Forms.MessageBox.Show(ex.Message)
+        End Try
+    End Sub
+
+
 #End Region
+
+#Region "Procedimientos"
+    Sub Cancelar_PlantillasCreacionDeArchivos()
+        'Botones Del Menu
+        Nuevo_Menu_PlantillasCreacionDeArchivos.Enabled = True
+        Guardar_Menu_PlantillasCreacionDeArchivos.Enabled = False
+        Editar_Menu_PlantillasCreacionDeArchivos.Enabled = True
+        Actualizar_Menu_PlantillasCreacionDeArchivos.Enabled = False
+        Eliminar_Menu_PlantillasCreacionDeArchivos.Enabled = False
+        SP_Componentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView.Enabled = True
+        SP_Plantillas_BUSQUEDA_SEGUN_PARAMETRO_TecnologiaDataGridView.Enabled = True
+        TecnologiasDataGridView.Enabled = True
+        'Cargar Datos de Tabla Actualizados
+        SP_PlantillasCreacionDeArchivos_BUSQUEDA_SEGUN_PARAMETRO_ComponenteID()
+        Bloquear_Objetos_PlantillasCreacionDeArchivos()
+        Parar_Timer_PlantillasCreacionDeArchivos()
+    End Sub
+    'Insertar
+    Private Sub SP_PlantillasCreacionDeArchivos_EDICION_INSERTAR()
+        Try
+            Me.SP_PlantillasCreacionDeArchivos_EDICION_INSERTARTableAdapter.Fill(Me.DataSetAdministracion.SP_PlantillasCreacionDeArchivos_EDICION_INSERTAR,
+                                                 RutaTextBox.Text,
+                                                 NombreArchivoTextBox.Text,
+                                                 ExtensionArchivoComboBox.Text,
+                                                 ContenidoArchivoTextBox.Text,
+                                                 New System.Nullable(Of Integer)(CType(PlantillaIDTextBox.Text, Integer)),
+                                                 New System.Nullable(Of Integer)(CType(ComponenteIDTextBox.Text, Integer)),
+                                                 New System.Nullable(Of Boolean)(CType(XTablaTextBox.Text, Boolean)))
+            SP_PlantillasCreacionDeArchivos_BUSQUEDA_SEGUN_PARAMETRO_ComponenteID()
+            MsgBox("El Dato Fue Guardado Exitosamente", MsgBoxStyle.Information, "Guardar Dato")
+        Catch ex As System.Exception
+            System.Windows.Forms.MessageBox.Show(ex.Message)
+        End Try
+    End Sub
+    'Actualizar
+    Private Sub SP_PlantillasCreacionDeArchivos_EDICION_ACTUALIZAR_Limp()
+        Try
+            Me.SP_PlantillasCreacionDeArchivos_EDICION_ACTUALIZARTableAdapter.Fill(Me.DataSetAdministracion.SP_PlantillasCreacionDeArchivos_EDICION_ACTUALIZAR,
+                                                 RutaTextBox.Text,
+                                                 NombreArchivoTextBox.Text,
+                                                 ExtensionArchivoComboBox.Text,
+                                                 ContenidoArchivoTextBox.Text,
+                                                 New System.Nullable(Of Integer)(CType(PlantillaIDTextBox.Text, Integer)),
+                                                 New System.Nullable(Of Integer)(CType(ComponenteIDTextBox.Text, Integer)),
+                                                 New System.Nullable(Of Boolean)(CType(PorTablaTextBox.Text, Boolean)))
+            SP_PlantillasCreacionDeArchivos_BUSQUEDA_SEGUN_PARAMETRO_ComponenteID()
+        Catch ex As System.Exception
+            System.Windows.Forms.MessageBox.Show(ex.Message)
+        End Try
+    End Sub
+    Private Sub SP_PlantillasCreacionDeArchivos_EDICION_ACTUALIZAR()
+        Try
+            Me.SP_PlantillasCreacionDeArchivos_EDICION_ACTUALIZARTableAdapter.Fill(Me.DataSetAdministracion.SP_PlantillasCreacionDeArchivos_EDICION_ACTUALIZAR,
+                                                 RutaTextBox.Text,
+                                                 NombreArchivoTextBox.Text,
+                                                 ExtensionArchivoComboBox.Text,
+                                                 ContenidoArchivoTextBox.Text,
+                                                 New System.Nullable(Of Integer)(CType(PlantillaIDTextBox.Text, Integer)),
+                                                 New System.Nullable(Of Integer)(CType(ComponenteIDTextBox.Text, Integer)),
+                                                 New System.Nullable(Of Boolean)(CType(PorTablaTextBox.Text, Boolean)))
+            SP_PlantillasCreacionDeArchivos_BUSQUEDA_SEGUN_PARAMETRO_ComponenteID()
+            MsgBox("El Dato Fue Actualizado Exitosamente", MsgBoxStyle.Information, "Actualizar Dato")
+        Catch ex As System.Exception
+            System.Windows.Forms.MessageBox.Show(ex.Message)
+        End Try
+    End Sub
+    'Eliminar
+    Private Sub SP_PlantillasCreacionDeArchivos_EDICION_ELIMINAR()
+        Try
+            Me.SP_PlantillasCreacionDeArchivos_EDICION_ELIMINARTableAdapter.Fill(Me.DataSetAdministracion.SP_PlantillasCreacionDeArchivos_EDICION_ELIMINAR, New System.Nullable(Of Long)(CType(PlantillasCreacionDeArchivosIdTextBox.Text, Long)))
+            SP_PlantillasCreacionDeArchivos_BUSQUEDA_SEGUN_PARAMETRO_ComponenteID()
+            MsgBox("El Dato Fue Eliminado Exitosamente de la Base de Datos", MsgBoxStyle.Information, "Eliminación de Dato")
+        Catch ex As System.Exception
+            System.Windows.Forms.MessageBox.Show(ex.Message)
+        End Try
+    End Sub
+#End Region
+#Region "Menus"
+    'Nuevo 
+    Private Sub Nuevo_Menu_PlantillasCreacionDeArchivos_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Nuevo_Menu_PlantillasCreacionDeArchivos.Click
+        Nuevo_Menu_PlantillasCreacionDeArchivos.Enabled = False
+        Editar_Menu_PlantillasCreacionDeArchivos.Enabled = False
+        Limpiar_Objetos_PlantillasCreacionDeArchivos()
+        RutaTextBox.Enabled = True
+        RutaTextBox.Focus()
+    End Sub
+    'Guardar
+    Private Sub Guardar_Menu_PlantillasCreacionDeArchivos_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Guardar_Menu_PlantillasCreacionDeArchivos.Click
+        Control_Nulos_PlantillasCreacionDeArchivos()
+        If ControlNulos.Text = "" Then ' Then
+            SP_PlantillasCreacionDeArchivos_EDICION_INSERTAR()
+            Cancelar_PlantillasCreacionDeArchivos()
+            Parar_Timer_PlantillasCreacionDeArchivos()
+        End If
+    End Sub
+    'Editar
+    Private Sub Editar_Menu_PlantillasCreacionDeArchivos_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Editar_Menu_PlantillasCreacionDeArchivos.Click
+        Nuevo_Menu_PlantillasCreacionDeArchivos.Enabled = False
+        Guardar_Menu_PlantillasCreacionDeArchivos.Enabled = False
+        Editar_Menu_PlantillasCreacionDeArchivos.Enabled = False
+        Actualizar_Menu_PlantillasCreacionDeArchivos.Enabled = True
+        Eliminar_Menu_PlantillasCreacionDeArchivos.Enabled = True
+        SP_Componentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView.Enabled = False
+        SP_Plantillas_BUSQUEDA_SEGUN_PARAMETRO_TecnologiaDataGridView.Enabled = False
+        TecnologiasDataGridView.Enabled = False
+        Desbloquear_Objetos_PlantillasCreacionDeArchivos()
+        Timer_Actualizar_PlantillasCreacionDeArchivos()
+        Timer_Eliminar_PlantillasCreacionDeArchivos()
+    End Sub
+    'Actualizar
+    Private Sub Actualizar_Menu_PlantillasCreacionDeArchivos_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Actualizar_Menu_PlantillasCreacionDeArchivos.Click
+        Control_Nulos_PlantillasCreacionDeArchivos()
+        If ControlNulos.Text = "" Then ' Then
+            SP_PlantillasCreacionDeArchivos_EDICION_ACTUALIZAR()
+            Cancelar_PlantillasCreacionDeArchivos()
+            Parar_Timer_PlantillasCreacionDeArchivos()
+        End If
+    End Sub
+    Private Sub Eliminar_Menu_PlantillasCreacionDeArchivos_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Eliminar_Menu_PlantillasCreacionDeArchivos.Click
+        If MsgBox("Desea Eliminar Este Dato?", MsgBoxStyle.YesNo) = MsgBoxResult.Yes Then
+            SP_PlantillasCreacionDeArchivos_EDICION_ELIMINAR()
+            Cancelar_PlantillasCreacionDeArchivos()
+            Parar_Timer_PlantillasCreacionDeArchivos()
+        Else
+            MsgBox("Se Cancelo la Eliminación del Dato", MsgBoxStyle.Information)
+            Cancelar_PlantillasCreacionDeArchivos()
+        End If
+    End Sub
+    'Cancelar
+    Private Sub Cancelar_Menu_PlantillasCreacionDeArchivos_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Cancelar_Menu_PlantillasCreacionDeArchivos.Click
+        Cancelar_PlantillasCreacionDeArchivos()
+    End Sub
+
+#End Region
+
+#Region "Eventos sobre Objetos "
+    'Control de Nulos
+    Public Sub Control_Nulos_PlantillasCreacionDeArchivos()
+        ControlNulos.Text = "" '
+        Select Case ControlNulos.Text = "" '
+            Case RutaTextBox.Text = ""
+                MsgBox("El nombre del campo: Ruta; Esta vacio, Favor Verificar", MsgBoxStyle.Critical)
+                RutaTextBox.BackColor = Color.Beige
+                ControlNulos.Text = "1"
+            Case NombreArchivoTextBox.Text = ""
+                MsgBox("El nombre del campo: NombreArchivo; Esta vacio, Favor Verificar", MsgBoxStyle.Critical)
+                NombreArchivoTextBox.BackColor = Color.Beige
+                ControlNulos.Text = "1"
+            Case ExtensionArchivoComboBox.Text = ""
+                MsgBox("El nombre del campo: ExtensionArchivo; Esta vacio, Favor Verificar", MsgBoxStyle.Critical)
+                ExtensionArchivoComboBox.BackColor = Color.Beige
+                ControlNulos.Text = "1"
+            Case ContenidoArchivoTextBox.Text = ""
+                MsgBox("El nombre del campo: ContenidoArchivo; Esta vacio, Favor Verificar", MsgBoxStyle.Critical)
+                ContenidoArchivoTextBox.BackColor = Color.Beige
+                ControlNulos.Text = "1"
+            Case Else
+                ControlNulos.Text = "" '
+        End Select
+    End Sub
+    Private Sub RutaTextBox_KeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles RutaTextBox.KeyPress
+        If Asc(e.KeyChar) = 13 Then
+            If RutaTextBox.Text = "" Then
+                MsgBox("Dato Obligatorio, Favor Verificar", MsgBoxStyle.Critical, "Validación de Datos")
+                RutaTextBox.Text = ""
+                RutaTextBox.Focus()
+            Else
+                NombreArchivoTextBox.Enabled = True
+                NombreArchivoTextBox.Focus()
+            End If
+        End If
+    End Sub
+    Private Sub NombreArchivoTextBox_KeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles NombreArchivoTextBox.KeyPress
+        If Asc(e.KeyChar) = 13 Then
+            If NombreArchivoTextBox.Text = "" Then
+                MsgBox("Dato Obligatorio, Favor Verificar", MsgBoxStyle.Critical, "Validación de Datos")
+                NombreArchivoTextBox.Text = ""
+                NombreArchivoTextBox.Focus()
+            Else
+                ExtensionArchivoComboBox.Enabled = True
+                ExtensionArchivoComboBox.Focus()
+            End If
+        End If
+    End Sub
+    Private Sub ExtensionArchivoComboBox_KeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles ExtensionArchivoComboBox.KeyPress
+        If Asc(e.KeyChar) = 13 Then
+            If Actualizar_Menu_PlantillasCreacionDeArchivos.Enabled = True Then
+                Actualizar_Menu_PlantillasCreacionDeArchivos.Enabled = True
+                Eliminar_Menu_PlantillasCreacionDeArchivos.Enabled = True
+            Else
+                If ExtensionArchivoComboBox.Text = "" Then
+                    MsgBox("Dato Obligatorio, Favor Verificar", MsgBoxStyle.Critical, "Validación de Datos")
+                    ExtensionArchivoComboBox.Text = ""
+                    ExtensionArchivoComboBox.Focus()
+                Else
+                    MsgBox("La Información Ya puede ser Guardada el Icono de Guardado queda habilitado", MsgBoxStyle.Information, "Guardar los Datos")
+                    Guardar_Menu_PlantillasCreacionDeArchivos.Enabled = True
+                    Timer_Guardar_PlantillasCreacionDeArchivos()
+                End If
+            End If
+        End If
+    End Sub
+    Public Sub Limpiar_Objetos_PlantillasCreacionDeArchivos()
+        NombreArchivoTextBox.Text = "" ''
+        ExtensionArchivoComboBox.Text = "" ''
+    End Sub
+    Public Sub Desbloquear_Objetos_PlantillasCreacionDeArchivos()
+        RutaTextBox.Enabled = True
+        NombreArchivoTextBox.Enabled = True
+        ExtensionArchivoComboBox.Enabled = True
+    End Sub
+    Public Sub Bloquear_Objetos_PlantillasCreacionDeArchivos()
+        RutaTextBox.Enabled = False
+        NombreArchivoTextBox.Enabled = False
+        ExtensionArchivoComboBox.Enabled = False
+    End Sub
+
+#End Region
+
+#Region "Timer de Botones"
+    'Declaraciones de Timers de Botones
+    Private WithEvents Timer_Guardar_Menu_PlantillasCreacionDeArchivos As Timer
+    Private WithEvents Timer_Actualizar_Menu_PlantillasCreacionDeArchivos As Timer
+    Private WithEvents Timer_Eliminar_Menu_PlantillasCreacionDeArchivos As Timer
+    'Procedimientos del Timer
+    Private Sub Timer_Guardar_PlantillasCreacionDeArchivos()
+        Me.Timer_Guardar_Menu_PlantillasCreacionDeArchivos = New Timer
+        Timer_Guardar_Menu_PlantillasCreacionDeArchivos.Interval = 250
+        Timer_Guardar_Menu_PlantillasCreacionDeArchivos.Start()
+    End Sub
+    Private Sub Timer_Actualizar_PlantillasCreacionDeArchivos()
+        Me.Timer_Actualizar_Menu_PlantillasCreacionDeArchivos = New Timer
+        Timer_Actualizar_Menu_PlantillasCreacionDeArchivos.Interval = 500
+        Timer_Actualizar_Menu_PlantillasCreacionDeArchivos.Start()
+    End Sub
+    Private Sub Timer_Eliminar_PlantillasCreacionDeArchivos()
+        Me.Timer_Eliminar_Menu_PlantillasCreacionDeArchivos = New Timer
+        Timer_Eliminar_Menu_PlantillasCreacionDeArchivos.Interval = 800
+        Timer_Eliminar_Menu_PlantillasCreacionDeArchivos.Start()
+    End Sub
+    'Eventos Tick
+    Private Sub Timer_Guardar_Menu_PlantillasCreacionDeArchivos_Tick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Timer_Guardar_Menu_PlantillasCreacionDeArchivos.Tick
+        If Guardar_Menu_PlantillasCreacionDeArchivos.BackColor = Color.White Then
+            Guardar_Menu_PlantillasCreacionDeArchivos.BackColor = Color.Green
+        Else
+            Guardar_Menu_PlantillasCreacionDeArchivos.BackColor = Color.White
+        End If
+    End Sub
+    Private Sub Timer_Actualizar_Menu_PlantillasCreacionDeArchivos_Tick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Timer_Actualizar_Menu_PlantillasCreacionDeArchivos.Tick
+        If Actualizar_Menu_PlantillasCreacionDeArchivos.BackColor = Color.White Then
+            Actualizar_Menu_PlantillasCreacionDeArchivos.BackColor = Color.Green
+        Else
+            Actualizar_Menu_PlantillasCreacionDeArchivos.BackColor = Color.White
+        End If
+    End Sub
+    Private Sub Timer_Eliminar_Menu_PlantillasCreacionDeArchivos_Tick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Timer_Eliminar_Menu_PlantillasCreacionDeArchivos.Tick
+        If Eliminar_Menu_PlantillasCreacionDeArchivos.BackColor = Color.White Then
+            Eliminar_Menu_PlantillasCreacionDeArchivos.BackColor = Color.Red
+        Else
+            Eliminar_Menu_PlantillasCreacionDeArchivos.BackColor = Color.White
+        End If
+    End Sub
+    'Parar Timer
+    Private Sub Parar_Timer_PlantillasCreacionDeArchivos()
+        Me.Timer_Guardar_Menu_PlantillasCreacionDeArchivos = New Timer
+        Timer_Guardar_Menu_PlantillasCreacionDeArchivos.Stop()
+        Guardar_Menu_PlantillasCreacionDeArchivos.BackColor = Color.White
+        Me.Timer_Actualizar_Menu_PlantillasCreacionDeArchivos = New Timer
+        Timer_Actualizar_Menu_PlantillasCreacionDeArchivos.Stop()
+        Actualizar_Menu_PlantillasCreacionDeArchivos.BackColor = Color.White
+        Me.Timer_Eliminar_Menu_PlantillasCreacionDeArchivos = New Timer
+        Timer_Eliminar_Menu_PlantillasCreacionDeArchivos.Stop()
+        Eliminar_Menu_PlantillasCreacionDeArchivos.BackColor = Color.White
+    End Sub
+
+    Private Sub RutaTextBox_TextChanged(sender As Object, e As EventArgs) Handles RutaTextBox.TextChanged
+        If RutaTextBox.Text <> "" Then
+            Nuevo_Menu_PlantillasCreacionDeArchivos.Enabled = False
+            Editar_Menu_PlantillasCreacionDeArchivos.Enabled = True
+        Else
+            Nuevo_Menu_PlantillasCreacionDeArchivos.Enabled = True
+            Editar_Menu_PlantillasCreacionDeArchivos.Enabled = False
+        End If
+    End Sub
+
+    Private Sub PorTablaCheckBox_CheckedChanged(sender As Object, e As EventArgs) Handles PorTablaCheckBox.CheckedChanged
+        If PorTablaCheckBox.Checked = True Then
+            PorTablaCheckBox.Text = "SI"
+            XTablaTextBox.Text = "True"
+            PorTablaTextBox.Text = "True"
+        Else
+            PorTablaCheckBox.Text = "NO"
+            XTablaTextBox.Text = "False"
+            PorTablaTextBox.Text = "False"
+        End If
+    End Sub
+#End Region
+
+
+
+
+
+
+
+
+
 
 End Class

@@ -54,6 +54,22 @@ Partial Class FrmTecnologias
         Dim ComponenteIDLabel As System.Windows.Forms.Label
         Dim XTablaLabel2 As System.Windows.Forms.Label
         Dim MetricaPlantillaIdLabel As System.Windows.Forms.Label
+        Dim VentajaTecnologicaPlantillaIdLabel As System.Windows.Forms.Label
+        Dim ImagenIdLabel As System.Windows.Forms.Label
+        Dim PlantillaIDLabel As System.Windows.Forms.Label
+        Dim ReferenciaLabel As System.Windows.Forms.Label
+        Dim ImagenLabel As System.Windows.Forms.Label
+        Dim AdmiteCreacionLabel As System.Windows.Forms.Label
+        Dim AdmiteCreacionLabel1 As System.Windows.Forms.Label
+        Dim IdLabel As System.Windows.Forms.Label
+        Dim NombreRequerimientoFuncionalLabel As System.Windows.Forms.Label
+        Dim PlantillasCreacionDeArchivosIdLabel As System.Windows.Forms.Label
+        Dim RutaLabel As System.Windows.Forms.Label
+        Dim NombreArchivoLabel As System.Windows.Forms.Label
+        Dim ExtensionArchivoLabel As System.Windows.Forms.Label
+        Dim ContenidoArchivoLabel As System.Windows.Forms.Label
+        Dim PorTablaLabel As System.Windows.Forms.Label
+        Dim PorTablaLabel1 As System.Windows.Forms.Label
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmTecnologias))
         Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
@@ -135,8 +151,8 @@ Partial Class FrmTecnologias
         Me.Label2 = New System.Windows.Forms.Label()
         Me.TabPanelControl = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
+        Me.BtnImprimeCamposSinRelacion = New System.Windows.Forms.Button()
         Me.BtnImprimeCamposSinID = New System.Windows.Forms.Button()
-        Me.BtnZoom = New System.Windows.Forms.Button()
         Me.ContenidoComponenteRichTextBox = New System.Windows.Forms.RichTextBox()
         Me.ChkControlCambios = New System.Windows.Forms.CheckBox()
         Me.ContenidoComponenteCopia = New System.Windows.Forms.RichTextBox()
@@ -160,15 +176,28 @@ Partial Class FrmTecnologias
         Me.BtnSubirFuente = New System.Windows.Forms.Button()
         Me.BtnBuscarYPintar = New System.Windows.Forms.Button()
         Me.TabPage5 = New System.Windows.Forms.TabPage()
-        Me.RichTextboxRichTextBox = New System.Windows.Forms.RichTextBox()
-        Me.SP_TextoEnriquecido_BUSQUEDA_SEGUN_PARAMETRO_ComponenteIDBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.DataSetTablasYCampos = New GeneradorCod.DataSetTablasYCampos()
-        Me.TextoEnriquecidoIDTextBox = New System.Windows.Forms.TextBox()
+        Me.PanelImagenesPlantillas = New System.Windows.Forms.Panel()
+        Me.BtnCancelarImagen = New System.Windows.Forms.Button()
+        Me.BtnEditarImagen = New System.Windows.Forms.Button()
+        Me.BtnNuevo = New System.Windows.Forms.Button()
+        Me.BtnEliminarImagen = New System.Windows.Forms.Button()
+        Me.BtnActualizarImagen = New System.Windows.Forms.Button()
+        Me.ImagenPictureBox = New System.Windows.Forms.PictureBox()
+        Me.SP_PlantillasImagenes_BUSCA_SEGUN_PlantillaIDBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.DataSetReportes = New GeneradorCod.DataSetReportes()
+        Me.BtnGuardarImagen = New System.Windows.Forms.Button()
+        Me.btnSeleccionarImagen = New System.Windows.Forms.Button()
+        Me.ReferenciaTextBox = New System.Windows.Forms.TextBox()
+        Me.SP_PlantillasImagenes_BUSCA_SEGUN_PlantillaIDDataGridView = New System.Windows.Forms.DataGridView()
+        Me.DataGridViewTextBoxColumn18 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Panel10 = New System.Windows.Forms.Panel()
         Me.BtnActualizar = New System.Windows.Forms.Button()
         Me.Nuevo_Menu_TextoEnriquecido = New System.Windows.Forms.Button()
         Me.BtnColor = New System.Windows.Forms.Button()
         Me.BtnDerecha = New System.Windows.Forms.Button()
+        Me.RichTextboxRichTextBox = New System.Windows.Forms.RichTextBox()
+        Me.SP_TextoEnriquecido_BUSQUEDA_SEGUN_PARAMETRO_ComponenteIDBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.DataSetTablasYCampos = New GeneradorCod.DataSetTablasYCampos()
         Me.BtnFuentes = New System.Windows.Forms.Button()
         Me.BtnCentrar = New System.Windows.Forms.Button()
         Me.Cancelar_Menu_TextoEnriquecido = New System.Windows.Forms.Button()
@@ -202,6 +231,9 @@ Partial Class FrmTecnologias
         Me.CM_TiposDatos = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.CopiarRegistroToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.Panel7 = New System.Windows.Forms.Panel()
+        Me.BtnEliminarTodosMenos1 = New System.Windows.Forms.Button()
+        Me.NombreTipoDato = New System.Windows.Forms.TextBox()
+        Me.BtnGenerarParaLosTipos = New System.Windows.Forms.Button()
         Me.BtnPrevisualizar = New System.Windows.Forms.Button()
         Me.Nuevo_Menu_CampoComponentes = New System.Windows.Forms.Button()
         Me.Cancelar_Menu_CampoComponentes = New System.Windows.Forms.Button()
@@ -238,21 +270,54 @@ Partial Class FrmTecnologias
         Me.BtnTI = New System.Windows.Forms.Button()
         Me.BtnTD = New System.Windows.Forms.Button()
         Me.TabPage6 = New System.Windows.Forms.TabPage()
+        Me.VentajaTextBox = New System.Windows.Forms.TextBox()
+        Me.SP_PlantillasVentajasTecnologicas_SEGUN_PlantillaIDBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.Panel11 = New System.Windows.Forms.Panel()
-        Me.MetricaPlantillaIdTextBox = New System.Windows.Forms.TextBox()
-        Me.SP_PlantillasMetricas_BUSQUEDA_SEGUN_PlantillaIDBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.Label16 = New System.Windows.Forms.Label()
-        Me.XTablaMetrica = New System.Windows.Forms.TextBox()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.XTablaCheckBox1 = New System.Windows.Forms.CheckBox()
+        Me.SP_PlantillasMetricas_BUSQUEDA_SEGUN_PlantillaIDBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.Label14 = New System.Windows.Forms.Label()
         Me.TiempoTextBox = New System.Windows.Forms.TextBox()
+        Me.BtnEditaRegistroVentaja = New System.Windows.Forms.Button()
+        Me.BtnGuardaRegistroVentaja = New System.Windows.Forms.Button()
+        Me.Label15 = New System.Windows.Forms.Label()
         Me.BtnGuardarTiempo = New System.Windows.Forms.Button()
         Me.BtnEditarTiempo = New System.Windows.Forms.Button()
-        Me.Button4 = New System.Windows.Forms.Button()
-        Me.Button5 = New System.Windows.Forms.Button()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
-        Me.Label15 = New System.Windows.Forms.Label()
+        Me.TabPage7 = New System.Windows.Forms.TabPage()
+        Me.PorTablaCheckBox = New System.Windows.Forms.CheckBox()
+        Me.SP_PlantillasCreacionDeArchivos_BUSQUEDA_SEGUN_PARAMETRO_ComponenteIDBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.PorTablaTextBox = New System.Windows.Forms.TextBox()
+        Me.RutaTextBox = New System.Windows.Forms.TextBox()
+        Me.NombreArchivoTextBox = New System.Windows.Forms.TextBox()
+        Me.ExtensionArchivoComboBox = New System.Windows.Forms.ComboBox()
+        Me.ContenidoArchivoTextBox = New System.Windows.Forms.TextBox()
+        Me.Panel13 = New System.Windows.Forms.Panel()
+        Me.Nuevo_Menu_PlantillasCreacionDeArchivos = New System.Windows.Forms.Button()
+        Me.Cancelar_Menu_PlantillasCreacionDeArchivos = New System.Windows.Forms.Button()
+        Me.Eliminar_Menu_PlantillasCreacionDeArchivos = New System.Windows.Forms.Button()
+        Me.Editar_Menu_PlantillasCreacionDeArchivos = New System.Windows.Forms.Button()
+        Me.Actualizar_Menu_PlantillasCreacionDeArchivos = New System.Windows.Forms.Button()
+        Me.Guardar_Menu_PlantillasCreacionDeArchivos = New System.Windows.Forms.Button()
+        Me.Panel12 = New System.Windows.Forms.Panel()
+        Me.NombreRequerimientoFuncionalTextBox = New System.Windows.Forms.TextBox()
+        Me.SP_TecnologiasConCreacion_BUSQUEDA_SEGUN_IdBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.Cancelar_Menu_TecnologiasConCreacion = New System.Windows.Forms.Button()
+        Me.AdmiteCreacionCheckBox = New System.Windows.Forms.CheckBox()
+        Me.Guardar_Menu_TecnologiasConCreacion = New System.Windows.Forms.Button()
+        Me.Actualizar_Menu_TecnologiasConCreacion = New System.Windows.Forms.Button()
+        Me.SP_PlantillasCreacionDeArchivos_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.IdTextBox = New System.Windows.Forms.TextBox()
+        Me.AdmiteCreacionTextBox = New System.Windows.Forms.TextBox()
+        Me.lblFileName = New System.Windows.Forms.TextBox()
+        Me.ImagenIdTextBox = New System.Windows.Forms.TextBox()
+        Me.PlantillaIDTextBox1 = New System.Windows.Forms.TextBox()
+        Me.TextoEnriquecidoIDTextBox = New System.Windows.Forms.TextBox()
+        Me.SP_PlantillasImagenes_EDICION_INSERTARBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.PlantillasImagenesBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.VentajaTecnologicaPlantillaIdTextBox = New System.Windows.Forms.TextBox()
+        Me.MetricaPlantillaIdTextBox = New System.Windows.Forms.TextBox()
+        Me.XTablaMetrica = New System.Windows.Forms.TextBox()
         Me.SP_CampoComponentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.Cbo_TipoDato = New System.Windows.Forms.ComboBox()
         Me.RelacionTablasIDTextBox = New System.Windows.Forms.TextBox()
@@ -342,11 +407,44 @@ Partial Class FrmTecnologias
         Me.SP_Componentes_EDICION_ACTUALIZAR_XBase_PorPlantillaBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.SP_Componentes_EDICION_ACTUALIZAR_XBase_PorPlantillaTableAdapter = New GeneradorCod.DataSetAdministracionTableAdapters.SP_Componentes_EDICION_ACTUALIZAR_XBase_PorPlantillaTableAdapter()
         Me.PanelConfiguracion = New System.Windows.Forms.Panel()
+        Me.TiposGenerarParaTodos = New System.Windows.Forms.DataGridView()
+        Me.DataGridViewTextBoxColumn16 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn17 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.PlantillasCreacionDeArchivosIdTextBox = New System.Windows.Forms.TextBox()
         Me.SP_PlantillasMetricas_BUSQUEDA_SEGUN_PlantillaIDTableAdapter = New GeneradorCod.DataSetAdministracionTableAdapters.SP_PlantillasMetricas_BUSQUEDA_SEGUN_PlantillaIDTableAdapter()
         Me.SP_PlantillasMetricas_EDICION_INSERTARBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.SP_PlantillasMetricas_EDICION_INSERTARTableAdapter = New GeneradorCod.DataSetAdministracionTableAdapters.SP_PlantillasMetricas_EDICION_INSERTARTableAdapter()
         Me.SP_PlantillasMetricas_EDICION_EDITAR_SEGUN_PLANTILLABindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.SP_PlantillasMetricas_EDICION_EDITAR_SEGUN_PLANTILLATableAdapter = New GeneradorCod.DataSetAdministracionTableAdapters.SP_PlantillasMetricas_EDICION_EDITAR_SEGUN_PLANTILLATableAdapter()
+        Me.SP_PlantillasVentajasTecnologicas_SEGUN_PlantillaIDTableAdapter = New GeneradorCod.DataSetAdministracionTableAdapters.SP_PlantillasVentajasTecnologicas_SEGUN_PlantillaIDTableAdapter()
+        Me.SP_PlantillasVentajasTecnologicas_EDICION_EDITARBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.SP_PlantillasVentajasTecnologicas_EDICION_EDITARTableAdapter = New GeneradorCod.DataSetAdministracionTableAdapters.SP_PlantillasVentajasTecnologicas_EDICION_EDITARTableAdapter()
+        Me.SP_PlantillasVentajasTecnologicas_EDICION_INSERTARBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.SP_PlantillasVentajasTecnologicas_EDICION_INSERTARTableAdapter = New GeneradorCod.DataSetAdministracionTableAdapters.SP_PlantillasVentajasTecnologicas_EDICION_INSERTARTableAdapter()
+        Me.PlantillasImagenesTableAdapter = New GeneradorCod.DataSetReportesTableAdapters.PlantillasImagenesTableAdapter()
+        Me.TableAdapterManager2 = New GeneradorCod.DataSetReportesTableAdapters.TableAdapterManager()
+        Me.SP_PlantillasImagenes_BUSCA_SEGUN_PlantillaIDTableAdapter = New GeneradorCod.DataSetReportesTableAdapters.SP_PlantillasImagenes_BUSCA_SEGUN_PlantillaIDTableAdapter()
+        Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
+        Me.SP_PlantillasImagenes_EDICION_INSERTARTableAdapter = New GeneradorCod.DataSetReportesTableAdapters.SP_PlantillasImagenes_EDICION_INSERTARTableAdapter()
+        Me.SP_PlantillasImagenes_EDICION_ACTUALIZARBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.SP_PlantillasImagenes_EDICION_ACTUALIZARTableAdapter = New GeneradorCod.DataSetReportesTableAdapters.SP_PlantillasImagenes_EDICION_ACTUALIZARTableAdapter()
+        Me.SP_PlantillasImagenes_EDICION_ELIMINARBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.SP_PlantillasImagenes_EDICION_ELIMINARTableAdapter = New GeneradorCod.DataSetReportesTableAdapters.SP_PlantillasImagenes_EDICION_ELIMINARTableAdapter()
+        Me.SP_TecnologiasConCreacion_BUSQUEDA_SEGUN_IdTableAdapter = New GeneradorCod.DataSetAdministracionTableAdapters.SP_TecnologiasConCreacion_BUSQUEDA_SEGUN_IdTableAdapter()
+        Me.SP_TecnologiasConCreacion_EDICION_ACTUALIZARBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.SP_TecnologiasConCreacion_EDICION_ACTUALIZARTableAdapter = New GeneradorCod.DataSetAdministracionTableAdapters.SP_TecnologiasConCreacion_EDICION_ACTUALIZARTableAdapter()
+        Me.SP_TecnologiasConCreacion_EDICION_INSERTARBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.SP_TecnologiasConCreacion_EDICION_INSERTARTableAdapter = New GeneradorCod.DataSetAdministracionTableAdapters.SP_TecnologiasConCreacion_EDICION_INSERTARTableAdapter()
+        Me.SP_CampoComponentes_EDICION_INSERTAR_PARA_DUPLICADOBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.SP_CampoComponentes_EDICION_INSERTAR_PARA_DUPLICADOTableAdapter = New GeneradorCod.DataSetTablasYCamposTableAdapters.SP_CampoComponentes_EDICION_INSERTAR_PARA_DUPLICADOTableAdapter()
+        Me.SP_PlantillasCreacionDeArchivos_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDTableAdapter = New GeneradorCod.DataSetAdministracionTableAdapters.SP_PlantillasCreacionDeArchivos_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDTableAdapter()
+        Me.SP_PlantillasCreacionDeArchivos_EDICION_ACTUALIZARBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.SP_PlantillasCreacionDeArchivos_EDICION_ACTUALIZARTableAdapter = New GeneradorCod.DataSetAdministracionTableAdapters.SP_PlantillasCreacionDeArchivos_EDICION_ACTUALIZARTableAdapter()
+        Me.SP_PlantillasCreacionDeArchivos_EDICION_ELIMINARBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.SP_PlantillasCreacionDeArchivos_EDICION_ELIMINARTableAdapter = New GeneradorCod.DataSetAdministracionTableAdapters.SP_PlantillasCreacionDeArchivos_EDICION_ELIMINARTableAdapter()
+        Me.SP_PlantillasCreacionDeArchivos_EDICION_INSERTARBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.SP_PlantillasCreacionDeArchivos_EDICION_INSERTARTableAdapter = New GeneradorCod.DataSetAdministracionTableAdapters.SP_PlantillasCreacionDeArchivos_EDICION_INSERTARTableAdapter()
+        Me.SP_PlantillasCreacionDeArchivos_BUSQUEDA_SEGUN_PARAMETRO_ComponenteIDTableAdapter = New GeneradorCod.DataSetAdministracionTableAdapters.SP_PlantillasCreacionDeArchivos_BUSQUEDA_SEGUN_PARAMETRO_ComponenteIDTableAdapter()
         NombreTecnologiaLabel = New System.Windows.Forms.Label()
         TecnologiaIDLabel = New System.Windows.Forms.Label()
         NombrePlantillaLabel = New System.Windows.Forms.Label()
@@ -378,6 +476,22 @@ Partial Class FrmTecnologias
         ComponenteIDLabel = New System.Windows.Forms.Label()
         XTablaLabel2 = New System.Windows.Forms.Label()
         MetricaPlantillaIdLabel = New System.Windows.Forms.Label()
+        VentajaTecnologicaPlantillaIdLabel = New System.Windows.Forms.Label()
+        ImagenIdLabel = New System.Windows.Forms.Label()
+        PlantillaIDLabel = New System.Windows.Forms.Label()
+        ReferenciaLabel = New System.Windows.Forms.Label()
+        ImagenLabel = New System.Windows.Forms.Label()
+        AdmiteCreacionLabel = New System.Windows.Forms.Label()
+        AdmiteCreacionLabel1 = New System.Windows.Forms.Label()
+        IdLabel = New System.Windows.Forms.Label()
+        NombreRequerimientoFuncionalLabel = New System.Windows.Forms.Label()
+        PlantillasCreacionDeArchivosIdLabel = New System.Windows.Forms.Label()
+        RutaLabel = New System.Windows.Forms.Label()
+        NombreArchivoLabel = New System.Windows.Forms.Label()
+        ExtensionArchivoLabel = New System.Windows.Forms.Label()
+        ContenidoArchivoLabel = New System.Windows.Forms.Label()
+        PorTablaLabel = New System.Windows.Forms.Label()
+        PorTablaLabel1 = New System.Windows.Forms.Label()
         CType(Me.TecnologiasDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TecnologiasBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DataSetAdministracion, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -400,9 +514,14 @@ Partial Class FrmTecnologias
         Me.TabPage1.SuspendLayout()
         Me.PanelGuardado.SuspendLayout()
         Me.TabPage5.SuspendLayout()
+        Me.PanelImagenesPlantillas.SuspendLayout()
+        CType(Me.ImagenPictureBox, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.SP_PlantillasImagenes_BUSCA_SEGUN_PlantillaIDBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DataSetReportes, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.SP_PlantillasImagenes_BUSCA_SEGUN_PlantillaIDDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel10.SuspendLayout()
         CType(Me.SP_TextoEnriquecido_BUSQUEDA_SEGUN_PARAMETRO_ComponenteIDBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DataSetTablasYCampos, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.Panel10.SuspendLayout()
         Me.TabPage3.SuspendLayout()
         CType(Me.SP_CampoComponentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaID_ComponenteIDBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TiposBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -420,8 +539,17 @@ Partial Class FrmTecnologias
         CType(Me.SP_TablasRelacionadas_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel9.SuspendLayout()
         Me.TabPage6.SuspendLayout()
+        CType(Me.SP_PlantillasVentajasTecnologicas_SEGUN_PlantillaIDBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel11.SuspendLayout()
         CType(Me.SP_PlantillasMetricas_BUSQUEDA_SEGUN_PlantillaIDBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.TabPage7.SuspendLayout()
+        CType(Me.SP_PlantillasCreacionDeArchivos_BUSQUEDA_SEGUN_PARAMETRO_ComponenteIDBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel13.SuspendLayout()
+        Me.Panel12.SuspendLayout()
+        CType(Me.SP_TecnologiasConCreacion_BUSQUEDA_SEGUN_IdBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.SP_PlantillasCreacionDeArchivos_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.SP_PlantillasImagenes_EDICION_INSERTARBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PlantillasImagenesBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.SP_CampoComponentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.SP_CampoComponentes_EDICION_ACTUALIZARBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.SP_CampoComponentes_EDICION_ELIMINARBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -450,8 +578,19 @@ Partial Class FrmTecnologias
         CType(Me.SP_Componentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaID_XBaseBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.SP_Componentes_EDICION_ACTUALIZAR_XBase_PorPlantillaBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelConfiguracion.SuspendLayout()
+        CType(Me.TiposGenerarParaTodos, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.SP_PlantillasMetricas_EDICION_INSERTARBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.SP_PlantillasMetricas_EDICION_EDITAR_SEGUN_PLANTILLABindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.SP_PlantillasVentajasTecnologicas_EDICION_EDITARBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.SP_PlantillasVentajasTecnologicas_EDICION_INSERTARBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.SP_PlantillasImagenes_EDICION_ACTUALIZARBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.SP_PlantillasImagenes_EDICION_ELIMINARBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.SP_TecnologiasConCreacion_EDICION_ACTUALIZARBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.SP_TecnologiasConCreacion_EDICION_INSERTARBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.SP_CampoComponentes_EDICION_INSERTAR_PARA_DUPLICADOBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.SP_PlantillasCreacionDeArchivos_EDICION_ACTUALIZARBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.SP_PlantillasCreacionDeArchivos_EDICION_ELIMINARBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.SP_PlantillasCreacionDeArchivos_EDICION_INSERTARBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'NombreTecnologiaLabel
@@ -652,7 +791,7 @@ Partial Class FrmTecnologias
         'TextoEnriquecidoIDLabel
         '
         TextoEnriquecidoIDLabel.AutoSize = True
-        TextoEnriquecidoIDLabel.Location = New System.Drawing.Point(478, 546)
+        TextoEnriquecidoIDLabel.Location = New System.Drawing.Point(115, 261)
         TextoEnriquecidoIDLabel.Name = "TextoEnriquecidoIDLabel"
         TextoEnriquecidoIDLabel.Size = New System.Drawing.Size(138, 18)
         TextoEnriquecidoIDLabel.TabIndex = 92
@@ -739,6 +878,150 @@ Partial Class FrmTecnologias
         MetricaPlantillaIdLabel.Size = New System.Drawing.Size(124, 18)
         MetricaPlantillaIdLabel.TabIndex = 12
         MetricaPlantillaIdLabel.Text = "Metrica Plantilla Id:"
+        '
+        'VentajaTecnologicaPlantillaIdLabel
+        '
+        VentajaTecnologicaPlantillaIdLabel.AutoSize = True
+        VentajaTecnologicaPlantillaIdLabel.Location = New System.Drawing.Point(401, 546)
+        VentajaTecnologicaPlantillaIdLabel.Name = "VentajaTecnologicaPlantillaIdLabel"
+        VentajaTecnologicaPlantillaIdLabel.Size = New System.Drawing.Size(199, 18)
+        VentajaTecnologicaPlantillaIdLabel.TabIndex = 12
+        VentajaTecnologicaPlantillaIdLabel.Text = "Ventaja Tecnologica Plantilla Id:"
+        '
+        'ImagenIdLabel
+        '
+        ImagenIdLabel.AutoSize = True
+        ImagenIdLabel.Location = New System.Drawing.Point(180, 323)
+        ImagenIdLabel.Name = "ImagenIdLabel"
+        ImagenIdLabel.Size = New System.Drawing.Size(73, 18)
+        ImagenIdLabel.TabIndex = 3
+        ImagenIdLabel.Text = "Imagen Id:"
+        '
+        'PlantillaIDLabel
+        '
+        PlantillaIDLabel.AutoSize = True
+        PlantillaIDLabel.Location = New System.Drawing.Point(180, 355)
+        PlantillaIDLabel.Name = "PlantillaIDLabel"
+        PlantillaIDLabel.Size = New System.Drawing.Size(76, 18)
+        PlantillaIDLabel.TabIndex = 5
+        PlantillaIDLabel.Text = "Plantilla ID:"
+        '
+        'ReferenciaLabel
+        '
+        ReferenciaLabel.AutoSize = True
+        ReferenciaLabel.Location = New System.Drawing.Point(5, 47)
+        ReferenciaLabel.Name = "ReferenciaLabel"
+        ReferenciaLabel.Size = New System.Drawing.Size(75, 18)
+        ReferenciaLabel.TabIndex = 7
+        ReferenciaLabel.Text = "Referencia:"
+        '
+        'ImagenLabel
+        '
+        ImagenLabel.AutoSize = True
+        ImagenLabel.Location = New System.Drawing.Point(239, 47)
+        ImagenLabel.Name = "ImagenLabel"
+        ImagenLabel.Size = New System.Drawing.Size(58, 18)
+        ImagenLabel.TabIndex = 9
+        ImagenLabel.Text = "Imagen:"
+        '
+        'AdmiteCreacionLabel
+        '
+        AdmiteCreacionLabel.AutoSize = True
+        AdmiteCreacionLabel.Location = New System.Drawing.Point(11, 13)
+        AdmiteCreacionLabel.Name = "AdmiteCreacionLabel"
+        AdmiteCreacionLabel.Size = New System.Drawing.Size(111, 18)
+        AdmiteCreacionLabel.TabIndex = 0
+        AdmiteCreacionLabel.Text = "Admite Creacion:"
+        '
+        'AdmiteCreacionLabel1
+        '
+        AdmiteCreacionLabel1.AutoSize = True
+        AdmiteCreacionLabel1.Location = New System.Drawing.Point(145, 388)
+        AdmiteCreacionLabel1.Name = "AdmiteCreacionLabel1"
+        AdmiteCreacionLabel1.Size = New System.Drawing.Size(111, 18)
+        AdmiteCreacionLabel1.TabIndex = 2
+        AdmiteCreacionLabel1.Text = "Admite Creacion:"
+        '
+        'IdLabel
+        '
+        IdLabel.AutoSize = True
+        IdLabel.Location = New System.Drawing.Point(232, 418)
+        IdLabel.Name = "IdLabel"
+        IdLabel.Size = New System.Drawing.Size(24, 18)
+        IdLabel.TabIndex = 91
+        IdLabel.Text = "Id:"
+        '
+        'NombreRequerimientoFuncionalLabel
+        '
+        NombreRequerimientoFuncionalLabel.AutoSize = True
+        NombreRequerimientoFuncionalLabel.Location = New System.Drawing.Point(11, 40)
+        NombreRequerimientoFuncionalLabel.Name = "NombreRequerimientoFuncionalLabel"
+        NombreRequerimientoFuncionalLabel.Size = New System.Drawing.Size(215, 18)
+        NombreRequerimientoFuncionalLabel.TabIndex = 91
+        NombreRequerimientoFuncionalLabel.Text = "Nombre Requerimiento Funcional:"
+        '
+        'PlantillasCreacionDeArchivosIdLabel
+        '
+        PlantillasCreacionDeArchivosIdLabel.AutoSize = True
+        PlantillasCreacionDeArchivosIdLabel.Location = New System.Drawing.Point(47, 452)
+        PlantillasCreacionDeArchivosIdLabel.Name = "PlantillasCreacionDeArchivosIdLabel"
+        PlantillasCreacionDeArchivosIdLabel.Size = New System.Drawing.Size(209, 18)
+        PlantillasCreacionDeArchivosIdLabel.TabIndex = 92
+        PlantillasCreacionDeArchivosIdLabel.Text = "Plantillas Creacion De Archivos Id:"
+        '
+        'RutaLabel
+        '
+        RutaLabel.AutoSize = True
+        RutaLabel.Location = New System.Drawing.Point(12, 160)
+        RutaLabel.Name = "RutaLabel"
+        RutaLabel.Size = New System.Drawing.Size(194, 18)
+        RutaLabel.TabIndex = 94
+        RutaLabel.Text = "Ruta desde el archivo principal:"
+        '
+        'NombreArchivoLabel
+        '
+        NombreArchivoLabel.AutoSize = True
+        NombreArchivoLabel.Location = New System.Drawing.Point(16, 217)
+        NombreArchivoLabel.Name = "NombreArchivoLabel"
+        NombreArchivoLabel.Size = New System.Drawing.Size(110, 18)
+        NombreArchivoLabel.TabIndex = 96
+        NombreArchivoLabel.Text = "Nombre Archivo:"
+        '
+        'ExtensionArchivoLabel
+        '
+        ExtensionArchivoLabel.AutoSize = True
+        ExtensionArchivoLabel.Location = New System.Drawing.Point(454, 217)
+        ExtensionArchivoLabel.Name = "ExtensionArchivoLabel"
+        ExtensionArchivoLabel.Size = New System.Drawing.Size(121, 18)
+        ExtensionArchivoLabel.TabIndex = 98
+        ExtensionArchivoLabel.Text = "Extension Archivo:"
+        '
+        'ContenidoArchivoLabel
+        '
+        ContenidoArchivoLabel.AutoSize = True
+        ContenidoArchivoLabel.Location = New System.Drawing.Point(12, 271)
+        ContenidoArchivoLabel.Name = "ContenidoArchivoLabel"
+        ContenidoArchivoLabel.Size = New System.Drawing.Size(124, 18)
+        ContenidoArchivoLabel.TabIndex = 100
+        ContenidoArchivoLabel.Text = "Contenido Archivo:"
+        '
+        'PorTablaLabel
+        '
+        PorTablaLabel.AutoSize = True
+        PorTablaLabel.Location = New System.Drawing.Point(573, 157)
+        PorTablaLabel.Name = "PorTablaLabel"
+        PorTablaLabel.Size = New System.Drawing.Size(69, 18)
+        PorTablaLabel.TabIndex = 102
+        PorTablaLabel.Text = "Por Tabla:"
+        '
+        'PorTablaLabel1
+        '
+        PorTablaLabel1.AutoSize = True
+        PorTablaLabel1.Location = New System.Drawing.Point(604, 242)
+        PorTablaLabel1.Name = "PorTablaLabel1"
+        PorTablaLabel1.Size = New System.Drawing.Size(69, 18)
+        PorTablaLabel1.TabIndex = 103
+        PorTablaLabel1.Text = "Por Tabla:"
         '
         'TecnologiasDataGridView
         '
@@ -1507,6 +1790,7 @@ Partial Class FrmTecnologias
         Me.TabPanelControl.Controls.Add(Me.TabPage2)
         Me.TabPanelControl.Controls.Add(Me.TabPage4)
         Me.TabPanelControl.Controls.Add(Me.TabPage6)
+        Me.TabPanelControl.Controls.Add(Me.TabPage7)
         Me.TabPanelControl.Location = New System.Drawing.Point(549, 1)
         Me.TabPanelControl.Name = "TabPanelControl"
         Me.TabPanelControl.SelectedIndex = 0
@@ -1516,8 +1800,8 @@ Partial Class FrmTecnologias
         'TabPage1
         '
         Me.TabPage1.BackColor = System.Drawing.Color.Transparent
+        Me.TabPage1.Controls.Add(Me.BtnImprimeCamposSinRelacion)
         Me.TabPage1.Controls.Add(Me.BtnImprimeCamposSinID)
-        Me.TabPage1.Controls.Add(Me.BtnZoom)
         Me.TabPage1.Controls.Add(Me.ContenidoComponenteRichTextBox)
         Me.TabPage1.Controls.Add(Me.ChkControlCambios)
         Me.TabPage1.Controls.Add(Me.ContenidoComponenteCopia)
@@ -1546,9 +1830,21 @@ Partial Class FrmTecnologias
         Me.TabPage1.Location = New System.Drawing.Point(4, 27)
         Me.TabPage1.Name = "TabPage1"
         Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage1.Size = New System.Drawing.Size(760, 576)
+        Me.TabPage1.Size = New System.Drawing.Size(758, 576)
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Text = "Text Cod"
+        '
+        'BtnImprimeCamposSinRelacion
+        '
+        Me.BtnImprimeCamposSinRelacion.BackColor = System.Drawing.Color.White
+        Me.BtnImprimeCamposSinRelacion.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnImprimeCamposSinRelacion.Location = New System.Drawing.Point(366, 55)
+        Me.BtnImprimeCamposSinRelacion.Name = "BtnImprimeCamposSinRelacion"
+        Me.BtnImprimeCamposSinRelacion.Size = New System.Drawing.Size(92, 25)
+        Me.BtnImprimeCamposSinRelacion.TabIndex = 149
+        Me.BtnImprimeCamposSinRelacion.Text = "{{{TCampos-R}}}"
+        Me.ToolTip1.SetToolTip(Me.BtnImprimeCamposSinRelacion, "Campos de la Tabla SIN Campos Relacionados, ideal para DTOs")
+        Me.BtnImprimeCamposSinRelacion.UseVisualStyleBackColor = False
         '
         'BtnImprimeCamposSinID
         '
@@ -1562,18 +1858,6 @@ Partial Class FrmTecnologias
         Me.ToolTip1.SetToolTip(Me.BtnImprimeCamposSinID, "Campos de la Tabla SIN SU ID con su  prefijos - sufijos - superior - inferior o m" &
         "ultireplace son por plantilla")
         Me.BtnImprimeCamposSinID.UseVisualStyleBackColor = False
-        '
-        'BtnZoom
-        '
-        Me.BtnZoom.BackColor = System.Drawing.Color.YellowGreen
-        Me.BtnZoom.Font = New System.Drawing.Font("Candara", 9.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnZoom.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.BtnZoom.Location = New System.Drawing.Point(702, 55)
-        Me.BtnZoom.Name = "BtnZoom"
-        Me.BtnZoom.Size = New System.Drawing.Size(48, 25)
-        Me.BtnZoom.TabIndex = 147
-        Me.BtnZoom.Text = "Zoom"
-        Me.BtnZoom.UseVisualStyleBackColor = False
         '
         'ContenidoComponenteRichTextBox
         '
@@ -1680,9 +1964,9 @@ Partial Class FrmTecnologias
         '
         Me.BtnTablaPlural.BackColor = System.Drawing.Color.White
         Me.BtnTablaPlural.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnTablaPlural.Location = New System.Drawing.Point(366, 55)
+        Me.BtnTablaPlural.Location = New System.Drawing.Point(665, 56)
         Me.BtnTablaPlural.Name = "BtnTablaPlural"
-        Me.BtnTablaPlural.Size = New System.Drawing.Size(89, 25)
+        Me.BtnTablaPlural.Size = New System.Drawing.Size(86, 25)
         Me.BtnTablaPlural.TabIndex = 128
         Me.BtnTablaPlural.Text = "{{{TPlur}}}"
         Me.ToolTip1.SetToolTip(Me.BtnTablaPlural, "Nombre de la Tabla en Plural")
@@ -1827,44 +2111,159 @@ Partial Class FrmTecnologias
         '
         'TabPage5
         '
-        Me.TabPage5.Controls.Add(Me.RichTextboxRichTextBox)
-        Me.TabPage5.Controls.Add(TextoEnriquecidoIDLabel)
-        Me.TabPage5.Controls.Add(Me.TextoEnriquecidoIDTextBox)
+        Me.TabPage5.Controls.Add(Me.PanelImagenesPlantillas)
         Me.TabPage5.Controls.Add(Me.Panel10)
         Me.TabPage5.Location = New System.Drawing.Point(4, 27)
         Me.TabPage5.Name = "TabPage5"
         Me.TabPage5.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage5.Size = New System.Drawing.Size(760, 576)
+        Me.TabPage5.Size = New System.Drawing.Size(758, 576)
         Me.TabPage5.TabIndex = 4
         Me.TabPage5.Text = "Descripciones"
         Me.TabPage5.UseVisualStyleBackColor = True
         '
-        'RichTextboxRichTextBox
+        'PanelImagenesPlantillas
         '
-        Me.RichTextboxRichTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SP_TextoEnriquecido_BUSQUEDA_SEGUN_PARAMETRO_ComponenteIDBindingSource, "RichTextbox", True))
-        Me.RichTextboxRichTextBox.Location = New System.Drawing.Point(6, 56)
-        Me.RichTextboxRichTextBox.Name = "RichTextboxRichTextBox"
-        Me.RichTextboxRichTextBox.Size = New System.Drawing.Size(746, 513)
-        Me.RichTextboxRichTextBox.TabIndex = 92
-        Me.RichTextboxRichTextBox.Text = ""
+        Me.PanelImagenesPlantillas.AutoScroll = True
+        Me.PanelImagenesPlantillas.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.PanelImagenesPlantillas.Controls.Add(Me.BtnCancelarImagen)
+        Me.PanelImagenesPlantillas.Controls.Add(Me.BtnEditarImagen)
+        Me.PanelImagenesPlantillas.Controls.Add(Me.BtnNuevo)
+        Me.PanelImagenesPlantillas.Controls.Add(Me.BtnEliminarImagen)
+        Me.PanelImagenesPlantillas.Controls.Add(Me.BtnActualizarImagen)
+        Me.PanelImagenesPlantillas.Controls.Add(Me.ImagenPictureBox)
+        Me.PanelImagenesPlantillas.Controls.Add(Me.BtnGuardarImagen)
+        Me.PanelImagenesPlantillas.Controls.Add(Me.btnSeleccionarImagen)
+        Me.PanelImagenesPlantillas.Controls.Add(ReferenciaLabel)
+        Me.PanelImagenesPlantillas.Controls.Add(Me.ReferenciaTextBox)
+        Me.PanelImagenesPlantillas.Controls.Add(ImagenLabel)
+        Me.PanelImagenesPlantillas.Controls.Add(Me.SP_PlantillasImagenes_BUSCA_SEGUN_PlantillaIDDataGridView)
+        Me.PanelImagenesPlantillas.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.PanelImagenesPlantillas.Location = New System.Drawing.Point(3, 3)
+        Me.PanelImagenesPlantillas.Name = "PanelImagenesPlantillas"
+        Me.PanelImagenesPlantillas.Size = New System.Drawing.Size(752, 570)
+        Me.PanelImagenesPlantillas.TabIndex = 94
         '
-        'SP_TextoEnriquecido_BUSQUEDA_SEGUN_PARAMETRO_ComponenteIDBindingSource
+        'BtnCancelarImagen
         '
-        Me.SP_TextoEnriquecido_BUSQUEDA_SEGUN_PARAMETRO_ComponenteIDBindingSource.DataMember = "SP_TextoEnriquecido_BUSQUEDA_SEGUN_PARAMETRO_ComponenteID"
-        Me.SP_TextoEnriquecido_BUSQUEDA_SEGUN_PARAMETRO_ComponenteIDBindingSource.DataSource = Me.DataSetTablasYCampos
+        Me.BtnCancelarImagen.BackColor = System.Drawing.Color.Red
+        Me.BtnCancelarImagen.Font = New System.Drawing.Font("Candara", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnCancelarImagen.ForeColor = System.Drawing.Color.White
+        Me.BtnCancelarImagen.Location = New System.Drawing.Point(308, 5)
+        Me.BtnCancelarImagen.Name = "BtnCancelarImagen"
+        Me.BtnCancelarImagen.Size = New System.Drawing.Size(38, 37)
+        Me.BtnCancelarImagen.TabIndex = 102
+        Me.BtnCancelarImagen.Text = "X"
+        Me.BtnCancelarImagen.UseVisualStyleBackColor = False
         '
-        'DataSetTablasYCampos
+        'BtnEditarImagen
         '
-        Me.DataSetTablasYCampos.DataSetName = "DataSetTablasYCampos"
-        Me.DataSetTablasYCampos.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        Me.BtnEditarImagen.BackColor = System.Drawing.Color.Ivory
+        Me.BtnEditarImagen.Font = New System.Drawing.Font("Candara", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnEditarImagen.Location = New System.Drawing.Point(264, 5)
+        Me.BtnEditarImagen.Name = "BtnEditarImagen"
+        Me.BtnEditarImagen.Size = New System.Drawing.Size(38, 37)
+        Me.BtnEditarImagen.TabIndex = 101
+        Me.BtnEditarImagen.Text = "E"
+        Me.BtnEditarImagen.UseVisualStyleBackColor = False
         '
-        'TextoEnriquecidoIDTextBox
+        'BtnNuevo
         '
-        Me.TextoEnriquecidoIDTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SP_TextoEnriquecido_BUSQUEDA_SEGUN_PARAMETRO_ComponenteIDBindingSource, "TextoEnriquecidoID", True))
-        Me.TextoEnriquecidoIDTextBox.Location = New System.Drawing.Point(622, 543)
-        Me.TextoEnriquecidoIDTextBox.Name = "TextoEnriquecidoIDTextBox"
-        Me.TextoEnriquecidoIDTextBox.Size = New System.Drawing.Size(100, 26)
-        Me.TextoEnriquecidoIDTextBox.TabIndex = 93
+        Me.BtnNuevo.BackColor = System.Drawing.Color.GreenYellow
+        Me.BtnNuevo.Font = New System.Drawing.Font("Candara", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnNuevo.Location = New System.Drawing.Point(220, 4)
+        Me.BtnNuevo.Name = "BtnNuevo"
+        Me.BtnNuevo.Size = New System.Drawing.Size(38, 37)
+        Me.BtnNuevo.TabIndex = 100
+        Me.BtnNuevo.Text = "+"
+        Me.BtnNuevo.UseVisualStyleBackColor = False
+        '
+        'BtnEliminarImagen
+        '
+        Me.BtnEliminarImagen.Enabled = False
+        Me.BtnEliminarImagen.Location = New System.Drawing.Point(610, 5)
+        Me.BtnEliminarImagen.Name = "BtnEliminarImagen"
+        Me.BtnEliminarImagen.Size = New System.Drawing.Size(131, 36)
+        Me.BtnEliminarImagen.TabIndex = 99
+        Me.BtnEliminarImagen.Text = "Eliminar Imagen"
+        Me.BtnEliminarImagen.UseVisualStyleBackColor = True
+        '
+        'BtnActualizarImagen
+        '
+        Me.BtnActualizarImagen.Enabled = False
+        Me.BtnActualizarImagen.Location = New System.Drawing.Point(475, 5)
+        Me.BtnActualizarImagen.Name = "BtnActualizarImagen"
+        Me.BtnActualizarImagen.Size = New System.Drawing.Size(131, 36)
+        Me.BtnActualizarImagen.TabIndex = 98
+        Me.BtnActualizarImagen.Text = "Actualizar Imagen"
+        Me.BtnActualizarImagen.UseVisualStyleBackColor = True
+        '
+        'ImagenPictureBox
+        '
+        Me.ImagenPictureBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.ImagenPictureBox.DataBindings.Add(New System.Windows.Forms.Binding("Image", Me.SP_PlantillasImagenes_BUSCA_SEGUN_PlantillaIDBindingSource, "Imagen", True))
+        Me.ImagenPictureBox.Location = New System.Drawing.Point(220, 67)
+        Me.ImagenPictureBox.Name = "ImagenPictureBox"
+        Me.ImagenPictureBox.Size = New System.Drawing.Size(521, 498)
+        Me.ImagenPictureBox.TabIndex = 97
+        Me.ImagenPictureBox.TabStop = False
+        '
+        'SP_PlantillasImagenes_BUSCA_SEGUN_PlantillaIDBindingSource
+        '
+        Me.SP_PlantillasImagenes_BUSCA_SEGUN_PlantillaIDBindingSource.DataMember = "SP_PlantillasImagenes_BUSCA_SEGUN_PlantillaID"
+        Me.SP_PlantillasImagenes_BUSCA_SEGUN_PlantillaIDBindingSource.DataSource = Me.DataSetReportes
+        '
+        'DataSetReportes
+        '
+        Me.DataSetReportes.DataSetName = "DataSetReportes"
+        Me.DataSetReportes.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'BtnGuardarImagen
+        '
+        Me.BtnGuardarImagen.Enabled = False
+        Me.BtnGuardarImagen.Location = New System.Drawing.Point(352, 5)
+        Me.BtnGuardarImagen.Name = "BtnGuardarImagen"
+        Me.BtnGuardarImagen.Size = New System.Drawing.Size(118, 36)
+        Me.BtnGuardarImagen.TabIndex = 96
+        Me.BtnGuardarImagen.Text = "Guardar Imagen"
+        Me.BtnGuardarImagen.UseVisualStyleBackColor = True
+        '
+        'btnSeleccionarImagen
+        '
+        Me.btnSeleccionarImagen.Enabled = False
+        Me.btnSeleccionarImagen.Location = New System.Drawing.Point(7, 4)
+        Me.btnSeleccionarImagen.Name = "btnSeleccionarImagen"
+        Me.btnSeleccionarImagen.Size = New System.Drawing.Size(207, 37)
+        Me.btnSeleccionarImagen.TabIndex = 13
+        Me.btnSeleccionarImagen.Text = "Seleccionar Imagen"
+        Me.btnSeleccionarImagen.UseVisualStyleBackColor = True
+        '
+        'ReferenciaTextBox
+        '
+        Me.ReferenciaTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SP_PlantillasImagenes_BUSCA_SEGUN_PlantillaIDBindingSource, "Referencia", True))
+        Me.ReferenciaTextBox.Location = New System.Drawing.Point(8, 67)
+        Me.ReferenciaTextBox.Name = "ReferenciaTextBox"
+        Me.ReferenciaTextBox.Size = New System.Drawing.Size(206, 26)
+        Me.ReferenciaTextBox.TabIndex = 8
+        '
+        'SP_PlantillasImagenes_BUSCA_SEGUN_PlantillaIDDataGridView
+        '
+        Me.SP_PlantillasImagenes_BUSCA_SEGUN_PlantillaIDDataGridView.AllowUserToAddRows = False
+        Me.SP_PlantillasImagenes_BUSCA_SEGUN_PlantillaIDDataGridView.AutoGenerateColumns = False
+        Me.SP_PlantillasImagenes_BUSCA_SEGUN_PlantillaIDDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.SP_PlantillasImagenes_BUSCA_SEGUN_PlantillaIDDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn18})
+        Me.SP_PlantillasImagenes_BUSCA_SEGUN_PlantillaIDDataGridView.DataSource = Me.SP_PlantillasImagenes_BUSCA_SEGUN_PlantillaIDBindingSource
+        Me.SP_PlantillasImagenes_BUSCA_SEGUN_PlantillaIDDataGridView.Location = New System.Drawing.Point(8, 99)
+        Me.SP_PlantillasImagenes_BUSCA_SEGUN_PlantillaIDDataGridView.Name = "SP_PlantillasImagenes_BUSCA_SEGUN_PlantillaIDDataGridView"
+        Me.SP_PlantillasImagenes_BUSCA_SEGUN_PlantillaIDDataGridView.RowHeadersVisible = False
+        Me.SP_PlantillasImagenes_BUSCA_SEGUN_PlantillaIDDataGridView.Size = New System.Drawing.Size(206, 466)
+        Me.SP_PlantillasImagenes_BUSCA_SEGUN_PlantillaIDDataGridView.TabIndex = 3
+        '
+        'DataGridViewTextBoxColumn18
+        '
+        Me.DataGridViewTextBoxColumn18.DataPropertyName = "Referencia"
+        Me.DataGridViewTextBoxColumn18.HeaderText = "Referencia"
+        Me.DataGridViewTextBoxColumn18.Name = "DataGridViewTextBoxColumn18"
+        Me.DataGridViewTextBoxColumn18.Width = 202
         '
         'Panel10
         '
@@ -1873,6 +2272,7 @@ Partial Class FrmTecnologias
         Me.Panel10.Controls.Add(Me.Nuevo_Menu_TextoEnriquecido)
         Me.Panel10.Controls.Add(Me.BtnColor)
         Me.Panel10.Controls.Add(Me.BtnDerecha)
+        Me.Panel10.Controls.Add(Me.RichTextboxRichTextBox)
         Me.Panel10.Controls.Add(Me.BtnFuentes)
         Me.Panel10.Controls.Add(Me.BtnCentrar)
         Me.Panel10.Controls.Add(Me.Cancelar_Menu_TextoEnriquecido)
@@ -1924,6 +2324,25 @@ Partial Class FrmTecnologias
         Me.BtnDerecha.TabIndex = 138
         Me.BtnDerecha.Text = "-->"
         Me.BtnDerecha.UseVisualStyleBackColor = True
+        '
+        'RichTextboxRichTextBox
+        '
+        Me.RichTextboxRichTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SP_TextoEnriquecido_BUSQUEDA_SEGUN_PARAMETRO_ComponenteIDBindingSource, "RichTextbox", True))
+        Me.RichTextboxRichTextBox.Location = New System.Drawing.Point(629, 10)
+        Me.RichTextboxRichTextBox.Name = "RichTextboxRichTextBox"
+        Me.RichTextboxRichTextBox.Size = New System.Drawing.Size(21, 28)
+        Me.RichTextboxRichTextBox.TabIndex = 92
+        Me.RichTextboxRichTextBox.Text = ""
+        '
+        'SP_TextoEnriquecido_BUSQUEDA_SEGUN_PARAMETRO_ComponenteIDBindingSource
+        '
+        Me.SP_TextoEnriquecido_BUSQUEDA_SEGUN_PARAMETRO_ComponenteIDBindingSource.DataMember = "SP_TextoEnriquecido_BUSQUEDA_SEGUN_PARAMETRO_ComponenteID"
+        Me.SP_TextoEnriquecido_BUSQUEDA_SEGUN_PARAMETRO_ComponenteIDBindingSource.DataSource = Me.DataSetTablasYCampos
+        '
+        'DataSetTablasYCampos
+        '
+        Me.DataSetTablasYCampos.DataSetName = "DataSetTablasYCampos"
+        Me.DataSetTablasYCampos.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
         'BtnFuentes
         '
@@ -2023,7 +2442,7 @@ Partial Class FrmTecnologias
         Me.TabPage3.Location = New System.Drawing.Point(4, 27)
         Me.TabPage3.Name = "TabPage3"
         Me.TabPage3.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage3.Size = New System.Drawing.Size(760, 576)
+        Me.TabPage3.Size = New System.Drawing.Size(758, 576)
         Me.TabPage3.TabIndex = 2
         Me.TabPage3.Text = "Tratamiento Campos"
         Me.TabPage3.UseVisualStyleBackColor = True
@@ -2222,6 +2641,9 @@ Partial Class FrmTecnologias
         'Panel7
         '
         Me.Panel7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel7.Controls.Add(Me.BtnEliminarTodosMenos1)
+        Me.Panel7.Controls.Add(Me.NombreTipoDato)
+        Me.Panel7.Controls.Add(Me.BtnGenerarParaLosTipos)
         Me.Panel7.Controls.Add(Me.BtnPrevisualizar)
         Me.Panel7.Controls.Add(Me.Nuevo_Menu_CampoComponentes)
         Me.Panel7.Controls.Add(Me.Cancelar_Menu_CampoComponentes)
@@ -2234,11 +2656,43 @@ Partial Class FrmTecnologias
         Me.Panel7.Size = New System.Drawing.Size(746, 46)
         Me.Panel7.TabIndex = 91
         '
+        'BtnEliminarTodosMenos1
+        '
+        Me.BtnEliminarTodosMenos1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.BtnEliminarTodosMenos1.Image = CType(resources.GetObject("BtnEliminarTodosMenos1.Image"), System.Drawing.Image)
+        Me.BtnEliminarTodosMenos1.Location = New System.Drawing.Point(414, 3)
+        Me.BtnEliminarTodosMenos1.Name = "BtnEliminarTodosMenos1"
+        Me.BtnEliminarTodosMenos1.Size = New System.Drawing.Size(40, 38)
+        Me.BtnEliminarTodosMenos1.TabIndex = 80
+        Me.BtnEliminarTodosMenos1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.ToolTip1.SetToolTip(Me.BtnEliminarTodosMenos1, "Generar para todos los tipos")
+        Me.BtnEliminarTodosMenos1.UseVisualStyleBackColor = True
+        '
+        'NombreTipoDato
+        '
+        Me.NombreTipoDato.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.TiposBindingSource, "Tipo", True))
+        Me.NombreTipoDato.Location = New System.Drawing.Point(606, 8)
+        Me.NombreTipoDato.Name = "NombreTipoDato"
+        Me.NombreTipoDato.Size = New System.Drawing.Size(89, 26)
+        Me.NombreTipoDato.TabIndex = 79
+        '
+        'BtnGenerarParaLosTipos
+        '
+        Me.BtnGenerarParaLosTipos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.BtnGenerarParaLosTipos.Image = CType(resources.GetObject("BtnGenerarParaLosTipos.Image"), System.Drawing.Image)
+        Me.BtnGenerarParaLosTipos.Location = New System.Drawing.Point(368, 3)
+        Me.BtnGenerarParaLosTipos.Name = "BtnGenerarParaLosTipos"
+        Me.BtnGenerarParaLosTipos.Size = New System.Drawing.Size(40, 38)
+        Me.BtnGenerarParaLosTipos.TabIndex = 78
+        Me.BtnGenerarParaLosTipos.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.ToolTip1.SetToolTip(Me.BtnGenerarParaLosTipos, "Generar para todos los tipos")
+        Me.BtnGenerarParaLosTipos.UseVisualStyleBackColor = True
+        '
         'BtnPrevisualizar
         '
         Me.BtnPrevisualizar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.BtnPrevisualizar.Image = CType(resources.GetObject("BtnPrevisualizar.Image"), System.Drawing.Image)
-        Me.BtnPrevisualizar.Location = New System.Drawing.Point(280, 3)
+        Me.BtnPrevisualizar.Location = New System.Drawing.Point(279, 3)
         Me.BtnPrevisualizar.Name = "BtnPrevisualizar"
         Me.BtnPrevisualizar.Size = New System.Drawing.Size(40, 38)
         Me.BtnPrevisualizar.TabIndex = 77
@@ -2332,7 +2786,7 @@ Partial Class FrmTecnologias
         Me.TabPage2.Location = New System.Drawing.Point(4, 27)
         Me.TabPage2.Name = "TabPage2"
         Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage2.Size = New System.Drawing.Size(760, 576)
+        Me.TabPage2.Size = New System.Drawing.Size(758, 576)
         Me.TabPage2.TabIndex = 1
         Me.TabPage2.Text = "Requerimientos"
         Me.TabPage2.UseVisualStyleBackColor = True
@@ -2466,7 +2920,7 @@ Partial Class FrmTecnologias
         Me.TabPage4.Location = New System.Drawing.Point(4, 27)
         Me.TabPage4.Name = "TabPage4"
         Me.TabPage4.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage4.Size = New System.Drawing.Size(759, 576)
+        Me.TabPage4.Size = New System.Drawing.Size(758, 576)
         Me.TabPage4.TabIndex = 3
         Me.TabPage4.Text = "Campos Relacionados"
         Me.TabPage4.UseVisualStyleBackColor = True
@@ -2636,18 +3090,34 @@ Partial Class FrmTecnologias
         'TabPage6
         '
         Me.TabPage6.AutoScroll = True
+        Me.TabPage6.Controls.Add(Me.VentajaTextBox)
         Me.TabPage6.Controls.Add(Me.Panel11)
-        Me.TabPage6.Controls.Add(Me.Button4)
-        Me.TabPage6.Controls.Add(Me.Button5)
-        Me.TabPage6.Controls.Add(Me.TextBox1)
+        Me.TabPage6.Controls.Add(Me.BtnEditaRegistroVentaja)
+        Me.TabPage6.Controls.Add(Me.BtnGuardaRegistroVentaja)
         Me.TabPage6.Controls.Add(Me.Label15)
+        Me.TabPage6.Controls.Add(Me.BtnGuardarTiempo)
+        Me.TabPage6.Controls.Add(Me.BtnEditarTiempo)
         Me.TabPage6.Location = New System.Drawing.Point(4, 27)
         Me.TabPage6.Name = "TabPage6"
         Me.TabPage6.Padding = New System.Windows.Forms.Padding(3)
         Me.TabPage6.Size = New System.Drawing.Size(758, 576)
         Me.TabPage6.TabIndex = 5
-        Me.TabPage6.Text = "Métricas y Ventajas Tecnológicas"
+        Me.TabPage6.Text = "Métricas y Ventajas"
         Me.TabPage6.UseVisualStyleBackColor = True
+        '
+        'VentajaTextBox
+        '
+        Me.VentajaTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SP_PlantillasVentajasTecnologicas_SEGUN_PlantillaIDBindingSource, "Ventaja", True))
+        Me.VentajaTextBox.Location = New System.Drawing.Point(10, 233)
+        Me.VentajaTextBox.Multiline = True
+        Me.VentajaTextBox.Name = "VentajaTextBox"
+        Me.VentajaTextBox.Size = New System.Drawing.Size(738, 285)
+        Me.VentajaTextBox.TabIndex = 12
+        '
+        'SP_PlantillasVentajasTecnologicas_SEGUN_PlantillaIDBindingSource
+        '
+        Me.SP_PlantillasVentajasTecnologicas_SEGUN_PlantillaIDBindingSource.DataMember = "SP_PlantillasVentajasTecnologicas_SEGUN_PlantillaID"
+        Me.SP_PlantillasVentajasTecnologicas_SEGUN_PlantillaIDBindingSource.DataSource = Me.DataSetAdministracion
         '
         'Panel11
         '
@@ -2657,25 +3127,10 @@ Partial Class FrmTecnologias
         Me.Panel11.Controls.Add(Me.XTablaCheckBox1)
         Me.Panel11.Controls.Add(Me.Label14)
         Me.Panel11.Controls.Add(Me.TiempoTextBox)
-        Me.Panel11.Controls.Add(Me.BtnGuardarTiempo)
-        Me.Panel11.Controls.Add(Me.BtnEditarTiempo)
         Me.Panel11.Location = New System.Drawing.Point(10, 6)
         Me.Panel11.Name = "Panel11"
         Me.Panel11.Size = New System.Drawing.Size(736, 147)
         Me.Panel11.TabIndex = 11
-        '
-        'MetricaPlantillaIdTextBox
-        '
-        Me.MetricaPlantillaIdTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SP_PlantillasMetricas_BUSQUEDA_SEGUN_PlantillaIDBindingSource, "MetricaPlantillaId", True))
-        Me.MetricaPlantillaIdTextBox.Location = New System.Drawing.Point(606, 478)
-        Me.MetricaPlantillaIdTextBox.Name = "MetricaPlantillaIdTextBox"
-        Me.MetricaPlantillaIdTextBox.Size = New System.Drawing.Size(100, 26)
-        Me.MetricaPlantillaIdTextBox.TabIndex = 13
-        '
-        'SP_PlantillasMetricas_BUSQUEDA_SEGUN_PlantillaIDBindingSource
-        '
-        Me.SP_PlantillasMetricas_BUSQUEDA_SEGUN_PlantillaIDBindingSource.DataMember = "SP_PlantillasMetricas_BUSQUEDA_SEGUN_PlantillaID"
-        Me.SP_PlantillasMetricas_BUSQUEDA_SEGUN_PlantillaIDBindingSource.DataSource = Me.DataSetAdministracion
         '
         'Label16
         '
@@ -2686,14 +3141,6 @@ Partial Class FrmTecnologias
         Me.Label16.Size = New System.Drawing.Size(159, 23)
         Me.Label16.TabIndex = 12
         Me.Label16.Text = "Por Tabla o Entidad"
-        '
-        'XTablaMetrica
-        '
-        Me.XTablaMetrica.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SP_PlantillasMetricas_BUSQUEDA_SEGUN_PlantillaIDBindingSource, "XTabla", True))
-        Me.XTablaMetrica.Location = New System.Drawing.Point(606, 511)
-        Me.XTablaMetrica.Name = "XTablaMetrica"
-        Me.XTablaMetrica.Size = New System.Drawing.Size(100, 26)
-        Me.XTablaMetrica.TabIndex = 11
         '
         'Label6
         '
@@ -2715,6 +3162,11 @@ Partial Class FrmTecnologias
         Me.XTablaCheckBox1.TabIndex = 10
         Me.XTablaCheckBox1.UseVisualStyleBackColor = True
         '
+        'SP_PlantillasMetricas_BUSQUEDA_SEGUN_PlantillaIDBindingSource
+        '
+        Me.SP_PlantillasMetricas_BUSQUEDA_SEGUN_PlantillaIDBindingSource.DataMember = "SP_PlantillasMetricas_BUSQUEDA_SEGUN_PlantillaID"
+        Me.SP_PlantillasMetricas_BUSQUEDA_SEGUN_PlantillaIDBindingSource.DataSource = Me.DataSetAdministracion
+        '
         'Label14
         '
         Me.Label14.AutoSize = True
@@ -2735,9 +3187,37 @@ Partial Class FrmTecnologias
         Me.TiempoTextBox.TabIndex = 9
         Me.TiempoTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
+        'BtnEditaRegistroVentaja
+        '
+        Me.BtnEditaRegistroVentaja.Location = New System.Drawing.Point(601, 530)
+        Me.BtnEditaRegistroVentaja.Name = "BtnEditaRegistroVentaja"
+        Me.BtnEditaRegistroVentaja.Size = New System.Drawing.Size(127, 34)
+        Me.BtnEditaRegistroVentaja.TabIndex = 8
+        Me.BtnEditaRegistroVentaja.Text = "Editar Ventaja"
+        Me.BtnEditaRegistroVentaja.UseVisualStyleBackColor = True
+        '
+        'BtnGuardaRegistroVentaja
+        '
+        Me.BtnGuardaRegistroVentaja.Location = New System.Drawing.Point(468, 530)
+        Me.BtnGuardaRegistroVentaja.Name = "BtnGuardaRegistroVentaja"
+        Me.BtnGuardaRegistroVentaja.Size = New System.Drawing.Size(127, 34)
+        Me.BtnGuardaRegistroVentaja.TabIndex = 7
+        Me.BtnGuardaRegistroVentaja.Text = "Guardar Ventaja"
+        Me.BtnGuardaRegistroVentaja.UseVisualStyleBackColor = True
+        '
+        'Label15
+        '
+        Me.Label15.AutoSize = True
+        Me.Label15.Font = New System.Drawing.Font("Candara", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label15.Location = New System.Drawing.Point(6, 207)
+        Me.Label15.Name = "Label15"
+        Me.Label15.Size = New System.Drawing.Size(239, 23)
+        Me.Label15.TabIndex = 5
+        Me.Label15.Text = "Ventajas de implementación"
+        '
         'BtnGuardarTiempo
         '
-        Me.BtnGuardarTiempo.Location = New System.Drawing.Point(449, 7)
+        Me.BtnGuardarTiempo.Location = New System.Drawing.Point(467, 159)
         Me.BtnGuardarTiempo.Name = "BtnGuardarTiempo"
         Me.BtnGuardarTiempo.Size = New System.Drawing.Size(128, 34)
         Me.BtnGuardarTiempo.TabIndex = 3
@@ -2746,49 +3226,334 @@ Partial Class FrmTecnologias
         '
         'BtnEditarTiempo
         '
-        Me.BtnEditarTiempo.Location = New System.Drawing.Point(583, 7)
+        Me.BtnEditarTiempo.Location = New System.Drawing.Point(601, 159)
         Me.BtnEditarTiempo.Name = "BtnEditarTiempo"
         Me.BtnEditarTiempo.Size = New System.Drawing.Size(127, 34)
         Me.BtnEditarTiempo.TabIndex = 4
         Me.BtnEditarTiempo.Text = "Editar Registro"
         Me.BtnEditarTiempo.UseVisualStyleBackColor = True
         '
-        'Button4
+        'TabPage7
         '
-        Me.Button4.Location = New System.Drawing.Point(144, 524)
-        Me.Button4.Name = "Button4"
-        Me.Button4.Size = New System.Drawing.Size(127, 34)
-        Me.Button4.TabIndex = 8
-        Me.Button4.Text = "Editar Registro"
-        Me.Button4.UseVisualStyleBackColor = True
+        Me.TabPage7.AutoScroll = True
+        Me.TabPage7.Controls.Add(PorTablaLabel1)
+        Me.TabPage7.Controls.Add(Me.PorTablaCheckBox)
+        Me.TabPage7.Controls.Add(PorTablaLabel)
+        Me.TabPage7.Controls.Add(Me.PorTablaTextBox)
+        Me.TabPage7.Controls.Add(RutaLabel)
+        Me.TabPage7.Controls.Add(Me.RutaTextBox)
+        Me.TabPage7.Controls.Add(NombreArchivoLabel)
+        Me.TabPage7.Controls.Add(Me.NombreArchivoTextBox)
+        Me.TabPage7.Controls.Add(ExtensionArchivoLabel)
+        Me.TabPage7.Controls.Add(Me.ExtensionArchivoComboBox)
+        Me.TabPage7.Controls.Add(ContenidoArchivoLabel)
+        Me.TabPage7.Controls.Add(Me.ContenidoArchivoTextBox)
+        Me.TabPage7.Controls.Add(Me.Panel13)
+        Me.TabPage7.Controls.Add(Me.Panel12)
+        Me.TabPage7.Location = New System.Drawing.Point(4, 27)
+        Me.TabPage7.Name = "TabPage7"
+        Me.TabPage7.Padding = New System.Windows.Forms.Padding(3)
+        Me.TabPage7.Size = New System.Drawing.Size(758, 576)
+        Me.TabPage7.TabIndex = 6
+        Me.TabPage7.Text = "Autom"
+        Me.TabPage7.UseVisualStyleBackColor = True
         '
-        'Button5
+        'PorTablaCheckBox
         '
-        Me.Button5.Location = New System.Drawing.Point(10, 524)
-        Me.Button5.Name = "Button5"
-        Me.Button5.Size = New System.Drawing.Size(127, 34)
-        Me.Button5.TabIndex = 7
-        Me.Button5.Text = "Guardar Registro"
-        Me.Button5.UseVisualStyleBackColor = True
+        Me.PorTablaCheckBox.DataBindings.Add(New System.Windows.Forms.Binding("CheckState", Me.SP_PlantillasCreacionDeArchivos_BUSQUEDA_SEGUN_PARAMETRO_ComponenteIDBindingSource, "PorTabla", True))
+        Me.PorTablaCheckBox.Enabled = False
+        Me.PorTablaCheckBox.Location = New System.Drawing.Point(679, 239)
+        Me.PorTablaCheckBox.Name = "PorTablaCheckBox"
+        Me.PorTablaCheckBox.Size = New System.Drawing.Size(69, 24)
+        Me.PorTablaCheckBox.TabIndex = 104
+        Me.PorTablaCheckBox.UseVisualStyleBackColor = True
         '
-        'TextBox1
+        'SP_PlantillasCreacionDeArchivos_BUSQUEDA_SEGUN_PARAMETRO_ComponenteIDBindingSource
         '
-        Me.TextBox1.Font = New System.Drawing.Font("Candara", 14.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox1.Location = New System.Drawing.Point(10, 193)
-        Me.TextBox1.Multiline = True
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(736, 325)
-        Me.TextBox1.TabIndex = 6
+        Me.SP_PlantillasCreacionDeArchivos_BUSQUEDA_SEGUN_PARAMETRO_ComponenteIDBindingSource.DataMember = "SP_PlantillasCreacionDeArchivos_BUSQUEDA_SEGUN_PARAMETRO_ComponenteID"
+        Me.SP_PlantillasCreacionDeArchivos_BUSQUEDA_SEGUN_PARAMETRO_ComponenteIDBindingSource.DataSource = Me.DataSetAdministracion
         '
-        'Label15
+        'PorTablaTextBox
         '
-        Me.Label15.AutoSize = True
-        Me.Label15.Font = New System.Drawing.Font("Candara", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label15.Location = New System.Drawing.Point(6, 167)
-        Me.Label15.Name = "Label15"
-        Me.Label15.Size = New System.Drawing.Size(239, 23)
-        Me.Label15.TabIndex = 5
-        Me.Label15.Text = "Ventajas de implementación"
+        Me.PorTablaTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SP_PlantillasCreacionDeArchivos_BUSQUEDA_SEGUN_PARAMETRO_ComponenteIDBindingSource, "PorTabla", True))
+        Me.PorTablaTextBox.Location = New System.Drawing.Point(648, 154)
+        Me.PorTablaTextBox.Name = "PorTablaTextBox"
+        Me.PorTablaTextBox.Size = New System.Drawing.Size(100, 26)
+        Me.PorTablaTextBox.TabIndex = 103
+        '
+        'RutaTextBox
+        '
+        Me.RutaTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SP_PlantillasCreacionDeArchivos_BUSQUEDA_SEGUN_PARAMETRO_ComponenteIDBindingSource, "Ruta", True))
+        Me.RutaTextBox.Location = New System.Drawing.Point(15, 181)
+        Me.RutaTextBox.Name = "RutaTextBox"
+        Me.RutaTextBox.Size = New System.Drawing.Size(733, 26)
+        Me.RutaTextBox.TabIndex = 95
+        '
+        'NombreArchivoTextBox
+        '
+        Me.NombreArchivoTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SP_PlantillasCreacionDeArchivos_BUSQUEDA_SEGUN_PARAMETRO_ComponenteIDBindingSource, "NombreArchivo", True))
+        Me.NombreArchivoTextBox.Location = New System.Drawing.Point(15, 238)
+        Me.NombreArchivoTextBox.Name = "NombreArchivoTextBox"
+        Me.NombreArchivoTextBox.Size = New System.Drawing.Size(433, 26)
+        Me.NombreArchivoTextBox.TabIndex = 97
+        '
+        'ExtensionArchivoComboBox
+        '
+        Me.ExtensionArchivoComboBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SP_PlantillasCreacionDeArchivos_BUSQUEDA_SEGUN_PARAMETRO_ComponenteIDBindingSource, "ExtensionArchivo", True))
+        Me.ExtensionArchivoComboBox.FormattingEnabled = True
+        Me.ExtensionArchivoComboBox.Items.AddRange(New Object() {".txt", ".json", ".cs", ".vb", ".sql"})
+        Me.ExtensionArchivoComboBox.Location = New System.Drawing.Point(454, 238)
+        Me.ExtensionArchivoComboBox.Name = "ExtensionArchivoComboBox"
+        Me.ExtensionArchivoComboBox.Size = New System.Drawing.Size(138, 26)
+        Me.ExtensionArchivoComboBox.TabIndex = 99
+        '
+        'ContenidoArchivoTextBox
+        '
+        Me.ContenidoArchivoTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SP_Componentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDBindingSource, "Codigo", True))
+        Me.ContenidoArchivoTextBox.Enabled = False
+        Me.ContenidoArchivoTextBox.Location = New System.Drawing.Point(15, 294)
+        Me.ContenidoArchivoTextBox.Multiline = True
+        Me.ContenidoArchivoTextBox.Name = "ContenidoArchivoTextBox"
+        Me.ContenidoArchivoTextBox.Size = New System.Drawing.Size(733, 276)
+        Me.ContenidoArchivoTextBox.TabIndex = 101
+        '
+        'Panel13
+        '
+        Me.Panel13.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel13.Controls.Add(Me.Nuevo_Menu_PlantillasCreacionDeArchivos)
+        Me.Panel13.Controls.Add(Me.Cancelar_Menu_PlantillasCreacionDeArchivos)
+        Me.Panel13.Controls.Add(Me.Eliminar_Menu_PlantillasCreacionDeArchivos)
+        Me.Panel13.Controls.Add(Me.Editar_Menu_PlantillasCreacionDeArchivos)
+        Me.Panel13.Controls.Add(Me.Actualizar_Menu_PlantillasCreacionDeArchivos)
+        Me.Panel13.Controls.Add(Me.Guardar_Menu_PlantillasCreacionDeArchivos)
+        Me.Panel13.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Panel13.Location = New System.Drawing.Point(3, 102)
+        Me.Panel13.Name = "Panel13"
+        Me.Panel13.Size = New System.Drawing.Size(752, 46)
+        Me.Panel13.TabIndex = 92
+        '
+        'Nuevo_Menu_PlantillasCreacionDeArchivos
+        '
+        Me.Nuevo_Menu_PlantillasCreacionDeArchivos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Nuevo_Menu_PlantillasCreacionDeArchivos.Image = CType(resources.GetObject("Nuevo_Menu_PlantillasCreacionDeArchivos.Image"), System.Drawing.Image)
+        Me.Nuevo_Menu_PlantillasCreacionDeArchivos.Location = New System.Drawing.Point(475, 3)
+        Me.Nuevo_Menu_PlantillasCreacionDeArchivos.Name = "Nuevo_Menu_PlantillasCreacionDeArchivos"
+        Me.Nuevo_Menu_PlantillasCreacionDeArchivos.Size = New System.Drawing.Size(40, 38)
+        Me.Nuevo_Menu_PlantillasCreacionDeArchivos.TabIndex = 76
+        Me.Nuevo_Menu_PlantillasCreacionDeArchivos.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.Nuevo_Menu_PlantillasCreacionDeArchivos.UseVisualStyleBackColor = True
+        '
+        'Cancelar_Menu_PlantillasCreacionDeArchivos
+        '
+        Me.Cancelar_Menu_PlantillasCreacionDeArchivos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Cancelar_Menu_PlantillasCreacionDeArchivos.Image = CType(resources.GetObject("Cancelar_Menu_PlantillasCreacionDeArchivos.Image"), System.Drawing.Image)
+        Me.Cancelar_Menu_PlantillasCreacionDeArchivos.Location = New System.Drawing.Point(704, 3)
+        Me.Cancelar_Menu_PlantillasCreacionDeArchivos.Name = "Cancelar_Menu_PlantillasCreacionDeArchivos"
+        Me.Cancelar_Menu_PlantillasCreacionDeArchivos.Size = New System.Drawing.Size(40, 38)
+        Me.Cancelar_Menu_PlantillasCreacionDeArchivos.TabIndex = 75
+        Me.Cancelar_Menu_PlantillasCreacionDeArchivos.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.Cancelar_Menu_PlantillasCreacionDeArchivos.UseVisualStyleBackColor = True
+        '
+        'Eliminar_Menu_PlantillasCreacionDeArchivos
+        '
+        Me.Eliminar_Menu_PlantillasCreacionDeArchivos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Eliminar_Menu_PlantillasCreacionDeArchivos.Image = CType(resources.GetObject("Eliminar_Menu_PlantillasCreacionDeArchivos.Image"), System.Drawing.Image)
+        Me.Eliminar_Menu_PlantillasCreacionDeArchivos.Location = New System.Drawing.Point(659, 3)
+        Me.Eliminar_Menu_PlantillasCreacionDeArchivos.Name = "Eliminar_Menu_PlantillasCreacionDeArchivos"
+        Me.Eliminar_Menu_PlantillasCreacionDeArchivos.Size = New System.Drawing.Size(40, 38)
+        Me.Eliminar_Menu_PlantillasCreacionDeArchivos.TabIndex = 72
+        Me.Eliminar_Menu_PlantillasCreacionDeArchivos.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.Eliminar_Menu_PlantillasCreacionDeArchivos.UseVisualStyleBackColor = True
+        '
+        'Editar_Menu_PlantillasCreacionDeArchivos
+        '
+        Me.Editar_Menu_PlantillasCreacionDeArchivos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Editar_Menu_PlantillasCreacionDeArchivos.Image = CType(resources.GetObject("Editar_Menu_PlantillasCreacionDeArchivos.Image"), System.Drawing.Image)
+        Me.Editar_Menu_PlantillasCreacionDeArchivos.Location = New System.Drawing.Point(567, 3)
+        Me.Editar_Menu_PlantillasCreacionDeArchivos.Name = "Editar_Menu_PlantillasCreacionDeArchivos"
+        Me.Editar_Menu_PlantillasCreacionDeArchivos.Size = New System.Drawing.Size(40, 38)
+        Me.Editar_Menu_PlantillasCreacionDeArchivos.TabIndex = 74
+        Me.Editar_Menu_PlantillasCreacionDeArchivos.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.Editar_Menu_PlantillasCreacionDeArchivos.UseVisualStyleBackColor = True
+        '
+        'Actualizar_Menu_PlantillasCreacionDeArchivos
+        '
+        Me.Actualizar_Menu_PlantillasCreacionDeArchivos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Actualizar_Menu_PlantillasCreacionDeArchivos.Image = CType(resources.GetObject("Actualizar_Menu_PlantillasCreacionDeArchivos.Image"), System.Drawing.Image)
+        Me.Actualizar_Menu_PlantillasCreacionDeArchivos.Location = New System.Drawing.Point(613, 3)
+        Me.Actualizar_Menu_PlantillasCreacionDeArchivos.Name = "Actualizar_Menu_PlantillasCreacionDeArchivos"
+        Me.Actualizar_Menu_PlantillasCreacionDeArchivos.Size = New System.Drawing.Size(40, 38)
+        Me.Actualizar_Menu_PlantillasCreacionDeArchivos.TabIndex = 73
+        Me.Actualizar_Menu_PlantillasCreacionDeArchivos.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.Actualizar_Menu_PlantillasCreacionDeArchivos.UseVisualStyleBackColor = True
+        '
+        'Guardar_Menu_PlantillasCreacionDeArchivos
+        '
+        Me.Guardar_Menu_PlantillasCreacionDeArchivos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Guardar_Menu_PlantillasCreacionDeArchivos.Image = CType(resources.GetObject("Guardar_Menu_PlantillasCreacionDeArchivos.Image"), System.Drawing.Image)
+        Me.Guardar_Menu_PlantillasCreacionDeArchivos.Location = New System.Drawing.Point(521, 3)
+        Me.Guardar_Menu_PlantillasCreacionDeArchivos.Name = "Guardar_Menu_PlantillasCreacionDeArchivos"
+        Me.Guardar_Menu_PlantillasCreacionDeArchivos.Size = New System.Drawing.Size(40, 38)
+        Me.Guardar_Menu_PlantillasCreacionDeArchivos.TabIndex = 71
+        Me.Guardar_Menu_PlantillasCreacionDeArchivos.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.Guardar_Menu_PlantillasCreacionDeArchivos.UseVisualStyleBackColor = True
+        '
+        'Panel12
+        '
+        Me.Panel12.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel12.Controls.Add(NombreRequerimientoFuncionalLabel)
+        Me.Panel12.Controls.Add(AdmiteCreacionLabel)
+        Me.Panel12.Controls.Add(Me.NombreRequerimientoFuncionalTextBox)
+        Me.Panel12.Controls.Add(Me.Cancelar_Menu_TecnologiasConCreacion)
+        Me.Panel12.Controls.Add(Me.AdmiteCreacionCheckBox)
+        Me.Panel12.Controls.Add(Me.Guardar_Menu_TecnologiasConCreacion)
+        Me.Panel12.Controls.Add(Me.Actualizar_Menu_TecnologiasConCreacion)
+        Me.Panel12.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Panel12.Location = New System.Drawing.Point(3, 3)
+        Me.Panel12.Name = "Panel12"
+        Me.Panel12.Size = New System.Drawing.Size(752, 99)
+        Me.Panel12.TabIndex = 91
+        '
+        'NombreRequerimientoFuncionalTextBox
+        '
+        Me.NombreRequerimientoFuncionalTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SP_TecnologiasConCreacion_BUSQUEDA_SEGUN_IdBindingSource, "NombreRequerimientoFuncional", True))
+        Me.NombreRequerimientoFuncionalTextBox.Location = New System.Drawing.Point(11, 61)
+        Me.NombreRequerimientoFuncionalTextBox.Name = "NombreRequerimientoFuncionalTextBox"
+        Me.NombreRequerimientoFuncionalTextBox.Size = New System.Drawing.Size(729, 26)
+        Me.NombreRequerimientoFuncionalTextBox.TabIndex = 92
+        '
+        'SP_TecnologiasConCreacion_BUSQUEDA_SEGUN_IdBindingSource
+        '
+        Me.SP_TecnologiasConCreacion_BUSQUEDA_SEGUN_IdBindingSource.DataMember = "SP_TecnologiasConCreacion_BUSQUEDA_SEGUN_Id"
+        Me.SP_TecnologiasConCreacion_BUSQUEDA_SEGUN_IdBindingSource.DataSource = Me.DataSetAdministracion
+        '
+        'Cancelar_Menu_TecnologiasConCreacion
+        '
+        Me.Cancelar_Menu_TecnologiasConCreacion.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Cancelar_Menu_TecnologiasConCreacion.Image = CType(resources.GetObject("Cancelar_Menu_TecnologiasConCreacion.Image"), System.Drawing.Image)
+        Me.Cancelar_Menu_TecnologiasConCreacion.Location = New System.Drawing.Point(704, 6)
+        Me.Cancelar_Menu_TecnologiasConCreacion.Name = "Cancelar_Menu_TecnologiasConCreacion"
+        Me.Cancelar_Menu_TecnologiasConCreacion.Size = New System.Drawing.Size(40, 38)
+        Me.Cancelar_Menu_TecnologiasConCreacion.TabIndex = 75
+        Me.Cancelar_Menu_TecnologiasConCreacion.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.Cancelar_Menu_TecnologiasConCreacion.UseVisualStyleBackColor = True
+        '
+        'AdmiteCreacionCheckBox
+        '
+        Me.AdmiteCreacionCheckBox.DataBindings.Add(New System.Windows.Forms.Binding("CheckState", Me.SP_TecnologiasConCreacion_BUSQUEDA_SEGUN_IdBindingSource, "AdmiteCreacion", True))
+        Me.AdmiteCreacionCheckBox.Location = New System.Drawing.Point(127, 10)
+        Me.AdmiteCreacionCheckBox.Name = "AdmiteCreacionCheckBox"
+        Me.AdmiteCreacionCheckBox.Size = New System.Drawing.Size(104, 24)
+        Me.AdmiteCreacionCheckBox.TabIndex = 1
+        Me.AdmiteCreacionCheckBox.UseVisualStyleBackColor = True
+        '
+        'Guardar_Menu_TecnologiasConCreacion
+        '
+        Me.Guardar_Menu_TecnologiasConCreacion.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Guardar_Menu_TecnologiasConCreacion.Image = CType(resources.GetObject("Guardar_Menu_TecnologiasConCreacion.Image"), System.Drawing.Image)
+        Me.Guardar_Menu_TecnologiasConCreacion.Location = New System.Drawing.Point(612, 6)
+        Me.Guardar_Menu_TecnologiasConCreacion.Name = "Guardar_Menu_TecnologiasConCreacion"
+        Me.Guardar_Menu_TecnologiasConCreacion.Size = New System.Drawing.Size(40, 38)
+        Me.Guardar_Menu_TecnologiasConCreacion.TabIndex = 71
+        Me.Guardar_Menu_TecnologiasConCreacion.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.Guardar_Menu_TecnologiasConCreacion.UseVisualStyleBackColor = True
+        '
+        'Actualizar_Menu_TecnologiasConCreacion
+        '
+        Me.Actualizar_Menu_TecnologiasConCreacion.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Actualizar_Menu_TecnologiasConCreacion.Image = CType(resources.GetObject("Actualizar_Menu_TecnologiasConCreacion.Image"), System.Drawing.Image)
+        Me.Actualizar_Menu_TecnologiasConCreacion.Location = New System.Drawing.Point(658, 6)
+        Me.Actualizar_Menu_TecnologiasConCreacion.Name = "Actualizar_Menu_TecnologiasConCreacion"
+        Me.Actualizar_Menu_TecnologiasConCreacion.Size = New System.Drawing.Size(40, 38)
+        Me.Actualizar_Menu_TecnologiasConCreacion.TabIndex = 73
+        Me.Actualizar_Menu_TecnologiasConCreacion.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.Actualizar_Menu_TecnologiasConCreacion.UseVisualStyleBackColor = True
+        '
+        'SP_PlantillasCreacionDeArchivos_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDBindingSource
+        '
+        Me.SP_PlantillasCreacionDeArchivos_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDBindingSource.DataMember = "SP_PlantillasCreacionDeArchivos_BUSQUEDA_SEGUN_PARAMETRO_PlantillaID"
+        Me.SP_PlantillasCreacionDeArchivos_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDBindingSource.DataSource = Me.DataSetAdministracion
+        '
+        'IdTextBox
+        '
+        Me.IdTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SP_TecnologiasConCreacion_BUSQUEDA_SEGUN_IdBindingSource, "Id", True))
+        Me.IdTextBox.Location = New System.Drawing.Point(262, 415)
+        Me.IdTextBox.Name = "IdTextBox"
+        Me.IdTextBox.Size = New System.Drawing.Size(100, 26)
+        Me.IdTextBox.TabIndex = 92
+        '
+        'AdmiteCreacionTextBox
+        '
+        Me.AdmiteCreacionTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SP_TecnologiasConCreacion_BUSQUEDA_SEGUN_IdBindingSource, "AdmiteCreacion", True))
+        Me.AdmiteCreacionTextBox.Location = New System.Drawing.Point(262, 385)
+        Me.AdmiteCreacionTextBox.Name = "AdmiteCreacionTextBox"
+        Me.AdmiteCreacionTextBox.Size = New System.Drawing.Size(100, 26)
+        Me.AdmiteCreacionTextBox.TabIndex = 3
+        '
+        'lblFileName
+        '
+        Me.lblFileName.Location = New System.Drawing.Point(259, 286)
+        Me.lblFileName.Name = "lblFileName"
+        Me.lblFileName.Size = New System.Drawing.Size(100, 26)
+        Me.lblFileName.TabIndex = 95
+        '
+        'ImagenIdTextBox
+        '
+        Me.ImagenIdTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SP_PlantillasImagenes_BUSCA_SEGUN_PlantillaIDBindingSource, "ImagenId", True))
+        Me.ImagenIdTextBox.Location = New System.Drawing.Point(262, 320)
+        Me.ImagenIdTextBox.Name = "ImagenIdTextBox"
+        Me.ImagenIdTextBox.Size = New System.Drawing.Size(100, 26)
+        Me.ImagenIdTextBox.TabIndex = 4
+        '
+        'PlantillaIDTextBox1
+        '
+        Me.PlantillaIDTextBox1.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SP_PlantillasImagenes_BUSCA_SEGUN_PlantillaIDBindingSource, "PlantillaID", True))
+        Me.PlantillaIDTextBox1.Location = New System.Drawing.Point(262, 352)
+        Me.PlantillaIDTextBox1.Name = "PlantillaIDTextBox1"
+        Me.PlantillaIDTextBox1.Size = New System.Drawing.Size(100, 26)
+        Me.PlantillaIDTextBox1.TabIndex = 6
+        '
+        'TextoEnriquecidoIDTextBox
+        '
+        Me.TextoEnriquecidoIDTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SP_TextoEnriquecido_BUSQUEDA_SEGUN_PARAMETRO_ComponenteIDBindingSource, "TextoEnriquecidoID", True))
+        Me.TextoEnriquecidoIDTextBox.Location = New System.Drawing.Point(259, 258)
+        Me.TextoEnriquecidoIDTextBox.Name = "TextoEnriquecidoIDTextBox"
+        Me.TextoEnriquecidoIDTextBox.Size = New System.Drawing.Size(100, 26)
+        Me.TextoEnriquecidoIDTextBox.TabIndex = 93
+        '
+        'SP_PlantillasImagenes_EDICION_INSERTARBindingSource
+        '
+        Me.SP_PlantillasImagenes_EDICION_INSERTARBindingSource.DataMember = "SP_PlantillasImagenes_EDICION_INSERTAR"
+        Me.SP_PlantillasImagenes_EDICION_INSERTARBindingSource.DataSource = Me.DataSetReportes
+        '
+        'PlantillasImagenesBindingSource
+        '
+        Me.PlantillasImagenesBindingSource.DataMember = "PlantillasImagenes"
+        Me.PlantillasImagenesBindingSource.DataSource = Me.DataSetReportes
+        '
+        'VentajaTecnologicaPlantillaIdTextBox
+        '
+        Me.VentajaTecnologicaPlantillaIdTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SP_PlantillasVentajasTecnologicas_SEGUN_PlantillaIDBindingSource, "VentajaTecnologicaPlantillaId", True))
+        Me.VentajaTecnologicaPlantillaIdTextBox.Location = New System.Drawing.Point(606, 543)
+        Me.VentajaTecnologicaPlantillaIdTextBox.Name = "VentajaTecnologicaPlantillaIdTextBox"
+        Me.VentajaTecnologicaPlantillaIdTextBox.Size = New System.Drawing.Size(100, 26)
+        Me.VentajaTecnologicaPlantillaIdTextBox.TabIndex = 13
+        '
+        'MetricaPlantillaIdTextBox
+        '
+        Me.MetricaPlantillaIdTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SP_PlantillasMetricas_BUSQUEDA_SEGUN_PlantillaIDBindingSource, "MetricaPlantillaId", True))
+        Me.MetricaPlantillaIdTextBox.Location = New System.Drawing.Point(606, 478)
+        Me.MetricaPlantillaIdTextBox.Name = "MetricaPlantillaIdTextBox"
+        Me.MetricaPlantillaIdTextBox.Size = New System.Drawing.Size(100, 26)
+        Me.MetricaPlantillaIdTextBox.TabIndex = 13
+        '
+        'XTablaMetrica
+        '
+        Me.XTablaMetrica.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SP_PlantillasMetricas_BUSQUEDA_SEGUN_PlantillaIDBindingSource, "XTabla", True))
+        Me.XTablaMetrica.Location = New System.Drawing.Point(606, 511)
+        Me.XTablaMetrica.Name = "XTablaMetrica"
+        Me.XTablaMetrica.Size = New System.Drawing.Size(100, 26)
+        Me.XTablaMetrica.TabIndex = 11
         '
         'SP_CampoComponentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDBindingSource
         '
@@ -2860,6 +3625,7 @@ Partial Class FrmTecnologias
         Me.TableAdapterManager1.Connection = Nothing
         Me.TableAdapterManager1.SP_CampoComponentes_EDICION_ACTUALIZARTableAdapter = Nothing
         Me.TableAdapterManager1.SP_CampoComponentes_EDICION_ELIMINARTableAdapter = Nothing
+        Me.TableAdapterManager1.SP_CampoComponentes_EDICION_INSERTAR_PARA_DUPLICADOTableAdapter = Nothing
         Me.TableAdapterManager1.SP_CampoComponentes_EDICION_INSERTARTableAdapter = Nothing
         Me.TableAdapterManager1.SP_CamposDeTablas_EDICION_ACTUALIZARTableAdapter = Nothing
         Me.TableAdapterManager1.SP_CamposDeTablas_EDICION_ELIMINARTableAdapter = Nothing
@@ -3004,19 +3770,31 @@ Partial Class FrmTecnologias
         Me.TableAdapterManager.SP_Plantillas_EDICION_ACTUALIZARTableAdapter = Nothing
         Me.TableAdapterManager.SP_Plantillas_EDICION_ELIMINARTableAdapter = Nothing
         Me.TableAdapterManager.SP_Plantillas_EDICION_INSERTARTableAdapter = Nothing
+        Me.TableAdapterManager.SP_PlantillasCreacionDeArchivos_EDICION_ACTUALIZARTableAdapter = Nothing
+        Me.TableAdapterManager.SP_PlantillasCreacionDeArchivos_EDICION_ELIMINARTableAdapter = Nothing
+        Me.TableAdapterManager.SP_PlantillasCreacionDeArchivos_EDICION_INSERTARTableAdapter = Nothing
         Me.TableAdapterManager.SP_PlantillasMetricas_EDICION_EDITAR_SEGUN_PLANTILLATableAdapter = Nothing
         Me.TableAdapterManager.SP_PlantillasMetricas_EDICION_INSERTARTableAdapter = Nothing
+        Me.TableAdapterManager.SP_PlantillasVentajasTecnologicas_EDICION_EDITARTableAdapter = Nothing
+        Me.TableAdapterManager.SP_PlantillasVentajasTecnologicas_EDICION_INSERTARTableAdapter = Nothing
+        Me.TableAdapterManager.SP_ProyectoCarpetasArchivos_EDICION_ACTUALIZARTableAdapter = Nothing
+        Me.TableAdapterManager.SP_ProyectoCarpetasArchivos_EDICION_ELIMINAR_SEGUN_ProyectoIDTableAdapter = Nothing
+        Me.TableAdapterManager.SP_ProyectoCarpetasArchivos_EDICION_ELIMINARTableAdapter = Nothing
+        Me.TableAdapterManager.SP_ProyectoCarpetasArchivos_EDICION_INSERTARTableAdapter = Nothing
         Me.TableAdapterManager.SP_Proyectos_EDICION_ACTUALIZARTableAdapter = Nothing
         Me.TableAdapterManager.SP_Proyectos_EDICION_ELIMINARTableAdapter = Nothing
         Me.TableAdapterManager.SP_Proyectos_EDICION_INSERTARTableAdapter = Nothing
         Me.TableAdapterManager.SP_ProyectosYTecnologias_EDICION_ELIMINARTableAdapter = Nothing
         Me.TableAdapterManager.SP_ProyectosYTecnologias_EDICION_INSERTARTableAdapter = Nothing
+        Me.TableAdapterManager.SP_Prueba_EDICION_ACTUALIZARTableAdapter = Nothing
         Me.TableAdapterManager.SP_RequerimientosPlantillas_EDICION_ACTUALIZARTableAdapter = Nothing
         Me.TableAdapterManager.SP_RequerimientosPlantillas_EDICION_ELIMINARTableAdapter = Nothing
         Me.TableAdapterManager.SP_RequerimientosPlantillas_EDICION_INSERTARTableAdapter = Nothing
         Me.TableAdapterManager.SP_Tecnologias_EDICION_ACTUALIZARTableAdapter = Nothing
         Me.TableAdapterManager.SP_Tecnologias_EDICION_ELIMINARTableAdapter = Nothing
         Me.TableAdapterManager.SP_Tecnologias_EDICION_INSERTARTableAdapter = Nothing
+        Me.TableAdapterManager.SP_TecnologiasConCreacion_EDICION_ACTUALIZARTableAdapter = Nothing
+        Me.TableAdapterManager.SP_TecnologiasConCreacion_EDICION_INSERTARTableAdapter = Nothing
         Me.TableAdapterManager.SP_Tipos_EDICION_ACTUALIZARTableAdapter = Nothing
         Me.TableAdapterManager.SP_Tipos_EDICION_ELIMINARTableAdapter = Nothing
         Me.TableAdapterManager.SP_Tipos_EDICION_INSERTARTableAdapter = Nothing
@@ -3322,13 +4100,29 @@ Partial Class FrmTecnologias
         'PanelConfiguracion
         '
         Me.PanelConfiguracion.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.PanelConfiguracion.Controls.Add(PlantillasCreacionDeArchivosIdLabel)
+        Me.PanelConfiguracion.Controls.Add(Me.TiposGenerarParaTodos)
+        Me.PanelConfiguracion.Controls.Add(Me.PlantillasCreacionDeArchivosIdTextBox)
+        Me.PanelConfiguracion.Controls.Add(IdLabel)
+        Me.PanelConfiguracion.Controls.Add(VentajaTecnologicaPlantillaIdLabel)
+        Me.PanelConfiguracion.Controls.Add(Me.IdTextBox)
         Me.PanelConfiguracion.Controls.Add(MetricaPlantillaIdLabel)
+        Me.PanelConfiguracion.Controls.Add(Me.lblFileName)
+        Me.PanelConfiguracion.Controls.Add(AdmiteCreacionLabel1)
+        Me.PanelConfiguracion.Controls.Add(Me.VentajaTecnologicaPlantillaIdTextBox)
+        Me.PanelConfiguracion.Controls.Add(Me.AdmiteCreacionTextBox)
+        Me.PanelConfiguracion.Controls.Add(ImagenIdLabel)
         Me.PanelConfiguracion.Controls.Add(Me.RichTextBox1)
+        Me.PanelConfiguracion.Controls.Add(Me.ImagenIdTextBox)
         Me.PanelConfiguracion.Controls.Add(Me.MetricaPlantillaIdTextBox)
         Me.PanelConfiguracion.Controls.Add(Me.TipoTextBox)
+        Me.PanelConfiguracion.Controls.Add(PlantillaIDLabel)
         Me.PanelConfiguracion.Controls.Add(TipoLabel)
+        Me.PanelConfiguracion.Controls.Add(TextoEnriquecidoIDLabel)
         Me.PanelConfiguracion.Controls.Add(Me.XTablaTextBox)
+        Me.PanelConfiguracion.Controls.Add(Me.PlantillaIDTextBox1)
         Me.PanelConfiguracion.Controls.Add(XTablaLabel2)
+        Me.PanelConfiguracion.Controls.Add(Me.TextoEnriquecidoIDTextBox)
         Me.PanelConfiguracion.Controls.Add(XTablaLabel1)
         Me.PanelConfiguracion.Controls.Add(Me.RelacionTablasIDTextBox)
         Me.PanelConfiguracion.Controls.Add(Me.XTablaMetrica)
@@ -3361,8 +4155,42 @@ Partial Class FrmTecnologias
         Me.PanelConfiguracion.Controls.Add(Me.NombreGrupoTipoDeDatoTextBox1)
         Me.PanelConfiguracion.Location = New System.Drawing.Point(582, 5)
         Me.PanelConfiguracion.Name = "PanelConfiguracion"
-        Me.PanelConfiguracion.Size = New System.Drawing.Size(719, 599)
+        Me.PanelConfiguracion.Size = New System.Drawing.Size(733, 599)
         Me.PanelConfiguracion.TabIndex = 170
+        '
+        'TiposGenerarParaTodos
+        '
+        Me.TiposGenerarParaTodos.AllowUserToAddRows = False
+        Me.TiposGenerarParaTodos.AutoGenerateColumns = False
+        Me.TiposGenerarParaTodos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.TiposGenerarParaTodos.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn16, Me.DataGridViewTextBoxColumn17})
+        Me.TiposGenerarParaTodos.DataSource = Me.TiposBindingSource
+        Me.TiposGenerarParaTodos.Location = New System.Drawing.Point(259, 94)
+        Me.TiposGenerarParaTodos.Name = "TiposGenerarParaTodos"
+        Me.TiposGenerarParaTodos.RowHeadersVisible = False
+        Me.TiposGenerarParaTodos.Size = New System.Drawing.Size(103, 151)
+        Me.TiposGenerarParaTodos.TabIndex = 169
+        '
+        'DataGridViewTextBoxColumn16
+        '
+        Me.DataGridViewTextBoxColumn16.DataPropertyName = "tipoID"
+        Me.DataGridViewTextBoxColumn16.HeaderText = "tipoID"
+        Me.DataGridViewTextBoxColumn16.Name = "DataGridViewTextBoxColumn16"
+        Me.DataGridViewTextBoxColumn16.ReadOnly = True
+        '
+        'DataGridViewTextBoxColumn17
+        '
+        Me.DataGridViewTextBoxColumn17.DataPropertyName = "Tipo"
+        Me.DataGridViewTextBoxColumn17.HeaderText = "Tipo"
+        Me.DataGridViewTextBoxColumn17.Name = "DataGridViewTextBoxColumn17"
+        '
+        'PlantillasCreacionDeArchivosIdTextBox
+        '
+        Me.PlantillasCreacionDeArchivosIdTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SP_PlantillasCreacionDeArchivos_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDBindingSource, "PlantillasCreacionDeArchivosId", True))
+        Me.PlantillasCreacionDeArchivosIdTextBox.Location = New System.Drawing.Point(262, 449)
+        Me.PlantillasCreacionDeArchivosIdTextBox.Name = "PlantillasCreacionDeArchivosIdTextBox"
+        Me.PlantillasCreacionDeArchivosIdTextBox.Size = New System.Drawing.Size(100, 26)
+        Me.PlantillasCreacionDeArchivosIdTextBox.TabIndex = 93
         '
         'SP_PlantillasMetricas_BUSQUEDA_SEGUN_PlantillaIDTableAdapter
         '
@@ -3386,11 +4214,144 @@ Partial Class FrmTecnologias
         '
         Me.SP_PlantillasMetricas_EDICION_EDITAR_SEGUN_PLANTILLATableAdapter.ClearBeforeFill = True
         '
+        'SP_PlantillasVentajasTecnologicas_SEGUN_PlantillaIDTableAdapter
+        '
+        Me.SP_PlantillasVentajasTecnologicas_SEGUN_PlantillaIDTableAdapter.ClearBeforeFill = True
+        '
+        'SP_PlantillasVentajasTecnologicas_EDICION_EDITARBindingSource
+        '
+        Me.SP_PlantillasVentajasTecnologicas_EDICION_EDITARBindingSource.DataMember = "SP_PlantillasVentajasTecnologicas_EDICION_EDITAR"
+        Me.SP_PlantillasVentajasTecnologicas_EDICION_EDITARBindingSource.DataSource = Me.DataSetAdministracion
+        '
+        'SP_PlantillasVentajasTecnologicas_EDICION_EDITARTableAdapter
+        '
+        Me.SP_PlantillasVentajasTecnologicas_EDICION_EDITARTableAdapter.ClearBeforeFill = True
+        '
+        'SP_PlantillasVentajasTecnologicas_EDICION_INSERTARBindingSource
+        '
+        Me.SP_PlantillasVentajasTecnologicas_EDICION_INSERTARBindingSource.DataMember = "SP_PlantillasVentajasTecnologicas_EDICION_INSERTAR"
+        Me.SP_PlantillasVentajasTecnologicas_EDICION_INSERTARBindingSource.DataSource = Me.DataSetAdministracion
+        '
+        'SP_PlantillasVentajasTecnologicas_EDICION_INSERTARTableAdapter
+        '
+        Me.SP_PlantillasVentajasTecnologicas_EDICION_INSERTARTableAdapter.ClearBeforeFill = True
+        '
+        'PlantillasImagenesTableAdapter
+        '
+        Me.PlantillasImagenesTableAdapter.ClearBeforeFill = True
+        '
+        'TableAdapterManager2
+        '
+        Me.TableAdapterManager2.BackupDataSetBeforeUpdate = False
+        Me.TableAdapterManager2.PlantillasImagenesTableAdapter = Me.PlantillasImagenesTableAdapter
+        Me.TableAdapterManager2.SP_PlantillasImagenes_EDICION_ACTUALIZARTableAdapter = Nothing
+        Me.TableAdapterManager2.SP_PlantillasImagenes_EDICION_ELIMINARTableAdapter = Nothing
+        Me.TableAdapterManager2.SP_PlantillasImagenes_EDICION_INSERTARTableAdapter = Nothing
+        Me.TableAdapterManager2.SP_ProyectoDocumentoTecnico_EDICION_ELIMINAR_SEGUN_ProyectoIDTableAdapter = Nothing
+        Me.TableAdapterManager2.SP_ProyectoDocumentoTecnico_EDICION_INSERTARTableAdapter = Nothing
+        Me.TableAdapterManager2.UpdateOrder = GeneradorCod.DataSetReportesTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
+        '
+        'SP_PlantillasImagenes_BUSCA_SEGUN_PlantillaIDTableAdapter
+        '
+        Me.SP_PlantillasImagenes_BUSCA_SEGUN_PlantillaIDTableAdapter.ClearBeforeFill = True
+        '
+        'OpenFileDialog1
+        '
+        Me.OpenFileDialog1.FileName = "OpenFileDialog1"
+        '
+        'SP_PlantillasImagenes_EDICION_INSERTARTableAdapter
+        '
+        Me.SP_PlantillasImagenes_EDICION_INSERTARTableAdapter.ClearBeforeFill = True
+        '
+        'SP_PlantillasImagenes_EDICION_ACTUALIZARBindingSource
+        '
+        Me.SP_PlantillasImagenes_EDICION_ACTUALIZARBindingSource.DataMember = "SP_PlantillasImagenes_EDICION_ACTUALIZAR"
+        Me.SP_PlantillasImagenes_EDICION_ACTUALIZARBindingSource.DataSource = Me.DataSetReportes
+        '
+        'SP_PlantillasImagenes_EDICION_ACTUALIZARTableAdapter
+        '
+        Me.SP_PlantillasImagenes_EDICION_ACTUALIZARTableAdapter.ClearBeforeFill = True
+        '
+        'SP_PlantillasImagenes_EDICION_ELIMINARBindingSource
+        '
+        Me.SP_PlantillasImagenes_EDICION_ELIMINARBindingSource.DataMember = "SP_PlantillasImagenes_EDICION_ELIMINAR"
+        Me.SP_PlantillasImagenes_EDICION_ELIMINARBindingSource.DataSource = Me.DataSetReportes
+        '
+        'SP_PlantillasImagenes_EDICION_ELIMINARTableAdapter
+        '
+        Me.SP_PlantillasImagenes_EDICION_ELIMINARTableAdapter.ClearBeforeFill = True
+        '
+        'SP_TecnologiasConCreacion_BUSQUEDA_SEGUN_IdTableAdapter
+        '
+        Me.SP_TecnologiasConCreacion_BUSQUEDA_SEGUN_IdTableAdapter.ClearBeforeFill = True
+        '
+        'SP_TecnologiasConCreacion_EDICION_ACTUALIZARBindingSource
+        '
+        Me.SP_TecnologiasConCreacion_EDICION_ACTUALIZARBindingSource.DataMember = "SP_TecnologiasConCreacion_EDICION_ACTUALIZAR"
+        Me.SP_TecnologiasConCreacion_EDICION_ACTUALIZARBindingSource.DataSource = Me.DataSetAdministracion
+        '
+        'SP_TecnologiasConCreacion_EDICION_ACTUALIZARTableAdapter
+        '
+        Me.SP_TecnologiasConCreacion_EDICION_ACTUALIZARTableAdapter.ClearBeforeFill = True
+        '
+        'SP_TecnologiasConCreacion_EDICION_INSERTARBindingSource
+        '
+        Me.SP_TecnologiasConCreacion_EDICION_INSERTARBindingSource.DataMember = "SP_TecnologiasConCreacion_EDICION_INSERTAR"
+        Me.SP_TecnologiasConCreacion_EDICION_INSERTARBindingSource.DataSource = Me.DataSetAdministracion
+        '
+        'SP_TecnologiasConCreacion_EDICION_INSERTARTableAdapter
+        '
+        Me.SP_TecnologiasConCreacion_EDICION_INSERTARTableAdapter.ClearBeforeFill = True
+        '
+        'SP_CampoComponentes_EDICION_INSERTAR_PARA_DUPLICADOBindingSource
+        '
+        Me.SP_CampoComponentes_EDICION_INSERTAR_PARA_DUPLICADOBindingSource.DataMember = "SP_CampoComponentes_EDICION_INSERTAR_PARA_DUPLICADO"
+        Me.SP_CampoComponentes_EDICION_INSERTAR_PARA_DUPLICADOBindingSource.DataSource = Me.DataSetTablasYCampos
+        '
+        'SP_CampoComponentes_EDICION_INSERTAR_PARA_DUPLICADOTableAdapter
+        '
+        Me.SP_CampoComponentes_EDICION_INSERTAR_PARA_DUPLICADOTableAdapter.ClearBeforeFill = True
+        '
+        'SP_PlantillasCreacionDeArchivos_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDTableAdapter
+        '
+        Me.SP_PlantillasCreacionDeArchivos_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDTableAdapter.ClearBeforeFill = True
+        '
+        'SP_PlantillasCreacionDeArchivos_EDICION_ACTUALIZARBindingSource
+        '
+        Me.SP_PlantillasCreacionDeArchivos_EDICION_ACTUALIZARBindingSource.DataMember = "SP_PlantillasCreacionDeArchivos_EDICION_ACTUALIZAR"
+        Me.SP_PlantillasCreacionDeArchivos_EDICION_ACTUALIZARBindingSource.DataSource = Me.DataSetAdministracion
+        '
+        'SP_PlantillasCreacionDeArchivos_EDICION_ACTUALIZARTableAdapter
+        '
+        Me.SP_PlantillasCreacionDeArchivos_EDICION_ACTUALIZARTableAdapter.ClearBeforeFill = True
+        '
+        'SP_PlantillasCreacionDeArchivos_EDICION_ELIMINARBindingSource
+        '
+        Me.SP_PlantillasCreacionDeArchivos_EDICION_ELIMINARBindingSource.DataMember = "SP_PlantillasCreacionDeArchivos_EDICION_ELIMINAR"
+        Me.SP_PlantillasCreacionDeArchivos_EDICION_ELIMINARBindingSource.DataSource = Me.DataSetAdministracion
+        '
+        'SP_PlantillasCreacionDeArchivos_EDICION_ELIMINARTableAdapter
+        '
+        Me.SP_PlantillasCreacionDeArchivos_EDICION_ELIMINARTableAdapter.ClearBeforeFill = True
+        '
+        'SP_PlantillasCreacionDeArchivos_EDICION_INSERTARBindingSource
+        '
+        Me.SP_PlantillasCreacionDeArchivos_EDICION_INSERTARBindingSource.DataMember = "SP_PlantillasCreacionDeArchivos_EDICION_INSERTAR"
+        Me.SP_PlantillasCreacionDeArchivos_EDICION_INSERTARBindingSource.DataSource = Me.DataSetAdministracion
+        '
+        'SP_PlantillasCreacionDeArchivos_EDICION_INSERTARTableAdapter
+        '
+        Me.SP_PlantillasCreacionDeArchivos_EDICION_INSERTARTableAdapter.ClearBeforeFill = True
+        '
+        'SP_PlantillasCreacionDeArchivos_BUSQUEDA_SEGUN_PARAMETRO_ComponenteIDTableAdapter
+        '
+        Me.SP_PlantillasCreacionDeArchivos_BUSQUEDA_SEGUN_PARAMETRO_ComponenteIDTableAdapter.ClearBeforeFill = True
+        '
         'FrmTecnologias
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 18.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1319, 611)
+        Me.ClientSize = New System.Drawing.Size(1320, 611)
         Me.Controls.Add(Me.TabPanelControl)
         Me.Controls.Add(Me.Panel6)
         Me.Controls.Add(Me.Panel1)
@@ -3431,10 +4392,15 @@ Partial Class FrmTecnologias
         Me.PanelGuardado.ResumeLayout(False)
         Me.PanelGuardado.PerformLayout()
         Me.TabPage5.ResumeLayout(False)
-        Me.TabPage5.PerformLayout()
+        Me.PanelImagenesPlantillas.ResumeLayout(False)
+        Me.PanelImagenesPlantillas.PerformLayout()
+        CType(Me.ImagenPictureBox, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.SP_PlantillasImagenes_BUSCA_SEGUN_PlantillaIDBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DataSetReportes, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.SP_PlantillasImagenes_BUSCA_SEGUN_PlantillaIDDataGridView, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Panel10.ResumeLayout(False)
         CType(Me.SP_TextoEnriquecido_BUSQUEDA_SEGUN_PARAMETRO_ComponenteIDBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DataSetTablasYCampos, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.Panel10.ResumeLayout(False)
         Me.TabPage3.ResumeLayout(False)
         Me.TabPage3.PerformLayout()
         CType(Me.SP_CampoComponentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaID_ComponenteIDBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
@@ -3444,6 +4410,7 @@ Partial Class FrmTecnologias
         CType(Me.SP_CampoComponentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView, System.ComponentModel.ISupportInitialize).EndInit()
         Me.CM_TiposDatos.ResumeLayout(False)
         Me.Panel7.ResumeLayout(False)
+        Me.Panel7.PerformLayout()
         Me.TabPage2.ResumeLayout(False)
         Me.TabPage2.PerformLayout()
         CType(Me.SP_CARGA_CONVENSIONES_USADAS_POR_PLANTILLADataGridView, System.ComponentModel.ISupportInitialize).EndInit()
@@ -3457,9 +4424,20 @@ Partial Class FrmTecnologias
         Me.Panel9.ResumeLayout(False)
         Me.TabPage6.ResumeLayout(False)
         Me.TabPage6.PerformLayout()
+        CType(Me.SP_PlantillasVentajasTecnologicas_SEGUN_PlantillaIDBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel11.ResumeLayout(False)
         Me.Panel11.PerformLayout()
         CType(Me.SP_PlantillasMetricas_BUSQUEDA_SEGUN_PlantillaIDBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.TabPage7.ResumeLayout(False)
+        Me.TabPage7.PerformLayout()
+        CType(Me.SP_PlantillasCreacionDeArchivos_BUSQUEDA_SEGUN_PARAMETRO_ComponenteIDBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Panel13.ResumeLayout(False)
+        Me.Panel12.ResumeLayout(False)
+        Me.Panel12.PerformLayout()
+        CType(Me.SP_TecnologiasConCreacion_BUSQUEDA_SEGUN_IdBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.SP_PlantillasCreacionDeArchivos_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.SP_PlantillasImagenes_EDICION_INSERTARBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PlantillasImagenesBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.SP_CampoComponentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.SP_CampoComponentes_EDICION_ACTUALIZARBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.SP_CampoComponentes_EDICION_ELIMINARBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
@@ -3489,8 +4467,19 @@ Partial Class FrmTecnologias
         CType(Me.SP_Componentes_EDICION_ACTUALIZAR_XBase_PorPlantillaBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.PanelConfiguracion.ResumeLayout(False)
         Me.PanelConfiguracion.PerformLayout()
+        CType(Me.TiposGenerarParaTodos, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.SP_PlantillasMetricas_EDICION_INSERTARBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.SP_PlantillasMetricas_EDICION_EDITAR_SEGUN_PLANTILLABindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.SP_PlantillasVentajasTecnologicas_EDICION_EDITARBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.SP_PlantillasVentajasTecnologicas_EDICION_INSERTARBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.SP_PlantillasImagenes_EDICION_ACTUALIZARBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.SP_PlantillasImagenes_EDICION_ELIMINARBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.SP_TecnologiasConCreacion_EDICION_ACTUALIZARBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.SP_TecnologiasConCreacion_EDICION_INSERTARBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.SP_CampoComponentes_EDICION_INSERTAR_PARA_DUPLICADOBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.SP_PlantillasCreacionDeArchivos_EDICION_ACTUALIZARBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.SP_PlantillasCreacionDeArchivos_EDICION_ELIMINARBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.SP_PlantillasCreacionDeArchivos_EDICION_INSERTARBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -3732,7 +4721,6 @@ Partial Class FrmTecnologias
     Friend WithEvents ContenidoComponenteCopia As RichTextBox
     Friend WithEvents ChkControlCambios As CheckBox
     Friend WithEvents RichTextBox1 As RichTextBox
-    Friend WithEvents BtnZoom As Button
     Friend WithEvents CM_AccionesEdicion As ContextMenuStrip
     Friend WithEvents MinimizarToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents DataGridViewTextBoxColumn7 As DataGridViewTextBoxColumn
@@ -3767,9 +4755,8 @@ Partial Class FrmTecnologias
     Friend WithEvents PanelConfiguracion As Panel
     Friend WithEvents DataGridViewTextBoxColumn6 As DataGridViewTextBoxColumn
     Friend WithEvents BtnImprimeCamposSinID As Button
-    Friend WithEvents Button4 As Button
-    Friend WithEvents Button5 As Button
-    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents BtnEditaRegistroVentaja As Button
+    Friend WithEvents BtnGuardaRegistroVentaja As Button
     Friend WithEvents Label15 As Label
     Friend WithEvents BtnEditarTiempo As Button
     Friend WithEvents BtnGuardarTiempo As Button
@@ -3786,4 +4773,88 @@ Partial Class FrmTecnologias
     Friend WithEvents MetricaPlantillaIdTextBox As TextBox
     Friend WithEvents SP_PlantillasMetricas_EDICION_EDITAR_SEGUN_PLANTILLABindingSource As BindingSource
     Friend WithEvents SP_PlantillasMetricas_EDICION_EDITAR_SEGUN_PLANTILLATableAdapter As DataSetAdministracionTableAdapters.SP_PlantillasMetricas_EDICION_EDITAR_SEGUN_PLANTILLATableAdapter
+    Friend WithEvents BtnImprimeCamposSinRelacion As Button
+    Friend WithEvents SP_PlantillasVentajasTecnologicas_SEGUN_PlantillaIDBindingSource As BindingSource
+    Friend WithEvents SP_PlantillasVentajasTecnologicas_SEGUN_PlantillaIDTableAdapter As DataSetAdministracionTableAdapters.SP_PlantillasVentajasTecnologicas_SEGUN_PlantillaIDTableAdapter
+    Friend WithEvents VentajaTextBox As TextBox
+    Friend WithEvents SP_PlantillasVentajasTecnologicas_EDICION_EDITARBindingSource As BindingSource
+    Friend WithEvents SP_PlantillasVentajasTecnologicas_EDICION_EDITARTableAdapter As DataSetAdministracionTableAdapters.SP_PlantillasVentajasTecnologicas_EDICION_EDITARTableAdapter
+    Friend WithEvents SP_PlantillasVentajasTecnologicas_EDICION_INSERTARBindingSource As BindingSource
+    Friend WithEvents SP_PlantillasVentajasTecnologicas_EDICION_INSERTARTableAdapter As DataSetAdministracionTableAdapters.SP_PlantillasVentajasTecnologicas_EDICION_INSERTARTableAdapter
+    Friend WithEvents VentajaTecnologicaPlantillaIdTextBox As TextBox
+    Friend WithEvents PanelImagenesPlantillas As Panel
+    Friend WithEvents DataSetReportes As DataSetReportes
+    Friend WithEvents PlantillasImagenesBindingSource As BindingSource
+    Friend WithEvents PlantillasImagenesTableAdapter As DataSetReportesTableAdapters.PlantillasImagenesTableAdapter
+    Friend WithEvents TableAdapterManager2 As DataSetReportesTableAdapters.TableAdapterManager
+    Friend WithEvents SP_PlantillasImagenes_BUSCA_SEGUN_PlantillaIDBindingSource As BindingSource
+    Friend WithEvents SP_PlantillasImagenes_BUSCA_SEGUN_PlantillaIDTableAdapter As DataSetReportesTableAdapters.SP_PlantillasImagenes_BUSCA_SEGUN_PlantillaIDTableAdapter
+    Friend WithEvents SP_PlantillasImagenes_BUSCA_SEGUN_PlantillaIDDataGridView As DataGridView
+    Friend WithEvents ImagenIdTextBox As TextBox
+    Friend WithEvents PlantillaIDTextBox1 As TextBox
+    Friend WithEvents ReferenciaTextBox As TextBox
+    Friend WithEvents DataGridViewTextBoxColumn18 As DataGridViewTextBoxColumn
+    Friend WithEvents btnSeleccionarImagen As Button
+    Friend WithEvents OpenFileDialog1 As OpenFileDialog
+    Friend WithEvents SP_PlantillasImagenes_EDICION_INSERTARBindingSource As BindingSource
+    Friend WithEvents SP_PlantillasImagenes_EDICION_INSERTARTableAdapter As DataSetReportesTableAdapters.SP_PlantillasImagenes_EDICION_INSERTARTableAdapter
+    Friend WithEvents lblFileName As TextBox
+    Friend WithEvents BtnGuardarImagen As Button
+    Friend WithEvents ImagenPictureBox As PictureBox
+    Friend WithEvents BtnActualizarImagen As Button
+    Friend WithEvents BtnEliminarImagen As Button
+    Friend WithEvents SP_PlantillasImagenes_EDICION_ACTUALIZARBindingSource As BindingSource
+    Friend WithEvents SP_PlantillasImagenes_EDICION_ACTUALIZARTableAdapter As DataSetReportesTableAdapters.SP_PlantillasImagenes_EDICION_ACTUALIZARTableAdapter
+    Friend WithEvents SP_PlantillasImagenes_EDICION_ELIMINARBindingSource As BindingSource
+    Friend WithEvents SP_PlantillasImagenes_EDICION_ELIMINARTableAdapter As DataSetReportesTableAdapters.SP_PlantillasImagenes_EDICION_ELIMINARTableAdapter
+    Friend WithEvents BtnNuevo As Button
+    Friend WithEvents BtnCancelarImagen As Button
+    Friend WithEvents BtnEditarImagen As Button
+    Friend WithEvents TabPage7 As TabPage
+    Friend WithEvents SP_TecnologiasConCreacion_BUSQUEDA_SEGUN_IdBindingSource As BindingSource
+    Friend WithEvents SP_TecnologiasConCreacion_BUSQUEDA_SEGUN_IdTableAdapter As DataSetAdministracionTableAdapters.SP_TecnologiasConCreacion_BUSQUEDA_SEGUN_IdTableAdapter
+    Friend WithEvents AdmiteCreacionCheckBox As CheckBox
+    Friend WithEvents AdmiteCreacionTextBox As TextBox
+    Friend WithEvents Panel12 As Panel
+    Friend WithEvents Cancelar_Menu_TecnologiasConCreacion As Button
+    Friend WithEvents Actualizar_Menu_TecnologiasConCreacion As Button
+    Friend WithEvents Guardar_Menu_TecnologiasConCreacion As Button
+    Friend WithEvents SP_TecnologiasConCreacion_EDICION_ACTUALIZARBindingSource As BindingSource
+    Friend WithEvents SP_TecnologiasConCreacion_EDICION_ACTUALIZARTableAdapter As DataSetAdministracionTableAdapters.SP_TecnologiasConCreacion_EDICION_ACTUALIZARTableAdapter
+    Friend WithEvents SP_TecnologiasConCreacion_EDICION_INSERTARBindingSource As BindingSource
+    Friend WithEvents SP_TecnologiasConCreacion_EDICION_INSERTARTableAdapter As DataSetAdministracionTableAdapters.SP_TecnologiasConCreacion_EDICION_INSERTARTableAdapter
+    Friend WithEvents IdTextBox As TextBox
+    Friend WithEvents NombreRequerimientoFuncionalTextBox As TextBox
+    Friend WithEvents BtnGenerarParaLosTipos As Button
+    Friend WithEvents TiposGenerarParaTodos As DataGridView
+    Friend WithEvents DataGridViewTextBoxColumn16 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn17 As DataGridViewTextBoxColumn
+    Friend WithEvents NombreTipoDato As TextBox
+    Friend WithEvents BtnEliminarTodosMenos1 As Button
+    Friend WithEvents SP_CampoComponentes_EDICION_INSERTAR_PARA_DUPLICADOBindingSource As BindingSource
+    Friend WithEvents SP_CampoComponentes_EDICION_INSERTAR_PARA_DUPLICADOTableAdapter As DataSetTablasYCamposTableAdapters.SP_CampoComponentes_EDICION_INSERTAR_PARA_DUPLICADOTableAdapter
+    Friend WithEvents Panel13 As Panel
+    Friend WithEvents Cancelar_Menu_PlantillasCreacionDeArchivos As Button
+    Friend WithEvents Eliminar_Menu_PlantillasCreacionDeArchivos As Button
+    Friend WithEvents Editar_Menu_PlantillasCreacionDeArchivos As Button
+    Friend WithEvents Actualizar_Menu_PlantillasCreacionDeArchivos As Button
+    Friend WithEvents Guardar_Menu_PlantillasCreacionDeArchivos As Button
+    Friend WithEvents SP_PlantillasCreacionDeArchivos_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDBindingSource As BindingSource
+    Friend WithEvents SP_PlantillasCreacionDeArchivos_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDTableAdapter As DataSetAdministracionTableAdapters.SP_PlantillasCreacionDeArchivos_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDTableAdapter
+    Friend WithEvents PlantillasCreacionDeArchivosIdTextBox As TextBox
+    Friend WithEvents RutaTextBox As TextBox
+    Friend WithEvents NombreArchivoTextBox As TextBox
+    Friend WithEvents ExtensionArchivoComboBox As ComboBox
+    Friend WithEvents ContenidoArchivoTextBox As TextBox
+    Friend WithEvents SP_PlantillasCreacionDeArchivos_EDICION_ACTUALIZARBindingSource As BindingSource
+    Friend WithEvents SP_PlantillasCreacionDeArchivos_EDICION_ACTUALIZARTableAdapter As DataSetAdministracionTableAdapters.SP_PlantillasCreacionDeArchivos_EDICION_ACTUALIZARTableAdapter
+    Friend WithEvents SP_PlantillasCreacionDeArchivos_EDICION_ELIMINARBindingSource As BindingSource
+    Friend WithEvents SP_PlantillasCreacionDeArchivos_EDICION_ELIMINARTableAdapter As DataSetAdministracionTableAdapters.SP_PlantillasCreacionDeArchivos_EDICION_ELIMINARTableAdapter
+    Friend WithEvents SP_PlantillasCreacionDeArchivos_EDICION_INSERTARBindingSource As BindingSource
+    Friend WithEvents SP_PlantillasCreacionDeArchivos_EDICION_INSERTARTableAdapter As DataSetAdministracionTableAdapters.SP_PlantillasCreacionDeArchivos_EDICION_INSERTARTableAdapter
+    Friend WithEvents SP_PlantillasCreacionDeArchivos_BUSQUEDA_SEGUN_PARAMETRO_ComponenteIDBindingSource As BindingSource
+    Friend WithEvents SP_PlantillasCreacionDeArchivos_BUSQUEDA_SEGUN_PARAMETRO_ComponenteIDTableAdapter As DataSetAdministracionTableAdapters.SP_PlantillasCreacionDeArchivos_BUSQUEDA_SEGUN_PARAMETRO_ComponenteIDTableAdapter
+    Friend WithEvents Nuevo_Menu_PlantillasCreacionDeArchivos As Button
+    Friend WithEvents PorTablaTextBox As TextBox
+    Friend WithEvents PorTablaCheckBox As CheckBox
 End Class

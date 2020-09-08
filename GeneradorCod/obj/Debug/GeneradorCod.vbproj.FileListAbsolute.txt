@@ -121,7 +121,6 @@ C:\www\Copia GenCodigo\GenCodigo\GeneradorCod\obj\Debug\GeneradorCod.vbproj.Copy
 C:\www\Copia GenCodigo\GenCodigo\GeneradorCod\obj\Debug\GeneradorCod.exe
 C:\www\Copia GenCodigo\GenCodigo\GeneradorCod\obj\Debug\GeneradorCod.xml
 C:\www\Copia GenCodigo\GenCodigo\GeneradorCod\obj\Debug\GeneradorCod.pdb
-C:\www\Copia GenCodigo\GenCodigo\GeneradorCod\obj\Debug\GeneradorCod.vbprojAssemblyReference.cache
 C:\www\Copia GenCodigo\GenCodigo\GeneradorCod\bin\Debug\SqlServerTypes\x64\msvcr120.dll
 C:\www\Copia GenCodigo\GenCodigo\GeneradorCod\bin\Debug\SqlServerTypes\x64\SqlServerSpatial140.dll
 C:\www\Copia GenCodigo\GenCodigo\GeneradorCod\bin\Debug\SqlServerTypes\x86\msvcr120.dll
@@ -184,3 +183,5 @@ C:\www\Copia GenCodigo\GenCodigo\GeneradorCod\obj\Debug\GeneradorCod.Reportes.re
 C:\www\Copia GenCodigo\GenCodigo\GeneradorCod\obj\Debug\RdlCompile.cache
 C:\www\Copia GenCodigo\GenCodigo\GeneradorCod\obj\Debug\RdlCompile.compiled
 C:\www\Copia GenCodigo\GenCodigo\GeneradorCod\bin\Debug\FontAwesome.Sharp.dll
+C:\www\Copia GenCodigo\GenCodigo\GeneradorCod\obj\Debug\GeneradorCod.FormularioPruebas.resources
+C:\www\Copia GenCodigo\GenCodigo\GeneradorCod\obj\Debug\GeneradorCod.vbprojAssemblyReference.cache
