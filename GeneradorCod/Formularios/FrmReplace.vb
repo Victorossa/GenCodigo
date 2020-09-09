@@ -7,11 +7,14 @@ Public Class FrmReplace
     Dim creaDocTec As Boolean
     Dim creaCarpArch As Boolean
     Dim NombreArchivoACrear As String
+    Dim ContenidoACrear As String
     Dim RutaProcesada As String
     Dim contadorContadorArchivo As Integer = 0
     Dim ComponenteBase As Integer
 
     Private Sub FrmReplace_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        'TODO: esta línea de código carga datos en la tabla 'DataSetTablasYCampos.SP_RequerimientosValorProvisional_TRUNCA' Puede moverla o quitarla según sea necesario.
+        Me.SP_RequerimientosValorProvisional_TRUNCATableAdapter.Fill(Me.DataSetTablasYCampos.SP_RequerimientosValorProvisional_TRUNCA)
 
         'TODO: esta línea de código carga datos en la tabla 'DataSetAdministracion.Proyectos' Puede moverla o quitarla según sea necesario.
         'Me.ProyectosTableAdapter.Fill(Me.DataSetAdministracion.Proyectos)
@@ -300,7 +303,24 @@ Public Class FrmReplace
 
     End Sub
 
-
+    Public Sub ValidarRequerimientos()
+        Dim contador As Integer
+        Dim cuentaRequerimientos As Integer = 0
+        contador = SP_CARGA_TECNOLOGIAS_APLICADAS_A_PROYECTODataGridView.Rows.Count
+        While contador > 0
+            If Lbl_Requerimiento.Text <> "" Then
+                cuentaRequerimientos = cuentaRequerimientos + 1
+            End If
+            SP_CARGA_TECNOLOGIAS_APLICADAS_A_PROYECTODataGridView.Rows.RemoveAt(0)
+            contador = contador - 1
+        End While
+        SP_CARGA_TECNOLOGIAS_APLICADAS_A_PROYECTO()
+        If cuentaRequerimientos = SP_RegistroValorRequerimientos_SEGUN_ProyectoIDDataGridView.Rows.Count Then
+            MsgBox("El proyecto " & NombreProyectoTextBox.Text & "tiene la cantidad de requerimientos correctos", MsgBoxStyle.Information)
+        Else
+            MsgBox("El proyecto " & NombreProyectoTextBox.Text & " tiene " & SP_RegistroValorRequerimientos_SEGUN_ProyectoIDDataGridView.Rows.Count & " requerimientos, solo cuenta con " & cuentaRequerimientos & "", MsgBoxStyle.Exclamation)
+        End If
+    End Sub
 
 
 
@@ -384,7 +404,12 @@ Public Class FrmReplace
         Else
             creaDocTec = False
         End If
-        GenerarCodigo(creaDocTec, creaCarpArch)
+        If chkValidacion.Checked = True Then
+            ValidarRequerimientos()
+            GenerarCodigo(creaDocTec, creaCarpArch)
+        Else
+            GenerarCodigo(creaDocTec, creaCarpArch)
+        End If
     End Sub
 
     Public Sub GenerarCodigo(ByVal CreaDocTec As Boolean, ByVal CreaCarpArch As Boolean)
@@ -459,6 +484,7 @@ Public Class FrmReplace
                         SP_PlantillasCreacionDeArchivos_BUSQUEDA_SEGUN_PARAMETRO_ComponenteID()
                         If RutaTextBox.Text <> "" Then
                             NombreArchivoACrear = NombreArchivoTextBox.Text & ExtensionArchivoTextBox.Text
+                            NombreArchivoACrear = RemplazaRequerimientos(NombreArchivoACrear)
                             RutaProcesada = RemplazaRequerimientos(RutaTextBox.Text)
                             CodigoTextBox.Text = RemplazaRequerimientos(CodigoTextBox.Text)
                             GenerarArchivos(NombreArchivoACrear, RutaProcesada, CodigoTextBox.Text)
@@ -467,7 +493,6 @@ Public Class FrmReplace
                 End If
             Else
                 'CODIGO APLICABLE A TODAS LAS TABLAS
-
                 If cteBase = False Then
                     CodigoGeneradoRichTextBox.Text = CodigoGeneradoRichTextBox.Text & "                             " & NombreTecnologiaTextBox1.Text & vbCrLf & vbCrLf & NombreComponenteTextBox.Text & TablasDeAplicacion(CodigoTextBox.Text, cteBase, CreaCarpArch) & vbCrLf & vbCrLf & "-- ____________________________________________________________________________________________________________________________________________" & vbCrLf & vbCrLf
                 End If
@@ -612,10 +637,28 @@ Public Class FrmReplace
             If ChkGenerarCarpetasYArchivos.Checked = True Then
                 SP_PlantillasCreacionDeArchivos_BUSQUEDA_SEGUN_PARAMETRO_ComponenteID_Metodo(ComponenteBase)
                 If RutaTextBox.Text <> "" And NombreTablaTextBox3.Text <> "" Then
-                    NombreArchivoACrear = RemplazosDeTabla(NombreArchivoTextBox.Text, NombreTablaTextBox3.Text) & ExtensionArchivoTextBox.Text
-                    RutaProcesada = RemplazaRequerimientos(RutaTextBox.Text)
-                    BaseTextBox.Text = RemplazaRequerimientos(BaseTextBox.Text)
-                    GenerarArchivos(NombreArchivoACrear, RutaProcesada, BaseTextBox.Text)
+                    'Nombre archivo
+                    NombreArchivoACrear = NombreArchivoTextBox.Text & ExtensionArchivoTextBox.Text
+                    'Tabla
+                    NombreArchivoACrear = RemplazosDeTabla(NombreArchivoACrear, NombreTablaTextBox3.Text)
+                    'Requerimientos
+                    NombreArchivoACrear = RemplazaRequerimientos(NombreArchivoACrear)
+
+                    'Ruta
+                    RutaProcesada = RutaTextBox.Text
+                    'Tabla
+                    RutaProcesada = RemplazosDeTabla(RutaProcesada, NombreTablaTextBox3.Text)
+                    'Requerimientos
+                    RutaProcesada = RemplazaRequerimientos(RutaProcesada)
+
+                    'Contenido
+                    ContenidoACrear = BaseTextBox.Text
+                    'Tabla
+                    ContenidoACrear = RemplazosDeTabla(ContenidoACrear, NombreTablaTextBox3.Text)
+
+                    ContenidoACrear = RemplazaRequerimientos(ContenidoACrear)
+                    'Guardado
+                    GenerarArchivos(NombreArchivoACrear, RutaProcesada, ContenidoACrear)
                 End If
             End If
         End If
@@ -2055,18 +2098,54 @@ Public Class FrmReplace
 
     Function RemplazaRequerimientos(ByVal Texto As String)
         Dim contenido As String = ""
+        'Inserta en provisional
+        SP_RequerimientosValorProvisional_EDICION_INSERTAR(Texto)
         Dim contadorRequerimientos = SP_RegistroValorRequerimientos_SEGUN_ProyectoIDDataGridView.Rows.Count
         While contadorRequerimientos > 0
             'Se ubica en la primera fila
             SP_RegistroValorRequerimientos_SEGUN_ProyectoIDDataGridView.CurrentCell = SP_RegistroValorRequerimientos_SEGUN_ProyectoIDDataGridView.Rows(0).Cells(0)
-            contenido = Texto.Replace(RequerimientoTextBox1.Text, ValorRequerimientoTextBox1.Text)
+            'Carga lo que hay en provisional
+            SP_RequerimientosValorProvisional_BUSQUEDA_SEGUN_PARAMETRO()
+            contenido = TextoDeBD.Text.Replace(RequerimientoTextBox1.Text, ValorRequerimientoTextBox1.Text)
+            'Actualiza valor en provisional
+            SP_RequerimientosValorProvisional_EDICION_ACTUALIZAR(contenido)
             SP_RegistroValorRequerimientos_SEGUN_ProyectoIDDataGridView.Rows.RemoveAt(0)
             contadorRequerimientos = contadorRequerimientos - 1
         End While
         SP_RegistroValorRequerimientos_SEGUN_ProyectoID()
+        'Trunca Tabla del provisional
+        Me.SP_RequerimientosValorProvisional_TRUNCATableAdapter.Fill(Me.DataSetTablasYCampos.SP_RequerimientosValorProvisional_TRUNCA)
         Return contenido
     End Function
+    Private Sub SP_RequerimientosValorProvisional_EDICION_INSERTAR(ByVal Texto As String)
+        Try
+            Me.SP_RequerimientosValorProvisional_EDICION_INSERTARTableAdapter.Fill(Me.DataSetTablasYCampos.SP_RequerimientosValorProvisional_EDICION_INSERTAR,
+                                                                                   Texto)
+        Catch ex As System.Exception
+            System.Windows.Forms.MessageBox.Show(ex.Message)
+        End Try
 
+    End Sub
+    Private Sub SP_RequerimientosValorProvisional_BUSQUEDA_SEGUN_PARAMETRO()
+        Try
+            Dim parametro As Integer = 1
+            Me.SP_RequerimientosValorProvisional_BUSQUEDA_SEGUN_PARAMETRO_TableAdapter.Fill(Me.DataSetTablasYCampos.SP_RequerimientosValorProvisional_BUSQUEDA_SEGUN_PARAMETRO_, New System.Nullable(Of Integer)(CType(parametro, Integer)))
+        Catch ex As System.Exception
+            System.Windows.Forms.MessageBox.Show(ex.Message)
+        End Try
+
+    End Sub
+    Private Sub SP_RequerimientosValorProvisional_EDICION_ACTUALIZAR(ByVal Texto As String)
+        Try
+            Dim parametro As Integer = 1
+            Me.SP_RequerimientosValorProvisional_EDICION_ACTUALIZARTableAdapter.Fill(Me.DataSetTablasYCampos.SP_RequerimientosValorProvisional_EDICION_ACTUALIZAR, New System.Nullable(Of Integer)(CType(parametro, Integer)), Texto)
+        Catch ex As System.Exception
+            System.Windows.Forms.MessageBox.Show(ex.Message)
+        End Try
+
+    End Sub
+
+    'dfklñjasdklñfjasdlñkfjasdñklfjasdlñfjasñfjasdklñdf
     Function RemplazosDeTabla(ByVal Contenido As String, ByVal Tabla As String)
         Dim ContenidoGenerado As String = Contenido
         Dim ObjContenido As String = ""
@@ -2089,19 +2168,6 @@ Public Class FrmReplace
         End Try
 
     End Sub
-
-    Public Sub RemplazarEnResultadoPorTabla(textoBase As String, nombreTabla As String)
-
-        'Remplaza los Requerimientos
-        CargaRequerimientos()
-        'Guarda la informacion
-        SP_Proyectos_EDICION_ACTUALIZAR_CodigoRemplazado()
-
-    End Sub
-
-
-
-
 
 
     Private Sub AgregarTodasToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AgregarTodasToolStripMenuItem.Click
@@ -2644,6 +2710,8 @@ Public Class FrmReplace
         BtnCodigoRuta.BackColor = Color.GreenYellow
     End Sub
 
+
+
     Private Sub BtnCodigoRuta_Click(sender As Object, e As EventArgs) Handles BtnCodigoRuta.Click
         If BtnCodigoRuta.BackColor = Color.White Then
             BtnCodigoRuta.BackColor = Color.GreenYellow
@@ -2655,6 +2723,8 @@ Public Class FrmReplace
             ContenidoCrear.Dock = DockStyle.None
         End If
     End Sub
+
+
 
 
 
