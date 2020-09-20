@@ -25,6 +25,7 @@ Public Class FrmTecnologias
             SP_TextoEnriquecido_BUSQUEDA_SEGUN_PARAMETRO_ComponenteID()
             Cancelar_TextoEnriquecido()
             Cancelar_PlantillasCreacionDeArchivos()
+            Cancelar_ComponentesParaTablas()
         Catch ex As System.Exception
             System.Windows.Forms.MessageBox.Show(ex.Message)
         End Try
@@ -1140,6 +1141,15 @@ Los otros componentes deberan ser palabras completas y sin saltos de linea
             System.Windows.Forms.MessageBox.Show(ex.Message)
         End Try
     End Sub
+    Private Sub SP_RequerimientosPlantillas_EDICION_ELIMINAR_PorBusqueda()
+        Try
+            Me.SP_RequerimientosPlantillas_EDICION_ELIMINARTableAdapter.Fill(Me.DataSetAdministracion.SP_RequerimientosPlantillas_EDICION_ELIMINAR, New System.Nullable(Of Long)(CType(RequerimientoPlantillaIDTextBox1.Text, Long)))
+            SP_RequerimientosPlantillas_BUSCA_LIKE()
+            MsgBox("El Dato Fue Eliminado Exitosamente de la Base de Datos", MsgBoxStyle.Information, "Eliminación de Dato")
+        Catch ex As System.Exception
+            System.Windows.Forms.MessageBox.Show(ex.Message)
+        End Try
+    End Sub
 #End Region
 #Region "Menus"
     'Nuevo 
@@ -1906,7 +1916,13 @@ Los otros componentes deberan ser palabras completas y sin saltos de linea
     Private Sub BtnImprimeTabla_Click(sender As Object, e As EventArgs) Handles BtnImprimeTabla.Click
         Me.ContenidoComponenteRichTextBox.Text = Me.ContenidoComponenteRichTextBox.Text.Insert(Me.ContenidoComponenteRichTextBox.SelectionStart, "{{{Tabla}}}")
     End Sub
-
+    Private Sub BtnGeneraTablas_Click(sender As Object, e As EventArgs) Handles BtnGeneraTablas.Click
+        If ContenidoXTablaTextBox.Text = "" Then
+            MsgBox("Debe de existir codigo para asignar donde apareceran las tablas, favor verificar", MsgBoxStyle.Exclamation)
+        Else
+            Me.ContenidoComponenteRichTextBox.Text = Me.ContenidoComponenteRichTextBox.Text.Insert(Me.ContenidoComponenteRichTextBox.SelectionStart, "{{{Tabla-G}}}")
+        End If
+    End Sub
     Private Sub BtnImprimeClavePrincipal_Click(sender As Object, e As EventArgs) Handles BtnImprimeClavePrincipal.Click
         Me.ContenidoComponenteRichTextBox.Text = Me.ContenidoComponenteRichTextBox.Text.Insert(Me.ContenidoComponenteRichTextBox.SelectionStart, "{{{Clave}}}")
     End Sub
@@ -2476,6 +2492,16 @@ Los otros componentes deberan ser palabras completas y sin saltos de linea
         'SP_TextoEnriquecido_BUSQUEDA_SEGUN_PARAMETRO_ComponenteID()
         SP_CampoComponentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaID_ComponenteID()
         SP_PlantillasCreacionDeArchivos_BUSQUEDA_SEGUN_PARAMETRO_ComponenteID()
+        SP_ComponentesParaTablas_BUSQUEDA_SEGUN_PARAMETRO_ComponenteID()
+    End Sub
+
+    Private Sub SP_ComponentesParaTablas_BUSQUEDA_SEGUN_PARAMETRO_ComponenteID()
+        Try
+            Me.SP_ComponentesParaTablas_BUSQUEDA_SEGUN_PARAMETRO_ComponenteIDTableAdapter.Fill(Me.DataSetTablasYCampos.SP_ComponentesParaTablas_BUSQUEDA_SEGUN_PARAMETRO_ComponenteID, New System.Nullable(Of Integer)(CType(ComponenteIDTextBox.Text, Integer)))
+        Catch ex As System.Exception
+            System.Windows.Forms.MessageBox.Show(ex.Message)
+        End Try
+
     End Sub
 
 #Region "Procedimientos"
@@ -2742,11 +2768,62 @@ Los otros componentes deberan ser palabras completas y sin saltos de linea
     Private Sub RB_Plantilla_CheckedChanged(sender As Object, e As EventArgs) Handles RB_Plantilla.CheckedChanged
         SP_CARGA_CONVENSIONES_USADAS_POR_PLANTILLADataGridView.Visible = True
         SP_CARGA_CONVENSIONES_USADASDataGridView.Visible = False
+        SP_RequerimientosPlantillas_BUSCA_LIKEDataGridView.Visible = False
+        SP_CARGA_CONVENSIONES_USADASDataGridView.Height = 302
+        SP_CARGA_CONVENSIONES_USADASDataGridView.Location = New Point(502, 268)
+        SP_CARGA_CONVENSIONES_USADAS_POR_PLANTILLADataGridView.Height = 302
+        SP_CARGA_CONVENSIONES_USADAS_POR_PLANTILLADataGridView.Location = New Point(502, 268)
     End Sub
 
     Private Sub RB_Todas_CheckedChanged(sender As Object, e As EventArgs) Handles RB_Todas.CheckedChanged
         SP_CARGA_CONVENSIONES_USADAS_POR_PLANTILLADataGridView.Visible = False
         SP_CARGA_CONVENSIONES_USADASDataGridView.Visible = True
+        SP_RequerimientosPlantillas_BUSCA_LIKEDataGridView.Visible = False
+        SP_CARGA_CONVENSIONES_USADASDataGridView.Height = 302
+        SP_CARGA_CONVENSIONES_USADASDataGridView.Location = New Point(502, 268)
+        SP_CARGA_CONVENSIONES_USADAS_POR_PLANTILLADataGridView.Height = 302
+        SP_CARGA_CONVENSIONES_USADAS_POR_PLANTILLADataGridView.Location = New Point(502, 268)
+    End Sub
+
+    Private Sub RBBusqueda_CheckedChanged(sender As Object, e As EventArgs) Handles RBBusqueda.CheckedChanged
+        SP_CARGA_CONVENSIONES_USADAS_POR_PLANTILLADataGridView.Visible = False
+        SP_CARGA_CONVENSIONES_USADASDataGridView.Visible = False
+        SP_RequerimientosPlantillas_BUSCA_LIKEDataGridView.Visible = True
+        SP_CARGA_CONVENSIONES_USADASDataGridView.Height = 268
+        SP_CARGA_CONVENSIONES_USADASDataGridView.Location = New Point(502, 299)
+        SP_CARGA_CONVENSIONES_USADAS_POR_PLANTILLADataGridView.Height = 268
+        SP_CARGA_CONVENSIONES_USADAS_POR_PLANTILLADataGridView.Location = New Point(502, 299)
+    End Sub
+
+    Private Sub TxtBuscarReq_TextChanged(sender As Object, e As EventArgs) Handles TxtBuscarReq.TextChanged
+        SP_RequerimientosPlantillas_BUSCA_LIKE()
+    End Sub
+
+    Private Sub SP_RequerimientosPlantillas_BUSCA_LIKE()
+        Try
+            Me.SP_RequerimientosPlantillas_BUSCA_LIKETableAdapter.Fill(Me.DataSetAdministracion.SP_RequerimientosPlantillas_BUSCA_LIKE, TxtBuscarReq.Text)
+        Catch ex As System.Exception
+            System.Windows.Forms.MessageBox.Show(ex.Message)
+        End Try
+
+    End Sub
+
+    Private Sub SP_RequerimientosPlantillas_BUSCA_LIKEDataGridView_CellMouseDoubleClick(sender As Object, e As DataGridViewCellMouseEventArgs) Handles SP_RequerimientosPlantillas_BUSCA_LIKEDataGridView.CellMouseDoubleClick
+        If Editar_Menu_RequerimientosPlantillas.Enabled = False Then
+            RequerimientoPlantillaIDTextBox.Text = RequerimientoPlantillaIDTextBox1.Text
+            EnunciadoRichTextBox.Text = EnunciadoTextBox.Text
+            RequerimientoTextBox.Text = RequerimientoTextBox2.Text
+            OrdenDePeticionTextBox.Enabled = True
+            OrdenDePeticionTextBox.Focus()
+        End If
+    End Sub
+    Private Sub SP_RequerimientosPlantillas_BUSCA_LIKEDataGridView_CellMouseClick(sender As Object, e As DataGridViewCellMouseEventArgs) Handles SP_RequerimientosPlantillas_BUSCA_LIKEDataGridView.CellMouseClick
+        EnunciadoRichTextBox.Text = EnunciadoTextBox.Text
+    End Sub
+
+
+    Private Sub EliminarRequerimientoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles EliminarRequerimientoToolStripMenuItem.Click
+        SP_RequerimientosPlantillas_EDICION_ELIMINAR_PorBusqueda()
     End Sub
 
     Private Sub EnunciadoRichTextBox_MouseDoubleClick(sender As Object, e As MouseEventArgs) Handles EnunciadoRichTextBox.MouseDoubleClick
@@ -3577,6 +3654,7 @@ Los otros componentes deberan ser palabras completas y sin saltos de linea
             Eliminar_Menu_PlantillasCreacionDeArchivos.BackColor = Color.White
         End If
     End Sub
+#End Region
     'Parar Timer
     Private Sub Parar_Timer_PlantillasCreacionDeArchivos()
         Me.Timer_Guardar_Menu_PlantillasCreacionDeArchivos = New Timer
@@ -3611,6 +3689,289 @@ Los otros componentes deberan ser palabras completas y sin saltos de linea
             PorTablaTextBox.Text = "False"
         End If
     End Sub
+
+    Sub Cancelar_ComponentesParaTablas()
+        'Botones Del Menu
+        Nuevo_Menu_ComponentesParaTablas.Enabled = True
+        Guardar_Menu_ComponentesParaTablas.Enabled = False
+        Editar_Menu_ComponentesParaTablas.Enabled = True
+        Actualizar_Menu_ComponentesParaTablas.Enabled = False
+        Eliminar_Menu_ComponentesParaTablas.Enabled = False
+        'Grid
+        SP_ComponentesParaTablas_BUSQUEDA_SEGUN_PARAMETRO_ComponenteIDDataGridView.Enabled = True
+        SP_ComponentesParaTablas_BUSQUEDA_SEGUN_PARAMETRO_ComponenteID()
+        Bloquear_Objetos_ComponentesParaTablas()
+        Parar_Timer_ComponentesParaTablas()
+        Timer_Ubicar_En_Fila_ComponentesParaTablas()
+    End Sub
+    'Insertar
+    Private Sub SP_ComponentesParaTablas_EDICION_INSERTAR()
+        Try
+            Me.SP_ComponentesParaTablas_EDICION_INSERTARTableAdapter.Fill(Me.DataSetTablasYCampos.SP_ComponentesParaTablas_EDICION_INSERTAR,
+                                                                          New System.Nullable(Of Integer)(CType(ComponenteIDTextBox.Text, Integer)),
+                                                                          ContenidoXTablaTextBox.Text)
+            SP_ComponentesParaTablas_BUSQUEDA_SEGUN_PARAMETRO_ComponenteID()
+            MsgBox("El Dato Fue Guardado Exitosamente", MsgBoxStyle.Information, "Guardar Dato")
+        Catch ex As System.Exception
+            System.Windows.Forms.MessageBox.Show(ex.Message)
+        End Try
+    End Sub
+
+    'Actualizar
+    Private Sub SP_ComponentesParaTablas_EDICION_ACTUALIZAR()
+        Try
+            Me.SP_ComponentesParaTablas_EDICION_ACTUALIZARTableAdapter.Fill(Me.DataSetTablasYCampos.SP_ComponentesParaTablas_EDICION_ACTUALIZAR,
+                                                                            New System.Nullable(Of Integer)(CType(ComponentesParaTablasIdTextBox.Text, Integer)),
+                                                                            New System.Nullable(Of Integer)(CType(ComponenteIDTextBox.Text, Integer)),
+                                                                            ContenidoXTablaTextBox.Text)
+            SP_ComponentesParaTablas_BUSQUEDA_SEGUN_PARAMETRO_ComponenteID()
+            MsgBox("El Dato Fue Actualizado Exitosamente", MsgBoxStyle.Information, "Actualizar Dato")
+        Catch ex As System.Exception
+            System.Windows.Forms.MessageBox.Show(ex.Message)
+        End Try
+    End Sub
+
+    'Eliminar
+    Private Sub SP_ComponentesParaTablas_EDICION_ELIMINAR()
+        Try
+            Me.SP_ComponentesParaTablas_EDICION_ELIMINARTableAdapter.Fill(Me.DataSetTablasYCampos.SP_ComponentesParaTablas_EDICION_ELIMINAR, New System.Nullable(Of Integer)(CType(ComponentesParaTablasIdTextBox.Text, Integer)))
+            SP_ComponentesParaTablas_BUSQUEDA_SEGUN_PARAMETRO_ComponenteID()
+            MsgBox("El Dato Fue Eliminado Exitosamente de la Base de Datos", MsgBoxStyle.Information, "Eliminación de Dato")
+        Catch ex As System.Exception
+            System.Windows.Forms.MessageBox.Show(ex.Message)
+        End Try
+    End Sub
+
+    'Nuevo 
+    Private Sub Nuevo_Menu_ComponentesParaTablas_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Nuevo_Menu_ComponentesParaTablas.Click
+        If ContenidoXTablaTextBox.Text = "" Then
+            Nuevo_Menu_ComponentesParaTablas.Enabled = False
+            Editar_Menu_ComponentesParaTablas.Enabled = False
+            SP_ComponentesParaTablas_BUSQUEDA_SEGUN_PARAMETRO_ComponenteIDDataGridView.Enabled = False
+            Limpiar_Objetos_ComponentesParaTablas()
+            ContenidoXTablaTextBox.Enabled = True
+            ContenidoXTablaTextBox.Focus()
+        Else
+            MsgBox("Ya existe un valor para asignar tablas, favor verificar", MsgBoxStyle.Exclamation)
+        End If
+    End Sub
+    'Guardar
+    Private Sub Guardar_Menu_ComponentesParaTablas_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Guardar_Menu_ComponentesParaTablas.Click
+        Control_Nulos_ComponentesParaTablas
+        If ControlNulos.Text = "" Then ' Then
+            SP_ComponentesParaTablas_EDICION_INSERTAR()
+            Cancelar_ComponentesParaTablas()
+            Parar_Timer_ComponentesParaTablas()
+        End If
+    End Sub
+    'Editar
+    Private Sub Editar_Menu_ComponentesParaTablas_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Editar_Menu_ComponentesParaTablas.Click
+        If ContenidoXTablaTextBox.Text = "" Then
+            MsgBox("No se cuenta con información para editar", MsgBoxStyle.Exclamation)
+        Else
+            Nuevo_Menu_ComponentesParaTablas.Enabled = False
+            Guardar_Menu_ComponentesParaTablas.Enabled = False
+            Editar_Menu_ComponentesParaTablas.Enabled = False
+            Actualizar_Menu_ComponentesParaTablas.Enabled = True
+            Eliminar_Menu_ComponentesParaTablas.Enabled = True
+            SP_ComponentesParaTablas_BUSQUEDA_SEGUN_PARAMETRO_ComponenteIDDataGridView.Enabled = False
+            Desbloquear_Objetos_ComponentesParaTablas()
+            Timer_Actualizar_ComponentesParaTablas()
+            Timer_Eliminar_ComponentesParaTablas()
+        End If
+    End Sub
+    'Actualizar
+    Private Sub Actualizar_Menu_ComponentesParaTablas_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Actualizar_Menu_ComponentesParaTablas.Click
+
+        Control_Nulos_ComponentesParaTablas()
+            If ControlNulos.Text = "" Then ' Then
+                SP_ComponentesParaTablas_EDICION_ACTUALIZAR()
+                Cancelar_ComponentesParaTablas()
+                Parar_Timer_ComponentesParaTablas()
+            End If
+
+    End Sub
+    Private Sub Eliminar_Menu_ComponentesParaTablas_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Eliminar_Menu_ComponentesParaTablas.Click
+        If MsgBox("Desea Eliminar Este Dato?", MsgBoxStyle.YesNo) = MsgBoxResult.Yes Then
+            SP_ComponentesParaTablas_EDICION_ELIMINAR()
+            Cancelar_ComponentesParaTablas()
+            Parar_Timer_ComponentesParaTablas()
+        Else
+            MsgBox("Se Cancelo la Eliminación del Dato", MsgBoxStyle.Information)
+            Cancelar_ComponentesParaTablas()
+        End If
+    End Sub
+    'Cancelar
+    Private Sub Cancelar_Menu_ComponentesParaTablas_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Cancelar_Menu_ComponentesParaTablas.Click
+        Cancelar_ComponentesParaTablas()
+    End Sub
+
+    'Control de Nulos
+    Public Sub Control_Nulos_ComponentesParaTablas()
+        ControlNulos.Text = "" '
+        Select Case ControlNulos.Text = "" '
+            Case ComponenteIDTextBox.Text = ""
+                MsgBox("El nombre del campo: ComponenteID; Esta vacio, Favor Verificar", MsgBoxStyle.Critical)
+                ComponenteIDTextBox.BackColor = Color.Beige
+                ControlNulos.Text = "1"
+            Case ContenidoXTablaTextBox.Text = ""
+                MsgBox("El nombre del campo: ContenidoXTabla; Esta vacio, Favor Verificar", MsgBoxStyle.Critical)
+                ContenidoXTablaTextBox.BackColor = Color.Beige
+                ControlNulos.Text = "1"
+            Case Else
+                ControlNulos.Text = "" '
+        End Select
+    End Sub
+
+    Private Sub ContenidoXTablaTextBox_KeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles ContenidoXTablaTextBox.KeyPress
+        If Asc(e.KeyChar) = 13 Then
+            If Actualizar_Menu_ComponentesParaTablas.Enabled = True Then
+                Actualizar_Menu_ComponentesParaTablas.Enabled = True
+                Eliminar_Menu_ComponentesParaTablas.Enabled = True
+            Else
+                If ContenidoXTablaTextBox.Text = "" Then
+                    MsgBox("Dato Obligatorio, Favor Verificar", MsgBoxStyle.Critical, "Validación de Datos")
+                    ContenidoXTablaTextBox.Text = ""
+                    ContenidoXTablaTextBox.Focus()
+                Else
+                    MsgBox("La Información Ya puede ser Guardada el Icono de Guardado queda habilitado", MsgBoxStyle.Information, "Guardar los Datos")
+                    Guardar_Menu_ComponentesParaTablas.Enabled = True
+                    Timer_Guardar_ComponentesParaTablas()
+                End If
+            End If
+        End If
+    End Sub
+
+    Public Sub Limpiar_Objetos_ComponentesParaTablas()
+        ContenidoXTablaTextBox.Text = "" ''
+    End Sub
+    Public Sub Desbloquear_Objetos_ComponentesParaTablas()
+        ContenidoXTablaTextBox.Enabled = True
+    End Sub
+    Public Sub Bloquear_Objetos_ComponentesParaTablas()
+        ContenidoXTablaTextBox.Enabled = False
+    End Sub
+
+    
+ #Region"Timer de Botones"
+ 'Declaraciones de Timers de Botones
+Private WithEvents Timer_Guardar_Menu_ComponentesParaTablas As Timer
+Private WithEvents Timer_Actualizar_Menu_ComponentesParaTablas As Timer
+Private WithEvents Timer_Eliminar_Menu_ComponentesParaTablas As Timer
+ 'Procedimientos del Timer
+Private Sub Timer_Guardar_ComponentesParaTablas
+Me.Timer_Guardar_Menu_ComponentesParaTablas = New Timer
+Timer_Guardar_Menu_ComponentesParaTablas.Interval = 250
+Timer_Guardar_Menu_ComponentesParaTablas.Start()
+End Sub
+Private Sub Timer_Actualizar_ComponentesParaTablas
+Me.Timer_Actualizar_Menu_ComponentesParaTablas = New Timer
+Timer_Actualizar_Menu_ComponentesParaTablas.Interval = 500
+Timer_Actualizar_Menu_ComponentesParaTablas.Start()
+End Sub
+Private Sub Timer_Eliminar_ComponentesParaTablas
+Me.Timer_Eliminar_Menu_ComponentesParaTablas = New Timer
+Timer_Eliminar_Menu_ComponentesParaTablas.Interval = 800
+Timer_Eliminar_Menu_ComponentesParaTablas.Start()
+End Sub
+ 'Eventos Tick
+Private Sub Timer_Guardar_Menu_ComponentesParaTablas_Tick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Timer_Guardar_Menu_ComponentesParaTablas.Tick
+If Guardar_Menu_ComponentesParaTablas.BackColor = Color.White Then
+Guardar_Menu_ComponentesParaTablas.BackColor = Color.Green
+Else
+Guardar_Menu_ComponentesParaTablas.BackColor = Color.White
+End If
+End Sub
+Private Sub Timer_Actualizar_Menu_ComponentesParaTablas_Tick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Timer_Actualizar_Menu_ComponentesParaTablas.Tick
+If Actualizar_Menu_ComponentesParaTablas.BackColor = Color.White Then
+Actualizar_Menu_ComponentesParaTablas.BackColor = Color.Green
+Else
+Actualizar_Menu_ComponentesParaTablas.BackColor = Color.White
+End If
+End Sub
+Private Sub Timer_Eliminar_Menu_ComponentesParaTablas_Tick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Timer_Eliminar_Menu_ComponentesParaTablas.Tick
+If Eliminar_Menu_ComponentesParaTablas.BackColor = Color.White Then
+Eliminar_Menu_ComponentesParaTablas.BackColor = Color.Red
+Else
+Eliminar_Menu_ComponentesParaTablas.BackColor = Color.White
+End If
+End Sub
+
+     'Parar Timer
+Private Sub Parar_Timer_ComponentesParaTablas()
+Me.Timer_Guardar_Menu_ComponentesParaTablas = New Timer
+Timer_Guardar_Menu_ComponentesParaTablas.Stop
+Guardar_Menu_ComponentesParaTablas.BackColor = Color.White
+Me.Timer_Actualizar_Menu_ComponentesParaTablas = New Timer
+Timer_Actualizar_Menu_ComponentesParaTablas.Stop
+Actualizar_Menu_ComponentesParaTablas.BackColor = Color.White
+Me.Timer_Eliminar_Menu_ComponentesParaTablas = New Timer
+Timer_Eliminar_Menu_ComponentesParaTablas.Stop
+Eliminar_Menu_ComponentesParaTablas.BackColor = Color.White
+End Sub
+#End Region
+ #Region"Ubicación de Fila"
+Private WithEvents Timer_Ubicacion_ComponentesParaTablas As Timer
+Dim X_ComponentesParaTablas
+Private Sub Timer_Ubicar_En_Fila_ComponentesParaTablas
+Me.Timer_Ubicacion_ComponentesParaTablas= New Timer
+Timer_Ubicacion_ComponentesParaTablas.Interval = 100
+Timer_Ubicacion_ComponentesParaTablas.Start()
+End Sub
+Private Sub SP_ComponentesParaTablas_BUSQUEDA_SEGUN_PARAMETRO_ComponenteIDDataGridView_CellMouseClick(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewCellMouseEventArgs) Handles SP_ComponentesParaTablas_BUSQUEDA_SEGUN_PARAMETRO_ComponenteIDDataGridView.CellMouseClick
+X_ComponentesParaTablas = SP_ComponentesParaTablas_BUSQUEDA_SEGUN_PARAMETRO_ComponenteIDDataGridView.CurrentRow.Index
+End Sub
+Private Sub Ubicar_En_Fila_ComponentesParaTablas
+Try
+Me.SP_ComponentesParaTablas_BUSQUEDA_SEGUN_PARAMETRO_ComponenteIDDataGridView.Rows(X_ComponentesParaTablas).Selected = True
+Me.SP_ComponentesParaTablas_BUSQUEDA_SEGUN_PARAMETRO_ComponenteIDDataGridView.FirstDisplayedScrollingRowIndex = X_ComponentesParaTablas
+Catch ex As Exception
+End Try
+End Sub
+Private Sub Timer_Ubicacion_ComponentesParaTablas_Tick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Timer_Ubicacion_ComponentesParaTablas.Tick
+Ubicar_En_Fila_ComponentesParaTablas
+Timer_Ubicacion_ComponentesParaTablas.Stop()
+End Sub
+
+    Private Sub Button7_Click(sender As Object, e As EventArgs) Handles Button7.Click
+        Me.ContenidoXTablaTextBox.Text = Me.ContenidoXTablaTextBox.Text.Insert(Me.ContenidoXTablaTextBox.SelectionStart, "{{{Tabla}}}")
+    End Sub
+
+    Private Sub Button5_Click(sender As Object, e As EventArgs) Handles Button5.Click
+        Me.ContenidoXTablaTextBox.Text = Me.ContenidoXTablaTextBox.Text.Insert(Me.ContenidoXTablaTextBox.SelectionStart, "{{{TPlur}}}")
+    End Sub
+
+    Private Sub Button6_Click(sender As Object, e As EventArgs) Handles Button6.Click
+        Me.ContenidoXTablaTextBox.Text = Me.ContenidoXTablaTextBox.Text.Insert(Me.ContenidoXTablaTextBox.SelectionStart, "{{{Tmin}}}")
+    End Sub
+
+    Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
+        Me.ContenidoXTablaTextBox.Text = Me.ContenidoXTablaTextBox.Text.Insert(Me.ContenidoXTablaTextBox.SelectionStart, "{{{A=>-a}}}")
+    End Sub
+
+    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
+        Me.ContenidoXTablaTextBox.Text = Me.ContenidoXTablaTextBox.Text.Insert(Me.ContenidoXTablaTextBox.SelectionStart, "{{{TPlurMin}}}")
+    End Sub
+
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+        Me.ContenidoXTablaTextBox.Text = Me.ContenidoXTablaTextBox.Text.Insert(Me.ContenidoXTablaTextBox.SelectionStart, "{{{Tbl-Camel}}}")
+    End Sub
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 #End Region
 
 

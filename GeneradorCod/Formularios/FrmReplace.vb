@@ -303,17 +303,24 @@ Public Class FrmReplace
 
     End Sub
 
+    Dim aList As New List(Of String)
     Public Sub ValidarRequerimientos()
+
+
+
         Dim contador As Integer
         Dim cuentaRequerimientos As Integer = 0
         contador = SP_CARGA_TECNOLOGIAS_APLICADAS_A_PROYECTODataGridView.Rows.Count
         While contador > 0
-            If Lbl_Requerimiento.Text <> "" Then
-                cuentaRequerimientos = cuentaRequerimientos + 1
-            End If
+            'If Lbl_Requerimiento.Text <> "" Then
+            'MsgBox(Lbl_Requerimiento.Text)
+            aList.Add(Lbl_Requerimiento.Text)
+            cuentaRequerimientos = cuentaRequerimientos + 1
+            'End If
             SP_CARGA_TECNOLOGIAS_APLICADAS_A_PROYECTODataGridView.Rows.RemoveAt(0)
             contador = contador - 1
         End While
+        MsgBox(aList)
         SP_CARGA_TECNOLOGIAS_APLICADAS_A_PROYECTO()
         If cuentaRequerimientos = SP_RegistroValorRequerimientos_SEGUN_ProyectoIDDataGridView.Rows.Count Then
             MsgBox("El proyecto " & NombreProyectoTextBox.Text & "tiene la cantidad de requerimientos correctos", MsgBoxStyle.Information)
@@ -440,24 +447,25 @@ Public Class FrmReplace
     End Sub
 
     Public Sub RecorrerComponentesHaciendoReplace(ByVal CreaDocTec As Boolean, ByVal CreaCarpArch As Boolean)
-        '--- VALIDA SI LA PLANTILLA TIENE UN COMPONENTE BASE ---
         'VARIABLES
-        'VARIABLE CREADA PARA EVALUAR SI LOS COMPONENTES DE LA PLANTILLA TIENEN UN COMPONENTE QUE TENGA BASE
         Dim cteBase As Boolean
-
-        'CONTENIDO QUE TENDRA EL CODIGO SI 
         Dim contenidoConBase As String = ""
 
-        'METODO QUE NOS TRAERA 
+        ' --1-- VALIDA PRIMERO SI EL COMPONENTE TRABAJADO ES UN COMPONENTE BASE
         SP_Componentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaID_XBase()
-
+        ' --2-- RESULTADO DE LA VERIFICACION DE SI EXISTE EN LOS COMPONENTETES DE LA PLANTILLA UNO QUE SEA TIPO BASE
         If ComponenteEvaluaSiTieneBase.Text = "" Then
             cteBase = False
         Else
             cteBase = True
+            ' --2.1-- ASIGNA A LA VARIABLE GLOBAL EL VALOR DEL COMPONENTE TRABAJADO PARA UTILIZARLO EN OTRO MODULO
             ComponenteBase = ComponenteEvaluaSiTieneBase.Text
+            ' --2.2-- EJECUTA PROCESAMIENTO PARA PLANTILLAS QUE TIENEN COMPONENTES CON BASE
             contenidoConBase = procesandoConBase(cteBase, CreaCarpArch)
         End If
+        ' --3-- CUENTA LOS COMPONENTES DE LA PLANTILLA TRABAJADA
+
+
 
 
         'CUENTA LOS COMPONENTES DE LA PLANTILLA A TRABAJAR
@@ -466,19 +474,15 @@ Public Class FrmReplace
         While contadorComponentes > 0
             'Se ubica en la primera fila
             SP_Componentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView.CurrentCell = SP_Componentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView.Rows(0).Cells(0)
-
+            'ComponenteIDTextBox3.Text
             'CODIGO NO APLICABLE A TABLAS
             If XTablaCheckBox.Checked = False Then
                 'CODIGO GENERADO CON ENCABEZADO Y SEPARACION
                 'CodigoGeneradoRichTextBox.Text = CodigoGeneradoRichTextBox.Text & "                              " & NombreTecnologiaTextBox1.Text & vbCrLf & vbCrLf & NombreComponenteTextBox.Text & vbCrLf & CodigoTextBox.Text & vbCrLf & "-- ____________________________________________________________________________________________________________________________________________" & vbCrLf & vbCrLf
-                'CODIGO GENERADO SIN ENCABEZADO
-                CodigoGeneradoRichTextBox.Text = CodigoGeneradoRichTextBox.Text & vbCrLf & NombreComponenteTextBox.Text & vbCrLf & CodigoTextBox.Text & vbCrLf & "--" & vbCrLf & vbCrLf
-
-
-                CodigoParaReporte.Text = CodigoTextBox.Text
-                'VERIFICA SI SE CREARAN ARCHIVOS DE ESTA PLANTILLA
-                If CreaCarpArch = True Then
-                    'VERIFICA SI LA PLANTILLA QUE TIENE LOS COMPONENTES ADMITE LA CREACION DE ARCHIVOS
+                'Verifica si contiene tratamiento para tablas
+                If InStr(CodigoTextBox.Text, "{{{Tabla-G}}}") Then
+                    CodigoTextBox.Text = validarProcesoTablas(CodigoTextBox.Text, ComponenteIDTextBox3.Text)
+                    CodigoGeneradoRichTextBox.Text = CodigoGeneradoRichTextBox.Text & CodigoTextBox.Text & vbCrLf & NombreComponenteTextBox.Text & vbCrLf & vbCrLf
                     If AdmiteCreacionCheckBox.Checked = True Then
                         'BUSCA EN LA BASE DE DATOS SI EXISTE PARA EL COMPONENTE TRABAJADO REGISTRO DE RUTA Y ARCHIVO
                         SP_PlantillasCreacionDeArchivos_BUSQUEDA_SEGUN_PARAMETRO_ComponenteID()
@@ -487,10 +491,33 @@ Public Class FrmReplace
                             NombreArchivoACrear = RemplazaRequerimientos(NombreArchivoACrear)
                             RutaProcesada = RemplazaRequerimientos(RutaTextBox.Text)
                             CodigoTextBox.Text = RemplazaRequerimientos(CodigoTextBox.Text)
+                            CodigoTextBox.Text = validarProcesoTablas(CodigoTextBox.Text, ComponenteIDTextBox3.Text)
                             GenerarArchivos(NombreArchivoACrear, RutaProcesada, CodigoTextBox.Text)
                         End If
+                    Else
+                        CodigoGeneradoRichTextBox.Text = CodigoTextBox.Text & vbCrLf & NombreComponenteTextBox.Text & "--" & vbCrLf & vbCrLf
+                    End If
+                Else
+                    If AdmiteCreacionCheckBox.Checked = True Then
+                        'CODIGO GENERADO SIN ENCABEZADO
+                        CodigoGeneradoRichTextBox.Text = CodigoGeneradoRichTextBox.Text & vbCrLf & NombreComponenteTextBox.Text & vbCrLf & CodigoTextBox.Text & vbCrLf & "--" & vbCrLf & vbCrLf
+                        'BUSCA EN LA BASE DE DATOS SI EXISTE PARA EL COMPONENTE TRABAJADO REGISTRO DE RUTA Y ARCHIVO
+                        SP_PlantillasCreacionDeArchivos_BUSQUEDA_SEGUN_PARAMETRO_ComponenteID()
+                        If RutaTextBox.Text <> "" Then
+                            NombreArchivoACrear = NombreArchivoTextBox.Text & ExtensionArchivoTextBox.Text
+                            NombreArchivoACrear = RemplazaRequerimientos(NombreArchivoACrear)
+                            RutaProcesada = RemplazaRequerimientos(RutaTextBox.Text)
+                            CodigoTextBox.Text = RemplazaRequerimientos(CodigoTextBox.Text)
+                            CodigoTextBox.Text = validarProcesoTablas(CodigoTextBox.Text, ComponenteIDTextBox3.Text)
+                            GenerarArchivos(NombreArchivoACrear, RutaProcesada, CodigoTextBox.Text)
+                        End If
+                    Else
+                        'CODIGO GENERADO SIN ENCABEZADO
+                        CodigoGeneradoRichTextBox.Text = CodigoGeneradoRichTextBox.Text & vbCrLf & NombreComponenteTextBox.Text & vbCrLf & CodigoTextBox.Text & vbCrLf & "--" & vbCrLf & vbCrLf
                     End If
                 End If
+
+
             Else
                 'CODIGO APLICABLE A TODAS LAS TABLAS
                 If cteBase = False Then
@@ -501,6 +528,7 @@ Public Class FrmReplace
             contadorComponentes = contadorComponentes - 1
         End While
         If cteBase = True Then
+            ' --2.3 EL CONTENIDO QUE SE GENERO COMO BASE SE AGREGA AL CONTENIDO QUE SE GENERARA COMO PRINCIPAL
             CodigoGeneradoRichTextBox.Text = CodigoGeneradoRichTextBox.Text & vbCrLf & vbCrLf & contenidoConBase
         End If
         RemplazarEnResultado(CodigoGeneradoRichTextBox.Text, NombreTablaTextBox1.Text)
@@ -539,19 +567,22 @@ Public Class FrmReplace
     End Function
 
     Function procesandoConBase(cteBase As Boolean, ByVal CreaCarpArch As Boolean)
+        ' --2.3-- SE DECLARA VARIABLE CON EL CONTENIDO CON BASE
         Dim contenidoConBase As String = ""
+        ' --2.4-- CUENTA LOS COMPONENTES DE LA ESTRUCTURA TOTAL 
         Dim contadorComponentes = SP_Componentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView.Rows.Count()
         While contadorComponentes > 0
-            'Se ubica en la primera fila
+            ' --2.5-- SE UBICA EN LA PRIMERA FILA
             SP_Componentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView.CurrentCell = SP_Componentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView.Rows(0).Cells(0)
-            'Valida si uno de los componentes es base para otros
+            ' --2.6-- PROCESA LOS COMPONENTES QUE COMPONEN LA PLANTILLA QUE TIENE COMPONENTE BASE
             If cteBase = True Then
                 contenidoConBase = contenidoConBase & vbCrLf & TablasDeAplicacion(CodigoTextBox.Text, cteBase, CreaCarpArch) & vbCrLf & vbCrLf
             End If
             SP_Componentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView.Rows.RemoveAt(0)
             contadorComponentes = contadorComponentes - 1
         End While
-        contenidoConBase = ProcesarProvisionales()
+        ' --2.7-- PROCESARA LO GUARDADO EN BASE DE DATOS PARA HACER LOS REPLACE
+        contenidoConBase = ProcesarProvisionales(CreaCarpArch)
         Return contenidoConBase
     End Function
 
@@ -569,20 +600,40 @@ Public Class FrmReplace
         'Guarda la informacion
         SP_Proyectos_EDICION_ACTUALIZAR_CodigoRemplazado()
     End Sub
-    'debera devolver los formularios
-    Function ProcesarProvisionales()
+    Function validarContenidoTablas(textoBase As String, NombreTabla As String)
+        Dim CodigoGenerado = textoBase.Replace("{{{Tabla}}}", NombreTabla)
+        Return CodigoGenerado
+    End Function
+
+    Function ProcesarProvisionales(ByVal CreaCarpArch As Boolean)
+        'VARIABLES 
         Dim respuestaFormularios As String = ""
+        ComponenteIDTextBox.Text = ComponenteEvaluaSiTieneBase.Text
+
+
+        ' --2.7.1 PROCESA LOS REGISTROS GUARDADOS PROVISIONAL Y HACE LOS REPLACE EN LA BASE
         CargaTablasParaComponentesContenidoProvisional()
+        ' --2.7.2 CUENTA LAS TABLAS A PROCESAR
         Dim contadorTablas = SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoTablasContProvi.Rows.Count()
         While contadorTablas > 0
-            'Se ubica en la primera fila
+            'SE UBICA EN LA PRIMERA FILA
             SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoTablasContProvi.CurrentCell = SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoTablasContProvi.Rows(0).Cells(0)
-            'Agrega a la respuesta
+            ' --2.7.3 VA AGREGANDO LO PROCESADO PARA ENTREGAR LA RESPUESTA DEL PROCESO
             respuestaFormularios = respuestaFormularios & BaseTextBox.Text & vbCrLf
+            If CreaCarpArch = True Then
+                SP_PlantillasCreacionDeArchivos_BUSQUEDA_SEGUN_PARAMETRO_ComponenteID()
+                If RutaTextBox.Text <> "" Then
+                    NombreArchivoACrear = RemplazosDeTabla(NombreArchivoTextBox.Text, NombreTablaTextBox3.Text) & ExtensionArchivoTextBox.Text
+                    RutaProcesada = RemplazaRequerimientos(RutaTextBox.Text)
+                    respuestaFormularios = RemplazaRequerimientos(respuestaFormularios)
+                    GenerarArchivos(NombreArchivoACrear, RutaProcesada, respuestaFormularios)
+                End If
+            End If
+            ' --2.7.4 ELIMINA EJECUTANDO EL TEXCHANGED GENERANDO EL NUEVO BASE MAS SUS REPLACE PARA ADICIONAR A LA RESPUESTA DEL FORMULARIO
             SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoTablasContProvi.Rows.RemoveAt(0)
             contadorTablas = contadorTablas - 1
         End While
-        'Trunca el contenido provisional
+        ' --2.7.4 TRUNCA EL CONTENIDO DE LA TABLA PROVISIONAL
         Me.SP_ComponentesContenidoProvisional_TruncateTableAdapter.Fill(Me.DataSetTablasYCampos.SP_ComponentesContenidoProvisional_Truncate)
         Return respuestaFormularios
     End Function
@@ -602,7 +653,6 @@ Public Class FrmReplace
             'System.Windows.Forms.MessageBox.Show(ex.Message)
         End Try
     End Sub
-
     Private Sub SP_ComponentesContenidoProvisional_SEGUN_TABLA_REPLACE()
         Try
             Me.SP_ComponentesContenidoProvisional_SEGUN_TABLA_REPLACETableAdapter.Fill(Me.DataSetTablasYCampos.SP_ComponentesContenidoProvisional_SEGUN_TABLA_REPLACE, New System.Nullable(Of Integer)(CType(TablaID_Provisional.Text, Integer)))
@@ -613,21 +663,22 @@ Public Class FrmReplace
     End Sub
 
     Private Sub TablaID_Provisional_TextChanged(sender As Object, e As EventArgs) Handles TablaID_Provisional.TextChanged
-        'Trunca la tabla de informacion de base
+        ' --2.7.1.1 TRUNCA LA TABLA DE COMPONENTE PROVISIONAL
         Me.SP_ComponentesContenidoProvisional_Base_TrucateTableAdapter.Fill(Me.DataSetTablasYCampos.SP_ComponentesContenidoProvisional_Base_Trucate)
-        'Carga el componente base de la plantilla
+        ' --2.7.1.2 CARGA LOS REGISTROS DE LA TABLA PROVISIONAL QUE CORRESPONDEN A LA TABLA TRABAJADA
         SP_ComponentesContenidoProvisional_SEGUN_TABLA_BASE()
-        'Carga los componentes a replace
+        ' --2.7.1.3 
         SP_ComponentesContenidoProvisional_SEGUN_TABLA_REPLACE()
-        'Inserta el contenido de base para ir haciendo replace y entregar contenido final por tabla
+        ' --2.7.1.4 INSERTA EL CONTENIDO DE BASE PARA IR HACIENDO EL REPLACE PARA LA TABLA EN PROCESO
         FSP_ComponentesContenidoProvisional_Base_EDICION_INSERTAR()
+        ' --2.7.1.5 CUENTA LA CANTIDAD DE FILAS QUE NO SON TIPO BASE O SEA QUE NO SON TRUE 
         Dim cantidadComp = SP_ComponentesContenidoProvisional_SEGUN_TABLA_REPLACEDataGridView.Rows.Count
         While cantidadComp > 0
-            'Carga lo definido como base
+            ' --2.7.1.6 CARGA EL QUE ES DENOMINADO LA BASE
             Me.SP_ComponentesContenidoProvisional_Base_BUSQUEDA_SEGUN_PARAMETRO_IdTableAdapter.Fill(Me.DataSetTablasYCampos.SP_ComponentesContenidoProvisional_Base_BUSQUEDA_SEGUN_PARAMETRO_Id)
-            'Lo que encuentre en el texto que sea igual a la referencia lo remplaza por el contenido
+            ' --2.7.1.7 LO QUE ENCUENTE EN EL TEXTO BASE Y QUE SEA COMO REFERENCIA LO REMPLAZA POR EL CONTENIDO 
             BaseTextBox.Text = Replace(BaseTextBox.Text, ReferenciaTextBox.Text, ContenidoDeRemplazo.Text)
-            'Actualiza al nuevo valor 
+            ' --2.7.1.8 ACTUALIZA LO REMPLAZADO 
             SP_ComponentesContenidoProvisional_Base_EDICION_ACTUALIZAR()
             SP_ComponentesContenidoProvisional_SEGUN_TABLA_REPLACEDataGridView.Rows.RemoveAt(0)
             cantidadComp = cantidadComp - 1
@@ -1970,24 +2021,29 @@ Public Class FrmReplace
         End Try
     End Sub
     Function TablasDeAplicacion(ByVal Contenido As String, ByVal cteBase As Boolean, ByVal CreaCarpArch As Boolean)
-        'carga las tablas que tenga el proyecto
-        SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1_RepetirTablas()
-        'Cuenta las tablas que hay
-        Dim contadorTablasSistema = SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1DataGridView.Rows.Count()
+        ' VARIABLES DE LA FUNCION
         Dim textoDeTablas As String = ""
-        'Carga las tecnologias aplicadas y segun pide los requerimientos de de las plantillas de dichas tecnologias
+
+        ' --2.6.1-- CARGA EN EL GRID LAS TABLAS PROCESADAS 
+        SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1_RepetirTablas()
+        ' --2.6.2-- CUENTA LAS TABLAS DEL GRID QUE SE VAN A PROCESAR
+        Dim contadorTablasSistema = SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1DataGridView.Rows.Count()
+        ' --2.6.3-- RECORRERA EL CONTENIDO DEL COMPONENTE BASE Y VA A REMPLAZAR EL NOMBRE DE CADA TABLA EN ESTE
         While contadorTablasSistema > 0
-            'Se ubica en la primera fila
+            'SE UBICA EN LA PRIMERA FILA DEL GRID DE LAS TABLAS
             SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1DataGridView.CurrentCell = SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1DataGridView.Rows(0).Cells(0)
+            ' --2.6.4-- EJECUTA EL METODO QUE REMPLAZA TODO LO QUE ENCUENTRE POR REMPLAZAR HE INSERTA EN BASE DE DATOS PROVISIONAL
             textoDeTablas = textoDeTablas & RemplazosDeTodasTablas(Contenido, NombreTablaTextBox2.Text, cteBase, CreaCarpArch, contadorTablasSistema) & vbCrLf
             SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1DataGridView.Rows.RemoveAt(0)
             contadorTablasSistema = contadorTablasSistema - 1
         End While
+        ' --2.6.5-- CARGA DE NUEVO LAS TABLAS A PROCESAR
         SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID1_RepetirTablas()
-        CodigoParaReporte.Text = textoDeTablas
+        ' --2.6.6-- HACE EL RETORNO DE LA FUNCION
         Return textoDeTablas
     End Function
     Public Sub SP_ComponentesContenidoProvisional_EDICION_INSERTAR(TablaID As Integer, PlantillaID As Integer, TipoXBase As String, Referencia As String, Contenido As String)
+        ' --2.6.4.2-- INSERTA EN BASE DE DATOS LAS PARTES DEL COMPONENTE BASE
         Try
             Me.SP_ComponentesContenidoProvisional_EDICION_INSERTARTableAdapter.Fill(Me.DataSetTablasYCampos.SP_ComponentesContenidoProvisional_EDICION_INSERTAR,
                                                                                     New System.Nullable(Of Integer)(CType(TablaID, Integer)),
@@ -2010,30 +2066,27 @@ Public Class FrmReplace
     Function RemplazosDeTodasTablas(ByVal Contenido As String, ByVal Tabla As String, ByVal cteBase As Boolean, ByVal creaCarpArch As Boolean, ByVal cantTablas As Integer)
         Dim ContenidoGenerado As String = Contenido
         Dim ObjContenido As String = ""
-        '
+        'Remplaza el nombre de la tabla en el contenido
         If InStr(Contenido, "{{{Tabla}}}") Then
             ContenidoGenerado = CargarTabla(Contenido, Tabla)
         End If
-
-
+        'Remplaza el nombre de la tabla poniendola en minuscula
         If InStr(Contenido, "{{{Tmin}}}") Then
             ContenidoGenerado = CargarTablaMinuscula(ContenidoGenerado, Tabla)
         End If
-
-
+        'Remplaza el nombre de la tabla poniendola en plorual
         If InStr(Contenido, "{{{TPlur}}}") Then
             ContenidoGenerado = CargarTablaEnPlural(ContenidoGenerado, Tabla)
         End If
+        'Remplaza el nombre de la tabla poniendola en minuscula y en plural
         If InStr(Contenido, "{{{TPlurMin}}}") Then
             ContenidoGenerado = CargarTablaEnPluralMinus(ContenidoGenerado, Tabla)
         End If
-
-
+        'Remplaza el nombre de la tabla poniendola en minusculas y donde encuentre una mayuscula la remplaza por un guion poniendo la letra que sigue en minuscula
         If InStr(Contenido, "{{{A=>-a}}}") Then
             ContenidoGenerado = ConvertirMayusculasMinSeparadasPorGuion(ContenidoGenerado, Tabla)
         End If
-
-
+        'Remplaza el nombre de la tabla poniendola en
         If InStr(Contenido, "{{{Tbl-Camel}}}") Then
             ContenidoGenerado = ucaseCamelCase(ContenidoGenerado, Tabla)
         End If
@@ -2080,6 +2133,7 @@ Public Class FrmReplace
 
 
         If cteBase = True Then
+            ' --2.6.4.1-- INSERTA EN BASE DE DATOS LAS PARTES DEL COMPONENTE BASE
             SP_ComponentesContenidoProvisional_EDICION_INSERTAR(TablaIDTextBox1.Text, PlantillaIDTextBox1.Text, TipoXBase.Text, NombreComponenteTextBox.Text, ContenidoGenerado)
         End If
 
@@ -2101,22 +2155,75 @@ Public Class FrmReplace
         'Inserta en provisional
         SP_RequerimientosValorProvisional_EDICION_INSERTAR(Texto)
         Dim contadorRequerimientos = SP_RegistroValorRequerimientos_SEGUN_ProyectoIDDataGridView.Rows.Count
-        While contadorRequerimientos > 0
-            'Se ubica en la primera fila
-            SP_RegistroValorRequerimientos_SEGUN_ProyectoIDDataGridView.CurrentCell = SP_RegistroValorRequerimientos_SEGUN_ProyectoIDDataGridView.Rows(0).Cells(0)
-            'Carga lo que hay en provisional
-            SP_RequerimientosValorProvisional_BUSQUEDA_SEGUN_PARAMETRO()
-            contenido = TextoDeBD.Text.Replace(RequerimientoTextBox1.Text, ValorRequerimientoTextBox1.Text)
-            'Actualiza valor en provisional
-            SP_RequerimientosValorProvisional_EDICION_ACTUALIZAR(contenido)
-            SP_RegistroValorRequerimientos_SEGUN_ProyectoIDDataGridView.Rows.RemoveAt(0)
-            contadorRequerimientos = contadorRequerimientos - 1
-        End While
-        SP_RegistroValorRequerimientos_SEGUN_ProyectoID()
-        'Trunca Tabla del provisional
-        Me.SP_RequerimientosValorProvisional_TRUNCATableAdapter.Fill(Me.DataSetTablasYCampos.SP_RequerimientosValorProvisional_TRUNCA)
+        If contadorRequerimientos = 0 Then
+            contenido = Texto
+        Else
+            While contadorRequerimientos > 0
+                'Se ubica en la primera fila
+                SP_RegistroValorRequerimientos_SEGUN_ProyectoIDDataGridView.CurrentCell = SP_RegistroValorRequerimientos_SEGUN_ProyectoIDDataGridView.Rows(0).Cells(0)
+                'Carga lo que hay en provisional
+                SP_RequerimientosValorProvisional_BUSQUEDA_SEGUN_PARAMETRO()
+                contenido = TextoDeBD.Text.Replace(RequerimientoTextBox1.Text, ValorRequerimientoTextBox1.Text)
+                'Actualiza valor en provisional
+                SP_RequerimientosValorProvisional_EDICION_ACTUALIZAR(contenido)
+                SP_RegistroValorRequerimientos_SEGUN_ProyectoIDDataGridView.Rows.RemoveAt(0)
+                contadorRequerimientos = contadorRequerimientos - 1
+            End While
+            SP_RegistroValorRequerimientos_SEGUN_ProyectoID()
+            'Trunca Tabla del provisional
+            Me.SP_RequerimientosValorProvisional_TRUNCATableAdapter.Fill(Me.DataSetTablasYCampos.SP_RequerimientosValorProvisional_TRUNCA)
+        End If
         Return contenido
     End Function
+
+    Function validarProcesoTablas(ByVal Texto As String, ByVal ComponenteID As Integer)
+        Dim contenido As String = ""
+        Dim ContenidoGenerado As String = ""
+        Dim contadorTablas As Integer = 0
+        Dim ObjContenido As String = ""
+
+
+        If InStr(Texto, "{{{Tabla-G}}}") Then
+            'Carga el contenido que hara replace
+            SP_ComponentesParaTablas_BUSQUEDA_SEGUN_PARAMETRO_ComponenteID(ComponenteID)
+            'Carga las tablas del proyecto
+            SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID4()
+            'Recorre Tablas
+            contadorTablas = SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID4DataGridView.Rows.Count
+            While contadorTablas > 0
+                SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID4DataGridView.CurrentCell = SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID4DataGridView.Rows(0).Cells(0)
+                contenido = contenido & vbCrLf & RemplazosDeTodasTablas(ContenidoXTablaTextBox.Text, NombreTablaParaAplicacionXTabla.Text, False, False, 0)
+                SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID4DataGridView.Rows.RemoveAt(0)
+                contadorTablas = contadorTablas - 1
+            End While
+            ContenidoGenerado = Texto.Replace("{{{Tabla-G}}}", contenido)
+        Else
+            ContenidoGenerado = Texto
+        End If
+        Return ContenidoGenerado
+    End Function
+
+
+
+    Private Sub SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID4()
+        Try
+            Me.SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID4TableAdapter.Fill(Me.DataSetTablasYCampos.SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID4, New System.Nullable(Of Integer)(CType(ProyectoIDTextBox.Text, Integer)))
+        Catch ex As System.Exception
+            System.Windows.Forms.MessageBox.Show(ex.Message)
+        End Try
+
+    End Sub
+
+    Private Sub SP_ComponentesParaTablas_BUSQUEDA_SEGUN_PARAMETRO_ComponenteID(ByVal ComponenteId As Integer)
+        Try
+            Me.SP_ComponentesParaTablas_BUSQUEDA_SEGUN_PARAMETRO_ComponenteIDTableAdapter.Fill(Me.DataSetTablasYCampos.SP_ComponentesParaTablas_BUSQUEDA_SEGUN_PARAMETRO_ComponenteID, New System.Nullable(Of Integer)(CType(ComponenteId, Integer)))
+        Catch ex As System.Exception
+            System.Windows.Forms.MessageBox.Show(ex.Message)
+        End Try
+
+    End Sub
+
+
     Private Sub SP_RequerimientosValorProvisional_EDICION_INSERTAR(ByVal Texto As String)
         Try
             Me.SP_RequerimientosValorProvisional_EDICION_INSERTARTableAdapter.Fill(Me.DataSetTablasYCampos.SP_RequerimientosValorProvisional_EDICION_INSERTAR,
@@ -2186,7 +2293,7 @@ Public Class FrmReplace
     Private Sub AgregarPlantillaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AgregarPlantillaToolStripMenuItem.Click
         SP_ProyectosYTecnologias_EDICION_INSERTAR()
         SP_CARGA_TECNOLOGIAS_APLICADAS_A_PROYECTO()
-        MsgBox("Se Crea Relación Del Proyecto" & NombreProyectoTextBox.Text & " con la tecnologia " & NombreTecnologiaTextBox.Text, MsgBoxStyle.Information)
+        'MsgBox("Se Crea Relación Del Proyecto" & NombreProyectoTextBox.Text & " con la tecnologia " & NombreTecnologiaTextBox.Text, MsgBoxStyle.Information)
     End Sub
 
 
@@ -2549,46 +2656,88 @@ Public Class FrmReplace
 #End Region
 
     Private Sub BtnCreacion_Click(sender As Object, e As EventArgs) Handles BtnCreacion.Click
-        If ChkGenerarCarpetasYArchivos.Checked = True Then
-            If RutaUbicacion.Text <> "" Then
-                If SP_ProyectoCarpetasArchivos_BUSQUEDA_SEGUN_PARAMETRO_ProyectoIDDataGridView.Rows.Count > 0 Then
-                    If SP_RegistroValorRequerimientos_SEGUN_ProyectoIDDataGridView.Rows.Count > 0 Then
-                        If NombreRequerimientoFuncionalTextBox.Text <> "" Then
-                            validarNombreAplicacion(NombreRequerimientoFuncionalTextBox.Text)
+        If RBNuevo.Checked = True Or RBExistente.Checked = True Then
+            If ChkGenerarCarpetasYArchivos.Checked = True Then
+                If RutaUbicacion.Text <> "" Then
+                    If SP_ProyectoCarpetasArchivos_BUSQUEDA_SEGUN_PARAMETRO_ProyectoIDDataGridView.Rows.Count > 0 Then
+                        If SP_RegistroValorRequerimientos_SEGUN_ProyectoIDDataGridView.Rows.Count > 0 Then
+                            If NombreRequerimientoFuncionalTextBox.Text <> "" Then
+                                validarNombreAplicacion(NombreRequerimientoFuncionalTextBox.Text)
+                            Else
+                                MsgBox("Deberia existir un nombre o requisito funcional para la creacion de carpetas y archivos, favor verificar", MsgBoxStyle.Exclamation)
+                            End If
                         Else
-                            MsgBox("Deberia existir un nombre o requisito funcional para la creacion de carpetas y archivos, favor verificar", MsgBoxStyle.Exclamation)
+                            MsgBox("Para realizar esta acción deberas tener una lista de requerimientos, favor verificar", MsgBoxStyle.Exclamation)
                         End If
                     Else
-                        MsgBox("Para realizar esta acción deberas tener una lista de requerimientos, favor verificar", MsgBoxStyle.Exclamation)
+                        MsgBox("No existen rutas definidas para este proyecto, debera generarlas primero", MsgBoxStyle.Exclamation)
                     End If
                 Else
-                    MsgBox("No existen rutas definidas para este proyecto, debera generarlas primero", MsgBoxStyle.Exclamation)
+                    MsgBox("El proyecto " & NombreProyectoTextBox.Text & " Deberas asignarle una ruta de ubicación", MsgBoxStyle.Critical)
                 End If
             Else
-                MsgBox("El proyecto " & NombreProyectoTextBox.Text & " Deberas asignarle una ruta de ubicación", MsgBoxStyle.Critical)
+                MsgBox("No has chekeado que deseas generar la creación de carpetas y archivos", MsgBoxStyle.Exclamation)
             End If
         Else
-            MsgBox("No has chekeado que deseas generar la creación de carpetas y archivos", MsgBoxStyle.Exclamation)
+            MsgBox("No has seleccionado el tipo de aplicacion que deseas construir, ya sea un proyecto ya creado o nuevo", MsgBoxStyle.Exclamation)
         End If
-
+        MsgBox("Creación de proyecto finalizada...", MsgBoxStyle.Information)
+        RutaUbicacion.Text = ""
     End Sub
 
     Private Sub validarNombreAplicacion(ByVal nombreRequerimientoFuncional As String)
         Dim contador As Integer = SP_RegistroValorRequerimientos_SEGUN_ProyectoIDDataGridView.Rows.Count
         Dim req As Boolean = False
+        Dim remplaza As Boolean
         While contador > 0
             SP_RegistroValorRequerimientos_SEGUN_ProyectoIDDataGridView.CurrentCell = SP_RegistroValorRequerimientos_SEGUN_ProyectoIDDataGridView.Rows(0).Cells(0)
             If RequerimientoTextBox3.Text = nombreRequerimientoFuncional Then ' Aqui verificamos que exista un nombre para la aplicacion
-                RutaUbicacion.Text = RutaUbicacion.Text + "\" + ValorRequerimientoTextBox4.Text
-                If Directory.Exists(RutaUbicacion.Text) = Nothing Then
-                    If MsgBox("Se crearan en " & RutaUbicacion.Text & " todos los archivos para este proyecto, desea continuar?", MsgBoxStyle.YesNo) = MsgBoxResult.Yes Then
-                        GenerarProyecto()
+                If RBNuevo.Checked = True Then
+                    RutaUbicacion.Text = RutaUbicacion.Text + "\" + ValorRequerimientoTextBox4.Text
+                    If Directory.Exists(RutaUbicacion.Text) = Nothing Then
+                        If Directory.Exists(RutaUbicacion.Text) = Nothing Then
+                            If MsgBox("Se crearan en " & RutaUbicacion.Text & " todos los archivos para este proyecto, desea continuar?", MsgBoxStyle.YesNo) = MsgBoxResult.Yes Then
+                                remplaza = False
+                                GenerarProyecto(remplaza)
+                            Else
+                                MsgBox("Se cancelo la instrucción", MsgBoxStyle.Information)
+                            End If
+                        End If
                     Else
-                        MsgBox("Se cancelo la instrucción", MsgBoxStyle.Information)
+                        MsgBox("Este proyecto que se desea construir como 'NUEVO' ya existe, favor verificar", MsgBoxStyle.Exclamation)
                     End If
-                Else
-                    MsgBox("El proyecto " & NombreProyectoTextBox.Text & " Ya existe en la ubicación que definio, favor verificar", MsgBoxStyle.Critical)
                 End If
+                If RBExistente.Checked = True Then
+                    If Directory.Exists(RutaUbicacion.Text) Then
+                        If MsgBox("Se crearan en " & RutaUbicacion.Text & " todos los archivos para este proyecto, desea continuar?", MsgBoxStyle.YesNo) = MsgBoxResult.Yes Then
+                            remplaza = True
+                            GenerarProyecto(remplaza)
+                        Else
+                            MsgBox("Se cancelo la instrucción", MsgBoxStyle.Information)
+                        End If
+                    Else
+                        MsgBox("Este proyecto que se desea construir como 'EXISTENTE' No fue posible encontrarlo, favor verificar", MsgBoxStyle.Exclamation)
+                    End If
+                End If
+
+
+
+                'RutaUbicacion.Text = RutaUbicacion.Text + "\" + ValorRequerimientoTextBox4.Text
+                'If Directory.Exists(RutaUbicacion.Text) = Nothing Then
+                '    If MsgBox("Se crearan en " & RutaUbicacion.Text & " todos los archivos para este proyecto, desea continuar?", MsgBoxStyle.YesNo) = MsgBoxResult.Yes Then
+                '        remplaza = False
+                '        GenerarProyecto(remplaza)
+                '    Else
+                '        MsgBox("Se cancelo la instrucción", MsgBoxStyle.Information)
+                '    End If
+                'Else
+                '    If MsgBox("El proyecto " & NombreProyectoTextBox.Text & " Ya existe en la ubicación que definio, Desea Continuar", MsgBoxStyle.YesNo) = MsgBoxResult.Yes Then
+                '        remplaza = True
+                '        GenerarProyecto(remplaza)
+                '    Else
+
+                '    End If
+                'End If
                 SP_RegistroValorRequerimientos_SEGUN_ProyectoID()
                 req = True
                 Exit While
@@ -2601,7 +2750,7 @@ Public Class FrmReplace
             MsgBox("El proyecto " & NombreProyectoTextBox.Text & " Debe de cumplir con el requerimiento => **" & nombreRequerimientoFuncional & "** para la creacion de archivos, y este no se encuentra en la lista de requerimientos, favor verificar ", MsgBoxStyle.Critical)
         End If
     End Sub
-    Public Sub GenerarProyecto()
+    Public Sub GenerarProyecto(ByVal remplaza As Boolean)
         Dim cantRutas As Integer = 0
         Dim rutaConcatenada As String
         cantRutas = SP_ProyectoCarpetasArchivos_BUSQUEDA_SEGUN_PARAMETRO_ProyectoIDDataGridView.Rows.Count
@@ -2609,7 +2758,12 @@ Public Class FrmReplace
             SP_ProyectoCarpetasArchivos_BUSQUEDA_SEGUN_PARAMETRO_ProyectoIDDataGridView.CurrentCell = SP_ProyectoCarpetasArchivos_BUSQUEDA_SEGUN_PARAMETRO_ProyectoIDDataGridView.Rows(0).Cells(0)
             rutaConcatenada = RutaUbicacion.Text & "\" & RutaCrear.Text
             tratamientoRuta(RutaCrear.Text, RutaUbicacion.Text)
-            GenerarArchivo(rutaConcatenada, NombreArchivoCrear.Text, ContenidoCrear.Text)
+            If remplaza = True Then
+                GenerarYRemplazarArchivo(rutaConcatenada, NombreArchivoCrear.Text, ContenidoCrear.Text)
+            End If
+            If remplaza = False Then
+                GenerarArchivo(rutaConcatenada, NombreArchivoCrear.Text, ContenidoCrear.Text)
+            End If
             SP_ProyectoCarpetasArchivos_BUSQUEDA_SEGUN_PARAMETRO_ProyectoIDDataGridView.Rows.RemoveAt(0)
             cantRutas = cantRutas - 1
         End While
@@ -2628,6 +2782,10 @@ Public Class FrmReplace
     End Sub
     Private Sub GenerarArchivo(ByVal Ruta As String, ByVal Archivo As String, ByVal Contenido As String)
         My.Computer.FileSystem.WriteAllText(Ruta + "\" + Archivo, Contenido, True)
+    End Sub
+
+    Private Sub GenerarYRemplazarArchivo(ByVal Ruta As String, ByVal Archivo As String, ByVal Contenido As String)
+        ModuloReplace.GenerarYRemplazar(Ruta, Archivo, Contenido)
     End Sub
 
     Private Sub BtnCargaRuta_Click(sender As Object, e As EventArgs) Handles BtnCargaRuta.Click
@@ -2723,6 +2881,12 @@ Public Class FrmReplace
             ContenidoCrear.Dock = DockStyle.None
         End If
     End Sub
+
+
+
+
+
+
 
 
 
