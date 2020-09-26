@@ -74,6 +74,9 @@ Partial Class FrmTecnologias
         Dim RequerimientoPlantillaIDLabel As System.Windows.Forms.Label
         Dim RequerimientoLabel2 As System.Windows.Forms.Label
         Dim ComponentesParaTablasIdLabel As System.Windows.Forms.Label
+        Dim ComponenteRutaArchivoIdLabel As System.Windows.Forms.Label
+        Dim RutaArchivoLabel As System.Windows.Forms.Label
+        Dim ArchivoLabel As System.Windows.Forms.Label
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmTecnologias))
         Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
@@ -317,10 +320,25 @@ Partial Class FrmTecnologias
         Me.BtnGuardarTiempo = New System.Windows.Forms.Button()
         Me.BtnEditarTiempo = New System.Windows.Forms.Button()
         Me.TabPage7 = New System.Windows.Forms.TabPage()
-        Me.PorTablaCheckBox = New System.Windows.Forms.CheckBox()
-        Me.SP_PlantillasCreacionDeArchivos_BUSQUEDA_SEGUN_PARAMETRO_ComponenteIDBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.PorTablaTextBox = New System.Windows.Forms.TextBox()
+        Me.Panel19 = New System.Windows.Forms.Panel()
+        Me.ArchivoTextBox = New System.Windows.Forms.TextBox()
+        Me.SP_ComponenteArchivoEliminar_BUSQUEDA_SEGUN_PARAMETRO_ComponenteIdBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.RutaArchivoTextBox = New System.Windows.Forms.TextBox()
+        Me.SP_ComponenteArchivoEliminar_BUSQUEDA_SEGUN_PARAMETRO_ComponenteIdDataGridView = New System.Windows.Forms.DataGridView()
+        Me.DataGridViewTextBoxColumn24 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn23 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ComponenteRutaArchivoIdTextBox = New System.Windows.Forms.TextBox()
+        Me.Panel20 = New System.Windows.Forms.Panel()
+        Me.Nuevo_Menu_ComponenteArchivoEliminar = New System.Windows.Forms.Button()
+        Me.Cancelar_Menu_ComponenteArchivoEliminar = New System.Windows.Forms.Button()
+        Me.Eliminar_Menu_ComponenteArchivoEliminar = New System.Windows.Forms.Button()
+        Me.Editar_Menu_ComponenteArchivoEliminar = New System.Windows.Forms.Button()
+        Me.Actualizar_Menu_ComponenteArchivoEliminar = New System.Windows.Forms.Button()
+        Me.Guardar_Menu_ComponenteArchivoEliminar = New System.Windows.Forms.Button()
         Me.RutaTextBox = New System.Windows.Forms.TextBox()
+        Me.SP_PlantillasCreacionDeArchivos_BUSQUEDA_SEGUN_PARAMETRO_ComponenteIDBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.PorTablaCheckBox = New System.Windows.Forms.CheckBox()
+        Me.PorTablaTextBox = New System.Windows.Forms.TextBox()
         Me.NombreArchivoTextBox = New System.Windows.Forms.TextBox()
         Me.ExtensionArchivoComboBox = New System.Windows.Forms.ComboBox()
         Me.ContenidoArchivoTextBox = New System.Windows.Forms.TextBox()
@@ -504,6 +522,13 @@ Partial Class FrmTecnologias
         Me.SP_ComponentesParaTablas_EDICION_ELIMINARTableAdapter = New GeneradorCod.DataSetTablasYCamposTableAdapters.SP_ComponentesParaTablas_EDICION_ELIMINARTableAdapter()
         Me.SP_ComponentesParaTablas_EDICION_INSERTARBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.SP_ComponentesParaTablas_EDICION_INSERTARTableAdapter = New GeneradorCod.DataSetTablasYCamposTableAdapters.SP_ComponentesParaTablas_EDICION_INSERTARTableAdapter()
+        Me.SP_ComponenteArchivoEliminar_BUSQUEDA_SEGUN_PARAMETRO_ComponenteIdTableAdapter = New GeneradorCod.DataSetAdministracionTableAdapters.SP_ComponenteArchivoEliminar_BUSQUEDA_SEGUN_PARAMETRO_ComponenteIdTableAdapter()
+        Me.SP_ComponenteArchivoEliminar_EDICION_ACTUALIZARBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.SP_ComponenteArchivoEliminar_EDICION_ACTUALIZARTableAdapter = New GeneradorCod.DataSetAdministracionTableAdapters.SP_ComponenteArchivoEliminar_EDICION_ACTUALIZARTableAdapter()
+        Me.SP_ComponenteArchivoEliminar_EDICION_ELIMINARBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.SP_ComponenteArchivoEliminar_EDICION_ELIMINARTableAdapter = New GeneradorCod.DataSetAdministracionTableAdapters.SP_ComponenteArchivoEliminar_EDICION_ELIMINARTableAdapter()
+        Me.SP_ComponenteArchivoEliminar_EDICION_INSERTARBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.SP_ComponenteArchivoEliminar_EDICION_INSERTARTableAdapter = New GeneradorCod.DataSetAdministracionTableAdapters.SP_ComponenteArchivoEliminar_EDICION_INSERTARTableAdapter()
         NombreTecnologiaLabel = New System.Windows.Forms.Label()
         TecnologiaIDLabel = New System.Windows.Forms.Label()
         NombrePlantillaLabel = New System.Windows.Forms.Label()
@@ -555,6 +580,9 @@ Partial Class FrmTecnologias
         RequerimientoPlantillaIDLabel = New System.Windows.Forms.Label()
         RequerimientoLabel2 = New System.Windows.Forms.Label()
         ComponentesParaTablasIdLabel = New System.Windows.Forms.Label()
+        ComponenteRutaArchivoIdLabel = New System.Windows.Forms.Label()
+        RutaArchivoLabel = New System.Windows.Forms.Label()
+        ArchivoLabel = New System.Windows.Forms.Label()
         CType(Me.TecnologiasDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TecnologiasBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DataSetAdministracion, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -613,6 +641,10 @@ Partial Class FrmTecnologias
         Me.Panel16.SuspendLayout()
         CType(Me.SP_PlantillasMetricas_BUSQUEDA_SEGUN_PlantillaIDBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabPage7.SuspendLayout()
+        Me.Panel19.SuspendLayout()
+        CType(Me.SP_ComponenteArchivoEliminar_BUSQUEDA_SEGUN_PARAMETRO_ComponenteIdBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.SP_ComponenteArchivoEliminar_BUSQUEDA_SEGUN_PARAMETRO_ComponenteIdDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel20.SuspendLayout()
         CType(Me.SP_PlantillasCreacionDeArchivos_BUSQUEDA_SEGUN_PARAMETRO_ComponenteIDBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel13.SuspendLayout()
         Me.Panel12.SuspendLayout()
@@ -668,6 +700,9 @@ Partial Class FrmTecnologias
         CType(Me.SP_ComponentesParaTablas_EDICION_ACTUALIZARBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.SP_ComponentesParaTablas_EDICION_ELIMINARBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.SP_ComponentesParaTablas_EDICION_INSERTARBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.SP_ComponenteArchivoEliminar_EDICION_ACTUALIZARBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.SP_ComponenteArchivoEliminar_EDICION_ELIMINARBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.SP_ComponenteArchivoEliminar_EDICION_INSERTARBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'NombreTecnologiaLabel
@@ -1087,7 +1122,7 @@ Partial Class FrmTecnologias
         'PorTablaLabel
         '
         PorTablaLabel.AutoSize = True
-        PorTablaLabel.Location = New System.Drawing.Point(573, 157)
+        PorTablaLabel.Location = New System.Drawing.Point(573, 185)
         PorTablaLabel.Name = "PorTablaLabel"
         PorTablaLabel.Size = New System.Drawing.Size(69, 18)
         PorTablaLabel.TabIndex = 102
@@ -1137,6 +1172,33 @@ Partial Class FrmTecnologias
         ComponentesParaTablasIdLabel.Size = New System.Drawing.Size(184, 18)
         ComponentesParaTablasIdLabel.TabIndex = 92
         ComponentesParaTablasIdLabel.Text = "Componentes Para Tablas Id:"
+        '
+        'ComponenteRutaArchivoIdLabel
+        '
+        ComponenteRutaArchivoIdLabel.AutoSize = True
+        ComponenteRutaArchivoIdLabel.Location = New System.Drawing.Point(347, 91)
+        ComponenteRutaArchivoIdLabel.Name = "ComponenteRutaArchivoIdLabel"
+        ComponenteRutaArchivoIdLabel.Size = New System.Drawing.Size(187, 18)
+        ComponenteRutaArchivoIdLabel.TabIndex = 91
+        ComponenteRutaArchivoIdLabel.Text = "Componente Ruta Archivo Id:"
+        '
+        'RutaArchivoLabel
+        '
+        RutaArchivoLabel.AutoSize = True
+        RutaArchivoLabel.Location = New System.Drawing.Point(5, 52)
+        RutaArchivoLabel.Name = "RutaArchivoLabel"
+        RutaArchivoLabel.Size = New System.Drawing.Size(90, 18)
+        RutaArchivoLabel.TabIndex = 92
+        RutaArchivoLabel.Text = "Ruta Archivo:"
+        '
+        'ArchivoLabel
+        '
+        ArchivoLabel.AutoSize = True
+        ArchivoLabel.Location = New System.Drawing.Point(5, 111)
+        ArchivoLabel.Name = "ArchivoLabel"
+        ArchivoLabel.Size = New System.Drawing.Size(58, 18)
+        ArchivoLabel.TabIndex = 93
+        ArchivoLabel.Text = "Archivo:"
         '
         'TecnologiasDataGridView
         '
@@ -3649,12 +3711,13 @@ Partial Class FrmTecnologias
         'TabPage7
         '
         Me.TabPage7.AutoScroll = True
+        Me.TabPage7.Controls.Add(Me.Panel19)
+        Me.TabPage7.Controls.Add(Me.RutaTextBox)
         Me.TabPage7.Controls.Add(PorTablaLabel1)
         Me.TabPage7.Controls.Add(Me.PorTablaCheckBox)
         Me.TabPage7.Controls.Add(PorTablaLabel)
         Me.TabPage7.Controls.Add(Me.PorTablaTextBox)
         Me.TabPage7.Controls.Add(RutaLabel)
-        Me.TabPage7.Controls.Add(Me.RutaTextBox)
         Me.TabPage7.Controls.Add(NombreArchivoLabel)
         Me.TabPage7.Controls.Add(Me.NombreArchivoTextBox)
         Me.TabPage7.Controls.Add(ExtensionArchivoLabel)
@@ -3671,6 +3734,172 @@ Partial Class FrmTecnologias
         Me.TabPage7.Text = "Gen-Archivos"
         Me.TabPage7.UseVisualStyleBackColor = True
         '
+        'Panel19
+        '
+        Me.Panel19.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel19.Controls.Add(ArchivoLabel)
+        Me.Panel19.Controls.Add(Me.ArchivoTextBox)
+        Me.Panel19.Controls.Add(RutaArchivoLabel)
+        Me.Panel19.Controls.Add(Me.RutaArchivoTextBox)
+        Me.Panel19.Controls.Add(Me.SP_ComponenteArchivoEliminar_BUSQUEDA_SEGUN_PARAMETRO_ComponenteIdDataGridView)
+        Me.Panel19.Controls.Add(ComponenteRutaArchivoIdLabel)
+        Me.Panel19.Controls.Add(Me.ComponenteRutaArchivoIdTextBox)
+        Me.Panel19.Controls.Add(Me.Panel20)
+        Me.Panel19.Location = New System.Drawing.Point(15, 406)
+        Me.Panel19.Name = "Panel19"
+        Me.Panel19.Size = New System.Drawing.Size(733, 165)
+        Me.Panel19.TabIndex = 105
+        '
+        'ArchivoTextBox
+        '
+        Me.ArchivoTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SP_ComponenteArchivoEliminar_BUSQUEDA_SEGUN_PARAMETRO_ComponenteIdBindingSource, "Archivo", True))
+        Me.ArchivoTextBox.Location = New System.Drawing.Point(5, 132)
+        Me.ArchivoTextBox.Name = "ArchivoTextBox"
+        Me.ArchivoTextBox.Size = New System.Drawing.Size(328, 26)
+        Me.ArchivoTextBox.TabIndex = 94
+        '
+        'SP_ComponenteArchivoEliminar_BUSQUEDA_SEGUN_PARAMETRO_ComponenteIdBindingSource
+        '
+        Me.SP_ComponenteArchivoEliminar_BUSQUEDA_SEGUN_PARAMETRO_ComponenteIdBindingSource.DataMember = "SP_ComponenteArchivoEliminar_BUSQUEDA_SEGUN_PARAMETRO_ComponenteId"
+        Me.SP_ComponenteArchivoEliminar_BUSQUEDA_SEGUN_PARAMETRO_ComponenteIdBindingSource.DataSource = Me.DataSetAdministracion
+        '
+        'RutaArchivoTextBox
+        '
+        Me.RutaArchivoTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SP_ComponenteArchivoEliminar_BUSQUEDA_SEGUN_PARAMETRO_ComponenteIdBindingSource, "RutaArchivo", True))
+        Me.RutaArchivoTextBox.Location = New System.Drawing.Point(5, 73)
+        Me.RutaArchivoTextBox.Name = "RutaArchivoTextBox"
+        Me.RutaArchivoTextBox.Size = New System.Drawing.Size(328, 26)
+        Me.RutaArchivoTextBox.TabIndex = 93
+        '
+        'SP_ComponenteArchivoEliminar_BUSQUEDA_SEGUN_PARAMETRO_ComponenteIdDataGridView
+        '
+        Me.SP_ComponenteArchivoEliminar_BUSQUEDA_SEGUN_PARAMETRO_ComponenteIdDataGridView.AllowUserToAddRows = False
+        Me.SP_ComponenteArchivoEliminar_BUSQUEDA_SEGUN_PARAMETRO_ComponenteIdDataGridView.AutoGenerateColumns = False
+        Me.SP_ComponenteArchivoEliminar_BUSQUEDA_SEGUN_PARAMETRO_ComponenteIdDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.SP_ComponenteArchivoEliminar_BUSQUEDA_SEGUN_PARAMETRO_ComponenteIdDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn24, Me.DataGridViewTextBoxColumn23})
+        Me.SP_ComponenteArchivoEliminar_BUSQUEDA_SEGUN_PARAMETRO_ComponenteIdDataGridView.DataSource = Me.SP_ComponenteArchivoEliminar_BUSQUEDA_SEGUN_PARAMETRO_ComponenteIdBindingSource
+        Me.SP_ComponenteArchivoEliminar_BUSQUEDA_SEGUN_PARAMETRO_ComponenteIdDataGridView.Dock = System.Windows.Forms.DockStyle.Right
+        Me.SP_ComponenteArchivoEliminar_BUSQUEDA_SEGUN_PARAMETRO_ComponenteIdDataGridView.Location = New System.Drawing.Point(339, 46)
+        Me.SP_ComponenteArchivoEliminar_BUSQUEDA_SEGUN_PARAMETRO_ComponenteIdDataGridView.Name = "SP_ComponenteArchivoEliminar_BUSQUEDA_SEGUN_PARAMETRO_ComponenteIdDataGridView"
+        Me.SP_ComponenteArchivoEliminar_BUSQUEDA_SEGUN_PARAMETRO_ComponenteIdDataGridView.RowHeadersVisible = False
+        Me.SP_ComponenteArchivoEliminar_BUSQUEDA_SEGUN_PARAMETRO_ComponenteIdDataGridView.Size = New System.Drawing.Size(392, 117)
+        Me.SP_ComponenteArchivoEliminar_BUSQUEDA_SEGUN_PARAMETRO_ComponenteIdDataGridView.TabIndex = 91
+        '
+        'DataGridViewTextBoxColumn24
+        '
+        Me.DataGridViewTextBoxColumn24.DataPropertyName = "Archivo"
+        Me.DataGridViewTextBoxColumn24.HeaderText = "Archivo"
+        Me.DataGridViewTextBoxColumn24.Name = "DataGridViewTextBoxColumn24"
+        '
+        'DataGridViewTextBoxColumn23
+        '
+        Me.DataGridViewTextBoxColumn23.DataPropertyName = "RutaArchivo"
+        Me.DataGridViewTextBoxColumn23.HeaderText = "Ruta"
+        Me.DataGridViewTextBoxColumn23.Name = "DataGridViewTextBoxColumn23"
+        Me.DataGridViewTextBoxColumn23.Width = 288
+        '
+        'ComponenteRutaArchivoIdTextBox
+        '
+        Me.ComponenteRutaArchivoIdTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SP_ComponenteArchivoEliminar_BUSQUEDA_SEGUN_PARAMETRO_ComponenteIdBindingSource, "ComponenteRutaArchivoId", True))
+        Me.ComponenteRutaArchivoIdTextBox.Location = New System.Drawing.Point(540, 88)
+        Me.ComponenteRutaArchivoIdTextBox.Name = "ComponenteRutaArchivoIdTextBox"
+        Me.ComponenteRutaArchivoIdTextBox.Size = New System.Drawing.Size(100, 26)
+        Me.ComponenteRutaArchivoIdTextBox.TabIndex = 92
+        '
+        'Panel20
+        '
+        Me.Panel20.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel20.Controls.Add(Me.Nuevo_Menu_ComponenteArchivoEliminar)
+        Me.Panel20.Controls.Add(Me.Cancelar_Menu_ComponenteArchivoEliminar)
+        Me.Panel20.Controls.Add(Me.Eliminar_Menu_ComponenteArchivoEliminar)
+        Me.Panel20.Controls.Add(Me.Editar_Menu_ComponenteArchivoEliminar)
+        Me.Panel20.Controls.Add(Me.Actualizar_Menu_ComponenteArchivoEliminar)
+        Me.Panel20.Controls.Add(Me.Guardar_Menu_ComponenteArchivoEliminar)
+        Me.Panel20.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Panel20.Location = New System.Drawing.Point(0, 0)
+        Me.Panel20.Name = "Panel20"
+        Me.Panel20.Size = New System.Drawing.Size(731, 46)
+        Me.Panel20.TabIndex = 91
+        '
+        'Nuevo_Menu_ComponenteArchivoEliminar
+        '
+        Me.Nuevo_Menu_ComponenteArchivoEliminar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Nuevo_Menu_ComponenteArchivoEliminar.Image = CType(resources.GetObject("Nuevo_Menu_ComponenteArchivoEliminar.Image"), System.Drawing.Image)
+        Me.Nuevo_Menu_ComponenteArchivoEliminar.Location = New System.Drawing.Point(4, 3)
+        Me.Nuevo_Menu_ComponenteArchivoEliminar.Name = "Nuevo_Menu_ComponenteArchivoEliminar"
+        Me.Nuevo_Menu_ComponenteArchivoEliminar.Size = New System.Drawing.Size(40, 38)
+        Me.Nuevo_Menu_ComponenteArchivoEliminar.TabIndex = 70
+        Me.Nuevo_Menu_ComponenteArchivoEliminar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.Nuevo_Menu_ComponenteArchivoEliminar.UseVisualStyleBackColor = True
+        '
+        'Cancelar_Menu_ComponenteArchivoEliminar
+        '
+        Me.Cancelar_Menu_ComponenteArchivoEliminar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Cancelar_Menu_ComponenteArchivoEliminar.Image = CType(resources.GetObject("Cancelar_Menu_ComponenteArchivoEliminar.Image"), System.Drawing.Image)
+        Me.Cancelar_Menu_ComponenteArchivoEliminar.Location = New System.Drawing.Point(233, 3)
+        Me.Cancelar_Menu_ComponenteArchivoEliminar.Name = "Cancelar_Menu_ComponenteArchivoEliminar"
+        Me.Cancelar_Menu_ComponenteArchivoEliminar.Size = New System.Drawing.Size(40, 38)
+        Me.Cancelar_Menu_ComponenteArchivoEliminar.TabIndex = 75
+        Me.Cancelar_Menu_ComponenteArchivoEliminar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.Cancelar_Menu_ComponenteArchivoEliminar.UseVisualStyleBackColor = True
+        '
+        'Eliminar_Menu_ComponenteArchivoEliminar
+        '
+        Me.Eliminar_Menu_ComponenteArchivoEliminar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Eliminar_Menu_ComponenteArchivoEliminar.Image = CType(resources.GetObject("Eliminar_Menu_ComponenteArchivoEliminar.Image"), System.Drawing.Image)
+        Me.Eliminar_Menu_ComponenteArchivoEliminar.Location = New System.Drawing.Point(188, 3)
+        Me.Eliminar_Menu_ComponenteArchivoEliminar.Name = "Eliminar_Menu_ComponenteArchivoEliminar"
+        Me.Eliminar_Menu_ComponenteArchivoEliminar.Size = New System.Drawing.Size(40, 38)
+        Me.Eliminar_Menu_ComponenteArchivoEliminar.TabIndex = 72
+        Me.Eliminar_Menu_ComponenteArchivoEliminar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.Eliminar_Menu_ComponenteArchivoEliminar.UseVisualStyleBackColor = True
+        '
+        'Editar_Menu_ComponenteArchivoEliminar
+        '
+        Me.Editar_Menu_ComponenteArchivoEliminar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Editar_Menu_ComponenteArchivoEliminar.Image = CType(resources.GetObject("Editar_Menu_ComponenteArchivoEliminar.Image"), System.Drawing.Image)
+        Me.Editar_Menu_ComponenteArchivoEliminar.Location = New System.Drawing.Point(96, 3)
+        Me.Editar_Menu_ComponenteArchivoEliminar.Name = "Editar_Menu_ComponenteArchivoEliminar"
+        Me.Editar_Menu_ComponenteArchivoEliminar.Size = New System.Drawing.Size(40, 38)
+        Me.Editar_Menu_ComponenteArchivoEliminar.TabIndex = 74
+        Me.Editar_Menu_ComponenteArchivoEliminar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.Editar_Menu_ComponenteArchivoEliminar.UseVisualStyleBackColor = True
+        '
+        'Actualizar_Menu_ComponenteArchivoEliminar
+        '
+        Me.Actualizar_Menu_ComponenteArchivoEliminar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Actualizar_Menu_ComponenteArchivoEliminar.Image = CType(resources.GetObject("Actualizar_Menu_ComponenteArchivoEliminar.Image"), System.Drawing.Image)
+        Me.Actualizar_Menu_ComponenteArchivoEliminar.Location = New System.Drawing.Point(142, 3)
+        Me.Actualizar_Menu_ComponenteArchivoEliminar.Name = "Actualizar_Menu_ComponenteArchivoEliminar"
+        Me.Actualizar_Menu_ComponenteArchivoEliminar.Size = New System.Drawing.Size(40, 38)
+        Me.Actualizar_Menu_ComponenteArchivoEliminar.TabIndex = 73
+        Me.Actualizar_Menu_ComponenteArchivoEliminar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.Actualizar_Menu_ComponenteArchivoEliminar.UseVisualStyleBackColor = True
+        '
+        'Guardar_Menu_ComponenteArchivoEliminar
+        '
+        Me.Guardar_Menu_ComponenteArchivoEliminar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Guardar_Menu_ComponenteArchivoEliminar.Image = CType(resources.GetObject("Guardar_Menu_ComponenteArchivoEliminar.Image"), System.Drawing.Image)
+        Me.Guardar_Menu_ComponenteArchivoEliminar.Location = New System.Drawing.Point(50, 3)
+        Me.Guardar_Menu_ComponenteArchivoEliminar.Name = "Guardar_Menu_ComponenteArchivoEliminar"
+        Me.Guardar_Menu_ComponenteArchivoEliminar.Size = New System.Drawing.Size(40, 38)
+        Me.Guardar_Menu_ComponenteArchivoEliminar.TabIndex = 71
+        Me.Guardar_Menu_ComponenteArchivoEliminar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.Guardar_Menu_ComponenteArchivoEliminar.UseVisualStyleBackColor = True
+        '
+        'RutaTextBox
+        '
+        Me.RutaTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SP_PlantillasCreacionDeArchivos_BUSQUEDA_SEGUN_PARAMETRO_ComponenteIDBindingSource, "Ruta", True))
+        Me.RutaTextBox.Location = New System.Drawing.Point(15, 181)
+        Me.RutaTextBox.Name = "RutaTextBox"
+        Me.RutaTextBox.Size = New System.Drawing.Size(733, 26)
+        Me.RutaTextBox.TabIndex = 95
+        '
+        'SP_PlantillasCreacionDeArchivos_BUSQUEDA_SEGUN_PARAMETRO_ComponenteIDBindingSource
+        '
+        Me.SP_PlantillasCreacionDeArchivos_BUSQUEDA_SEGUN_PARAMETRO_ComponenteIDBindingSource.DataMember = "SP_PlantillasCreacionDeArchivos_BUSQUEDA_SEGUN_PARAMETRO_ComponenteID"
+        Me.SP_PlantillasCreacionDeArchivos_BUSQUEDA_SEGUN_PARAMETRO_ComponenteIDBindingSource.DataSource = Me.DataSetAdministracion
+        '
         'PorTablaCheckBox
         '
         Me.PorTablaCheckBox.DataBindings.Add(New System.Windows.Forms.Binding("CheckState", Me.SP_PlantillasCreacionDeArchivos_BUSQUEDA_SEGUN_PARAMETRO_ComponenteIDBindingSource, "PorTabla", True))
@@ -3681,26 +3910,13 @@ Partial Class FrmTecnologias
         Me.PorTablaCheckBox.TabIndex = 104
         Me.PorTablaCheckBox.UseVisualStyleBackColor = True
         '
-        'SP_PlantillasCreacionDeArchivos_BUSQUEDA_SEGUN_PARAMETRO_ComponenteIDBindingSource
-        '
-        Me.SP_PlantillasCreacionDeArchivos_BUSQUEDA_SEGUN_PARAMETRO_ComponenteIDBindingSource.DataMember = "SP_PlantillasCreacionDeArchivos_BUSQUEDA_SEGUN_PARAMETRO_ComponenteID"
-        Me.SP_PlantillasCreacionDeArchivos_BUSQUEDA_SEGUN_PARAMETRO_ComponenteIDBindingSource.DataSource = Me.DataSetAdministracion
-        '
         'PorTablaTextBox
         '
         Me.PorTablaTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SP_PlantillasCreacionDeArchivos_BUSQUEDA_SEGUN_PARAMETRO_ComponenteIDBindingSource, "PorTabla", True))
-        Me.PorTablaTextBox.Location = New System.Drawing.Point(648, 154)
+        Me.PorTablaTextBox.Location = New System.Drawing.Point(648, 181)
         Me.PorTablaTextBox.Name = "PorTablaTextBox"
         Me.PorTablaTextBox.Size = New System.Drawing.Size(100, 26)
         Me.PorTablaTextBox.TabIndex = 103
-        '
-        'RutaTextBox
-        '
-        Me.RutaTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SP_PlantillasCreacionDeArchivos_BUSQUEDA_SEGUN_PARAMETRO_ComponenteIDBindingSource, "Ruta", True))
-        Me.RutaTextBox.Location = New System.Drawing.Point(15, 181)
-        Me.RutaTextBox.Name = "RutaTextBox"
-        Me.RutaTextBox.Size = New System.Drawing.Size(733, 26)
-        Me.RutaTextBox.TabIndex = 95
         '
         'NombreArchivoTextBox
         '
@@ -3714,7 +3930,7 @@ Partial Class FrmTecnologias
         '
         Me.ExtensionArchivoComboBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SP_PlantillasCreacionDeArchivos_BUSQUEDA_SEGUN_PARAMETRO_ComponenteIDBindingSource, "ExtensionArchivo", True))
         Me.ExtensionArchivoComboBox.FormattingEnabled = True
-        Me.ExtensionArchivoComboBox.Items.AddRange(New Object() {".txt", ".json", ".cs", ".vb", ".sql", ".ts", ".css", ".scss", ".js", ".md", ".cshtml"})
+        Me.ExtensionArchivoComboBox.Items.AddRange(New Object() {".txt", ".json", ".cs", ".vb", ".sql", ".ts", ".css", ".scss", ".js", ".md", ".cshtml", ".csproj", ".pubxml"})
         Me.ExtensionArchivoComboBox.Location = New System.Drawing.Point(454, 238)
         Me.ExtensionArchivoComboBox.Name = "ExtensionArchivoComboBox"
         Me.ExtensionArchivoComboBox.Size = New System.Drawing.Size(138, 26)
@@ -3727,7 +3943,7 @@ Partial Class FrmTecnologias
         Me.ContenidoArchivoTextBox.Location = New System.Drawing.Point(15, 294)
         Me.ContenidoArchivoTextBox.Multiline = True
         Me.ContenidoArchivoTextBox.Name = "ContenidoArchivoTextBox"
-        Me.ContenidoArchivoTextBox.Size = New System.Drawing.Size(733, 276)
+        Me.ContenidoArchivoTextBox.Size = New System.Drawing.Size(733, 106)
         Me.ContenidoArchivoTextBox.TabIndex = 101
         '
         'Panel13
@@ -4401,6 +4617,9 @@ Partial Class FrmTecnologias
         Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
         Me.TableAdapterManager.ELIMINA_SEGUN_PROYECTOTableAdapter = Nothing
         Me.TableAdapterManager.ProyectosTableAdapter = Nothing
+        Me.TableAdapterManager.SP_ComponenteArchivoEliminar_EDICION_ACTUALIZARTableAdapter = Nothing
+        Me.TableAdapterManager.SP_ComponenteArchivoEliminar_EDICION_ELIMINARTableAdapter = Nothing
+        Me.TableAdapterManager.SP_ComponenteArchivoEliminar_EDICION_INSERTARTableAdapter = Nothing
         Me.TableAdapterManager.SP_Componentes_EDICION_ACTUALIZAR_XBase_PorPlantillaTableAdapter = Nothing
         Me.TableAdapterManager.SP_Componentes_EDICION_ACTUALIZARTableAdapter = Nothing
         Me.TableAdapterManager.SP_Componentes_EDICION_ELIMINARTableAdapter = Nothing
@@ -5022,6 +5241,37 @@ Partial Class FrmTecnologias
         '
         Me.SP_ComponentesParaTablas_EDICION_INSERTARTableAdapter.ClearBeforeFill = True
         '
+        'SP_ComponenteArchivoEliminar_BUSQUEDA_SEGUN_PARAMETRO_ComponenteIdTableAdapter
+        '
+        Me.SP_ComponenteArchivoEliminar_BUSQUEDA_SEGUN_PARAMETRO_ComponenteIdTableAdapter.ClearBeforeFill = True
+        '
+        'SP_ComponenteArchivoEliminar_EDICION_ACTUALIZARBindingSource
+        '
+        Me.SP_ComponenteArchivoEliminar_EDICION_ACTUALIZARBindingSource.DataMember = "SP_ComponenteArchivoEliminar_EDICION_ACTUALIZAR"
+        Me.SP_ComponenteArchivoEliminar_EDICION_ACTUALIZARBindingSource.DataSource = Me.DataSetAdministracion
+        '
+        'SP_ComponenteArchivoEliminar_EDICION_ACTUALIZARTableAdapter
+        '
+        Me.SP_ComponenteArchivoEliminar_EDICION_ACTUALIZARTableAdapter.ClearBeforeFill = True
+        '
+        'SP_ComponenteArchivoEliminar_EDICION_ELIMINARBindingSource
+        '
+        Me.SP_ComponenteArchivoEliminar_EDICION_ELIMINARBindingSource.DataMember = "SP_ComponenteArchivoEliminar_EDICION_ELIMINAR"
+        Me.SP_ComponenteArchivoEliminar_EDICION_ELIMINARBindingSource.DataSource = Me.DataSetAdministracion
+        '
+        'SP_ComponenteArchivoEliminar_EDICION_ELIMINARTableAdapter
+        '
+        Me.SP_ComponenteArchivoEliminar_EDICION_ELIMINARTableAdapter.ClearBeforeFill = True
+        '
+        'SP_ComponenteArchivoEliminar_EDICION_INSERTARBindingSource
+        '
+        Me.SP_ComponenteArchivoEliminar_EDICION_INSERTARBindingSource.DataMember = "SP_ComponenteArchivoEliminar_EDICION_INSERTAR"
+        Me.SP_ComponenteArchivoEliminar_EDICION_INSERTARBindingSource.DataSource = Me.DataSetAdministracion
+        '
+        'SP_ComponenteArchivoEliminar_EDICION_INSERTARTableAdapter
+        '
+        Me.SP_ComponenteArchivoEliminar_EDICION_INSERTARTableAdapter.ClearBeforeFill = True
+        '
         'FrmTecnologias
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 18.0!)
@@ -5112,6 +5362,11 @@ Partial Class FrmTecnologias
         CType(Me.SP_PlantillasMetricas_BUSQUEDA_SEGUN_PlantillaIDBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabPage7.ResumeLayout(False)
         Me.TabPage7.PerformLayout()
+        Me.Panel19.ResumeLayout(False)
+        Me.Panel19.PerformLayout()
+        CType(Me.SP_ComponenteArchivoEliminar_BUSQUEDA_SEGUN_PARAMETRO_ComponenteIdBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.SP_ComponenteArchivoEliminar_BUSQUEDA_SEGUN_PARAMETRO_ComponenteIdDataGridView, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Panel20.ResumeLayout(False)
         CType(Me.SP_PlantillasCreacionDeArchivos_BUSQUEDA_SEGUN_PARAMETRO_ComponenteIDBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel13.ResumeLayout(False)
         Me.Panel12.ResumeLayout(False)
@@ -5170,6 +5425,9 @@ Partial Class FrmTecnologias
         CType(Me.SP_ComponentesParaTablas_EDICION_ACTUALIZARBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.SP_ComponentesParaTablas_EDICION_ELIMINARBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.SP_ComponentesParaTablas_EDICION_INSERTARBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.SP_ComponenteArchivoEliminar_EDICION_ACTUALIZARBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.SP_ComponenteArchivoEliminar_EDICION_ELIMINARBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.SP_ComponenteArchivoEliminar_EDICION_INSERTARBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -5602,4 +5860,26 @@ Partial Class FrmTecnologias
     Friend WithEvents Editar_Menu_PlantillasVentajasTecnologicas As Button
     Friend WithEvents Guardar_Menu_PlantillasVentajasTecnologicas As Button
     Friend WithEvents Actualizar_Menu_PlantillasVentajasTecnologicas As Button
+    Friend WithEvents Panel19 As Panel
+    Friend WithEvents Panel20 As Panel
+    Friend WithEvents Nuevo_Menu_ComponenteArchivoEliminar As Button
+    Friend WithEvents Cancelar_Menu_ComponenteArchivoEliminar As Button
+    Friend WithEvents Eliminar_Menu_ComponenteArchivoEliminar As Button
+    Friend WithEvents Editar_Menu_ComponenteArchivoEliminar As Button
+    Friend WithEvents Actualizar_Menu_ComponenteArchivoEliminar As Button
+    Friend WithEvents Guardar_Menu_ComponenteArchivoEliminar As Button
+    Friend WithEvents SP_ComponenteArchivoEliminar_BUSQUEDA_SEGUN_PARAMETRO_ComponenteIdBindingSource As BindingSource
+    Friend WithEvents SP_ComponenteArchivoEliminar_BUSQUEDA_SEGUN_PARAMETRO_ComponenteIdTableAdapter As DataSetAdministracionTableAdapters.SP_ComponenteArchivoEliminar_BUSQUEDA_SEGUN_PARAMETRO_ComponenteIdTableAdapter
+    Friend WithEvents ArchivoTextBox As TextBox
+    Friend WithEvents RutaArchivoTextBox As TextBox
+    Friend WithEvents SP_ComponenteArchivoEliminar_BUSQUEDA_SEGUN_PARAMETRO_ComponenteIdDataGridView As DataGridView
+    Friend WithEvents DataGridViewTextBoxColumn24 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn23 As DataGridViewTextBoxColumn
+    Friend WithEvents ComponenteRutaArchivoIdTextBox As TextBox
+    Friend WithEvents SP_ComponenteArchivoEliminar_EDICION_ACTUALIZARBindingSource As BindingSource
+    Friend WithEvents SP_ComponenteArchivoEliminar_EDICION_ACTUALIZARTableAdapter As DataSetAdministracionTableAdapters.SP_ComponenteArchivoEliminar_EDICION_ACTUALIZARTableAdapter
+    Friend WithEvents SP_ComponenteArchivoEliminar_EDICION_ELIMINARBindingSource As BindingSource
+    Friend WithEvents SP_ComponenteArchivoEliminar_EDICION_ELIMINARTableAdapter As DataSetAdministracionTableAdapters.SP_ComponenteArchivoEliminar_EDICION_ELIMINARTableAdapter
+    Friend WithEvents SP_ComponenteArchivoEliminar_EDICION_INSERTARBindingSource As BindingSource
+    Friend WithEvents SP_ComponenteArchivoEliminar_EDICION_INSERTARTableAdapter As DataSetAdministracionTableAdapters.SP_ComponenteArchivoEliminar_EDICION_INSERTARTableAdapter
 End Class

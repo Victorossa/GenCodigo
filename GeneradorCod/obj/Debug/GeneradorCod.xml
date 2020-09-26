@@ -292,6 +292,26 @@ Represents the strongly named DataTable class.
 Represents the strongly named DataTable class.
 </summary>
 </member>
+<member name="T:GeneradorCod.DataSetAdministracion.SP_ComponenteArchivoEliminar_BUSQUEDA_SEGUN_PARAMETRO_ComponenteIdDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:GeneradorCod.DataSetAdministracion.SP_ComponenteArchivoEliminar_EDICION_ELIMINARDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:GeneradorCod.DataSetAdministracion.SP_ComponenteArchivoEliminar_EDICION_ACTUALIZARDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:GeneradorCod.DataSetAdministracion.SP_ComponenteArchivoEliminar_EDICION_INSERTARDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
 <member name="T:GeneradorCod.DataSetAdministracion.TecnologiasRow">
 <summary>
 Represents strongly named DataRow class.
@@ -548,6 +568,26 @@ Represents strongly named DataRow class.
 </summary>
 </member>
 <member name="T:GeneradorCod.DataSetAdministracion.SP_RequerimientosPlantillas_BUSCA_LIKERow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:GeneradorCod.DataSetAdministracion.SP_ComponenteArchivoEliminar_BUSQUEDA_SEGUN_PARAMETRO_ComponenteIdRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:GeneradorCod.DataSetAdministracion.SP_ComponenteArchivoEliminar_EDICION_ELIMINARRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:GeneradorCod.DataSetAdministracion.SP_ComponenteArchivoEliminar_EDICION_ACTUALIZARRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:GeneradorCod.DataSetAdministracion.SP_ComponenteArchivoEliminar_EDICION_INSERTARRow">
 <summary>
 Represents strongly named DataRow class.
 </summary>
@@ -812,6 +852,26 @@ Row event argument class
 Row event argument class
 </summary>
 </member>
+<member name="T:GeneradorCod.DataSetAdministracion.SP_ComponenteArchivoEliminar_BUSQUEDA_SEGUN_PARAMETRO_ComponenteIdRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:GeneradorCod.DataSetAdministracion.SP_ComponenteArchivoEliminar_EDICION_ELIMINARRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:GeneradorCod.DataSetAdministracion.SP_ComponenteArchivoEliminar_EDICION_ACTUALIZARRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:GeneradorCod.DataSetAdministracion.SP_ComponenteArchivoEliminar_EDICION_INSERTARRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
 <member name="T:GeneradorCod.DataSetAdministracionTableAdapters.TecnologiasTableAdapter">
 <summary>
 Represents the connection and commands used to retrieve and save data.
@@ -1068,6 +1128,26 @@ Represents the connection and commands used to retrieve and save data.
 </summary>
 </member>
 <member name="T:GeneradorCod.DataSetAdministracionTableAdapters.SP_RequerimientosPlantillas_BUSCA_LIKETableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:GeneradorCod.DataSetAdministracionTableAdapters.SP_ComponenteArchivoEliminar_BUSQUEDA_SEGUN_PARAMETRO_ComponenteIdTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:GeneradorCod.DataSetAdministracionTableAdapters.SP_ComponenteArchivoEliminar_EDICION_ELIMINARTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:GeneradorCod.DataSetAdministracionTableAdapters.SP_ComponenteArchivoEliminar_EDICION_ACTUALIZARTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:GeneradorCod.DataSetAdministracionTableAdapters.SP_ComponenteArchivoEliminar_EDICION_INSERTARTableAdapter">
 <summary>
 Represents the connection and commands used to retrieve and save data.
 </summary>

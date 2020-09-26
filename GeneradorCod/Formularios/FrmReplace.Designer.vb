@@ -111,6 +111,8 @@ Partial Class FrmReplace
         Dim TextoLabel As System.Windows.Forms.Label
         Dim NombreTablaLabel4 As System.Windows.Forms.Label
         Dim ContenidoXTablaLabel As System.Windows.Forms.Label
+        Dim RutaArchivoLabel As System.Windows.Forms.Label
+        Dim ArchivoLabel As System.Windows.Forms.Label
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
@@ -450,6 +452,12 @@ Partial Class FrmReplace
         Me.SP_PlantillasImagenes_BUSCA_SEGUN_PlantillaIDDataGridView = New System.Windows.Forms.DataGridView()
         Me.DataGridViewTextBoxColumn51 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.TabPage7 = New System.Windows.Forms.TabPage()
+        Me.ArchivoTextBox = New System.Windows.Forms.TextBox()
+        Me.SP_ComponenteArchivoEliminar_BUSQUEDA_SEGUN_PARAMETRO_ComponenteIdBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.RutaArchivoTextBox = New System.Windows.Forms.TextBox()
+        Me.SP_ComponenteArchivoEliminar_BUSQUEDA_SEGUN_PARAMETRO_ComponenteIdDataGridView = New System.Windows.Forms.DataGridView()
+        Me.DataGridViewTextBoxColumn58 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn57 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ContenidoCrear = New System.Windows.Forms.TextBox()
         Me.SP_ProyectoCarpetasArchivos_BUSQUEDA_SEGUN_PARAMETRO_ProyectoIDBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.TextoDeBD = New System.Windows.Forms.TextBox()
@@ -592,6 +600,7 @@ Partial Class FrmReplace
         Me.SP_RequerimientosValorProvisional_TRUNCATableAdapter = New GeneradorCod.DataSetTablasYCamposTableAdapters.SP_RequerimientosValorProvisional_TRUNCATableAdapter()
         Me.SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID4TableAdapter = New GeneradorCod.DataSetTablasYCamposTableAdapters.SP_TablasDeProyecto_BUSQUEDA_SEGUN_PARAMETRO_ProyectoID4TableAdapter()
         Me.SP_ComponentesParaTablas_BUSQUEDA_SEGUN_PARAMETRO_ComponenteIDTableAdapter = New GeneradorCod.DataSetTablasYCamposTableAdapters.SP_ComponentesParaTablas_BUSQUEDA_SEGUN_PARAMETRO_ComponenteIDTableAdapter()
+        Me.SP_ComponenteArchivoEliminar_BUSQUEDA_SEGUN_PARAMETRO_ComponenteIdTableAdapter = New GeneradorCod.DataSetAdministracionTableAdapters.SP_ComponenteArchivoEliminar_BUSQUEDA_SEGUN_PARAMETRO_ComponenteIdTableAdapter()
         ComponenteIDLabel = New System.Windows.Forms.Label()
         PlantillaIDLabel = New System.Windows.Forms.Label()
         TecnologiaIDLabel = New System.Windows.Forms.Label()
@@ -680,6 +689,8 @@ Partial Class FrmReplace
         TextoLabel = New System.Windows.Forms.Label()
         NombreTablaLabel4 = New System.Windows.Forms.Label()
         ContenidoXTablaLabel = New System.Windows.Forms.Label()
+        RutaArchivoLabel = New System.Windows.Forms.Label()
+        ArchivoLabel = New System.Windows.Forms.Label()
         CType(Me.SP_RequerimientosPlantillas_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.SP_RequerimientosPlantillas_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DataSetAdministracion, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -756,6 +767,8 @@ Partial Class FrmReplace
         CType(Me.DataSetReportes, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.SP_PlantillasImagenes_BUSCA_SEGUN_PlantillaIDDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabPage7.SuspendLayout()
+        CType(Me.SP_ComponenteArchivoEliminar_BUSQUEDA_SEGUN_PARAMETRO_ComponenteIdBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.SP_ComponenteArchivoEliminar_BUSQUEDA_SEGUN_PARAMETRO_ComponenteIdDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.SP_ProyectoCarpetasArchivos_BUSQUEDA_SEGUN_PARAMETRO_ProyectoIDBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.SP_RequerimientosValorProvisional_BUSQUEDA_SEGUN_PARAMETRO_BindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.SP_ProyectoCarpetasArchivos_BUSQUEDA_SEGUN_PARAMETRO_ProyectoIDDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -1420,7 +1433,7 @@ Partial Class FrmReplace
         'TecnologiaIDLabel2
         '
         TecnologiaIDLabel2.AutoSize = True
-        TecnologiaIDLabel2.Location = New System.Drawing.Point(127, 473)
+        TecnologiaIDLabel2.Location = New System.Drawing.Point(270, 426)
         TecnologiaIDLabel2.Name = "TecnologiaIDLabel2"
         TecnologiaIDLabel2.Size = New System.Drawing.Size(77, 13)
         TecnologiaIDLabel2.TabIndex = 193
@@ -1429,7 +1442,7 @@ Partial Class FrmReplace
         'ValorRequerimientoLabel3
         '
         ValorRequerimientoLabel3.AutoSize = True
-        ValorRequerimientoLabel3.Location = New System.Drawing.Point(99, 521)
+        ValorRequerimientoLabel3.Location = New System.Drawing.Point(37, 453)
         ValorRequerimientoLabel3.Name = "ValorRequerimientoLabel3"
         ValorRequerimientoLabel3.Size = New System.Drawing.Size(105, 13)
         ValorRequerimientoLabel3.TabIndex = 195
@@ -1438,7 +1451,7 @@ Partial Class FrmReplace
         'RequerimientoLabel5
         '
         RequerimientoLabel5.AutoSize = True
-        RequerimientoLabel5.Location = New System.Drawing.Point(126, 499)
+        RequerimientoLabel5.Location = New System.Drawing.Point(269, 450)
         RequerimientoLabel5.Name = "RequerimientoLabel5"
         RequerimientoLabel5.Size = New System.Drawing.Size(78, 13)
         RequerimientoLabel5.TabIndex = 196
@@ -1528,7 +1541,7 @@ Partial Class FrmReplace
         'ContenidoLabel2
         '
         ContenidoLabel2.AutoSize = True
-        ContenidoLabel2.Location = New System.Drawing.Point(6, 372)
+        ContenidoLabel2.Location = New System.Drawing.Point(8, 362)
         ContenidoLabel2.Name = "ContenidoLabel2"
         ContenidoLabel2.Size = New System.Drawing.Size(58, 13)
         ContenidoLabel2.TabIndex = 200
@@ -1537,7 +1550,7 @@ Partial Class FrmReplace
         'RutaLabel1
         '
         RutaLabel1.AutoSize = True
-        RutaLabel1.Location = New System.Drawing.Point(9, 393)
+        RutaLabel1.Location = New System.Drawing.Point(11, 383)
         RutaLabel1.Name = "RutaLabel1"
         RutaLabel1.Size = New System.Drawing.Size(33, 13)
         RutaLabel1.TabIndex = 201
@@ -1546,7 +1559,7 @@ Partial Class FrmReplace
         'NombreArchivoLabel1
         '
         NombreArchivoLabel1.AutoSize = True
-        NombreArchivoLabel1.Location = New System.Drawing.Point(259, 393)
+        NombreArchivoLabel1.Location = New System.Drawing.Point(261, 383)
         NombreArchivoLabel1.Name = "NombreArchivoLabel1"
         NombreArchivoLabel1.Size = New System.Drawing.Size(86, 13)
         NombreArchivoLabel1.TabIndex = 202
@@ -1564,7 +1577,7 @@ Partial Class FrmReplace
         'TextoLabel
         '
         TextoLabel.AutoSize = True
-        TextoLabel.Location = New System.Drawing.Point(167, 449)
+        TextoLabel.Location = New System.Drawing.Point(105, 427)
         TextoLabel.Name = "TextoLabel"
         TextoLabel.Size = New System.Drawing.Size(37, 13)
         TextoLabel.TabIndex = 203
@@ -1587,6 +1600,24 @@ Partial Class FrmReplace
         ContenidoXTablaLabel.Size = New System.Drawing.Size(95, 13)
         ContenidoXTablaLabel.TabIndex = 204
         ContenidoXTablaLabel.Text = "Contenido XTabla:"
+        '
+        'RutaArchivoLabel
+        '
+        RutaArchivoLabel.AutoSize = True
+        RutaArchivoLabel.Location = New System.Drawing.Point(161, 483)
+        RutaArchivoLabel.Name = "RutaArchivoLabel"
+        RutaArchivoLabel.Size = New System.Drawing.Size(72, 13)
+        RutaArchivoLabel.TabIndex = 204
+        RutaArchivoLabel.Text = "Ruta Archivo:"
+        '
+        'ArchivoLabel
+        '
+        ArchivoLabel.AutoSize = True
+        ArchivoLabel.Location = New System.Drawing.Point(4, 483)
+        ArchivoLabel.Name = "ArchivoLabel"
+        ArchivoLabel.Size = New System.Drawing.Size(46, 13)
+        ArchivoLabel.TabIndex = 205
+        ArchivoLabel.Text = "Archivo:"
         '
         'SP_RequerimientosPlantillas_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView
         '
@@ -2868,9 +2899,9 @@ Partial Class FrmReplace
         Me.PanelConf.Controls.Add(RequerimientoLabel1)
         Me.PanelConf.Controls.Add(Me.NombreComponenteTextBox)
         Me.PanelConf.Controls.Add(NombreComponenteLabel)
-        Me.PanelConf.Location = New System.Drawing.Point(580, 8)
+        Me.PanelConf.Location = New System.Drawing.Point(565, 8)
         Me.PanelConf.Name = "PanelConf"
-        Me.PanelConf.Size = New System.Drawing.Size(79, 11)
+        Me.PanelConf.Size = New System.Drawing.Size(94, 11)
         Me.PanelConf.TabIndex = 159
         '
         'ContenidoXTablaTextBox
@@ -4553,6 +4584,11 @@ Partial Class FrmReplace
         '
         Me.TabPage7.AutoScroll = True
         Me.TabPage7.Controls.Add(Me.ContenidoCrear)
+        Me.TabPage7.Controls.Add(Me.SP_ComponenteArchivoEliminar_BUSQUEDA_SEGUN_PARAMETRO_ComponenteIdDataGridView)
+        Me.TabPage7.Controls.Add(ArchivoLabel)
+        Me.TabPage7.Controls.Add(Me.ArchivoTextBox)
+        Me.TabPage7.Controls.Add(RutaArchivoLabel)
+        Me.TabPage7.Controls.Add(Me.RutaArchivoTextBox)
         Me.TabPage7.Controls.Add(TextoLabel)
         Me.TabPage7.Controls.Add(Me.TextoDeBD)
         Me.TabPage7.Controls.Add(NombreArchivoLabel1)
@@ -4577,14 +4613,62 @@ Partial Class FrmReplace
         Me.TabPage7.Text = "Generacion"
         Me.TabPage7.UseVisualStyleBackColor = True
         '
+        'ArchivoTextBox
+        '
+        Me.ArchivoTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SP_ComponenteArchivoEliminar_BUSQUEDA_SEGUN_PARAMETRO_ComponenteIdBindingSource, "Archivo", True))
+        Me.ArchivoTextBox.Location = New System.Drawing.Point(56, 480)
+        Me.ArchivoTextBox.Name = "ArchivoTextBox"
+        Me.ArchivoTextBox.Size = New System.Drawing.Size(100, 20)
+        Me.ArchivoTextBox.TabIndex = 206
+        '
+        'SP_ComponenteArchivoEliminar_BUSQUEDA_SEGUN_PARAMETRO_ComponenteIdBindingSource
+        '
+        Me.SP_ComponenteArchivoEliminar_BUSQUEDA_SEGUN_PARAMETRO_ComponenteIdBindingSource.DataMember = "SP_ComponenteArchivoEliminar_BUSQUEDA_SEGUN_PARAMETRO_ComponenteId"
+        Me.SP_ComponenteArchivoEliminar_BUSQUEDA_SEGUN_PARAMETRO_ComponenteIdBindingSource.DataSource = Me.DataSetAdministracion
+        '
+        'RutaArchivoTextBox
+        '
+        Me.RutaArchivoTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SP_ComponenteArchivoEliminar_BUSQUEDA_SEGUN_PARAMETRO_ComponenteIdBindingSource, "RutaArchivo", True))
+        Me.RutaArchivoTextBox.Location = New System.Drawing.Point(239, 480)
+        Me.RutaArchivoTextBox.Name = "RutaArchivoTextBox"
+        Me.RutaArchivoTextBox.Size = New System.Drawing.Size(211, 20)
+        Me.RutaArchivoTextBox.TabIndex = 205
+        '
+        'SP_ComponenteArchivoEliminar_BUSQUEDA_SEGUN_PARAMETRO_ComponenteIdDataGridView
+        '
+        Me.SP_ComponenteArchivoEliminar_BUSQUEDA_SEGUN_PARAMETRO_ComponenteIdDataGridView.AllowUserToAddRows = False
+        Me.SP_ComponenteArchivoEliminar_BUSQUEDA_SEGUN_PARAMETRO_ComponenteIdDataGridView.AutoGenerateColumns = False
+        Me.SP_ComponenteArchivoEliminar_BUSQUEDA_SEGUN_PARAMETRO_ComponenteIdDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.SP_ComponenteArchivoEliminar_BUSQUEDA_SEGUN_PARAMETRO_ComponenteIdDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn58, Me.DataGridViewTextBoxColumn57})
+        Me.SP_ComponenteArchivoEliminar_BUSQUEDA_SEGUN_PARAMETRO_ComponenteIdDataGridView.DataSource = Me.SP_ComponenteArchivoEliminar_BUSQUEDA_SEGUN_PARAMETRO_ComponenteIdBindingSource
+        Me.SP_ComponenteArchivoEliminar_BUSQUEDA_SEGUN_PARAMETRO_ComponenteIdDataGridView.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.SP_ComponenteArchivoEliminar_BUSQUEDA_SEGUN_PARAMETRO_ComponenteIdDataGridView.Location = New System.Drawing.Point(3, 503)
+        Me.SP_ComponenteArchivoEliminar_BUSQUEDA_SEGUN_PARAMETRO_ComponenteIdDataGridView.Name = "SP_ComponenteArchivoEliminar_BUSQUEDA_SEGUN_PARAMETRO_ComponenteIdDataGridView"
+        Me.SP_ComponenteArchivoEliminar_BUSQUEDA_SEGUN_PARAMETRO_ComponenteIdDataGridView.RowHeadersVisible = False
+        Me.SP_ComponenteArchivoEliminar_BUSQUEDA_SEGUN_PARAMETRO_ComponenteIdDataGridView.Size = New System.Drawing.Size(453, 71)
+        Me.SP_ComponenteArchivoEliminar_BUSQUEDA_SEGUN_PARAMETRO_ComponenteIdDataGridView.TabIndex = 204
+        '
+        'DataGridViewTextBoxColumn58
+        '
+        Me.DataGridViewTextBoxColumn58.DataPropertyName = "Archivo"
+        Me.DataGridViewTextBoxColumn58.HeaderText = "Archivo"
+        Me.DataGridViewTextBoxColumn58.Name = "DataGridViewTextBoxColumn58"
+        '
+        'DataGridViewTextBoxColumn57
+        '
+        Me.DataGridViewTextBoxColumn57.DataPropertyName = "RutaArchivo"
+        Me.DataGridViewTextBoxColumn57.HeaderText = "Ruta del Archivo A Eliminar"
+        Me.DataGridViewTextBoxColumn57.Name = "DataGridViewTextBoxColumn57"
+        Me.DataGridViewTextBoxColumn57.Width = 349
+        '
         'ContenidoCrear
         '
         Me.ContenidoCrear.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SP_ProyectoCarpetasArchivos_BUSQUEDA_SEGUN_PARAMETRO_ProyectoIDBindingSource, "Contenido", True))
-        Me.ContenidoCrear.Location = New System.Drawing.Point(3, 416)
+        Me.ContenidoCrear.Location = New System.Drawing.Point(3, 405)
         Me.ContenidoCrear.Multiline = True
         Me.ContenidoCrear.Name = "ContenidoCrear"
         Me.ContenidoCrear.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
-        Me.ContenidoCrear.Size = New System.Drawing.Size(450, 149)
+        Me.ContenidoCrear.Size = New System.Drawing.Size(450, 69)
         Me.ContenidoCrear.TabIndex = 201
         '
         'SP_ProyectoCarpetasArchivos_BUSQUEDA_SEGUN_PARAMETRO_ProyectoIDBindingSource
@@ -4595,7 +4679,7 @@ Partial Class FrmReplace
         'TextoDeBD
         '
         Me.TextoDeBD.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SP_RequerimientosValorProvisional_BUSQUEDA_SEGUN_PARAMETRO_BindingSource, "Texto", True))
-        Me.TextoDeBD.Location = New System.Drawing.Point(210, 446)
+        Me.TextoDeBD.Location = New System.Drawing.Point(148, 424)
         Me.TextoDeBD.Name = "TextoDeBD"
         Me.TextoDeBD.Size = New System.Drawing.Size(100, 20)
         Me.TextoDeBD.TabIndex = 204
@@ -4608,7 +4692,7 @@ Partial Class FrmReplace
         'NombreArchivoCrear
         '
         Me.NombreArchivoCrear.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SP_ProyectoCarpetasArchivos_BUSQUEDA_SEGUN_PARAMETRO_ProyectoIDBindingSource, "NombreArchivo", True))
-        Me.NombreArchivoCrear.Location = New System.Drawing.Point(351, 390)
+        Me.NombreArchivoCrear.Location = New System.Drawing.Point(353, 380)
         Me.NombreArchivoCrear.Name = "NombreArchivoCrear"
         Me.NombreArchivoCrear.Size = New System.Drawing.Size(100, 20)
         Me.NombreArchivoCrear.TabIndex = 203
@@ -4616,7 +4700,7 @@ Partial Class FrmReplace
         'RutaCrear
         '
         Me.RutaCrear.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SP_ProyectoCarpetasArchivos_BUSQUEDA_SEGUN_PARAMETRO_ProyectoIDBindingSource, "Ruta", True))
-        Me.RutaCrear.Location = New System.Drawing.Point(48, 390)
+        Me.RutaCrear.Location = New System.Drawing.Point(50, 380)
         Me.RutaCrear.Name = "RutaCrear"
         Me.RutaCrear.Size = New System.Drawing.Size(205, 20)
         Me.RutaCrear.TabIndex = 202
@@ -4648,7 +4732,7 @@ Partial Class FrmReplace
         Me.SP_ProyectoCarpetasArchivos_BUSQUEDA_SEGUN_PARAMETRO_ProyectoIDDataGridView.Location = New System.Drawing.Point(3, 235)
         Me.SP_ProyectoCarpetasArchivos_BUSQUEDA_SEGUN_PARAMETRO_ProyectoIDDataGridView.Name = "SP_ProyectoCarpetasArchivos_BUSQUEDA_SEGUN_PARAMETRO_ProyectoIDDataGridView"
         Me.SP_ProyectoCarpetasArchivos_BUSQUEDA_SEGUN_PARAMETRO_ProyectoIDDataGridView.RowHeadersVisible = False
-        Me.SP_ProyectoCarpetasArchivos_BUSQUEDA_SEGUN_PARAMETRO_ProyectoIDDataGridView.Size = New System.Drawing.Size(453, 134)
+        Me.SP_ProyectoCarpetasArchivos_BUSQUEDA_SEGUN_PARAMETRO_ProyectoIDDataGridView.Size = New System.Drawing.Size(453, 125)
         Me.SP_ProyectoCarpetasArchivos_BUSQUEDA_SEGUN_PARAMETRO_ProyectoIDDataGridView.TabIndex = 200
         '
         'DataGridViewTextBoxColumn53
@@ -4904,7 +4988,7 @@ Partial Class FrmReplace
         'RequerimientoTextBox3
         '
         Me.RequerimientoTextBox3.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SP_RegistroValorRequerimientos_SEGUN_ProyectoIDBindingSource, "Requerimiento", True))
-        Me.RequerimientoTextBox3.Location = New System.Drawing.Point(210, 496)
+        Me.RequerimientoTextBox3.Location = New System.Drawing.Point(353, 447)
         Me.RequerimientoTextBox3.Name = "RequerimientoTextBox3"
         Me.RequerimientoTextBox3.Size = New System.Drawing.Size(100, 20)
         Me.RequerimientoTextBox3.TabIndex = 197
@@ -4912,7 +4996,7 @@ Partial Class FrmReplace
         'ValorRequerimientoTextBox4
         '
         Me.ValorRequerimientoTextBox4.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SP_RegistroValorRequerimientos_SEGUN_ProyectoIDBindingSource, "ValorRequerimiento", True))
-        Me.ValorRequerimientoTextBox4.Location = New System.Drawing.Point(210, 518)
+        Me.ValorRequerimientoTextBox4.Location = New System.Drawing.Point(148, 450)
         Me.ValorRequerimientoTextBox4.Name = "ValorRequerimientoTextBox4"
         Me.ValorRequerimientoTextBox4.Size = New System.Drawing.Size(100, 20)
         Me.ValorRequerimientoTextBox4.TabIndex = 196
@@ -4920,7 +5004,7 @@ Partial Class FrmReplace
         'TecnologiaIDTextBox1
         '
         Me.TecnologiaIDTextBox1.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SP_CARGA_TECNOLOGIAS_APLICADAS_A_PROYECTOBindingSource, "TecnologiaID", True))
-        Me.TecnologiaIDTextBox1.Location = New System.Drawing.Point(210, 470)
+        Me.TecnologiaIDTextBox1.Location = New System.Drawing.Point(353, 423)
         Me.TecnologiaIDTextBox1.Name = "TecnologiaIDTextBox1"
         Me.TecnologiaIDTextBox1.Size = New System.Drawing.Size(100, 20)
         Me.TecnologiaIDTextBox1.TabIndex = 194
@@ -5195,6 +5279,9 @@ Partial Class FrmReplace
         Me.TableAdapterManager.Connection = Nothing
         Me.TableAdapterManager.ELIMINA_SEGUN_PROYECTOTableAdapter = Nothing
         Me.TableAdapterManager.ProyectosTableAdapter = Nothing
+        Me.TableAdapterManager.SP_ComponenteArchivoEliminar_EDICION_ACTUALIZARTableAdapter = Nothing
+        Me.TableAdapterManager.SP_ComponenteArchivoEliminar_EDICION_ELIMINARTableAdapter = Nothing
+        Me.TableAdapterManager.SP_ComponenteArchivoEliminar_EDICION_INSERTARTableAdapter = Nothing
         Me.TableAdapterManager.SP_Componentes_EDICION_ACTUALIZAR_XBase_PorPlantillaTableAdapter = Nothing
         Me.TableAdapterManager.SP_Componentes_EDICION_ACTUALIZARTableAdapter = Nothing
         Me.TableAdapterManager.SP_Componentes_EDICION_ELIMINARTableAdapter = Nothing
@@ -5508,6 +5595,10 @@ Partial Class FrmReplace
         '
         Me.SP_ComponentesParaTablas_BUSQUEDA_SEGUN_PARAMETRO_ComponenteIDTableAdapter.ClearBeforeFill = True
         '
+        'SP_ComponenteArchivoEliminar_BUSQUEDA_SEGUN_PARAMETRO_ComponenteIdTableAdapter
+        '
+        Me.SP_ComponenteArchivoEliminar_BUSQUEDA_SEGUN_PARAMETRO_ComponenteIdTableAdapter.ClearBeforeFill = True
+        '
         'FrmReplace
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -5610,6 +5701,8 @@ Partial Class FrmReplace
         CType(Me.SP_PlantillasImagenes_BUSCA_SEGUN_PlantillaIDDataGridView, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabPage7.ResumeLayout(False)
         Me.TabPage7.PerformLayout()
+        CType(Me.SP_ComponenteArchivoEliminar_BUSQUEDA_SEGUN_PARAMETRO_ComponenteIdBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.SP_ComponenteArchivoEliminar_BUSQUEDA_SEGUN_PARAMETRO_ComponenteIdDataGridView, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.SP_ProyectoCarpetasArchivos_BUSQUEDA_SEGUN_PARAMETRO_ProyectoIDBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.SP_RequerimientosValorProvisional_BUSQUEDA_SEGUN_PARAMETRO_BindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.SP_ProyectoCarpetasArchivos_BUSQUEDA_SEGUN_PARAMETRO_ProyectoIDDataGridView, System.ComponentModel.ISupportInitialize).EndInit()
@@ -6091,4 +6184,11 @@ Partial Class FrmReplace
     Friend WithEvents SP_ComponentesParaTablas_BUSQUEDA_SEGUN_PARAMETRO_ComponenteIDBindingSource As BindingSource
     Friend WithEvents SP_ComponentesParaTablas_BUSQUEDA_SEGUN_PARAMETRO_ComponenteIDTableAdapter As DataSetTablasYCamposTableAdapters.SP_ComponentesParaTablas_BUSQUEDA_SEGUN_PARAMETRO_ComponenteIDTableAdapter
     Friend WithEvents ContenidoXTablaTextBox As TextBox
+    Friend WithEvents SP_ComponenteArchivoEliminar_BUSQUEDA_SEGUN_PARAMETRO_ComponenteIdBindingSource As BindingSource
+    Friend WithEvents SP_ComponenteArchivoEliminar_BUSQUEDA_SEGUN_PARAMETRO_ComponenteIdTableAdapter As DataSetAdministracionTableAdapters.SP_ComponenteArchivoEliminar_BUSQUEDA_SEGUN_PARAMETRO_ComponenteIdTableAdapter
+    Friend WithEvents SP_ComponenteArchivoEliminar_BUSQUEDA_SEGUN_PARAMETRO_ComponenteIdDataGridView As DataGridView
+    Friend WithEvents DataGridViewTextBoxColumn58 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn57 As DataGridViewTextBoxColumn
+    Friend WithEvents ArchivoTextBox As TextBox
+    Friend WithEvents RutaArchivoTextBox As TextBox
 End Class

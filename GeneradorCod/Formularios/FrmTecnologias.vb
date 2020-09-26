@@ -26,6 +26,7 @@ Public Class FrmTecnologias
             Cancelar_TextoEnriquecido()
             Cancelar_PlantillasCreacionDeArchivos()
             Cancelar_ComponentesParaTablas()
+            Cancelar_ComponenteArchivoEliminar()
         Catch ex As System.Exception
             System.Windows.Forms.MessageBox.Show(ex.Message)
         End Try
@@ -2493,6 +2494,7 @@ Los otros componentes deberan ser palabras completas y sin saltos de linea
         SP_CampoComponentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaID_ComponenteID()
         SP_PlantillasCreacionDeArchivos_BUSQUEDA_SEGUN_PARAMETRO_ComponenteID()
         SP_ComponentesParaTablas_BUSQUEDA_SEGUN_PARAMETRO_ComponenteID()
+        SP_ComponenteArchivoEliminar_BUSQUEDA_SEGUN_PARAMETRO_ComponenteId()
     End Sub
 
     Private Sub SP_ComponentesParaTablas_BUSQUEDA_SEGUN_PARAMETRO_ComponenteID()
@@ -3757,7 +3759,8 @@ Los otros componentes deberan ser palabras completas y sin saltos de linea
     End Sub
     'Guardar
     Private Sub Guardar_Menu_ComponentesParaTablas_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Guardar_Menu_ComponentesParaTablas.Click
-        Control_Nulos_ComponentesParaTablas
+        Control_Nulos_ComponentesParaTablas()
+
         If ControlNulos.Text = "" Then ' Then
             SP_ComponentesParaTablas_EDICION_INSERTAR()
             Cancelar_ComponentesParaTablas()
@@ -3784,11 +3787,11 @@ Los otros componentes deberan ser palabras completas y sin saltos de linea
     Private Sub Actualizar_Menu_ComponentesParaTablas_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Actualizar_Menu_ComponentesParaTablas.Click
 
         Control_Nulos_ComponentesParaTablas()
-            If ControlNulos.Text = "" Then ' Then
-                SP_ComponentesParaTablas_EDICION_ACTUALIZAR()
-                Cancelar_ComponentesParaTablas()
-                Parar_Timer_ComponentesParaTablas()
-            End If
+        If ControlNulos.Text = "" Then ' Then
+            SP_ComponentesParaTablas_EDICION_ACTUALIZAR()
+            Cancelar_ComponentesParaTablas()
+            Parar_Timer_ComponentesParaTablas()
+        End If
 
     End Sub
     Private Sub Eliminar_Menu_ComponentesParaTablas_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Eliminar_Menu_ComponentesParaTablas.Click
@@ -3852,86 +3855,86 @@ Los otros componentes deberan ser palabras completas y sin saltos de linea
         ContenidoXTablaTextBox.Enabled = False
     End Sub
 
-    
- #Region"Timer de Botones"
- 'Declaraciones de Timers de Botones
-Private WithEvents Timer_Guardar_Menu_ComponentesParaTablas As Timer
-Private WithEvents Timer_Actualizar_Menu_ComponentesParaTablas As Timer
-Private WithEvents Timer_Eliminar_Menu_ComponentesParaTablas As Timer
- 'Procedimientos del Timer
-Private Sub Timer_Guardar_ComponentesParaTablas
-Me.Timer_Guardar_Menu_ComponentesParaTablas = New Timer
-Timer_Guardar_Menu_ComponentesParaTablas.Interval = 250
-Timer_Guardar_Menu_ComponentesParaTablas.Start()
-End Sub
-Private Sub Timer_Actualizar_ComponentesParaTablas
-Me.Timer_Actualizar_Menu_ComponentesParaTablas = New Timer
-Timer_Actualizar_Menu_ComponentesParaTablas.Interval = 500
-Timer_Actualizar_Menu_ComponentesParaTablas.Start()
-End Sub
-Private Sub Timer_Eliminar_ComponentesParaTablas
-Me.Timer_Eliminar_Menu_ComponentesParaTablas = New Timer
-Timer_Eliminar_Menu_ComponentesParaTablas.Interval = 800
-Timer_Eliminar_Menu_ComponentesParaTablas.Start()
-End Sub
- 'Eventos Tick
-Private Sub Timer_Guardar_Menu_ComponentesParaTablas_Tick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Timer_Guardar_Menu_ComponentesParaTablas.Tick
-If Guardar_Menu_ComponentesParaTablas.BackColor = Color.White Then
-Guardar_Menu_ComponentesParaTablas.BackColor = Color.Green
-Else
-Guardar_Menu_ComponentesParaTablas.BackColor = Color.White
-End If
-End Sub
-Private Sub Timer_Actualizar_Menu_ComponentesParaTablas_Tick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Timer_Actualizar_Menu_ComponentesParaTablas.Tick
-If Actualizar_Menu_ComponentesParaTablas.BackColor = Color.White Then
-Actualizar_Menu_ComponentesParaTablas.BackColor = Color.Green
-Else
-Actualizar_Menu_ComponentesParaTablas.BackColor = Color.White
-End If
-End Sub
-Private Sub Timer_Eliminar_Menu_ComponentesParaTablas_Tick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Timer_Eliminar_Menu_ComponentesParaTablas.Tick
-If Eliminar_Menu_ComponentesParaTablas.BackColor = Color.White Then
-Eliminar_Menu_ComponentesParaTablas.BackColor = Color.Red
-Else
-Eliminar_Menu_ComponentesParaTablas.BackColor = Color.White
-End If
-End Sub
 
-     'Parar Timer
-Private Sub Parar_Timer_ComponentesParaTablas()
-Me.Timer_Guardar_Menu_ComponentesParaTablas = New Timer
-Timer_Guardar_Menu_ComponentesParaTablas.Stop
-Guardar_Menu_ComponentesParaTablas.BackColor = Color.White
-Me.Timer_Actualizar_Menu_ComponentesParaTablas = New Timer
-Timer_Actualizar_Menu_ComponentesParaTablas.Stop
-Actualizar_Menu_ComponentesParaTablas.BackColor = Color.White
-Me.Timer_Eliminar_Menu_ComponentesParaTablas = New Timer
-Timer_Eliminar_Menu_ComponentesParaTablas.Stop
-Eliminar_Menu_ComponentesParaTablas.BackColor = Color.White
-End Sub
+#Region "Timer de Botones"
+    'Declaraciones de Timers de Botones
+    Private WithEvents Timer_Guardar_Menu_ComponentesParaTablas As Timer
+    Private WithEvents Timer_Actualizar_Menu_ComponentesParaTablas As Timer
+    Private WithEvents Timer_Eliminar_Menu_ComponentesParaTablas As Timer
+    'Procedimientos del Timer
+    Private Sub Timer_Guardar_ComponentesParaTablas()
+        Me.Timer_Guardar_Menu_ComponentesParaTablas = New Timer
+        Timer_Guardar_Menu_ComponentesParaTablas.Interval = 250
+        Timer_Guardar_Menu_ComponentesParaTablas.Start()
+    End Sub
+    Private Sub Timer_Actualizar_ComponentesParaTablas()
+        Me.Timer_Actualizar_Menu_ComponentesParaTablas = New Timer
+        Timer_Actualizar_Menu_ComponentesParaTablas.Interval = 500
+        Timer_Actualizar_Menu_ComponentesParaTablas.Start()
+    End Sub
+    Private Sub Timer_Eliminar_ComponentesParaTablas()
+        Me.Timer_Eliminar_Menu_ComponentesParaTablas = New Timer
+        Timer_Eliminar_Menu_ComponentesParaTablas.Interval = 800
+        Timer_Eliminar_Menu_ComponentesParaTablas.Start()
+    End Sub
+    'Eventos Tick
+    Private Sub Timer_Guardar_Menu_ComponentesParaTablas_Tick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Timer_Guardar_Menu_ComponentesParaTablas.Tick
+        If Guardar_Menu_ComponentesParaTablas.BackColor = Color.White Then
+            Guardar_Menu_ComponentesParaTablas.BackColor = Color.Green
+        Else
+            Guardar_Menu_ComponentesParaTablas.BackColor = Color.White
+        End If
+    End Sub
+    Private Sub Timer_Actualizar_Menu_ComponentesParaTablas_Tick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Timer_Actualizar_Menu_ComponentesParaTablas.Tick
+        If Actualizar_Menu_ComponentesParaTablas.BackColor = Color.White Then
+            Actualizar_Menu_ComponentesParaTablas.BackColor = Color.Green
+        Else
+            Actualizar_Menu_ComponentesParaTablas.BackColor = Color.White
+        End If
+    End Sub
+    Private Sub Timer_Eliminar_Menu_ComponentesParaTablas_Tick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Timer_Eliminar_Menu_ComponentesParaTablas.Tick
+        If Eliminar_Menu_ComponentesParaTablas.BackColor = Color.White Then
+            Eliminar_Menu_ComponentesParaTablas.BackColor = Color.Red
+        Else
+            Eliminar_Menu_ComponentesParaTablas.BackColor = Color.White
+        End If
+    End Sub
+
+    'Parar Timer
+    Private Sub Parar_Timer_ComponentesParaTablas()
+        Me.Timer_Guardar_Menu_ComponentesParaTablas = New Timer
+        Timer_Guardar_Menu_ComponentesParaTablas.Stop()
+        Guardar_Menu_ComponentesParaTablas.BackColor = Color.White
+        Me.Timer_Actualizar_Menu_ComponentesParaTablas = New Timer
+        Timer_Actualizar_Menu_ComponentesParaTablas.Stop()
+        Actualizar_Menu_ComponentesParaTablas.BackColor = Color.White
+        Me.Timer_Eliminar_Menu_ComponentesParaTablas = New Timer
+        Timer_Eliminar_Menu_ComponentesParaTablas.Stop()
+        Eliminar_Menu_ComponentesParaTablas.BackColor = Color.White
+    End Sub
 #End Region
- #Region"Ubicación de Fila"
-Private WithEvents Timer_Ubicacion_ComponentesParaTablas As Timer
-Dim X_ComponentesParaTablas
-Private Sub Timer_Ubicar_En_Fila_ComponentesParaTablas
-Me.Timer_Ubicacion_ComponentesParaTablas= New Timer
-Timer_Ubicacion_ComponentesParaTablas.Interval = 100
-Timer_Ubicacion_ComponentesParaTablas.Start()
-End Sub
-Private Sub SP_ComponentesParaTablas_BUSQUEDA_SEGUN_PARAMETRO_ComponenteIDDataGridView_CellMouseClick(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewCellMouseEventArgs) Handles SP_ComponentesParaTablas_BUSQUEDA_SEGUN_PARAMETRO_ComponenteIDDataGridView.CellMouseClick
-X_ComponentesParaTablas = SP_ComponentesParaTablas_BUSQUEDA_SEGUN_PARAMETRO_ComponenteIDDataGridView.CurrentRow.Index
-End Sub
-Private Sub Ubicar_En_Fila_ComponentesParaTablas
-Try
-Me.SP_ComponentesParaTablas_BUSQUEDA_SEGUN_PARAMETRO_ComponenteIDDataGridView.Rows(X_ComponentesParaTablas).Selected = True
-Me.SP_ComponentesParaTablas_BUSQUEDA_SEGUN_PARAMETRO_ComponenteIDDataGridView.FirstDisplayedScrollingRowIndex = X_ComponentesParaTablas
-Catch ex As Exception
-End Try
-End Sub
-Private Sub Timer_Ubicacion_ComponentesParaTablas_Tick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Timer_Ubicacion_ComponentesParaTablas.Tick
-Ubicar_En_Fila_ComponentesParaTablas
-Timer_Ubicacion_ComponentesParaTablas.Stop()
-End Sub
+#Region "Ubicación de Fila"
+    Private WithEvents Timer_Ubicacion_ComponentesParaTablas As Timer
+    Dim X_ComponentesParaTablas
+    Private Sub Timer_Ubicar_En_Fila_ComponentesParaTablas()
+        Me.Timer_Ubicacion_ComponentesParaTablas = New Timer
+        Timer_Ubicacion_ComponentesParaTablas.Interval = 100
+        Timer_Ubicacion_ComponentesParaTablas.Start()
+    End Sub
+    Private Sub SP_ComponentesParaTablas_BUSQUEDA_SEGUN_PARAMETRO_ComponenteIDDataGridView_CellMouseClick(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewCellMouseEventArgs) Handles SP_ComponentesParaTablas_BUSQUEDA_SEGUN_PARAMETRO_ComponenteIDDataGridView.CellMouseClick
+        X_ComponentesParaTablas = SP_ComponentesParaTablas_BUSQUEDA_SEGUN_PARAMETRO_ComponenteIDDataGridView.CurrentRow.Index
+    End Sub
+    Private Sub Ubicar_En_Fila_ComponentesParaTablas()
+        Try
+            Me.SP_ComponentesParaTablas_BUSQUEDA_SEGUN_PARAMETRO_ComponenteIDDataGridView.Rows(X_ComponentesParaTablas).Selected = True
+            Me.SP_ComponentesParaTablas_BUSQUEDA_SEGUN_PARAMETRO_ComponenteIDDataGridView.FirstDisplayedScrollingRowIndex = X_ComponentesParaTablas
+        Catch ex As Exception
+        End Try
+    End Sub
+    Private Sub Timer_Ubicacion_ComponentesParaTablas_Tick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Timer_Ubicacion_ComponentesParaTablas.Tick
+        Ubicar_En_Fila_ComponentesParaTablas()
+        Timer_Ubicacion_ComponentesParaTablas.Stop()
+    End Sub
 
     Private Sub Button7_Click(sender As Object, e As EventArgs) Handles Button7.Click
         Me.ContenidoXTablaTextBox.Text = Me.ContenidoXTablaTextBox.Text.Insert(Me.ContenidoXTablaTextBox.SelectionStart, "{{{Tabla}}}")
@@ -3956,6 +3959,276 @@ End Sub
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
         Me.ContenidoXTablaTextBox.Text = Me.ContenidoXTablaTextBox.Text.Insert(Me.ContenidoXTablaTextBox.SelectionStart, "{{{Tbl-Camel}}}")
     End Sub
+
+    Private Sub SP_ComponenteArchivoEliminar_BUSQUEDA_SEGUN_PARAMETRO_ComponenteId()
+        Try
+            Me.SP_ComponenteArchivoEliminar_BUSQUEDA_SEGUN_PARAMETRO_ComponenteIdTableAdapter.Fill(Me.DataSetAdministracion.SP_ComponenteArchivoEliminar_BUSQUEDA_SEGUN_PARAMETRO_ComponenteId,
+                                                                                                   New System.Nullable(Of Integer)(CType(ComponenteIDTextBox.Text, Integer)))
+        Catch ex As System.Exception
+            System.Windows.Forms.MessageBox.Show(ex.Message)
+        End Try
+    End Sub
+
+
+
+#Region "Procedimientos"
+    Sub Cancelar_ComponenteArchivoEliminar()
+        'Botones Del Menu
+        Nuevo_Menu_ComponenteArchivoEliminar.Enabled = True
+        Guardar_Menu_ComponenteArchivoEliminar.Enabled = False
+        Editar_Menu_ComponenteArchivoEliminar.Enabled = True
+        Actualizar_Menu_ComponenteArchivoEliminar.Enabled = False
+        Eliminar_Menu_ComponenteArchivoEliminar.Enabled = False
+        'Grid
+        SP_ComponenteArchivoEliminar_BUSQUEDA_SEGUN_PARAMETRO_ComponenteIdDataGridView.Enabled = True
+        'Cargar Datos de Tabla Actualizados
+        SP_ComponenteArchivoEliminar_BUSQUEDA_SEGUN_PARAMETRO_ComponenteId()
+        Bloquear_Objetos_ComponenteArchivoEliminar()
+        Parar_Timer_ComponenteArchivoEliminar()
+        Timer_Ubicar_En_Fila_ComponenteArchivoEliminar()
+    End Sub
+    'Insertar
+    Private Sub SP_ComponenteArchivoEliminar_EDICION_INSERTAR()
+        Try
+            Me.SP_ComponenteArchivoEliminar_EDICION_INSERTARTableAdapter.Fill(Me.DataSetAdministracion.SP_ComponenteArchivoEliminar_EDICION_INSERTAR,
+                                                             New System.Nullable(Of Integer)(CType(ComponenteIDTextBox.Text, Integer)),
+                                                             RutaArchivoTextBox.Text,
+                                                             ArchivoTextBox.Text)
+
+            SP_ComponenteArchivoEliminar_BUSQUEDA_SEGUN_PARAMETRO_ComponenteId()
+            MsgBox("El Dato Fue Guardado Exitosamente", MsgBoxStyle.Information, "Guardar Dato")
+        Catch ex As System.Exception
+            System.Windows.Forms.MessageBox.Show(ex.Message)
+        End Try
+    End Sub
+    'Actualizar
+    Private Sub SP_ComponenteArchivoEliminar_EDICION_ACTUALIZAR()
+        Try
+            Me.SP_ComponenteArchivoEliminar_EDICION_ACTUALIZARTableAdapter.Fill(Me.DataSetAdministracion.SP_ComponenteArchivoEliminar_EDICION_ACTUALIZAR,
+                                                             New System.Nullable(Of Integer)(CType(ComponenteRutaArchivoIdTextBox.Text, Integer)),
+                                                             New System.Nullable(Of Integer)(CType(ComponenteIDTextBox.Text, Integer)),
+                                                             RutaArchivoTextBox.Text,
+                                                             ArchivoTextBox.Text)
+            SP_ComponenteArchivoEliminar_BUSQUEDA_SEGUN_PARAMETRO_ComponenteId()
+            MsgBox("El Dato Fue Actualizado Exitosamente", MsgBoxStyle.Information, "Actualizar Dato")
+        Catch ex As System.Exception
+            System.Windows.Forms.MessageBox.Show(ex.Message)
+        End Try
+    End Sub
+    'Eliminar
+    Private Sub SP_ComponenteArchivoEliminar_EDICION_ELIMINAR()
+        Try
+            Me.SP_ComponenteArchivoEliminar_EDICION_ELIMINARTableAdapter.Fill(Me.DataSetAdministracion.SP_ComponenteArchivoEliminar_EDICION_ELIMINAR, New System.Nullable(Of Long)(CType(ComponenteRutaArchivoIdTextBox.Text, Long)))
+            SP_ComponenteArchivoEliminar_BUSQUEDA_SEGUN_PARAMETRO_ComponenteId()
+            MsgBox("El Dato Fue Eliminado Exitosamente de la Base de Datos", MsgBoxStyle.Information, "Eliminación de Dato")
+        Catch ex As System.Exception
+            System.Windows.Forms.MessageBox.Show(ex.Message)
+        End Try
+    End Sub
+#End Region
+
+#Region "Menus"
+    'Nuevo 
+    Private Sub Nuevo_Menu_ComponenteArchivoEliminar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Nuevo_Menu_ComponenteArchivoEliminar.Click
+        Nuevo_Menu_ComponenteArchivoEliminar.Enabled = False
+        Editar_Menu_ComponenteArchivoEliminar.Enabled = False
+        SP_ComponenteArchivoEliminar_BUSQUEDA_SEGUN_PARAMETRO_ComponenteIdDataGridView.Enabled = False
+        Limpiar_Objetos_ComponenteArchivoEliminar()
+        RutaArchivoTextBox.Enabled = True
+        RutaArchivoTextBox.Focus()
+    End Sub
+    'Guardar
+    Private Sub Guardar_Menu_ComponenteArchivoEliminar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Guardar_Menu_ComponenteArchivoEliminar.Click
+        Control_Nulos_ComponenteArchivoEliminar()
+
+        If ControlNulos.Text = "" Then ' Then
+            SP_ComponenteArchivoEliminar_EDICION_INSERTAR()
+            Cancelar_ComponenteArchivoEliminar()
+            Parar_Timer_ComponenteArchivoEliminar()
+        End If
+    End Sub
+    'Editar
+    Private Sub Editar_Menu_ComponenteArchivoEliminar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Editar_Menu_ComponenteArchivoEliminar.Click
+        Nuevo_Menu_ComponenteArchivoEliminar.Enabled = False
+        Guardar_Menu_ComponenteArchivoEliminar.Enabled = False
+        Editar_Menu_ComponenteArchivoEliminar.Enabled = False
+        Actualizar_Menu_ComponenteArchivoEliminar.Enabled = True
+        Eliminar_Menu_ComponenteArchivoEliminar.Enabled = True
+        SP_ComponenteArchivoEliminar_BUSQUEDA_SEGUN_PARAMETRO_ComponenteIdDataGridView.Enabled = False
+        Desbloquear_Objetos_ComponenteArchivoEliminar()
+        Timer_Actualizar_ComponenteArchivoEliminar()
+        Timer_Eliminar_ComponenteArchivoEliminar()
+    End Sub
+    'Actualizar
+    Private Sub Actualizar_Menu_ComponenteArchivoEliminar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Actualizar_Menu_ComponenteArchivoEliminar.Click
+        Control_Nulos_ComponenteArchivoEliminar()
+
+        If ControlNulos.Text = "" Then ' Then
+            SP_ComponenteArchivoEliminar_EDICION_ACTUALIZAR()
+            Cancelar_ComponenteArchivoEliminar()
+            Parar_Timer_ComponenteArchivoEliminar()
+        End If
+    End Sub
+    Private Sub Eliminar_Menu_ComponenteArchivoEliminar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Eliminar_Menu_ComponenteArchivoEliminar.Click
+        If MsgBox("Desea Eliminar Este Dato?", MsgBoxStyle.YesNo) = MsgBoxResult.Yes Then
+            SP_ComponenteArchivoEliminar_EDICION_ELIMINAR()
+            Cancelar_ComponenteArchivoEliminar()
+            Parar_Timer_ComponenteArchivoEliminar()
+        Else
+            MsgBox("Se Cancelo la Eliminación del Dato", MsgBoxStyle.Information)
+            Cancelar_ComponenteArchivoEliminar()
+        End If
+    End Sub
+    'Cancelar
+    Private Sub Cancelar_Menu_ComponenteArchivoEliminar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Cancelar_Menu_ComponenteArchivoEliminar.Click
+        Cancelar_ComponenteArchivoEliminar()
+    End Sub
+
+
+#End Region
+    'Menus
+#Region "Eventos sobre Objetos "
+    'Control de Nulos
+    Public Sub Control_Nulos_ComponenteArchivoEliminar()
+        ControlNulos.Text = "" '
+        Select Case ControlNulos.Text = "" '
+            Case RutaArchivoTextBox.Text = ""
+                MsgBox("El nombre del campo: RutaArchivo; Esta vacio, Favor Verificar", MsgBoxStyle.Critical)
+                RutaArchivoTextBox.BackColor = Color.Beige
+                ControlNulos.Text = "1"
+            Case ArchivoTextBox.Text = ""
+                MsgBox("El nombre del campo: Archivo; Esta vacio, Favor Verificar", MsgBoxStyle.Critical)
+                ArchivoTextBox.BackColor = Color.Beige
+                ControlNulos.Text = "1"
+            Case Else
+                ControlNulos.Text = "" '
+        End Select
+    End Sub
+    Private Sub RutaArchivoTextBox_KeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles RutaArchivoTextBox.KeyPress
+        If Asc(e.KeyChar) = 13 Then
+            If RutaArchivoTextBox.Text = "" Then
+                MsgBox("Dato Obligatorio, Favor Verificar", MsgBoxStyle.Critical, "Validación de Datos")
+                RutaArchivoTextBox.Text = ""
+                RutaArchivoTextBox.Focus()
+            Else
+                ArchivoTextBox.Enabled = True
+                ArchivoTextBox.Focus()
+            End If
+        End If
+    End Sub
+    Private Sub ArchivoTextBox_KeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles ArchivoTextBox.KeyPress
+        If Asc(e.KeyChar) = 13 Then
+            If Actualizar_Menu_ComponenteArchivoEliminar.Enabled = True Then
+                Actualizar_Menu_ComponenteArchivoEliminar.Enabled = True
+                Eliminar_Menu_ComponenteArchivoEliminar.Enabled = True
+            Else
+                If ArchivoTextBox.Text = "" Then
+                    MsgBox("Dato Obligatorio, Favor Verificar", MsgBoxStyle.Critical, "Validación de Datos")
+                    ArchivoTextBox.Text = ""
+                    ArchivoTextBox.Focus()
+                Else
+                    MsgBox("La Información Ya puede ser Guardada el Icono de Guardado queda habilitado", MsgBoxStyle.Information, "Guardar los Datos")
+                    Guardar_Menu_ComponenteArchivoEliminar.Enabled = True
+                    Timer_Guardar_ComponenteArchivoEliminar()
+                End If
+            End If
+        End If
+    End Sub
+    Public Sub Limpiar_Objetos_ComponenteArchivoEliminar()
+        RutaArchivoTextBox.Text = "" ''
+        ArchivoTextBox.Text = "" ''
+    End Sub
+    Public Sub Desbloquear_Objetos_ComponenteArchivoEliminar()
+        RutaArchivoTextBox.Enabled = True
+        ArchivoTextBox.Enabled = True
+    End Sub
+    Public Sub Bloquear_Objetos_ComponenteArchivoEliminar()
+        RutaArchivoTextBox.Enabled = False
+        ArchivoTextBox.Enabled = False
+    End Sub
+#End Region
+
+#Region "Timer de Botones"
+    'Declaraciones de Timers de Botones
+    Private WithEvents Timer_Guardar_Menu_ComponenteArchivoEliminar As Timer
+    Private WithEvents Timer_Actualizar_Menu_ComponenteArchivoEliminar As Timer
+    Private WithEvents Timer_Eliminar_Menu_ComponenteArchivoEliminar As Timer
+    'Procedimientos del Timer
+    Private Sub Timer_Guardar_ComponenteArchivoEliminar()
+        Me.Timer_Guardar_Menu_ComponenteArchivoEliminar = New Timer
+        Timer_Guardar_Menu_ComponenteArchivoEliminar.Interval = 250
+        Timer_Guardar_Menu_ComponenteArchivoEliminar.Start()
+    End Sub
+    Private Sub Timer_Actualizar_ComponenteArchivoEliminar()
+        Me.Timer_Actualizar_Menu_ComponenteArchivoEliminar = New Timer
+        Timer_Actualizar_Menu_ComponenteArchivoEliminar.Interval = 500
+        Timer_Actualizar_Menu_ComponenteArchivoEliminar.Start()
+    End Sub
+    Private Sub Timer_Eliminar_ComponenteArchivoEliminar()
+        Me.Timer_Eliminar_Menu_ComponenteArchivoEliminar = New Timer
+        Timer_Eliminar_Menu_ComponenteArchivoEliminar.Interval = 800
+        Timer_Eliminar_Menu_ComponenteArchivoEliminar.Start()
+    End Sub
+    'Eventos Tick
+    Private Sub Timer_Guardar_Menu_ComponenteArchivoEliminar_Tick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Timer_Guardar_Menu_ComponenteArchivoEliminar.Tick
+        If Guardar_Menu_ComponenteArchivoEliminar.BackColor = Color.White Then
+            Guardar_Menu_ComponenteArchivoEliminar.BackColor = Color.Green
+        Else
+            Guardar_Menu_ComponenteArchivoEliminar.BackColor = Color.White
+        End If
+    End Sub
+    Private Sub Timer_Actualizar_Menu_ComponenteArchivoEliminar_Tick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Timer_Actualizar_Menu_ComponenteArchivoEliminar.Tick
+        If Actualizar_Menu_ComponenteArchivoEliminar.BackColor = Color.White Then
+            Actualizar_Menu_ComponenteArchivoEliminar.BackColor = Color.Green
+        Else
+            Actualizar_Menu_ComponenteArchivoEliminar.BackColor = Color.White
+        End If
+    End Sub
+    Private Sub Timer_Eliminar_Menu_ComponenteArchivoEliminar_Tick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Timer_Eliminar_Menu_ComponenteArchivoEliminar.Tick
+        If Eliminar_Menu_ComponenteArchivoEliminar.BackColor = Color.White Then
+            Eliminar_Menu_ComponenteArchivoEliminar.BackColor = Color.Red
+        Else
+            Eliminar_Menu_ComponenteArchivoEliminar.BackColor = Color.White
+        End If
+    End Sub
+    'Parar Timer
+    Private Sub Parar_Timer_ComponenteArchivoEliminar()
+        Me.Timer_Guardar_Menu_ComponenteArchivoEliminar = New Timer
+        Timer_Guardar_Menu_ComponenteArchivoEliminar.Stop()
+        Guardar_Menu_ComponenteArchivoEliminar.BackColor = Color.White
+        Me.Timer_Actualizar_Menu_ComponenteArchivoEliminar = New Timer
+        Timer_Actualizar_Menu_ComponenteArchivoEliminar.Stop()
+        Actualizar_Menu_ComponenteArchivoEliminar.BackColor = Color.White
+        Me.Timer_Eliminar_Menu_ComponenteArchivoEliminar = New Timer
+        Timer_Eliminar_Menu_ComponenteArchivoEliminar.Stop()
+        Eliminar_Menu_ComponenteArchivoEliminar.BackColor = Color.White
+    End Sub
+#End Region
+#Region "Ubicación de Fila"
+    Private WithEvents Timer_Ubicacion_ComponenteArchivoEliminar As Timer
+    Dim X_ComponenteArchivoEliminar
+    Private Sub Timer_Ubicar_En_Fila_ComponenteArchivoEliminar()
+        Me.Timer_Ubicacion_ComponenteArchivoEliminar = New Timer
+        Timer_Ubicacion_ComponenteArchivoEliminar.Interval = 100
+        Timer_Ubicacion_ComponenteArchivoEliminar.Start()
+    End Sub
+    Private Sub SP_ComponenteArchivoEliminar_BUSQUEDA_SEGUN_PARAMETRO_ComponenteIdDataGridView_CellMouseClick(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewCellMouseEventArgs) Handles SP_ComponenteArchivoEliminar_BUSQUEDA_SEGUN_PARAMETRO_ComponenteIdDataGridView.CellMouseClick
+        X_ComponenteArchivoEliminar = SP_ComponenteArchivoEliminar_BUSQUEDA_SEGUN_PARAMETRO_ComponenteIdDataGridView.CurrentRow.Index
+    End Sub
+    Private Sub Ubicar_En_Fila_ComponenteArchivoEliminar()
+        Try
+            Me.SP_ComponenteArchivoEliminar_BUSQUEDA_SEGUN_PARAMETRO_ComponenteIdDataGridView.Rows(X_ComponenteArchivoEliminar).Selected = True
+            Me.SP_ComponenteArchivoEliminar_BUSQUEDA_SEGUN_PARAMETRO_ComponenteIdDataGridView.FirstDisplayedScrollingRowIndex = X_ComponenteArchivoEliminar
+        Catch ex As Exception
+        End Try
+    End Sub
+    Private Sub Timer_Ubicacion_ComponenteArchivoEliminar_Tick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Timer_Ubicacion_ComponenteArchivoEliminar.Tick
+        Ubicar_En_Fila_ComponenteArchivoEliminar()
+        Timer_Ubicacion_ComponenteArchivoEliminar.Stop()
+    End Sub
+#End Region
+
+
 
 
 

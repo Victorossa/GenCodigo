@@ -463,11 +463,14 @@ Public Class FrmReplace
             ' --2.2-- EJECUTA PROCESAMIENTO PARA PLANTILLAS QUE TIENEN COMPONENTES CON BASE
             contenidoConBase = procesandoConBase(cteBase, CreaCarpArch)
         End If
+
+        ' --4-- VALIDA SI TIENE ARCHIVOS O CARPETAS POR ELIMINAR
+        If SP_ComponenteArchivoEliminar_BUSQUEDA_SEGUN_PARAMETRO_ComponenteIdDataGridView.Rows.Count > 0 Then
+            'MsgBox("Este componente contiene rutas de archivo a eliminar")
+            'EliminarCarpetasArchivos()
+        End If
+
         ' --3-- CUENTA LOS COMPONENTES DE LA PLANTILLA TRABAJADA
-
-
-
-
         'CUENTA LOS COMPONENTES DE LA PLANTILLA A TRABAJAR
         Dim contadorComponentes = SP_Componentes_BUSQUEDA_SEGUN_PARAMETRO_PlantillaIDDataGridView.Rows.Count()
 
@@ -625,6 +628,7 @@ Public Class FrmReplace
                 If RutaTextBox.Text <> "" Then
                     NombreArchivoACrear = RemplazosDeTabla(NombreArchivoTextBox.Text, NombreTablaTextBox3.Text) & ExtensionArchivoTextBox.Text
                     RutaProcesada = RemplazaRequerimientos(RutaTextBox.Text)
+                    RutaProcesada = RemplazosDeTabla(RutaProcesada, NombreTablaTextBox3.Text)
                     respuestaFormularios = RemplazaRequerimientos(respuestaFormularios)
                     GenerarArchivos(NombreArchivoACrear, RutaProcesada, respuestaFormularios)
                 End If
@@ -2143,7 +2147,9 @@ Public Class FrmReplace
             If RutaTextBox.Text <> "" Then
                 NombreArchivoACrear = RemplazosDeTabla(NombreArchivoTextBox.Text, Tabla) & ExtensionArchivoTextBox.Text
                 RutaProcesada = RemplazaRequerimientos(RutaTextBox.Text)
+                RutaProcesada = RemplazosDeTabla(RutaProcesada, Tabla)
                 ContenidoGenerado = RemplazaRequerimientos(ContenidoGenerado)
+
                 GenerarArchivos(NombreArchivoACrear, RutaProcesada, ContenidoGenerado)
             End If
         End If
@@ -2719,25 +2725,6 @@ Public Class FrmReplace
                         MsgBox("Este proyecto que se desea construir como 'EXISTENTE' No fue posible encontrarlo, favor verificar", MsgBoxStyle.Exclamation)
                     End If
                 End If
-
-
-
-                'RutaUbicacion.Text = RutaUbicacion.Text + "\" + ValorRequerimientoTextBox4.Text
-                'If Directory.Exists(RutaUbicacion.Text) = Nothing Then
-                '    If MsgBox("Se crearan en " & RutaUbicacion.Text & " todos los archivos para este proyecto, desea continuar?", MsgBoxStyle.YesNo) = MsgBoxResult.Yes Then
-                '        remplaza = False
-                '        GenerarProyecto(remplaza)
-                '    Else
-                '        MsgBox("Se cancelo la instrucción", MsgBoxStyle.Information)
-                '    End If
-                'Else
-                '    If MsgBox("El proyecto " & NombreProyectoTextBox.Text & " Ya existe en la ubicación que definio, Desea Continuar", MsgBoxStyle.YesNo) = MsgBoxResult.Yes Then
-                '        remplaza = True
-                '        GenerarProyecto(remplaza)
-                '    Else
-
-                '    End If
-                'End If
                 SP_RegistroValorRequerimientos_SEGUN_ProyectoID()
                 req = True
                 Exit While
@@ -2751,6 +2738,7 @@ Public Class FrmReplace
         End If
     End Sub
     Public Sub GenerarProyecto(ByVal remplaza As Boolean)
+        RecorrePlantillasEliminandoArchivos()
         Dim cantRutas As Integer = 0
         Dim rutaConcatenada As String
         cantRutas = SP_ProyectoCarpetasArchivos_BUSQUEDA_SEGUN_PARAMETRO_ProyectoIDDataGridView.Rows.Count
@@ -2881,6 +2869,67 @@ Public Class FrmReplace
             ContenidoCrear.Dock = DockStyle.None
         End If
     End Sub
+
+
+
+
+
+
+    Private Sub SP_ComponenteArchivoEliminar_BUSQUEDA_SEGUN_PARAMETRO_ComponenteId()
+        Try
+            Me.SP_ComponenteArchivoEliminar_BUSQUEDA_SEGUN_PARAMETRO_ComponenteIdTableAdapter.Fill(Me.DataSetAdministracion.SP_ComponenteArchivoEliminar_BUSQUEDA_SEGUN_PARAMETRO_ComponenteId, New System.Nullable(Of Integer)(CType(ComponenteIDTextBox.Text, Integer)))
+        Catch ex As System.Exception
+            'System.Windows.Forms.MessageBox.Show(ex.Message)
+        End Try
+
+    End Sub
+
+    Private Sub ComponenteIDTextBox_TextChanged(sender As Object, e As EventArgs) Handles ComponenteIDTextBox.TextChanged
+        SP_ComponenteArchivoEliminar_BUSQUEDA_SEGUN_PARAMETRO_ComponenteId()
+    End Sub
+
+    Public Sub RecorrePlantillasEliminandoArchivos()
+        Dim contadorTecnologiasAplicadas = SP_CARGA_TECNOLOGIAS_APLICADAS_A_PROYECTODataGridView.Rows.Count()
+        'Carga las tecnologias aplicadas y segun pide los requerimientos de de las plantillas de dichas tecnologias
+        While contadorTecnologiasAplicadas > 0
+            'Se ubica en la primera fila
+            SP_CARGA_TECNOLOGIAS_APLICADAS_A_PROYECTODataGridView.CurrentCell = SP_CARGA_TECNOLOGIAS_APLICADAS_A_PROYECTODataGridView.Rows(0).Cells(0)
+            EliminarCarpetasArchivos()
+            SP_CARGA_TECNOLOGIAS_APLICADAS_A_PROYECTODataGridView.Rows.RemoveAt(0)
+            contadorTecnologiasAplicadas = contadorTecnologiasAplicadas - 1
+        End While
+        'Vuelve y carga las tecnologias aplicadas
+        SP_CARGA_TECNOLOGIAS_APLICADAS_A_PROYECTO()
+    End Sub
+
+
+    Public Sub EliminarCarpetasArchivos()
+        Dim contador As Integer
+        contador = SP_ComponenteArchivoEliminar_BUSQUEDA_SEGUN_PARAMETRO_ComponenteIdDataGridView.Rows.Count
+        While contador > 0
+            SP_ComponenteArchivoEliminar_BUSQUEDA_SEGUN_PARAMETRO_ComponenteIdDataGridView.CurrentCell = SP_ComponenteArchivoEliminar_BUSQUEDA_SEGUN_PARAMETRO_ComponenteIdDataGridView.Rows(0).Cells(0)
+            If RutaArchivoTextBox.Text <> "" Then
+                RutaProcesada = RutaUbicacion.Text & "\" & RutaArchivoTextBox.Text
+                RutaProcesada = RemplazaRequerimientos(RutaProcesada)
+                Eliminar_Archivo(RutaProcesada)
+            End If
+            SP_ComponenteArchivoEliminar_BUSQUEDA_SEGUN_PARAMETRO_ComponenteIdDataGridView.Rows.RemoveAt(0)
+            contador = contador - 1
+        End While
+        SP_ComponenteArchivoEliminar_BUSQUEDA_SEGUN_PARAMETRO_ComponenteId()
+    End Sub
+
+    Public Sub Eliminar_Archivo(Path As String)
+        If File.Exists(Path) Then
+            My.Computer.FileSystem.DeleteFile(Path)
+        End If
+    End Sub
+    Public Sub Eliminar_Directorio(Path As String)
+        My.Computer.FileSystem.DeleteDirectory(Path, FileIO.DeleteDirectoryOption.DeleteAllContents)
+    End Sub
+
+
+
 
 
 
